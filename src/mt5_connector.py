@@ -48,11 +48,43 @@ class MT5Connector:
         self.connected = False
         return False
 
+    def get_account_equity(self, default_equity: float = 10000.0) -> float:
+        """Return live MT5 account equity if connected, else default equity."""
+        if self.connected and self._mt5 is not None:
+            try:
+                info = self._mt5.account_info()
+                if info is not None and float(info.equity) > 0:
+                    return float(info.equity)
+            except Exception:
+                pass
+        return default_equity
+
+    def resolve_broker_symbol(self, base_symbol: str) -> str:
+        """
+        Automatically match broker symbol suffixes (e.g. `XAUUSD`, `XAUUSDm`, `XAUUSD.raw`, `XAUUSD.pro`).
+        """
+        if not self.connected or self._mt5 is None:
+            return base_symbol
+        try:
+            # First try exact symbol
+            if self._mt5.symbol_select(base_symbol, True):
+                return base_symbol
+            # Otherwise search all available broker symbols starting with base_symbol
+            all_syms = self._mt5.symbols_get() or []
+            for s in all_syms:
+                if s.name.upper().startswith(base_symbol.upper()):
+                    self._mt5.symbol_select(s.name, True)
+                    return s.name
+        except Exception:
+            pass
+        return base_symbol
+
     def fetch_recent_candles(
         self, symbol: str, timeframe: str = "M15", count: int = 500
     ) -> List[Candle]:
         """Fetch recent OHLCV candles from MT5 if connected, else generate realistic feed."""
         if self.connected and self._mt5 is not None:
+            broker_sym = self.resolve_broker_symbol(symbol)
             tf_map = {
                 "M5": self._mt5.TIMEFRAME_M5,
                 "M15": self._mt5.TIMEFRAME_M15,
@@ -60,7 +92,7 @@ class MT5Connector:
                 "H4": self._mt5.TIMEFRAME_H4,
             }
             mt5_tf = tf_map.get(timeframe, self._mt5.TIMEFRAME_M15)
-            rates = self._mt5.copy_rates_from_pos(symbol, mt5_tf, 0, count)
+            rates = self._mt5.copy_rates_from_pos(broker_sym, mt5_tf, 0, count)
             if rates is not None and len(rates) > 0:
                 return [
                     Candle(
