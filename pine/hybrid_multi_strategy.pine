@@ -1,0 +1,120 @@
+//@version=5
+indicator("Hybrid Multi-Strategy Copilot [SND + ICT + Breakout + EMA Pullback]", shorttitle="HybridCopilot", overlay=true, max_boxes_count=100, max_lines_count=100, max_labels_count=100)
+
+// ============================================================================
+// 1. USER INPUTS
+// ============================================================================
+grp_strat = "Strategy Modules"
+use_snd      = input.bool(true, "Enable Supply & Demand (SND) Zones", group=grp_strat)
+use_ict      = input.bool(true, "Enable ICT Liquidity Sweep + FVG", group=grp_strat)
+use_breakout = input.bool(true, "Enable Session Compression Breakout", group=grp_strat)
+use_pullback = input.bool(true, "Enable EMA 20/50/200 + RSI Pullback", group=grp_strat)
+
+grp_risk = "Risk & Targets (ATR / R-Multiple)"
+atr_len      = input.int(14, "ATR Length", group=grp_risk)
+sl_atr_mult  = input.float(1.5, "Default SL ATR Multiplier", step=0.1, group=grp_risk)
+tp1_rr       = input.float(1.5, "TP1 Risk:Reward (50% Partial + BE)", step=0.1, group=grp_risk)
+tp2_rr       = input.float(3.0, "TP2 Risk:Reward (Runner)", step=0.1, group=grp_risk)
+
+// ============================================================================
+// 2. CORE INDICATORS (Strictly Causal)
+// ============================================================================
+atr_val = ta.atr(atr_len)
+ema20   = ta.ema(close, 20)
+ema50   = ta.ema(close, 50)
+ema200  = ta.ema(close, 200)
+rsi_val = ta.rsi(close, 14)
+[plus_di, minus_di, adx_val] = ta.dmi(14, 14)
+
+plot(ema20, "EMA 20", color=color.new(color.aqua, 20), linewidth=1)
+plot(ema50, "EMA 50", color=color.new(color.orange, 15), linewidth=2)
+plot(ema200, "EMA 200", color=color.new(color.gray, 30), linewidth=2)
+
+// ============================================================================
+// 3. STRATEGY 1: SUPPLY & DEMAND (RBR / DBR / RBD / DBD)
+// ============================================================================
+body_size = math.abs(close - open)
+candle_rng = high - low
+base_compact = (high[1] - low[1]) <= 1.25 * atr_val[1]
+bull_impulse = close > open and body_size >= 1.15 * atr_val and close > high[1] and base_compact
+bear_impulse = close < open and body_size >= 1.15 * atr_val and close < low[1] and base_compact
+
+var float last_demand_top = na
+var float last_demand_bot = na
+var float last_supply_top = na
+var float last_supply_bot = na
+
+if bull_impulse
+    last_demand_top := math.max(open[1], close[1])
+    last_demand_bot := low[1]
+    if use_snd
+        box.new(bar_index - 1, last_demand_top, bar_index + 12, last_demand_bot, border_color=color.new(color.teal, 30), bgcolor=color.new(color.teal, 85))
+
+if bear_impulse
+    last_supply_top := high[1]
+    last_supply_bot := math.min(open[1], close[1])
+    if use_snd
+        box.new(bar_index - 1, last_supply_top, bar_index + 12, last_supply_bot, border_color=color.new(color.maroon, 30), bgcolor=color.new(color.maroon, 85))
+
+snd_long  = use_snd and not na(last_demand_top) and low <= last_demand_top + 0.15 * atr_val and close >= last_demand_bot and close > open
+snd_short = use_snd and not na(last_supply_bot) and high >= last_supply_bot - 0.15 * atr_val and close <= last_supply_top and close < open
+
+// ============================================================================
+// 4. STRATEGY 2: ICT LIQUIDITY SWEEP + FVG
+// ============================================================================
+pool_high = ta.highest(high, 24)[1]
+pool_low  = ta.lowest(low, 24)[1]
+
+ssl_sweep = low < pool_low and close > pool_low and close > open
+bsl_sweep = high > pool_high and close < pool_high and close < open
+
+bull_fvg  = low > high[2] and close[1] > open[1]
+bear_fvg  = high < low[2] and close[1] < open[1]
+
+ict_long  = use_ict and (ssl_sweep or (ta.barssince(ssl_sweep) <= 4 and bull_fvg)) and close > open
+ict_short = use_ict and (bsl_sweep or (ta.barssince(bsl_sweep) <= 4 and bear_fvg)) and close < open
+
+// ============================================================================
+// 5. STRATEGY 3: SESSION COMPRESSION BREAKOUT
+// ============================================================================
+box_hi = ta.highest(high, 20)[1]
+box_lo = ta.lowest(low, 20)[1]
+is_compressed = (box_hi - box_lo) <= 5.5 * atr_val
+
+brk_long  = use_breakout and is_compressed and close > box_hi and close[1] <= box_hi and body_size >= 0.60 * atr_val
+brk_short = use_breakout and is_compressed and close < box_lo and close[1] >= box_lo and body_size >= 0.60 * atr_val
+
+// ============================================================================
+// 6. STRATEGY 4: EMA 20/50/200 TREND PULLBACK + RSI FILTER
+// ============================================================================
+pb_long  = use_pullback and ema20 > ema50 and ema50 >= ema200 - 0.5 * atr_val and low <= ema20 + 0.25 * atr_val and close > ema20 and close > open and rsi_val >= 35 and rsi_val <= 64
+pb_short = use_pullback and ema20 < ema50 and ema50 <= ema200 + 0.5 * atr_val and high >= ema20 - 0.25 * atr_val and close < ema20 and close < open and rsi_val >= 36 and rsi_val <= 65
+
+// ============================================================================
+// 7. CONFLUENCE SCORING & COPILOT SIGNAL MARKERS
+// ============================================================================
+long_votes  = (snd_long ? 1 : 0) + (ict_long ? 1 : 0) + (brk_long ? 1 : 0) + (pb_long ? 1 : 0)
+short_votes = (snd_short ? 1 : 0) + (ict_short ? 1 : 0) + (brk_short ? 1 : 0) + (pb_short ? 1 : 0)
+
+var int last_signal_bar = 0
+cooldown_ok = (bar_index - last_signal_bar) >= 6
+
+buy_signal  = cooldown_ok and long_votes >= 1 and short_votes == 0 and (long_votes >= 2 or (ict_long or snd_long))
+sell_signal = cooldown_ok and short_votes >= 1 and long_votes == 0 and (short_votes >= 2 or (ict_short or snd_short))
+
+if buy_signal
+    last_signal_bar := bar_index
+    sl_p  = close - sl_atr_mult * atr_val
+    tp1_p = close + tp1_rr * (close - sl_p)
+    tp2_p = close + tp2_rr * (close - sl_p)
+    label.new(bar_index, low - 0.6 * atr_val, "BUY\nSL: " + str.tostring(sl_p, format.mintick) + "\nTP1: " + str.tostring(tp1_p, format.mintick) + "\nTP2: " + str.tostring(tp2_p, format.mintick), style=label.style_label_up, color=color.new(color.emerald, 10), textcolor=color.white, size=size.small)
+
+if sell_signal
+    last_signal_bar := bar_index
+    sl_p  = close + sl_atr_mult * atr_val
+    tp1_p = close - tp1_rr * (sl_p - close)
+    tp2_p = close - tp2_rr * (sl_p - close)
+    label.new(bar_index, high + 0.6 * atr_val, "SELL\nSL: " + str.tostring(sl_p, format.mintick) + "\nTP1: " + str.tostring(tp1_p, format.mintick) + "\nTP2: " + str.tostring(tp2_p, format.mintick), style=label.style_label_down, color=color.new(color.crimson, 10), textcolor=color.white, size=size.small)
+
+alertcondition(buy_signal, title="Hybrid Copilot BUY Setup", message="High-Confluence BUY Setup on {{ticker}} ({{interval}})")
+alertcondition(sell_signal, title="Hybrid Copilot SELL Setup", message="High-Confluence SELL Setup on {{ticker}} ({{interval}})")

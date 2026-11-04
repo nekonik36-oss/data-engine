@@ -1,0 +1,14 @@
+# Core numerical & data libraries
+numpy>=1.26.0
+pandas>=2.2.0
+
+# MetaTrader 5 bridge (install on Personal Windows PC with MT5 terminal)
+# MetaTrader5>=5.0.45
+
+# Local GPU AI Forecasting (install on Personal PC with RTX 5060 CUDA)
+# torch>=2.4.0
+# huggingface_hub>=0.24.0
+# safetensors>=0.4.4
+
+# Testing
+pytest>=8.0.0
