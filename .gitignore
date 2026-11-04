@@ -1,0 +1,25 @@
+﻿# Environment & Secrets (NEVER commit to Git)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials*.json
+token*.json
+
+# Virtual Environments & Python Bytecode
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Local Data, Backtest Cache & Logs
+data/
+logs/
+*.log
+*.csv
+*.parquet
+*.sqlite
+*.db
