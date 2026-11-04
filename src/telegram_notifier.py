@@ -12,12 +12,20 @@ from __future__ import annotations
 import html
 import json
 import os
+import re
+from typing import Optional, Tuple
+import urllib.error
 import urllib.parse
 import urllib.request
-from typing import Optional, Tuple
 
 from src.env_loader import load_dotenv
 from src.models import Direction, SetupSignal
+
+
+def sanitize_token(raw: str) -> str:
+    """Remove invisible control chars (like Ctrl+V \\x16 in Windows console) and whitespace."""
+    cleaned = re.sub(r"[^0-9A-Za-z:_-]", "", raw.strip())
+    return cleaned
 
 
 class TelegramNotifier:
@@ -30,7 +38,7 @@ class TelegramNotifier:
         timeout_sec: float = 10.0,
     ) -> None:
         load_dotenv()
-        self.bot_token = (bot_token or os.getenv("TELEGRAM_BOT_TOKEN", "")).strip()
+        self.bot_token = sanitize_token(bot_token or os.getenv("TELEGRAM_BOT_TOKEN", ""))
         self.chat_id = (chat_id or os.getenv("TELEGRAM_CHAT_ID", "")).strip()
         self.timeout_sec = timeout_sec
 
@@ -106,8 +114,15 @@ class TelegramNotifier:
             with urllib.request.urlopen(req, timeout=self.timeout_sec) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
                 if data.get("ok"):
-                    return True, "Telegram alert delivered."
+                    return True, "Telegram alert delivered to your phone!"
                 return False, f"Telegram API error: {data.get('description', 'Unknown error')}"
+        except urllib.error.HTTPError as http_err:
+            try:
+                err_body = json.loads(http_err.read().decode("utf-8"))
+                desc = err_body.get("description", str(http_err))
+            except Exception:
+                desc = str(http_err)
+            return False, f"Telegram HTTP {http_err.code}: {desc}"
         except Exception as exc:
             return False, f"Telegram request failed: {exc}"
 
@@ -119,10 +134,11 @@ class TelegramNotifier:
     @staticmethod
     def discover_chat_id(bot_token: str, timeout_sec: float = 10.0) -> Tuple[Optional[str], str]:
         """
-        Query `/getUpdates` to automatically find the `chat_id` of the user who most
+        Query `/getUpdates` to automatically find the numeric `chat_id` of the user who most
         recently sent a message (e.g. `/start`) to the bot.
         """
-        url = f"https://api.telegram.org/bot{bot_token.strip()}/getUpdates"
+        clean_tok = sanitize_token(bot_token)
+        url = f"https://api.telegram.org/bot{clean_tok}/getUpdates"
         try:
             with urllib.request.urlopen(url, timeout=timeout_sec) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
@@ -140,10 +156,17 @@ class TelegramNotifier:
                     cid = chat.get("id")
                     if cid is not None:
                         username = chat.get("username") or chat.get("first_name") or "User"
-                        return str(cid), f"Found chat_id={cid} ({username})"
+                        return str(cid), f"Found numeric chat_id={cid} ({username})"
                 return (
                     None,
-                    "No messages found yet. Open Telegram, send '/start' or 'hello' to your bot, and run again.",
+                    "No messages received by your bot yet.",
                 )
+        except urllib.error.HTTPError as http_err:
+            try:
+                err_body = json.loads(http_err.read().decode("utf-8"))
+                desc = err_body.get("description", str(http_err))
+            except Exception:
+                desc = str(http_err)
+            return None, f"Telegram HTTP {http_err.code} on /getUpdates: {desc}"
         except Exception as exc:
             return None, f"Could not connect to api.telegram.org: {exc}"

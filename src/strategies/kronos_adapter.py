@@ -40,6 +40,14 @@ class KronosForecaster:
             return
         self._tried_loading = True
         try:
+            from pathlib import Path
+            import sys
+
+            # Automatically add local `./kronos_repo` to sys.path if cloned inside data-engine
+            local_kronos = Path(__file__).resolve().parent.parent.parent / "kronos_repo"
+            if local_kronos.is_dir() and str(local_kronos) not in sys.path:
+                sys.path.insert(0, str(local_kronos))
+
             import torch  # type: ignore
             from model import Kronos, KronosPredictor, KronosTokenizer  # type: ignore
 

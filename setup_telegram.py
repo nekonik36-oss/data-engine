@@ -1,21 +1,18 @@
 """
 Interactive Telegram Setup & Verification Utility (`setup_telegram.py`).
 
-Security Note:
-  - Uses hidden terminal input (`getpass`) so your Bot Token is NEVER echoed on screen
-    or leaked into chat logs.
-  - Automatically discovers your `TELEGRAM_CHAT_ID` after you message your bot on Telegram.
-  - Saves `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` into your local `.env` file (gitignored).
-  - Sends a live test Copilot Signal Card to your phone to confirm everything works!
+Fixes Windows PowerShell `Ctrl+V` control-character issues and automatically waits
+for you to send `/start` or `hello` to your bot so it can discover your numeric
+`TELEGRAM_CHAT_ID` automatically without manual lookup!
 """
 
 from __future__ import annotations
 
 from datetime import datetime, timezone
-import getpass
 import os
 from pathlib import Path
 import re
+import time
 
 from src.env_loader import load_dotenv
 from src.models import (
@@ -25,7 +22,7 @@ from src.models import (
     SetupSignal,
     StrategyVote,
 )
-from src.telegram_notifier import TelegramNotifier
+from src.telegram_notifier import TelegramNotifier, sanitize_token
 
 
 ENV_PATH = Path(__file__).resolve().parent / ".env"
@@ -114,49 +111,60 @@ def main() -> None:
     print("=" * 74)
     print("  TELEGRAM COPILOT ALERT SETUP WIZARD")
     print("=" * 74)
-    print("  Step 1: Open Telegram and message @BotFather -> send /newbot")
-    print("  Step 2: Copy the HTTP API Bot Token from @BotFather")
-    print("  Step 3: Open a chat with your new bot and send '/start' or 'hello'\n")
 
-    token = os.getenv("TELEGRAM_BOT_TOKEN", "").strip()
-    if token:
-        print("  [✓] Found existing TELEGRAM_BOT_TOKEN in .env")
-        change = input("  Keep existing token? [Y/n]: ").strip().lower()
+    token = sanitize_token(os.getenv("TELEGRAM_BOT_TOKEN", ""))
+    if token and ":" in token:
+        masked = token[:6] + "..." + token[-4:]
+        print(f"  [✓] Current TELEGRAM_BOT_TOKEN in .env: {masked}")
+        change = input("  Use this token? [Y/n]: ").strip().lower()
         if change == "n":
             token = ""
+    else:
+        token = ""
 
     if not token:
-        token = getpass.getpass("  Paste TELEGRAM_BOT_TOKEN (input is hidden): ").strip()
-        if not token:
-            print("  [!] No token entered. Exiting.")
+        raw_tok = input("  Paste your BotFather HTTP API Token (e.g. 123456:ABC-DEF...): ")
+        token = sanitize_token(raw_tok)
+        if not token or ":" not in token:
+            print("  [!] Invalid token format (must contain ':'). Please run setup_telegram.py again.")
             return
         _upsert_env_var(ENV_PATH, "TELEGRAM_BOT_TOKEN", token)
         os.environ["TELEGRAM_BOT_TOKEN"] = token
-        print("  [✓] Saved TELEGRAM_BOT_TOKEN to .env")
+        print("  [✓] Saved clean TELEGRAM_BOT_TOKEN to .env")
 
-    chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
-    if not chat_id:
-        print("\n  Attempting to auto-discover your TELEGRAM_CHAT_ID from @BotFather updates...")
-        discovered_id, msg = TelegramNotifier.discover_chat_id(token)
+    # Auto-discover numeric TELEGRAM_CHAT_ID via /getUpdates polling
+    print("\n  Discovering your numeric TELEGRAM_CHAT_ID from your bot...")
+    discovered_id, msg = TelegramNotifier.discover_chat_id(token)
+    if not discovered_id:
         print(f"  -> {msg}")
-        if discovered_id:
-            chat_id = discovered_id
-        else:
-            chat_id = input(
-                "  Enter your numeric TELEGRAM_CHAT_ID manually (or press Enter after messaging your bot): "
-            ).strip()
-            if not chat_id:
-                discovered_id, msg = TelegramNotifier.discover_chat_id(token)
-                print(f"  -> {msg}")
-                chat_id = discovered_id or ""
+        print("  👉 Action needed: Open your new bot in the Telegram app right now and send 'hello' or tap 'Start'!")
+        for attempt in range(1, 16):
+            time.sleep(2.5)
+            discovered_id, msg = TelegramNotifier.discover_chat_id(token)
+            if discovered_id:
+                break
+            print(f"     Waiting for your message on Telegram... ({attempt}/15)")
 
-    if not chat_id:
-        print("  [!] TELEGRAM_CHAT_ID not set yet. Send '/start' to your bot and re-run `python setup_telegram.py`.")
-        return
+    if discovered_id:
+        chat_id = discovered_id
+        print(f"  [✓] {msg}")
+    else:
+        existing_cid = os.getenv("TELEGRAM_CHAT_ID", "").strip()
+        if existing_cid.lstrip("-").isdigit():
+            chat_id = existing_cid
+        else:
+            raw_cid = input("  Enter your numeric TELEGRAM_CHAT_ID (digits only, NOT @username): ").strip()
+            if not raw_cid.lstrip("-").isdigit():
+                print(
+                    "  [!] TELEGRAM_CHAT_ID must be a number (e.g. 123456789), not a @username.\n"
+                    "      Just send 'hello' to your bot in Telegram and run `python setup_telegram.py` again!"
+                )
+                return
+            chat_id = raw_cid
 
     _upsert_env_var(ENV_PATH, "TELEGRAM_CHAT_ID", chat_id)
     os.environ["TELEGRAM_CHAT_ID"] = chat_id
-    print(f"  [✓] Saved TELEGRAM_CHAT_ID={chat_id} to .env")
+    print(f"  [✓] Saved numeric TELEGRAM_CHAT_ID={chat_id} to .env")
 
     print("\n  Sending a live Test Copilot Signal Card to your Telegram...")
     notifier = TelegramNotifier(bot_token=token, chat_id=chat_id)
