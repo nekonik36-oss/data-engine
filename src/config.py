@@ -6,6 +6,10 @@ import os
 from dataclasses import dataclass, field
 from typing import Dict
 
+from src.env_loader import load_dotenv
+
+load_dotenv()
+
 
 @dataclass(frozen=True)
 class InstrumentProfile:

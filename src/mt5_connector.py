@@ -22,6 +22,7 @@ from typing import List, Optional
 
 from src.config import INSTRUMENTS
 from src.models import Candle, Direction, SetupSignal
+from src.telegram_notifier import TelegramNotifier
 
 
 class MT5Connector:
@@ -31,6 +32,7 @@ class MT5Connector:
         self.execution_mode = execution_mode
         self._mt5 = None
         self.connected = False
+        self.telegram = TelegramNotifier()
 
     def connect(self) -> bool:
         """Attempt to initialize local MetaTrader 5 terminal (Personal PC only)."""
@@ -82,10 +84,15 @@ class MT5Connector:
         """
         print(signal.format_signal_card())
 
+        tg_note = ""
+        if self.telegram.is_configured:
+            ok, msg = self.telegram.send_signal(signal)
+            tg_note = f" | Telegram: {msg}" if ok else f" | Telegram Failed: {msg}"
+
         if self.execution_mode == "signal_only":
             return (
                 "[COPILOT MODE: signal_only] Setup displayed for your manual review on "
-                "TradingView / MT5. No automated order was placed."
+                f"TradingView / MT5. No automated order was placed.{tg_note}"
             )
 
         if self.execution_mode == "confirm":

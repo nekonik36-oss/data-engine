@@ -9,6 +9,7 @@ from src.indicators import compute_adx, compute_atr, compute_ema, compute_rsi
 from src.models import Direction
 from src.mt5_connector import generate_realistic_market_candles
 from src.risk_guard import RiskGuard
+from src.telegram_notifier import TelegramNotifier
 
 
 def test_causal_indicators_have_no_lookahead() -> None:
@@ -94,6 +95,10 @@ def test_signal_card_rendering() -> None:
     assert "Stop Loss (SL)" in card
     assert "Take Profit 1" in card
     assert "KRONOS AI FORECAST" in card
+
+    tg_html = TelegramNotifier.format_telegram_html(signal)
+    assert "Execution Levels (MT5):" in tg_html
+    assert "Strategy Votes:" in tg_html
 
 
 if __name__ == "__main__":
