@@ -40,8 +40,14 @@ class KronosForecaster:
             return
         self._tried_loading = True
         try:
+            import os
             from pathlib import Path
             import sys
+            import warnings
+
+            # Silence noisy Windows HuggingFace symlink warnings
+            os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
+            warnings.filterwarnings("ignore", message=".*huggingface_hub cache-system uses symlinks.*")
 
             # Automatically add local `./kronos_repo` to sys.path if cloned inside data-engine
             local_kronos = Path(__file__).resolve().parent.parent.parent / "kronos_repo"
@@ -51,16 +57,16 @@ class KronosForecaster:
             import torch  # type: ignore
             from model import Kronos, KronosPredictor, KronosTokenizer  # type: ignore
 
-            device = (
-                "cuda:0"
-                if (self.config.device.startswith("cuda") and torch.cuda.is_available())
-                else "cpu"
-            )
-            model_id = (
-                self.config.model_id
-                if device.startswith("cuda")
-                else self.config.fallback_model_id
-            )
+            device = "cpu"
+            if self.config.device.startswith("cuda") and torch.cuda.is_available():
+                try:
+                    # Verify CUDA kernel compatibility (e.g., RTX 5060 sm_120 requires cu128)
+                    _test = torch.zeros(1, device="cuda:0") + 1.0
+                    device = "cuda:0"
+                except Exception:
+                    device = "cpu"
+
+            model_id = self.config.model_id
             tokenizer = KronosTokenizer.from_pretrained(self.config.tokenizer_id)
             model = Kronos.from_pretrained(model_id)
             self._predictor = KronosPredictor(
