@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-07 14:32:36 UTC",
+  "updated_utc": "2026-11-07 14:36:58 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -13,13 +13,13 @@
   },
   "mt5_connected": true,
   "mt5_error": null,
-  "live_equity": 3000.0,
+  "live_equity": 10000.0,
   "telegram_configured": true,
-  "kronos_active_backend": "statistical_mc_fallback",
+  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "XAUUSD": 4065.82,
-    "EURUSD": 1.11413,
-    "USDJPY": 158.483
+    "XAUUSD": 2664.06,
+    "EURUSD": 1.09164,
+    "USDJPY": 153.973
   },
-  "cycle_count": 1
+  "cycle_count": 5
 }
