@@ -180,6 +180,41 @@ class MT5Connector:
         crypto_pnl = float(self.stats.get("crypto_book_pnl", 0.0))
         return round(base_bal + crypto_pnl, 2)
 
+    def get_account_meta(self) -> Dict[str, Any]:
+        """Return connected MT5 account login, server, and company metadata."""
+        if self.connected and self._mt5 is not None:
+            try:
+                info = self._mt5.account_info()
+                if info is not None:
+                    return {
+                        "login": int(getattr(info, "login", 0)),
+                        "server": str(getattr(info, "server", "")),
+                        "company": str(getattr(info, "company", "")),
+                        "currency": str(getattr(info, "currency", "USD")),
+                    }
+            except Exception:
+                pass
+        return {"login": 0, "server": None, "company": None, "currency": "USD"}
+
+    def mt5_has_live_symbol(self, base_symbol: str) -> bool:
+        """Return True if the connected MT5 terminal has `base_symbol` with live tradeable quotes."""
+        if not self.connected or self._mt5 is None:
+            return False
+        try:
+            broker_sym = self.resolve_broker_symbol(base_symbol)
+            sym_info = self._mt5.symbol_info(broker_sym)
+            tick = self._mt5.symbol_info_tick(broker_sym)
+            if sym_info is None or tick is None or float(tick.ask) <= 0:
+                return False
+            # Check that the symbol exists in MT5 and its name actually matches base_symbol
+            if not sym_info.name.upper().startswith(base_symbol.upper()[:3]):
+                return False
+            trade_mode = int(getattr(sym_info, "trade_mode", 4))
+            # 0 = SYMBOL_TRADE_MODE_DISABLED
+            return trade_mode != 0
+        except Exception:
+            return False
+
     def resolve_broker_symbol(self, base_symbol: str) -> str:
         """
         Automatically match broker symbol suffixes (e.g. `XAUUSD`, `XAUUSDm`, `BTCUSD`, `BTCUSDm`).
