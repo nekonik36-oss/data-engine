@@ -37,7 +37,7 @@ def run_scanner(watch: bool = True, poll_seconds: int = 60, sync_github: bool = 
     mode_banner = (
         f"MT5 Live/Demo Connected (Equity: ${live_equity:,.2f})"
         if mt5_conn.connected
-        else "Offline Simulation Feed (Open MetaTrader 5 on PC for Live Broker Bars)"
+        else f"Offline Simulation Feed (MT5 Status: {mt5_conn.last_error or 'Not Connected'})"
     )
     tg_banner = (
         "Configured (Ready)"
@@ -54,9 +54,18 @@ def run_scanner(watch: bool = True, poll_seconds: int = 60, sync_github: bool = 
 
     last_alerted_bar: Dict[str, datetime] = {}
     cycle_count = 0
+    was_connected = mt5_conn.connected
 
     while True:
         cycle_count += 1
+        just_connected = False
+        if not mt5_conn.connected and cycle_count > 1:
+            if mt5_conn.connect():
+                just_connected = True
+                live_equity = mt5_conn.get_account_equity(config.default_equity)
+                log(f"  [MT5 Connected] MetaTrader 5 is now online! Account Equity: ${live_equity:,.2f}")
+                last_alerted_bar.clear()
+
         now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
         live_equity = mt5_conn.get_account_equity(config.default_equity)
         log(f"\n[{now_str}] Scanning XAUUSD, EURUSD, USDJPY (M15)...")
@@ -107,8 +116,9 @@ def run_scanner(watch: bool = True, poll_seconds: int = 60, sync_github: bool = 
                     f"  [{symbol:<6}] Price={last_c.close:<9} | No new setup on latest bar. Waiting for A+ confluence..."
                 )
 
-        # Auto-sync Home PC telemetry & console log to GitHub on startup or when a new signal fires
-        if cycle_count == 1 or new_signal_fired or not watch:
+        # Auto-sync Home PC telemetry & console log to GitHub on startup, MT5 connect, or new signal
+        if cycle_count == 1 or just_connected or new_signal_fired or not watch or (mt5_conn.connected != was_connected):
+            was_connected = mt5_conn.connected
             pushed = write_and_push_telemetry(
                 console_lines=console_buffer,
                 extra_status={
