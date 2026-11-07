@@ -55,15 +55,6 @@ class MT5Connector:
                 else:
                     raise
 
-            if mt5.initialize(timeout=30000):
-                self._mt5 = mt5
-                self.connected = True
-                self.last_error = None
-                return True
-
-            first_err = mt5.last_error()
-
-            # Auto-discover running or installed broker terminal64.exe path on Windows
             import subprocess
             import sys
 
@@ -80,31 +71,33 @@ class MT5Connector:
                     check=False,
                 ).stdout.strip()
 
-                candidate_paths: list[str] = []
                 if proc_res.startswith("PROC:"):
-                    candidate_paths.append(proc_res.split("PROC:", 1)[1].strip())
-
-                for root_dir in [Path(r"C:\Program Files"), Path(r"C:\Program Files (x86)")]:
-                    if root_dir.exists():
-                        for exe in root_dir.glob("*/*terminal64.exe"):
-                            if str(exe) not in candidate_paths:
-                                candidate_paths.append(str(exe))
-
-                for exe_path in candidate_paths:
-                    if mt5.initialize(path=exe_path, timeout=30000):
+                    exe_path = proc_res.split("PROC:", 1)[1].strip()
+                    if mt5.initialize(path=exe_path, timeout=8000):
                         self._mt5 = mt5
                         self.connected = True
                         self.terminal_path = exe_path
                         self.last_error = None
                         return True
 
+                if mt5.initialize(timeout=8000):
+                    self._mt5 = mt5
+                    self.connected = True
+                    self.last_error = None
+                    return True
+
+                first_err = mt5.last_error()
                 self.last_error = (
                     f"mt5.initialize() failed: {first_err} | "
-                    f"proc_check={proc_res} | "
-                    f"candidates={candidate_paths}"
+                    f"proc_check={proc_res}"
                 )
             else:
-                self.last_error = f"mt5.initialize() returned False: {first_err}"
+                if mt5.initialize():
+                    self._mt5 = mt5
+                    self.connected = True
+                    self.last_error = None
+                    return True
+                self.last_error = f"mt5.initialize() returned False: {mt5.last_error()}"
         except Exception as exc:
             self.last_error = str(exc)
         self.connected = False

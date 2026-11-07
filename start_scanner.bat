@@ -4,9 +4,11 @@ cd /d "%~dp0"
 set HF_HUB_DISABLE_SYMLINKS_WARNING=1
 
 echo ============================================================================
-echo   [1/3] Checking GitHub for latest Data-Engine updates...
+echo   [1/3] Syncing latest Data-Engine updates from GitHub...
 echo ============================================================================
-git pull --rebase --autostash origin main
+git rebase --abort 2>nul
+git fetch origin main
+git reset --hard origin/main
 
 if not exist ".venv\Scripts\python.exe" (
     echo Creating Python virtual environment...

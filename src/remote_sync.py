@@ -69,8 +69,8 @@ def write_and_push_telemetry(
     push_to_github: bool = True,
 ) -> bool:
     """
-    Write `logs/home_pc_status.json` and `logs/home_pc_console.txt`, then commit and push
-    to GitHub so the laptop agent can inspect the Home PC state directly via `git pull`.
+    Synchronize with `origin/main` (conflict-free), write `logs/home_pc_status.json` and
+    `logs/home_pc_console.txt`, then commit and push to GitHub.
     """
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -83,11 +83,18 @@ def write_and_push_telemetry(
                 capture_output=True,
             )
             subprocess.run(
-                ["git", "pull", "--rebase", "--autostash", "origin", "main"],
+                ["git", "fetch", "origin", "main"],
                 cwd=REPO_ROOT,
                 check=False,
                 capture_output=True,
-                timeout=30,
+                timeout=25,
+            )
+            subprocess.run(
+                ["git", "reset", "--hard", "origin/main"],
+                cwd=REPO_ROOT,
+                check=False,
+                capture_output=True,
+                timeout=15,
             )
         except Exception:
             pass
@@ -116,7 +123,6 @@ def write_and_push_telemetry(
         return True
 
     try:
-        # Ensure local repo git identity is set on fresh Home PC installations
         subprocess.run(
             ["git", "config", "user.name", "DataEngine-HomePC"],
             cwd=REPO_ROOT,
@@ -149,7 +155,7 @@ def write_and_push_telemetry(
                 check=False,
                 capture_output=True,
                 text=True,
-                timeout=120,
+                timeout=60,
             )
             return push_res.returncode == 0
     except Exception:
