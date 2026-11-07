@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from typing import Dict, List, Optional, Sequence, Set
 
-from src.config import EngineConfig, INSTRUMENTS, InstrumentProfile
+from src.config import ALL_INSTRUMENTS, EngineConfig, INSTRUMENTS, InstrumentProfile
 from src.indicators import (
     compute_adx,
     compute_atr,
@@ -102,7 +102,7 @@ class ConfluenceEngine:
         if idx < 45:
             return None
 
-        profile: InstrumentProfile = INSTRUMENTS.get(symbol, INSTRUMENTS["XAUUSD"])
+        profile: InstrumentProfile = ALL_INSTRUMENTS.get(symbol, INSTRUMENTS["XAUUSD"])
         acct_equity = equity if equity is not None else self.config.default_equity
         ind = series if series is not None else self.precompute(candles[: idx + 1])
 
@@ -116,10 +116,10 @@ class ConfluenceEngine:
 
         use_regime_gate = preset_name == "HYBRID_REGIME_KRONOS"
         if use_regime_gate:
-            # Block entries during HIGH_VOL_CHOP or dead illiquid rollover hours (21:00-06:00 UTC)
+            # Block entries during HIGH_VOL_CHOP or dead illiquid Forex rollover hours (21:00-06:00 UTC)
             if regime == MarketRegime.HIGH_VOL_CHOP:
                 return None
-            if not (6 <= curr.timestamp.hour <= 18):
+            if not profile.is_crypto and not (6 <= curr.timestamp.hour <= 18):
                 return None
 
         active_set = TOURNAMENT_PRESETS.get(
@@ -133,7 +133,11 @@ class ConfluenceEngine:
         if "ICT" in active_set:
             votes.append(self.ict.evaluate(candles, ind.atr, idx))
         if "BREAKOUT" in active_set:
-            votes.append(self.breakout.evaluate(candles, ind.atr, ind.adx, idx))
+            votes.append(
+                self.breakout.evaluate(
+                    candles, ind.atr, ind.adx, idx, is_24_7=profile.is_crypto
+                )
+            )
         if "TREND_PULLBACK" in active_set:
             votes.append(
                 self.trend_pullback.evaluate(
@@ -146,6 +150,7 @@ class ConfluenceEngine:
                     ind.bb_lower,
                     ind.atr,
                     idx,
+                    is_24_7=profile.is_crypto,
                 )
             )
 
@@ -199,7 +204,6 @@ class ConfluenceEngine:
             confluence_score = agreeing_pa[0].confidence * 100.0
             threshold = 66.0
         elif preset_name == "SND_PLUS_ICT":
-            # Require either both SND + ICT agreeing, or high-conviction ICT/SND with no conflict
             if opposing_pa:
                 return None
             best_conf = max(v.confidence for v in agreeing_pa)
@@ -207,26 +211,20 @@ class ConfluenceEngine:
             confluence_score = min(100.0, best_conf * 100.0 + synergy)
             threshold = 78.0
         elif preset_name == "ALL_4_NAIVE":
-            # Unfiltered combination: fires whenever any of the 4 strategies triggers
             best_conf = max(v.confidence for v in agreeing_pa)
             confluence_score = best_conf * 100.0
             threshold = 66.0
         else:
             # HYBRID_REGIME_KRONOS: Intelligent Regime-Switched Router + Kronos AI Filter
-            # Rule A: Never trade if another price-action strategy opposes the direction
             if opposing_pa:
                 return None
 
-            # Rule B: Regime-specific strategy gating (prevents low-winrate strategies from diluting results)
             if agreeing_names == {"BREAKOUT"} and ind.adx[idx] < 20.0:
-                # Require ADX >= 20 for standalone breakout to avoid low-momentum fakeouts
                 return None
 
             if regime == MarketRegime.RANGING:
-                # In ranging markets, block standalone BREAKOUT (avoids range fakeouts)
                 if agreeing_names == {"BREAKOUT"}:
                     return None
-                # Require either 2+ agreeing strategies OR a high-confidence ICT Sweep + FVG
                 if len(agreeing_pa) < 2 and "ICT" not in agreeing_names:
                     return None
 
@@ -243,7 +241,7 @@ class ConfluenceEngine:
             ):
                 return None
 
-            # Rule C: Kronos AI Trajectory Filter (veto setups where Kronos predicts counter-drift)
+            # Kronos AI Trajectory Filter (veto setups where Kronos predicts counter-drift)
             kronos_boost = 0.0
             if kronos_fc is not None:
                 if direction == Direction.LONG:

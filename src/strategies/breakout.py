@@ -25,6 +25,7 @@ class SessionBreakoutStrategy:
         atr: Sequence[float],
         adx: Sequence[float],
         idx: int,
+        is_24_7: bool = False,
     ) -> StrategyVote:
         if idx < self.box_lookback + 5:
             return StrategyVote(
@@ -59,7 +60,7 @@ class SessionBreakoutStrategy:
 
         # Bullish Expansion Breakout above box high
         if curr.close > box_high and prev.close <= box_high and strong_body:
-            session_bonus = 0.12 if 7 <= curr.timestamp.hour <= 16 else 0.0
+            session_bonus = 0.12 if (is_24_7 or (7 <= curr.timestamp.hour <= 16)) else 0.0
             adx_bonus = 0.08 if cur_adx >= 20.0 else 0.0
             conf = min(0.92, 0.66 + session_bonus + adx_bonus)
             sl = max(box_low, curr.low - 1.2 * cur_atr)
@@ -76,7 +77,7 @@ class SessionBreakoutStrategy:
 
         # Bearish Expansion Breakout below box low
         if curr.close < box_low and prev.close >= box_low and strong_body:
-            session_bonus = 0.12 if 7 <= curr.timestamp.hour <= 16 else 0.0
+            session_bonus = 0.12 if (is_24_7 or (7 <= curr.timestamp.hour <= 16)) else 0.0
             adx_bonus = 0.08 if cur_adx >= 20.0 else 0.0
             conf = min(0.92, 0.66 + session_bonus + adx_bonus)
             sl = min(box_high, curr.high + 1.2 * cur_atr)

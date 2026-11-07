@@ -29,6 +29,7 @@ class TrendPullbackStrategy:
         bb_lower: Sequence[float],
         atr: Sequence[float],
         idx: int,
+        is_24_7: bool = False,
     ) -> StrategyVote:
         if idx < 35:
             return StrategyVote(
@@ -43,7 +44,7 @@ class TrendPullbackStrategy:
         cur_atr = max(atr[idx], 1e-9)
         e20, e50, e200 = ema20[idx], ema50[idx], ema200[idx]
         cur_rsi = rsi[idx]
-        in_active_session = 7 <= curr.timestamp.hour <= 16
+        in_active_session = True if is_24_7 else (7 <= curr.timestamp.hour <= 16)
 
         if not in_active_session:
             return StrategyVote(

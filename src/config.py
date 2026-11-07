@@ -27,6 +27,7 @@ class InstrumentProfile:
     tp1_close_fraction: float = 0.5
     min_lot: float = 0.01
     lot_step: float = 0.01
+    is_crypto: bool = False
 
 
 INSTRUMENTS: Dict[str, InstrumentProfile] = {
@@ -35,34 +36,81 @@ INSTRUMENTS: Dict[str, InstrumentProfile] = {
         display_name="Gold vs US Dollar (Spot)",
         pip_size=0.10,
         contract_size=100.0,  # 1 standard lot = 100 oz ($1 move = $100 per 1.00 lot, $1 per 0.01 lot)
-        typical_spread_price=0.25,  # $0.25 spread on ECN/Raw accounts
+        typical_spread_price=0.25,
         max_spread_price=0.60,
         atr_sl_multiplier=1.5,
         tp1_rr=1.5,
         tp2_rr=3.0,
+        is_crypto=False,
     ),
     "EURUSD": InstrumentProfile(
         symbol="EURUSD",
         display_name="Euro vs US Dollar",
         pip_size=0.0001,
-        contract_size=100_000.0,  # 1 standard lot = 100,000 units ($10/pip per 1.00 lot)
-        typical_spread_price=0.00010,  # 1.0 pip
+        contract_size=100_000.0,
+        typical_spread_price=0.00010,
         max_spread_price=0.00022,
         atr_sl_multiplier=1.4,
         tp1_rr=1.5,
         tp2_rr=3.0,
+        is_crypto=False,
     ),
     "USDJPY": InstrumentProfile(
         symbol="USDJPY",
         display_name="US Dollar vs Japanese Yen",
         pip_size=0.01,
-        contract_size=100_000.0,  # Approx $6.50-$7.00/pip per 1.00 lot (converted via price)
-        typical_spread_price=0.012,  # 1.2 pips
+        contract_size=100_000.0,
+        typical_spread_price=0.012,
         max_spread_price=0.025,
         atr_sl_multiplier=1.4,
         tp1_rr=1.5,
         tp2_rr=3.0,
+        is_crypto=False,
     ),
+}
+
+CRYPTO_INSTRUMENTS: Dict[str, InstrumentProfile] = {
+    "BTCUSD": InstrumentProfile(
+        symbol="BTCUSD",
+        display_name="Bitcoin vs US Dollar (24/7)",
+        pip_size=1.0,
+        contract_size=1.0,  # 1.00 lot = 1 BTC ($1 move = $1 per 1.00 lot, $0.01 per 0.01 lot)
+        typical_spread_price=5.0,
+        max_spread_price=60.0,
+        atr_sl_multiplier=1.4,
+        tp1_rr=1.5,
+        tp2_rr=3.0,
+        is_crypto=True,
+    ),
+    "ETHUSD": InstrumentProfile(
+        symbol="ETHUSD",
+        display_name="Ethereum vs US Dollar (24/7)",
+        pip_size=0.10,
+        contract_size=1.0,  # 1.00 lot = 1 ETH
+        typical_spread_price=0.50,
+        max_spread_price=6.0,
+        atr_sl_multiplier=1.4,
+        tp1_rr=1.5,
+        tp2_rr=3.0,
+        is_crypto=True,
+    ),
+    "SOLUSD": InstrumentProfile(
+        symbol="SOLUSD",
+        display_name="Solana vs US Dollar (24/7)",
+        pip_size=0.01,
+        contract_size=10.0,  # 1.00 lot = 10 SOL
+        typical_spread_price=0.05,
+        max_spread_price=1.0,
+        atr_sl_multiplier=1.4,
+        tp1_rr=1.5,
+        tp2_rr=3.0,
+        is_crypto=True,
+    ),
+}
+
+ALL_INSTRUMENTS: Dict[str, InstrumentProfile] = {
+    **CRYPTO_INSTRUMENTS,
+    **INSTRUMENTS,
 }
 
 

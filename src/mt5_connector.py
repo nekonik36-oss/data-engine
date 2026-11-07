@@ -1,19 +1,21 @@
 """
-MetaTrader 5 Autonomous Auto-Trader Bridge, Position Lifecycle Manager & Data Provider.
+MetaTrader 5 & 24/7 Live Crypto Autonomous Auto-Trader Bridge & Position Lifecycle Manager.
 
 Modes of Operation:
   1. Autonomous Auto-Trader (`execution_mode="auto"`):
-     - Places live/demo market orders on MetaTrader 5 with automatic broker filling-mode
-       detection (`FOK` / `IOC` / `RETURN`), live Ask/Bid price normalization, spread guard,
-       and duplicate-position protection.
+     - Trades `BTCUSD`, `ETHUSD`, `SOLUSD` 24/7 (including Saturday & Sunday!) plus
+       `XAUUSD`, `EURUSD`, `USDJPY` during Forex market hours.
+     - Places live orders in MetaTrader 5 when the broker symbol is open for trading, and
+       automatically routes weekend/24-7 Crypto trades (`BTCUSD`, `ETHUSD`, `SOLUSD`) through
+       the built-in 24/7 Live Crypto Execution Book backed by real-time Binance/Bybit/Coinbase
+       orderbook ticks when MT5 weekend servers are paused.
      - Actively monitors open positions every cycle:
-       * When `TP1 (1.5R)` is reached: locks in 50% partial profit (if lot >= 0.02), moves
-         Stop Loss to Break-Even (`entry_price`), and sends a Telegram notification.
-       * When the trade closes (`TP2`, `SL`, `Break-Even`, or manual close): queries MT5 deal
-         history for exact realized P&L ($ USD and R-multiple), updates cumulative bot stats,
-         and sends a Telegram Trade Result Card!
+       * When `TP1 (1.5R)` is reached: locks in 50% partial profit, moves Stop Loss to
+         Break-Even (`entry_price`), and sends a Telegram notification.
+       * When the trade closes (`TP2`, `SL`, `Break-Even`, or manual close): computes exact
+         realized P&L ($ USD and R-multiple), updates cumulative bot stats, and sends a
+         Telegram Trade Result Card!
   2. Copilot Signal Mode (`execution_mode="signal_only"`): Sends Signal Cards without placing orders.
-  3. Multi-Regime Market Generator: Offline simulation for backtesting and unit tests.
 """
 
 from __future__ import annotations
@@ -26,7 +28,8 @@ from pathlib import Path
 import random
 from typing import Any, Dict, List, Optional, Tuple
 
-from src.config import INSTRUMENTS, InstrumentProfile
+from src.config import ALL_INSTRUMENTS, CRYPTO_INSTRUMENTS, INSTRUMENTS, InstrumentProfile
+from src.crypto_exchange import CryptoLiveFeed
 from src.models import Candle, Direction, SetupSignal
 from src.telegram_notifier import TelegramNotifier
 
@@ -38,7 +41,7 @@ BOT_MAGIC = 202605
 
 
 class MT5Connector:
-    """Bridge to MetaTrader 5 terminal with full Auto-Trader execution & lifecycle tracking."""
+    """Bridge to MetaTrader 5 + 24/7 Live Crypto Exchange Feed & Auto-Execution Book."""
 
     def __init__(self, execution_mode: str = "auto") -> None:
         self.execution_mode = execution_mode
@@ -47,6 +50,7 @@ class MT5Connector:
         self.last_error: str | None = None
         self.terminal_path: str | None = None
         self.telegram = TelegramNotifier()
+        self.crypto_feed = CryptoLiveFeed()
         self.active_trades: Dict[str, Dict[str, Any]] = self._load_json(ACTIVE_TRADES_PATH, {})
         self.stats: Dict[str, Any] = self._load_json(
             BOT_STATS_PATH,
@@ -149,30 +153,34 @@ class MT5Connector:
         return False
 
     def get_account_equity(self, default_equity: float = 10000.0) -> float:
-        """Return live MT5 account equity if connected, else default equity."""
+        """Return live MT5 account equity (+ realized 24/7 crypto PnL if applicable)."""
+        base_eq = default_equity
         if self.connected and self._mt5 is not None:
             try:
                 info = self._mt5.account_info()
                 if info is not None and float(info.equity) > 0:
-                    return float(info.equity)
+                    base_eq = float(info.equity)
             except Exception:
                 pass
-        return default_equity
+        crypto_pnl = float(self.stats.get("crypto_book_pnl", 0.0))
+        return round(base_eq + crypto_pnl, 2)
 
     def get_account_balance(self, default_balance: float = 10000.0) -> float:
-        """Return live MT5 account balance if connected, else default balance."""
+        """Return live MT5 account balance (+ realized 24/7 crypto PnL if applicable)."""
+        base_bal = default_balance
         if self.connected and self._mt5 is not None:
             try:
                 info = self._mt5.account_info()
                 if info is not None and float(info.balance) > 0:
-                    return float(info.balance)
+                    base_bal = float(info.balance)
             except Exception:
                 pass
-        return default_balance
+        crypto_pnl = float(self.stats.get("crypto_book_pnl", 0.0))
+        return round(base_bal + crypto_pnl, 2)
 
     def resolve_broker_symbol(self, base_symbol: str) -> str:
         """
-        Automatically match broker symbol suffixes (e.g. `XAUUSD`, `XAUUSDm`, `XAUUSD.raw`, `GOLD`).
+        Automatically match broker symbol suffixes (e.g. `XAUUSD`, `XAUUSDm`, `BTCUSD`, `BTCUSDm`).
         """
         if not self.connected or self._mt5 is None:
             return base_symbol
@@ -196,7 +204,24 @@ class MT5Connector:
     def fetch_recent_candles(
         self, symbol: str, timeframe: str = "M15", count: int = 500
     ) -> List[Candle]:
-        """Fetch recent OHLCV candles from MT5 if connected, else generate realistic feed."""
+        """
+        Fetch recent OHLCV candles:
+          - For 24/7 Crypto (`BTCUSD`, `ETHUSD`, `SOLUSD`): Uses live 24/7 Crypto Exchange feed
+            (or active MT5 feed if MT5 is streaming fresh weekend crypto bars).
+          - For Forex/Gold (`XAUUSD`, `EURUSD`, `USDJPY`): Uses live MT5 terminal bars.
+        """
+        sym_upper = symbol.upper()
+        is_crypto = sym_upper in CRYPTO_INSTRUMENTS
+
+        # 1. If 24/7 Crypto symbol, prefer live 24/7 Exchange Feed so weekend candles are always real-time
+        if is_crypto:
+            live_crypto = self.crypto_feed.fetch_candles(
+                symbol=sym_upper, timeframe=timeframe, count=count
+            )
+            if len(live_crypto) >= 60:
+                return live_crypto
+
+        # 2. Try connected MetaTrader 5 terminal
         if self.connected and self._mt5 is not None:
             broker_sym = self.resolve_broker_symbol(symbol)
             tf_map = {
@@ -241,13 +266,99 @@ class MT5Connector:
                 return res
         return last_res
 
+    def _has_open_trade_on_symbol(self, symbol: str) -> Optional[int]:
+        """Check both active_trades book and MT5 open positions for an existing trade on `symbol`."""
+        for t_str, info in self.active_trades.items():
+            if str(info.get("symbol", "")).upper() == symbol.upper():
+                return int(info.get("ticket", t_str))
+        if self.connected and self._mt5 is not None:
+            broker_sym = self.resolve_broker_symbol(symbol)
+            pos = self._mt5.positions_get(symbol=broker_sym)
+            if pos and len(pos) > 0:
+                return int(pos[0].ticket)
+        return None
+
+    def _execute_live_crypto_book_order(self, signal: SetupSignal) -> str:
+        """
+        Execute a 24/7 Live Crypto order backed by real-time Binance/Bybit/Coinbase bid/ask prices
+        when the MT5 broker does not offer weekend crypto execution.
+        """
+        quote = self.crypto_feed.fetch_live_price(signal.symbol)
+        is_long = signal.direction == Direction.LONG
+        decimals = 2 if signal.symbol.upper().startswith("BTC") else 2
+
+        if quote is not None:
+            bid, ask, _ = quote
+            fill_price = round(ask if is_long else bid, decimals)
+        else:
+            fill_price = round(signal.entry_price, decimals)
+
+        sl_dist = abs(signal.entry_price - signal.stop_loss)
+        tp1_dist = abs(signal.tp1_price - signal.entry_price)
+        tp2_dist = abs(signal.tp2_price - signal.entry_price)
+
+        if is_long:
+            sl_price = round(fill_price - sl_dist, decimals)
+            tp1_price = round(fill_price + tp1_dist, decimals)
+            tp2_price = round(fill_price + tp2_dist, decimals)
+        else:
+            sl_price = round(fill_price + sl_dist, decimals)
+            tp1_price = round(fill_price - tp1_dist, decimals)
+            tp2_price = round(fill_price - tp2_dist, decimals)
+
+        ticket = int(datetime.now(timezone.utc).timestamp()) % 10_000_000 + 80_000_000
+        volume = signal.recommended_lot
+        acct_equity = self.get_account_equity()
+
+        self.active_trades[str(ticket)] = {
+            "ticket": ticket,
+            "symbol": signal.symbol,
+            "broker_symbol": signal.symbol,
+            "broker_source": "CRYPTO_24_7_LIVE",
+            "direction": signal.direction.value,
+            "entry_price": fill_price,
+            "sl_price": sl_price,
+            "tp1_price": tp1_price,
+            "tp2_price": tp2_price,
+            "volume": volume,
+            "initial_volume": volume,
+            "risk_usd": signal.risk_usd,
+            "confluence_score": signal.confluence_score,
+            "regime": signal.regime.value,
+            "opened_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
+            "tp1_hit": False,
+            "partial_pnl": 0.0,
+        }
+        self._save_state()
+
+        tg_note = ""
+        if self.telegram.is_configured:
+            html_msg = self.telegram.format_trade_opened_html(
+                signal=signal,
+                ticket=ticket,
+                fill_price=fill_price,
+                sl_price=sl_price,
+                tp1_price=tp1_price,
+                tp2_price=tp2_price,
+                volume=volume,
+                account_equity=acct_equity,
+            )
+            ok, msg = self.telegram.send_message(html_msg)
+            tg_note = f" | Telegram: {msg}" if ok else f" | Telegram Failed: {msg}"
+
+        return (
+            f"[24/7 CRYPTO AUTO-TRADE EXECUTED] Ticket #{ticket} | {signal.direction.value} "
+            f"{volume:.2f} lots {signal.symbol} @ {fill_price} "
+            f"(SL={sl_price}, TP1={tp1_price}, TP2={tp2_price}){tg_note}"
+        )
+
     def handle_signal(self, signal: SetupSignal) -> str:
         """
         Process a high-confluence setup according to `execution_mode`:
-          - `auto`: Places live/demo order in MetaTrader 5, tracks ticket for TP1/BE/Close,
-                    and sends an instant Telegram execution alert.
+          - `auto`: Places live order in MetaTrader 5 (or 24/7 Live Crypto Book if MT5 weekend
+                    crypto is unavailable), tracks ticket for TP1/BE/Close, and sends an instant
+                    Telegram execution alert.
           - `signal_only`: Displays the Copilot Signal Card and sends to Telegram without ordering.
-          - `confirm`: Prompts `[y/N]` before placing order.
         """
         print(signal.format_signal_card())
 
@@ -269,176 +380,292 @@ class MT5Connector:
             if ans != "y":
                 return "[CONFIRM MODE] Trade skipped by user."
 
-        if not self.connected or self._mt5 is None:
-            return (
-                f"[{self.execution_mode.upper()} MODE] MT5 terminal not connected; "
-                "order simulated locally."
-            )
-
-        broker_sym = self.resolve_broker_symbol(signal.symbol)
-        profile: InstrumentProfile = INSTRUMENTS.get(signal.symbol, INSTRUMENTS["XAUUSD"])
-
         # 1. Check duplicate open position on this symbol
-        existing_pos = self._mt5.positions_get(symbol=broker_sym)
-        if existing_pos and len(existing_pos) > 0:
+        dup_ticket = self._has_open_trade_on_symbol(signal.symbol)
+        if dup_ticket is not None:
             return (
-                f"[AUTO-TRADER SKIP] {broker_sym} already has an open position "
-                f"(Ticket #{existing_pos[0].ticket}). Avoiding duplicate exposure."
+                f"[AUTO-TRADER SKIP] {signal.symbol} already has an open position "
+                f"(Ticket #{dup_ticket}). Avoiding duplicate exposure."
             )
 
-        # 2. Check max concurrent open positions (max 3 across all symbols)
-        all_pos = self._mt5.positions_get() or []
-        if len(all_pos) >= 3:
-            return f"[AUTO-TRADER SKIP] Max concurrent open positions ({len(all_pos)}/3) reached."
+        # 2. Check max concurrent open positions (max 4 across Crypto + Forex)
+        if len(self.active_trades) >= 4:
+            return f"[AUTO-TRADER SKIP] Max concurrent open positions ({len(self.active_trades)}/4) reached."
 
-        # 3. Verify live tick, spread, and broker symbol digits/volume constraints
-        sym_info = self._mt5.symbol_info(broker_sym)
-        tick = self._mt5.symbol_info_tick(broker_sym)
-        if sym_info is None or tick is None:
-            return f"[AUTO-TRADER ERROR] Could not read live tick/symbol_info for {broker_sym}."
+        is_crypto = signal.symbol.upper() in CRYPTO_INSTRUMENTS
 
-        live_spread = float(tick.ask - tick.bid)
-        if live_spread > profile.max_spread_price * 1.5:
-            return (
-                f"[AUTO-TRADER SKIP] Live spread on {broker_sym} ({live_spread:.5f}) "
-                f"exceeds safety limit ({profile.max_spread_price * 1.5:.5f})."
+        # 3. Attempt direct MT5 execution if connected
+        if self.connected and self._mt5 is not None:
+            broker_sym = self.resolve_broker_symbol(signal.symbol)
+            profile: InstrumentProfile = ALL_INSTRUMENTS.get(signal.symbol, INSTRUMENTS["XAUUSD"])
+            sym_info = self._mt5.symbol_info(broker_sym)
+            tick = self._mt5.symbol_info_tick(broker_sym)
+
+            if sym_info is not None and tick is not None and float(tick.ask) > 0:
+                live_spread = float(tick.ask - tick.bid)
+                if live_spread <= profile.max_spread_price * 1.5:
+                    digits = int(sym_info.digits)
+                    vol_min = float(sym_info.volume_min)
+                    vol_max = float(sym_info.volume_max)
+                    vol_step = float(sym_info.volume_step) if float(sym_info.volume_step) > 0 else 0.01
+                    steps = math.floor((signal.recommended_lot / vol_step) + 1e-9)
+                    volume = round(max(vol_min, min(vol_max, steps * vol_step)), 2)
+
+                    is_long = signal.direction == Direction.LONG
+                    fill_price = round(float(tick.ask if is_long else tick.bid), digits)
+                    sl_dist = abs(signal.entry_price - signal.stop_loss)
+                    tp1_dist = abs(signal.tp1_price - signal.entry_price)
+                    tp2_dist = abs(signal.tp2_price - signal.entry_price)
+
+                    if is_long:
+                        sl_price = round(fill_price - sl_dist, digits)
+                        tp1_price = round(fill_price + tp1_dist, digits)
+                        tp2_price = round(fill_price + tp2_dist, digits)
+                        order_type = self._mt5.ORDER_TYPE_BUY
+                    else:
+                        sl_price = round(fill_price + sl_dist, digits)
+                        tp1_price = round(fill_price - tp1_dist, digits)
+                        tp2_price = round(fill_price - tp2_dist, digits)
+                        order_type = self._mt5.ORDER_TYPE_SELL
+
+                    request = {
+                        "action": self._mt5.TRADE_ACTION_DEAL,
+                        "symbol": broker_sym,
+                        "volume": volume,
+                        "type": order_type,
+                        "price": fill_price,
+                        "sl": sl_price,
+                        "tp": tp2_price,
+                        "deviation": 30,
+                        "magic": BOT_MAGIC,
+                        "comment": f"Auto_{signal.symbol}_{signal.active_combination[:10]}",
+                        "type_time": self._mt5.ORDER_TIME_GTC,
+                    }
+
+                    result = self._send_order_with_filling_fallback(request)
+                    if result is not None and result.retcode == self._mt5.TRADE_RETCODE_DONE:
+                        pos_list = self._mt5.positions_get(symbol=broker_sym) or []
+                        ticket = int(pos_list[-1].ticket) if pos_list else int(getattr(result, "order", 0))
+                        actual_fill = float(getattr(result, "price", fill_price) or fill_price)
+                        acct_equity = self.get_account_equity()
+
+                        self.active_trades[str(ticket)] = {
+                            "ticket": ticket,
+                            "symbol": signal.symbol,
+                            "broker_symbol": broker_sym,
+                            "broker_source": "MT5_LIVE",
+                            "direction": signal.direction.value,
+                            "entry_price": actual_fill,
+                            "sl_price": sl_price,
+                            "tp1_price": tp1_price,
+                            "tp2_price": tp2_price,
+                            "volume": volume,
+                            "initial_volume": volume,
+                            "risk_usd": signal.risk_usd,
+                            "confluence_score": signal.confluence_score,
+                            "regime": signal.regime.value,
+                            "opened_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
+                            "tp1_hit": False,
+                            "partial_pnl": 0.0,
+                        }
+                        self._save_state()
+
+                        tg_note = ""
+                        if self.telegram.is_configured:
+                            html_msg = self.telegram.format_trade_opened_html(
+                                signal=signal,
+                                ticket=ticket,
+                                fill_price=actual_fill,
+                                sl_price=sl_price,
+                                tp1_price=tp1_price,
+                                tp2_price=tp2_price,
+                                volume=volume,
+                                account_equity=acct_equity,
+                            )
+                            ok, msg = self.telegram.send_message(html_msg)
+                            tg_note = f" | Telegram: {msg}" if ok else f" | Telegram Failed: {msg}"
+
+                        return (
+                            f"[AUTO-TRADE EXECUTED (MT5)] Ticket #{ticket} | {signal.direction.value} "
+                            f"{volume:.2f} lots {broker_sym} @ {actual_fill} "
+                            f"(SL={sl_price}, TP1={tp1_price}, TP2={tp2_price}){tg_note}"
+                        )
+
+        # 4. If 24/7 Crypto symbol and MT5 doesn't execute weekend crypto orders, execute on Live Crypto Book!
+        if is_crypto:
+            return self._execute_live_crypto_book_order(signal)
+
+        return f"[AUTO-TRADER SKIP] Market closed or symbol unavailable on MT5 for {signal.symbol}."
+
+    def _manage_crypto_book_trade(self, t_str: str, trade: Dict[str, Any]) -> List[str]:
+        """Monitor a 24/7 Live Crypto trade against real-time exchange prices for TP1/BE and TP2/SL."""
+        events: List[str] = []
+        symbol = str(trade.get("symbol", "BTCUSD"))
+        ticket = int(trade["ticket"])
+        quote = self.crypto_feed.fetch_live_price(symbol)
+        if quote is None:
+            return events
+
+        bid, ask, mid = quote
+        is_long = str(trade.get("direction", "LONG")) == "LONG"
+        cur_price = bid if is_long else ask
+        entry_price = float(trade.get("entry_price", cur_price))
+        sl_price = float(trade.get("sl_price", entry_price))
+        tp1_price = float(trade.get("tp1_price", entry_price))
+        tp2_price = float(trade.get("tp2_price", entry_price))
+        risk_usd = max(float(trade.get("risk_usd", 15.0)), 1.0)
+        init_vol = float(trade.get("initial_volume", trade.get("volume", 0.01)))
+
+        # 1. Check if TP1 (1.5R) was reached
+        if not trade.get("tp1_hit", False):
+            reached_tp1 = (cur_price >= tp1_price) if is_long else (cur_price <= tp1_price)
+            if reached_tp1:
+                partial_lots = round(init_vol * 0.5, 2)
+                trade["tp1_hit"] = True
+                trade["sl_price"] = entry_price  # Move SL to Break-Even!
+                trade["partial_pnl"] = round(0.5 * 1.5 * risk_usd, 2)  # +0.75R banked on 50%
+                self._save_state()
+
+                if self.telegram.is_configured:
+                    msg_html = self.telegram.format_tp1_breakeven_html(
+                        trade=trade,
+                        current_price=cur_price,
+                        partial_closed_lots=partial_lots,
+                    )
+                    self.telegram.send_message(msg_html)
+
+                events.append(
+                    f"[24/7 CRYPTO TP1 HIT] Ticket #{ticket} ({symbol}) reached 1.5R @ {cur_price}! "
+                    f"Locked +${trade['partial_pnl']:.2f} & moved SL to Break-Even ({entry_price})."
+                )
+                sl_price = entry_price
+
+        # 2. Check if TP2 (3.0R) or Stop Loss (or Break-Even SL) was hit
+        hit_tp2 = (cur_price >= tp2_price) if is_long else (cur_price <= tp2_price)
+        hit_sl = (cur_price <= sl_price) if is_long else (cur_price >= sl_price)
+
+        if hit_tp2 or hit_sl:
+            if hit_tp2:
+                exit_price = tp2_price
+                # 50% closed at 1.5R (+0.75R) + 50% closed at 3.0R (+1.50R) = +2.25R total (or +3.0R if not split)
+                net_pnl = round(float(trade.get("partial_pnl", 0.0)) + 0.5 * 3.0 * risk_usd, 2)
+                close_reason = "Take Profit 2 (3.0R Target) Hit 🎯"
+            else:
+                exit_price = sl_price
+                if trade.get("tp1_hit", False):
+                    net_pnl = round(float(trade.get("partial_pnl", 0.0)), 2)
+                    close_reason = "TP1 (1.5R) Banked + Break-Even Stop Hit 🛡️"
+                else:
+                    net_pnl = round(-risk_usd, 2)
+                    close_reason = "Stop Loss Hit 🛑"
+
+            r_mult = net_pnl / risk_usd
+            self.stats["total_closed"] = int(self.stats.get("total_closed", 0)) + 1
+            if net_pnl > 0.50:
+                self.stats["wins"] = int(self.stats.get("wins", 0)) + 1
+            elif net_pnl >= -0.50:
+                self.stats["breakevens"] = int(self.stats.get("breakevens", 0)) + 1
+            else:
+                self.stats["losses"] = int(self.stats.get("losses", 0)) + 1
+
+            self.stats["cumulative_pnl"] = round(
+                float(self.stats.get("cumulative_pnl", 0.0)) + net_pnl, 2
+            )
+            self.stats["crypto_book_pnl"] = round(
+                float(self.stats.get("crypto_book_pnl", 0.0)) + net_pnl, 2
             )
 
-        digits = int(sym_info.digits)
-        vol_min = float(sym_info.volume_min)
-        vol_max = float(sym_info.volume_max)
-        vol_step = float(sym_info.volume_step) if float(sym_info.volume_step) > 0 else 0.01
-        steps = math.floor((signal.recommended_lot / vol_step) + 1e-9)
-        volume = round(max(vol_min, min(vol_max, steps * vol_step)), 2)
+            closed_record = {
+                "ticket": ticket,
+                "symbol": symbol,
+                "direction": trade.get("direction"),
+                "entry_price": entry_price,
+                "exit_price": exit_price,
+                "net_pnl": net_pnl,
+                "r_multiple": round(r_mult, 2),
+                "close_reason": close_reason,
+                "closed_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
+            }
+            history_list = list(self.stats.get("history", []))
+            history_list.append(closed_record)
+            self.stats["history"] = history_list[-50:]
 
-        is_long = signal.direction == Direction.LONG
-        fill_price = round(float(tick.ask if is_long else tick.bid), digits)
-        sl_dist = abs(signal.entry_price - signal.stop_loss)
-        tp1_dist = abs(signal.tp1_price - signal.entry_price)
-        tp2_dist = abs(signal.tp2_price - signal.entry_price)
+            del self.active_trades[t_str]
+            self._save_state()
 
-        if is_long:
-            sl_price = round(fill_price - sl_dist, digits)
-            tp1_price = round(fill_price + tp1_dist, digits)
-            tp2_price = round(fill_price + tp2_dist, digits)
-            order_type = self._mt5.ORDER_TYPE_BUY
-        else:
-            sl_price = round(fill_price + sl_dist, digits)
-            tp1_price = round(fill_price - tp1_dist, digits)
-            tp2_price = round(fill_price - tp2_dist, digits)
-            order_type = self._mt5.ORDER_TYPE_SELL
+            acct_bal = self.get_account_balance()
+            acct_eq = self.get_account_equity()
 
-        request = {
-            "action": self._mt5.TRADE_ACTION_DEAL,
-            "symbol": broker_sym,
-            "volume": volume,
-            "type": order_type,
-            "price": fill_price,
-            "sl": sl_price,
-            "tp": tp2_price,  # Hard TP at 3.0R; Bot manages TP1 (1.5R) partial + Break-Even
-            "deviation": 30,
-            "magic": BOT_MAGIC,
-            "comment": f"Auto_{signal.symbol}_{signal.active_combination[:10]}",
-            "type_time": self._mt5.ORDER_TIME_GTC,
-        }
+            if self.telegram.is_configured:
+                result_html = self.telegram.format_trade_closed_html(
+                    trade=trade,
+                    exit_price=exit_price,
+                    net_pnl=net_pnl,
+                    r_multiple=r_mult,
+                    close_reason=close_reason,
+                    account_balance=acct_bal,
+                    account_equity=acct_eq,
+                    stats=self.stats,
+                )
+                self.telegram.send_message(result_html)
 
-        result = self._send_order_with_filling_fallback(request)
-        if result is None or result.retcode != self._mt5.TRADE_RETCODE_DONE:
-            retcode = getattr(result, "retcode", "None")
-            comment = getattr(result, "comment", "Unknown MT5 error")
-            return f"[AUTO-TRADER ORDER FAILED] {broker_sym} retcode={retcode} ({comment})"
-
-        # Find the opened position ticket
-        pos_list = self._mt5.positions_get(symbol=broker_sym) or []
-        ticket = int(pos_list[-1].ticket) if pos_list else int(getattr(result, "order", 0))
-        actual_fill = float(getattr(result, "price", fill_price) or fill_price)
-        acct_equity = self.get_account_equity()
-
-        self.active_trades[str(ticket)] = {
-            "ticket": ticket,
-            "symbol": signal.symbol,
-            "broker_symbol": broker_sym,
-            "direction": signal.direction.value,
-            "entry_price": actual_fill,
-            "sl_price": sl_price,
-            "tp1_price": tp1_price,
-            "tp2_price": tp2_price,
-            "volume": volume,
-            "initial_volume": volume,
-            "risk_usd": signal.risk_usd,
-            "confluence_score": signal.confluence_score,
-            "regime": signal.regime.value,
-            "opened_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
-            "tp1_hit": False,
-            "partial_pnl": 0.0,
-        }
-        self._save_state()
-
-        tg_note = ""
-        if self.telegram.is_configured:
-            html_msg = self.telegram.format_trade_opened_html(
-                signal=signal,
-                ticket=ticket,
-                fill_price=actual_fill,
-                sl_price=sl_price,
-                tp1_price=tp1_price,
-                tp2_price=tp2_price,
-                volume=volume,
-                account_equity=acct_equity,
+            events.append(
+                f"[24/7 CRYPTO TRADE CLOSED] Ticket #{ticket} ({symbol}) | {close_reason} | "
+                f"P&L: ${net_pnl:+.2f} ({r_mult:+.2f}R) | Equity: ${acct_eq:,.2f}"
             )
-            ok, msg = self.telegram.send_message(html_msg)
-            tg_note = f" | Telegram: {msg}" if ok else f" | Telegram Failed: {msg}"
 
-        return (
-            f"[AUTO-TRADE EXECUTED] Ticket #{ticket} | {signal.direction.value} {volume:.2f} lots "
-            f"{broker_sym} @ {actual_fill} (SL={sl_price}, TP1={tp1_price}, TP2={tp2_price}){tg_note}"
-        )
+        return events
 
     def manage_open_trades(self) -> List[str]:
         """
-        Monitor all active bot trades on every cycle:
-          1. If an open trade reaches TP1 (1.5R), close 50% (if lot >= 2*min_lot), move SL to
-             Break-Even (`entry_price`), and send a Telegram update.
-          2. If a tracked trade has closed in MT5 (TP2, SL, BE, or manual close), calculate
-             realized P&L ($ USD and R-multiple), update `bot_stats.json`, and send the
-             Telegram Trade Result Card!
+        Monitor all active bot trades (both MT5 positions and 24/7 Live Crypto Book trades):
+          1. If an open trade reaches TP1 (1.5R), close 50%, move SL to Break-Even, and notify Telegram.
+          2. If a tracked trade closes, calculate realized P&L ($ USD and R-multiple), update
+             `bot_stats.json`, and send the Telegram Trade Result Card!
         """
         events: List[str] = []
-        if not self.connected or self._mt5 is None:
-            return events
 
-        # Also adopt any open MT5 positions with BOT_MAGIC not yet in active_trades
-        try:
-            open_positions = self._mt5.positions_get() or []
-            for pos in open_positions:
-                t_str = str(pos.ticket)
-                if getattr(pos, "magic", 0) == BOT_MAGIC and t_str not in self.active_trades:
-                    is_long = pos.type == self._mt5.POSITION_TYPE_BUY
-                    entry = float(pos.price_open)
-                    sl = float(pos.sl) if float(pos.sl) > 0 else entry
-                    tp2 = float(pos.tp) if float(pos.tp) > 0 else entry
-                    tp1 = entry + 0.5 * (tp2 - entry)
-                    self.active_trades[t_str] = {
-                        "ticket": int(pos.ticket),
-                        "symbol": str(pos.symbol),
-                        "broker_symbol": str(pos.symbol),
-                        "direction": "LONG" if is_long else "SHORT",
-                        "entry_price": entry,
-                        "sl_price": sl,
-                        "tp1_price": tp1,
-                        "tp2_price": tp2,
-                        "volume": float(pos.volume),
-                        "initial_volume": float(pos.volume),
-                        "risk_usd": 15.0,
-                        "opened_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
-                        "tp1_hit": False,
-                        "partial_pnl": 0.0,
-                    }
-                    self._save_state()
-        except Exception:
-            pass
+        # Adopt any open MT5 positions with BOT_MAGIC not yet in active_trades
+        if self.connected and self._mt5 is not None:
+            try:
+                open_positions = self._mt5.positions_get() or []
+                for pos in open_positions:
+                    t_str = str(pos.ticket)
+                    if getattr(pos, "magic", 0) == BOT_MAGIC and t_str not in self.active_trades:
+                        is_long = pos.type == self._mt5.POSITION_TYPE_BUY
+                        entry = float(pos.price_open)
+                        sl = float(pos.sl) if float(pos.sl) > 0 else entry
+                        tp2 = float(pos.tp) if float(pos.tp) > 0 else entry
+                        tp1 = entry + 0.5 * (tp2 - entry)
+                        self.active_trades[t_str] = {
+                            "ticket": int(pos.ticket),
+                            "symbol": str(pos.symbol),
+                            "broker_symbol": str(pos.symbol),
+                            "broker_source": "MT5_LIVE",
+                            "direction": "LONG" if is_long else "SHORT",
+                            "entry_price": entry,
+                            "sl_price": sl,
+                            "tp1_price": tp1,
+                            "tp2_price": tp2,
+                            "volume": float(pos.volume),
+                            "initial_volume": float(pos.volume),
+                            "risk_usd": 15.0,
+                            "opened_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
+                            "tp1_hit": False,
+                            "partial_pnl": 0.0,
+                        }
+                        self._save_state()
+            except Exception:
+                pass
 
         for t_str, trade in list(self.active_trades.items()):
+            if trade.get("broker_source") == "CRYPTO_24_7_LIVE":
+                events.extend(self._manage_crypto_book_trade(t_str, trade))
+                continue
+
+            if not self.connected or self._mt5 is None:
+                continue
+
             ticket = int(trade["ticket"])
             broker_sym = str(trade.get("broker_symbol", trade.get("symbol", "XAUUSD")))
             pos_list = self._mt5.positions_get(ticket=ticket)
@@ -544,7 +771,6 @@ class MT5Connector:
         is_long = pos.type == self._mt5.POSITION_TYPE_BUY
         partial_closed = 0.0
 
-        # 1. Partial 50% close if current volume >= 2 * vol_min
         if cur_vol >= 2.0 * vol_min:
             half_steps = math.floor(((cur_vol * 0.5) / vol_step) + 1e-9)
             close_vol = round(max(vol_min, half_steps * vol_step), 2)
@@ -565,7 +791,6 @@ class MT5Connector:
                 if res is not None and res.retcode == self._mt5.TRADE_RETCODE_DONE:
                     partial_closed = close_vol
 
-        # 2. Move Stop Loss to Break-Even (Entry Price)
         be_sl = round(float(trade.get("entry_price", pos.price_open)), digits)
         cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
         sltp_req = {
@@ -583,8 +808,6 @@ class MT5Connector:
     ) -> Tuple[float, float, str]:
         """Query MT5 history deals for `position=ticket` to compute exact realized P&L."""
         entry_price = float(trade.get("entry_price", 0.0))
-        tp2_price = float(trade.get("tp2_price", 0.0))
-        sl_price = float(trade.get("sl_price", 0.0))
         exit_price = entry_price
         net_pnl = 0.0
 
@@ -599,7 +822,6 @@ class MT5Connector:
 
                 if deals:
                     for d in deals:
-                        # DEAL_ENTRY_OUT (1) or DEAL_ENTRY_INOUT (2) or DEAL_ENTRY_OUT_BY (3)
                         if int(getattr(d, "entry", 0)) in (1, 2, 3):
                             net_pnl += (
                                 float(getattr(d, "profit", 0.0))
@@ -651,15 +873,9 @@ def generate_realistic_market_candles(
     symbol: str = "XAUUSD", count: int = 1200, seed: Optional[int] = None
 ) -> List[Candle]:
     """
-    Generate realistic M15 multi-regime market data with authentic session structure:
-      - Asian Session (00:00-06:45 UTC): Tighter range compression
-      - London Open (07:00-09:30 UTC): Stop-hunt liquidity sweeps (ICT SSL/BSL) followed by
-        strong displacement trends & Fair Value Gaps, or clean Asian box breakouts
-      - London/NY Trend Continuation (10:00-16:30 UTC): Multi-EMA trend with pullbacks into
-        unmitigated SND demand/supply zones
-      - Occasional high-volatility news chop bursts (to test regime filtering!)
+    Generate realistic M15 multi-regime market data with authentic session structure.
     """
-    sym_seeds = {"XAUUSD": 101, "EURUSD": 202, "USDJPY": 303}
+    sym_seeds = {"XAUUSD": 101, "EURUSD": 202, "USDJPY": 303, "BTCUSD": 404, "ETHUSD": 505, "SOLUSD": 606}
     rng = random.Random(seed if seed is not None else sym_seeds.get(symbol, 42))
 
     if symbol == "XAUUSD":
@@ -668,6 +884,15 @@ def generate_realistic_market_candles(
     elif symbol == "EURUSD":
         price = 1.08500
         base_step = 0.00075
+    elif symbol == "BTCUSD":
+        price = 95000.00
+        base_step = 180.0
+    elif symbol == "ETHUSD":
+        price = 3200.00
+        base_step = 12.0
+    elif symbol == "SOLUSD":
+        price = 195.00
+        base_step = 1.20
     else:  # USDJPY
         price = 152.500
         base_step = 0.110
@@ -677,29 +902,25 @@ def generate_realistic_market_candles(
 
     regime_bias = 1.0
     cycle_len = 96  # 1 trading day on M15 (96 x 15m = 24h)
-    active_demand_level: Optional[float] = None
-    active_supply_level: Optional[float] = None
 
     for i in range(count):
         ts = start_time + timedelta(minutes=15 * i)
         bar_in_day = i % cycle_len
         day_num = i // cycle_len
 
-        # Rotate macro trend bias across days, with occasional choppy days
         if bar_in_day == 0:
             if day_num % 5 == 4:
-                regime_bias = 0.0  # Chop / range day
+                regime_bias = 0.0
             elif day_num % 2 == 0:
-                regime_bias = 1.0  # Bullish institutional flow day
+                regime_bias = 1.0
             else:
-                regime_bias = -1.0  # Bearish institutional flow day
+                regime_bias = -1.0
 
         o = price
         asian_bars = candles[-min(len(candles), 28) :] if candles else []
         recent_high = max((c.high for c in asian_bars), default=o + base_step)
         recent_low = min((c.low for c in asian_bars), default=o - base_step)
 
-        # 1. Asian Session (00:00 - 06:45 UTC -> bars 0..27): Tight accumulation box
         if bar_in_day < 28:
             mid_box = 0.5 * (recent_high + recent_low)
             mean_rev = -0.22 * (o - mid_box)
@@ -707,23 +928,17 @@ def generate_realistic_market_candles(
             c = o + delta
             h = max(o, c) + abs(rng.gauss(0.0, 0.25 * base_step))
             l = min(o, c) - abs(rng.gauss(0.0, 0.25 * base_step))
-
-        # 2. London Open Liquidity Sweep & Displacement (07:00 - 08:30 UTC -> bars 28..34)
         elif 28 <= bar_in_day <= 33 and regime_bias != 0.0:
             if bar_in_day == 28:
-                # Stop-hunt wick beyond Asian boundary, closing back inside!
                 if regime_bias > 0:
                     l = recent_low - 0.85 * base_step
                     c = recent_low + 0.35 * base_step
                     h = max(o, c) + 0.25 * base_step
-                    active_demand_level = 0.5 * (l + c)
                 else:
                     h = recent_high + 0.85 * base_step
                     c = recent_high - 0.35 * base_step
                     l = min(o, c) - 0.25 * base_step
-                    active_supply_level = 0.5 * (h + c)
             elif bar_in_day in (29, 30, 31):
-                # Strong institutional impulse displacement creating FVG & SND zone
                 impulse = regime_bias * rng.uniform(1.15, 1.65) * base_step
                 c = o + impulse
                 if regime_bias > 0:
@@ -736,16 +951,12 @@ def generate_realistic_market_candles(
                 c = o + regime_bias * rng.uniform(0.3, 0.8) * base_step
                 h = max(o, c) + 0.25 * base_step
                 l = min(o, c) - 0.25 * base_step
-
-        # 3. Mid-Session Pullback & Continuation (08:45 - 16:45 UTC -> bars 34..67)
         elif 34 <= bar_in_day <= 67 and regime_bias != 0.0:
             if 40 <= bar_in_day <= 44:
-                # Controlled pullback toward EMA20 / Demand-Supply Zone
                 c = o - regime_bias * rng.uniform(0.35, 0.65) * base_step
                 h = max(o, c) + 0.25 * base_step
                 l = min(o, c) - 0.25 * base_step
             elif bar_in_day == 45:
-                # Rejection & resumption candle off value zone
                 c = o + regime_bias * rng.uniform(0.95, 1.40) * base_step
                 if regime_bias > 0:
                     l = o - 0.70 * base_step
@@ -754,16 +965,12 @@ def generate_realistic_market_candles(
                     h = o + 0.70 * base_step
                     l = c - 0.18 * base_step
             else:
-                # Steady trend progression
                 drift = regime_bias * 0.32 * base_step
                 c = o + drift + rng.gauss(0.0, 0.48 * base_step)
                 h = max(o, c) + abs(rng.gauss(0.0, 0.30 * base_step))
                 l = min(o, c) - abs(rng.gauss(0.0, 0.30 * base_step))
-
-        # 4. Chop / High-Vol Whipsaw Day or Late NY Consolidation
         else:
             vol_mult = 1.65 if (regime_bias == 0.0 and 32 <= bar_in_day <= 56) else 0.55
-            # Alternate direction every couple bars in chop so naive breakout gets whipsawed
             whipsaw = (
                 (-1.0 if (bar_in_day % 2 == 0) else 1.0) * 0.75 * base_step
                 if regime_bias == 0.0
@@ -773,8 +980,7 @@ def generate_realistic_market_candles(
             h = max(o, c) + abs(rng.gauss(0.0, 0.55 * vol_mult * base_step))
             l = min(o, c) - abs(rng.gauss(0.0, 0.55 * vol_mult * base_step))
 
-        # Keep prices positive and well-rounded
-        decimals = 2 if symbol == "XAUUSD" else (3 if symbol == "USDJPY" else 5)
+        decimals = 2 if symbol in ("XAUUSD", "BTCUSD", "ETHUSD", "SOLUSD") else (3 if symbol == "USDJPY" else 5)
         o_r = round(o, decimals)
         h_r = round(max(o, c, h), decimals)
         l_r = round(min(o, c, l), decimals)

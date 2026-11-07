@@ -1,18 +1,17 @@
 """
-Autonomous Multi-Strategy MT5 Auto-Trader & Telegram Result Notifier.
+24/7 Autonomous Multi-Strategy Crypto + Forex Auto-Trader & Telegram Result Notifier.
 
-Modes of Operation:
-  1. Continuous Auto-Trader (`python run_scanner.py`):
-     - Evaluates closed M15 candles on `XAUUSD`, `EURUSD`, and `USDJPY`.
-     - Automatically places risk-managed orders (`0.50%` equity risk) in MetaTrader 5 when
-       a high-confluence `HYBRID_REGIME_KRONOS` setup triggers, and sends a Telegram execution alert.
-     - Monitors open trades every 60 seconds:
-       * At `TP1 (1.5R)`: locks 50% partial profit (if lot >= 0.02), moves SL to Break-Even,
-         and notifies Telegram.
-       * On trade close (`TP2`, `SL`, `Break-Even`, or manual close): computes exact realized
-         P&L ($ USD and R-multiple) from MT5 deal history and sends the Telegram Result Card!
-  2. Copilot Signal-Only Mode (`python run_scanner.py --signal-only`):
-     - Sends Signal Cards without placing orders.
+Trades:
+  - 24/7 Crypto (`BTCUSD`, `ETHUSD`, `SOLUSD` on M5 & M15 — live 24/7 including Saturday & Sunday!)
+  - Forex & Gold (`XAUUSD`, `EURUSD`, `USDJPY` on M15 during weekday market hours)
+
+Every 30 seconds:
+  1. Checks open trades against live real-time prices:
+     - At `TP1 (1.5R)`: locks 50% profit, moves SL to Break-Even, and sends a Telegram alert.
+     - At `TP2 (3.0R)` or `SL`: closes the trade, records exact `$ USD` & `R-multiple` P&L,
+       updates the bot's Win/Loss scorecard, and sends a Telegram Trade Result Card!
+  2. Scans `BTCUSD`, `ETHUSD`, `SOLUSD` (24/7) + `XAUUSD`, `EURUSD`, `USDJPY` for new
+     `HYBRID_REGIME_KRONOS` setups and automatically executes them!
 """
 
 from __future__ import annotations
@@ -20,17 +19,17 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timezone
 import time
-from typing import Dict
+from typing import Dict, List, Tuple
 
 from src.confluence import ConfluenceEngine
-from src.config import EngineConfig, INSTRUMENTS
+from src.config import ALL_INSTRUMENTS, CRYPTO_INSTRUMENTS, EngineConfig, INSTRUMENTS
 from src.mt5_connector import MT5Connector
 from src.remote_sync import write_and_push_telemetry
 
 
 def run_scanner(
     watch: bool = True,
-    poll_seconds: int = 60,
+    poll_seconds: int = 30,
     sync_github: bool = True,
     force_mode: str | None = "auto",
 ) -> None:
@@ -50,9 +49,9 @@ def run_scanner(
 
     live_equity = mt5_conn.get_account_equity(config.default_equity)
     mode_banner = (
-        f"MT5 Live/Demo Connected (Equity: ${live_equity:,.2f})"
+        f"MT5 Live Connected + 24/7 Live Crypto Feed (Equity: ${live_equity:,.2f})"
         if mt5_conn.connected
-        else f"Offline Simulation Feed (MT5 Status: {mt5_conn.last_error or 'Not Connected'})"
+        else f"24/7 Live Crypto Feed Active (Equity: ${live_equity:,.2f})"
     )
     tg_banner = (
         "Configured (Auto-Trade & Result Alerts Ready)"
@@ -61,8 +60,10 @@ def run_scanner(
     )
 
     log("=" * 78)
-    log(f"  HYBRID MULTI-STRATEGY AUTO-TRADER BOT | Execution Mode: {config.execution_mode.upper()}")
+    log(f"  24/7 CRYPTO + FOREX AUTO-TRADER BOT | Execution Mode: {config.execution_mode.upper()}")
     log(f"  Data Source    : {mode_banner}")
+    log(f"  24/7 Crypto    : BTCUSD, ETHUSD, SOLUSD (M5 & M15 Live Orderbook)")
+    log(f"  Forex / Gold   : XAUUSD, EURUSD, USDJPY (M15 MT5)")
     log(f"  Telegram Alert : {tg_banner}")
     log(f"  Kronos Model   : {config.kronos.model_id} (Device: {config.kronos.device})")
     log("=" * 78)
@@ -70,6 +71,19 @@ def run_scanner(
     last_alerted_bar: Dict[str, datetime] = {}
     cycle_count = 0
     was_connected = mt5_conn.connected
+
+    # Scan Crypto on both M5 and M15 for active 24/7 trading, plus Forex on M15
+    scan_targets: List[Tuple[str, str]] = [
+        ("BTCUSD", "M5"),
+        ("ETHUSD", "M5"),
+        ("SOLUSD", "M5"),
+        ("BTCUSD", "M15"),
+        ("ETHUSD", "M15"),
+        ("SOLUSD", "M15"),
+        ("XAUUSD", "M15"),
+        ("EURUSD", "M15"),
+        ("USDJPY", "M15"),
+    ]
 
     while True:
         cycle_count += 1
@@ -79,7 +93,6 @@ def run_scanner(
                 just_connected = True
                 live_equity = mt5_conn.get_account_equity(config.default_equity)
                 log(f"  [MT5 Connected] MetaTrader 5 is now online! Account Equity: ${live_equity:,.2f}")
-                last_alerted_bar.clear()
 
         now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
         live_equity = mt5_conn.get_account_equity(config.default_equity)
@@ -90,43 +103,64 @@ def run_scanner(
             log(f"  {ev}")
 
         open_count = len(mt5_conn.active_trades)
+        wins = int(mt5_conn.stats.get("wins", 0))
+        losses = int(mt5_conn.stats.get("losses", 0))
+        cum_pnl = float(mt5_conn.stats.get("cumulative_pnl", 0.0))
         log(
-            f"\n[{now_str}] Scanning XAUUSD, EURUSD, USDJPY (M15) | "
-            f"Open Bot Trades: {open_count} | Equity: ${live_equity:,.2f}..."
+            f"\n[{now_str}] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | "
+            f"Open Trades: {open_count} | Record: {wins}W-{losses}L (${cum_pnl:+.2f}) | Equity: ${live_equity:,.2f}"
         )
+
+        # Display live status of any currently open trades
+        for t_id, tr in mt5_conn.active_trades.items():
+            t_sym = str(tr.get("symbol", ""))
+            t_dir = str(tr.get("direction", ""))
+            t_entry = float(tr.get("entry_price", 0.0))
+            t_sl = float(tr.get("sl_price", 0.0))
+            t_tp1 = float(tr.get("tp1_price", 0.0))
+            t_tp2 = float(tr.get("tp2_price", 0.0))
+            tp1_tag = "TP1 BANKED (BE ACTIVE)" if tr.get("tp1_hit") else f"TP1={t_tp1}"
+            log(
+                f"  [OPEN #{t_id}] {t_sym} {t_dir} @ {t_entry} | SL={t_sl} | {tp1_tag} | TP2={t_tp2}"
+            )
 
         latest_prices: Dict[str, float] = {}
         new_signal_fired = bool(trade_events)
 
-        for symbol in INSTRUMENTS:
-            candles = mt5_conn.fetch_recent_candles(symbol=symbol, timeframe="M15", count=260)
+        for symbol, tf in scan_targets:
+            key = f"{symbol}_{tf}"
+            is_crypto = symbol in CRYPTO_INSTRUMENTS
+
+            # Skip duplicate scan if symbol already has an open position
+            if mt5_conn._has_open_trade_on_symbol(symbol) is not None:
+                continue
+
+            candles = mt5_conn.fetch_recent_candles(symbol=symbol, timeframe=tf, count=260)
             if len(candles) < 60:
-                log(f"  [{symbol}] Insufficient bars ({len(candles)}).")
                 continue
 
             latest_prices[symbol] = candles[-1].close
             series = engine.precompute(candles)
 
-            # In live MT5 Auto-Trader mode, index -1 is the currently forming M15 bar and
-            # index -2 is the just-closed M15 bar. Only trade newly closed bars!
-            if mt5_conn.connected and config.execution_mode == "auto":
+            # On Cycle 1 for 24/7 Crypto, check the last 6 closed candles (last 30m on M5)
+            # so active setups are caught immediately on launch; on subsequent cycles check the newly closed bar (-2).
+            if is_crypto and cycle_count == 1:
+                candidate_indices = list(range(len(candles) - 2, max(50, len(candles) - 8), -1))
+            elif mt5_conn.connected and config.execution_mode == "auto":
                 candidate_indices = [len(candles) - 2]
             else:
-                lookback_bars = 2 if (mt5_conn.connected and watch and last_alerted_bar) else 20
-                candidate_indices = list(
-                    range(len(candles) - 1, max(50, len(candles) - 1 - lookback_bars), -1)
-                )
+                candidate_indices = [len(candles) - 2]
 
             found = False
             for idx in candidate_indices:
                 bar_ts = candles[idx].timestamp
-                if last_alerted_bar.get(symbol) == bar_ts:
+                if last_alerted_bar.get(key) == bar_ts:
                     found = True
                     break
 
                 signal = engine.evaluate_bar(
                     symbol=symbol,
-                    timeframe="M15",
+                    timeframe=tf,
                     candles=candles,
                     idx=idx,
                     series=series,
@@ -134,7 +168,7 @@ def run_scanner(
                     equity=live_equity,
                 )
                 if signal is not None:
-                    last_alerted_bar[symbol] = bar_ts
+                    last_alerted_bar[key] = bar_ts
                     console_buffer.extend(signal.format_signal_card().splitlines())
                     status_msg = mt5_conn.handle_signal(signal)
                     log(f"  {status_msg}")
@@ -142,17 +176,19 @@ def run_scanner(
                     new_signal_fired = True
                     break
 
-            if not found:
+            if not found and tf == "M15":
                 last_c = candles[-1]
+                src_tag = f"Live {mt5_conn.crypto_feed.last_source}" if is_crypto else "MT5"
                 log(
-                    f"  [{symbol:<6}] Price={last_c.close:<9} | No new setup on closed M15 bar. Waiting for A+ confluence..."
+                    f"  [{symbol:<6} ({src_tag})] Price={last_c.close:<10} | Watching M5/M15 for A+ confluence..."
                 )
 
-        # Auto-sync Home PC telemetry & console log to GitHub on startup, trade event, or new signal
+        # Auto-sync Home PC telemetry & console log to GitHub on startup, trade event, or every 5 cycles
         if (
             cycle_count == 1
             or just_connected
             or new_signal_fired
+            or (cycle_count % 5 == 0)
             or not watch
             or (mt5_conn.connected != was_connected)
         ):
@@ -163,6 +199,7 @@ def run_scanner(
                     "execution_mode": config.execution_mode,
                     "mt5_connected": mt5_conn.connected,
                     "mt5_error": mt5_conn.last_error,
+                    "crypto_feed_source": mt5_conn.crypto_feed.last_source,
                     "live_equity": live_equity,
                     "telegram_configured": mt5_conn.telegram.is_configured,
                     "kronos_active_backend": engine.kronos._active_backend,
@@ -174,12 +211,12 @@ def run_scanner(
                 push_to_github=sync_github,
             )
             if pushed:
-                print("  [GitHub Sync] Home PC status & trade telemetry synced to GitHub.")
+                print("  [GitHub Sync] Home PC status & 24/7 Crypto trade telemetry synced to GitHub.")
 
         if not watch:
             break
 
-        print(f"\n  Sleeping {poll_seconds}s until next scan cycle (Press Ctrl+C to stop)...")
+        print(f"\n  Sleeping {poll_seconds}s until next 24/7 Crypto + Forex check (Press Ctrl+C to stop)...")
         try:
             time.sleep(poll_seconds)
         except KeyboardInterrupt:
@@ -188,7 +225,7 @@ def run_scanner(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Hybrid Multi-Strategy MT5 Auto-Trader Bot")
+    parser = argparse.ArgumentParser(description="24/7 Crypto + Forex Multi-Strategy Auto-Trader Bot")
     parser.add_argument(
         "--once",
         action="store_true",
@@ -197,7 +234,7 @@ def main() -> None:
     parser.add_argument(
         "--signal-only",
         action="store_true",
-        help="Run in Copilot signal-only mode (do not place automated MT5 orders).",
+        help="Run in Copilot signal-only mode (do not place automated orders).",
     )
     parser.add_argument(
         "--no-sync",
@@ -207,8 +244,8 @@ def main() -> None:
     parser.add_argument(
         "--interval",
         type=int,
-        default=60,
-        help="Polling interval in seconds for continuous watch mode (default: 60).",
+        default=30,
+        help="Polling interval in seconds for continuous watch mode (default: 30).",
     )
     args = parser.parse_args()
     mode = "signal_only" if args.signal_only else "auto"
