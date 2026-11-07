@@ -94,7 +94,7 @@ def run_scanner(watch: bool = True, poll_seconds: int = 60, sync_github: bool = 
                 )
                 if signal is not None:
                     last_alerted_bar[symbol] = bar_ts
-                    console_buffer.extend(signal.format_console_card().splitlines())
+                    console_buffer.extend(signal.format_signal_card().splitlines())
                     status_msg = mt5_conn.handle_signal(signal)
                     log(f"  {status_msg}")
                     found = True
