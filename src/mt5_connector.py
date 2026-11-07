@@ -219,6 +219,7 @@ class MT5Connector:
                     )
                     for r in rates
                 ]
+            return []
         return generate_realistic_market_candles(symbol=symbol, count=count)
 
     def _send_order_with_filling_fallback(self, base_request: Dict[str, Any]) -> Any:
