@@ -31,3 +31,33 @@
   KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=90.6% | Exp Move=+1.67 ATR (Max Up +2.60 ATR / Max Down -0.71 ATR)
 ==========================================================================
   [COPILOT MODE: signal_only] Setup displayed for your manual review on TradingView / MT5. No automated order was placed. | Telegram: Telegram alert delivered to your phone!
+
+[2026-11-07 14:17:04 UTC] Scanning XAUUSD, EURUSD, USDJPY (M15)...
+  [XAUUSD] Price=2664.06   | No new setup on latest bar. Waiting for A+ confluence...
+  [EURUSD] Price=1.09164   | No new setup on latest bar. Waiting for A+ confluence...
+
+[2026-11-07 14:18:07 UTC] Scanning XAUUSD, EURUSD, USDJPY (M15)...
+==========================================================================
+  HIGH-CONFLUENCE SETUP DETECTED | XAUUSD (M15) | BUY (LONG)
+==========================================================================
+  Timestamp (UTC)   : 2026-01-07 15:30 UTC
+  Market Regime     : SESSION_SWEEP_WINDOW
+  Confluence Score  : 82.4 / 100.0  [HYBRID_REGIME_KRONOS]
+--------------------------------------------------------------------------
+  Entry Price       : 2661.96
+  Stop Loss (SL)    : 2656.77  (Invalidation + ATR Buffer)
+  Take Profit 1     : 2669.74  (1.5R -> Close 50% & Move SL to BE)
+  Take Profit 2     : 2677.53  (3.0R -> Runner Target)
+  Suggested Lot     : 0.09 lots  (Risk: $46.70 / 0.50%)
+--------------------------------------------------------------------------
+  STRATEGY BREAKDOWN (Why this setup triggered):
+    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (0 unmitigated zones tracked)
+    [NEUTRAL] ICT             (conf    0%): Waiting for BSL (2659.07) or SSL (2638.92) liquidity sweep
+    [AGREES ] BREAKOUT        (conf   86%): Bullish volatility breakout above compression high 2660.16 (body=1.08x ATR, ADX=26.1)
+    [NEUTRAL] TREND_PULLBACK  (conf    0%): No aligned EMA pullback trigger (RSI=70.1)
+    [AGREES ] KRONOS          (conf   42%): Bullish Prob=69.3% | Exp Move=+0.60 ATR (Max Up +1.42 ATR / Max Down -2.20 ATR)
+--------------------------------------------------------------------------
+  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=69.3% | Exp Move=+0.60 ATR (Max Up +1.42 ATR / Max Down -2.20 ATR)
+==========================================================================
+  [COPILOT MODE: signal_only] Setup displayed for your manual review on TradingView / MT5. No automated order was placed. | Telegram: Telegram alert delivered to your phone!
+  [EURUSD] Price=1.09164   | No new setup on latest bar. Waiting for A+ confluence...
