@@ -1,0 +1,24 @@
+{
+  "updated_utc": "2026-11-07 13:52:11 UTC",
+  "hostname": "DESKTOP-8RQUOSU",
+  "python_version": "3.12.10",
+  "gpu": {
+    "torch_installed": true,
+    "torch_version": "2.11.0+cu128",
+    "cuda_version": "12.8",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 5060",
+    "cuda_kernel_ok": true,
+    "cuda_error": null
+  },
+  "mt5_connected": false,
+  "live_equity": 10000.0,
+  "telegram_configured": true,
+  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
+  "latest_prices": {
+    "XAUUSD": 2664.06,
+    "EURUSD": 1.09164,
+    "USDJPY": 153.973
+  },
+  "cycle_count": 1
+}
