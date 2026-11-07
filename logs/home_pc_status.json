@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-07 15:31:55 UTC",
+  "updated_utc": "2026-11-07 15:43:23 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -19,7 +19,7 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 75839.86,
+    "BTCUSD": 75814.92,
     "XAUUSD": 4065.82,
     "EURUSD": 1.11413,
     "USDJPY": 158.483
@@ -72,5 +72,48 @@
     "cumulative_pnl": 0.0,
     "history": []
   },
-  "cycle_count": 35
+  "learned_weights": {
+    "updated_utc": "2026-11-07 15:43:11 UTC",
+    "total_episodes": 0,
+    "strategy_stats": {
+      "SND": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "ema_r": 0.0,
+        "multiplier": 1.0
+      },
+      "ICT": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "ema_r": 0.0,
+        "multiplier": 1.0
+      },
+      "BREAKOUT": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "ema_r": 0.0,
+        "multiplier": 1.0
+      },
+      "TREND_PULLBACK": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "ema_r": 0.0,
+        "multiplier": 1.0
+      },
+      "KRONOS": {
+        "trades": 0,
+        "wins": 0,
+        "losses": 0,
+        "ema_r": 0.0,
+        "multiplier": 1.0
+      }
+    },
+    "regime_strategy_multipliers": {},
+    "symbol_streaks": {}
+  },
+  "cycle_count": 1
 }
