@@ -1,4 +1,4 @@
-﻿# Environment & Secrets (NEVER commit to Git)
+# Environment & Secrets (NEVER commit to Git)
 .env
 .env.*
 !.env.example
@@ -15,11 +15,15 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
-# Local Data, Backtest Cache & Logs
+# Local Data, Backtest Cache & Nested Repos
 data/
-logs/
-*.log
+kronos_repo/
 *.csv
 *.parquet
 *.sqlite
 *.db
+
+# Allow sanitized Home PC telemetry/console sync (no secrets)
+logs/*
+!logs/home_pc_status.json
+!logs/home_pc_console.txt

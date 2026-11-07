@@ -18,9 +18,16 @@ from typing import Dict
 from src.confluence import ConfluenceEngine
 from src.config import EngineConfig, INSTRUMENTS
 from src.mt5_connector import MT5Connector
+from src.remote_sync import write_and_push_telemetry
 
 
-def run_scanner(watch: bool = True, poll_seconds: int = 60) -> None:
+def run_scanner(watch: bool = True, poll_seconds: int = 60, sync_github: bool = True) -> None:
+    console_buffer: list[str] = []
+
+    def log(msg: str = "") -> None:
+        print(msg)
+        console_buffer.extend(msg.splitlines() if msg else [""])
+
     config = EngineConfig()
     engine = ConfluenceEngine(config)
     mt5_conn = MT5Connector(execution_mode=config.execution_mode)
@@ -33,31 +40,37 @@ def run_scanner(watch: bool = True, poll_seconds: int = 60) -> None:
         else "Offline Simulation Feed (Open MetaTrader 5 on PC for Live Broker Bars)"
     )
     tg_banner = (
-        f"Configured (Chat ID: {mt5_conn.telegram.chat_id})"
+        "Configured (Ready)"
         if mt5_conn.telegram.is_configured
         else "Not configured (Run `python setup_telegram.py`)"
     )
 
-    print("=" * 78)
-    print(f"  HYBRID MULTI-STRATEGY COPILOT SCANNER | Execution Mode: {config.execution_mode}")
-    print(f"  Data Source    : {mode_banner}")
-    print(f"  Telegram Alert : {tg_banner}")
-    print(f"  Kronos Model   : {config.kronos.model_id} (Device: {config.kronos.device})")
-    print("=" * 78)
+    log("=" * 78)
+    log(f"  HYBRID MULTI-STRATEGY COPILOT SCANNER | Execution Mode: {config.execution_mode}")
+    log(f"  Data Source    : {mode_banner}")
+    log(f"  Telegram Alert : {tg_banner}")
+    log(f"  Kronos Model   : {config.kronos.model_id} (Device: {config.kronos.device})")
+    log("=" * 78)
 
     last_alerted_bar: Dict[str, datetime] = {}
+    cycle_count = 0
 
     while True:
+        cycle_count += 1
         now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
         live_equity = mt5_conn.get_account_equity(config.default_equity)
-        print(f"\n[{now_str}] Scanning XAUUSD, EURUSD, USDJPY (M15)...")
+        log(f"\n[{now_str}] Scanning XAUUSD, EURUSD, USDJPY (M15)...")
+
+        latest_prices: Dict[str, float] = {}
+        new_signal_fired = False
 
         for symbol in INSTRUMENTS:
             candles = mt5_conn.fetch_recent_candles(symbol=symbol, timeframe="M15", count=260)
             if len(candles) < 60:
-                print(f"  [{symbol}] Insufficient bars ({len(candles)}).")
+                log(f"  [{symbol}] Insufficient bars ({len(candles)}).")
                 continue
 
+            latest_prices[symbol] = candles[-1].close
             series = engine.precompute(candles)
             # In live MT5 mode, index -1 is the currently forming bar and -2 is the just-closed M15 bar.
             # In single-scan / demo preview, check the most recent closed bars.
@@ -81,16 +94,35 @@ def run_scanner(watch: bool = True, poll_seconds: int = 60) -> None:
                 )
                 if signal is not None:
                     last_alerted_bar[symbol] = bar_ts
+                    console_buffer.extend(signal.format_console_card().splitlines())
                     status_msg = mt5_conn.handle_signal(signal)
-                    print(f"  {status_msg}")
+                    log(f"  {status_msg}")
                     found = True
+                    new_signal_fired = True
                     break
 
             if not found:
                 last_c = candles[-1]
-                print(
+                log(
                     f"  [{symbol:<6}] Price={last_c.close:<9} | No new setup on latest bar. Waiting for A+ confluence..."
                 )
+
+        # Auto-sync Home PC telemetry & console log to GitHub on startup or when a new signal fires
+        if cycle_count == 1 or new_signal_fired or not watch:
+            pushed = write_and_push_telemetry(
+                console_lines=console_buffer,
+                extra_status={
+                    "mt5_connected": mt5_conn.connected,
+                    "live_equity": live_equity,
+                    "telegram_configured": mt5_conn.telegram.is_configured,
+                    "kronos_active_backend": engine.kronos._active_backend,
+                    "latest_prices": latest_prices,
+                    "cycle_count": cycle_count,
+                },
+                push_to_github=sync_github,
+            )
+            if pushed:
+                print("  [GitHub Sync] Home PC status & console log synced to GitHub for remote inspection.")
 
         if not watch:
             break
@@ -111,13 +143,18 @@ def main() -> None:
         help="Run a single scan pass and exit instead of continuous watching.",
     )
     parser.add_argument(
+        "--no-sync",
+        action="store_true",
+        help="Disable automatic GitHub telemetry push.",
+    )
+    parser.add_argument(
         "--interval",
         type=int,
         default=60,
         help="Polling interval in seconds for continuous watch mode (default: 60).",
     )
     args = parser.parse_args()
-    run_scanner(watch=not args.once, poll_seconds=args.interval)
+    run_scanner(watch=not args.once, poll_seconds=args.interval, sync_github=not args.no_sync)
 
 
 if __name__ == "__main__":
