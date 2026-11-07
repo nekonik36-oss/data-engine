@@ -113,6 +113,7 @@ def run_scanner(watch: bool = True, poll_seconds: int = 60, sync_github: bool = 
                 console_lines=console_buffer,
                 extra_status={
                     "mt5_connected": mt5_conn.connected,
+                    "mt5_error": mt5_conn.last_error,
                     "live_equity": live_equity,
                     "telegram_configured": mt5_conn.telegram.is_configured,
                     "kronos_active_backend": engine.kronos._active_backend,

@@ -32,6 +32,7 @@ class MT5Connector:
         self.execution_mode = execution_mode
         self._mt5 = None
         self.connected = False
+        self.last_error: str | None = None
         self.telegram = TelegramNotifier()
 
     def connect(self) -> bool:
@@ -42,9 +43,11 @@ class MT5Connector:
             if mt5.initialize():
                 self._mt5 = mt5
                 self.connected = True
+                self.last_error = None
                 return True
-        except Exception:
-            pass
+            self.last_error = f"mt5.initialize() returned False: {mt5.last_error()}"
+        except Exception as exc:
+            self.last_error = str(exc)
         self.connected = False
         return False
 

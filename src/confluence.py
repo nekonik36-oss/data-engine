@@ -149,11 +149,6 @@ class ConfluenceEngine:
                 )
             )
 
-        kronos_fc = None
-        if "KRONOS" in active_set and self.config.kronos.enabled:
-            k_vote, kronos_fc = self.kronos.evaluate_vote(candles, ind.atr, idx)
-            votes.append(k_vote)
-
         pa_votes = [
             v
             for v in votes
@@ -161,6 +156,11 @@ class ConfluenceEngine:
         ]
         if not pa_votes:
             return None
+
+        kronos_fc = None
+        if "KRONOS" in active_set and self.config.kronos.enabled:
+            k_vote, kronos_fc = self.kronos.evaluate_vote(candles, ind.atr, idx)
+            votes.append(k_vote)
 
         # 3. Score LONG vs SHORT with Regime-Adaptive Multipliers
         multipliers = (

@@ -138,7 +138,7 @@ def write_and_push_telemetry(
                 check=False,
                 capture_output=True,
                 text=True,
-                timeout=25,
+                timeout=120,
             )
             return push_res.returncode == 0
     except Exception:
