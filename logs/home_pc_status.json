@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-07 14:18:11 UTC",
+  "updated_utc": "2026-11-07 14:32:36 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -11,15 +11,15 @@
     "cuda_kernel_ok": true,
     "cuda_error": null
   },
-  "mt5_connected": false,
-  "mt5_error": "mt5.initialize() failed: (-6, 'Terminal: Authorization failed') | proc_check=PROC:C:\\Program Files\\MetaTrader 5\\terminal64.exe",
-  "live_equity": 10000.0,
+  "mt5_connected": true,
+  "mt5_error": null,
+  "live_equity": 3000.0,
   "telegram_configured": true,
-  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
+  "kronos_active_backend": "statistical_mc_fallback",
   "latest_prices": {
-    "XAUUSD": 2664.06,
-    "EURUSD": 1.09164,
-    "USDJPY": 153.973
+    "XAUUSD": 4065.82,
+    "EURUSD": 1.11413,
+    "USDJPY": 158.483
   },
-  "cycle_count": 3
+  "cycle_count": 1
 }
