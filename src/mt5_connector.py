@@ -28,6 +28,7 @@ from pathlib import Path
 import random
 from typing import Any, Dict, List, Optional, Tuple
 
+from src.adaptive_learner import AdaptiveLearner
 from src.config import ALL_INSTRUMENTS, CRYPTO_INSTRUMENTS, INSTRUMENTS, InstrumentProfile
 from src.crypto_exchange import CryptoLiveFeed
 from src.models import Candle, Direction, SetupSignal
@@ -43,7 +44,7 @@ BOT_MAGIC = 202605
 class MT5Connector:
     """Bridge to MetaTrader 5 + 24/7 Live Crypto Exchange Feed & Auto-Execution Book."""
 
-    def __init__(self, execution_mode: str = "auto") -> None:
+    def __init__(self, execution_mode: str = "auto", learner: AdaptiveLearner | None = None) -> None:
         self.execution_mode = execution_mode
         self._mt5 = None
         self.connected = False
@@ -51,6 +52,7 @@ class MT5Connector:
         self.terminal_path: str | None = None
         self.telegram = TelegramNotifier()
         self.crypto_feed = CryptoLiveFeed()
+        self.learner = learner or AdaptiveLearner()
         self.active_trades: Dict[str, Dict[str, Any]] = self._load_json(ACTIVE_TRADES_PATH, {})
         self.stats: Dict[str, Any] = self._load_json(
             BOT_STATS_PATH,
@@ -310,6 +312,10 @@ class MT5Connector:
         volume = signal.recommended_lot
         acct_equity = self.get_account_equity()
 
+        agreeing_strats = [v.strategy_name for v in signal.votes if v.direction == signal.direction]
+        if signal.kronos is not None and signal.kronos.direction == signal.direction:
+            agreeing_strats.append("KRONOS")
+
         self.active_trades[str(ticket)] = {
             "ticket": ticket,
             "symbol": signal.symbol,
@@ -325,6 +331,7 @@ class MT5Connector:
             "risk_usd": signal.risk_usd,
             "confluence_score": signal.confluence_score,
             "regime": signal.regime.value,
+            "agreeing_strategies": agreeing_strats,
             "opened_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
             "tp1_hit": False,
             "partial_pnl": 0.0,
@@ -449,6 +456,12 @@ class MT5Connector:
                         actual_fill = float(getattr(result, "price", fill_price) or fill_price)
                         acct_equity = self.get_account_equity()
 
+                        agreeing_strats = [
+                            v.strategy_name for v in signal.votes if v.direction == signal.direction
+                        ]
+                        if signal.kronos is not None and signal.kronos.direction == signal.direction:
+                            agreeing_strats.append("KRONOS")
+
                         self.active_trades[str(ticket)] = {
                             "ticket": ticket,
                             "symbol": signal.symbol,
@@ -464,6 +477,7 @@ class MT5Connector:
                             "risk_usd": signal.risk_usd,
                             "confluence_score": signal.confluence_score,
                             "regime": signal.regime.value,
+                            "agreeing_strategies": agreeing_strats,
                             "opened_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
                             "tp1_hit": False,
                             "partial_pnl": 0.0,
@@ -595,6 +609,13 @@ class MT5Connector:
 
             acct_bal = self.get_account_balance()
             acct_eq = self.get_account_equity()
+            learn_note = self.learner.record_trade_outcome(
+                symbol=symbol,
+                regime=str(trade.get("regime", "TREND_EXPANSION")),
+                agreeing_strategies=list(trade.get("agreeing_strategies", ["SND", "ICT", "KRONOS"])),
+                r_multiple=r_mult,
+                net_pnl=net_pnl,
+            )
 
             if self.telegram.is_configured:
                 result_html = self.telegram.format_trade_closed_html(
@@ -606,12 +627,13 @@ class MT5Connector:
                     account_balance=acct_bal,
                     account_equity=acct_eq,
                     stats=self.stats,
+                    learning_summary=learn_note,
                 )
                 self.telegram.send_message(result_html)
 
             events.append(
                 f"[24/7 CRYPTO TRADE CLOSED] Ticket #{ticket} ({symbol}) | {close_reason} | "
-                f"P&L: ${net_pnl:+.2f} ({r_mult:+.2f}R) | Equity: ${acct_eq:,.2f}"
+                f"P&L: ${net_pnl:+.2f} ({r_mult:+.2f}R) | Equity: ${acct_eq:,.2f} | {learn_note}"
             )
 
         return events
@@ -733,6 +755,13 @@ class MT5Connector:
 
             acct_bal = self.get_account_balance()
             acct_eq = self.get_account_equity()
+            learn_note = self.learner.record_trade_outcome(
+                symbol=str(trade.get("symbol", broker_sym)),
+                regime=str(trade.get("regime", "TREND_EXPANSION")),
+                agreeing_strategies=list(trade.get("agreeing_strategies", ["SND", "ICT", "KRONOS"])),
+                r_multiple=r_mult,
+                net_pnl=net_pnl,
+            )
 
             if self.telegram.is_configured:
                 result_html = self.telegram.format_trade_closed_html(
@@ -744,12 +773,13 @@ class MT5Connector:
                     account_balance=acct_bal,
                     account_equity=acct_eq,
                     stats=self.stats,
+                    learning_summary=learn_note,
                 )
                 self.telegram.send_message(result_html)
 
             events.append(
                 f"[TRADE CLOSED] Ticket #{ticket} ({broker_sym}) | {close_reason} | "
-                f"P&L: ${net_pnl:+.2f} ({r_mult:+.2f}R) | Balance: ${acct_bal:,.2f}"
+                f"P&L: ${net_pnl:+.2f} ({r_mult:+.2f}R) | Balance: ${acct_bal:,.2f} | {learn_note}"
             )
 
         return events

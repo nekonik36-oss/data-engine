@@ -43,9 +43,9 @@ def run_scanner(
     if force_mode is not None:
         config.execution_mode = force_mode
 
-    engine = ConfluenceEngine(config)
     mt5_conn = MT5Connector(execution_mode=config.execution_mode)
     mt5_conn.connect()
+    engine = ConfluenceEngine(config, learner=mt5_conn.learner)
 
     live_equity = mt5_conn.get_account_equity(config.default_equity)
     mode_banner = (
@@ -66,6 +66,7 @@ def run_scanner(
     log(f"  Forex / Gold   : XAUUSD, EURUSD, USDJPY (M15 MT5)")
     log(f"  Telegram Alert : {tg_banner}")
     log(f"  Kronos Model   : {config.kronos.model_id} (Device: {config.kronos.device})")
+    log(f"  Self-Learning  : {mt5_conn.learner.format_weights_banner()}")
     log("=" * 78)
 
     last_alerted_bar: Dict[str, datetime] = {}
@@ -206,6 +207,7 @@ def run_scanner(
                     "latest_prices": latest_prices,
                     "active_trades": mt5_conn.active_trades,
                     "bot_stats": mt5_conn.stats,
+                    "learned_weights": mt5_conn.learner.state,
                     "cycle_count": cycle_count,
                 },
                 push_to_github=sync_github,

@@ -2,10 +2,10 @@
 Telegram Bot Alert Notifier for Auto-Trader Execution & Trade Result Cards.
 
 Uses Python's built-in `urllib.request` (zero third-party dependencies required) to:
-  1. Send instant notifications when the Auto-Trader opens a live/demo MT5 position.
+  1. Send instant notifications when the Auto-Trader opens a live/demo MT5 or 24/7 Crypto position.
   2. Notify when TP1 (1.5R) is reached and Stop Loss is moved to Break-Even.
   3. Send a detailed Trade Result Card (Net P&L $, R-multiple, Exit Price, Updated Balance,
-     and Session Win/Loss record) the moment any trade closes in MetaTrader 5.
+     Session Win/Loss record, and AI Self-Learning Weight Update) the moment any trade closes.
 """
 
 from __future__ import annotations
@@ -49,8 +49,12 @@ class TelegramNotifier:
 
     @staticmethod
     def _price_fmt(symbol: str) -> str:
-        decimals = 2 if symbol.upper().startswith("XAU") else (3 if "JPY" in symbol.upper() else 5)
-        return f"{{:.{decimals}f}}"
+        sym = symbol.upper()
+        if sym.startswith(("XAU", "BTC", "ETH", "SOL")):
+            return "{:.2f}"
+        if "JPY" in sym:
+            return "{:.3f}"
+        return "{:.5f}"
 
     @classmethod
     def format_telegram_html(cls, signal: SetupSignal, header_prefix: str = "") -> str:
@@ -112,7 +116,7 @@ class TelegramNotifier:
         volume: float,
         account_equity: float,
     ) -> str:
-        """Render Telegram HTML notification when the Auto-Trader opens a live MT5 position."""
+        """Render Telegram HTML notification when the Auto-Trader opens a live position."""
         is_long = signal.direction == Direction.LONG
         header_icon = "🚀🟢" if is_long else "🚀🔴"
         dir_label = "BUY (LONG)" if is_long else "SELL (SHORT)"
@@ -123,7 +127,7 @@ class TelegramNotifier:
             f"🎫 Ticket: <code>#{ticket}</code> | Direction: <b>{dir_label}</b>",
             f"🧭 Regime: <b>{html.escape(signal.regime.value)}</b> | Score: <b>{signal.confluence_score:.1f}/100</b>",
             "",
-            "<b>⚡ Live MT5 Fill Details:</b>",
+            "<b>⚡ Live Fill Details:</b>",
             f"• Fill Price: <code>{fmt.format(fill_price)}</code>",
             f"• Stop Loss (SL): <code>{fmt.format(sl_price)}</code>",
             f"• TP1 ({signal.rr_tp1:.1f}R → 50% Close + BE): <code>{fmt.format(tp1_price)}</code>",
@@ -188,8 +192,9 @@ class TelegramNotifier:
         account_balance: float,
         account_equity: float,
         stats: Dict[str, Any],
+        learning_summary: str = "",
     ) -> str:
-        """Render Telegram HTML notification when a bot trade closes in MetaTrader 5."""
+        """Render Telegram HTML notification when a bot trade closes."""
         symbol = str(trade.get("symbol", "XAUUSD"))
         fmt = cls._price_fmt(symbol)
         ticket = trade.get("ticket")
@@ -215,23 +220,30 @@ class TelegramNotifier:
         win_rate = (wins / max(1, wins + losses)) * 100.0
         cum_sign = "+" if cum_pnl >= 0 else ""
 
-        return "\n".join(
-            [
-                header,
-                f"📊 <b>{html.escape(symbol)} ({html.escape(direction)})</b> | Ticket <code>#{ticket}</code>",
-                f"🏁 Exit Trigger: <b>{html.escape(close_reason)}</b>",
-                "",
-                "<b>💵 Trade Performance:</b>",
-                f"• Realized P&L: <b>{pnl_sign}${net_pnl:.2f} USD ({r_sign}{r_multiple:.2f}R)</b>",
-                f"• Entry → Exit: <code>{fmt.format(entry_price)}</code> → <code>{fmt.format(exit_price)}</code>",
-                f"• Position Size: <code>{volume:.2f} lots</code>",
-                "",
-                "<b>🏦 Account & Bot Scorecard:</b>",
-                f"• New Balance: <code>${account_balance:,.2f}</code> (Equity: <code>${account_equity:,.2f}</code>)",
-                f"• Bot Record: <b>{wins}W - {losses}L - {bes}BE</b> (Win Rate: <b>{win_rate:.1f}%</b> / {total_closed} trades)",
-                f"• Cumulative Bot P&L: <b>{cum_sign}${cum_pnl:.2f} USD</b>",
-            ]
-        )
+        lines = [
+            header,
+            f"📊 <b>{html.escape(symbol)} ({html.escape(direction)})</b> | Ticket <code>#{ticket}</code>",
+            f"🏁 Exit Trigger: <b>{html.escape(close_reason)}</b>",
+            "",
+            "<b>💵 Trade Performance:</b>",
+            f"• Realized P&L: <b>{pnl_sign}${net_pnl:.2f} USD ({r_sign}{r_multiple:.2f}R)</b>",
+            f"• Entry → Exit: <code>{fmt.format(entry_price)}</code> → <code>{fmt.format(exit_price)}</code>",
+            f"• Position Size: <code>{volume:.2f} lots</code>",
+            "",
+            "<b>🏦 Account & Bot Scorecard:</b>",
+            f"• New Balance: <code>${account_balance:,.2f}</code> (Equity: <code>${account_equity:,.2f}</code>)",
+            f"• Bot Record: <b>{wins}W - {losses}L - {bes}BE</b> (Win Rate: <b>{win_rate:.1f}%</b> / {total_closed} trades)",
+            f"• Cumulative Bot P&L: <b>{cum_sign}${cum_pnl:.2f} USD</b>",
+        ]
+        if learning_summary:
+            lines.extend(
+                [
+                    "",
+                    "🧠 <b>AI Self-Learning Update:</b>",
+                    f"<code>{html.escape(learning_summary)}</code>",
+                ]
+            )
+        return "\n".join(lines)
 
     def send_message(self, text: str, parse_mode: str = "HTML") -> Tuple[bool, str]:
         """Send raw or HTML message to the configured Telegram chat."""

@@ -1,16 +1,18 @@
 """
-Multi-Strategy Confluence Engine & Regime-Gated Voter.
+Multi-Strategy Confluence Engine, Regime-Gated Voter & Online Self-Learning Adapter.
 
 Supports both:
   - Individual Strategy Modes (`SND_ONLY`, `ICT_ONLY`, `BREAKOUT_ONLY`, `TREND_PULLBACK_ONLY`)
   - Multi-Strategy Combinations (`SND_PLUS_ICT`, `ALL_4_NAIVE`, `HYBRID_REGIME_KRONOS`)
-so the Automated Backtest Tournament can benchmark every strategy alone vs. combined.
+and integrates `AdaptiveLearner` so closed trade outcomes dynamically refine strategy
+weights (`0.60x`–`1.40x`) and per-symbol confluence thresholds in live trading.
 """
 
 from __future__ import annotations
 
 from typing import Dict, List, Optional, Sequence, Set
 
+from src.adaptive_learner import AdaptiveLearner
 from src.config import ALL_INSTRUMENTS, EngineConfig, INSTRUMENTS, InstrumentProfile
 from src.indicators import (
     compute_adx,
@@ -66,15 +68,20 @@ class PrecomputedSeries:
 
 class ConfluenceEngine:
     """
-    Evaluates all 4 price-action strategy modules + Market Regime + Kronos AI Forecaster,
-    computes a normalized 0-100 Confluence Score, and builds an actionable `SetupSignal`
-    with ATR-buffered SL, TP1 (1.5R), TP2 (3.0R), and risk-managed lot size.
+    Evaluates all 4 price-action strategy modules + Market Regime + Kronos AI Forecaster
+    + Online Self-Learning weights (`AdaptiveLearner`), computes a normalized 0-100
+    Confluence Score, and builds an actionable `SetupSignal`.
     """
 
-    def __init__(self, config: Optional[EngineConfig] = None) -> None:
+    def __init__(
+        self,
+        config: Optional[EngineConfig] = None,
+        learner: Optional[AdaptiveLearner] = None,
+    ) -> None:
         self.config = config or EngineConfig()
         self.regime_detector = RegimeDetector()
         self.risk_guard = RiskGuard(self.config)
+        self.learner = learner or AdaptiveLearner()
 
         self.snd = SupplyDemandStrategy()
         self.ict = ICTStrategy()
@@ -116,7 +123,6 @@ class ConfluenceEngine:
 
         use_regime_gate = preset_name == "HYBRID_REGIME_KRONOS"
         if use_regime_gate:
-            # Block entries during HIGH_VOL_CHOP or dead illiquid Forex rollover hours (21:00-06:00 UTC)
             if regime == MarketRegime.HIGH_VOL_CHOP:
                 return None
             if not profile.is_crypto and not (6 <= curr.timestamp.hour <= 18):
@@ -167,7 +173,7 @@ class ConfluenceEngine:
             k_vote, kronos_fc = self.kronos.evaluate_vote(candles, ind.atr, idx)
             votes.append(k_vote)
 
-        # 3. Score LONG vs SHORT with Regime-Adaptive Multipliers
+        # 3. Score LONG vs SHORT with Regime-Adaptive + Online Self-Learned Multipliers
         multipliers = (
             self.regime_detector.regime_multipliers(regime)
             if use_regime_gate
@@ -177,8 +183,15 @@ class ConfluenceEngine:
         long_pa_points = 0.0
         short_pa_points = 0.0
         for v in pa_votes:
-            w = self.config.base_weights.get(v.strategy_name, 25.0) * multipliers.get(
-                v.strategy_name, 1.0
+            learned_mult = (
+                self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
+                if use_regime_gate
+                else 1.0
+            )
+            w = (
+                self.config.base_weights.get(v.strategy_name, 25.0)
+                * multipliers.get(v.strategy_name, 1.0)
+                * learned_mult
             )
             if v.direction == Direction.LONG:
                 long_pa_points += w * v.confidence
@@ -215,7 +228,7 @@ class ConfluenceEngine:
             confluence_score = best_conf * 100.0
             threshold = 66.0
         else:
-            # HYBRID_REGIME_KRONOS: Intelligent Regime-Switched Router + Kronos AI Filter
+            # HYBRID_REGIME_KRONOS: Intelligent Regime-Switched Router + Kronos AI Filter + Online Learner
             if opposing_pa:
                 return None
 
@@ -241,24 +254,29 @@ class ConfluenceEngine:
             ):
                 return None
 
-            # Kronos AI Trajectory Filter (veto setups where Kronos predicts counter-drift)
             kronos_boost = 0.0
             if kronos_fc is not None:
+                k_learned = self.learner.get_strategy_multiplier("KRONOS", regime.value)
                 if direction == Direction.LONG:
                     if kronos_fc.bullish_prob < 0.52:
                         return None
-                    kronos_boost = (kronos_fc.bullish_prob - 0.50) * 35.0
+                    kronos_boost = (kronos_fc.bullish_prob - 0.50) * 35.0 * k_learned
                 else:
                     if kronos_fc.bullish_prob > 0.48:
                         return None
-                    kronos_boost = (0.50 - kronos_fc.bullish_prob) * 35.0
+                    kronos_boost = (0.50 - kronos_fc.bullish_prob) * 35.0 * k_learned
 
-            best_pa_conf = max(v.confidence for v in agreeing_pa)
+            best_pa_conf = max(
+                v.confidence * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
+                for v in agreeing_pa
+            )
             pa_synergy = 12.0 * (len(agreeing_pa) - 1)
             confluence_score = min(
                 100.0, best_pa_conf * 88.0 + pa_synergy + kronos_boost
             )
-            threshold = self.config.min_confluence_score
+            threshold = self.config.min_confluence_score + self.learner.get_symbol_threshold_offset(
+                symbol
+            )
 
         if confluence_score < threshold:
             return None
