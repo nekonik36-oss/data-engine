@@ -31,3 +31,29 @@
   [COPILOT MODE: signal_only] Setup displayed for your manual review on TradingView / MT5. No automated order was placed. | Telegram: Telegram alert delivered to your phone!
   [EURUSD] Price=1.09164   | No new setup on latest bar. Waiting for A+ confluence...
   [USDJPY] Price=153.973   | No new setup on latest bar. Waiting for A+ confluence...
+
+[2026-11-07 14:01:19 UTC] Scanning XAUUSD, EURUSD, USDJPY (M15)...
+  [EURUSD] Price=1.09164   | No new setup on latest bar. Waiting for A+ confluence...
+==========================================================================
+  HIGH-CONFLUENCE SETUP DETECTED | USDJPY (M15) | BUY (LONG)
+==========================================================================
+  Timestamp (UTC)   : 2026-01-07 15:00 UTC
+  Market Regime     : SESSION_SWEEP_WINDOW
+  Confluence Score  : 81.5 / 100.0  [HYBRID_REGIME_KRONOS]
+--------------------------------------------------------------------------
+  Entry Price       : 153.501
+  Stop Loss (SL)    : 153.302  (Invalidation + ATR Buffer)
+  Take Profit 1     : 153.800  (1.5R -> Close 50% & Move SL to BE)
+  Take Profit 2     : 154.099  (3.0R -> Runner Target)
+  Suggested Lot     : 0.38 lots  (Risk: $49.35 / 0.50%)
+--------------------------------------------------------------------------
+  STRATEGY BREAKDOWN (Why this setup triggered):
+    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (1 unmitigated zones tracked)
+    [NEUTRAL] ICT             (conf    0%): Waiting for BSL (153.349) or SSL (152.350) liquidity sweep
+    [AGREES ] BREAKOUT        (conf   86%): Bullish volatility breakout above compression high 153.44 (body=0.67x ATR, ADX=25.7)
+    [NEUTRAL] TREND_PULLBACK  (conf    0%): No aligned EMA pullback trigger (RSI=72.7)
+    [AGREES ] KRONOS          (conf   37%): Bullish Prob=66.8% | Exp Move=+0.52 ATR (Max Up +1.67 ATR / Max Down -1.13 ATR)
+--------------------------------------------------------------------------
+  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=66.8% | Exp Move=+0.52 ATR (Max Up +1.67 ATR / Max Down -1.13 ATR)
+==========================================================================
+  [COPILOT MODE: signal_only] Setup displayed for your manual review on TradingView / MT5. No automated order was placed. | Telegram: Telegram alert delivered to your phone!
