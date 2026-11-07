@@ -77,7 +77,9 @@ class AdaptiveLearner:
         except Exception:
             pass
 
-    def get_strategy_multiplier(self, strategy_name: str, regime_name: str) -> float:
+    def get_strategy_multiplier(
+        self, strategy_name: str, regime_name: str = "TREND_EXPANSION"
+    ) -> float:
         """
         Return the learned weight multiplier (`0.60` to `1.40`) for `strategy_name` in `regime_name`.
         """
@@ -90,6 +92,12 @@ class AdaptiveLearner:
         )
         combined = 0.6 * global_mult + 0.4 * reg_mult
         return round(max(0.60, min(1.40, combined)), 3)
+
+    def get_strategy_multipliers(
+        self, regime_name: str = "TREND_EXPANSION"
+    ) -> Dict[str, float]:
+        """Return dict of learned multipliers across all 5 strategy modules for `regime_name`."""
+        return {s: self.get_strategy_multiplier(s, regime_name) for s in STRATEGIES}
 
     def get_symbol_threshold_offset(self, symbol: str) -> float:
         """
@@ -105,17 +113,33 @@ class AdaptiveLearner:
             return -1.5
         return 0.0
 
+    def get_threshold_offset(self, symbol: str) -> float:
+        return self.get_symbol_threshold_offset(symbol)
+
+    def format_weights_banner(self) -> str:
+        """Return a concise status string of learned strategy multipliers for the startup banner."""
+        ep = int(self.state.get("total_episodes", 0))
+        s_stats = self.state.get("strategy_stats") or {}
+        parts = [
+            f"{s}={float((s_stats.get(s) or {}).get('multiplier', 1.0)):.2f}x"
+            for s in STRATEGIES
+        ]
+        return f"Online RL Active ({ep} closed trades learned | {', '.join(parts)})"
+
     def record_trade_outcome(
         self,
         symbol: str,
-        regime_name: str,
         agreeing_strategies: List[str],
         r_multiple: float,
+        regime: str = "TREND_EXPANSION",
+        regime_name: str | None = None,
+        net_pnl: float = 0.0,
     ) -> str:
         """
         Update learned strategy weights, regime-strategy multipliers, and symbol threshold
         from a closed trade's realized `r_multiple`. Returns a human-readable summary for Telegram.
         """
+        active_regime = regime_name or regime or "TREND_EXPANSION"
         self.state["total_episodes"] = int(self.state.get("total_episodes", 0)) + 1
         s_stats = self.state.setdefault("strategy_stats", {})
         reg_map = self.state.setdefault("regime_strategy_multipliers", {})
@@ -152,13 +176,13 @@ class AdaptiveLearner:
             entry["multiplier"] = round(new_mult, 3)
 
             # Update Regime x Strategy specific multiplier
-            reg_key = f"{regime_name}:{s_name}"
+            reg_key = f"{active_regime}:{s_name}"
             old_reg_mult = float(reg_map.get(reg_key, 1.0))
             step = 0.045 * reward
             new_reg_mult = max(0.60, min(1.40, old_reg_mult + step))
             reg_map[reg_key] = round(new_reg_mult, 3)
 
-            eff_mult = self.get_strategy_multiplier(s_name, regime_name)
+            eff_mult = self.get_strategy_multiplier(s_name, active_regime)
             arrow = "↑" if reward > 0 else ("↓" if reward < -0.05 else "→")
             updated_notes.append(f"{s_name} {arrow}{eff_mult:.2f}x")
 
@@ -179,5 +203,9 @@ class AdaptiveLearner:
         self.save()
 
         strat_str = ", ".join(updated_notes) if updated_notes else "weights unchanged"
-        offset_str = f"+{offset:.1f} stricter" if offset > 0 else (f"{offset:.1f} relaxed" if offset < 0 else "normal")
+        offset_str = (
+            f"+{offset:.1f} stricter"
+            if offset > 0
+            else (f"{offset:.1f} relaxed" if offset < 0 else "normal")
+        )
         return f"Weights [{strat_str}] | {sym_key} Filter: {offset_str}"
