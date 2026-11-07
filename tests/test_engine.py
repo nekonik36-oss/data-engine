@@ -100,6 +100,47 @@ def test_signal_card_rendering() -> None:
     assert "Execution Levels (MT5):" in tg_html
     assert "Strategy Votes:" in tg_html
 
+    opened_html = TelegramNotifier.format_trade_opened_html(
+        signal=signal,
+        ticket=1002003,
+        fill_price=signal.entry_price,
+        sl_price=signal.stop_loss,
+        tp1_price=signal.tp1_price,
+        tp2_price=signal.tp2_price,
+        volume=signal.recommended_lot,
+        account_equity=3000.0,
+    )
+    assert "AUTO-TRADE EXECUTED" in opened_html
+    assert "#1002003" in opened_html
+
+    mock_trade = {
+        "ticket": 1002003,
+        "symbol": signal.symbol,
+        "direction": signal.direction.value,
+        "entry_price": signal.entry_price,
+        "tp2_price": signal.tp2_price,
+        "initial_volume": signal.recommended_lot,
+    }
+    tp1_html = TelegramNotifier.format_tp1_breakeven_html(
+        trade=mock_trade,
+        current_price=signal.tp1_price,
+        partial_closed_lots=0.01,
+    )
+    assert "TP1 (1.5R) HIT" in tp1_html
+
+    closed_html = TelegramNotifier.format_trade_closed_html(
+        trade=mock_trade,
+        exit_price=signal.tp2_price,
+        net_pnl=45.0,
+        r_multiple=3.0,
+        close_reason="Take Profit 2 (3.0R Target) Hit 🎯",
+        account_balance=3045.0,
+        account_equity=3045.0,
+        stats={"total_closed": 1, "wins": 1, "losses": 0, "breakevens": 0, "cumulative_pnl": 45.0},
+    )
+    assert "TRADE RESULT: WIN" in closed_html
+    assert "+$45.00 USD (+3.00R)" in closed_html
+
 
 if __name__ == "__main__":
     test_causal_indicators_have_no_lookahead()

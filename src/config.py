@@ -90,7 +90,7 @@ class EngineConfig:
     """Global configuration for scanning, confluence scoring, and risk control."""
 
     execution_mode: str = field(
-        default_factory=lambda: os.getenv("EXECUTION_MODE", "signal_only")
+        default_factory=lambda: os.getenv("EXECUTION_MODE", "auto")
     )
     default_equity: float = field(
         default_factory=lambda: float(os.getenv("ACCOUNT_EQUITY_DEFAULT", "10000.0"))
