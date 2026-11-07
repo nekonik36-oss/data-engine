@@ -74,6 +74,24 @@ def write_and_push_telemetry(
     """
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
+    if push_to_github:
+        try:
+            subprocess.run(
+                ["git", "rebase", "--abort"],
+                cwd=REPO_ROOT,
+                check=False,
+                capture_output=True,
+            )
+            subprocess.run(
+                ["git", "pull", "--rebase", "--autostash", "origin", "main"],
+                cwd=REPO_ROOT,
+                check=False,
+                capture_output=True,
+                timeout=30,
+            )
+        except Exception:
+            pass
+
     status_payload: dict[str, Any] = {
         "updated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
         "hostname": platform.node(),
@@ -125,13 +143,6 @@ def write_and_push_telemetry(
             text=True,
         )
         if commit_res.returncode == 0:
-            subprocess.run(
-                ["git", "pull", "--rebase", "--autostash", "origin", "main"],
-                cwd=REPO_ROOT,
-                check=False,
-                capture_output=True,
-                timeout=20,
-            )
             push_res = subprocess.run(
                 ["git", "push", "origin", "main"],
                 cwd=REPO_ROOT,

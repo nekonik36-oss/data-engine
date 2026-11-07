@@ -38,7 +38,21 @@ class MT5Connector:
     def connect(self) -> bool:
         """Attempt to initialize local MetaTrader 5 terminal (Personal PC only)."""
         try:
-            import MetaTrader5 as mt5  # type: ignore
+            try:
+                import MetaTrader5 as mt5  # type: ignore
+            except ModuleNotFoundError:
+                import subprocess
+                import sys
+
+                if sys.platform == "win32":
+                    print("  [MT5 Bridge] Installing MetaTrader5 Python package into .venv...")
+                    subprocess.run(
+                        [sys.executable, "-m", "pip", "install", "MetaTrader5", "--quiet"],
+                        check=False,
+                    )
+                    import MetaTrader5 as mt5  # type: ignore
+                else:
+                    raise
 
             if mt5.initialize():
                 self._mt5 = mt5
