@@ -217,21 +217,29 @@ class MT5Connector:
 
     def resolve_broker_symbol(self, base_symbol: str) -> str:
         """
-        Automatically match broker symbol suffixes (e.g. `XAUUSD`, `XAUUSDm`, `BTCUSD`, `BTCUSDm`).
+        Automatically match broker symbol suffixes and XM aliases
+        (e.g. `XAUUSD` -> `GOLD`/`GOLD#`, `BTCUSD` -> `BTCUSD`/`BITCOIN`, `ETHUSD` -> `ETHUSD`/`ETHEREUM`).
         """
         if not self.connected or self._mt5 is None:
             return base_symbol
+        alias_map = {
+            "XAUUSD": ["XAUUSD", "GOLD", "XAUUSD#", "GOLD#", "XAUUSDm", "GOLDm"],
+            "BTCUSD": ["BTCUSD", "BTCUSD#", "BTCUSDm", "BITCOIN", "BITCOIN#", "BTCUSDT"],
+            "ETHUSD": ["ETHUSD", "ETHUSD#", "ETHUSDm", "ETHEREUM", "ETHEREUM#", "ETHUSDT"],
+            "SOLUSD": ["SOLUSD", "SOLUSD#", "SOLUSDm", "SOLANA", "SOLANA#", "SOLUSDT"],
+            "EURUSD": ["EURUSD", "EURUSD#", "EURUSDm"],
+            "USDJPY": ["USDJPY", "USDJPY#", "USDJPYm"],
+        }
+        candidates = alias_map.get(base_symbol.upper(), [base_symbol])
         try:
-            if self._mt5.symbol_select(base_symbol, True):
-                return base_symbol
+            for cand in candidates:
+                info = self._mt5.symbol_info(cand)
+                if info is not None and self._mt5.symbol_select(cand, True):
+                    return cand
             all_syms = self._mt5.symbols_get() or []
-            for s in all_syms:
-                if s.name.upper().startswith(base_symbol.upper()):
-                    self._mt5.symbol_select(s.name, True)
-                    return s.name
-            if base_symbol.upper() == "XAUUSD":
+            for cand in candidates:
                 for s in all_syms:
-                    if s.name.upper().startswith("GOLD"):
+                    if s.name.upper().startswith(cand.upper()):
                         self._mt5.symbol_select(s.name, True)
                         return s.name
         except Exception:
@@ -305,8 +313,13 @@ class MT5Connector:
 
     def _has_open_trade_on_symbol(self, symbol: str) -> Optional[int]:
         """Check both active_trades book and MT5 open positions for an existing trade on `symbol`."""
-        for t_str, info in self.active_trades.items():
+        mt5_live_avail = self.mt5_has_live_symbol(symbol)
+        for t_str, info in list(self.active_trades.items()):
             if str(info.get("symbol", "")).upper() == symbol.upper():
+                if mt5_live_avail and info.get("broker_source") == "CRYPTO_24_7_LIVE":
+                    del self.active_trades[t_str]
+                    self._save_state()
+                    continue
                 return int(info.get("ticket", t_str))
         if self.connected and self._mt5 is not None:
             broker_sym = self.resolve_broker_symbol(symbol)
@@ -445,12 +458,21 @@ class MT5Connector:
 
             if sym_info is not None and tick is not None and float(tick.ask) > 0:
                 live_spread = float(tick.ask - tick.bid)
-                if live_spread <= profile.max_spread_price * 1.5:
+                spread_limit = profile.max_spread_price * (8.0 if is_crypto else 2.5)
+                if live_spread <= spread_limit:
                     digits = int(sym_info.digits)
                     vol_min = float(sym_info.volume_min)
                     vol_max = float(sym_info.volume_max)
                     vol_step = float(sym_info.volume_step) if float(sym_info.volume_step) > 0 else 0.01
-                    steps = math.floor((signal.recommended_lot / vol_step) + 1e-9)
+                    raw_lot = signal.recommended_lot
+                    tick_val = float(getattr(sym_info, "trade_tick_value", 0.0) or 0.0)
+                    tick_sz = float(getattr(sym_info, "trade_tick_size", 0.0) or 0.0)
+                    sl_dist_raw = max(abs(signal.entry_price - signal.stop_loss), live_spread * 1.5)
+                    if tick_val > 0 and tick_sz > 0 and sl_dist_raw > 0:
+                        risk_per_lot = (sl_dist_raw / tick_sz) * tick_val
+                        if risk_per_lot > 0:
+                            raw_lot = signal.risk_usd / risk_per_lot
+                    steps = math.floor((raw_lot / vol_step) + 1e-9)
                     volume = round(max(vol_min, min(vol_max, steps * vol_step)), 2)
 
                     is_long = signal.direction == Direction.LONG
