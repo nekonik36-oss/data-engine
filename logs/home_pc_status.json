@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-07 16:24:48 UTC",
+  "updated_utc": "2026-11-07 16:26:33 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -12,58 +12,21 @@
     "cuda_error": null
   },
   "execution_mode": "auto",
-  "mt5_connected": false,
-  "mt5_error": "mt5.initialize() failed: (-6, 'Terminal: Authorization failed') | proc_check=PROC:C:\\Program Files\\MetaTrader 5\\terminal64.exe",
+  "mt5_connected": true,
+  "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 10000.0,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
     "BTCUSD": 75779.77,
-    "XAUUSD": 2664.06,
-    "EURUSD": 1.09164,
-    "USDJPY": 153.973
+    "ETHUSD": 2237.78,
+    "SOLUSD": 89.64,
+    "XAUUSD": 4070.76,
+    "EURUSD": 1.1138,
+    "USDJPY": 158.471
   },
-  "active_trades": {
-    "84064282": {
-      "ticket": 84064282,
-      "symbol": "ETHUSD",
-      "broker_symbol": "ETHUSD",
-      "broker_source": "CRYPTO_24_7_LIVE",
-      "direction": "SHORT",
-      "entry_price": 2242.75,
-      "sl_price": 2242.75,
-      "tp1_price": 2237.41,
-      "tp2_price": 2232.07,
-      "volume": 4.21,
-      "initial_volume": 4.21,
-      "risk_usd": 14.98,
-      "confluence_score": 77.9,
-      "regime": "SESSION_SWEEP_WINDOW",
-      "opened_at_utc": "2026-11-07 15:11:22 UTC",
-      "tp1_hit": true,
-      "partial_pnl": 11.23
-    },
-    "84064287": {
-      "ticket": 84064287,
-      "symbol": "SOLUSD",
-      "broker_symbol": "SOLUSD",
-      "broker_source": "CRYPTO_24_7_LIVE",
-      "direction": "SHORT",
-      "entry_price": 89.72,
-      "sl_price": 89.72,
-      "tp1_price": 89.35,
-      "tp2_price": 88.99,
-      "volume": 6.14,
-      "initial_volume": 6.14,
-      "risk_usd": 14.98,
-      "confluence_score": 85.2,
-      "regime": "SESSION_SWEEP_WINDOW",
-      "opened_at_utc": "2026-11-07 15:11:27 UTC",
-      "tp1_hit": true,
-      "partial_pnl": 11.23
-    }
-  },
+  "active_trades": {},
   "bot_stats": {
     "total_closed": 0,
     "wins": 0,
@@ -115,5 +78,5 @@
     "regime_strategy_multipliers": {},
     "symbol_streaks": {}
   },
-  "cycle_count": 10
+  "cycle_count": 13
 }
