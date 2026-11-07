@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-07 13:52:11 UTC",
+  "updated_utc": "2026-11-07 14:00:06 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -12,6 +12,7 @@
     "cuda_error": null
   },
   "mt5_connected": false,
+  "mt5_error": "mt5.initialize() returned False: (-10005, 'IPC timeout')",
   "live_equity": 10000.0,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
