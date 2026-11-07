@@ -1,11 +1,60 @@
 ==============================================================================
-  HYBRID MULTI-STRATEGY AUTO-TRADER BOT | Execution Mode: AUTO
-  Data Source    : MT5 Live/Demo Connected (Equity: $3,000.00)
+  24/7 CRYPTO + FOREX AUTO-TRADER BOT | Execution Mode: AUTO
+  Data Source    : MT5 Live Connected + 24/7 Live Crypto Feed (Equity: $3,000.00)
+  24/7 Crypto    : BTCUSD, ETHUSD, SOLUSD (M5 & M15 Live Orderbook)
+  Forex / Gold   : XAUUSD, EURUSD, USDJPY (M15 MT5)
   Telegram Alert : Configured (Auto-Trade & Result Alerts Ready)
   Kronos Model   : NeoQuasar/Kronos-base (Device: cuda)
 ==============================================================================
 
-[2026-11-07 14:49:02 UTC] Scanning XAUUSD, EURUSD, USDJPY (M15) | Open Bot Trades: 0 | Equity: $3,000.00...
-  [XAUUSD] Price=4065.82   | No new setup on closed M15 bar. Waiting for A+ confluence...
-  [EURUSD] Price=1.11413   | No new setup on closed M15 bar. Waiting for A+ confluence...
-  [USDJPY] Price=158.483   | No new setup on closed M15 bar. Waiting for A+ confluence...
+[2026-11-07 15:11:12 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 0W-0L ($+0.00) | Equity: $3,000.00
+==========================================================================
+  HIGH-CONFLUENCE SETUP DETECTED | ETHUSD (M5) | SELL (SHORT)
+==========================================================================
+  Timestamp (UTC)   : 2026-11-07 15:05 UTC
+  Market Regime     : SESSION_SWEEP_WINDOW
+  Confluence Score  : 77.9 / 100.0  [HYBRID_REGIME_KRONOS]
+--------------------------------------------------------------------------
+  Entry Price       : 2242.50000
+  Stop Loss (SL)    : 2246.05930  (Invalidation + ATR Buffer)
+  Take Profit 1     : 2237.16105  (1.5R -> Close 50% & Move SL to BE)
+  Take Profit 2     : 2231.82210  (3.0R -> Runner Target)
+  Suggested Lot     : 4.21 lots  (Risk: $14.98 / 0.50%)
+--------------------------------------------------------------------------
+  STRATEGY BREAKDOWN (Why this setup triggered):
+    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (0 unmitigated zones tracked)
+    [AGREES ] ICT             (conf   82%): BSL Liquidity Sweep above 2247.43 (high 2248.11) + Bearish FVG [2245.01-2246.31]
+    [NEUTRAL] BREAKOUT        (conf    0%): Inside compression box [2241.99 - 2248.11]
+    [NEUTRAL] TREND_PULLBACK  (conf    0%): No aligned EMA pullback trigger (RSI=38.4)
+    [AGREES ] KRONOS          (conf   36%): Bullish Prob=33.7% | Exp Move=-0.50 ATR (Max Up +1.46 ATR / Max Down -1.56 ATR)
+--------------------------------------------------------------------------
+  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=33.7% | Exp Move=-0.50 ATR (Max Up +1.46 ATR / Max Down -1.56 ATR)
+==========================================================================
+  [24/7 CRYPTO AUTO-TRADE EXECUTED] Ticket #84064282 | SHORT 4.21 lots ETHUSD @ 2242.75 (SL=2246.31, TP1=2237.41, TP2=2232.07) | Telegram: Telegram alert delivered to your phone!
+==========================================================================
+  HIGH-CONFLUENCE SETUP DETECTED | SOLUSD (M5) | SELL (SHORT)
+==========================================================================
+  Timestamp (UTC)   : 2026-11-07 14:55 UTC
+  Market Regime     : SESSION_SWEEP_WINDOW
+  Confluence Score  : 85.2 / 100.0  [HYBRID_REGIME_KRONOS]
+--------------------------------------------------------------------------
+  Entry Price       : 89.95000
+  Stop Loss (SL)    : 90.19405  (Invalidation + ATR Buffer)
+  Take Profit 1     : 89.58392  (1.5R -> Close 50% & Move SL to BE)
+  Take Profit 2     : 89.21785  (3.0R -> Runner Target)
+  Suggested Lot     : 6.14 lots  (Risk: $14.98 / 0.50%)
+--------------------------------------------------------------------------
+  STRATEGY BREAKDOWN (Why this setup triggered):
+    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (2 unmitigated zones tracked)
+    [AGREES ] ICT             (conf   90%): BSL Liquidity Sweep above 90.110 (high 90.150) + Bearish FVG [89.980-90.020]
+    [NEUTRAL] BREAKOUT        (conf    0%): Inside compression box [89.66 - 90.15]
+    [NEUTRAL] TREND_PULLBACK  (conf    0%): No aligned EMA pullback trigger (RSI=48.1)
+    [AGREES ] KRONOS          (conf   38%): Bullish Prob=32.9% | Exp Move=-0.53 ATR (Max Up +0.54 ATR / Max Down -1.66 ATR)
+--------------------------------------------------------------------------
+  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=32.9% | Exp Move=-0.53 ATR (Max Up +0.54 ATR / Max Down -1.66 ATR)
+==========================================================================
+  [24/7 CRYPTO AUTO-TRADE EXECUTED] Ticket #84064287 | SHORT 6.14 lots SOLUSD @ 89.72 (SL=89.96, TP1=89.35, TP2=88.99) | Telegram: Telegram alert delivered to your phone!
+  [BTCUSD (Live data-api.binance.vision)] Price=75873.48   | Watching M5/M15 for A+ confluence...
+  [XAUUSD (MT5)] Price=4065.82    | Watching M5/M15 for A+ confluence...
+  [EURUSD (MT5)] Price=1.11413    | Watching M5/M15 for A+ confluence...
+  [USDJPY (MT5)] Price=158.483    | Watching M5/M15 for A+ confluence...
