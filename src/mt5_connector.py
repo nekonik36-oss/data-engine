@@ -33,6 +33,7 @@ class MT5Connector:
         self._mt5 = None
         self.connected = False
         self.last_error: str | None = None
+        self.terminal_path: str | None = None
         self.telegram = TelegramNotifier()
 
     def connect(self) -> bool:
@@ -54,12 +55,56 @@ class MT5Connector:
                 else:
                     raise
 
-            if mt5.initialize():
+            if mt5.initialize(timeout=30000):
                 self._mt5 = mt5
                 self.connected = True
                 self.last_error = None
                 return True
-            self.last_error = f"mt5.initialize() returned False: {mt5.last_error()}"
+
+            first_err = mt5.last_error()
+
+            # Auto-discover running or installed broker terminal64.exe path on Windows
+            import subprocess
+            import sys
+
+            if sys.platform == "win32":
+                ps_cmd = (
+                    "$p = Get-Process terminal64 -ErrorAction SilentlyContinue | Select-Object -First 1; "
+                    "if ($p) { if ($p.Path) { Write-Output ('PROC:' + $p.Path) } else { Write-Output 'PROC_ELEVATED' } } "
+                    "else { Write-Output 'NO_TERMINAL64' }"
+                )
+                proc_res = subprocess.run(
+                    ["powershell", "-NoProfile", "-Command", ps_cmd],
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                ).stdout.strip()
+
+                candidate_paths: list[str] = []
+                if proc_res.startswith("PROC:"):
+                    candidate_paths.append(proc_res.split("PROC:", 1)[1].strip())
+
+                for root_dir in [Path(r"C:\Program Files"), Path(r"C:\Program Files (x86)")]:
+                    if root_dir.exists():
+                        for exe in root_dir.glob("*/*terminal64.exe"):
+                            if str(exe) not in candidate_paths:
+                                candidate_paths.append(str(exe))
+
+                for exe_path in candidate_paths:
+                    if mt5.initialize(path=exe_path, timeout=30000):
+                        self._mt5 = mt5
+                        self.connected = True
+                        self.terminal_path = exe_path
+                        self.last_error = None
+                        return True
+
+                self.last_error = (
+                    f"mt5.initialize() failed: {first_err} | "
+                    f"proc_check={proc_res} | "
+                    f"candidates={candidate_paths}"
+                )
+            else:
+                self.last_error = f"mt5.initialize() returned False: {first_err}"
         except Exception as exc:
             self.last_error = str(exc)
         self.connected = False
