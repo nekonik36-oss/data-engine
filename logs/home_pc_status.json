@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-07 14:01:24 UTC",
+  "updated_utc": "2026-11-07 14:09:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -12,7 +12,7 @@
     "cuda_error": null
   },
   "mt5_connected": false,
-  "mt5_error": "mt5.initialize() returned False: (-10005, 'IPC timeout')",
+  "mt5_error": "mt5.initialize() failed: (-10005, 'IPC timeout') | proc_check=PROC:C:\\Program Files\\MetaTrader 5\\terminal64.exe | candidates=['C:\\\\Program Files\\\\MetaTrader 5\\\\terminal64.exe']",
   "live_equity": 10000.0,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
@@ -21,5 +21,5 @@
     "EURUSD": 1.09164,
     "USDJPY": 153.973
   },
-  "cycle_count": 2
+  "cycle_count": 1
 }
