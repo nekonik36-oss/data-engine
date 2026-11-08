@@ -761,30 +761,62 @@ class MT5Connector:
             broker_sym = str(trade.get("broker_symbol", trade.get("symbol", "XAUUSD")))
             pos_list = self._mt5.positions_get(ticket=ticket)
 
-            # CASE 1: Position is still open -> Check if TP1 (1.0R Aggressive Scalp Lock) was reached
+            # CASE 1: Position is still open -> Check Early Break-Even Shield (+0.55R) & TP1 (+0.72R / tp1_price)
             if pos_list and len(pos_list) > 0:
                 pos = pos_list[0]
                 cur_price = float(pos.price_current)
+                pos_profit = float(getattr(pos, "profit", 0.0) or 0.0)
+                risk_usd_val = max(float(trade.get("risk_usd", 50.0)), 10.0)
                 is_long = str(trade.get("direction", "LONG")) == "LONG"
                 entry_price = float(trade.get("entry_price", 0.0))
                 sl_price_cur = float(trade.get("sl_price", 0.0))
-                # Auto-tighten legacy 1.5R/3.0R open trades into 1.0R/2.0R Aggressive Scalp targets
+                # Auto-tighten legacy open trades into 0.75R/1.8R Scalp targets
                 if not trade.get("tp1_hit", False) and not trade.get("scalp_upgraded", False) and entry_price > 0 and sl_price_cur > 0:
                     r_dist = abs(entry_price - sl_price_cur)
                     if r_dist > 0:
-                        new_tp1 = round(entry_price + (r_dist if is_long else -r_dist), 5)
-                        new_tp2 = round(entry_price + (2.0 * r_dist if is_long else -2.0 * r_dist), 5)
+                        new_tp1 = round(entry_price + (0.75 * r_dist if is_long else -0.75 * r_dist), 5)
+                        new_tp2 = round(entry_price + (1.80 * r_dist if is_long else -1.80 * r_dist), 5)
                         trade["tp1_price"] = new_tp1
                         trade["tp2_price"] = new_tp2
                         trade["scalp_upgraded"] = True
                         self._save_state()
                 tp1_price = float(trade.get("tp1_price", 0.0))
 
+                # Early Break-Even Shield: If floating profit reaches +0.55R (~+$27.50), lock SL to Break-Even immediately
+                if (
+                    not trade.get("tp1_hit", False)
+                    and not trade.get("be_shield_active", False)
+                    and pos_profit >= 0.55 * risk_usd_val
+                    and entry_price > 0
+                ):
+                    sym_info = self._mt5.symbol_info(broker_sym)
+                    digits = int(sym_info.digits) if sym_info is not None else 2
+                    be_sl = round(entry_price, digits)
+                    cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
+                    self._mt5.order_send(
+                        {
+                            "action": self._mt5.TRADE_ACTION_SLTP,
+                            "position": int(pos.ticket),
+                            "symbol": broker_sym,
+                            "sl": be_sl,
+                            "tp": cur_tp,
+                        }
+                    )
+                    trade["be_shield_active"] = True
+                    trade["sl_price"] = be_sl
+                    self._save_state()
+                    events.append(
+                        f"[BREAK-EVEN SHIELD] Ticket #{ticket} ({broker_sym}) reached +${pos_profit:.2f} (+0.55R)! "
+                        f"SL locked at Break-Even ({be_sl})."
+                    )
+
                 if not trade.get("tp1_hit", False) and tp1_price > 0:
-                    reached_tp1 = (cur_price >= tp1_price) if is_long else (cur_price <= tp1_price)
-                    if reached_tp1:
+                    price_reached = (cur_price >= tp1_price) if is_long else (cur_price <= tp1_price)
+                    profit_reached = pos_profit >= 0.72 * risk_usd_val
+                    if price_reached or profit_reached:
                         partial_closed = self._execute_tp1_protection(pos, trade)
                         trade["tp1_hit"] = True
+                        trade["be_shield_active"] = True
                         self._save_state()
                         if self.telegram.is_configured:
                             msg_html = self.telegram.format_tp1_breakeven_html(
@@ -794,7 +826,7 @@ class MT5Connector:
                             )
                             self.telegram.send_message(msg_html)
                         events.append(
-                            f"[TP1 REACHED] Ticket #{ticket} ({broker_sym}) hit 1.5R! "
+                            f"[TP1 REACHED] Ticket #{ticket} ({broker_sym}) banked partial profit (+${pos_profit:.2f})! "
                             f"SL moved to Break-Even ({entry_price})."
                         )
                 continue
