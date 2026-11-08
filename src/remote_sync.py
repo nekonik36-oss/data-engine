@@ -14,6 +14,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import platform
 import re
@@ -74,6 +75,7 @@ def write_and_push_telemetry(
     """
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
+    code_updated = False
     if push_to_github:
         try:
             subprocess.run(
@@ -89,6 +91,21 @@ def write_and_push_telemetry(
                 capture_output=True,
                 timeout=25,
             )
+            diff_res = subprocess.run(
+                ["git", "diff", "--name-only", "HEAD..origin/main"],
+                cwd=REPO_ROOT,
+                check=False,
+                capture_output=True,
+                text=True,
+                timeout=10,
+            )
+            changed_files = [
+                f.strip()
+                for f in (diff_res.stdout or "").splitlines()
+                if f.strip() and not f.strip().startswith("logs/")
+            ]
+            if changed_files:
+                code_updated = True
             subprocess.run(
                 ["git", "reset", "--hard", "origin/main"],
                 cwd=REPO_ROOT,
@@ -104,6 +121,7 @@ def write_and_push_telemetry(
         "hostname": platform.node(),
         "python_version": sys.version.split()[0],
         "gpu": collect_gpu_diagnostics(),
+        "pending_hot_reload": code_updated,
     }
     if extra_status:
         status_payload.update(extra_status)
@@ -157,7 +175,13 @@ def write_and_push_telemetry(
                 text=True,
                 timeout=60,
             )
-            return push_res.returncode == 0
+            ok = push_res.returncode == 0
+        else:
+            ok = True
+        if code_updated and "--once" not in sys.argv:
+            print("  [Auto-Update] New code detected from GitHub! Hot-reloading bot automatically...")
+            os.execv(sys.executable, [sys.executable] + sys.argv)
+        return ok
     except Exception:
         return False
     return False

@@ -37,8 +37,15 @@ if not exist "kronos_repo\model" (
     git clone https://github.com/shiyu-coder/Kronos.git kronos_repo
 )
 
+:loop
 echo ============================================================================
-echo   [3/3] Starting Live M15 Copilot Scanner...
+echo   [3/3] Starting 24/7 Dual-Engine Sniper Bot (Auto-Reload Enabled)...
 echo ============================================================================
+git rebase --abort 2>nul
+git fetch origin main 2>nul
+git reset --hard origin/main 2>nul
 ".venv\Scripts\python.exe" run_scanner.py
-pause
+echo.
+echo   [Bot Restart] Reloading latest code in 3 seconds (Close window to exit)...
+timeout /t 3 /nobreak >nul
+goto loop
