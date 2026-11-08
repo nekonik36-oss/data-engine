@@ -485,10 +485,21 @@ class MT5Connector:
                     raw_lot = signal.recommended_lot
                     tick_val = float(getattr(sym_info, "trade_tick_value", 0.0) or 0.0)
                     tick_sz = float(getattr(sym_info, "trade_tick_size", 0.0) or 0.0)
-                    sl_dist_raw = max(abs(signal.entry_price - signal.stop_loss), live_spread * 1.5)
+                    is_long = signal.direction == Direction.LONG
+                    fill_price = round(float(tick.ask if is_long else tick.bid), digits)
+
+                    # Anti-Wick Structural Stop Floor + Live MT5 Spread Buffer:
+                    # Pad SL by +live_spread and enforce >= 4.5x spread & >= 0.22% floor on Crypto so
+                    # weekend compressed M5 ATR + broker spread never wicks out a winning trade early.
+                    raw_signal_sl = abs(signal.entry_price - signal.stop_loss)
+                    crypto_floor = (fill_price * 0.0022) if is_crypto else 0.0
+                    sl_dist = max(raw_signal_sl + live_spread, live_spread * 4.5, crypto_floor)
+                    tp1_dist = max(abs(signal.tp1_price - signal.entry_price), sl_dist * 0.72)
+                    tp2_dist = max(abs(signal.tp2_price - signal.entry_price), sl_dist * 1.65)
+
                     risk_per_lot = 0.0
-                    if tick_val > 0 and tick_sz > 0 and sl_dist_raw > 0:
-                        risk_per_lot = (sl_dist_raw / tick_sz) * tick_val
+                    if tick_val > 0 and tick_sz > 0 and sl_dist > 0:
+                        risk_per_lot = (sl_dist / tick_sz) * tick_val
                         if risk_per_lot > 0:
                             raw_lot = signal.risk_usd / risk_per_lot
                     steps = math.floor((raw_lot / vol_step) + 1e-9)
@@ -506,12 +517,6 @@ class MT5Connector:
                                 f"risks ${min_lot_risk:.2f} ({min_lot_risk / max(acct_equity_pre, 1.0) * 100:.1f}% "
                                 f"of ${acct_equity_pre:.2f} equity > 12% safety cap)."
                             )
-
-                    is_long = signal.direction == Direction.LONG
-                    fill_price = round(float(tick.ask if is_long else tick.bid), digits)
-                    sl_dist = abs(signal.entry_price - signal.stop_loss)
-                    tp1_dist = abs(signal.tp1_price - signal.entry_price)
-                    tp2_dist = abs(signal.tp2_price - signal.entry_price)
 
                     if is_long:
                         sl_price = round(fill_price - sl_dist, digits)
@@ -578,6 +583,7 @@ class MT5Connector:
                             "direction": signal.direction.value,
                             "entry_price": actual_fill,
                             "sl_price": sl_price,
+                            "initial_sl_price": sl_price,
                             "tp1_price": tp1_price,
                             "tp2_price": tp2_price,
                             "volume": volume,
@@ -589,6 +595,7 @@ class MT5Connector:
                             "opened_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
                             "tp1_hit": False,
                             "partial_pnl": 0.0,
+                            "scalp_upgraded": True,
                         }
                         self._save_state()
 
