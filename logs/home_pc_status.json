@@ -1,23 +1,23 @@
 {
-  "updated_utc": "2026-11-08 05:07:08 UTC",
+  "updated_utc": "2026-11-08 05:08:12 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
     "torch_installed": true,
-    "torch_version": "2.11.0+cu128",
-    "cuda_version": "12.8",
+    "torch_version": "2.6.0+cu124",
+    "cuda_version": "12.4",
     "cuda_available": true,
     "gpu_name": "NVIDIA GeForce RTX 5060",
-    "cuda_kernel_ok": true,
-    "cuda_error": null
+    "cuda_kernel_ok": false,
+    "cuda_error": "CUDA error: no kernel image is available for execution on the device\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"
   },
   "execution_mode": "auto",
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9941.34,
+  "live_equity": 9943.89,
   "telegram_configured": true,
-  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
+  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
     "SOLUSD": 89.32,
     "XAUUSD": 4070.76,
