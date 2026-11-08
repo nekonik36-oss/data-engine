@@ -33,10 +33,17 @@ def run_scanner(
     sync_github: bool = True,
     force_mode: str | None = "auto",
 ) -> None:
+    import ctypes
     import sys
 
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[attr-defined]
+    except Exception:
+        pass
+    try:
+        # Prevent Windows Idle Sleep while 24/7 scanner is running (allows monitor to turn off)
+        if sys.platform == "win32":
+            ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
     except Exception:
         pass
     console_buffer: list[str] = []
