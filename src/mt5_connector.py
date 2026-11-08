@@ -449,9 +449,21 @@ class MT5Connector:
                 f"(Ticket #{dup_ticket}). Avoiding duplicate exposure."
             )
 
-        # 2. Check max concurrent open positions (max 4 across Crypto + Forex)
-        if len(self.active_trades) >= 6:
-            return f"[AUTO-TRADER SKIP] Max concurrent open positions ({len(self.active_trades)}/6) reached."
+        # 2. Check max concurrent open positions (dynamically scaled for $10-$50 small accounts)
+        acct_equity_pre = self.get_account_equity()
+        if acct_equity_pre < 35.0:
+            max_concurrent = 1
+        elif acct_equity_pre < 100.0:
+            max_concurrent = 2
+        elif acct_equity_pre < 500.0:
+            max_concurrent = 3
+        else:
+            max_concurrent = 6
+        if len(self.active_trades) >= max_concurrent:
+            return (
+                f"[AUTO-TRADER SKIP] Max concurrent open positions "
+                f"({len(self.active_trades)}/{max_concurrent} for ${acct_equity_pre:,.2f} equity) reached."
+            )
 
         is_crypto = signal.symbol.upper() in CRYPTO_INSTRUMENTS
 
@@ -474,12 +486,26 @@ class MT5Connector:
                     tick_val = float(getattr(sym_info, "trade_tick_value", 0.0) or 0.0)
                     tick_sz = float(getattr(sym_info, "trade_tick_size", 0.0) or 0.0)
                     sl_dist_raw = max(abs(signal.entry_price - signal.stop_loss), live_spread * 1.5)
+                    risk_per_lot = 0.0
                     if tick_val > 0 and tick_sz > 0 and sl_dist_raw > 0:
                         risk_per_lot = (sl_dist_raw / tick_sz) * tick_val
                         if risk_per_lot > 0:
                             raw_lot = signal.risk_usd / risk_per_lot
                     steps = math.floor((raw_lot / vol_step) + 1e-9)
                     volume = round(max(vol_min, min(vol_max, steps * vol_step)), 2)
+                    actual_risk_usd = round(
+                        volume * risk_per_lot if risk_per_lot > 0 else signal.risk_usd, 2
+                    )
+
+                    # Small-Account Pre-Trade 0.01-Lot Risk Cap (blocks oversized Standard contracts on $10-$50 accounts)
+                    if acct_equity_pre < 250.0 and risk_per_lot > 0:
+                        min_lot_risk = vol_min * risk_per_lot
+                        if min_lot_risk > acct_equity_pre * 0.12:
+                            return (
+                                f"[SMALL-ACCOUNT GUARD] Skipping {broker_sym}: minimum {vol_min:.2f} lot "
+                                f"risks ${min_lot_risk:.2f} ({min_lot_risk / max(acct_equity_pre, 1.0) * 100:.1f}% "
+                                f"of ${acct_equity_pre:.2f} equity > 12% safety cap)."
+                            )
 
                     is_long = signal.direction == Direction.LONG
                     fill_price = round(float(tick.ask if is_long else tick.bid), digits)
@@ -497,6 +523,19 @@ class MT5Connector:
                         tp1_price = round(fill_price - tp1_dist, digits)
                         tp2_price = round(fill_price - tp2_dist, digits)
                         order_type = self._mt5.ORDER_TYPE_SELL
+
+                    # Small-Account Free-Margin Anti-Margin-Call Check (never exceed 50% of free margin)
+                    try:
+                        acct_info = self._mt5.account_info()
+                        free_margin = float(getattr(acct_info, "margin_free", acct_equity_pre) or acct_equity_pre)
+                        req_margin = self._mt5.order_calc_margin(order_type, broker_sym, volume, fill_price)
+                        if req_margin is not None and float(req_margin) > free_margin * 0.50:
+                            return (
+                                f"[MARGIN-CALL SHIELD] Skipping {broker_sym}: required margin "
+                                f"${float(req_margin):.2f} exceeds 50% of free margin (${free_margin:.2f})."
+                            )
+                    except Exception:
+                        pass
 
                     request = {
                         "action": self._mt5.TRADE_ACTION_DEAL,
@@ -543,7 +582,7 @@ class MT5Connector:
                             "tp2_price": tp2_price,
                             "volume": volume,
                             "initial_volume": volume,
-                            "risk_usd": signal.risk_usd,
+                            "risk_usd": actual_risk_usd,
                             "confluence_score": signal.confluence_score,
                             "regime": signal.regime.value,
                             "agreeing_strategies": agreeing_strats,
@@ -761,28 +800,30 @@ class MT5Connector:
             broker_sym = str(trade.get("broker_symbol", trade.get("symbol", "XAUUSD")))
             pos_list = self._mt5.positions_get(ticket=ticket)
 
-            # CASE 1: Position is still open -> Check Early Break-Even Shield (+0.55R) & TP1 (+0.72R / tp1_price)
+            # CASE 1: Position is still open -> Check Early Break-Even Shield (+0.55R), TP1 (+0.72R / tp1_price) & Runner Ratchet (+1.35R)
             if pos_list and len(pos_list) > 0:
                 pos = pos_list[0]
                 cur_price = float(pos.price_current)
                 pos_profit = float(getattr(pos, "profit", 0.0) or 0.0)
-                risk_usd_val = max(float(trade.get("risk_usd", 50.0)), 10.0)
+                risk_usd_val = max(float(trade.get("risk_usd", 1.0)), 0.05)
                 is_long = str(trade.get("direction", "LONG")) == "LONG"
                 entry_price = float(trade.get("entry_price", 0.0))
                 sl_price_cur = float(trade.get("sl_price", 0.0))
+                if "initial_sl_price" not in trade and sl_price_cur > 0:
+                    trade["initial_sl_price"] = sl_price_cur
+                init_sl_price = float(trade.get("initial_sl_price", sl_price_cur))
+                r_dist = abs(entry_price - init_sl_price) if (entry_price > 0 and init_sl_price > 0) else 0.0
                 # Auto-tighten legacy open trades into 0.75R/1.8R Scalp targets
-                if not trade.get("tp1_hit", False) and not trade.get("scalp_upgraded", False) and entry_price > 0 and sl_price_cur > 0:
-                    r_dist = abs(entry_price - sl_price_cur)
-                    if r_dist > 0:
-                        new_tp1 = round(entry_price + (0.75 * r_dist if is_long else -0.75 * r_dist), 5)
-                        new_tp2 = round(entry_price + (1.80 * r_dist if is_long else -1.80 * r_dist), 5)
-                        trade["tp1_price"] = new_tp1
-                        trade["tp2_price"] = new_tp2
-                        trade["scalp_upgraded"] = True
-                        self._save_state()
+                if not trade.get("tp1_hit", False) and not trade.get("scalp_upgraded", False) and r_dist > 0:
+                    new_tp1 = round(entry_price + (0.75 * r_dist if is_long else -0.75 * r_dist), 5)
+                    new_tp2 = round(entry_price + (1.80 * r_dist if is_long else -1.80 * r_dist), 5)
+                    trade["tp1_price"] = new_tp1
+                    trade["tp2_price"] = new_tp2
+                    trade["scalp_upgraded"] = True
+                    self._save_state()
                 tp1_price = float(trade.get("tp1_price", 0.0))
 
-                # Early Break-Even Shield: If floating profit reaches +0.55R (~+$27.50), lock SL to Break-Even immediately
+                # Step 1 — Early Break-Even Shield: If floating profit reaches +0.55R, lock SL to Break-Even immediately
                 if (
                     not trade.get("tp1_hit", False)
                     and not trade.get("be_shield_active", False)
@@ -810,6 +851,7 @@ class MT5Connector:
                         f"SL locked at Break-Even ({be_sl})."
                     )
 
+                # Step 2 — TP1 Hit (+0.72R floating or tp1_price): Close partial (if >0.01 lot) OR lock +0.35R profit (for 0.01 lot)
                 if not trade.get("tp1_hit", False) and tp1_price > 0:
                     price_reached = (cur_price >= tp1_price) if is_long else (cur_price <= tp1_price)
                     profit_reached = pos_profit >= 0.72 * risk_usd_val
@@ -826,20 +868,50 @@ class MT5Connector:
                             )
                             self.telegram.send_message(msg_html)
                         events.append(
-                            f"[TP1 REACHED] Ticket #{ticket} ({broker_sym}) banked partial profit (+${pos_profit:.2f})! "
-                            f"SL moved to Break-Even ({entry_price})."
+                            f"[TP1 REACHED] Ticket #{ticket} ({broker_sym}) reached TP1 (+${pos_profit:.2f})! "
+                            f"SL locked at {trade.get('sl_price', entry_price)}."
                         )
+
+                # Step 3 — Golden Runner Ratchet (+1.35R): Lock SL at +0.85R guaranteed profit on road to TP2
+                if (
+                    trade.get("tp1_hit", False)
+                    and not trade.get("runner_ratchet_active", False)
+                    and pos_profit >= 1.35 * risk_usd_val
+                    and r_dist > 0
+                ):
+                    sym_info = self._mt5.symbol_info(broker_sym)
+                    digits = int(sym_info.digits) if sym_info is not None else 2
+                    ratchet_sl = round(
+                        entry_price + (0.85 * r_dist if is_long else -0.85 * r_dist), digits
+                    )
+                    cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
+                    self._mt5.order_send(
+                        {
+                            "action": self._mt5.TRADE_ACTION_SLTP,
+                            "position": int(pos.ticket),
+                            "symbol": broker_sym,
+                            "sl": ratchet_sl,
+                            "tp": cur_tp,
+                        }
+                    )
+                    trade["runner_ratchet_active"] = True
+                    trade["sl_price"] = ratchet_sl
+                    self._save_state()
+                    events.append(
+                        f"[RUNNER RATCHET +0.85R] Ticket #{ticket} ({broker_sym}) reached +${pos_profit:.2f} (+1.35R)! "
+                        f"SL ratcheted to +0.85R guaranteed profit ({ratchet_sl})."
+                    )
                 continue
 
             # CASE 2: Position is no longer in open positions -> It has CLOSED!
             exit_price, net_pnl, close_reason = self._resolve_closed_trade_pnl(ticket, trade)
-            risk_usd = max(float(trade.get("risk_usd", 15.0)), 1.0)
+            risk_usd = max(float(trade.get("risk_usd", 1.0)), 0.05)
             r_mult = net_pnl / risk_usd
 
             self.stats["total_closed"] = int(self.stats.get("total_closed", 0)) + 1
-            if net_pnl > 0.50:
+            if r_mult > 0.08:
                 self.stats["wins"] = int(self.stats.get("wins", 0)) + 1
-            elif net_pnl >= -0.50:
+            elif r_mult >= -0.08:
                 self.stats["breakevens"] = int(self.stats.get("breakevens", 0)) + 1
             else:
                 self.stats["losses"] = int(self.stats.get("losses", 0)) + 1
@@ -897,10 +969,17 @@ class MT5Connector:
         return events
 
     def _execute_tp1_protection(self, pos: Any, trade: Dict[str, Any]) -> float:
-        """Close 50% at TP1 (if volume allows) and move SL to Break-Even (`entry_price`)."""
+        """
+        At TP1:
+        - If position volume >= 2 * vol_min: close tp1_close_fraction (50-60%) and move SL to Break-Even.
+        - If position volume == 0.01 lot (small account cannot split): lock SL at +0.35R in profit so the
+          0.01-lot trade is guaranteed to bank +0.35R cash while still running for TP2!
+        """
         if self._mt5 is None:
             return 0.0
         broker_sym = str(pos.symbol)
+        canonical_sym = str(trade.get("symbol", broker_sym))
+        profile: InstrumentProfile = ALL_INSTRUMENTS.get(canonical_sym, INSTRUMENTS["XAUUSD"])
         sym_info = self._mt5.symbol_info(broker_sym)
         tick = self._mt5.symbol_info_tick(broker_sym)
         if sym_info is None or tick is None:
@@ -914,8 +993,9 @@ class MT5Connector:
         partial_closed = 0.0
 
         if cur_vol >= 2.0 * vol_min:
-            half_steps = math.floor(((cur_vol * 0.5) / vol_step) + 1e-9)
-            close_vol = round(max(vol_min, half_steps * vol_step), 2)
+            close_frac = float(getattr(profile, "tp1_close_fraction", 0.5) or 0.5)
+            frac_steps = math.floor(((cur_vol * close_frac) / vol_step) + 1e-9)
+            close_vol = round(max(vol_min, frac_steps * vol_step), 2)
             if close_vol < cur_vol:
                 close_price = round(float(tick.bid if is_long else tick.ask), digits)
                 close_req = {
@@ -927,13 +1007,23 @@ class MT5Connector:
                     "price": close_price,
                     "deviation": 30,
                     "magic": BOT_MAGIC,
-                    "comment": "TP1_50pct",
+                    "comment": "TP1_Partial",
                 }
                 res = self._send_order_with_filling_fallback(close_req)
                 if res is not None and res.retcode == self._mt5.TRADE_RETCODE_DONE:
                     partial_closed = close_vol
 
-        be_sl = round(float(trade.get("entry_price", pos.price_open)), digits)
+        entry_price = float(trade.get("entry_price", pos.price_open))
+        init_sl_price = float(trade.get("initial_sl_price", trade.get("sl_price", entry_price)))
+        r_dist = abs(entry_price - init_sl_price)
+
+        if partial_closed == 0.0 and r_dist > 0:
+            # 0.01-lot Golden Ratchet: cannot split 0.01 lot, so lock SL at +0.35R guaranteed profit!
+            be_sl = round(entry_price + (0.35 * r_dist if is_long else -0.35 * r_dist), digits)
+        else:
+            be_sl = round(entry_price, digits)
+
+        trade["sl_price"] = be_sl
         cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
         sltp_req = {
             "action": self._mt5.TRADE_ACTION_SLTP,
@@ -974,15 +1064,15 @@ class MT5Connector:
             except Exception:
                 pass
 
-        risk_usd = max(float(trade.get("risk_usd", 15.0)), 1.0)
+        risk_usd = max(float(trade.get("risk_usd", 1.0)), 0.05)
         r_mult = net_pnl / risk_usd
-        if r_mult >= 2.0:
-            reason = "Take Profit 2 (3.0R Target) Hit 🎯"
-        elif trade.get("tp1_hit") and net_pnl > 0.50:
-            reason = "TP1 (1.5R) Locked + Break-Even Stop Hit 🛡️"
-        elif -0.50 <= net_pnl <= 0.50:
-            reason = "Break-Even Stop Hit 🛡️"
-        elif net_pnl > 0.50:
+        if r_mult >= 1.40:
+            reason = "Take Profit 2 (Runner Target) Hit 🎯"
+        elif trade.get("tp1_hit") and r_mult > 0.08:
+            reason = "TP1 + Ratchet Profit Stop Hit 🛡️💰"
+        elif -0.08 <= r_mult <= 0.08:
+            reason = "Break-Even Shield Hit 🛡️"
+        elif r_mult > 0.08:
             reason = "Take Profit / Positive Close 💰"
         else:
             reason = "Stop Loss Hit 🛑"

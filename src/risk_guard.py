@@ -48,10 +48,20 @@ class RiskGuard:
         stop_loss: float,
     ) -> tuple[float, float]:
         """
-        Calculate (recommended_lot_size, risk_usd) for `risk_per_trade_pct` of `equity`.
-        Handles USD-quoted pairs (`XAUUSD`, `EURUSD`) and JPY-quoted pairs (`USDJPY`).
+        Calculate (recommended_lot_size, risk_usd) for `equity`.
+        Automatically scales fractional risk for Small Accounts ($10-$200) vs Large Accounts,
+        and handles USD-quoted pairs (`XAUUSD`, `EURUSD`) and JPY-quoted pairs (`USDJPY`).
         """
-        risk_usd = equity * (self.config.risk_per_trade_pct / 100.0)
+        if equity < 35.0:
+            eff_risk_pct = max(self.config.risk_per_trade_pct, 4.0)
+        elif equity < 100.0:
+            eff_risk_pct = max(self.config.risk_per_trade_pct, 3.0)
+        elif equity < 250.0:
+            eff_risk_pct = max(self.config.risk_per_trade_pct, 1.5)
+        else:
+            eff_risk_pct = self.config.risk_per_trade_pct
+
+        risk_usd = equity * (eff_risk_pct / 100.0)
         sl_dist = abs(entry_price - stop_loss)
         if sl_dist <= 1e-9:
             return profile.min_lot, risk_usd
