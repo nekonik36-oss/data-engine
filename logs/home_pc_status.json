@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-07 16:49:09 UTC",
+  "updated_utc": "2026-11-08 03:46:41 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -19,14 +19,63 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 75725.35,
-    "ETHUSD": 2233.63,
-    "SOLUSD": 89.55,
+    "BTCUSD": 75886.29,
+    "ETHUSD": 2239.42,
+    "SOLUSD": 89.33,
     "XAUUSD": 4070.76,
     "EURUSD": 1.1138,
     "USDJPY": 158.471
   },
-  "active_trades": {},
+  "active_trades": {
+    "1078980628": {
+      "ticket": 1078980628,
+      "symbol": "ETHUSD",
+      "broker_symbol": "ETHUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 2237.9,
+      "sl_price": 2242.01,
+      "tp1_price": 2231.74,
+      "tp2_price": 2225.58,
+      "volume": 11.1,
+      "initial_volume": 11.1,
+      "risk_usd": 49.97,
+      "confluence_score": 83.6,
+      "regime": "RANGING",
+      "agreeing_strategies": [
+        "ICT",
+        "KRONOS",
+        "KRONOS"
+      ],
+      "opened_at_utc": "2026-11-08 03:46:34 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0
+    },
+    "1078980632": {
+      "ticket": 1078980632,
+      "symbol": "BTCUSD",
+      "broker_symbol": "BTCUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 75876.75,
+      "sl_price": 75964.87,
+      "tp1_price": 75744.57,
+      "tp2_price": 75612.38,
+      "volume": 0.56,
+      "initial_volume": 0.56,
+      "risk_usd": 49.35,
+      "confluence_score": 76.0,
+      "regime": "RANGING",
+      "agreeing_strategies": [
+        "ICT",
+        "KRONOS",
+        "KRONOS"
+      ],
+      "opened_at_utc": "2026-11-08 03:46:38 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0
+    }
+  },
   "bot_stats": {
     "total_closed": 0,
     "wins": 0,
@@ -36,7 +85,7 @@
     "history": []
   },
   "learned_weights": {
-    "updated_utc": "2026-11-07 16:19:33 UTC",
+    "updated_utc": "2026-11-08 03:46:19 UTC",
     "total_episodes": 0,
     "strategy_stats": {
       "SND": {
@@ -78,5 +127,5 @@
     "regime_strategy_multipliers": {},
     "symbol_streaks": {}
   },
-  "cycle_count": 50
+  "cycle_count": 1
 }
