@@ -813,6 +813,9 @@ class MT5Connector:
                 cur_price = float(pos.price_current)
                 pos_profit = float(getattr(pos, "profit", 0.0) or 0.0)
                 risk_usd_val = max(float(trade.get("risk_usd", 1.0)), 0.05)
+                cur_r = pos_profit / risk_usd_val
+                if cur_r > float(trade.get("peak_favorable_r", 0.0)):
+                    trade["peak_favorable_r"] = round(cur_r, 3)
                 is_long = str(trade.get("direction", "LONG")) == "LONG"
                 entry_price = float(trade.get("entry_price", 0.0))
                 sl_price_cur = float(trade.get("sl_price", 0.0))
@@ -830,11 +833,12 @@ class MT5Connector:
                     self._save_state()
                 tp1_price = float(trade.get("tp1_price", 0.0))
 
-                # Step 1 — Early Break-Even Shield: If floating profit reaches +0.55R, lock SL to Break-Even immediately
+                # Step 1 — Early Break-Even Shield (dynamically self-tuned per symbol by AdaptiveLearner)
+                be_shield_r = self.learner.get_symbol_be_shield_r(str(trade.get("symbol", broker_sym)))
                 if (
                     not trade.get("tp1_hit", False)
                     and not trade.get("be_shield_active", False)
-                    and pos_profit >= 0.55 * risk_usd_val
+                    and pos_profit >= be_shield_r * risk_usd_val
                     and entry_price > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
@@ -952,6 +956,16 @@ class MT5Connector:
                 agreeing_strategies=list(trade.get("agreeing_strategies", ["SND", "ICT", "KRONOS"])),
                 r_multiple=r_mult,
                 net_pnl=net_pnl,
+                trade_meta={
+                    "ticket": ticket,
+                    "direction": trade.get("direction", "LONG"),
+                    "entry_price": trade.get("entry_price", 0.0),
+                    "exit_price": exit_price,
+                    "tp1_price": trade.get("tp1_price", 0.0),
+                    "tp2_price": trade.get("tp2_price", 0.0),
+                    "peak_favorable_r": trade.get("peak_favorable_r", 0.0),
+                    "close_reason": close_reason,
+                },
             )
 
             if self.telegram.is_configured:

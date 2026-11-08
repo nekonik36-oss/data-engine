@@ -422,14 +422,15 @@ class ConfluenceEngine:
         if confluence_score < threshold:
             return None
 
-        # 4. Calculate Structural + ATR Stop Loss (with Anti-Wick 0.22% Crypto Floor), TP1, TP2, and Lot Size
+        # 4. Calculate Structural + ATR Stop Loss (with Self-Tuned Anti-Wick Crypto Floor), TP1, TP2, and Lot Size
         entry_price = curr.close
         candidate_sls = [
             v.suggested_sl for v in agreeing_pa if v.suggested_sl is not None
         ]
+        sl_floor_mult = self.learner.get_symbol_sl_floor_mult(symbol) if use_regime_gate else 1.0
         min_sl_dist = max(
-            1.50 * cur_atr,
-            (entry_price * 0.0022) if profile.is_crypto else (1.50 * cur_atr),
+            1.50 * cur_atr * sl_floor_mult,
+            (entry_price * 0.0022 * sl_floor_mult) if profile.is_crypto else (1.50 * cur_atr * sl_floor_mult),
         )
         max_sl_dist = max(3.20 * cur_atr, min_sl_dist * 1.35)
 

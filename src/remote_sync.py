@@ -131,6 +131,25 @@ def write_and_push_telemetry(
         encoding="utf-8",
     )
 
+    if extra_status and isinstance(extra_status.get("learned_weights"), dict):
+        lw = extra_status["learned_weights"]
+        (LOGS_DIR / "learned_weights.json").write_text(
+            json.dumps(lw, indent=2), encoding="utf-8"
+        )
+        inbox_payload = {
+            "updated_utc": status_payload["updated_utc"],
+            "hostname": status_payload["hostname"],
+            "live_equity": extra_status.get("live_equity"),
+            "bot_stats": extra_status.get("bot_stats"),
+            "symbol_tuning": lw.get("symbol_tuning", {}),
+            "symbol_streaks": lw.get("symbol_streaks", {}),
+            "pending_post_mortems": lw.get("pending_post_mortems", []),
+            "ai_feedback_feed": (lw.get("ai_feedback_feed") or [])[-25:],
+        }
+        (LOGS_DIR / "ai_feedback_inbox.json").write_text(
+            json.dumps(inbox_payload, indent=2), encoding="utf-8"
+        )
+
     sanitized_lines = [_scrub_secrets(line) for line in console_lines[-150:]]
     CONSOLE_TXT_PATH.write_text(
         "\n".join(sanitized_lines) + "\n",
@@ -154,7 +173,15 @@ def write_and_push_telemetry(
             capture_output=True,
         )
         subprocess.run(
-            ["git", "add", "-f", "logs/home_pc_status.json", "logs/home_pc_console.txt"],
+            [
+                "git",
+                "add",
+                "-f",
+                "logs/home_pc_status.json",
+                "logs/home_pc_console.txt",
+                "logs/ai_feedback_inbox.json",
+                "logs/learned_weights.json",
+            ],
             cwd=REPO_ROOT,
             check=False,
             capture_output=True,

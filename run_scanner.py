@@ -33,6 +33,12 @@ def run_scanner(
     sync_github: bool = True,
     force_mode: str | None = "auto",
 ) -> None:
+    import sys
+
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[attr-defined]
+    except Exception:
+        pass
     console_buffer: list[str] = []
 
     def log(msg: str = "") -> None:
@@ -183,6 +189,12 @@ def run_scanner(
                 log(
                     f"  [{symbol:<6} ({tf:<3} {src_tag})] Price={last_c.close:<10} | Watching for A+ Sniper setup..."
                 )
+
+        # 3. Run Autonomous Post-Mortem Forensics on recently closed trades (90m wick-out & TP1-reversal auditor)
+        pm_events = mt5_conn.learner.run_post_mortem_audits(latest_prices)
+        for p_ev in pm_events:
+            log(f"  {p_ev}")
+            new_signal_fired = True
 
         # Auto-sync Home PC telemetry & console log to GitHub on startup, trade event, or every 5 cycles
         if (
