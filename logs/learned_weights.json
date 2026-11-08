@@ -1,0 +1,61 @@
+{
+  "updated_utc": "2026-11-08 10:31:20 UTC",
+  "total_episodes": 4,
+  "strategy_stats": {
+    "SND": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "ema_r": 0.0,
+      "multiplier": 1.0
+    },
+    "ICT": {
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "ema_r": -0.254,
+      "multiplier": 0.952
+    },
+    "BREAKOUT": {
+      "trades": 0,
+      "wins": 0,
+      "losses": 0,
+      "ema_r": 0.0,
+      "multiplier": 1.0
+    },
+    "TREND_PULLBACK": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "ema_r": -0.225,
+      "multiplier": 0.986
+    },
+    "KRONOS": {
+      "trades": 6,
+      "wins": 2,
+      "losses": 4,
+      "ema_r": -0.39,
+      "multiplier": 0.902
+    }
+  },
+  "regime_strategy_multipliers": {
+    "RANGING:ICT": 0.934,
+    "RANGING:KRONOS": 0.868,
+    "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.954
+  },
+  "symbol_streaks": {
+    "BTCUSD": {
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": -1.55
+    },
+    "ETHUSD": {
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": -0.93
+    }
+  },
+  "symbol_tuning": {},
+  "pending_post_mortems": [],
+  "ai_feedback_feed": []
+}

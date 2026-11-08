@@ -1,0 +1,73 @@
+{
+  "updated_utc": "2026-11-08 14:14:46 UTC",
+  "hostname": "DESKTOP-8RQUOSU",
+  "live_equity": 9877.07,
+  "bot_stats": {
+    "total_closed": 4,
+    "wins": 1,
+    "losses": 3,
+    "breakevens": 0,
+    "cumulative_pnl": -122.93,
+    "history": [
+      {
+        "ticket": 1078980632,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 75876.75,
+        "exit_price": 75970.55,
+        "net_pnl": -52.53,
+        "r_multiple": -1.06,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-08 04:23:09 UTC"
+      },
+      {
+        "ticket": 1078981925,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 75909.15,
+        "exit_price": 75909.25,
+        "net_pnl": 26.29,
+        "r_multiple": 0.53,
+        "close_reason": "TP1 (1.5R) Locked + Break-Even Stop Hit \ud83d\udee1\ufe0f",
+        "closed_at_utc": "2026-11-08 07:40:59 UTC"
+      },
+      {
+        "ticket": 1078980628,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 2237.9,
+        "exit_price": 2242.07,
+        "net_pnl": -46.29,
+        "r_multiple": -0.93,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-08 07:46:59 UTC"
+      },
+      {
+        "ticket": 1078992397,
+        "symbol": "BTCUSD",
+        "direction": "LONG",
+        "entry_price": 75919.05,
+        "exit_price": 75855.25,
+        "net_pnl": -50.4,
+        "r_multiple": -1.02,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-08 10:31:20 UTC"
+      }
+    ]
+  },
+  "symbol_tuning": {},
+  "symbol_streaks": {
+    "BTCUSD": {
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": -1.55
+    },
+    "ETHUSD": {
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": -0.93
+    }
+  },
+  "pending_post_mortems": [],
+  "ai_feedback_feed": []
+}
