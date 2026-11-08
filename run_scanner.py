@@ -29,7 +29,7 @@ from src.remote_sync import write_and_push_telemetry
 
 def run_scanner(
     watch: bool = True,
-    poll_seconds: int = 30,
+    poll_seconds: int = 15,
     sync_github: bool = True,
     force_mode: str | None = "auto",
 ) -> None:
@@ -60,7 +60,7 @@ def run_scanner(
     )
 
     log("=" * 78)
-    log(f"  24/7 CRYPTO + FOREX AUTO-TRADER BOT | Execution Mode: {config.execution_mode.upper()}")
+    log(f"  24/7 AGGRESSIVE SCALPER BOT (M5/M15 | TP1=1.0R BE | TP2=2.0R) | Execution Mode: {config.execution_mode.upper()}")
     log(f"  Data Source    : {mode_banner}")
     log(f"  24/7 Crypto    : BTCUSD, ETHUSD, SOLUSD (M5 & M15 Live Orderbook)")
     log(f"  Forex / Gold   : XAUUSD, EURUSD, USDJPY (M15 MT5)")
@@ -78,6 +78,9 @@ def run_scanner(
         ("BTCUSD", "M5"),
         ("ETHUSD", "M5"),
         ("SOLUSD", "M5"),
+        ("XAUUSD", "M5"),
+        ("EURUSD", "M5"),
+        ("USDJPY", "M5"),
         ("BTCUSD", "M15"),
         ("ETHUSD", "M15"),
         ("SOLUSD", "M15"),
@@ -246,7 +249,7 @@ def main() -> None:
     parser.add_argument(
         "--interval",
         type=int,
-        default=30,
+        default=15,
         help="Polling interval in seconds for continuous watch mode (default: 30).",
     )
     args = parser.parse_args()

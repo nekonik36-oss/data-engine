@@ -22,8 +22,8 @@ class InstrumentProfile:
     typical_spread_price: float
     max_spread_price: float
     atr_sl_multiplier: float
-    tp1_rr: float = 1.5
-    tp2_rr: float = 3.0
+    tp1_rr: float = 1.0
+    tp2_rr: float = 2.0
     tp1_close_fraction: float = 0.5
     min_lot: float = 0.01
     lot_step: float = 0.01
@@ -38,9 +38,9 @@ INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=100.0,  # 1 standard lot = 100 oz ($1 move = $100 per 1.00 lot, $1 per 0.01 lot)
         typical_spread_price=0.25,
         max_spread_price=0.60,
-        atr_sl_multiplier=1.5,
-        tp1_rr=1.5,
-        tp2_rr=3.0,
+        atr_sl_multiplier=1.15,
+        tp1_rr=1.0,
+        tp2_rr=2.0,
         is_crypto=False,
     ),
     "EURUSD": InstrumentProfile(
@@ -50,9 +50,9 @@ INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=100_000.0,
         typical_spread_price=0.00010,
         max_spread_price=0.00022,
-        atr_sl_multiplier=1.4,
-        tp1_rr=1.5,
-        tp2_rr=3.0,
+        atr_sl_multiplier=1.10,
+        tp1_rr=1.0,
+        tp2_rr=2.0,
         is_crypto=False,
     ),
     "USDJPY": InstrumentProfile(
@@ -62,9 +62,9 @@ INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=100_000.0,
         typical_spread_price=0.012,
         max_spread_price=0.025,
-        atr_sl_multiplier=1.4,
-        tp1_rr=1.5,
-        tp2_rr=3.0,
+        atr_sl_multiplier=1.10,
+        tp1_rr=1.0,
+        tp2_rr=2.0,
         is_crypto=False,
     ),
 }
@@ -77,9 +77,9 @@ CRYPTO_INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=1.0,  # 1.00 lot = 1 BTC ($1 move = $1 per 1.00 lot, $0.01 per 0.01 lot)
         typical_spread_price=5.0,
         max_spread_price=60.0,
-        atr_sl_multiplier=1.4,
-        tp1_rr=1.5,
-        tp2_rr=3.0,
+        atr_sl_multiplier=1.10,
+        tp1_rr=1.0,
+        tp2_rr=2.0,
         is_crypto=True,
     ),
     "ETHUSD": InstrumentProfile(
@@ -89,9 +89,9 @@ CRYPTO_INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=1.0,  # 1.00 lot = 1 ETH
         typical_spread_price=0.50,
         max_spread_price=6.0,
-        atr_sl_multiplier=1.4,
-        tp1_rr=1.5,
-        tp2_rr=3.0,
+        atr_sl_multiplier=1.10,
+        tp1_rr=1.0,
+        tp2_rr=2.0,
         is_crypto=True,
     ),
     "SOLUSD": InstrumentProfile(
@@ -101,9 +101,9 @@ CRYPTO_INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=10.0,  # 1.00 lot = 10 SOL
         typical_spread_price=0.05,
         max_spread_price=1.0,
-        atr_sl_multiplier=1.4,
-        tp1_rr=1.5,
-        tp2_rr=3.0,
+        atr_sl_multiplier=1.10,
+        tp1_rr=1.0,
+        tp2_rr=2.0,
         is_crypto=True,
     ),
 }
@@ -127,7 +127,7 @@ class KronosConfig:
     device: str = "cuda"  # Automatically falls back to "cpu" if CUDA is unavailable
     use_fp16: bool = True
     lookback: int = 256  # Up to 512 supported by Kronos-base
-    pred_len: int = 12  # Forecast next 12 candles (e.g. 3 hours on M15)
+    pred_len: int = 8  # Forecast next 12 candles (e.g. 3 hours on M15)
     sample_count: int = 10  # Number of Monte-Carlo paths averaged for probability scoring
     temperature: float = 1.0
     top_p: float = 0.9
@@ -150,10 +150,10 @@ class EngineConfig:
         default_factory=lambda: float(os.getenv("MAX_DAILY_DRAWDOWN_PCT", "2.0"))
     )
     min_confluence_score: float = field(
-        default_factory=lambda: float(os.getenv("MIN_CONFLUENCE_SCORE", "65.0"))
+        default_factory=lambda: float(os.getenv("MIN_CONFLUENCE_SCORE", "62.0"))
     )
     max_bars_in_trade: int = 36  # Max holding horizon on M15 (9 hours)
-    cooldown_bars_after_trade: int = 4
+    cooldown_bars_after_trade: int = 2
     kronos: KronosConfig = field(default_factory=KronosConfig)
 
     # Base weights for each strategy family (before Regime-Adaptive multiplier)

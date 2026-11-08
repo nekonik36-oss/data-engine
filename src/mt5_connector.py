@@ -444,8 +444,8 @@ class MT5Connector:
             )
 
         # 2. Check max concurrent open positions (max 4 across Crypto + Forex)
-        if len(self.active_trades) >= 4:
-            return f"[AUTO-TRADER SKIP] Max concurrent open positions ({len(self.active_trades)}/4) reached."
+        if len(self.active_trades) >= 6:
+            return f"[AUTO-TRADER SKIP] Max concurrent open positions ({len(self.active_trades)}/6) reached."
 
         is_crypto = signal.symbol.upper() in CRYPTO_INSTRUMENTS
 
@@ -594,7 +594,7 @@ class MT5Connector:
                 partial_lots = round(init_vol * 0.5, 2)
                 trade["tp1_hit"] = True
                 trade["sl_price"] = entry_price  # Move SL to Break-Even!
-                trade["partial_pnl"] = round(0.5 * 1.5 * risk_usd, 2)  # +0.75R banked on 50%
+                trade["partial_pnl"] = round(0.5 * 1.0 * risk_usd, 2)  # +0.75R banked on 50%
                 self._save_state()
 
                 if self.telegram.is_configured:
@@ -619,7 +619,7 @@ class MT5Connector:
             if hit_tp2:
                 exit_price = tp2_price
                 # 50% closed at 1.5R (+0.75R) + 50% closed at 3.0R (+1.50R) = +2.25R total (or +3.0R if not split)
-                net_pnl = round(float(trade.get("partial_pnl", 0.0)) + 0.5 * 3.0 * risk_usd, 2)
+                net_pnl = round(float(trade.get("partial_pnl", 0.0)) + 0.5 * 2.0 * risk_usd, 2)
                 close_reason = "Take Profit 2 (3.0R Target) Hit 🎯"
             else:
                 exit_price = sl_price
@@ -749,13 +749,24 @@ class MT5Connector:
             broker_sym = str(trade.get("broker_symbol", trade.get("symbol", "XAUUSD")))
             pos_list = self._mt5.positions_get(ticket=ticket)
 
-            # CASE 1: Position is still open -> Check if TP1 (1.5R) was reached
+            # CASE 1: Position is still open -> Check if TP1 (1.0R Aggressive Scalp Lock) was reached
             if pos_list and len(pos_list) > 0:
                 pos = pos_list[0]
                 cur_price = float(pos.price_current)
                 is_long = str(trade.get("direction", "LONG")) == "LONG"
-                tp1_price = float(trade.get("tp1_price", 0.0))
                 entry_price = float(trade.get("entry_price", 0.0))
+                sl_price_cur = float(trade.get("sl_price", 0.0))
+                # Auto-tighten legacy 1.5R/3.0R open trades into 1.0R/2.0R Aggressive Scalp targets
+                if not trade.get("tp1_hit", False) and not trade.get("scalp_upgraded", False) and entry_price > 0 and sl_price_cur > 0:
+                    r_dist = abs(entry_price - sl_price_cur)
+                    if r_dist > 0:
+                        new_tp1 = round(entry_price + (r_dist if is_long else -r_dist), 5)
+                        new_tp2 = round(entry_price + (2.0 * r_dist if is_long else -2.0 * r_dist), 5)
+                        trade["tp1_price"] = new_tp1
+                        trade["tp2_price"] = new_tp2
+                        trade["scalp_upgraded"] = True
+                        self._save_state()
+                tp1_price = float(trade.get("tp1_price", 0.0))
 
                 if not trade.get("tp1_hit", False) and tp1_price > 0:
                     reached_tp1 = (cur_price >= tp1_price) if is_long else (cur_price <= tp1_price)
