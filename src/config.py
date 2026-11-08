@@ -38,9 +38,10 @@ INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=100.0,  # 1 standard lot = 100 oz ($1 move = $100 per 1.00 lot, $1 per 0.01 lot)
         typical_spread_price=0.25,
         max_spread_price=0.60,
-        atr_sl_multiplier=1.15,
-        tp1_rr=1.0,
+        atr_sl_multiplier=1.50,
+        tp1_rr=0.85,
         tp2_rr=2.0,
+        tp1_close_fraction=0.50,
         is_crypto=False,
     ),
     "EURUSD": InstrumentProfile(
@@ -50,9 +51,10 @@ INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=100_000.0,
         typical_spread_price=0.00010,
         max_spread_price=0.00022,
-        atr_sl_multiplier=1.10,
-        tp1_rr=1.0,
+        atr_sl_multiplier=1.50,
+        tp1_rr=0.85,
         tp2_rr=2.0,
+        tp1_close_fraction=0.50,
         is_crypto=False,
     ),
     "USDJPY": InstrumentProfile(
@@ -62,9 +64,10 @@ INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=100_000.0,
         typical_spread_price=0.012,
         max_spread_price=0.025,
-        atr_sl_multiplier=1.10,
-        tp1_rr=1.0,
+        atr_sl_multiplier=1.50,
+        tp1_rr=0.85,
         tp2_rr=2.0,
+        tp1_close_fraction=0.50,
         is_crypto=False,
     ),
 }
@@ -77,9 +80,10 @@ CRYPTO_INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=1.0,  # 1.00 lot = 1 BTC ($1 move = $1 per 1.00 lot, $0.01 per 0.01 lot)
         typical_spread_price=5.0,
         max_spread_price=60.0,
-        atr_sl_multiplier=1.10,
-        tp1_rr=1.0,
-        tp2_rr=2.0,
+        atr_sl_multiplier=1.50,
+        tp1_rr=0.75,
+        tp2_rr=1.80,
+        tp1_close_fraction=0.60,
         is_crypto=True,
     ),
     "ETHUSD": InstrumentProfile(
@@ -89,9 +93,10 @@ CRYPTO_INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=1.0,  # 1.00 lot = 1 ETH
         typical_spread_price=0.50,
         max_spread_price=6.0,
-        atr_sl_multiplier=1.10,
-        tp1_rr=1.0,
-        tp2_rr=2.0,
+        atr_sl_multiplier=1.50,
+        tp1_rr=0.75,
+        tp2_rr=1.80,
+        tp1_close_fraction=0.60,
         is_crypto=True,
     ),
     "SOLUSD": InstrumentProfile(
@@ -101,9 +106,10 @@ CRYPTO_INSTRUMENTS: Dict[str, InstrumentProfile] = {
         contract_size=10.0,  # 1.00 lot = 10 SOL
         typical_spread_price=0.05,
         max_spread_price=1.0,
-        atr_sl_multiplier=1.10,
-        tp1_rr=1.0,
-        tp2_rr=2.0,
+        atr_sl_multiplier=1.50,
+        tp1_rr=0.75,
+        tp2_rr=1.80,
+        tp1_close_fraction=0.60,
         is_crypto=True,
     ),
 }

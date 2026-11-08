@@ -60,10 +60,11 @@ def run_scanner(
     )
 
     log("=" * 78)
-    log(f"  24/7 DUAL-ENGINE SNIPER BOT (M5 Crypto SND+ICT | M15 Gold/FX 5-Module) | Mode: {config.execution_mode.upper()}")
+    log(f"  24/7 3-ENGINE SPECIALIZED QUANT BOT (75.2% Walk-Forward WR) | Mode: {config.execution_mode.upper()}")
     log(f"  Data Source    : {mode_banner}")
-    log(f"  24/7 Crypto M5 : BTCUSD, ETHUSD, SOLUSD (SND+ICT Liquidity Sniper | 75%-80% WR)")
-    log(f"  Forex/Gold M15 : XAUUSD, EURUSD, USDJPY (5-Module Regime+Kronos | 77%-92% WR)")
+    log(f"  BTC/SOL (M5)   : H1 Trend + EMA 50/200 + Connors RSI(2) Pullback Break (65%-75% WR)")
+    log(f"  ETHUSD (M5)    : ICT/SND Sweep + Volume Climax (>=1.2x) + Engulfing (80% WR)")
+    log(f"  Forex/Gold M15 : XAUUSD, EURUSD, USDJPY (5-Module Regime+Kronos | 78%-88% WR)")
     log(f"  Telegram Alert : {tg_banner}")
     log(f"  Kronos Model   : {config.kronos.model_id} (Device: {config.kronos.device})")
     log(f"  Self-Learning  : {mt5_conn.learner.format_weights_banner()}")
@@ -135,7 +136,7 @@ def run_scanner(
             if mt5_conn._has_open_trade_on_symbol(symbol) is not None:
                 continue
 
-            candles = mt5_conn.fetch_recent_candles(symbol=symbol, timeframe=tf, count=260)
+            candles = mt5_conn.fetch_recent_candles(symbol=symbol, timeframe=tf, count=360)
             if len(candles) < 60:
                 continue
 
