@@ -360,8 +360,14 @@ class MT5Connector:
         volume = signal.recommended_lot
         acct_equity = self.get_account_equity()
 
-        agreeing_strats = [v.strategy_name for v in signal.votes if v.direction == signal.direction]
-        if signal.kronos is not None and signal.kronos.direction == signal.direction:
+        agreeing_strats = list(
+            dict.fromkeys(v.strategy_name for v in signal.votes if v.direction == signal.direction)
+        )
+        if (
+            signal.kronos is not None
+            and signal.kronos.direction == signal.direction
+            and "KRONOS" not in agreeing_strats
+        ):
             agreeing_strats.append("KRONOS")
 
         self.active_trades[str(ticket)] = {
@@ -513,10 +519,16 @@ class MT5Connector:
                         actual_fill = float(getattr(result, "price", fill_price) or fill_price)
                         acct_equity = self.get_account_equity()
 
-                        agreeing_strats = [
-                            v.strategy_name for v in signal.votes if v.direction == signal.direction
-                        ]
-                        if signal.kronos is not None and signal.kronos.direction == signal.direction:
+                        agreeing_strats = list(
+                            dict.fromkeys(
+                                v.strategy_name for v in signal.votes if v.direction == signal.direction
+                            )
+                        )
+                        if (
+                            signal.kronos is not None
+                            and signal.kronos.direction == signal.direction
+                            and "KRONOS" not in agreeing_strats
+                        ):
                             agreeing_strats.append("KRONOS")
 
                         self.active_trades[str(ticket)] = {
