@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-08 09:24:20 UTC",
+  "updated_utc": "2026-11-08 09:25:20 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -11,7 +11,7 @@
     "cuda_kernel_ok": true,
     "cuda_error": null
   },
-  "pending_hot_reload": false,
+  "pending_hot_reload": true,
   "execution_mode": "auto",
   "mt5_connected": true,
   "mt5_error": null,
@@ -20,14 +20,37 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 75904.91,
-    "ETHUSD": 2236.09,
-    "SOLUSD": 89.18,
+    "BTCUSD": 75898.02,
+    "ETHUSD": 2235.88,
+    "SOLUSD": 89.16,
     "XAUUSD": 4070.76,
     "EURUSD": 1.1138,
     "USDJPY": 158.471
   },
-  "active_trades": {},
+  "active_trades": {
+    "1078992397": {
+      "ticket": 1078992397,
+      "symbol": "BTCUSD",
+      "broker_symbol": "BTCUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "LONG",
+      "entry_price": 75919.05,
+      "sl_price": 75856.75,
+      "tp1_price": 75965.77,
+      "tp2_price": 76031.19,
+      "volume": 0.79,
+      "initial_volume": 0.79,
+      "risk_usd": 49.22,
+      "confluence_score": 88.0,
+      "regime": "SESSION_SWEEP_WINDOW",
+      "agreeing_strategies": [
+        "TREND_PULLBACK"
+      ],
+      "opened_at_utc": "2026-11-08 09:25:16 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0
+    }
+  },
   "bot_stats": {
     "total_closed": 3,
     "wins": 1,
@@ -127,5 +150,5 @@
       }
     }
   },
-  "cycle_count": 80
+  "cycle_count": 83
 }
