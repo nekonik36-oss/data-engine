@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-09 13:55:08 UTC",
+  "updated_utc": "2026-11-09 14:03:40 UTC",
   "total_episodes": 16,
   "strategy_stats": {
     "SND": {
@@ -99,24 +99,6 @@
     }
   },
   "pending_post_mortems": [
-    {
-      "ticket": 1079632418,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "entry_price": 74456.55,
-      "exit_price": 75032.15,
-      "tp1_price": 74056.68,
-      "tp2_price": 73528.87,
-      "agreeing_strategies": [
-        "ICT",
-        "TREND_PULLBACK",
-        "KRONOS"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1794227602.66625,
-      "closed_at_utc": "2026-11-09 12:33:22 UTC",
-      "audited": false
-    },
     {
       "ticket": 1079629696,
       "symbol": "ETHUSD",
@@ -347,6 +329,14 @@
         "KRONOS"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if EURUSD reaches TP1=1.11735)"
+    },
+    {
+      "timestamp_utc": "2026-11-09 14:03:40 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1079632418,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1079632418 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }
