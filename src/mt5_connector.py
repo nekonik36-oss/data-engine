@@ -877,7 +877,7 @@ class MT5Connector:
                 if (
                     not trade.get("tp1_hit", False)
                     and not trade.get("be_shield_active", False)
-                    and pos_profit >= be_shield_r * risk_usd_val
+                    and (pos_profit >= be_shield_r * risk_usd_val or (float(trade.get("peak_favorable_r", 0.0)) >= be_shield_r and pos_profit >= 0.05 * risk_usd_val))
                     and entry_price > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
