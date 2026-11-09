@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-09 11:39:35 UTC",
+  "updated_utc": "2026-11-09 11:39:58 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9920.59,
+  "live_equity": 9917.48,
   "bot_stats": {
-    "total_closed": 11,
+    "total_closed": 12,
     "wins": 5,
-    "losses": 4,
+    "losses": 5,
     "breakevens": 2,
-    "cumulative_pnl": -24.76,
+    "cumulative_pnl": -45.37,
     "history": [
       {
         "ticket": 1078980632,
@@ -129,11 +129,26 @@
         "r_multiple": 0.45,
         "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
         "closed_at_utc": "2026-11-09 11:17:28 UTC"
+      },
+      {
+        "ticket": 1079451390,
+        "symbol": "XAUUSD",
+        "direction": "SHORT",
+        "entry_price": 4091.5,
+        "exit_price": 4112.11,
+        "net_pnl": -20.61,
+        "r_multiple": -1.0,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-09 11:39:54 UTC"
       }
     ]
   },
   "symbol_tuning": {
     "BTCUSD": {
+      "sl_floor_mult": 1.0,
+      "be_shield_r": 0.55
+    },
+    "XAUUSD": {
       "sl_floor_mult": 1.0,
       "be_shield_r": 0.55
     }
@@ -153,9 +168,32 @@
       "win_streak": 1,
       "loss_streak": 0,
       "net_r": 0.77
+    },
+    "XAUUSD": {
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": -1.0
     }
   },
-  "pending_post_mortems": [],
+  "pending_post_mortems": [
+    {
+      "ticket": 1079451390,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "entry_price": 4091.5,
+      "exit_price": 4112.11,
+      "tp1_price": 4074.54,
+      "tp2_price": 4051.53,
+      "agreeing_strategies": [
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "regime": "SESSION_SWEEP_WINDOW",
+      "closed_epoch": 1794224394.014114,
+      "closed_at_utc": "2026-11-09 11:39:54 UTC",
+      "audited": false
+    }
+  ],
   "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-09 05:26:06 UTC",
@@ -262,6 +300,22 @@
         "TREND_PULLBACK"
       ],
       "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-09 11:39:54 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1079451390,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "net_pnl": -20.61,
+      "r_multiple": -1.0,
+      "peak_favorable_r": 0.28,
+      "regime": "SESSION_SWEEP_WINDOW",
+      "strategies": [
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if XAUUSD reaches TP1=4074.54)"
     }
   ]
 }
