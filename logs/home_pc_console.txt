@@ -1,24 +1,3 @@
-  Entry Price       : 2107.30000
-  Stop Loss (SL)    : 2115.69577  (Invalidation + ATR Buffer)
-  Take Profit 1     : 2101.00317  (0.8R -> Close 50% & Move SL to BE)
-  Take Profit 2     : 2092.18761  (1.8R -> Runner Target)
-  Suggested Lot     : 5.93 lots  (Risk: $49.79 / 0.50%)
---------------------------------------------------------------------------
-  STRATEGY BREAKDOWN (Why this setup triggered):
-    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (2 unmitigated zones tracked)
-    [NEUTRAL] ICT             (conf    0%): Waiting for BSL (2128.40) or SSL (2089.42) liquidity sweep
-    [NEUTRAL] BREAKOUT        (conf    0%): Inside compression box [2099.33 - 2115.82]
-    [AGREES ] TREND_PULLBACK  (conf   88%): H1 Bear Trend + EMA50<200 + Connors RSI(2)=91.4 Pullback Break
-    [AGREES ] KRONOS          (conf   23%): Bullish Prob=39.5% | Exp Move=-0.32 ATR (Max Up +0.65 ATR / Max Down -1.59 ATR)
---------------------------------------------------------------------------
-  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=39.5% | Exp Move=-0.32 ATR (Max Up +0.65 ATR / Max Down -1.59 ATR)
-==========================================================================
-  [AUTO-TRADE EXECUTED (MT5)] Ticket #1079629696 | SHORT 3.68 lots ETHUSD @ 2117.94 (SL=2131.55, TP1=2108.33, TP2=2095.78) | Telegram: Telegram alert delivered to your phone!
-  [SOLUSD (M5  Live data-api.binance.vision)] Price=86.53      | Watching for A+ Sniper setup...
-  [EURUSD (M15 MT5)] Price=1.11898    | Watching for A+ Sniper setup...
-
-[2026-11-09 11:26:57 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 3 | Record: 5W-4L ($-24.76) | Equity: $9,963.78
-  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
   [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
   [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
   [BTCUSD (M5  Live data-api.binance.vision)] Price=74446.01   | Watching for A+ Sniper setup...
@@ -147,4 +126,25 @@
   KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=56.7% | Exp Move=+0.20 ATR (Max Up +0.76 ATR / Max Down -0.92 ATR)
 ==========================================================================
   [SPREAD CEILING GUARD] Skipping SOLUSD: live broker spread $0.73 (0.85% of price) exceeds 0.25% M5 scalp ceiling.
+  [EURUSD (M15 MT5)] Price=1.11907    | Watching for A+ Sniper setup...
+
+[2026-11-09 11:30:26 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,947.19
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
+  [EURUSD (M15 MT5)] Price=1.11907    | Watching for A+ Sniper setup...
+
+[2026-11-09 11:30:42 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,949.60
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
+  [EURUSD (M15 MT5)] Price=1.11906    | Watching for A+ Sniper setup...
+
+[2026-11-09 11:30:57 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,946.54
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
   [EURUSD (M15 MT5)] Price=1.11907    | Watching for A+ Sniper setup...
