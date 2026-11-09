@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-09 13:54:13 UTC",
+  "updated_utc": "2026-11-09 13:55:23 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,49 +16,24 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9826.9,
+  "live_equity": 9811.9,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 74718.01,
-    "ETHUSD": 2121.89,
-    "SOLUSD": 86.65,
-    "XAUUSD": 4125.59,
-    "USDJPY": 157.877
+    "BTCUSD": 74764.0,
+    "ETHUSD": 2124.37,
+    "SOLUSD": 86.75,
+    "XAUUSD": 4127.2,
+    "EURUSD": 1.12008,
+    "USDJPY": 157.861
   },
-  "active_trades": {
-    "1079668118": {
-      "ticket": 1079668118,
-      "symbol": "EURUSD",
-      "broker_symbol": "EURUSD",
-      "broker_source": "MT5_LIVE",
-      "direction": "SHORT",
-      "entry_price": 1.11853,
-      "sl_price": 1.1201,
-      "initial_sl_price": 1.1201,
-      "tp1_price": 1.11735,
-      "tp2_price": 1.11576,
-      "volume": 0.3,
-      "initial_volume": 0.3,
-      "risk_usd": 47.24,
-      "confluence_score": 91.5,
-      "regime": "SESSION_SWEEP_WINDOW",
-      "agreeing_strategies": [
-        "ICT",
-        "KRONOS"
-      ],
-      "opened_at_utc": "2026-11-09 12:15:29 UTC",
-      "tp1_hit": false,
-      "partial_pnl": 0.0,
-      "scalp_upgraded": true
-    }
-  },
+  "active_trades": {},
   "bot_stats": {
-    "total_closed": 15,
+    "total_closed": 16,
     "wins": 5,
-    "losses": 7,
+    "losses": 8,
     "breakevens": 3,
-    "cumulative_pnl": -140.1,
+    "cumulative_pnl": -188.1,
     "history": [
       {
         "ticket": 1078980632,
@@ -224,12 +199,23 @@
         "r_multiple": 0.04,
         "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-09 13:01:18 UTC"
+      },
+      {
+        "ticket": 1079668118,
+        "symbol": "EURUSD",
+        "direction": "SHORT",
+        "entry_price": 1.11853,
+        "exit_price": 1.12013,
+        "net_pnl": -48.0,
+        "r_multiple": -1.02,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-09 13:55:08 UTC"
       }
     ]
   },
   "learned_weights": {
-    "updated_utc": "2026-11-09 13:10:06 UTC",
-    "total_episodes": 15,
+    "updated_utc": "2026-11-09 13:55:08 UTC",
+    "total_episodes": 16,
     "strategy_stats": {
       "SND": {
         "trades": 0,
@@ -239,11 +225,11 @@
         "multiplier": 1.0
       },
       "ICT": {
-        "trades": 5,
+        "trades": 6,
         "wins": 2,
-        "losses": 3,
-        "ema_r": -0.305,
-        "multiplier": 0.924
+        "losses": 4,
+        "ema_r": -0.461,
+        "multiplier": 0.885
       },
       "BREAKOUT": {
         "trades": 2,
@@ -260,11 +246,11 @@
         "multiplier": 0.917
       },
       "KRONOS": {
-        "trades": 10,
+        "trades": 11,
         "wins": 2,
-        "losses": 7,
-        "ema_r": -0.554,
-        "multiplier": 0.861
+        "losses": 8,
+        "ema_r": -0.656,
+        "multiplier": 0.836
       }
     },
     "regime_strategy_multipliers": {
@@ -273,9 +259,9 @@
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.973,
       "RANGING:TREND_PULLBACK": 1.043,
       "TRENDING_DOWN:TREND_PULLBACK": 0.955,
-      "SESSION_SWEEP_WINDOW:ICT": 1.02,
+      "SESSION_SWEEP_WINDOW:ICT": 0.974,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.957,
-      "SESSION_SWEEP_WINDOW:KRONOS": 0.957
+      "SESSION_SWEEP_WINDOW:KRONOS": 0.911
     },
     "symbol_streaks": {
       "BTCUSD": {
@@ -302,6 +288,11 @@
         "win_streak": 0,
         "loss_streak": 0,
         "net_r": 0.04
+      },
+      "EURUSD": {
+        "win_streak": 0,
+        "loss_streak": 1,
+        "net_r": -1.02
       }
     },
     "symbol_tuning": {
@@ -314,6 +305,10 @@
         "be_shield_r": 0.55
       },
       "ETHUSD": {
+        "sl_floor_mult": 1.0,
+        "be_shield_r": 0.55
+      },
+      "EURUSD": {
         "sl_floor_mult": 1.0,
         "be_shield_r": 0.55
       }
@@ -352,6 +347,23 @@
         "regime": "RANGING",
         "closed_epoch": 1794228599.452942,
         "closed_at_utc": "2026-11-09 12:49:59 UTC",
+        "audited": false
+      },
+      {
+        "ticket": 1079668118,
+        "symbol": "EURUSD",
+        "direction": "SHORT",
+        "entry_price": 1.11853,
+        "exit_price": 1.12013,
+        "tp1_price": 1.11735,
+        "tp2_price": 1.11576,
+        "agreeing_strategies": [
+          "ICT",
+          "KRONOS"
+        ],
+        "regime": "SESSION_SWEEP_WINDOW",
+        "closed_epoch": 1794232508.06479,
+        "closed_at_utc": "2026-11-09 13:55:08 UTC",
         "audited": false
       }
     ],
@@ -534,8 +546,24 @@
         "symbol": "XAUUSD",
         "direction": "SHORT",
         "summary": "Ticket #1079451390 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+      },
+      {
+        "timestamp_utc": "2026-11-09 13:55:08 UTC",
+        "event": "TRADE_CLOSED_DIAGNOSTIC",
+        "ticket": 1079668118,
+        "symbol": "EURUSD",
+        "direction": "SHORT",
+        "net_pnl": -48.0,
+        "r_multiple": -1.02,
+        "peak_favorable_r": 0.0,
+        "regime": "SESSION_SWEEP_WINDOW",
+        "strategies": [
+          "ICT",
+          "KRONOS"
+        ],
+        "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if EURUSD reaches TP1=1.11735)"
       }
     ]
   },
-  "cycle_count": 190
+  "cycle_count": 193
 }
