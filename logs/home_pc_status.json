@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-09 04:44:36 UTC",
+  "updated_utc": "2026-11-09 04:45:20 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9881.07,
+  "live_equity": 9876.75,
   "telegram_configured": true,
-  "kronos_active_backend": "statistical_mc_fallback",
+  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 2140.19,
-    "SOLUSD": 87.53,
-    "XAUUSD": 4125.91,
-    "EURUSD": 1.11564,
-    "USDJPY": 158.286
+    "ETHUSD": 2140.71,
+    "SOLUSD": 87.56,
+    "XAUUSD": 4126.17,
+    "EURUSD": 1.11565,
+    "USDJPY": 158.296
   },
   "active_trades": {
     "1079289556": {
@@ -51,6 +51,30 @@
       "partial_pnl": 0.0,
       "scalp_upgraded": true,
       "peak_favorable_r": 0.408
+    },
+    "1079309287": {
+      "ticket": 1079309287,
+      "symbol": "SOLUSD",
+      "broker_symbol": "SOLUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 87.21,
+      "sl_price": 90.5,
+      "initial_sl_price": 90.5,
+      "tp1_price": 84.84,
+      "tp2_price": 81.79,
+      "volume": 1.5,
+      "initial_volume": 1.5,
+      "risk_usd": 49.28,
+      "confluence_score": 87.3,
+      "regime": "RANGING",
+      "agreeing_strategies": [
+        "TREND_PULLBACK"
+      ],
+      "opened_at_utc": "2026-11-09 04:45:18 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0,
+      "scalp_upgraded": true
     }
   },
   "bot_stats": {
@@ -167,5 +191,5 @@
     "pending_post_mortems": [],
     "ai_feedback_feed": []
   },
-  "cycle_count": 55
+  "cycle_count": 57
 }
