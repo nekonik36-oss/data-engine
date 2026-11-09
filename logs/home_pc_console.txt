@@ -1,43 +1,3 @@
-  HIGH-CONFLUENCE SETUP DETECTED | SOLUSD (M5) | SELL (SHORT)
-==========================================================================
-  Timestamp (UTC)   : 2026-11-09 11:25 UTC
-  Market Regime     : RANGING
-  Confluence Score  : 94.2 / 100.0  [HYBRID_REGIME_KRONOS]
---------------------------------------------------------------------------
-  Entry Price       : 86.53000
-  Stop Loss (SL)    : 87.48251  (Invalidation + ATR Buffer)
-  Take Profit 1     : 85.81562  (0.8R -> Close 50% & Move SL to BE)
-  Take Profit 2     : 84.81548  (1.8R -> Runner Target)
-  Suggested Lot     : 5.22 lots  (Risk: $49.72 / 0.50%)
---------------------------------------------------------------------------
-  STRATEGY BREAKDOWN (Why this setup triggered):
-    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (1 unmitigated zones tracked)
-    [NEUTRAL] ICT             (conf    0%): Waiting for BSL (87.290) or SSL (85.860) liquidity sweep
-    [NEUTRAL] BREAKOUT        (conf    0%): Inside compression box [85.81 - 87.15]
-    [AGREES ] TREND_PULLBACK  (conf   88%): H1 Bear Trend + EMA50<200 + Connors RSI(2)=95.8 Pullback Break
-    [OPPOSES] KRONOS          (conf   15%): Bullish Prob=56.7% | Exp Move=+0.20 ATR (Max Up +0.76 ATR / Max Down -0.92 ATR)
---------------------------------------------------------------------------
-  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=56.7% | Exp Move=+0.20 ATR (Max Up +0.76 ATR / Max Down -0.92 ATR)
-==========================================================================
-  [SPREAD CEILING GUARD] Skipping SOLUSD: live broker spread $0.73 (0.85% of price) exceeds 0.25% M5 scalp ceiling.
-  [EURUSD (M15 MT5)] Price=1.11907    | Watching for A+ Sniper setup...
-
-[2026-11-09 11:30:26 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,947.19
-  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
-  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
-  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
-  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
-  [EURUSD (M15 MT5)] Price=1.11907    | Watching for A+ Sniper setup...
-
-[2026-11-09 11:30:42 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,949.60
-  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
-  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
-  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
-  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
-  [EURUSD (M15 MT5)] Price=1.11906    | Watching for A+ Sniper setup...
-
-[2026-11-09 11:30:57 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,946.54
-  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
   [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
   [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
   [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
@@ -148,3 +108,43 @@
   [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
   [SOLUSD (M5  Live data-api.binance.vision)] Price=86.63      | Watching for A+ Sniper setup...
   [EURUSD (M15 MT5)] Price=1.11914    | Watching for A+ Sniper setup...
+
+[2026-11-09 11:35:30 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,899.28
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=86.63      | Watching for A+ Sniper setup...
+  [EURUSD (M15 MT5)] Price=1.11913    | Watching for A+ Sniper setup...
+
+[2026-11-09 11:35:47 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,905.00
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=86.53      | Watching for A+ Sniper setup...
+  [EURUSD (M15 MT5)] Price=1.11916    | Watching for A+ Sniper setup...
+
+[2026-11-09 11:36:04 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,916.04
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=86.45      | Watching for A+ Sniper setup...
+  [EURUSD (M15 MT5)] Price=1.11913    | Watching for A+ Sniper setup...
+
+[2026-11-09 11:36:20 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,915.75
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=86.41      | Watching for A+ Sniper setup...
+  [EURUSD (M15 MT5)] Price=1.11922    | Watching for A+ Sniper setup...
+
+[2026-11-09 11:36:37 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 4 | Record: 5W-4L ($-24.76) | Equity: $9,917.53
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+  [OPEN #1079632418] BTCUSD SHORT @ 74456.55 | SL=75011.93 | TP1=74056.68 | TP2=73528.87
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=86.39      | Watching for A+ Sniper setup...
+  [EURUSD (M15 MT5)] Price=1.11922    | Watching for A+ Sniper setup...
