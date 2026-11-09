@@ -168,12 +168,17 @@ class ConfluenceEngine:
                 max_rsi2 = max(ind.rsi2[idx], ind.rsi2[idx - 1], ind.rsi2[idx - 2])
                 h1_bull = e60 > e240 and (e60 - ind.ema60[idx - 12]) > 0
                 h1_bear = e60 < e240 and (ind.ema60[idx - 12] - e60) > 0
+                recent_max_high = max(c.high for c in candles[max(0, idx - 3) : idx + 1])
+                recent_min_low = min(c.low for c in candles[max(0, idx - 3) : idx + 1])
+                ema20_slope3 = ind.ema20[idx] - ind.ema20[max(0, idx - 3)]
                 if (
                     h1_bull
                     and e50 > e200
                     and min_rsi2 < 20.0
                     and curr.is_bullish
                     and curr.close > prev.high
+                    and recent_min_low >= e50 - 1.15 * cur_atr
+                    and ema20_slope3 >= -0.25 * cur_atr
                 ):
                     votes.append(
                         StrategyVote(
@@ -190,6 +195,8 @@ class ConfluenceEngine:
                     and max_rsi2 > 80.0
                     and curr.is_bearish
                     and curr.close < prev.low
+                    and recent_max_high <= e50 + 1.15 * cur_atr
+                    and ema20_slope3 <= 0.25 * cur_atr
                 ):
                     votes.append(
                         StrategyVote(

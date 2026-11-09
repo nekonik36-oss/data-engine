@@ -449,6 +449,31 @@ class MT5Connector:
                 f"(Ticket #{dup_ticket}). Avoiding duplicate exposure."
             )
 
+        # 1b. 60-Minute Same-Direction Re-Entry Cooldown after a Reversal Stop-Out
+        for past in reversed(list(self.stats.get("history", []))):
+            if str(past.get("symbol", "")).upper() == signal.symbol.upper():
+                if (
+                    str(past.get("direction", "")).upper() == signal.direction.value.upper()
+                    and float(past.get("r_multiple", 0.0)) < 0.80
+                ):
+                    closed_str = str(past.get("closed_at_utc", ""))
+                    if closed_str:
+                        try:
+                            closed_dt = datetime.strptime(closed_str, "%Y-%m-%d %H:%M:%S UTC").replace(
+                                tzinfo=timezone.utc
+                            )
+                            elapsed_sec = (datetime.now(timezone.utc) - closed_dt).total_seconds()
+                            if 0 <= elapsed_sec < 3600:
+                                mins_ago = elapsed_sec / 60.0
+                                return (
+                                    f"[RE-ENTRY COOLDOWN GUARD] Skipping {signal.symbol} {signal.direction.value}: "
+                                    f"previous {signal.direction.value} closed {mins_ago:.0f}m ago on reversal stop. "
+                                    f"Waiting 60m for structure reset."
+                                )
+                        except Exception:
+                            pass
+                break
+
         # 2. Check max concurrent open positions (dynamically scaled for $10-$50 small accounts)
         acct_equity_pre = self.get_account_equity()
         if acct_equity_pre < 35.0:
@@ -892,7 +917,7 @@ class MT5Connector:
                 if (
                     not trade.get("tp1_hit", False)
                     and not trade.get("be_shield_active", False)
-                    and (pos_profit >= be_shield_r * risk_usd_val or (float(trade.get("peak_favorable_r", 0.0)) >= 0.43 and pos_profit >= 0.05 * risk_usd_val))
+                    and (pos_profit >= be_shield_r * risk_usd_val or (float(trade.get("peak_favorable_r", 0.0)) >= 0.22 and pos_profit >= 0.04 * risk_usd_val))
                     and entry_price > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
