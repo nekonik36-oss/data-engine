@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-09 11:16:33 UTC",
+  "updated_utc": "2026-11-09 11:17:10 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 10001.12,
+  "live_equity": 9976.1,
   "bot_stats": {
-    "total_closed": 9,
+    "total_closed": 10,
     "wins": 4,
     "losses": 4,
-    "breakevens": 1,
-    "cumulative_pnl": -45.0,
+    "breakevens": 2,
+    "cumulative_pnl": -45.95,
     "history": [
       {
         "ticket": 1078980632,
@@ -107,6 +107,17 @@
         "r_multiple": -1.0,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-09 08:51:40 UTC"
+      },
+      {
+        "ticket": 1079533010,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 2116.5,
+        "exit_price": 2116.87,
+        "net_pnl": -0.95,
+        "r_multiple": -0.02,
+        "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
+        "closed_at_utc": "2026-11-09 11:17:07 UTC"
       }
     ]
   },
@@ -125,7 +136,7 @@
     "ETHUSD": {
       "win_streak": 1,
       "loss_streak": 0,
-      "net_r": 0.17
+      "net_r": 0.15
     },
     "SOLUSD": {
       "win_streak": 1,
@@ -209,6 +220,21 @@
         "TREND_PULLBACK"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=73690.82)"
+    },
+    {
+      "timestamp_utc": "2026-11-09 11:17:07 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1079533010,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "net_pnl": -0.95,
+      "r_multiple": -0.02,
+      "peak_favorable_r": 0.71,
+      "regime": "SESSION_SWEEP_WINDOW",
+      "strategies": [
+        "TREND_PULLBACK"
+      ],
+      "auto_fix_action": "NONE"
     }
   ]
 }
