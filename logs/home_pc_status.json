@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-09 15:22:54 UTC",
+  "updated_utc": "2026-11-09 15:27:52 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 75146.5,
-    "ETHUSD": 2133.56,
-    "SOLUSD": 87.49,
-    "XAUUSD": 4116.89,
-    "EURUSD": 1.11911,
-    "USDJPY": 158.163
+    "BTCUSD": 75183.45,
+    "ETHUSD": 2135.0,
+    "SOLUSD": 87.52,
+    "XAUUSD": 4116.84,
+    "EURUSD": 1.11908,
+    "USDJPY": 158.167
   },
   "active_trades": {},
   "bot_stats": {
@@ -214,7 +214,7 @@
     ]
   },
   "learned_weights": {
-    "updated_utc": "2026-11-09 14:20:04 UTC",
+    "updated_utc": "2026-11-09 15:25:10 UTC",
     "total_episodes": 16,
     "strategy_stats": {
       "SND": {
@@ -313,25 +313,7 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [
-      {
-        "ticket": 1079668118,
-        "symbol": "EURUSD",
-        "direction": "SHORT",
-        "entry_price": 1.11853,
-        "exit_price": 1.12013,
-        "tp1_price": 1.11735,
-        "tp2_price": 1.11576,
-        "agreeing_strategies": [
-          "ICT",
-          "KRONOS"
-        ],
-        "regime": "SESSION_SWEEP_WINDOW",
-        "closed_epoch": 1794232508.06479,
-        "closed_at_utc": "2026-11-09 13:55:08 UTC",
-        "audited": false
-      }
-    ],
+    "pending_post_mortems": [],
     "ai_feedback_feed": [
       {
         "timestamp_utc": "2026-11-09 05:26:06 UTC",
@@ -543,8 +525,16 @@
         "symbol": "ETHUSD",
         "direction": "SHORT",
         "summary": "Ticket #1079629696 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+      },
+      {
+        "timestamp_utc": "2026-11-09 15:25:10 UTC",
+        "event": "TRUE_TREND_LOSS_CONFIRMED",
+        "ticket": 1079668118,
+        "symbol": "EURUSD",
+        "direction": "SHORT",
+        "summary": "Ticket #1079668118 (EURUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
       }
     ]
   },
-  "cycle_count": 230
+  "cycle_count": 245
 }
