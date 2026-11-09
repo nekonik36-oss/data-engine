@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-09 05:25:48 UTC",
+  "updated_utc": "2026-11-09 05:26:11 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,42 +16,17 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9928.14,
+  "live_equity": 9928.51,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 2134.04,
-    "XAUUSD": 4121.91,
-    "EURUSD": 1.11583,
-    "USDJPY": 158.243
+    "BTCUSD": 74554.02,
+    "ETHUSD": 2134.85,
+    "XAUUSD": 4121.53,
+    "EURUSD": 1.11581,
+    "USDJPY": 158.251
   },
   "active_trades": {
-    "1079289556": {
-      "ticket": 1079289556,
-      "symbol": "BTCUSD",
-      "broker_symbol": "BTCUSD",
-      "broker_source": "MT5_LIVE",
-      "direction": "SHORT",
-      "entry_price": 74976.85,
-      "sl_price": 74976.85,
-      "initial_sl_price": 75239.22,
-      "tp1_price": 74787.94,
-      "tp2_price": 74543.94,
-      "volume": 0.18,
-      "initial_volume": 0.18,
-      "risk_usd": 47.23,
-      "confluence_score": 87.3,
-      "regime": "RANGING",
-      "agreeing_strategies": [
-        "TREND_PULLBACK"
-      ],
-      "opened_at_utc": "2026-11-09 04:25:49 UTC",
-      "tp1_hit": true,
-      "partial_pnl": 0.0,
-      "scalp_upgraded": true,
-      "peak_favorable_r": 0.788,
-      "be_shield_active": true
-    },
     "1079309287": {
       "ticket": 1079309287,
       "symbol": "SOLUSD",
@@ -79,11 +54,11 @@
     }
   },
   "bot_stats": {
-    "total_closed": 4,
-    "wins": 1,
+    "total_closed": 5,
+    "wins": 2,
     "losses": 3,
     "breakevens": 0,
-    "cumulative_pnl": -122.93,
+    "cumulative_pnl": -67.44,
     "history": [
       {
         "ticket": 1078980632,
@@ -128,12 +103,23 @@
         "r_multiple": -1.02,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-08 10:31:20 UTC"
+      },
+      {
+        "ticket": 1079289556,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 74976.85,
+        "exit_price": 74541.75,
+        "net_pnl": 55.49,
+        "r_multiple": 1.17,
+        "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-09 05:26:06 UTC"
       }
     ]
   },
   "learned_weights": {
-    "updated_utc": "2026-11-08 10:31:20 UTC",
-    "total_episodes": 4,
+    "updated_utc": "2026-11-09 05:26:06 UTC",
+    "total_episodes": 5,
     "strategy_stats": {
       "SND": {
         "trades": 0,
@@ -157,11 +143,11 @@
         "multiplier": 1.0
       },
       "TREND_PULLBACK": {
-        "trades": 1,
-        "wins": 0,
+        "trades": 2,
+        "wins": 1,
         "losses": 1,
-        "ema_r": -0.225,
-        "multiplier": 0.986
+        "ema_r": 0.083,
+        "multiplier": 1.01
       },
       "KRONOS": {
         "trades": 6,
@@ -174,13 +160,14 @@
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.934,
       "RANGING:KRONOS": 0.868,
-      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.954
+      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.954,
+      "RANGING:TREND_PULLBACK": 1.053
     },
     "symbol_streaks": {
       "BTCUSD": {
-        "win_streak": 0,
-        "loss_streak": 1,
-        "net_r": -1.55
+        "win_streak": 1,
+        "loss_streak": 0,
+        "net_r": -0.38
       },
       "ETHUSD": {
         "win_streak": 0,
@@ -190,7 +177,23 @@
     },
     "symbol_tuning": {},
     "pending_post_mortems": [],
-    "ai_feedback_feed": []
+    "ai_feedback_feed": [
+      {
+        "timestamp_utc": "2026-11-09 05:26:06 UTC",
+        "event": "TRADE_CLOSED_DIAGNOSTIC",
+        "ticket": 1079289556,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "net_pnl": 55.49,
+        "r_multiple": 1.17,
+        "peak_favorable_r": 0.79,
+        "regime": "RANGING",
+        "strategies": [
+          "TREND_PULLBACK"
+        ],
+        "auto_fix_action": "NONE"
+      }
+    ]
   },
-  "cycle_count": 100
+  "cycle_count": 101
 }
