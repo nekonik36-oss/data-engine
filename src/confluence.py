@@ -134,7 +134,7 @@ class ConfluenceEngine:
         if use_regime_gate:
             if not profile.is_crypto and regime == MarketRegime.HIGH_VOL_CHOP:
                 return None
-            if not profile.is_crypto and not (6 <= curr.timestamp.hour <= 18):
+            if not profile.is_crypto and not (1 <= curr.timestamp.hour <= 20):
                 return None
 
         active_set = TOURNAMENT_PRESETS.get(
@@ -154,9 +154,9 @@ class ConfluenceEngine:
                 )
             )
         if "TREND_PULLBACK" in active_set:
-            if use_regime_gate and symbol in {"BTCUSD", "SOLUSD"} and idx >= 50:
-                # Engine 1 (BTCUSD & SOLUSD Momentum Leaders):
-                # H1 Multi-Timeframe Trend (EMA60 vs EMA240) + EMA50/200 Stack + Connors RSI(2) Pullback + Prior-Bar Break
+            if use_regime_gate and profile.is_crypto and idx >= 50:
+                # Engine 1 (Crypto M5 Momentum Pullback Break — 66.7%-69.2% Real M5 Win Rate):
+                # H1 Multi-Timeframe Trend (EMA60 vs EMA240) + EMA50/200 Stack + 3-Bar Connors RSI(2) Pullback + Break
                 prev = candles[idx - 1]
                 e50, e60, e200, e240 = (
                     ind.ema50[idx],
@@ -164,13 +164,14 @@ class ConfluenceEngine:
                     ind.ema200[idx],
                     ind.ema240[idx],
                 )
-                rsi2_cur, rsi2_prev = ind.rsi2[idx], ind.rsi2[idx - 1]
+                min_rsi2 = min(ind.rsi2[idx], ind.rsi2[idx - 1], ind.rsi2[idx - 2])
+                max_rsi2 = max(ind.rsi2[idx], ind.rsi2[idx - 1], ind.rsi2[idx - 2])
                 h1_bull = e60 > e240 and (e60 - ind.ema60[idx - 12]) > 0
                 h1_bear = e60 < e240 and (ind.ema60[idx - 12] - e60) > 0
                 if (
                     h1_bull
                     and e50 > e200
-                    and (rsi2_cur < 15.0 or rsi2_prev < 12.0)
+                    and min_rsi2 < 20.0
                     and curr.is_bullish
                     and curr.close > prev.high
                 ):
@@ -179,14 +180,14 @@ class ConfluenceEngine:
                             strategy_name="TREND_PULLBACK",
                             direction=Direction.LONG,
                             confidence=0.88,
-                            reason=f"H1 Bull Trend + EMA50>200 + Connors RSI(2)={min(rsi2_cur, rsi2_prev):.1f} Pullback Break",
+                            reason=f"H1 Bull Trend + EMA50>200 + Connors RSI(2)={min_rsi2:.1f} Pullback Break",
                             suggested_sl=min(curr.low, prev.low) - 1.20 * cur_atr,
                         )
                     )
                 elif (
                     h1_bear
                     and e50 < e200
-                    and (rsi2_cur > 85.0 or rsi2_prev > 88.0)
+                    and max_rsi2 > 80.0
                     and curr.is_bearish
                     and curr.close < prev.low
                 ):
@@ -195,7 +196,7 @@ class ConfluenceEngine:
                             strategy_name="TREND_PULLBACK",
                             direction=Direction.SHORT,
                             confidence=0.88,
-                            reason=f"H1 Bear Trend + EMA50<200 + Connors RSI(2)={max(rsi2_cur, rsi2_prev):.1f} Pullback Break",
+                            reason=f"H1 Bear Trend + EMA50<200 + Connors RSI(2)={max_rsi2:.1f} Pullback Break",
                             suggested_sl=max(curr.high, prev.high) + 1.20 * cur_atr,
                         )
                     )
@@ -312,53 +313,66 @@ class ConfluenceEngine:
                 threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
 
             elif symbol == "ETHUSD":
-                # Engine 2 (Liquidity-Sweep Specialist ETHUSD — 80.0% 7-Day Real M5 Win Rate / 100% OOS):
-                # Uses ICT/SND Sweep (conf >= 0.80) + Volume Climax (>=1.20x) + Engulfing Close + H1 ADX Guard
+                # Engine 2 (ETHUSD Dual-Engine: Liquidity-Sweep + Volume Climax OR H1 Trend RSI(2) Pullback Break):
+                tpb_votes = [
+                    v
+                    for v in pa_votes
+                    if v.strategy_name == "TREND_PULLBACK" and v.confidence >= 0.85
+                ]
                 rev_votes = [
                     v
                     for v in pa_votes
                     if v.strategy_name in {"SND", "ICT"} and v.confidence >= 0.80
                 ]
-                if not rev_votes:
-                    return None
-                long_rev = [v for v in rev_votes if v.direction == Direction.LONG]
-                short_rev = [v for v in rev_votes if v.direction == Direction.SHORT]
-                if long_rev and short_rev:
-                    return None
-                direction = Direction.LONG if long_rev else Direction.SHORT
-                agreeing_pa = long_rev if long_rev else short_rev
-
-                prev = candles[idx - 1]
-                vol_ratio = curr.volume / max(ind.vol_ma20[idx], 1e-9)
-                prev_vol_ratio = prev.volume / max(ind.vol_ma20[idx - 1], 1e-9)
-                if max(vol_ratio, prev_vol_ratio) < 1.20:
-                    return None
-
-                e60, e240 = ind.ema60[idx], ind.ema240[idx]
-                h1_bull = e60 > e240 and (e60 - ind.ema60[idx - 12]) > 0
-                h1_bear = e60 < e240 and (ind.ema60[idx - 12] - e60) > 0
-                rsi_val = ind.rsi[idx]
-                adx_val = ind.adx[idx]
-
-                if direction == Direction.LONG:
-                    if not (curr.is_bullish and curr.close > prev.open and rsi_val < 55.0):
+                if tpb_votes:
+                    direction = tpb_votes[0].direction
+                    agreeing_pa = [v for v in pa_votes if v.direction == direction]
+                    learned_m = self.learner.get_strategy_multiplier(
+                        "TREND_PULLBACK", regime.value
+                    )
+                    confluence_score = min(100.0, 88.0 * learned_m)
+                    threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
+                elif rev_votes:
+                    long_rev = [v for v in rev_votes if v.direction == Direction.LONG]
+                    short_rev = [v for v in rev_votes if v.direction == Direction.SHORT]
+                    if long_rev and short_rev:
                         return None
-                    if h1_bear and adx_val > 25.0:
+                    direction = Direction.LONG if long_rev else Direction.SHORT
+                    agreeing_pa = long_rev if long_rev else short_rev
+
+                    prev = candles[idx - 1]
+                    vol_ratio = curr.volume / max(ind.vol_ma20[idx], 1e-9)
+                    prev_vol_ratio = prev.volume / max(ind.vol_ma20[idx - 1], 1e-9)
+                    if max(vol_ratio, prev_vol_ratio) < 1.20:
                         return None
+
+                    e60, e240 = ind.ema60[idx], ind.ema240[idx]
+                    h1_bull = e60 > e240 and (e60 - ind.ema60[idx - 12]) > 0
+                    h1_bear = e60 < e240 and (ind.ema60[idx - 12] - e60) > 0
+                    rsi_val = ind.rsi[idx]
+                    adx_val = ind.adx[idx]
+
+                    if direction == Direction.LONG:
+                        if not (curr.is_bullish and curr.close > prev.open and rsi_val < 55.0):
+                            return None
+                        if h1_bear and adx_val > 25.0:
+                            return None
+                    else:
+                        if not (curr.is_bearish and curr.close < prev.open and rsi_val > 45.0):
+                            return None
+                        if h1_bull and adx_val > 25.0:
+                            return None
+
+                    best_pa_conf = max(
+                        v.confidence
+                        * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
+                        for v in agreeing_pa
+                    )
+                    synergy = 14.0 if len(agreeing_pa) >= 2 else 8.0
+                    confluence_score = min(100.0, best_pa_conf * 100.0 + synergy)
+                    threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 else:
-                    if not (curr.is_bearish and curr.close < prev.open and rsi_val > 45.0):
-                        return None
-                    if h1_bull and adx_val > 25.0:
-                        return None
-
-                best_pa_conf = max(
-                    v.confidence
-                    * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
-                    for v in agreeing_pa
-                )
-                synergy = 14.0 if len(agreeing_pa) >= 2 else 8.0
-                confluence_score = min(100.0, best_pa_conf * 100.0 + synergy)
-                threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
+                    return None
 
             else:
                 # Engine 3: Gold & Forex M15 5-Module Regime-Gated + Kronos AI Sniper (78.2%-82.4% Win Rate)
