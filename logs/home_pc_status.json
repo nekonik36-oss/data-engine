@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-09 07:03:50 UTC",
+  "updated_utc": "2026-11-09 07:05:07 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 74170.01,
-    "ETHUSD": 2107.11,
-    "XAUUSD": 4108.01,
-    "EURUSD": 1.11647,
-    "USDJPY": 158.116
+    "BTCUSD": 74170.0,
+    "ETHUSD": 2107.31,
+    "XAUUSD": 4105.6,
+    "EURUSD": 1.1166,
+    "USDJPY": 158.157
   },
   "active_trades": {
     "1079309287": {
@@ -53,6 +53,30 @@
       "spread_cap_applied": true,
       "peak_favorable_r": 0.492,
       "be_shield_active": true
+    },
+    "1079412826": {
+      "ticket": 1079412826,
+      "symbol": "BTCUSD",
+      "broker_symbol": "BTCUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 74147.05,
+      "sl_price": 74590.44,
+      "initial_sl_price": 74590.44,
+      "tp1_price": 73827.81,
+      "tp2_price": 73415.46,
+      "volume": 0.1,
+      "initial_volume": 0.1,
+      "risk_usd": 44.34,
+      "confluence_score": 91.0,
+      "regime": "TRENDING_DOWN",
+      "agreeing_strategies": [
+        "TREND_PULLBACK"
+      ],
+      "opened_at_utc": "2026-11-09 07:05:03 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0,
+      "scalp_upgraded": true
     }
   },
   "bot_stats": {
@@ -223,5 +247,5 @@
       }
     ]
   },
-  "cycle_count": 430
+  "cycle_count": 434
 }
