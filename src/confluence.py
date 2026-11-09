@@ -417,18 +417,19 @@ class ConfluenceEngine:
                     if len(agreeing_pa) < 2 and "ICT" not in agreeing_names:
                         return None
 
-                if (
-                    regime == MarketRegime.TRENDING_UP
-                    and direction == Direction.SHORT
-                    and len(agreeing_pa) < 2
-                ):
-                    return None
-                if (
-                    regime == MarketRegime.TRENDING_DOWN
-                    and direction == Direction.LONG
-                    and len(agreeing_pa) < 2
-                ):
-                    return None
+                # Block solo counter-trend entries in Engine 3 (Gold & Forex M15) across all regimes
+                # including SESSION_SWEEP_WINDOW where regime overrides TRENDING_UP / TRENDING_DOWN.
+                if len(agreeing_pa) < 2:
+                    if direction == Direction.SHORT and (
+                        regime == MarketRegime.TRENDING_UP
+                        or ind.ema50[idx] > ind.ema200[idx]
+                    ):
+                        return None
+                    if direction == Direction.LONG and (
+                        regime == MarketRegime.TRENDING_DOWN
+                        or ind.ema50[idx] < ind.ema200[idx]
+                    ):
+                        return None
 
                 kronos_boost = 0.0
                 if kronos_fc is not None:
