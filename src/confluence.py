@@ -356,7 +356,7 @@ class ConfluenceEngine:
                     * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
                     for v in agreeing_pa
                 )
-                synergy = 10.0 if len(agreeing_pa) >= 2 else 5.0
+                synergy = 14.0 if len(agreeing_pa) >= 2 else 8.0
                 confluence_score = min(100.0, best_pa_conf * 100.0 + synergy)
                 threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
 

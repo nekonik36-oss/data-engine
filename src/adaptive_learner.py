@@ -128,14 +128,14 @@ class AdaptiveLearner:
 
     def get_symbol_threshold_offset(self, symbol: str) -> float:
         """
-        Return dynamic confluence score offset (`-2.0` to `+10.0`) based on recent symbol streak.
-        Tightens entry threshold automatically after losses to prevent revenge/choppy trading.
+        Return dynamic confluence score offset (`-1.5` to `+4.0`) based on recent symbol streak.
+        Capped at `+4.0` so a loss streak never creates an RL deadlock above single-engine max scores.
         """
         sym_info = (self.state.get("symbol_streaks") or {}).get(symbol.upper(), {})
         loss_streak = int(sym_info.get("loss_streak", 0))
         win_streak = int(sym_info.get("win_streak", 0))
         if loss_streak >= 1:
-            return min(10.0, float(loss_streak) * 3.0)
+            return min(4.0, float(loss_streak) * 1.5)
         if win_streak >= 2:
             return -1.5
         return 0.0
