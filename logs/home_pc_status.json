@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-09 07:44:52 UTC",
+  "updated_utc": "2026-11-09 07:45:17 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,14 +20,64 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 74004.0,
-    "ETHUSD": 2091.3,
-    "SOLUSD": 85.56,
-    "XAUUSD": 4091.13,
-    "EURUSD": 1.11707,
-    "USDJPY": 158.025
+    "BTCUSD": 74038.63,
+    "ETHUSD": 2091.66,
+    "SOLUSD": 85.59,
+    "XAUUSD": 4091.58,
+    "EURUSD": 1.11698,
+    "USDJPY": 158.027
   },
-  "active_trades": {},
+  "active_trades": {
+    "1079451328": {
+      "ticket": 1079451328,
+      "symbol": "BTCUSD",
+      "broker_symbol": "BTCUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 74018.15,
+      "sl_price": 74472.78,
+      "initial_sl_price": 74472.78,
+      "tp1_price": 73690.82,
+      "tp2_price": 73268.01,
+      "volume": 0.1,
+      "initial_volume": 0.1,
+      "risk_usd": 45.46,
+      "confluence_score": 92.1,
+      "regime": "TRENDING_DOWN",
+      "agreeing_strategies": [
+        "TREND_PULLBACK"
+      ],
+      "opened_at_utc": "2026-11-09 07:45:11 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0,
+      "scalp_upgraded": true
+    },
+    "1079451390": {
+      "ticket": 1079451390,
+      "symbol": "XAUUSD",
+      "broker_symbol": "GOLD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 4091.5,
+      "sl_price": 4112.07,
+      "initial_sl_price": 4112.07,
+      "tp1_price": 4074.54,
+      "tp2_price": 4051.53,
+      "volume": 0.01,
+      "initial_volume": 0.01,
+      "risk_usd": 20.53,
+      "confluence_score": 80.3,
+      "regime": "SESSION_SWEEP_WINDOW",
+      "agreeing_strategies": [
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "opened_at_utc": "2026-11-09 07:45:14 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0,
+      "scalp_upgraded": true
+    }
+  },
   "bot_stats": {
     "total_closed": 8,
     "wins": 4,
@@ -254,5 +304,5 @@
       }
     ]
   },
-  "cycle_count": 565
+  "cycle_count": 566
 }
