@@ -897,7 +897,12 @@ class MT5Connector:
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
                     digits = int(sym_info.digits) if sym_info is not None else 2
-                    be_sl = round(entry_price, digits)
+                    be_sl = round(
+                        entry_price + (0.04 * r_dist if is_long else -0.04 * r_dist)
+                        if r_dist > 0
+                        else entry_price,
+                        digits,
+                    )
                     cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
                     self._mt5.order_send(
                         {
@@ -912,14 +917,45 @@ class MT5Connector:
                     trade["sl_price"] = be_sl
                     self._save_state()
                     events.append(
-                        f"[BREAK-EVEN SHIELD] Ticket #{ticket} ({broker_sym}) reached +${pos_profit:.2f} (+0.55R)! "
-                        f"SL locked at Break-Even ({be_sl})."
+                        f"[BREAK-EVEN SHIELD +0.04R] Ticket #{ticket} ({broker_sym}) reached +${pos_profit:.2f} (+{cur_r:.2f}R)! "
+                        f"SL locked at Spread-Protected Break-Even ({be_sl})."
                     )
 
-                # Step 2 — TP1 Hit (+0.72R floating or tp1_price): Close partial (if >0.01 lot) OR lock +0.35R profit (for 0.01 lot)
+                # Step 1.5 - Near-TP1 Profit Cushion (+0.58R excursion): Lock SL at +0.25R guaranteed profit
+                if (
+                    not trade.get("tp1_hit", False)
+                    and not trade.get("near_tp1_cushion_active", False)
+                    and (cur_r >= 0.58 or pos_profit >= 0.58 * risk_usd_val)
+                    and r_dist > 0
+                ):
+                    sym_info = self._mt5.symbol_info(broker_sym)
+                    digits = int(sym_info.digits) if sym_info is not None else 2
+                    cushion_sl = round(
+                        entry_price + (0.25 * r_dist if is_long else -0.25 * r_dist), digits
+                    )
+                    cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
+                    self._mt5.order_send(
+                        {
+                            "action": self._mt5.TRADE_ACTION_SLTP,
+                            "position": int(pos.ticket),
+                            "symbol": broker_sym,
+                            "sl": cushion_sl,
+                            "tp": cur_tp,
+                        }
+                    )
+                    trade["near_tp1_cushion_active"] = True
+                    trade["be_shield_active"] = True
+                    trade["sl_price"] = cushion_sl
+                    self._save_state()
+                    events.append(
+                        f"[NEAR-TP1 CUSHION +0.25R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
+                        f"SL ratcheted to +0.25R guaranteed profit ({cushion_sl})."
+                    )
+
+                # Step 2 - Spread-Compensated TP1 Hit (+0.68R floating/excursion or tp1_price): Close partial OR lock +0.35R profit
                 if not trade.get("tp1_hit", False) and tp1_price > 0:
                     price_reached = (cur_price >= tp1_price) if is_long else (cur_price <= tp1_price)
-                    profit_reached = pos_profit >= 0.72 * risk_usd_val
+                    profit_reached = (pos_profit >= 0.68 * risk_usd_val) or (cur_r >= 0.68)
                     if price_reached or profit_reached:
                         partial_closed = self._execute_tp1_protection(pos, trade)
                         trade["tp1_hit"] = True
@@ -1129,6 +1165,9 @@ class MT5Connector:
         if partial_closed == 0.0 and r_dist > 0:
             # 0.01-lot Golden Ratchet: cannot split 0.01 lot, so lock SL at +0.35R guaranteed profit!
             be_sl = round(entry_price + (0.35 * r_dist if is_long else -0.35 * r_dist), digits)
+        elif r_dist > 0:
+            # Partial closed at TP1: lock remaining 50% runner at +0.15R profit cushion above entry!
+            be_sl = round(entry_price + (0.15 * r_dist if is_long else -0.15 * r_dist), digits)
         else:
             be_sl = round(entry_price, digits)
 
