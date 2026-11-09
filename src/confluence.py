@@ -134,7 +134,7 @@ class ConfluenceEngine:
         if use_regime_gate:
             if not profile.is_crypto and regime == MarketRegime.HIGH_VOL_CHOP:
                 return None
-            if not profile.is_crypto and not (1 <= curr.timestamp.hour <= 20):
+            if not profile.is_crypto and not (6 <= curr.timestamp.hour <= 18):
                 return None
 
         active_set = TOURNAMENT_PRESETS.get(
