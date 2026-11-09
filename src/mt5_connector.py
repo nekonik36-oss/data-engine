@@ -823,7 +823,10 @@ class MT5Connector:
                 risk_usd_val = max(float(trade.get("risk_usd", 1.0)), 0.05)
                 cur_r = pos_profit / risk_usd_val
                 if cur_r > float(trade.get("peak_favorable_r", 0.0)):
+                    prev_peak = float(trade.get("peak_favorable_r", 0.0))
                     trade["peak_favorable_r"] = round(cur_r, 3)
+                    if cur_r - prev_peak >= 0.015:
+                        self._save_state()
                 is_long = str(trade.get("direction", "LONG")) == "LONG"
                 entry_price = float(trade.get("entry_price", 0.0))
                 sl_price_cur = float(trade.get("sl_price", 0.0))
@@ -877,7 +880,7 @@ class MT5Connector:
                 if (
                     not trade.get("tp1_hit", False)
                     and not trade.get("be_shield_active", False)
-                    and (pos_profit >= be_shield_r * risk_usd_val or (float(trade.get("peak_favorable_r", 0.0)) >= be_shield_r and pos_profit >= 0.05 * risk_usd_val))
+                    and (pos_profit >= be_shield_r * risk_usd_val or (float(trade.get("peak_favorable_r", 0.0)) >= 0.43 and pos_profit >= 0.05 * risk_usd_val))
                     and entry_price > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
