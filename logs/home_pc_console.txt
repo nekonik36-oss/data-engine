@@ -1,25 +1,3 @@
-==============================================================================
-  24/7 3-ENGINE SPECIALIZED QUANT BOT (75.2% Walk-Forward WR) | Mode: AUTO
-  Data Source    : MT5 Live Connected + 24/7 Live Crypto Feed (Equity: $9,973.64)
-  BTC/SOL (M5)   : H1 Trend + EMA 50/200 + Connors RSI(2) Pullback Break (65%-75% WR)
-  ETHUSD (M5)    : ICT/SND Sweep + Volume Climax (>=1.2x) + Engulfing (80% WR)
-  Forex/Gold M15 : XAUUSD, EURUSD, USDJPY (5-Module Regime+Kronos | 78%-88% WR)
-  Telegram Alert : Configured (Auto-Trade & Result Alerts Ready)
-  Kronos Model   : NeoQuasar/Kronos-base (Device: cuda)
-  Self-Learning  : Online RL Active (11 closed trades learned | SND=1.00x, ICT=0.97x, BREAKOUT=1.00x, TREND_PULLBACK=1.03x, KRONOS=0.90x)
-==============================================================================
-
-[2026-11-09 11:26:26 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 2 | Record: 5W-4L ($-24.76) | Equity: $9,973.64
-  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
-  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
-  [BTCUSD (M5  Live data-api.binance.vision)] Price=74464.2    | Watching for A+ Sniper setup...
-==========================================================================
-  HIGH-CONFLUENCE SETUP DETECTED | ETHUSD (M5) | SELL (SHORT)
-==========================================================================
-  Timestamp (UTC)   : 2026-11-09 11:00 UTC
-  Market Regime     : RANGING
-  Confluence Score  : 94.2 / 100.0  [HYBRID_REGIME_KRONOS]
---------------------------------------------------------------------------
   Entry Price       : 2107.30000
   Stop Loss (SL)    : 2115.69577  (Invalidation + ATR Buffer)
   Take Profit 1     : 2101.00317  (0.8R -> Close 50% & Move SL to BE)
@@ -110,3 +88,63 @@
   [BTCUSD (M5  Live data-api.binance.vision)] Price=74490.0    | Watching for A+ Sniper setup...
   [SOLUSD (M5  Live data-api.binance.vision)] Price=86.54      | Watching for A+ Sniper setup...
   [EURUSD (M15 MT5)] Price=1.11919    | Watching for A+ Sniper setup...
+
+[2026-11-09 11:29:44 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 3 | Record: 5W-4L ($-24.76) | Equity: $9,959.40
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+  [BTCUSD (M5  Live data-api.binance.vision)] Price=74478.0    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=86.52      | Watching for A+ Sniper setup...
+  [EURUSD (M15 MT5)] Price=1.1191     | Watching for A+ Sniper setup...
+
+[2026-11-09 11:30:01 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 3 | Record: 5W-4L ($-24.76) | Equity: $9,957.12
+  [OPEN #1079451390] XAUUSD SHORT @ 4091.5 | SL=4112.07 | TP1=4074.54 | TP2=4051.53
+  [OPEN #1079469593] USDJPY SHORT @ 157.951 | SL=158.173 | TP1=157.783 | TP2=157.556
+  [OPEN #1079629696] ETHUSD SHORT @ 2117.94 | SL=2131.55 | TP1=2108.33 | TP2=2095.78
+==========================================================================
+  HIGH-CONFLUENCE SETUP DETECTED | BTCUSD (M5) | SELL (SHORT)
+==========================================================================
+  Timestamp (UTC)   : 2026-11-09 11:25 UTC
+  Market Regime     : RANGING
+  Confluence Score  : 94.2 / 100.0  [HYBRID_REGIME_KRONOS]
+--------------------------------------------------------------------------
+  Entry Price       : 74485.33000
+  Stop Loss (SL)    : 75000.70794  (Invalidation + ATR Buffer)
+  Take Profit 1     : 74098.79654  (0.8R -> Close 50% & Move SL to BE)
+  Take Profit 2     : 73557.64970  (1.8R -> Runner Target)
+  Suggested Lot     : 0.09 lots  (Risk: $46.38 / 0.50%)
+--------------------------------------------------------------------------
+  STRATEGY BREAKDOWN (Why this setup triggered):
+    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (2 unmitigated zones tracked)
+    [AGREES ] ICT             (conf   68%): BSL Liquidity Sweep above 74742.84 (high 74818.26) + MSS Displacement
+    [NEUTRAL] BREAKOUT        (conf    0%): Inside compression box [74058.45 - 74818.26]
+    [AGREES ] TREND_PULLBACK  (conf   88%): H1 Bear Trend + EMA50<200 + Connors RSI(2)=98.2 Pullback Break
+    [AGREES ] KRONOS          (conf   31%): Bullish Prob=36.1% | Exp Move=-0.42 ATR (Max Up +0.41 ATR / Max Down -1.22 ATR)
+--------------------------------------------------------------------------
+  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=36.1% | Exp Move=-0.42 ATR (Max Up +0.41 ATR / Max Down -1.22 ATR)
+==========================================================================
+  [AUTO-TRADE EXECUTED (MT5)] Ticket #1079632418 | SHORT 0.08 lots BTCUSD @ 74456.55 (SL=75011.93, TP1=74056.68, TP2=73528.87) | Telegram: Telegram alert delivered to your phone!
+==========================================================================
+  HIGH-CONFLUENCE SETUP DETECTED | SOLUSD (M5) | SELL (SHORT)
+==========================================================================
+  Timestamp (UTC)   : 2026-11-09 11:25 UTC
+  Market Regime     : RANGING
+  Confluence Score  : 94.2 / 100.0  [HYBRID_REGIME_KRONOS]
+--------------------------------------------------------------------------
+  Entry Price       : 86.53000
+  Stop Loss (SL)    : 87.48251  (Invalidation + ATR Buffer)
+  Take Profit 1     : 85.81562  (0.8R -> Close 50% & Move SL to BE)
+  Take Profit 2     : 84.81548  (1.8R -> Runner Target)
+  Suggested Lot     : 5.22 lots  (Risk: $49.72 / 0.50%)
+--------------------------------------------------------------------------
+  STRATEGY BREAKDOWN (Why this setup triggered):
+    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (1 unmitigated zones tracked)
+    [NEUTRAL] ICT             (conf    0%): Waiting for BSL (87.290) or SSL (85.860) liquidity sweep
+    [NEUTRAL] BREAKOUT        (conf    0%): Inside compression box [85.81 - 87.15]
+    [AGREES ] TREND_PULLBACK  (conf   88%): H1 Bear Trend + EMA50<200 + Connors RSI(2)=95.8 Pullback Break
+    [OPPOSES] KRONOS          (conf   15%): Bullish Prob=56.7% | Exp Move=+0.20 ATR (Max Up +0.76 ATR / Max Down -0.92 ATR)
+--------------------------------------------------------------------------
+  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=56.7% | Exp Move=+0.20 ATR (Max Up +0.76 ATR / Max Down -0.92 ATR)
+==========================================================================
+  [SPREAD CEILING GUARD] Skipping SOLUSD: live broker spread $0.73 (0.85% of price) exceeds 0.25% M5 scalp ceiling.
+  [EURUSD (M15 MT5)] Price=1.11907    | Watching for A+ Sniper setup...
