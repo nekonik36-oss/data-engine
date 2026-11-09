@@ -821,12 +821,6 @@ class MT5Connector:
                 cur_price = float(pos.price_current)
                 pos_profit = float(getattr(pos, "profit", 0.0) or 0.0)
                 risk_usd_val = max(float(trade.get("risk_usd", 1.0)), 0.05)
-                cur_r = pos_profit / risk_usd_val
-                if cur_r > float(trade.get("peak_favorable_r", 0.0)):
-                    prev_peak = float(trade.get("peak_favorable_r", 0.0))
-                    trade["peak_favorable_r"] = round(cur_r, 3)
-                    if cur_r - prev_peak >= 0.015:
-                        self._save_state()
                 is_long = str(trade.get("direction", "LONG")) == "LONG"
                 entry_price = float(trade.get("entry_price", 0.0))
                 sl_price_cur = float(trade.get("sl_price", 0.0))
@@ -834,6 +828,24 @@ class MT5Connector:
                     trade["initial_sl_price"] = sl_price_cur
                 init_sl_price = float(trade.get("initial_sl_price", sl_price_cur))
                 r_dist = abs(entry_price - init_sl_price) if (entry_price > 0 and init_sl_price > 0) else 0.0
+                init_vol = max(
+                    float(trade.get("initial_volume", trade.get("volume", getattr(pos, "volume", 0.01))) or 0.01),
+                    0.01,
+                )
+                cur_vol_pos = max(float(getattr(pos, "volume", init_vol) or init_vol), 0.01)
+                vol_scale = min(1.0, cur_vol_pos / init_vol)
+                remaining_risk_usd = max(risk_usd_val * vol_scale, 0.05)
+                price_r = (
+                    ((cur_price - entry_price) if is_long else (entry_price - cur_price)) / r_dist
+                    if (entry_price > 0 and r_dist > 0)
+                    else 0.0
+                )
+                cur_r = max(pos_profit / remaining_risk_usd, price_r)
+                if cur_r > float(trade.get("peak_favorable_r", 0.0)):
+                    prev_peak = float(trade.get("peak_favorable_r", 0.0))
+                    trade["peak_favorable_r"] = round(cur_r, 3)
+                    if cur_r - prev_peak >= 0.015:
+                        self._save_state()
                 # Auto-tighten wide-spread altcoin stops (e.g. SOLUSD >1.5% stop) to cap max risk & lock profit early
                 if (
                     not trade.get("tp1_hit", False)
@@ -928,8 +940,38 @@ class MT5Connector:
                 # Step 3 — Golden Runner Ratchet (+1.35R): Lock SL at +0.85R guaranteed profit on road to TP2
                 if (
                     trade.get("tp1_hit", False)
+                    and not trade.get("mid_runner_lock_active", False)
                     and not trade.get("runner_ratchet_active", False)
-                    and pos_profit >= 1.35 * risk_usd_val
+                    and cur_r >= 0.95
+                    and r_dist > 0
+                ):
+                    sym_info = self._mt5.symbol_info(broker_sym)
+                    digits = int(sym_info.digits) if sym_info is not None else 2
+                    mid_sl = round(
+                        entry_price + (0.40 * r_dist if is_long else -0.40 * r_dist), digits
+                    )
+                    cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
+                    self._mt5.order_send(
+                        {
+                            "action": self._mt5.TRADE_ACTION_SLTP,
+                            "position": int(pos.ticket),
+                            "symbol": broker_sym,
+                            "sl": mid_sl,
+                            "tp": cur_tp,
+                        }
+                    )
+                    trade["mid_runner_lock_active"] = True
+                    trade["sl_price"] = mid_sl
+                    self._save_state()
+                    events.append(
+                        f"[RUNNER LOCK +0.40R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
+                        f"SL ratcheted to +0.40R guaranteed profit ({mid_sl})."
+                    )
+
+                if (
+                    trade.get("tp1_hit", False)
+                    and not trade.get("runner_ratchet_active", False)
+                    and (cur_r >= 1.25 or pos_profit >= 1.35 * remaining_risk_usd)
                     and r_dist > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
@@ -951,7 +993,7 @@ class MT5Connector:
                     trade["sl_price"] = ratchet_sl
                     self._save_state()
                     events.append(
-                        f"[RUNNER RATCHET +0.85R] Ticket #{ticket} ({broker_sym}) reached +${pos_profit:.2f} (+1.35R)! "
+                        f"[RUNNER RATCHET +0.85R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
                         f"SL ratcheted to +0.85R guaranteed profit ({ratchet_sl})."
                     )
                 continue
@@ -1075,6 +1117,10 @@ class MT5Connector:
                 res = self._send_order_with_filling_fallback(close_req)
                 if res is not None and res.retcode == self._mt5.TRADE_RETCODE_DONE:
                     partial_closed = close_vol
+                    trade["volume"] = round(max(vol_min, cur_vol - partial_closed), 2)
+                    trade["partial_closed_volume"] = round(
+                        float(trade.get("partial_closed_volume", 0.0)) + partial_closed, 2
+                    )
 
         entry_price = float(trade.get("entry_price", pos.price_open))
         init_sl_price = float(trade.get("initial_sl_price", trade.get("sl_price", entry_price)))
