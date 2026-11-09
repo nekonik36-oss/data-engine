@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-09 13:09:44 UTC",
+  "updated_utc": "2026-11-09 13:11:20 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9837.7,
+  "live_equity": 9834.1,
   "bot_stats": {
     "total_closed": 15,
     "wins": 5,
@@ -219,23 +219,6 @@
   },
   "pending_post_mortems": [
     {
-      "ticket": 1079451390,
-      "symbol": "XAUUSD",
-      "direction": "SHORT",
-      "entry_price": 4091.5,
-      "exit_price": 4112.11,
-      "tp1_price": 4074.54,
-      "tp2_price": 4051.53,
-      "agreeing_strategies": [
-        "BREAKOUT",
-        "KRONOS"
-      ],
-      "regime": "SESSION_SWEEP_WINDOW",
-      "closed_epoch": 1794224394.014114,
-      "closed_at_utc": "2026-11-09 11:39:54 UTC",
-      "audited": false
-    },
-    {
       "ticket": 1079632418,
       "symbol": "BTCUSD",
       "direction": "SHORT",
@@ -442,6 +425,14 @@
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-09 13:10:06 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1079451390,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1079451390 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }
