@@ -102,7 +102,7 @@ class AdaptiveLearner:
     def get_symbol_be_shield_r(self, symbol: str) -> float:
         """Return dynamic Break-Even Shield trigger (`0.42R` to `0.55R`) learned from near-TP1 reversals."""
         tuning = (self.state.get("symbol_tuning") or {}).get(symbol.upper(), {})
-        return round(max(0.42, min(0.55, float(tuning.get("be_shield_r", 0.50)))), 3)
+        return round(max(0.38, min(0.45, float(tuning.get("be_shield_r", 0.45)))), 3)
 
     def get_strategy_multiplier(
         self, strategy_name: str, regime_name: str = "TREND_EXPANSION"
@@ -241,7 +241,7 @@ class AdaptiveLearner:
             sym_tune = tuning_map.setdefault(
                 sym_key, {"sl_floor_mult": 1.0, "be_shield_r": 0.55}
             )
-            if peak_r >= 0.45:
+            if peak_r >= 0.40:
                 # Trade went +0.45R+ into profit before reversing to SL -> tighten Break-Even Shield!
                 old_be = float(sym_tune.get("be_shield_r", 0.55))
                 new_be = round(max(0.42, old_be - 0.04), 2)

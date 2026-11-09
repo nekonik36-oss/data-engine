@@ -305,6 +305,11 @@ class ConfluenceEngine:
                 if not tpb_votes:
                     return None
                 direction = tpb_votes[0].direction
+                if kronos_fc is not None:
+                    if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
+                        return None
+                    if direction == Direction.LONG and kronos_fc.bullish_prob <= 0.32:
+                        return None
                 agreeing_pa = [v for v in pa_votes if v.direction == direction]
                 learned_m = self.learner.get_strategy_multiplier(
                     "TREND_PULLBACK", regime.value
@@ -373,6 +378,11 @@ class ConfluenceEngine:
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 else:
                     return None
+                if kronos_fc is not None:
+                    if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
+                        return None
+                    if direction == Direction.LONG and kronos_fc.bullish_prob <= 0.32:
+                        return None
 
             else:
                 # Engine 3: Gold & Forex M15 5-Module Regime-Gated + Kronos AI Sniper (78.2%-82.4% Win Rate)
