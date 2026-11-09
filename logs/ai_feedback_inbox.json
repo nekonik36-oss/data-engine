@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-09 14:18:27 UTC",
+  "updated_utc": "2026-11-09 14:20:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "live_equity": 9811.9,
   "bot_stats": {
@@ -239,23 +239,6 @@
   },
   "pending_post_mortems": [
     {
-      "ticket": 1079629696,
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "entry_price": 2117.94,
-      "exit_price": 2131.65,
-      "tp1_price": 2108.33,
-      "tp2_price": 2095.78,
-      "agreeing_strategies": [
-        "TREND_PULLBACK",
-        "KRONOS"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1794228599.452942,
-      "closed_at_utc": "2026-11-09 12:49:59 UTC",
-      "audited": false
-    },
-    {
       "ticket": 1079668118,
       "symbol": "EURUSD",
       "direction": "SHORT",
@@ -476,6 +459,14 @@
       "symbol": "BTCUSD",
       "direction": "SHORT",
       "summary": "Ticket #1079632418 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+    },
+    {
+      "timestamp_utc": "2026-11-09 14:20:04 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1079629696,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1079629696 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }
