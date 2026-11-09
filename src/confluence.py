@@ -173,7 +173,9 @@ class ConfluenceEngine:
                 ema20_slope3 = ind.ema20[idx] - ind.ema20[max(0, idx - 3)]
                 if (
                     h1_bull
+                    and ind.ema20[idx] > e50
                     and e50 > e200
+                    and curr.close > e60
                     and min_rsi2 < 20.0
                     and curr.is_bullish
                     and curr.close > prev.high
@@ -185,13 +187,15 @@ class ConfluenceEngine:
                             strategy_name="TREND_PULLBACK",
                             direction=Direction.LONG,
                             confidence=0.88,
-                            reason=f"H1 Bull Trend + EMA50>200 + Connors RSI(2)={min_rsi2:.1f} Pullback Break",
+                            reason=f"H1 Bull Trend + EMA20>50>200 + Connors RSI(2)={min_rsi2:.1f} Pullback Break",
                             suggested_sl=min(curr.low, prev.low) - 1.20 * cur_atr,
                         )
                     )
                 elif (
                     h1_bear
+                    and ind.ema20[idx] < e50
                     and e50 < e200
+                    and curr.close < e60
                     and max_rsi2 > 80.0
                     and curr.is_bearish
                     and curr.close < prev.low

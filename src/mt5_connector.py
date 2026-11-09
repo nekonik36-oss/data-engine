@@ -449,30 +449,61 @@ class MT5Connector:
                 f"(Ticket #{dup_ticket}). Avoiding duplicate exposure."
             )
 
-        # 1b. 60-Minute Same-Direction Re-Entry Cooldown after a Reversal Stop-Out
-        for past in reversed(list(self.stats.get("history", []))):
-            if str(past.get("symbol", "")).upper() == signal.symbol.upper():
-                if (
-                    str(past.get("direction", "")).upper() == signal.direction.value.upper()
-                    and float(past.get("r_multiple", 0.0)) < 0.80
+        is_crypto_sig = signal.symbol.upper() in CRYPTO_INSTRUMENTS
+
+        # 1b. Correlated Crypto Risk Cap: Never open a 2nd Crypto trade while another Crypto trade is unprotected (< BE Shield)
+        if is_crypto_sig:
+            for open_t in self.active_trades.values():
+                open_sym = str(open_t.get("symbol", "")).upper()
+                if open_sym in CRYPTO_INSTRUMENTS and not (
+                    open_t.get("be_shield_active", False) or open_t.get("tp1_hit", False)
                 ):
-                    closed_str = str(past.get("closed_at_utc", ""))
-                    if closed_str:
-                        try:
-                            closed_dt = datetime.strptime(closed_str, "%Y-%m-%d %H:%M:%S UTC").replace(
-                                tzinfo=timezone.utc
-                            )
-                            elapsed_sec = (datetime.now(timezone.utc) - closed_dt).total_seconds()
-                            if 0 <= elapsed_sec < 3600:
-                                mins_ago = elapsed_sec / 60.0
-                                return (
-                                    f"[RE-ENTRY COOLDOWN GUARD] Skipping {signal.symbol} {signal.direction.value}: "
-                                    f"previous {signal.direction.value} closed {mins_ago:.0f}m ago on reversal stop. "
-                                    f"Waiting 60m for structure reset."
-                                )
-                        except Exception:
-                            pass
-                break
+                    return (
+                        f"[CORRELATED CRYPTO GUARD] Skipping {signal.symbol}: {open_sym} "
+                        f"(Ticket #{open_t.get('ticket')}) is still unprotected (< Break-Even Shield). "
+                        f"Capping simultaneous unprotected Crypto risk at 1 trade."
+                    )
+
+        # 1c. 60m Same-Symbol Re-Entry Cooldown & 45m Cross-Crypto Stop-Loss Cooldown
+        checked_same_symbol = False
+        for past in reversed(list(self.stats.get("history", []))):
+            past_sym = str(past.get("symbol", "")).upper()
+            past_dir = str(past.get("direction", "")).upper()
+            past_r = float(past.get("r_multiple", 0.0))
+            closed_str = str(past.get("closed_at_utc", ""))
+            elapsed_sec = 999999.0
+            if closed_str:
+                try:
+                    closed_dt = datetime.strptime(closed_str, "%Y-%m-%d %H:%M:%S UTC").replace(
+                        tzinfo=timezone.utc
+                    )
+                    elapsed_sec = (datetime.now(timezone.utc) - closed_dt).total_seconds()
+                except Exception:
+                    pass
+
+            if not checked_same_symbol and past_sym == signal.symbol.upper():
+                checked_same_symbol = True
+                if past_dir == signal.direction.value.upper() and past_r < 0.80 and 0 <= elapsed_sec < 3600:
+                    mins_ago = elapsed_sec / 60.0
+                    return (
+                        f"[RE-ENTRY COOLDOWN GUARD] Skipping {signal.symbol} {signal.direction.value}: "
+                        f"previous {signal.direction.value} closed {mins_ago:.0f}m ago on reversal stop. "
+                        f"Waiting 60m for structure reset."
+                    )
+
+            if (
+                is_crypto_sig
+                and past_sym in CRYPTO_INSTRUMENTS
+                and past_dir == signal.direction.value.upper()
+                and past_r <= -0.50
+                and 0 <= elapsed_sec < 2700
+            ):
+                mins_ago = elapsed_sec / 60.0
+                return (
+                    f"[CRYPTO SECTOR COOLDOWN] Skipping {signal.symbol} {signal.direction.value}: "
+                    f"correlated {past_sym} {past_dir} hit Stop Loss {mins_ago:.0f}m ago ({past_r:+.2f}R). "
+                    f"Waiting 45m for crypto sector stabilization."
+                )
 
         # 2. Check max concurrent open positions (dynamically scaled for $10-$50 small accounts)
         acct_equity_pre = self.get_account_equity()
