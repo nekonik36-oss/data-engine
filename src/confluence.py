@@ -389,8 +389,16 @@ class ConfluenceEngine:
                 if opposing_pa:
                     return None
 
-                if agreeing_names == {"BREAKOUT"} and ind.adx[idx] < 20.0:
-                    return None
+                if agreeing_names == {"BREAKOUT"}:
+                    if ind.adx[idx] < 20.0:
+                        return None
+                    # Block solo counter-trend BREAKOUT traps (e.g. Judas Swing sweeps in SESSION_SWEEP_WINDOW)
+                    if direction == Direction.SHORT and ind.ema50[idx] > ind.ema200[idx]:
+                        return None
+                    if direction == Direction.LONG and ind.ema50[idx] < ind.ema200[idx]:
+                        return None
+                    if regime == MarketRegime.SESSION_SWEEP_WINDOW and ind.adx[idx] < 25.0:
+                        return None
 
                 if regime == MarketRegime.RANGING:
                     if agreeing_names == {"BREAKOUT"}:
