@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-09 12:49:24 UTC",
+  "updated_utc": "2026-11-09 12:50:04 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9840.81,
+  "live_equity": 9830.16,
   "bot_stats": {
-    "total_closed": 13,
+    "total_closed": 14,
     "wins": 5,
-    "losses": 6,
+    "losses": 7,
     "breakevens": 2,
-    "cumulative_pnl": -91.42,
+    "cumulative_pnl": -141.87,
     "history": [
       {
         "ticket": 1078980632,
@@ -151,6 +151,17 @@
         "r_multiple": -1.04,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-09 12:33:22 UTC"
+      },
+      {
+        "ticket": 1079629696,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 2117.94,
+        "exit_price": 2131.65,
+        "net_pnl": -50.45,
+        "r_multiple": -1.02,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-09 12:49:59 UTC"
       }
     ]
   },
@@ -162,6 +173,10 @@
     "XAUUSD": {
       "sl_floor_mult": 1.0,
       "be_shield_r": 0.55
+    },
+    "ETHUSD": {
+      "sl_floor_mult": 1.0,
+      "be_shield_r": 0.55
     }
   },
   "symbol_streaks": {
@@ -171,9 +186,9 @@
       "net_r": -1.97
     },
     "ETHUSD": {
-      "win_streak": 1,
-      "loss_streak": 0,
-      "net_r": 0.15
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": -0.87
     },
     "SOLUSD": {
       "win_streak": 1,
@@ -220,6 +235,23 @@
       "regime": "RANGING",
       "closed_epoch": 1794227602.66625,
       "closed_at_utc": "2026-11-09 12:33:22 UTC",
+      "audited": false
+    },
+    {
+      "ticket": 1079629696,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "entry_price": 2117.94,
+      "exit_price": 2131.65,
+      "tp1_price": 2108.33,
+      "tp2_price": 2095.78,
+      "agreeing_strategies": [
+        "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "regime": "RANGING",
+      "closed_epoch": 1794228599.452942,
+      "closed_at_utc": "2026-11-09 12:49:59 UTC",
       "audited": false
     }
   ],
@@ -362,6 +394,22 @@
         "KRONOS"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=74056.68)"
+    },
+    {
+      "timestamp_utc": "2026-11-09 12:49:59 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1079629696,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "net_pnl": -50.45,
+      "r_multiple": -1.02,
+      "peak_favorable_r": 0.22,
+      "regime": "RANGING",
+      "strategies": [
+        "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=2108.33)"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-09 12:49:24 UTC",
+  "updated_utc": "2026-11-09 12:50:04 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,13 +16,14 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9840.81,
+  "live_equity": 9830.16,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 74882.0,
-    "SOLUSD": 86.78,
-    "XAUUSD": 4115.86
+    "BTCUSD": 75010.44,
+    "ETHUSD": 2130.22,
+    "SOLUSD": 86.94,
+    "XAUUSD": 4118.94
   },
   "active_trades": {
     "1079469593": {
@@ -51,32 +52,6 @@
       "scalp_upgraded": true,
       "peak_favorable_r": 0.347
     },
-    "1079629696": {
-      "ticket": 1079629696,
-      "symbol": "ETHUSD",
-      "broker_symbol": "ETHUSD",
-      "broker_source": "MT5_LIVE",
-      "direction": "SHORT",
-      "entry_price": 2117.94,
-      "sl_price": 2131.55,
-      "initial_sl_price": 2131.55,
-      "tp1_price": 2108.33,
-      "tp2_price": 2095.78,
-      "volume": 3.68,
-      "initial_volume": 3.68,
-      "risk_usd": 49.68,
-      "confluence_score": 94.2,
-      "regime": "RANGING",
-      "agreeing_strategies": [
-        "TREND_PULLBACK",
-        "KRONOS"
-      ],
-      "opened_at_utc": "2026-11-09 11:26:36 UTC",
-      "tp1_hit": false,
-      "partial_pnl": 0.0,
-      "scalp_upgraded": true,
-      "peak_favorable_r": 0.224
-    },
     "1079668118": {
       "ticket": 1079668118,
       "symbol": "EURUSD",
@@ -104,11 +79,11 @@
     }
   },
   "bot_stats": {
-    "total_closed": 13,
+    "total_closed": 14,
     "wins": 5,
-    "losses": 6,
+    "losses": 7,
     "breakevens": 2,
-    "cumulative_pnl": -91.42,
+    "cumulative_pnl": -141.87,
     "history": [
       {
         "ticket": 1078980632,
@@ -252,12 +227,23 @@
         "r_multiple": -1.04,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-09 12:33:22 UTC"
+      },
+      {
+        "ticket": 1079629696,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 2117.94,
+        "exit_price": 2131.65,
+        "net_pnl": -50.45,
+        "r_multiple": -1.02,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-09 12:49:59 UTC"
       }
     ]
   },
   "learned_weights": {
-    "updated_utc": "2026-11-09 12:33:22 UTC",
-    "total_episodes": 13,
+    "updated_utc": "2026-11-09 12:49:59 UTC",
+    "total_episodes": 14,
     "strategy_stats": {
       "SND": {
         "trades": 0,
@@ -281,25 +267,25 @@
         "multiplier": 0.986
       },
       "TREND_PULLBACK": {
-        "trades": 9,
+        "trades": 10,
         "wins": 4,
-        "losses": 3,
-        "ema_r": -0.141,
-        "multiplier": 0.965
+        "losses": 4,
+        "ema_r": -0.333,
+        "multiplier": 0.917
       },
       "KRONOS": {
-        "trades": 8,
+        "trades": 9,
         "wins": 2,
-        "losses": 6,
-        "ema_r": -0.638,
-        "multiplier": 0.841
+        "losses": 7,
+        "ema_r": -0.721,
+        "multiplier": 0.82
       }
     },
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.887,
-      "RANGING:KRONOS": 0.821,
+      "RANGING:KRONOS": 0.775,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.973,
-      "RANGING:TREND_PULLBACK": 1.089,
+      "RANGING:TREND_PULLBACK": 1.043,
       "TRENDING_DOWN:TREND_PULLBACK": 0.955,
       "SESSION_SWEEP_WINDOW:ICT": 1.02,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.955,
@@ -312,9 +298,9 @@
         "net_r": -1.97
       },
       "ETHUSD": {
-        "win_streak": 1,
-        "loss_streak": 0,
-        "net_r": 0.15
+        "win_streak": 0,
+        "loss_streak": 1,
+        "net_r": -0.87
       },
       "SOLUSD": {
         "win_streak": 1,
@@ -333,6 +319,10 @@
         "be_shield_r": 0.55
       },
       "XAUUSD": {
+        "sl_floor_mult": 1.0,
+        "be_shield_r": 0.55
+      },
+      "ETHUSD": {
         "sl_floor_mult": 1.0,
         "be_shield_r": 0.55
       }
@@ -371,6 +361,23 @@
         "regime": "RANGING",
         "closed_epoch": 1794227602.66625,
         "closed_at_utc": "2026-11-09 12:33:22 UTC",
+        "audited": false
+      },
+      {
+        "ticket": 1079629696,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 2117.94,
+        "exit_price": 2131.65,
+        "tp1_price": 2108.33,
+        "tp2_price": 2095.78,
+        "agreeing_strategies": [
+          "TREND_PULLBACK",
+          "KRONOS"
+        ],
+        "regime": "RANGING",
+        "closed_epoch": 1794228599.452942,
+        "closed_at_utc": "2026-11-09 12:49:59 UTC",
         "audited": false
       }
     ],
@@ -513,8 +520,24 @@
           "KRONOS"
         ],
         "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=74056.68)"
+      },
+      {
+        "timestamp_utc": "2026-11-09 12:49:59 UTC",
+        "event": "TRADE_CLOSED_DIAGNOSTIC",
+        "ticket": 1079629696,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "net_pnl": -50.45,
+        "r_multiple": -1.02,
+        "peak_favorable_r": 0.22,
+        "regime": "RANGING",
+        "strategies": [
+          "TREND_PULLBACK",
+          "KRONOS"
+        ],
+        "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=2108.33)"
       }
     ]
   },
-  "cycle_count": 5
+  "cycle_count": 7
 }
