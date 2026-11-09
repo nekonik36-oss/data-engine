@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-09 07:35:20 UTC",
+  "updated_utc": "2026-11-09 07:36:51 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 10009.66,
+  "live_equity": 10000.62,
   "bot_stats": {
-    "total_closed": 7,
+    "total_closed": 8,
     "wins": 4,
     "losses": 3,
-    "breakevens": 0,
-    "cumulative_pnl": 0.77,
+    "breakevens": 1,
+    "cumulative_pnl": 0.62,
     "history": [
       {
         "ticket": 1078980632,
@@ -85,6 +85,17 @@
         "r_multiple": 0.77,
         "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
         "closed_at_utc": "2026-11-09 07:12:30 UTC"
+      },
+      {
+        "ticket": 1079412826,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 74147.05,
+        "exit_price": 74148.55,
+        "net_pnl": -0.15,
+        "r_multiple": -0.0,
+        "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
+        "closed_at_utc": "2026-11-09 07:36:45 UTC"
       }
     ]
   },
@@ -148,6 +159,21 @@
       "r_multiple": 0.77,
       "peak_favorable_r": 0.49,
       "regime": "RANGING",
+      "strategies": [
+        "TREND_PULLBACK"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-09 07:36:45 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1079412826,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "net_pnl": -0.15,
+      "r_multiple": -0.0,
+      "peak_favorable_r": 0.56,
+      "regime": "TRENDING_DOWN",
       "strategies": [
         "TREND_PULLBACK"
       ],

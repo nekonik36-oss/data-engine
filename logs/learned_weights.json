@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-09 07:12:30 UTC",
-  "total_episodes": 7,
+  "updated_utc": "2026-11-09 07:36:45 UTC",
+  "total_episodes": 8,
   "strategy_stats": {
     "SND": {
       "trades": 0,
@@ -24,11 +24,11 @@
       "multiplier": 1.0
     },
     "TREND_PULLBACK": {
-      "trades": 4,
+      "trades": 5,
       "wins": 3,
       "losses": 1,
-      "ema_r": 0.407,
-      "multiplier": 1.102
+      "ema_r": 0.317,
+      "multiplier": 1.079
     },
     "KRONOS": {
       "trades": 6,
@@ -42,7 +42,8 @@
     "RANGING:ICT": 0.934,
     "RANGING:KRONOS": 0.868,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.954,
-    "RANGING:TREND_PULLBACK": 1.136
+    "RANGING:TREND_PULLBACK": 1.136,
+    "TRENDING_DOWN:TREND_PULLBACK": 1.0
   },
   "symbol_streaks": {
     "BTCUSD": {
@@ -104,6 +105,21 @@
       "r_multiple": 0.77,
       "peak_favorable_r": 0.49,
       "regime": "RANGING",
+      "strategies": [
+        "TREND_PULLBACK"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-09 07:36:45 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1079412826,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "net_pnl": -0.15,
+      "r_multiple": -0.0,
+      "peak_favorable_r": 0.56,
+      "regime": "TRENDING_DOWN",
       "strategies": [
         "TREND_PULLBACK"
       ],
