@@ -488,6 +488,14 @@ class MT5Connector:
                     is_long = signal.direction == Direction.LONG
                     fill_price = round(float(tick.ask if is_long else tick.bid), digits)
 
+                    # Broker Percentage Spread Ceiling (blocks wide-spread altcoin CFDs like XM SOLUSD 0.84% spread)
+                    if is_crypto and fill_price > 0 and (live_spread / fill_price) > 0.0025:
+                        return (
+                            f"[SPREAD CEILING GUARD] Skipping {broker_sym}: live broker spread "
+                            f"${live_spread:.2f} ({live_spread / fill_price * 100:.2f}% of price) "
+                            f"exceeds 0.25% M5 scalp ceiling."
+                        )
+
                     # Anti-Wick Structural Stop Floor + Live MT5 Spread Buffer:
                     # Pad SL by +live_spread and enforce >= 4.5x spread & >= 0.22% floor on Crypto so
                     # weekend compressed M5 ATR + broker spread never wicks out a winning trade early.
@@ -823,6 +831,37 @@ class MT5Connector:
                     trade["initial_sl_price"] = sl_price_cur
                 init_sl_price = float(trade.get("initial_sl_price", sl_price_cur))
                 r_dist = abs(entry_price - init_sl_price) if (entry_price > 0 and init_sl_price > 0) else 0.0
+                # Auto-tighten wide-spread altcoin stops (e.g. SOLUSD >1.5% stop) to cap max risk & lock profit early
+                if (
+                    not trade.get("tp1_hit", False)
+                    and not trade.get("spread_cap_applied", False)
+                    and entry_price > 0
+                    and (r_dist / entry_price) > 0.015
+                ):
+                    sym_info = self._mt5.symbol_info(broker_sym)
+                    digits = int(sym_info.digits) if sym_info is not None else 2
+                    tight_r = entry_price * 0.011
+                    new_sl = round(entry_price - tight_r if is_long else entry_price + tight_r, digits)
+                    new_tp1 = round(entry_price + 0.60 * tight_r if is_long else entry_price - 0.60 * tight_r, digits)
+                    new_tp2 = round(entry_price + 1.35 * tight_r if is_long else entry_price - 1.35 * tight_r, digits)
+                    self._mt5.order_send(
+                        {
+                            "action": self._mt5.TRADE_ACTION_SLTP,
+                            "position": int(pos.ticket),
+                            "symbol": broker_sym,
+                            "sl": new_sl,
+                            "tp": new_tp2,
+                        }
+                    )
+                    trade["sl_price"] = new_sl
+                    trade["initial_sl_price"] = new_sl
+                    trade["tp1_price"] = new_tp1
+                    trade["tp2_price"] = new_tp2
+                    trade["risk_usd"] = round(min(risk_usd_val, 18.0), 2)
+                    trade["spread_cap_applied"] = True
+                    risk_usd_val = float(trade["risk_usd"])
+                    r_dist = tight_r
+                    self._save_state()
                 # Auto-tighten legacy open trades into 0.75R/1.8R Scalp targets
                 if not trade.get("tp1_hit", False) and not trade.get("scalp_upgraded", False) and r_dist > 0:
                     new_tp1 = round(entry_price + (0.75 * r_dist if is_long else -0.75 * r_dist), 5)
