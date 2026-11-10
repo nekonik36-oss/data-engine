@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 05:41:56 UTC",
+  "updated_utc": "2026-11-10 05:43:07 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 74854.76,
-    "ETHUSD": 2126.19,
-    "SOLUSD": 86.29
+    "BTCUSD": 74892.01,
+    "ETHUSD": 2127.26,
+    "SOLUSD": 86.28
   },
   "active_trades": {},
   "bot_stats": {
@@ -245,8 +245,8 @@
     "crypto_book_pnl": 51.35
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 05:36:09 UTC",
-    "total_episodes": 19,
+    "updated_utc": "2026-11-10 05:43:06 UTC",
+    "total_episodes": 20,
     "strategy_stats": {
       "SND": {
         "trades": 0,
@@ -256,11 +256,11 @@
         "multiplier": 1.0
       },
       "ICT": {
-        "trades": 7,
+        "trades": 8,
         "wins": 3,
-        "losses": 4,
-        "ema_r": -0.305,
-        "multiplier": 0.924
+        "losses": 5,
+        "ema_r": -0.361,
+        "multiplier": 0.91
       },
       "BREAKOUT": {
         "trades": 2,
@@ -285,7 +285,7 @@
       }
     },
     "regime_strategy_multipliers": {
-      "RANGING:ICT": 0.887,
+      "RANGING:ICT": 0.871,
       "RANGING:KRONOS": 0.833,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.973,
       "RANGING:TREND_PULLBACK": 1.079,
@@ -616,26 +616,11 @@
       }
     ],
     "live_episodes": 1,
-    "active_shadow_trades": [
-      {
-        "key": "ETHUSD:ICT",
-        "symbol": "ETHUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 2122.56,
-        "sl_price": 2127.22963,
-        "sl_dist": 4.66963,
-        "tp1_price": 2120.13179,
-        "tp2_price": 2117.4234,
-        "opened_epoch": 1794288970.361693,
-        "tp1_hit": false,
-        "peak_r": 0.0
-      }
-    ],
+    "active_shadow_trades": [],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794288970.361693
-    }
+    },
+    "shadow_episodes": 1
   },
-  "cycle_count": 25
+  "cycle_count": 28
 }
