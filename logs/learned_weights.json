@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-10 23:21:40 UTC",
-  "total_episodes": 90,
+  "updated_utc": "2026-11-10 23:27:49 UTC",
+  "total_episodes": 91,
   "strategy_stats": {
     "SND": {
-      "trades": 3,
-      "wins": 3,
+      "trades": 4,
+      "wins": 4,
       "losses": 0,
-      "ema_r": 0.147,
-      "multiplier": 1.028
+      "ema_r": 0.164,
+      "multiplier": 1.041
     },
     "ICT": {
       "trades": 28,
@@ -50,7 +50,7 @@
     "TRENDING_DOWN:ICT": 1.01,
     "TRENDING_DOWN:KRONOS": 1.059,
     "RANGING:BREAKOUT": 1.0,
-    "RANGING:SND": 1.019,
+    "RANGING:SND": 1.025,
     "TRENDING_DOWN:BREAKOUT": 1.042,
     "TRENDING_DOWN:SND": 1.013
   },
@@ -477,21 +477,6 @@
       "peak_r": 0.372
     },
     {
-      "key": "ETHUSD:SND",
-      "symbol": "ETHUSD",
-      "strategy_name": "SND",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 2048.74,
-      "sl_price": 2043.62478,
-      "sl_dist": 5.11522,
-      "tp1_price": 2051.39991,
-      "tp2_price": 2054.36674,
-      "opened_epoch": 1794352507.650639,
-      "tp1_hit": true,
-      "peak_r": 0.782
-    },
-    {
       "key": "ETHUSD:KRONOS",
       "symbol": "ETHUSD",
       "strategy_name": "KRONOS",
@@ -523,5 +508,5 @@
     "SOLUSD:TREND_PULLBACK": 1794301523.702785,
     "ETHUSD:SND": 1794352507.650639
   },
-  "shadow_episodes": 66
+  "shadow_episodes": 67
 }
