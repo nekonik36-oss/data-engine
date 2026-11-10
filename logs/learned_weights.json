@@ -1,20 +1,20 @@
 {
-  "updated_utc": "2026-11-10 23:15:47 UTC",
-  "total_episodes": 87,
+  "updated_utc": "2026-11-10 23:21:40 UTC",
+  "total_episodes": 90,
   "strategy_stats": {
     "SND": {
-      "trades": 2,
-      "wins": 2,
+      "trades": 3,
+      "wins": 3,
       "losses": 0,
-      "ema_r": 0.089,
-      "multiplier": 1.011
+      "ema_r": 0.147,
+      "multiplier": 1.028
     },
     "ICT": {
-      "trades": 27,
-      "wins": 14,
+      "trades": 28,
+      "wins": 15,
       "losses": 13,
-      "ema_r": -0.238,
-      "multiplier": 0.941
+      "ema_r": -0.154,
+      "multiplier": 0.961
     },
     "BREAKOUT": {
       "trades": 24,
@@ -31,11 +31,11 @@
       "multiplier": 0.894
     },
     "KRONOS": {
-      "trades": 27,
-      "wins": 10,
+      "trades": 28,
+      "wins": 11,
       "losses": 16,
-      "ema_r": -0.194,
-      "multiplier": 0.951
+      "ema_r": -0.114,
+      "multiplier": 0.972
     }
   },
   "regime_strategy_multipliers": {
@@ -47,11 +47,12 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.983,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.947,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.867,
-    "TRENDING_DOWN:ICT": 0.997,
-    "TRENDING_DOWN:KRONOS": 1.046,
+    "TRENDING_DOWN:ICT": 1.01,
+    "TRENDING_DOWN:KRONOS": 1.059,
     "RANGING:BREAKOUT": 1.0,
     "RANGING:SND": 1.019,
-    "TRENDING_DOWN:BREAKOUT": 1.042
+    "TRENDING_DOWN:BREAKOUT": 1.042,
+    "TRENDING_DOWN:SND": 1.013
   },
   "symbol_streaks": {
     "BTCUSD": {
@@ -504,51 +505,6 @@
       "opened_epoch": 1794352507.65264,
       "tp1_hit": false,
       "peak_r": 0.0
-    },
-    {
-      "key": "SOLUSD:SND",
-      "symbol": "SOLUSD",
-      "strategy_name": "SND",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 82.8,
-      "sl_price": 82.55393,
-      "sl_dist": 0.24607,
-      "tp1_price": 82.92796,
-      "tp2_price": 83.07068,
-      "opened_epoch": 1794352508.976063,
-      "tp1_hit": true,
-      "peak_r": 1.097
-    },
-    {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 82.8,
-      "sl_price": 82.55393,
-      "sl_dist": 0.24607,
-      "tp1_price": 82.92796,
-      "tp2_price": 83.07068,
-      "opened_epoch": 1794352508.979066,
-      "tp1_hit": true,
-      "peak_r": 1.097
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 82.8,
-      "sl_price": 82.55393,
-      "sl_dist": 0.24607,
-      "tp1_price": 82.92796,
-      "tp2_price": 83.07068,
-      "opened_epoch": 1794352508.981065,
-      "tp1_hit": true,
-      "peak_r": 1.097
     }
   ],
   "shadow_cooldowns": {
@@ -567,5 +523,5 @@
     "SOLUSD:TREND_PULLBACK": 1794301523.702785,
     "ETHUSD:SND": 1794352507.650639
   },
-  "shadow_episodes": 63
+  "shadow_episodes": 66
 }
