@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 21:45:30 UTC",
+  "updated_utc": "2026-11-10 21:46:26 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73893.34,
-    "ETHUSD": 2059.65,
-    "SOLUSD": 83.52,
-    "XAUUSD": 4030.51,
+    "BTCUSD": 73887.83,
+    "ETHUSD": 2059.04,
+    "SOLUSD": 83.51,
+    "XAUUSD": 4030.79,
     "EURUSD": 1.11631,
-    "USDJPY": 158.761
+    "USDJPY": 158.762
   },
   "active_trades": {},
   "bot_stats": {
@@ -303,7 +303,7 @@
     "crypto_book_pnl": 62.91
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 21:45:29 UTC",
+    "updated_utc": "2026-11-10 21:45:51 UTC",
     "total_episodes": 78,
     "strategy_stats": {
       "SND": {
@@ -407,24 +407,7 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [
-      {
-        "ticket": 1081472006,
-        "symbol": "BTCUSD",
-        "direction": "SHORT",
-        "entry_price": 73330.95,
-        "exit_price": 73596.85,
-        "tp1_price": 73123.4804,
-        "tp2_price": 72892.072,
-        "agreeing_strategies": [
-          "TREND_PULLBACK"
-        ],
-        "regime": "RANGING",
-        "closed_epoch": 1794341742.351696,
-        "closed_at_utc": "2026-11-10 20:15:42 UTC",
-        "audited": false
-      }
-    ],
+    "pending_post_mortems": [],
     "ai_feedback_feed": [
       {
         "timestamp_utc": "2026-11-09 05:26:06 UTC",
@@ -769,6 +752,14 @@
           "TREND_PULLBACK"
         ],
         "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=73123.4804)"
+      },
+      {
+        "timestamp_utc": "2026-11-10 21:45:51 UTC",
+        "event": "TRUE_TREND_LOSS_CONFIRMED",
+        "ticket": 1081472006,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "summary": "Ticket #1081472006 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
       }
     ],
     "live_episodes": 6,
@@ -837,5 +828,5 @@
     },
     "shadow_episodes": 54
   },
-  "cycle_count": 662
+  "cycle_count": 665
 }

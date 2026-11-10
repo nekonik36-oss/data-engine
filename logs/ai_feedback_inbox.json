@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 21:45:30 UTC",
+  "updated_utc": "2026-11-10 21:46:26 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "live_equity": 9799.56,
   "bot_stats": {
@@ -326,24 +326,7 @@
       "net_r": -1.02
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1081472006,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "entry_price": 73330.95,
-      "exit_price": 73596.85,
-      "tp1_price": 73123.4804,
-      "tp2_price": 72892.072,
-      "agreeing_strategies": [
-        "TREND_PULLBACK"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1794341742.351696,
-      "closed_at_utc": "2026-11-10 20:15:42 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-09 05:26:06 UTC",
@@ -688,6 +671,14 @@
         "TREND_PULLBACK"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=73123.4804)"
+    },
+    {
+      "timestamp_utc": "2026-11-10 21:45:51 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1081472006,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1081472006 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }
