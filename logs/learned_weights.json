@@ -1,20 +1,20 @@
 {
-  "updated_utc": "2026-11-10 06:11:27 UTC",
-  "total_episodes": 27,
+  "updated_utc": "2026-11-10 06:13:23 UTC",
+  "total_episodes": 29,
   "strategy_stats": {
     "SND": {
-      "trades": 0,
-      "wins": 0,
+      "trades": 1,
+      "wins": 1,
       "losses": 0,
-      "ema_r": 0.0,
-      "multiplier": 1.0
+      "ema_r": 0.065,
+      "multiplier": 1.004
     },
     "ICT": {
-      "trades": 9,
-      "wins": 4,
+      "trades": 10,
+      "wins": 5,
       "losses": 5,
-      "ema_r": -0.267,
-      "multiplier": 0.933
+      "ema_r": -0.181,
+      "multiplier": 0.955
     },
     "BREAKOUT": {
       "trades": 5,
@@ -39,7 +39,7 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.884,
+    "RANGING:ICT": 0.897,
     "RANGING:KRONOS": 0.785,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.973,
     "RANGING:TREND_PULLBACK": 1.079,
@@ -49,7 +49,8 @@
     "SESSION_SWEEP_WINDOW:KRONOS": 0.911,
     "TRENDING_DOWN:ICT": 1.011,
     "TRENDING_DOWN:KRONOS": 1.011,
-    "RANGING:BREAKOUT": 0.952
+    "RANGING:BREAKOUT": 0.952,
+    "RANGING:SND": 1.013
   },
   "symbol_streaks": {
     "BTCUSD": {
@@ -373,36 +374,6 @@
   "live_episodes": 1,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:SND",
-      "symbol": "SOLUSD",
-      "strategy_name": "SND",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 86.26,
-      "sl_price": 86.5105,
-      "sl_dist": 0.2505,
-      "tp1_price": 86.12974,
-      "tp2_price": 85.98445,
-      "opened_epoch": 1794290407.951161,
-      "tp1_hit": true,
-      "peak_r": 0.998
-    },
-    {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 86.26,
-      "sl_price": 86.5105,
-      "sl_dist": 0.2505,
-      "tp1_price": 86.12974,
-      "tp2_price": 85.98445,
-      "opened_epoch": 1794290407.957812,
-      "tp1_hit": true,
-      "peak_r": 0.998
-    },
-    {
       "key": "ETHUSD:ICT",
       "symbol": "ETHUSD",
       "strategy_name": "ICT",
@@ -415,7 +386,7 @@
       "tp2_price": 2114.62033,
       "opened_epoch": 1794291087.590059,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.259
     }
   ],
   "shadow_cooldowns": {
@@ -430,5 +401,5 @@
     "SOLUSD:SND": 1794290407.951161,
     "SOLUSD:ICT": 1794290407.957812
   },
-  "shadow_episodes": 8
+  "shadow_episodes": 10
 }
