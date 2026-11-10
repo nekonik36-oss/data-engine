@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-10 09:12:28 UTC",
+  "updated_utc": "2026-11-10 09:13:23 UTC",
   "hostname": "GB-5CD52876MS",
   "live_equity": 9818.96,
   "bot_stats": {
-    "total_closed": 20,
-    "wins": 7,
+    "total_closed": 21,
+    "wins": 8,
     "losses": 10,
     "breakevens": 3,
-    "cumulative_pnl": -181.04,
+    "cumulative_pnl": -164.63,
     "history": [
       {
         "ticket": 1078980632,
@@ -228,9 +228,20 @@
         "r_multiple": -0.9,
         "close_reason": "35m Time-Decay Reduced Stop Hit \u23f1\ufe0f\ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-10 07:45:57 UTC"
+      },
+      {
+        "ticket": 84301522,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 74418.28,
+        "exit_price": 74342.33,
+        "net_pnl": 16.41,
+        "r_multiple": 0.36,
+        "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-10 09:13:19 UTC"
       }
     ],
-    "crypto_book_pnl": 7.06
+    "crypto_book_pnl": 23.47
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -252,9 +263,9 @@
   },
   "symbol_streaks": {
     "BTCUSD": {
-      "win_streak": 0,
-      "loss_streak": 1,
-      "net_r": -1.97
+      "win_streak": 1,
+      "loss_streak": 0,
+      "net_r": -1.61
     },
     "ETHUSD": {
       "win_streak": 0,
@@ -565,6 +576,23 @@
         "KRONOS"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=None)"
+    },
+    {
+      "timestamp_utc": "2026-11-10 09:13:19 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": null,
+      "symbol": "BTCUSD",
+      "direction": null,
+      "net_pnl": 16.41,
+      "r_multiple": 0.36,
+      "peak_favorable_r": 0.0,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "BREAKOUT",
+        "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
     }
   ]
 }
