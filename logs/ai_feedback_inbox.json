@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-10 04:35:02 UTC",
+  "updated_utc": "2026-11-10 04:37:07 UTC",
   "hostname": "GB-5CD52876MS",
   "live_equity": 9874.74,
   "bot_stats": {
-    "total_closed": 17,
-    "wins": 6,
+    "total_closed": 18,
+    "wins": 7,
     "losses": 8,
     "breakevens": 3,
-    "cumulative_pnl": -125.26,
+    "cumulative_pnl": -112.94,
     "history": [
       {
         "ticket": 1078980632,
@@ -195,9 +195,20 @@
         "r_multiple": 1.28,
         "close_reason": "Take Profit 2 Target Hit \ud83c\udfaf",
         "closed_at_utc": "2026-11-10 03:43:21 UTC"
+      },
+      {
+        "ticket": 84283506,
+        "symbol": "ETHUSD",
+        "direction": "LONG",
+        "entry_price": 2117.68,
+        "exit_price": 2120.59,
+        "net_pnl": 12.32,
+        "r_multiple": 0.25,
+        "close_reason": "+0.25R Pre-TP1 Profit Ratchet Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-10 04:37:02 UTC"
       }
     ],
-    "crypto_book_pnl": 62.84
+    "crypto_book_pnl": 75.16
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -224,9 +235,9 @@
       "net_r": -1.97
     },
     "ETHUSD": {
-      "win_streak": 0,
-      "loss_streak": 1,
-      "net_r": -0.87
+      "win_streak": 1,
+      "loss_streak": 0,
+      "net_r": -0.62
     },
     "SOLUSD": {
       "win_streak": 2,
@@ -482,6 +493,22 @@
       "regime": "RANGING",
       "strategies": [
         "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-10 04:37:02 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": null,
+      "symbol": "ETHUSD",
+      "direction": null,
+      "net_pnl": 12.32,
+      "r_multiple": 0.25,
+      "peak_favorable_r": 0.0,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "ICT",
         "KRONOS"
       ],
       "auto_fix_action": "NONE"

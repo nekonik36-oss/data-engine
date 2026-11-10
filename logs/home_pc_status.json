@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 04:35:02 UTC",
+  "updated_utc": "2026-11-10 04:37:07 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,44 +20,17 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 74798.01,
-    "SOLUSD": 86.16
+    "BTCUSD": 74732.01,
+    "ETHUSD": 2119.6,
+    "SOLUSD": 85.97
   },
-  "active_trades": {
-    "84283506": {
-      "ticket": 84283506,
-      "symbol": "ETHUSD",
-      "broker_symbol": "ETHUSD",
-      "broker_source": "CRYPTO_24_7_LIVE",
-      "direction": "LONG",
-      "entry_price": 2117.68,
-      "sl_price": 2120.59,
-      "initial_sl_price": 2106.02,
-      "tp1_price": 2126.42,
-      "tp2_price": 2138.66,
-      "volume": 4.23,
-      "initial_volume": 4.23,
-      "risk_usd": 49.3,
-      "confluence_score": 84.3,
-      "regime": "TRENDING_DOWN",
-      "agreeing_strategies": [
-        "ICT",
-        "KRONOS"
-      ],
-      "opened_at_utc": "2026-11-10 04:05:06 UTC",
-      "tp1_hit": false,
-      "partial_pnl": 0.0,
-      "peak_favorable_r": 0.661,
-      "be_shield_active": true,
-      "pre_tp1_ratchet": true
-    }
-  },
+  "active_trades": {},
   "bot_stats": {
-    "total_closed": 17,
-    "wins": 6,
+    "total_closed": 18,
+    "wins": 7,
     "losses": 8,
     "breakevens": 3,
-    "cumulative_pnl": -125.26,
+    "cumulative_pnl": -112.94,
     "history": [
       {
         "ticket": 1078980632,
@@ -245,13 +218,24 @@
         "r_multiple": 1.28,
         "close_reason": "Take Profit 2 Target Hit \ud83c\udfaf",
         "closed_at_utc": "2026-11-10 03:43:21 UTC"
+      },
+      {
+        "ticket": 84283506,
+        "symbol": "ETHUSD",
+        "direction": "LONG",
+        "entry_price": 2117.68,
+        "exit_price": 2120.59,
+        "net_pnl": 12.32,
+        "r_multiple": 0.25,
+        "close_reason": "+0.25R Pre-TP1 Profit Ratchet Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-10 04:37:02 UTC"
       }
     ],
-    "crypto_book_pnl": 62.84
+    "crypto_book_pnl": 75.16
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 03:43:21 UTC",
-    "total_episodes": 17,
+    "updated_utc": "2026-11-10 04:37:02 UTC",
+    "total_episodes": 18,
     "strategy_stats": {
       "SND": {
         "trades": 0,
@@ -261,11 +245,11 @@
         "multiplier": 1.0
       },
       "ICT": {
-        "trades": 6,
-        "wins": 2,
+        "trades": 7,
+        "wins": 3,
         "losses": 4,
-        "ema_r": -0.461,
-        "multiplier": 0.885
+        "ema_r": -0.305,
+        "multiplier": 0.924
       },
       "BREAKOUT": {
         "trades": 2,
@@ -282,11 +266,11 @@
         "multiplier": 1.006
       },
       "KRONOS": {
-        "trades": 12,
-        "wins": 3,
+        "trades": 13,
+        "wins": 4,
         "losses": 8,
-        "ema_r": -0.23,
-        "multiplier": 0.943
+        "ema_r": -0.124,
+        "multiplier": 0.969
       }
     },
     "regime_strategy_multipliers": {
@@ -297,7 +281,9 @@
       "TRENDING_DOWN:TREND_PULLBACK": 0.955,
       "SESSION_SWEEP_WINDOW:ICT": 0.974,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.957,
-      "SESSION_SWEEP_WINDOW:KRONOS": 0.911
+      "SESSION_SWEEP_WINDOW:KRONOS": 0.911,
+      "TRENDING_DOWN:ICT": 1.011,
+      "TRENDING_DOWN:KRONOS": 1.011
     },
     "symbol_streaks": {
       "BTCUSD": {
@@ -306,9 +292,9 @@
         "net_r": -1.97
       },
       "ETHUSD": {
-        "win_streak": 0,
-        "loss_streak": 1,
-        "net_r": -0.87
+        "win_streak": 1,
+        "loss_streak": 0,
+        "net_r": -0.62
       },
       "SOLUSD": {
         "win_streak": 2,
@@ -585,8 +571,24 @@
           "KRONOS"
         ],
         "auto_fix_action": "NONE"
+      },
+      {
+        "timestamp_utc": "2026-11-10 04:37:02 UTC",
+        "event": "TRADE_CLOSED_DIAGNOSTIC",
+        "ticket": null,
+        "symbol": "ETHUSD",
+        "direction": null,
+        "net_pnl": 12.32,
+        "r_multiple": 0.25,
+        "peak_favorable_r": 0.0,
+        "regime": "TRENDING_DOWN",
+        "strategies": [
+          "ICT",
+          "KRONOS"
+        ],
+        "auto_fix_action": "NONE"
       }
     ]
   },
-  "cycle_count": 40
+  "cycle_count": 45
 }

@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-10 03:43:21 UTC",
-  "total_episodes": 17,
+  "updated_utc": "2026-11-10 04:37:02 UTC",
+  "total_episodes": 18,
   "strategy_stats": {
     "SND": {
       "trades": 0,
@@ -10,11 +10,11 @@
       "multiplier": 1.0
     },
     "ICT": {
-      "trades": 6,
-      "wins": 2,
+      "trades": 7,
+      "wins": 3,
       "losses": 4,
-      "ema_r": -0.461,
-      "multiplier": 0.885
+      "ema_r": -0.305,
+      "multiplier": 0.924
     },
     "BREAKOUT": {
       "trades": 2,
@@ -31,11 +31,11 @@
       "multiplier": 1.006
     },
     "KRONOS": {
-      "trades": 12,
-      "wins": 3,
+      "trades": 13,
+      "wins": 4,
       "losses": 8,
-      "ema_r": -0.23,
-      "multiplier": 0.943
+      "ema_r": -0.124,
+      "multiplier": 0.969
     }
   },
   "regime_strategy_multipliers": {
@@ -46,7 +46,9 @@
     "TRENDING_DOWN:TREND_PULLBACK": 0.955,
     "SESSION_SWEEP_WINDOW:ICT": 0.974,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.957,
-    "SESSION_SWEEP_WINDOW:KRONOS": 0.911
+    "SESSION_SWEEP_WINDOW:KRONOS": 0.911,
+    "TRENDING_DOWN:ICT": 1.011,
+    "TRENDING_DOWN:KRONOS": 1.011
   },
   "symbol_streaks": {
     "BTCUSD": {
@@ -55,9 +57,9 @@
       "net_r": -1.97
     },
     "ETHUSD": {
-      "win_streak": 0,
-      "loss_streak": 1,
-      "net_r": -0.87
+      "win_streak": 1,
+      "loss_streak": 0,
+      "net_r": -0.62
     },
     "SOLUSD": {
       "win_streak": 2,
@@ -331,6 +333,22 @@
       "regime": "RANGING",
       "strategies": [
         "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-10 04:37:02 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": null,
+      "symbol": "ETHUSD",
+      "direction": null,
+      "net_pnl": 12.32,
+      "r_multiple": 0.25,
+      "peak_favorable_r": 0.0,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "ICT",
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
