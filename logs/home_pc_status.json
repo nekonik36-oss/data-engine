@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 20:50:06 UTC",
+  "updated_utc": "2026-11-10 20:51:21 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73822.17,
-    "ETHUSD": 2059.97,
-    "SOLUSD": 83.5,
-    "XAUUSD": 4035.5,
-    "EURUSD": 1.11645,
-    "USDJPY": 158.775
+    "BTCUSD": 73820.55,
+    "ETHUSD": 2060.41,
+    "SOLUSD": 83.52,
+    "XAUUSD": 4035.23,
+    "EURUSD": 1.1164,
+    "USDJPY": 158.785
   },
   "active_trades": {},
   "bot_stats": {
@@ -303,7 +303,7 @@
     "crypto_book_pnl": 62.91
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 20:50:05 UTC",
+    "updated_utc": "2026-11-10 20:50:26 UTC",
     "total_episodes": 74,
     "strategy_stats": {
       "SND": {
@@ -786,7 +786,7 @@
         "tp2_price": 74021.79211,
         "opened_epoch": 1794343803.220617,
         "tp1_hit": false,
-        "peak_r": 0.029
+        "peak_r": 0.208
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -802,13 +802,28 @@
         "opened_epoch": 1794343803.222618,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:BREAKOUT",
+        "symbol": "ETHUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 2059.36,
+        "sl_price": 2051.81393,
+        "sl_dist": 7.54607,
+        "tp1_price": 2063.28395,
+        "tp2_price": 2067.66067,
+        "opened_epoch": 1794343826.456696,
+        "tp1_hit": false,
+        "peak_r": 0.323
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794342907.038691,
       "BTCUSD:BREAKOUT": 1794343803.220617,
       "BTCUSD:KRONOS": 1794343803.222618,
-      "ETHUSD:BREAKOUT": 1794341705.904895,
+      "ETHUSD:BREAKOUT": 1794343826.456696,
       "ETHUSD:KRONOS": 1794341705.906893,
       "SOLUSD:BREAKOUT": 1794342002.906926,
       "SOLUSD:KRONOS": 1794306912.087288,
@@ -822,5 +837,5 @@
     },
     "shadow_episodes": 50
   },
-  "cycle_count": 481
+  "cycle_count": 485
 }
