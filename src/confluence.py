@@ -373,10 +373,14 @@ class ConfluenceEngine:
                             return None
                         if h1_bear and adx_val > 25.0:
                             return None
+                        if len(agreeing_pa) < 2 and (regime == MarketRegime.TRENDING_DOWN or e60 < e240):
+                            return None
                     else:
                         if not (curr.is_bearish and curr.close < prev.open and rsi_val > 45.0):
                             return None
                         if h1_bull and adx_val > 25.0:
+                            return None
+                        if len(agreeing_pa) < 2 and (regime == MarketRegime.TRENDING_UP or e60 > e240):
                             return None
 
                     best_pa_conf = max(
