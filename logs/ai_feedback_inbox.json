@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-10 10:37:57 UTC",
-  "hostname": "runnervmwuk1x",
+  "updated_utc": "2026-11-10 17:59:21 UTC",
+  "hostname": "DESKTOP-8RQUOSU",
   "live_equity": 9835.37,
   "bot_stats": {
-    "total_closed": 21,
-    "wins": 8,
+    "total_closed": 22,
+    "wins": 9,
     "losses": 10,
     "breakevens": 3,
-    "cumulative_pnl": -164.63,
+    "cumulative_pnl": -125.19,
     "history": [
       {
         "ticket": 1078980632,
@@ -239,9 +239,20 @@
         "r_multiple": 0.36,
         "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
         "closed_at_utc": "2026-11-10 09:13:19 UTC"
+      },
+      {
+        "ticket": 84306449,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 74251.77,
+        "exit_price": 73969.87,
+        "net_pnl": 39.44,
+        "r_multiple": 0.81,
+        "close_reason": "Take Profit 2 Target Hit \ud83c\udfaf",
+        "closed_at_utc": "2026-11-10 17:58:58 UTC"
       }
     ],
-    "crypto_book_pnl": 23.47
+    "crypto_book_pnl": 62.91
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -263,9 +274,9 @@
   },
   "symbol_streaks": {
     "BTCUSD": {
-      "win_streak": 1,
+      "win_streak": 2,
       "loss_streak": 0,
-      "net_r": -1.61
+      "net_r": -0.8
     },
     "ETHUSD": {
       "win_streak": 0,
@@ -591,6 +602,21 @@
         "BREAKOUT",
         "TREND_PULLBACK",
         "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-10 17:58:58 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": null,
+      "symbol": "BTCUSD",
+      "direction": null,
+      "net_pnl": 39.44,
+      "r_multiple": 0.81,
+      "peak_favorable_r": 0.0,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "TREND_PULLBACK"
       ],
       "auto_fix_action": "NONE"
     }

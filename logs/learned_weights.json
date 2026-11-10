@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-10 10:35:12 UTC",
-  "total_episodes": 52,
+  "updated_utc": "2026-11-10 17:59:20 UTC",
+  "total_episodes": 56,
   "strategy_stats": {
     "SND": {
       "trades": 1,
@@ -10,32 +10,32 @@
       "multiplier": 1.004
     },
     "ICT": {
-      "trades": 19,
+      "trades": 20,
       "wins": 12,
-      "losses": 7,
-      "ema_r": -0.04,
-      "multiplier": 0.99
+      "losses": 8,
+      "ema_r": -0.117,
+      "multiplier": 0.971
     },
     "BREAKOUT": {
-      "trades": 11,
-      "wins": 4,
+      "trades": 12,
+      "wins": 5,
       "losses": 6,
-      "ema_r": -0.077,
-      "multiplier": 0.981
-    },
-    "TREND_PULLBACK": {
-      "trades": 18,
-      "wins": 9,
-      "losses": 7,
-      "ema_r": -0.007,
+      "ema_r": -0.006,
       "multiplier": 0.998
     },
+    "TREND_PULLBACK": {
+      "trades": 19,
+      "wins": 10,
+      "losses": 7,
+      "ema_r": 0.173,
+      "multiplier": 1.043
+    },
     "KRONOS": {
-      "trades": 21,
-      "wins": 7,
+      "trades": 22,
+      "wins": 8,
       "losses": 13,
-      "ema_r": -0.214,
-      "multiplier": 0.946
+      "ema_r": -0.132,
+      "multiplier": 0.967
     }
   },
   "regime_strategy_multipliers": {
@@ -43,21 +43,21 @@
     "RANGING:KRONOS": 0.785,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.93,
     "RANGING:TREND_PULLBACK": 1.079,
-    "TRENDING_DOWN:TREND_PULLBACK": 0.99,
+    "TRENDING_DOWN:TREND_PULLBACK": 1.026,
     "SESSION_SWEEP_WINDOW:ICT": 0.983,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.947,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.867,
-    "TRENDING_DOWN:ICT": 1.013,
-    "TRENDING_DOWN:KRONOS": 1.027,
+    "TRENDING_DOWN:ICT": 0.997,
+    "TRENDING_DOWN:KRONOS": 1.04,
     "RANGING:BREAKOUT": 0.952,
     "RANGING:SND": 1.013,
-    "TRENDING_DOWN:BREAKOUT": 1.029
+    "TRENDING_DOWN:BREAKOUT": 1.042
   },
   "symbol_streaks": {
     "BTCUSD": {
-      "win_streak": 1,
+      "win_streak": 2,
       "loss_streak": 0,
-      "net_r": -1.61
+      "net_r": -0.8
     },
     "ETHUSD": {
       "win_streak": 0,
@@ -403,56 +403,25 @@
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
-    }
-  ],
-  "live_episodes": 3,
-  "active_shadow_trades": [
-    {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 2094.68,
-      "sl_price": 2086.99605,
-      "sl_dist": 7.68395,
-      "tp1_price": 2098.67566,
-      "tp2_price": 2103.13235,
-      "opened_epoch": 1794306616.62818,
-      "tp1_hit": false,
-      "peak_r": 0.0
     },
     {
-      "key": "SOLUSD:BREAKOUT",
-      "symbol": "SOLUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "SHORT",
+      "timestamp_utc": "2026-11-10 17:58:58 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": null,
+      "symbol": "BTCUSD",
+      "direction": null,
+      "net_pnl": 39.44,
+      "r_multiple": 0.81,
+      "peak_favorable_r": 0.0,
       "regime": "TRENDING_DOWN",
-      "entry_price": 84.7,
-      "sl_price": 85.07763,
-      "sl_dist": 0.37763,
-      "tp1_price": 84.50363,
-      "tp2_price": 84.2846,
-      "opened_epoch": 1794306912.086166,
-      "tp1_hit": false,
-      "peak_r": 0.185
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 84.7,
-      "sl_price": 85.07763,
-      "sl_dist": 0.37763,
-      "tp1_price": 84.50363,
-      "tp2_price": 84.2846,
-      "opened_epoch": 1794306912.087288,
-      "tp1_hit": false,
-      "peak_r": 0.185
+      "strategies": [
+        "TREND_PULLBACK"
+      ],
+      "auto_fix_action": "NONE"
     }
   ],
+  "live_episodes": 4,
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794306616.62818,
     "BTCUSD:BREAKOUT": 1794299701.198287,
@@ -468,5 +437,5 @@
     "BTCUSD:TREND_PULLBACK": 1794301522.084946,
     "SOLUSD:TREND_PULLBACK": 1794301523.702785
   },
-  "shadow_episodes": 31
+  "shadow_episodes": 34
 }
