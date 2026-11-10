@@ -151,6 +151,20 @@ class MT5Connector:
                 self.last_error = f"mt5.initialize() returned False: {mt5.last_error()}"
         except Exception as exc:
             self.last_error = str(exc)
+
+        # Zero-Admin Cloud MT5 HTTPS Bridge fallback (MetaApi.cloud) for office laptops / cloud VMs
+        try:
+            from src.metaapi_bridge import MetaApiMT5Bridge
+            cloud_bridge = MetaApiMT5Bridge()
+            if cloud_bridge.is_configured and cloud_bridge.initialize():
+                self._mt5 = cloud_bridge
+                self.connected = True
+                self.terminal_path = f'MetaApi Cloud HTTPS ({cloud_bridge.region})'
+                self.last_error = None
+                return True
+        except Exception as cloud_exc:
+            self.last_error = f'{self.last_error} | CloudBridge: {cloud_exc}'
+
         self.connected = False
         return False
 
