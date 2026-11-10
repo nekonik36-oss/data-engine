@@ -579,8 +579,8 @@ class MT5Connector:
                     raw_signal_sl = abs(signal.entry_price - signal.stop_loss)
                     crypto_floor = (fill_price * 0.0022) if is_crypto else 0.0
                     sl_dist = max(raw_signal_sl + live_spread, live_spread * 4.5, crypto_floor)
-                    tp1_dist = max(abs(signal.tp1_price - signal.entry_price), sl_dist * 0.72)
-                    tp2_dist = max(abs(signal.tp2_price - signal.entry_price), sl_dist * 1.65)
+                    tp1_dist = max(abs(signal.tp1_price - signal.entry_price), sl_dist * 0.52)
+                    tp2_dist = max(abs(signal.tp2_price - signal.entry_price), sl_dist * 1.10)
 
                     risk_per_lot = 0.0
                     if tick_val > 0 and tick_sz > 0 and sl_dist > 0:
@@ -743,9 +743,23 @@ class MT5Connector:
         if peak_r > float(trade.get("peak_favorable_r", 0.0)):
             trade["peak_favorable_r"] = peak_r
 
-        # Tier 1 (+0.45R excursion or +0.22R peak pullback to +0.04R) -> +0.04R Spread-Protected BE Shield
+        # Compute elapsed trade age in minutes for 20m / 35m Fast-Scalp Time-Decay Shield
+        age_min = 0.0
+        opened_str = str(trade.get("opened_at_utc", ""))
+        if opened_str:
+            try:
+                opened_dt = datetime.strptime(opened_str, "%Y-%m-%d %H:%M:%S UTC").replace(tzinfo=timezone.utc)
+                age_min = (datetime.now(timezone.utc) - opened_dt).total_seconds() / 60.0
+            except Exception:
+                pass
+
+        # Tier 1 (+0.35R excursion, +0.18R peak pullback, OR >=20m open with >=+0.10R) -> +0.04R BE Shield
         if not trade.get("be_shield_active", False) and not trade.get("tp1_hit", False):
-            if excursion_r >= 0.45 or (peak_r >= 0.22 and 0.04 <= excursion_r <= 0.14):
+            if (
+                excursion_r >= 0.35
+                or (peak_r >= 0.18 and 0.04 <= excursion_r <= 0.14)
+                or (age_min >= 20.0 and excursion_r >= 0.10)
+            ):
                 be_sl = round(entry_price + (0.04 * sl_dist if is_long else -0.04 * sl_dist), 2)
                 trade["be_shield_active"] = True
                 trade["sl_price"] = be_sl
@@ -756,33 +770,54 @@ class MT5Connector:
                     f"Locked SL at +0.04R ({be_sl})."
                 )
 
-        # Tier 1.5 (+0.58R excursion) -> Lock +0.25R Guaranteed Profit Stop
-        if not trade.get("pre_tp1_ratchet", False) and not trade.get("tp1_hit", False) and excursion_r >= 0.58:
-            r25_sl = round(entry_price + (0.25 * sl_dist if is_long else -0.25 * sl_dist), 2)
-            trade["pre_tp1_ratchet"] = True
-            trade["be_shield_active"] = True
-            trade["sl_price"] = r25_sl
-            sl_price = r25_sl
+        # 35-Minute Fast-Scalp Time-Decay Stagnation Shield (cuts risk on stale >35m scalps that never popped)
+        if (
+            age_min >= 35.0
+            and not trade.get("be_shield_active", False)
+            and not trade.get("tp1_hit", False)
+            and not trade.get("time_decay_applied", False)
+        ):
+            decay_dist = 0.45 * sl_dist
+            if is_long:
+                decay_sl = round(min(cur_price - 0.06 * sl_dist, max(sl_price, entry_price - decay_dist)), 2)
+            else:
+                decay_sl = round(max(cur_price + 0.06 * sl_dist, min(sl_price, entry_price + decay_dist)), 2)
+            trade["time_decay_applied"] = True
+            trade["sl_price"] = decay_sl
+            sl_price = decay_sl
             self._save_state()
             events.append(
-                f"[24/7 CRYPTO +0.25R RATCHET] Ticket #{ticket} ({symbol}) reached {excursion_r:+.2f}R! "
-                f"Locked SL at +0.25R ({r25_sl})."
+                f"[35M TIME-DECAY SHIELD] Ticket #{ticket} ({symbol}) open {age_min:.0f}m without impulse; "
+                f"tightened SL to {decay_sl} to cap stale-scalp risk."
             )
 
-        # Tier 2: Check if TP1 (+0.68R or tp1_price) was reached
+        # Tier 1.5 (+0.44R excursion) -> Lock +0.22R Guaranteed Profit Stop
+        if not trade.get("pre_tp1_ratchet", False) and not trade.get("tp1_hit", False) and excursion_r >= 0.44:
+            r22_sl = round(entry_price + (0.22 * sl_dist if is_long else -0.22 * sl_dist), 2)
+            trade["pre_tp1_ratchet"] = True
+            trade["be_shield_active"] = True
+            trade["sl_price"] = r22_sl
+            sl_price = r22_sl
+            self._save_state()
+            events.append(
+                f"[24/7 CRYPTO +0.22R RATCHET] Ticket #{ticket} ({symbol}) reached {excursion_r:+.2f}R! "
+                f"Locked SL at +0.22R ({r22_sl})."
+            )
+
+        # Tier 2: Check if Fast-Scalp TP1 (+0.52R or tp1_price) was reached
         if not trade.get("tp1_hit", False):
             reached_tp1 = (
-                excursion_r >= 0.68
+                excursion_r >= 0.52
                 or ((cur_price >= tp1_price) if is_long else (cur_price <= tp1_price))
             )
             if reached_tp1:
                 partial_lots = round(init_vol * 0.5, 2)
-                r15_sl = round(entry_price + (0.15 * sl_dist if is_long else -0.15 * sl_dist), 2)
+                r20_sl = round(entry_price + (0.20 * sl_dist if is_long else -0.20 * sl_dist), 2)
                 trade["tp1_hit"] = True
                 trade["be_shield_active"] = True
-                trade["sl_price"] = r15_sl
+                trade["sl_price"] = r20_sl
                 tp1_r = abs(tp1_price - entry_price) / sl_dist
-                trade["partial_pnl"] = round(0.5 * max(tp1_r, 0.72) * risk_usd, 2)
+                trade["partial_pnl"] = round(0.5 * max(tp1_r, 0.52) * risk_usd, 2)
                 self._save_state()
 
                 if self.telegram.is_configured:
@@ -794,24 +829,24 @@ class MT5Connector:
                     self.telegram.send_message(msg_html)
 
                 events.append(
-                    f"[24/7 CRYPTO TP1 HIT] Ticket #{ticket} ({symbol}) reached TP1 @ {cur_price}! "
-                    f"Locked +${trade['partial_pnl']:.2f} & moved runner SL to +0.15R ({r15_sl})."
+                    f"[24/7 CRYPTO TP1 HIT] Ticket #{ticket} ({symbol}) reached Fast-Scalp TP1 @ {cur_price}! "
+                    f"Locked +${trade['partial_pnl']:.2f} & moved runner SL to +0.20R ({r20_sl})."
                 )
-                sl_price = r15_sl
+                sl_price = r20_sl
 
-        # Tier 2.5 (+0.95R -> +0.40R SL) & Tier 3 (+1.25R -> +0.85R SL) Post-TP1 Runner Ratchet
+        # Tier 2.5 (+0.75R -> +0.45R SL) & Tier 3 (+0.92R -> +0.72R SL) Post-TP1 Runner Ratchet
         if trade.get("tp1_hit", False):
-            if excursion_r >= 1.25 and int(trade.get("runner_stage", 0)) < 2:
-                r85_sl = round(entry_price + (0.85 * sl_dist if is_long else -0.85 * sl_dist), 2)
+            if excursion_r >= 0.92 and int(trade.get("runner_stage", 0)) < 2:
+                r72_sl = round(entry_price + (0.72 * sl_dist if is_long else -0.72 * sl_dist), 2)
                 trade["runner_stage"] = 2
-                trade["sl_price"] = r85_sl
-                sl_price = r85_sl
+                trade["sl_price"] = r72_sl
+                sl_price = r72_sl
                 self._save_state()
-            elif excursion_r >= 0.95 and int(trade.get("runner_stage", 0)) < 1:
-                r40_sl = round(entry_price + (0.40 * sl_dist if is_long else -0.40 * sl_dist), 2)
+            elif excursion_r >= 0.75 and int(trade.get("runner_stage", 0)) < 1:
+                r45_sl = round(entry_price + (0.45 * sl_dist if is_long else -0.45 * sl_dist), 2)
                 trade["runner_stage"] = 1
-                trade["sl_price"] = r40_sl
-                sl_price = r40_sl
+                trade["sl_price"] = r45_sl
+                sl_price = r45_sl
                 self._save_state()
 
         # 2. Check if TP2 or Stop Loss (or Ratchet/BE SL) was hit
@@ -836,6 +871,9 @@ class MT5Connector:
                 elif trade.get("be_shield_active", False):
                     net_pnl = round(max(locked_r, 0.04) * risk_usd, 2)
                     close_reason = "Break-Even Shield Hit 🛡️"
+                elif trade.get("time_decay_applied", False):
+                    net_pnl = round(locked_r * risk_usd, 2)
+                    close_reason = "35m Time-Decay Reduced Stop Hit ⏱️🛡️"
                 else:
                     net_pnl = round(-risk_usd, 2)
                     close_reason = "Stop Loss Hit 🛑"

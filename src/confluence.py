@@ -110,6 +110,7 @@ class ConfluenceEngine:
         series: Optional[PrecomputedSeries] = None,
         preset_name: str = "HYBRID_REGIME_KRONOS",
         equity: Optional[float] = None,
+        record_shadow: bool = False,
     ) -> Optional[SetupSignal]:
         """
         Evaluate bar `idx` under the chosen strategy preset (`preset_name`).
@@ -248,6 +249,22 @@ class ConfluenceEngine:
         if "KRONOS" in active_set and self.config.kronos.enabled:
             k_vote, kronos_fc = self.kronos.evaluate_vote(candles, ind.atr, idx)
             votes.append(k_vote)
+
+        if record_shadow and use_regime_gate:
+            sh_sl_dist = max(
+                1.50 * cur_atr,
+                (curr.close * 0.0022) if profile.is_crypto else (1.50 * cur_atr),
+            )
+            for sv in votes:
+                if sv.direction != Direction.NEUTRAL and sv.confidence >= 0.65:
+                    self.learner.open_shadow_trade(
+                        symbol=symbol,
+                        strategy_name=sv.strategy_name,
+                        direction=sv.direction.value,
+                        regime=regime.value,
+                        entry_price=curr.close,
+                        sl_dist=sh_sl_dist,
+                    )
 
         # 3. Score LONG vs SHORT with Regime-Adaptive + Online Self-Learned Multipliers
         multipliers = (

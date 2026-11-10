@@ -183,6 +183,7 @@ def run_scanner(
                     series=series,
                     preset_name="HYBRID_REGIME_KRONOS",
                     equity=live_equity,
+                    record_shadow=(idx == len(candles) - 2),
                 )
                 if signal is not None:
                     last_alerted_bar[key] = bar_ts
@@ -200,10 +201,14 @@ def run_scanner(
                     f"  [{symbol:<6} ({tf:<3} {src_tag})] Price={last_c.close:<10} | Watching for A+ Sniper setup..."
                 )
 
-        # 3. Run Autonomous Post-Mortem Forensics on recently closed trades (90m wick-out & TP1-reversal auditor)
+        # 3. Run Autonomous Post-Mortem Forensics & 30m Fast-Scalp Shadow Trade Learner (~100 episodes/day)
         pm_events = mt5_conn.learner.run_post_mortem_audits(latest_prices)
         for p_ev in pm_events:
             log(f"  {p_ev}")
+            new_signal_fired = True
+        sh_events = mt5_conn.learner.evaluate_shadow_trades(latest_prices)
+        for s_ev in sh_events:
+            log(f"  {s_ev}")
             new_signal_fired = True
 
         # Auto-sync Home PC telemetry & console log to GitHub on startup, trade event, or every 5 cycles

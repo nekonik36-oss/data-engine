@@ -146,12 +146,13 @@ class AdaptiveLearner:
     def format_weights_banner(self) -> str:
         """Return a concise status string of learned strategy multipliers for the startup banner."""
         ep = int(self.state.get("total_episodes", 0))
+        sh_ep = int(self.state.get("shadow_episodes", 0))
         s_stats = self.state.get("strategy_stats") or {}
         parts = [
             f"{s}={float((s_stats.get(s) or {}).get('multiplier', 1.0)):.2f}x"
             for s in STRATEGIES
         ]
-        return f"Online RL Active ({ep} closed trades learned | {', '.join(parts)})"
+        return f"Dual-Speed RL Active ({ep} total / {sh_ep} shadow episodes | {', '.join(parts)})"
 
     def record_trade_outcome(
         self,
@@ -162,13 +163,21 @@ class AdaptiveLearner:
         regime_name: str | None = None,
         net_pnl: float = 0.0,
         trade_meta: Dict[str, Any] | None = None,
+        is_shadow: bool = False,
     ) -> str:
         """
         Update learned strategy weights, regime-strategy multipliers, symbol threshold,
         and queue automated post-mortem forensics (`ai_feedback_inbox.json`).
+        Supports Dual-Speed Bandit learning:
+          - Live trades (`is_shadow=False`): alpha=0.22, reg_step=0.045
+          - Shadow trades (`is_shadow=True`): alpha=0.08, reg_step=0.016
         """
         active_regime = regime_name or regime or "TREND_EXPANSION"
         self.state["total_episodes"] = int(self.state.get("total_episodes", 0)) + 1
+        if is_shadow:
+            self.state["shadow_episodes"] = int(self.state.get("shadow_episodes", 0)) + 1
+        else:
+            self.state["live_episodes"] = int(self.state.get("live_episodes", 0)) + 1
         s_stats = self.state.setdefault("strategy_stats", {})
         reg_map = self.state.setdefault("regime_strategy_multipliers", {})
         sym_map = self.state.setdefault("symbol_streaks", {})
@@ -178,7 +187,7 @@ class AdaptiveLearner:
 
         # Reward signal clipped to [-1.5, +3.0]
         reward = max(-1.5, min(3.0, float(r_multiple)))
-        alpha = 0.22  # Learning rate for exponential moving expectancy
+        alpha = 0.08 if is_shadow else 0.22
 
         updated_notes: List[str] = []
         for s_name in agreeing_strategies:
@@ -209,7 +218,7 @@ class AdaptiveLearner:
             # Update Regime x Strategy specific multiplier
             reg_key = f"{active_regime}:{s_name}"
             old_reg_mult = float(reg_map.get(reg_key, 1.0))
-            step = 0.045 * reward
+            step = (0.016 if is_shadow else 0.045) * reward
             new_reg_mult = max(0.60, min(1.40, old_reg_mult + step))
             reg_map[reg_key] = round(new_reg_mult, 3)
 
@@ -217,8 +226,12 @@ class AdaptiveLearner:
             arrow = "^" if reward > 0 else ("v" if reward < -0.05 else "->")
             updated_notes.append(f"{s_name} {arrow}{eff_mult:.2f}x")
 
-        # Update Symbol streak & dynamic confluence threshold offset
         sym_key = symbol.upper()
+        if is_shadow:
+            self.save()
+            return f"[SHADOW RL EPISODE #{self.state['total_episodes']}] {sym_key} ({active_regime}): {', '.join(updated_notes)} ({reward:+.2f}R)"
+
+        # Update Symbol streak & dynamic confluence threshold offset (Live trades only)
         sym_entry = sym_map.setdefault(
             sym_key, {"win_streak": 0, "loss_streak": 0, "net_r": 0.0}
         )
@@ -407,4 +420,121 @@ class AdaptiveLearner:
             self.state["ai_feedback_feed"] = feed_list[-40:]
             self.save()
 
+        return events
+
+    def open_shadow_trade(
+        self,
+        symbol: str,
+        strategy_name: str,
+        direction: str,
+        regime: str,
+        entry_price: float,
+        sl_dist: float,
+    ) -> bool:
+        """
+        Open a $0-risk 30-minute Fast-Scalp Shadow Trade for `strategy_name` on `symbol`.
+        Enforces a 35-minute per-(symbol, strategy) deduplication cooldown so the engine
+        collects ~90-110 independent structural learning episodes per day across all 6 symbols.
+        """
+        if entry_price <= 0 or sl_dist <= 0:
+            return False
+        now_ts = datetime.now(timezone.utc).timestamp()
+        active_shadows: List[Dict[str, Any]] = self.state.setdefault("active_shadow_trades", [])
+        cooldown_map: Dict[str, float] = self.state.setdefault("shadow_cooldowns", {})
+        key = f"{symbol.upper()}:{strategy_name.upper()}"
+        last_ts = float(cooldown_map.get(key, 0.0))
+        if (now_ts - last_ts) < 2100.0:  # 35-minute spacing per (symbol, strategy)
+            return False
+
+        is_long = direction.upper() == "LONG"
+        sl_price = entry_price - sl_dist if is_long else entry_price + sl_dist
+        tp1_price = entry_price + (0.52 * sl_dist if is_long else -0.52 * sl_dist)
+        tp2_price = entry_price + (1.10 * sl_dist if is_long else -1.10 * sl_dist)
+
+        cooldown_map[key] = now_ts
+        active_shadows.append(
+            {
+                "key": key,
+                "symbol": symbol.upper(),
+                "strategy_name": strategy_name.upper(),
+                "direction": direction.upper(),
+                "regime": regime,
+                "entry_price": round(entry_price, 5),
+                "sl_price": round(sl_price, 5),
+                "sl_dist": round(sl_dist, 5),
+                "tp1_price": round(tp1_price, 5),
+                "tp2_price": round(tp2_price, 5),
+                "opened_epoch": now_ts,
+                "tp1_hit": False,
+                "peak_r": 0.0,
+            }
+        )
+        if len(active_shadows) > 60:
+            self.state["active_shadow_trades"] = active_shadows[-60:]
+        return True
+
+    def evaluate_shadow_trades(self, latest_prices: Dict[str, float]) -> List[str]:
+        """
+        Resolve active 30-minute Fast-Scalp Shadow Trades against live market prices
+        and feed outcomes into the Dual-Speed RL Bandit (`is_shadow=True`).
+        """
+        events: List[str] = []
+        active_shadows: List[Dict[str, Any]] = list(self.state.get("active_shadow_trades") or [])
+        if not active_shadows:
+            return events
+
+        now_ts = datetime.now(timezone.utc).timestamp()
+        remaining: List[Dict[str, Any]] = []
+        changed = False
+
+        for sh in active_shadows:
+            sym = str(sh.get("symbol", "")).upper()
+            cur_p = latest_prices.get(sym)
+            age_min = (now_ts - float(sh.get("opened_epoch", now_ts))) / 60.0
+            if cur_p is None:
+                if age_min <= 45.0:
+                    remaining.append(sh)
+                else:
+                    changed = True
+                continue
+
+            is_long = str(sh.get("direction", "LONG")) == "LONG"
+            entry = float(sh.get("entry_price", cur_p))
+            sl_dist = max(float(sh.get("sl_dist", 1e-4)), 1e-4)
+            fav = (cur_p - entry) if is_long else (entry - cur_p)
+            cur_r = fav / sl_dist
+            peak_r = max(float(sh.get("peak_r", 0.0)), round(cur_r, 3))
+            sh["peak_r"] = peak_r
+
+            if peak_r >= 0.52:
+                sh["tp1_hit"] = True
+
+            # Resolve on TP2 (+1.10R), SL (-1.00R), Post-TP1 pullback (+0.20R runner stop), or 30m Fast-Scalp horizon
+            resolved_r: float | None = None
+            if cur_r >= 1.10:
+                resolved_r = 0.81  # 50% @ +0.52R + 50% @ +1.10R
+            elif sh.get("tp1_hit") and cur_r <= 0.20:
+                resolved_r = 0.36  # 50% @ +0.52R + 50% @ +0.20R
+            elif cur_r <= -1.00:
+                resolved_r = -1.00
+            elif age_min >= 30.0:
+                resolved_r = round(max(-1.0, min(1.10, cur_r)), 2)
+
+            if resolved_r is not None:
+                changed = True
+                if abs(resolved_r) >= 0.08:
+                    note = self.record_trade_outcome(
+                        symbol=sym,
+                        agreeing_strategies=[str(sh.get("strategy_name", "TREND_PULLBACK"))],
+                        r_multiple=resolved_r,
+                        regime=str(sh.get("regime", "RANGING")),
+                        is_shadow=True,
+                    )
+                    events.append(note)
+            else:
+                remaining.append(sh)
+
+        if changed or len(remaining) != len(active_shadows):
+            self.state["active_shadow_trades"] = remaining
+            self.save()
         return events
