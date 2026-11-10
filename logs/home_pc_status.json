@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 05:50:06 UTC",
+  "updated_utc": "2026-11-10 05:52:00 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 74962.0,
+    "BTCUSD": 74995.99,
     "ETHUSD": 2130.38,
-    "SOLUSD": 86.52
+    "SOLUSD": 86.53
   },
   "active_trades": {},
   "bot_stats": {
@@ -630,7 +630,7 @@
         "tp2_price": 75137.80451,
         "opened_epoch": 1794289803.708837,
         "tp1_hit": false,
-        "peak_r": 0.034
+        "peak_r": 0.24
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -645,7 +645,7 @@
         "tp2_price": 75137.80451,
         "opened_epoch": 1794289803.714216,
         "tp1_hit": false,
-        "peak_r": 0.034
+        "peak_r": 0.24
       },
       {
         "key": "ETHUSD:BREAKOUT",
@@ -660,7 +660,7 @@
         "tp2_price": 2135.53552,
         "opened_epoch": 1794289804.296751,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.248
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -675,7 +675,7 @@
         "tp2_price": 2135.53552,
         "opened_epoch": 1794289804.299961,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.248
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -690,7 +690,7 @@
         "tp2_price": 86.78411,
         "opened_epoch": 1794289804.829036,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.333
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -705,7 +705,7 @@
         "tp2_price": 86.78411,
         "opened_epoch": 1794289804.83295,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.333
       }
     ],
     "shadow_cooldowns": {
@@ -719,5 +719,5 @@
     },
     "shadow_episodes": 1
   },
-  "cycle_count": 5
+  "cycle_count": 10
 }
