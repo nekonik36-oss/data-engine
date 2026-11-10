@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 20:22:13 UTC",
+  "updated_utc": "2026-11-10 20:35:08 UTC",
   "total_episodes": 69,
   "strategy_stats": {
     "SND": {
@@ -482,7 +482,7 @@
       "tp2_price": 2041.54757,
       "opened_epoch": 1794341705.906893,
       "tp1_hit": false,
-      "peak_r": 0.178
+      "peak_r": 0.251
     },
     {
       "key": "SOLUSD:BREAKOUT",
@@ -498,19 +498,64 @@
       "opened_epoch": 1794342002.906926,
       "tp1_hit": false,
       "peak_r": 0.4
+    },
+    {
+      "key": "BTCUSD:ICT",
+      "symbol": "BTCUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 73580.0,
+      "sl_price": 73771.28677,
+      "sl_dist": 191.28677,
+      "tp1_price": 73480.53088,
+      "tp2_price": 73369.58455,
+      "opened_epoch": 1794342905.687935,
+      "tp1_hit": false,
+      "peak_r": 0.052
+    },
+    {
+      "key": "ETHUSD:ICT",
+      "symbol": "ETHUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 2049.17,
+      "sl_price": 2056.74702,
+      "sl_dist": 7.57702,
+      "tp1_price": 2045.22995,
+      "tp2_price": 2040.83528,
+      "opened_epoch": 1794342907.038691,
+      "tp1_hit": false,
+      "peak_r": 0.096
+    },
+    {
+      "key": "SOLUSD:ICT",
+      "symbol": "SOLUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 83.08,
+      "sl_price": 83.44791,
+      "sl_dist": 0.36791,
+      "tp1_price": 82.88869,
+      "tp2_price": 82.6753,
+      "opened_epoch": 1794342908.308057,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
-    "ETHUSD:ICT": 1794306616.62818,
+    "ETHUSD:ICT": 1794342907.038691,
     "BTCUSD:BREAKOUT": 1794335818.97454,
     "BTCUSD:KRONOS": 1794299701.207211,
     "ETHUSD:BREAKOUT": 1794341705.904895,
     "ETHUSD:KRONOS": 1794341705.906893,
     "SOLUSD:BREAKOUT": 1794342002.906926,
     "SOLUSD:KRONOS": 1794306912.087288,
-    "BTCUSD:ICT": 1794337204.401278,
+    "BTCUSD:ICT": 1794342905.687935,
     "SOLUSD:SND": 1794290407.951161,
-    "SOLUSD:ICT": 1794336607.44403,
+    "SOLUSD:ICT": 1794342908.308057,
     "ETHUSD:TREND_PULLBACK": 1794339618.086671,
     "BTCUSD:TREND_PULLBACK": 1794339615.318767,
     "SOLUSD:TREND_PULLBACK": 1794301523.702785,
