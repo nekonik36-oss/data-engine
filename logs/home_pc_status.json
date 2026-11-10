@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 23:44:20 UTC",
+  "updated_utc": "2026-11-10 23:45:51 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73826.01,
-    "ETHUSD": 2054.35,
-    "SOLUSD": 83.35,
-    "XAUUSD": 4035.32,
-    "EURUSD": 1.11685,
-    "USDJPY": 158.707
+    "BTCUSD": 73778.01,
+    "ETHUSD": 2052.59,
+    "SOLUSD": 83.38,
+    "XAUUSD": 4035.68,
+    "EURUSD": 1.1168,
+    "USDJPY": 158.711
   },
   "active_trades": {},
   "bot_stats": {
@@ -303,7 +303,7 @@
     "crypto_book_pnl": 62.91
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 23:40:22 UTC",
+    "updated_utc": "2026-11-10 23:45:14 UTC",
     "total_episodes": 93,
     "strategy_stats": {
       "SND": {
@@ -778,7 +778,7 @@
         "tp2_price": 73864.10961,
         "opened_epoch": 1794353705.207967,
         "tp1_hit": true,
-        "peak_r": 0.865
+        "peak_r": 0.877
       },
       {
         "key": "ETHUSD:ICT",
@@ -794,12 +794,27 @@
         "opened_epoch": 1794354003.848472,
         "tp1_hit": false,
         "peak_r": 0.43
+      },
+      {
+        "key": "BTCUSD:KRONOS",
+        "symbol": "BTCUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 73831.17,
+        "sl_price": 73993.59857,
+        "sl_dist": 162.42857,
+        "tp1_price": 73746.70714,
+        "tp2_price": 73652.49857,
+        "opened_epoch": 1794354314.21057,
+        "tp1_hit": false,
+        "peak_r": 0.327
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794354003.848472,
       "BTCUSD:BREAKOUT": 1794351908.306599,
-      "BTCUSD:KRONOS": 1794343803.222618,
+      "BTCUSD:KRONOS": 1794354314.21057,
       "ETHUSD:BREAKOUT": 1794351909.582287,
       "ETHUSD:KRONOS": 1794352507.65264,
       "SOLUSD:BREAKOUT": 1794351911.05879,
@@ -814,5 +829,5 @@
     },
     "shadow_episodes": 69
   },
-  "cycle_count": 1050
+  "cycle_count": 1055
 }
