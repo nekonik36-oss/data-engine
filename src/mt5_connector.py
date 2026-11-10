@@ -1059,22 +1059,35 @@ class MT5Connector:
                     risk_usd_val = float(trade["risk_usd"])
                     r_dist = tight_r
                     self._save_state()
-                # Auto-tighten legacy open trades into 0.75R/1.8R Scalp targets
-                if not trade.get("tp1_hit", False) and not trade.get("scalp_upgraded", False) and r_dist > 0:
-                    new_tp1 = round(entry_price + (0.75 * r_dist if is_long else -0.75 * r_dist), 5)
-                    new_tp2 = round(entry_price + (1.80 * r_dist if is_long else -1.80 * r_dist), 5)
+                # Auto-tighten open trades into 0.52R/1.10R Fast-Scalp targets
+                if not trade.get("tp1_hit", False) and not trade.get("fast_scalp_upgraded", False) and r_dist > 0:
+                    new_tp1 = round(entry_price + (0.52 * r_dist if is_long else -0.52 * r_dist), 5)
+                    new_tp2 = round(entry_price + (1.10 * r_dist if is_long else -1.10 * r_dist), 5)
                     trade["tp1_price"] = new_tp1
                     trade["tp2_price"] = new_tp2
-                    trade["scalp_upgraded"] = True
+                    trade["fast_scalp_upgraded"] = True
                     self._save_state()
                 tp1_price = float(trade.get("tp1_price", 0.0))
 
-                # Step 1 — Early Break-Even Shield (dynamically self-tuned per symbol by AdaptiveLearner)
-                be_shield_r = self.learner.get_symbol_be_shield_r(str(trade.get("symbol", broker_sym)))
+                age_min = 0.0
+                opened_str = str(trade.get("opened_at_utc", ""))
+                if opened_str:
+                    try:
+                        opened_dt = datetime.strptime(opened_str, "%Y-%m-%d %H:%M:%S UTC").replace(tzinfo=timezone.utc)
+                        age_min = (datetime.now(timezone.utc) - opened_dt).total_seconds() / 60.0
+                    except Exception:
+                        pass
+
+                # Step 1 — Fast-Scalp Break-Even Shield (+0.35R excursion, +0.18R peak pullback, OR >=20m open with >=+0.10R)
                 if (
                     not trade.get("tp1_hit", False)
                     and not trade.get("be_shield_active", False)
-                    and (pos_profit >= be_shield_r * risk_usd_val or (float(trade.get("peak_favorable_r", 0.0)) >= 0.22 and pos_profit >= 0.04 * risk_usd_val))
+                    and (
+                        cur_r >= 0.35
+                        or pos_profit >= 0.35 * risk_usd_val
+                        or (float(trade.get("peak_favorable_r", 0.0)) >= 0.18 and pos_profit >= 0.04 * risk_usd_val)
+                        or (age_min >= 20.0 and (cur_r >= 0.10 or pos_profit >= 0.10 * risk_usd_val))
+                    )
                     and entry_price > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
@@ -1103,17 +1116,51 @@ class MT5Connector:
                         f"SL locked at Spread-Protected Break-Even ({be_sl})."
                     )
 
-                # Step 1.5 - Near-TP1 Profit Cushion (+0.58R excursion): Lock SL at +0.25R guaranteed profit
+                # Step 1.25 — 35-Minute Fast-Scalp Time-Decay Shield (cuts risk on stale >35m trades without impulse)
+                if (
+                    age_min >= 35.0
+                    and not trade.get("tp1_hit", False)
+                    and not trade.get("be_shield_active", False)
+                    and not trade.get("time_decay_applied", False)
+                    and r_dist > 0
+                ):
+                    sym_info = self._mt5.symbol_info(broker_sym)
+                    digits = int(sym_info.digits) if sym_info is not None else 2
+                    decay_dist = 0.45 * r_dist
+                    cur_sl_val = float(pos.sl) if float(pos.sl) > 0 else float(trade.get("sl_price", entry_price))
+                    if is_long:
+                        decay_sl = round(min(cur_price - 0.06 * r_dist, max(cur_sl_val, entry_price - decay_dist)), digits)
+                    else:
+                        decay_sl = round(max(cur_price + 0.06 * r_dist, min(cur_sl_val, entry_price + decay_dist)), digits)
+                    cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
+                    self._mt5.order_send(
+                        {
+                            "action": self._mt5.TRADE_ACTION_SLTP,
+                            "position": int(pos.ticket),
+                            "symbol": broker_sym,
+                            "sl": decay_sl,
+                            "tp": cur_tp,
+                        }
+                    )
+                    trade["time_decay_applied"] = True
+                    trade["sl_price"] = decay_sl
+                    self._save_state()
+                    events.append(
+                        f"[35M TIME-DECAY SHIELD] Ticket #{ticket} ({broker_sym}) open {age_min:.0f}m without impulse; "
+                        f"tightened SL to {decay_sl} to cap stale-scalp risk."
+                    )
+
+                # Step 1.5 - Near-TP1 Profit Cushion (+0.44R excursion): Lock SL at +0.22R guaranteed profit
                 if (
                     not trade.get("tp1_hit", False)
                     and not trade.get("near_tp1_cushion_active", False)
-                    and (cur_r >= 0.58 or pos_profit >= 0.58 * risk_usd_val)
+                    and (cur_r >= 0.44 or pos_profit >= 0.44 * risk_usd_val)
                     and r_dist > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
                     digits = int(sym_info.digits) if sym_info is not None else 2
                     cushion_sl = round(
-                        entry_price + (0.25 * r_dist if is_long else -0.25 * r_dist), digits
+                        entry_price + (0.22 * r_dist if is_long else -0.22 * r_dist), digits
                     )
                     cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
                     self._mt5.order_send(
@@ -1130,14 +1177,14 @@ class MT5Connector:
                     trade["sl_price"] = cushion_sl
                     self._save_state()
                     events.append(
-                        f"[NEAR-TP1 CUSHION +0.25R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
-                        f"SL ratcheted to +0.25R guaranteed profit ({cushion_sl})."
+                        f"[NEAR-TP1 CUSHION +0.22R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
+                        f"SL ratcheted to +0.22R guaranteed profit ({cushion_sl})."
                     )
 
-                # Step 2 - Spread-Compensated TP1 Hit (+0.68R floating/excursion or tp1_price): Close partial OR lock +0.35R profit
+                # Step 2 - Fast-Scalp TP1 Hit (+0.52R floating/excursion or tp1_price): Close 50% partial & lock +0.20R runner
                 if not trade.get("tp1_hit", False) and tp1_price > 0:
                     price_reached = (cur_price >= tp1_price) if is_long else (cur_price <= tp1_price)
-                    profit_reached = (pos_profit >= 0.68 * risk_usd_val) or (cur_r >= 0.68)
+                    profit_reached = (pos_profit >= 0.52 * risk_usd_val) or (cur_r >= 0.52)
                     if price_reached or profit_reached:
                         partial_closed = self._execute_tp1_protection(pos, trade)
                         trade["tp1_hit"] = True
@@ -1151,22 +1198,22 @@ class MT5Connector:
                             )
                             self.telegram.send_message(msg_html)
                         events.append(
-                            f"[TP1 REACHED] Ticket #{ticket} ({broker_sym}) reached TP1 (+${pos_profit:.2f})! "
+                            f"[TP1 REACHED] Ticket #{ticket} ({broker_sym}) reached Fast-Scalp TP1 (+${pos_profit:.2f})! "
                             f"SL locked at {trade.get('sl_price', entry_price)}."
                         )
 
-                # Step 3 — Golden Runner Ratchet (+1.35R): Lock SL at +0.85R guaranteed profit on road to TP2
+                # Step 2.5 & Step 3 — Fast-Scalp Runner Ratchet (+0.75R -> +0.45R SL, +0.92R -> +0.72R SL)
                 if (
                     trade.get("tp1_hit", False)
                     and not trade.get("mid_runner_lock_active", False)
                     and not trade.get("runner_ratchet_active", False)
-                    and cur_r >= 0.95
+                    and cur_r >= 0.75
                     and r_dist > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
                     digits = int(sym_info.digits) if sym_info is not None else 2
                     mid_sl = round(
-                        entry_price + (0.40 * r_dist if is_long else -0.40 * r_dist), digits
+                        entry_price + (0.45 * r_dist if is_long else -0.45 * r_dist), digits
                     )
                     cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
                     self._mt5.order_send(
@@ -1182,20 +1229,20 @@ class MT5Connector:
                     trade["sl_price"] = mid_sl
                     self._save_state()
                     events.append(
-                        f"[RUNNER LOCK +0.40R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
-                        f"SL ratcheted to +0.40R guaranteed profit ({mid_sl})."
+                        f"[RUNNER LOCK +0.45R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
+                        f"SL ratcheted to +0.45R guaranteed profit ({mid_sl})."
                     )
 
                 if (
                     trade.get("tp1_hit", False)
                     and not trade.get("runner_ratchet_active", False)
-                    and (cur_r >= 1.25 or pos_profit >= 1.35 * remaining_risk_usd)
+                    and (cur_r >= 0.92 or pos_profit >= 0.92 * remaining_risk_usd)
                     and r_dist > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
                     digits = int(sym_info.digits) if sym_info is not None else 2
                     ratchet_sl = round(
-                        entry_price + (0.85 * r_dist if is_long else -0.85 * r_dist), digits
+                        entry_price + (0.72 * r_dist if is_long else -0.72 * r_dist), digits
                     )
                     cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
                     self._mt5.order_send(
@@ -1211,8 +1258,8 @@ class MT5Connector:
                     trade["sl_price"] = ratchet_sl
                     self._save_state()
                     events.append(
-                        f"[RUNNER RATCHET +0.85R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
-                        f"SL ratcheted to +0.85R guaranteed profit ({ratchet_sl})."
+                        f"[RUNNER RATCHET +0.72R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
+                        f"SL ratcheted to +0.72R guaranteed profit ({ratchet_sl})."
                     )
                 continue
 
