@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 21:38:46 UTC",
+  "updated_utc": "2026-11-10 21:40:18 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73920.6,
-    "ETHUSD": 2058.77,
-    "SOLUSD": 83.42,
-    "XAUUSD": 4027.61,
-    "EURUSD": 1.1161699999999999,
-    "USDJPY": 158.771
+    "BTCUSD": 73895.07,
+    "ETHUSD": 2058.07,
+    "SOLUSD": 83.38,
+    "XAUUSD": 4028.85,
+    "EURUSD": 1.11622,
+    "USDJPY": 158.756
   },
   "active_trades": {},
   "bot_stats": {
@@ -303,7 +303,7 @@
     "crypto_book_pnl": 62.91
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 21:35:09 UTC",
+    "updated_utc": "2026-11-10 21:40:14 UTC",
     "total_episodes": 77,
     "strategy_stats": {
       "SND": {
@@ -801,7 +801,7 @@
         "tp2_price": 2053.01938,
         "opened_epoch": 1794346508.134311,
         "tp1_hit": false,
-        "peak_r": 0.197
+        "peak_r": 0.296
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -817,6 +817,21 @@
         "opened_epoch": 1794346509.405211,
         "tp1_hit": false,
         "peak_r": 0.217
+      },
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 73900.01,
+        "sl_price": 74062.59002,
+        "sl_dist": 162.58002,
+        "tp1_price": 73815.46839,
+        "tp2_price": 73721.17198,
+        "opened_epoch": 1794346814.602687,
+        "tp1_hit": false,
+        "peak_r": 0.03
       }
     ],
     "shadow_cooldowns": {
@@ -827,7 +842,7 @@
       "ETHUSD:KRONOS": 1794341705.906893,
       "SOLUSD:BREAKOUT": 1794342002.906926,
       "SOLUSD:KRONOS": 1794346509.405211,
-      "BTCUSD:ICT": 1794342905.687935,
+      "BTCUSD:ICT": 1794346814.602687,
       "SOLUSD:SND": 1794290407.951161,
       "SOLUSD:ICT": 1794345318.228893,
       "ETHUSD:TREND_PULLBACK": 1794339618.086671,
@@ -837,5 +852,5 @@
     },
     "shadow_episodes": 53
   },
-  "cycle_count": 640
+  "cycle_count": 645
 }
