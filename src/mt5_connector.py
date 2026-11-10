@@ -398,6 +398,7 @@ class MT5Connector:
             "direction": signal.direction.value,
             "entry_price": fill_price,
             "sl_price": sl_price,
+            "initial_sl_price": sl_price,
             "tp1_price": tp1_price,
             "tp2_price": tp2_price,
             "volume": volume,
@@ -729,8 +730,13 @@ class MT5Connector:
         risk_usd = max(float(trade.get("risk_usd", 15.0)), 1.0)
         init_vol = float(trade.get("initial_volume", trade.get("volume", 0.01)))
 
-        init_sl = float(trade.get("initial_sl_price", sl_price))
-        sl_dist = max(abs(entry_price - init_sl), 1e-6)
+        if "initial_sl_price" not in trade or abs(entry_price - float(trade["initial_sl_price"])) < 1e-5:
+            inferred_dist = max(abs(tp1_price - entry_price) / 0.75, abs(entry_price - sl_price), 1e-4)
+            trade["initial_sl_price"] = round(
+                entry_price - inferred_dist if is_long else entry_price + inferred_dist, 2
+            )
+        init_sl = float(trade["initial_sl_price"])
+        sl_dist = max(abs(entry_price - init_sl), 1e-4)
         fav_excursion = (cur_price - entry_price) if is_long else (entry_price - cur_price)
         excursion_r = fav_excursion / sl_dist
         peak_r = max(float(trade.get("peak_favorable_r", 0.0)), round(excursion_r, 3))
@@ -775,7 +781,8 @@ class MT5Connector:
                 trade["tp1_hit"] = True
                 trade["be_shield_active"] = True
                 trade["sl_price"] = r15_sl
-                trade["partial_pnl"] = round(0.5 * max(excursion_r, 0.72) * risk_usd, 2)
+                tp1_r = abs(tp1_price - entry_price) / sl_dist
+                trade["partial_pnl"] = round(0.5 * max(tp1_r, 0.72) * risk_usd, 2)
                 self._save_state()
 
                 if self.telegram.is_configured:
