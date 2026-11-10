@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 09:09:32 UTC",
+  "updated_utc": "2026-11-10 09:10:07 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 2104.67,
-    "SOLUSD": 85.4
+    "ETHUSD": 2099.14,
+    "SOLUSD": 85.22
   },
   "active_trades": {
     "84301522": {
@@ -31,7 +31,7 @@
       "broker_source": "CRYPTO_24_7_LIVE",
       "direction": "SHORT",
       "entry_price": 74418.28,
-      "sl_price": 74798.05,
+      "sl_price": 74403.09,
       "initial_sl_price": 74798.05,
       "tp1_price": 74220.8,
       "tp2_price": 74000.54,
@@ -48,7 +48,8 @@
       "opened_at_utc": "2026-11-10 09:05:22 UTC",
       "tp1_hit": false,
       "partial_pnl": 0.0,
-      "peak_favorable_r": 0.106
+      "peak_favorable_r": 0.434,
+      "be_shield_active": true
     }
   },
   "bot_stats": {
@@ -699,8 +700,8 @@
         "tp1_price": 2102.30499,
         "tp2_price": 2098.46247,
         "opened_epoch": 1794301523.064976,
-        "tp1_hit": false,
-        "peak_r": 0.225
+        "tp1_hit": true,
+        "peak_r": 0.998
       },
       {
         "key": "ETHUSD:TREND_PULLBACK",
@@ -714,8 +715,8 @@
         "tp1_price": 2102.30499,
         "tp2_price": 2098.46247,
         "opened_epoch": 1794301523.076745,
-        "tp1_hit": false,
-        "peak_r": 0.225
+        "tp1_hit": true,
+        "peak_r": 0.998
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -729,8 +730,8 @@
         "tp1_price": 85.31655,
         "tp2_price": 85.1454,
         "opened_epoch": 1794301523.694301,
-        "tp1_hit": false,
-        "peak_r": 0.237
+        "tp1_hit": true,
+        "peak_r": 0.847
       },
       {
         "key": "SOLUSD:TREND_PULLBACK",
@@ -744,8 +745,8 @@
         "tp1_price": 85.31655,
         "tp2_price": 85.1454,
         "opened_epoch": 1794301523.702785,
-        "tp1_hit": false,
-        "peak_r": 0.237
+        "tp1_hit": true,
+        "peak_r": 0.847
       }
     ],
     "shadow_cooldowns": {
@@ -765,5 +766,5 @@
     },
     "shadow_episodes": 23
   },
-  "cycle_count": 510
+  "cycle_count": 511
 }
