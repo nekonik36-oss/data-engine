@@ -32,6 +32,7 @@ def run_scanner(
     poll_seconds: int = 15,
     sync_github: bool = True,
     force_mode: str | None = "auto",
+    max_cycles: int = 0,
 ) -> None:
     import ctypes
     import sys
@@ -236,7 +237,7 @@ def run_scanner(
             if pushed:
                 print("  [GitHub Sync] Home PC status & 24/7 Crypto trade telemetry synced to GitHub.")
 
-        if not watch:
+        if not watch or (max_cycles > 0 and cycle_count >= max_cycles):
             break
 
         print(f"\n  Sleeping {poll_seconds}s until next 24/7 Crypto + Forex check (Press Ctrl+C to stop)...")
@@ -270,6 +271,12 @@ def main() -> None:
         default=15,
         help="Polling interval in seconds for continuous watch mode (default: 30).",
     )
+    parser.add_argument(
+        "--max-cycles",
+        type=int,
+        default=0,
+        help="Stop after N scan cycles (used by GitHub Actions 24/7 Cloud Runner).",
+    )
     args = parser.parse_args()
     mode = "signal_only" if args.signal_only else "auto"
     run_scanner(
@@ -277,6 +284,7 @@ def main() -> None:
         poll_seconds=args.interval,
         sync_github=not args.no_sync,
         force_mode=mode,
+        max_cycles=args.max_cycles,
     )
 
 

@@ -65,4 +65,4 @@ jobs:
         run: |
           git config user.name "Cloud Auto-Trader Bot"
           git config user.email "autotrader-bot@users.noreply.github.com"
-          python3 run_scanner.py --once
+          python3 run_scanner.py --interval 30 --max-cycles 20
