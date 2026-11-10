@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 19:50:36 UTC",
+  "updated_utc": "2026-11-10 20:06:57 UTC",
   "total_episodes": 65,
   "strategy_stats": {
     "SND": {
@@ -103,24 +103,7 @@
       "be_shield_r": 0.55
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1081421364,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "entry_price": 73164.95,
-      "exit_price": 73676.05,
-      "tp1_price": 72902.7088,
-      "tp2_price": 72610.209,
-      "agreeing_strategies": [
-        "TREND_PULLBACK"
-      ],
-      "regime": "TRENDING_DOWN",
-      "closed_epoch": 1794335816.372049,
-      "closed_at_utc": "2026-11-10 18:36:56 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-09 05:26:06 UTC",
