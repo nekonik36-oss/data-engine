@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 19:05:14 UTC",
+  "updated_utc": "2026-11-10 19:20:12 UTC",
   "total_episodes": 63,
   "strategy_stats": {
     "SND": {
@@ -454,21 +454,6 @@
   ],
   "live_episodes": 5,
   "active_shadow_trades": [
-    {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 82.89,
-      "sl_price": 83.38927,
-      "sl_dist": 0.49927,
-      "tp1_price": 82.63038,
-      "tp2_price": 82.34081,
-      "opened_epoch": 1794336607.44403,
-      "tp1_hit": false,
-      "peak_r": 0.34
-    },
     {
       "key": "BTCUSD:ICT",
       "symbol": "BTCUSD",
