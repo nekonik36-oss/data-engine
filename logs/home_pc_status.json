@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 21:00:28 UTC",
+  "updated_utc": "2026-11-10 21:02:00 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73881.99,
-    "ETHUSD": 2063.03,
-    "SOLUSD": 83.43,
-    "XAUUSD": 4031.4,
-    "EURUSD": 1.1162,
-    "USDJPY": 158.799
+    "BTCUSD": 73904.01,
+    "ETHUSD": 2062.74,
+    "SOLUSD": 83.37,
+    "XAUUSD": 4030.49,
+    "EURUSD": 1.11621,
+    "USDJPY": 158.809
   },
   "active_trades": {},
   "bot_stats": {
@@ -786,7 +786,7 @@
         "tp2_price": 74021.79211,
         "opened_epoch": 1794343803.220617,
         "tp1_hit": false,
-        "peak_r": 0.35
+        "peak_r": 0.468
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -815,8 +815,8 @@
         "tp1_price": 2063.28395,
         "tp2_price": 2067.66067,
         "opened_epoch": 1794343826.456696,
-        "tp1_hit": false,
-        "peak_r": 0.486
+        "tp1_hit": true,
+        "peak_r": 0.587
       }
     ],
     "shadow_cooldowns": {
@@ -837,5 +837,5 @@
     },
     "shadow_episodes": 50
   },
-  "cycle_count": 515
+  "cycle_count": 520
 }
