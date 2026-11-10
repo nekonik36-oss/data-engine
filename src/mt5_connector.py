@@ -729,14 +729,53 @@ class MT5Connector:
         risk_usd = max(float(trade.get("risk_usd", 15.0)), 1.0)
         init_vol = float(trade.get("initial_volume", trade.get("volume", 0.01)))
 
-        # 1. Check if TP1 (1.5R) was reached
+        init_sl = float(trade.get("initial_sl_price", sl_price))
+        sl_dist = max(abs(entry_price - init_sl), 1e-6)
+        fav_excursion = (cur_price - entry_price) if is_long else (entry_price - cur_price)
+        excursion_r = fav_excursion / sl_dist
+        peak_r = max(float(trade.get("peak_favorable_r", 0.0)), round(excursion_r, 3))
+        if peak_r > float(trade.get("peak_favorable_r", 0.0)):
+            trade["peak_favorable_r"] = peak_r
+
+        # Tier 1 (+0.45R excursion or +0.22R peak pullback to +0.04R) -> +0.04R Spread-Protected BE Shield
+        if not trade.get("be_shield_active", False) and not trade.get("tp1_hit", False):
+            if excursion_r >= 0.45 or (peak_r >= 0.22 and 0.04 <= excursion_r <= 0.14):
+                be_sl = round(entry_price + (0.04 * sl_dist if is_long else -0.04 * sl_dist), 2)
+                trade["be_shield_active"] = True
+                trade["sl_price"] = be_sl
+                sl_price = be_sl
+                self._save_state()
+                events.append(
+                    f"[24/7 CRYPTO BE SHIELD] Ticket #{ticket} ({symbol}) reached {peak_r:+.2f}R! "
+                    f"Locked SL at +0.04R ({be_sl})."
+                )
+
+        # Tier 1.5 (+0.58R excursion) -> Lock +0.25R Guaranteed Profit Stop
+        if not trade.get("pre_tp1_ratchet", False) and not trade.get("tp1_hit", False) and excursion_r >= 0.58:
+            r25_sl = round(entry_price + (0.25 * sl_dist if is_long else -0.25 * sl_dist), 2)
+            trade["pre_tp1_ratchet"] = True
+            trade["be_shield_active"] = True
+            trade["sl_price"] = r25_sl
+            sl_price = r25_sl
+            self._save_state()
+            events.append(
+                f"[24/7 CRYPTO +0.25R RATCHET] Ticket #{ticket} ({symbol}) reached {excursion_r:+.2f}R! "
+                f"Locked SL at +0.25R ({r25_sl})."
+            )
+
+        # Tier 2: Check if TP1 (+0.68R or tp1_price) was reached
         if not trade.get("tp1_hit", False):
-            reached_tp1 = (cur_price >= tp1_price) if is_long else (cur_price <= tp1_price)
+            reached_tp1 = (
+                excursion_r >= 0.68
+                or ((cur_price >= tp1_price) if is_long else (cur_price <= tp1_price))
+            )
             if reached_tp1:
                 partial_lots = round(init_vol * 0.5, 2)
+                r15_sl = round(entry_price + (0.15 * sl_dist if is_long else -0.15 * sl_dist), 2)
                 trade["tp1_hit"] = True
-                trade["sl_price"] = entry_price  # Move SL to Break-Even!
-                trade["partial_pnl"] = round(0.5 * 1.0 * risk_usd, 2)  # +0.75R banked on 50%
+                trade["be_shield_active"] = True
+                trade["sl_price"] = r15_sl
+                trade["partial_pnl"] = round(0.5 * max(excursion_r, 0.72) * risk_usd, 2)
                 self._save_state()
 
                 if self.telegram.is_configured:
@@ -748,26 +787,48 @@ class MT5Connector:
                     self.telegram.send_message(msg_html)
 
                 events.append(
-                    f"[24/7 CRYPTO TP1 HIT] Ticket #{ticket} ({symbol}) reached 1.5R @ {cur_price}! "
-                    f"Locked +${trade['partial_pnl']:.2f} & moved SL to Break-Even ({entry_price})."
+                    f"[24/7 CRYPTO TP1 HIT] Ticket #{ticket} ({symbol}) reached TP1 @ {cur_price}! "
+                    f"Locked +${trade['partial_pnl']:.2f} & moved runner SL to +0.15R ({r15_sl})."
                 )
-                sl_price = entry_price
+                sl_price = r15_sl
 
-        # 2. Check if TP2 (3.0R) or Stop Loss (or Break-Even SL) was hit
+        # Tier 2.5 (+0.95R -> +0.40R SL) & Tier 3 (+1.25R -> +0.85R SL) Post-TP1 Runner Ratchet
+        if trade.get("tp1_hit", False):
+            if excursion_r >= 1.25 and int(trade.get("runner_stage", 0)) < 2:
+                r85_sl = round(entry_price + (0.85 * sl_dist if is_long else -0.85 * sl_dist), 2)
+                trade["runner_stage"] = 2
+                trade["sl_price"] = r85_sl
+                sl_price = r85_sl
+                self._save_state()
+            elif excursion_r >= 0.95 and int(trade.get("runner_stage", 0)) < 1:
+                r40_sl = round(entry_price + (0.40 * sl_dist if is_long else -0.40 * sl_dist), 2)
+                trade["runner_stage"] = 1
+                trade["sl_price"] = r40_sl
+                sl_price = r40_sl
+                self._save_state()
+
+        # 2. Check if TP2 or Stop Loss (or Ratchet/BE SL) was hit
         hit_tp2 = (cur_price >= tp2_price) if is_long else (cur_price <= tp2_price)
         hit_sl = (cur_price <= sl_price) if is_long else (cur_price >= sl_price)
 
         if hit_tp2 or hit_sl:
             if hit_tp2:
                 exit_price = tp2_price
-                # 50% closed at 1.5R (+0.75R) + 50% closed at 3.0R (+1.50R) = +2.25R total (or +3.0R if not split)
-                net_pnl = round(float(trade.get("partial_pnl", 0.0)) + 0.5 * 2.0 * risk_usd, 2)
-                close_reason = "Take Profit 2 (3.0R Target) Hit 🎯"
+                runner_r = abs(tp2_price - entry_price) / sl_dist
+                net_pnl = round(float(trade.get("partial_pnl", 0.0)) + 0.5 * runner_r * risk_usd, 2)
+                close_reason = "Take Profit 2 Target Hit 🎯"
             else:
                 exit_price = sl_price
+                locked_r = ((sl_price - entry_price) if is_long else (entry_price - sl_price)) / sl_dist
                 if trade.get("tp1_hit", False):
-                    net_pnl = round(float(trade.get("partial_pnl", 0.0)), 2)
-                    close_reason = "TP1 (1.5R) Banked + Break-Even Stop Hit 🛡️"
+                    net_pnl = round(float(trade.get("partial_pnl", 0.0)) + 0.5 * max(locked_r, 0.0) * risk_usd, 2)
+                    close_reason = "TP1 + Ratchet Profit Stop Hit 🛡️💰"
+                elif trade.get("pre_tp1_ratchet", False):
+                    net_pnl = round(max(locked_r, 0.25) * risk_usd, 2)
+                    close_reason = "+0.25R Pre-TP1 Profit Ratchet Hit 🛡️💰"
+                elif trade.get("be_shield_active", False):
+                    net_pnl = round(max(locked_r, 0.04) * risk_usd, 2)
+                    close_reason = "Break-Even Shield Hit 🛡️"
                 else:
                     net_pnl = round(-risk_usd, 2)
                     close_reason = "Stop Loss Hit 🛑"
