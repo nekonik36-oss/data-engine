@@ -144,6 +144,8 @@ def run_scanner(
         for symbol, tf in scan_targets:
             key = f"{symbol}_{tf}"
             is_crypto = symbol in CRYPTO_INSTRUMENTS
+            if not is_crypto and not mt5_conn.connected:
+                continue
 
             # Skip duplicate scan if symbol already has an open position
             if mt5_conn._has_open_trade_on_symbol(symbol) is not None:
