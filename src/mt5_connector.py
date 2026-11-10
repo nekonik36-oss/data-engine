@@ -927,6 +927,16 @@ class MT5Connector:
                 agreeing_strategies=list(trade.get("agreeing_strategies", ["SND", "ICT", "KRONOS"])),
                 r_multiple=r_mult,
                 net_pnl=net_pnl,
+                trade_meta={
+                    "ticket": ticket,
+                    "direction": trade.get("direction", "LONG"),
+                    "entry_price": entry_price,
+                    "exit_price": exit_price,
+                    "tp1_price": trade.get("tp1_price", 0.0),
+                    "tp2_price": trade.get("tp2_price", 0.0),
+                    "peak_favorable_r": trade.get("peak_favorable_r", 0.0),
+                    "close_reason": close_reason,
+                },
             )
 
             if self.telegram.is_configured:
