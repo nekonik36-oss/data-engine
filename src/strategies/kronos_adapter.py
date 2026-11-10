@@ -33,6 +33,10 @@ class KronosForecaster:
         self._predictor = None
         self._active_backend = "statistical_mc_fallback"
         self._tried_loading = False
+        # Eco-Power GPU Cache: maps (first_bar_open_bucket, last_bar_timestamp) -> (last_close, KronosForecast)
+        # Prevents waking the RTX 5060 out of P8 idle (~8W) every 20s for the same M5/M15 candle
+        # unless live price moves >= 0.20 ATR intra-bar.
+        self._forecast_cache: dict[tuple[float, object], tuple[float, KronosForecast]] = {}
 
     def _lazy_load_kronos(self) -> None:
         """Attempt to load `NeoQuasar/Kronos-base` on CUDA if installed on the Personal PC."""
@@ -94,7 +98,13 @@ class KronosForecaster:
         lookback = min(self.config.lookback, idx + 1)
         history = candles[idx - lookback + 1 : idx + 1]
 
-        if self._predictor is not None:
+        if self._predictor is not None and len(history) >= 2:
+            cache_key = (round(history[0].open, 4), history[-1].timestamp)
+            cached_entry = self._forecast_cache.get(cache_key)
+            if cached_entry is not None:
+                cached_close, cached_fc = cached_entry
+                if abs(history[-1].close - cached_close) < 0.20 * cur_atr:
+                    return cached_fc
             try:
                 import pandas as pd  # type: ignore
 
@@ -146,7 +156,7 @@ class KronosForecaster:
                     else (Direction.SHORT if bull_prob <= 0.44 else Direction.NEUTRAL)
                 )
                 conf = min(0.95, abs(bull_prob - 0.5) * 2.2)
-                return KronosForecast(
+                fc_res = KronosForecast(
                     model_name=self._active_backend,
                     direction=direction,
                     bullish_prob=bull_prob,
@@ -159,6 +169,10 @@ class KronosForecaster:
                         f"(Max Up +{up_exc_atr:.2f} ATR / Max Down -{dn_exc_atr:.2f} ATR)"
                     ),
                 )
+                if len(self._forecast_cache) > 64:
+                    self._forecast_cache.clear()
+                self._forecast_cache[cache_key] = (last_close, fc_res)
+                return fc_res
             except Exception:
                 pass
 
