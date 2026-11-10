@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-10 07:45:05 UTC",
-  "total_episodes": 30,
+  "updated_utc": "2026-11-10 07:45:59 UTC",
+  "total_episodes": 32,
   "strategy_stats": {
     "SND": {
       "trades": 1,
@@ -24,29 +24,29 @@
       "multiplier": 0.913
     },
     "TREND_PULLBACK": {
-      "trades": 12,
+      "trades": 14,
       "wins": 5,
-      "losses": 5,
-      "ema_r": -0.089,
-      "multiplier": 0.978
+      "losses": 7,
+      "ema_r": -0.326,
+      "multiplier": 0.919
     },
     "KRONOS": {
-      "trades": 16,
+      "trades": 17,
       "wins": 4,
-      "losses": 11,
-      "ema_r": -0.317,
-      "multiplier": 0.921
+      "losses": 12,
+      "ema_r": -0.445,
+      "multiplier": 0.889
     }
   },
   "regime_strategy_multipliers": {
     "RANGING:ICT": 0.903,
     "RANGING:KRONOS": 0.785,
-    "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.973,
+    "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.917,
     "RANGING:TREND_PULLBACK": 1.079,
     "TRENDING_DOWN:TREND_PULLBACK": 0.955,
     "SESSION_SWEEP_WINDOW:ICT": 0.974,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.957,
-    "SESSION_SWEEP_WINDOW:KRONOS": 0.911,
+    "SESSION_SWEEP_WINDOW:KRONOS": 0.871,
     "TRENDING_DOWN:ICT": 1.011,
     "TRENDING_DOWN:KRONOS": 1.011,
     "RANGING:BREAKOUT": 0.952,
@@ -60,8 +60,8 @@
     },
     "ETHUSD": {
       "win_streak": 0,
-      "loss_streak": 1,
-      "net_r": -1.1
+      "loss_streak": 2,
+      "net_r": -2.0
     },
     "SOLUSD": {
       "win_streak": 2,
@@ -369,25 +369,26 @@
         "TREND_PULLBACK"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=None)"
+    },
+    {
+      "timestamp_utc": "2026-11-10 07:45:57 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": null,
+      "symbol": "ETHUSD",
+      "direction": null,
+      "net_pnl": -44.29,
+      "r_multiple": -0.9,
+      "peak_favorable_r": 0.0,
+      "regime": "SESSION_SWEEP_WINDOW",
+      "strategies": [
+        "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=None)"
     }
   ],
-  "live_episodes": 1,
+  "live_episodes": 2,
   "active_shadow_trades": [
-    {
-      "key": "ETHUSD:TREND_PULLBACK",
-      "symbol": "ETHUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 2117.05,
-      "sl_price": 2121.76263,
-      "sl_dist": 4.71263,
-      "tp1_price": 2114.59943,
-      "tp2_price": 2111.8661,
-      "opened_epoch": 1794294605.507803,
-      "tp1_hit": false,
-      "peak_r": 0.057
-    },
     {
       "key": "BTCUSD:BREAKOUT",
       "symbol": "BTCUSD",
@@ -401,7 +402,7 @@
       "tp2_price": 75093.27702,
       "opened_epoch": 1794296705.486652,
       "tp1_hit": false,
-      "peak_r": 0.17
+      "peak_r": 0.316
     }
   ],
   "shadow_cooldowns": {
@@ -417,5 +418,5 @@
     "SOLUSD:ICT": 1794290407.957812,
     "ETHUSD:TREND_PULLBACK": 1794294605.507803
   },
-  "shadow_episodes": 11
+  "shadow_episodes": 12
 }
