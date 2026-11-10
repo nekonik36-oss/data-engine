@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-10 18:36:38 UTC",
+  "updated_utc": "2026-11-10 18:37:01 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9841.19,
+  "live_equity": 9828.81,
   "bot_stats": {
-    "total_closed": 22,
+    "total_closed": 23,
     "wins": 9,
-    "losses": 10,
+    "losses": 11,
     "breakevens": 3,
-    "cumulative_pnl": -125.19,
+    "cumulative_pnl": -171.19,
     "history": [
       {
         "ticket": 1078980632,
@@ -250,6 +250,17 @@
         "r_multiple": 0.81,
         "close_reason": "Take Profit 2 Target Hit \ud83c\udfaf",
         "closed_at_utc": "2026-11-10 17:58:58 UTC"
+      },
+      {
+        "ticket": 1081421364,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 73164.95,
+        "exit_price": 73676.05,
+        "net_pnl": -46.0,
+        "r_multiple": -1.01,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-10 18:36:56 UTC"
       }
     ],
     "crypto_book_pnl": 62.91
@@ -274,9 +285,9 @@
   },
   "symbol_streaks": {
     "BTCUSD": {
-      "win_streak": 2,
-      "loss_streak": 0,
-      "net_r": -0.8
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": -1.81
     },
     "ETHUSD": {
       "win_streak": 0,
@@ -304,7 +315,24 @@
       "net_r": -1.02
     }
   },
-  "pending_post_mortems": [],
+  "pending_post_mortems": [
+    {
+      "ticket": 1081421364,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "entry_price": 73164.95,
+      "exit_price": 73676.05,
+      "tp1_price": 72902.7088,
+      "tp2_price": 72610.209,
+      "agreeing_strategies": [
+        "TREND_PULLBACK"
+      ],
+      "regime": "TRENDING_DOWN",
+      "closed_epoch": 1794335816.372049,
+      "closed_at_utc": "2026-11-10 18:36:56 UTC",
+      "audited": false
+    }
+  ],
   "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-09 05:26:06 UTC",
@@ -619,6 +647,21 @@
         "TREND_PULLBACK"
       ],
       "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-10 18:36:56 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1081421364,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "net_pnl": -46.0,
+      "r_multiple": -1.01,
+      "peak_favorable_r": 0.06,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "TREND_PULLBACK"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=72902.7088)"
     }
   ]
 }
