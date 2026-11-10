@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-10 09:48:19 UTC",
-  "total_episodes": 50,
+  "updated_utc": "2026-11-10 10:27:31 UTC",
+  "total_episodes": 52,
   "strategy_stats": {
     "SND": {
       "trades": 1,
@@ -10,11 +10,11 @@
       "multiplier": 1.004
     },
     "ICT": {
-      "trades": 17,
-      "wins": 11,
-      "losses": 6,
-      "ema_r": 0.005,
-      "multiplier": 1.001
+      "trades": 19,
+      "wins": 12,
+      "losses": 7,
+      "ema_r": -0.04,
+      "multiplier": 0.99
     },
     "BREAKOUT": {
       "trades": 11,
@@ -47,7 +47,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.983,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.947,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.867,
-    "TRENDING_DOWN:ICT": 1.023,
+    "TRENDING_DOWN:ICT": 1.013,
     "TRENDING_DOWN:KRONOS": 1.027,
     "RANGING:BREAKOUT": 0.952,
     "RANGING:SND": 1.013,
@@ -406,38 +406,7 @@
     }
   ],
   "live_episodes": 3,
-  "active_shadow_trades": [
-    {
-      "key": "BTCUSD:ICT",
-      "symbol": "BTCUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 74470.01,
-      "sl_price": 74266.79602,
-      "sl_dist": 203.21398,
-      "tp1_price": 74575.68127,
-      "tp2_price": 74693.54537,
-      "opened_epoch": 1794303003.62938,
-      "tp1_hit": false,
-      "peak_r": 0.309
-    },
-    {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 85.35,
-      "sl_price": 85.01038,
-      "sl_dist": 0.33962,
-      "tp1_price": 85.5266,
-      "tp2_price": 85.72358,
-      "opened_epoch": 1794303614.395663,
-      "tp1_hit": true,
-      "peak_r": 1.031
-    }
-  ],
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794303917.481369,
     "BTCUSD:BREAKOUT": 1794299701.198287,
@@ -453,5 +422,5 @@
     "BTCUSD:TREND_PULLBACK": 1794301522.084946,
     "SOLUSD:TREND_PULLBACK": 1794301523.702785
   },
-  "shadow_episodes": 29
+  "shadow_episodes": 31
 }
