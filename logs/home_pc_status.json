@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 04:03:30 UTC",
+  "updated_utc": "2026-11-10 04:05:10 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,11 +20,36 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 74596.7,
-    "ETHUSD": 2114.87,
-    "SOLUSD": 85.84
+    "BTCUSD": 74661.24,
+    "ETHUSD": 2117.7,
+    "SOLUSD": 85.98
   },
-  "active_trades": {},
+  "active_trades": {
+    "84283506": {
+      "ticket": 84283506,
+      "symbol": "ETHUSD",
+      "broker_symbol": "ETHUSD",
+      "broker_source": "CRYPTO_24_7_LIVE",
+      "direction": "LONG",
+      "entry_price": 2117.68,
+      "sl_price": 2106.02,
+      "initial_sl_price": 2106.02,
+      "tp1_price": 2126.42,
+      "tp2_price": 2138.66,
+      "volume": 4.23,
+      "initial_volume": 4.23,
+      "risk_usd": 49.3,
+      "confluence_score": 84.3,
+      "regime": "TRENDING_DOWN",
+      "agreeing_strategies": [
+        "ICT",
+        "KRONOS"
+      ],
+      "opened_at_utc": "2026-11-10 04:05:06 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0
+    }
+  },
   "bot_stats": {
     "total_closed": 17,
     "wins": 6,
@@ -561,5 +586,5 @@
       }
     ]
   },
-  "cycle_count": 75
+  "cycle_count": 79
 }
