@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 21:44:49 UTC",
+  "updated_utc": "2026-11-10 21:45:30 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73852.72,
-    "ETHUSD": 2058.47,
-    "SOLUSD": 83.46,
-    "XAUUSD": 4030.35,
-    "EURUSD": 1.11627,
-    "USDJPY": 158.772
+    "BTCUSD": 73893.34,
+    "ETHUSD": 2059.65,
+    "SOLUSD": 83.52,
+    "XAUUSD": 4030.51,
+    "EURUSD": 1.11631,
+    "USDJPY": 158.761
   },
   "active_trades": {},
   "bot_stats": {
@@ -303,8 +303,8 @@
     "crypto_book_pnl": 62.91
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 21:40:14 UTC",
-    "total_episodes": 77,
+    "updated_utc": "2026-11-10 21:45:29 UTC",
+    "total_episodes": 78,
     "strategy_stats": {
       "SND": {
         "trades": 2,
@@ -314,9 +314,9 @@
         "multiplier": 1.011
       },
       "ICT": {
-        "trades": 24,
+        "trades": 25,
         "wins": 13,
-        "losses": 11,
+        "losses": 12,
         "ema_r": -0.286,
         "multiplier": 0.928
       },
@@ -343,7 +343,7 @@
       }
     },
     "regime_strategy_multipliers": {
-      "RANGING:ICT": 0.86,
+      "RANGING:ICT": 0.855,
       "RANGING:KRONOS": 0.762,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.93,
       "RANGING:TREND_PULLBACK": 1.017,
@@ -774,21 +774,6 @@
     "live_episodes": 6,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:ICT",
-        "symbol": "SOLUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 83.42,
-        "sl_price": 83.76903,
-        "sl_dist": 0.34903,
-        "tp1_price": 83.23851,
-        "tp2_price": 83.03607,
-        "opened_epoch": 1794345318.228893,
-        "tp1_hit": false,
-        "peak_r": 0.229
-      },
-      {
         "key": "ETHUSD:ICT",
         "symbol": "ETHUSD",
         "strategy_name": "ICT",
@@ -850,7 +835,7 @@
       "SOLUSD:TREND_PULLBACK": 1794301523.702785,
       "ETHUSD:SND": 1794341705.902894
     },
-    "shadow_episodes": 53
+    "shadow_episodes": 54
   },
-  "cycle_count": 660
+  "cycle_count": 662
 }
