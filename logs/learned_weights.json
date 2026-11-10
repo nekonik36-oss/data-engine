@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-10 20:20:02 UTC",
-  "total_episodes": 67,
+  "updated_utc": "2026-11-10 20:22:13 UTC",
+  "total_episodes": 69,
   "strategy_stats": {
     "SND": {
-      "trades": 1,
-      "wins": 1,
+      "trades": 2,
+      "wins": 2,
       "losses": 0,
-      "ema_r": 0.065,
-      "multiplier": 1.004
+      "ema_r": 0.089,
+      "multiplier": 1.011
     },
     "ICT": {
       "trades": 21,
@@ -17,11 +17,11 @@
       "multiplier": 0.979
     },
     "BREAKOUT": {
-      "trades": 15,
-      "wins": 7,
+      "trades": 16,
+      "wins": 8,
       "losses": 7,
-      "ema_r": 0.037,
-      "multiplier": 1.009
+      "ema_r": 0.063,
+      "multiplier": 1.016
     },
     "TREND_PULLBACK": {
       "trades": 25,
@@ -49,8 +49,8 @@
     "SESSION_SWEEP_WINDOW:KRONOS": 0.867,
     "TRENDING_DOWN:ICT": 0.997,
     "TRENDING_DOWN:KRONOS": 1.046,
-    "RANGING:BREAKOUT": 0.962,
-    "RANGING:SND": 1.013,
+    "RANGING:BREAKOUT": 0.968,
+    "RANGING:SND": 1.019,
     "TRENDING_DOWN:BREAKOUT": 1.042
   },
   "symbol_streaks": {
@@ -470,36 +470,6 @@
   "live_episodes": 6,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:SND",
-      "symbol": "ETHUSD",
-      "strategy_name": "SND",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 2050.37,
-      "sl_price": 2042.34961,
-      "sl_dist": 8.02039,
-      "tp1_price": 2054.5406,
-      "tp2_price": 2059.19243,
-      "opened_epoch": 1794341705.902894,
-      "tp1_hit": true,
-      "peak_r": 0.683
-    },
-    {
-      "key": "ETHUSD:BREAKOUT",
-      "symbol": "ETHUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 2050.37,
-      "sl_price": 2042.34961,
-      "sl_dist": 8.02039,
-      "tp1_price": 2054.5406,
-      "tp2_price": 2059.19243,
-      "opened_epoch": 1794341705.904895,
-      "tp1_hit": true,
-      "peak_r": 0.683
-    },
-    {
       "key": "ETHUSD:KRONOS",
       "symbol": "ETHUSD",
       "strategy_name": "KRONOS",
@@ -546,5 +516,5 @@
     "SOLUSD:TREND_PULLBACK": 1794301523.702785,
     "ETHUSD:SND": 1794341705.902894
   },
-  "shadow_episodes": 43
+  "shadow_episodes": 45
 }
