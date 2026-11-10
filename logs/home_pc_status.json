@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 10:29:43 UTC",
+  "updated_utc": "2026-11-10 10:32:27 UTC",
   "hostname": "runnervmwuk1x",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 2094.73,
-    "SOLUSD": 85.27
+    "ETHUSD": 2093.0,
+    "SOLUSD": 85.01
   },
   "active_trades": {
     "84306449": {
@@ -290,7 +290,7 @@
     "crypto_book_pnl": 23.47
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 10:27:31 UTC",
+    "updated_utc": "2026-11-10 10:30:16 UTC",
     "total_episodes": 52,
     "strategy_stats": {
       "SND": {
@@ -697,9 +697,25 @@
       }
     ],
     "live_episodes": 3,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 2094.68,
+        "sl_price": 2086.99605,
+        "sl_dist": 7.68395,
+        "tp1_price": 2098.67566,
+        "tp2_price": 2103.13235,
+        "opened_epoch": 1794306616.62818,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1794303917.481369,
+      "ETHUSD:ICT": 1794306616.62818,
       "BTCUSD:BREAKOUT": 1794299701.198287,
       "BTCUSD:KRONOS": 1794299701.207211,
       "ETHUSD:BREAKOUT": 1794301523.064976,
@@ -715,5 +731,5 @@
     },
     "shadow_episodes": 31
   },
-  "cycle_count": 5
+  "cycle_count": 10
 }
