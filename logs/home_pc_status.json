@@ -1,31 +1,31 @@
 {
-  "updated_utc": "2026-11-09 17:28:14 UTC",
-  "hostname": "DESKTOP-8RQUOSU",
-  "python_version": "3.12.10",
+  "updated_utc": "2026-11-10 02:37:25 UTC",
+  "hostname": "GB-5CD52876MS",
+  "python_version": "3.14.6",
   "gpu": {
-    "torch_installed": true,
-    "torch_version": "2.11.0+cu128",
-    "cuda_version": "12.8",
-    "cuda_available": true,
-    "gpu_name": "NVIDIA GeForce RTX 5060",
-    "cuda_kernel_ok": true,
-    "cuda_error": null
+    "torch_installed": false,
+    "torch_version": null,
+    "cuda_version": null,
+    "cuda_available": false,
+    "gpu_name": null,
+    "cuda_kernel_ok": false,
+    "cuda_error": "No module named 'torch'"
   },
   "pending_hot_reload": false,
   "execution_mode": "auto",
-  "mt5_connected": true,
-  "mt5_error": null,
+  "mt5_connected": false,
+  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9811.9,
-  "telegram_configured": true,
-  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
+  "telegram_configured": false,
+  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 74784.0,
-    "ETHUSD": 2124.35,
-    "SOLUSD": 86.43,
-    "XAUUSD": 4104.64,
-    "EURUSD": 1.12063,
-    "USDJPY": 157.953
+    "BTCUSD": 74844.12,
+    "ETHUSD": 2119.16,
+    "SOLUSD": 85.91,
+    "XAUUSD": 2640.94,
+    "EURUSD": 1.07737,
+    "USDJPY": 152.779
   },
   "active_trades": {},
   "bot_stats": {
@@ -536,5 +536,5 @@
       }
     ]
   },
-  "cycle_count": 600
+  "cycle_count": 1
 }
