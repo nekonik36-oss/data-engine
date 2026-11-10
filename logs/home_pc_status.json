@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 18:16:05 UTC",
+  "updated_utc": "2026-11-10 18:17:36 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9868.41,
+  "live_equity": 9863.32,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 2026.27,
-    "SOLUSD": 82.31,
-    "XAUUSD": 4016.8,
-    "EURUSD": 1.11539,
-    "USDJPY": 158.808
+    "ETHUSD": 2030.1,
+    "SOLUSD": 82.46,
+    "XAUUSD": 4019.03,
+    "EURUSD": 1.11548,
+    "USDJPY": 158.797
   },
   "active_trades": {
     "1081421364": {
@@ -306,7 +306,7 @@
     "crypto_book_pnl": 62.91
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 18:15:07 UTC",
+    "updated_utc": "2026-11-10 18:16:41 UTC",
     "total_episodes": 56,
     "strategy_stats": {
       "SND": {
@@ -758,6 +758,21 @@
         "opened_epoch": 1794334507.107806,
         "tp1_hit": false,
         "peak_r": 0.029
+      },
+      {
+        "key": "ETHUSD:KRONOS",
+        "symbol": "ETHUSD",
+        "strategy_name": "KRONOS",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 2024.98,
+        "sl_price": 2013.68351,
+        "sl_dist": 11.29649,
+        "tp1_price": 2030.85417,
+        "tp2_price": 2037.40614,
+        "opened_epoch": 1794334601.885761,
+        "tp1_hit": false,
+        "peak_r": 0.453
       }
     ],
     "shadow_cooldowns": {
@@ -765,7 +780,7 @@
       "BTCUSD:BREAKOUT": 1794299701.198287,
       "BTCUSD:KRONOS": 1794299701.207211,
       "ETHUSD:BREAKOUT": 1794301523.064976,
-      "ETHUSD:KRONOS": 1794297904.278678,
+      "ETHUSD:KRONOS": 1794334601.885761,
       "SOLUSD:BREAKOUT": 1794306912.086166,
       "SOLUSD:KRONOS": 1794306912.087288,
       "BTCUSD:ICT": 1794303003.62938,
@@ -777,5 +792,5 @@
     },
     "shadow_episodes": 34
   },
-  "cycle_count": 20
+  "cycle_count": 25
 }
