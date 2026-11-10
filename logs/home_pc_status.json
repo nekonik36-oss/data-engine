@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 10:35:12 UTC",
+  "updated_utc": "2026-11-10 10:37:57 UTC",
   "hostname": "runnervmwuk1x",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 2092.75,
-    "SOLUSD": 84.72
+    "ETHUSD": 2091.78,
+    "SOLUSD": 84.71
   },
   "active_trades": {
     "84306449": {
@@ -727,7 +727,7 @@
         "tp2_price": 84.2846,
         "opened_epoch": 1794306912.086166,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.185
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -742,7 +742,7 @@
         "tp2_price": 84.2846,
         "opened_epoch": 1794306912.087288,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.185
       }
     ],
     "shadow_cooldowns": {
@@ -762,5 +762,5 @@
     },
     "shadow_episodes": 31
   },
-  "cycle_count": 15
+  "cycle_count": 20
 }
