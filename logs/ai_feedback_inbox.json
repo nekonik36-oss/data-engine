@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-10 03:41:24 UTC",
+  "updated_utc": "2026-11-10 03:43:25 UTC",
   "hostname": "GB-5CD52876MS",
   "live_equity": 9811.9,
   "bot_stats": {
-    "total_closed": 16,
-    "wins": 5,
+    "total_closed": 17,
+    "wins": 6,
     "losses": 8,
     "breakevens": 3,
-    "cumulative_pnl": -188.1,
+    "cumulative_pnl": -125.26,
     "history": [
       {
         "ticket": 1078980632,
@@ -184,8 +184,20 @@
         "r_multiple": -1.02,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-09 13:55:08 UTC"
+      },
+      {
+        "ticket": 84280505,
+        "symbol": "SOLUSD",
+        "direction": "SHORT",
+        "entry_price": 86.13,
+        "exit_price": 85.55,
+        "net_pnl": 62.84,
+        "r_multiple": 1.28,
+        "close_reason": "Take Profit 2 Target Hit \ud83c\udfaf",
+        "closed_at_utc": "2026-11-10 03:43:21 UTC"
       }
-    ]
+    ],
+    "crypto_book_pnl": 62.84
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -217,9 +229,9 @@
       "net_r": -0.87
     },
     "SOLUSD": {
-      "win_streak": 1,
+      "win_streak": 2,
       "loss_streak": 0,
-      "net_r": 0.77
+      "net_r": 2.05
     },
     "XAUUSD": {
       "win_streak": 0,
@@ -457,6 +469,22 @@
       "symbol": "EURUSD",
       "direction": "SHORT",
       "summary": "Ticket #1079668118 (EURUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+    },
+    {
+      "timestamp_utc": "2026-11-10 03:43:21 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": null,
+      "symbol": "SOLUSD",
+      "direction": null,
+      "net_pnl": 62.84,
+      "r_multiple": 1.28,
+      "peak_favorable_r": 0.0,
+      "regime": "RANGING",
+      "strategies": [
+        "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
     }
   ]
 }
