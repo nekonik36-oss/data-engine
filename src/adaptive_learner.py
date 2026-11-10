@@ -471,6 +471,7 @@ class AdaptiveLearner:
         )
         if len(active_shadows) > 60:
             self.state["active_shadow_trades"] = active_shadows[-60:]
+        self.save()
         return True
 
     def evaluate_shadow_trades(self, latest_prices: Dict[str, float]) -> List[str]:

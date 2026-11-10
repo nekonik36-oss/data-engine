@@ -333,6 +333,8 @@ class ConfluenceEngine:
                 if not tpb_votes:
                     return None
                 direction = tpb_votes[0].direction
+                if any(v.direction != direction and v.confidence >= 0.72 for v in pa_votes):
+                    return None
                 if kronos_fc is not None:
                     if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
                         return None
@@ -359,6 +361,8 @@ class ConfluenceEngine:
                 ]
                 if tpb_votes:
                     direction = tpb_votes[0].direction
+                    if any(v.direction != direction and v.confidence >= 0.72 for v in pa_votes):
+                        return None
                     agreeing_pa = [v for v in pa_votes if v.direction == direction]
                     learned_m = self.learner.get_strategy_multiplier(
                         "TREND_PULLBACK", regime.value
@@ -419,7 +423,12 @@ class ConfluenceEngine:
             else:
                 # Engine 3: Gold & Forex M15 5-Module Regime-Gated + Kronos AI Sniper (78.2%-82.4% Win Rate)
                 if opposing_pa:
-                    return None
+                    max_opp_weight = max(
+                        v.confidence * multipliers.get(v.strategy_name, 1.0)
+                        for v in opposing_pa
+                    )
+                    if len(agreeing_pa) < 2 or max_opp_weight >= 0.70:
+                        return None
 
                 if agreeing_names == {"BREAKOUT"}:
                     if ind.adx[idx] < 20.0:

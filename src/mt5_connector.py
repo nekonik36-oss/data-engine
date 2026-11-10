@@ -511,6 +511,13 @@ class MT5Connector:
                         f"previous {signal.direction.value} closed {mins_ago:.0f}m ago on reversal stop. "
                         f"Waiting 60m for structure reset."
                     )
+                if past_dir != signal.direction.value.upper() and past_r > 0.0 and 0 <= elapsed_sec < 1800:
+                    mins_ago = elapsed_sec / 60.0
+                    return (
+                        f"[ANTI-WHIPSAW GUARD] Skipping {signal.symbol} {signal.direction.value}: "
+                        f"opposing {past_dir} closed in profit ({past_r:+.2f}R) {mins_ago:.0f}m ago. "
+                        f"Waiting 30m before flipping against active impulse."
+                    )
 
             if (
                 is_crypto_sig
