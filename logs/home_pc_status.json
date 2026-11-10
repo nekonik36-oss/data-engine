@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 05:36:12 UTC",
+  "updated_utc": "2026-11-10 05:38:07 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -16,13 +16,13 @@
   "mt5_connected": false,
   "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9887.06,
+  "live_equity": 9863.25,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 74806.12,
-    "ETHUSD": 2124.09,
-    "SOLUSD": 86.25
+    "BTCUSD": 74868.8,
+    "ETHUSD": 2126.37,
+    "SOLUSD": 86.27
   },
   "active_trades": {},
   "bot_stats": {
@@ -637,5 +637,5 @@
       "ETHUSD:ICT": 1794288970.361693
     }
   },
-  "cycle_count": 10
+  "cycle_count": 15
 }
