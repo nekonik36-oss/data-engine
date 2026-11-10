@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-10 20:35:08 UTC",
-  "total_episodes": 69,
+  "updated_utc": "2026-11-10 20:45:14 UTC",
+  "total_episodes": 70,
   "strategy_stats": {
     "SND": {
       "trades": 2,
@@ -31,16 +31,16 @@
       "multiplier": 0.894
     },
     "KRONOS": {
-      "trades": 23,
+      "trades": 24,
       "wins": 9,
-      "losses": 13,
-      "ema_r": -0.093,
-      "multiplier": 0.977
+      "losses": 14,
+      "ema_r": -0.118,
+      "multiplier": 0.97
     }
   },
   "regime_strategy_multipliers": {
     "RANGING:ICT": 0.908,
-    "RANGING:KRONOS": 0.785,
+    "RANGING:KRONOS": 0.778,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.93,
     "RANGING:TREND_PULLBACK": 1.017,
     "TRENDING_DOWN:TREND_PULLBACK": 0.948,
@@ -470,21 +470,6 @@
   "live_episodes": 6,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:KRONOS",
-      "symbol": "ETHUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 2050.37,
-      "sl_price": 2058.39039,
-      "sl_dist": 8.02039,
-      "tp1_price": 2046.1994,
-      "tp2_price": 2041.54757,
-      "opened_epoch": 1794341705.906893,
-      "tp1_hit": false,
-      "peak_r": 0.251
-    },
-    {
       "key": "SOLUSD:BREAKOUT",
       "symbol": "SOLUSD",
       "strategy_name": "BREAKOUT",
@@ -561,5 +546,5 @@
     "SOLUSD:TREND_PULLBACK": 1794301523.702785,
     "ETHUSD:SND": 1794341705.902894
   },
-  "shadow_episodes": 45
+  "shadow_episodes": 46
 }
