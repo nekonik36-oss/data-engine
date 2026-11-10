@@ -65,6 +65,14 @@ class MT5Connector:
                 "history": [],
             },
         )
+        # Hydrate synced state from logs/home_pc_status.json on cloud / office failover machines
+        synced_status = self._load_json(LOGS_DIR / "home_pc_status.json", {})
+        if isinstance(synced_status, dict):
+            synced_stats = synced_status.get("bot_stats")
+            if isinstance(synced_stats, dict) and int(synced_stats.get("total_closed", 0)) > int(self.stats.get("total_closed", 0)):
+                self.stats = dict(synced_stats)
+            if not self.active_trades and isinstance(synced_status.get("active_trades"), dict):
+                self.active_trades = dict(synced_status["active_trades"])
 
     @staticmethod
     def _load_json(path: Path, default: Any) -> Any:
@@ -170,29 +178,27 @@ class MT5Connector:
 
     def get_account_equity(self, default_equity: float = 10000.0) -> float:
         """Return live MT5 account equity (+ realized 24/7 crypto PnL if applicable)."""
-        base_eq = default_equity
         if self.connected and self._mt5 is not None:
             try:
                 info = self._mt5.account_info()
                 if info is not None and float(info.equity) > 0:
-                    base_eq = float(info.equity)
+                    crypto_pnl = float(self.stats.get("crypto_book_pnl", 0.0))
+                    return round(float(info.equity) + crypto_pnl, 2)
             except Exception:
                 pass
-        crypto_pnl = float(self.stats.get("crypto_book_pnl", 0.0))
-        return round(base_eq + crypto_pnl, 2)
+        return round(default_equity + float(self.stats.get("cumulative_pnl", 0.0)), 2)
 
     def get_account_balance(self, default_balance: float = 10000.0) -> float:
         """Return live MT5 account balance (+ realized 24/7 crypto PnL if applicable)."""
-        base_bal = default_balance
         if self.connected and self._mt5 is not None:
             try:
                 info = self._mt5.account_info()
                 if info is not None and float(info.balance) > 0:
-                    base_bal = float(info.balance)
+                    crypto_pnl = float(self.stats.get("crypto_book_pnl", 0.0))
+                    return round(float(info.balance) + crypto_pnl, 2)
             except Exception:
                 pass
-        crypto_pnl = float(self.stats.get("crypto_book_pnl", 0.0))
-        return round(base_bal + crypto_pnl, 2)
+        return round(default_balance + float(self.stats.get("cumulative_pnl", 0.0)), 2)
 
     def get_account_meta(self) -> Dict[str, Any]:
         """Return connected MT5 account login, server, and company metadata."""

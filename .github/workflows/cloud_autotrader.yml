@@ -1,0 +1,68 @@
+name: 24/7 Cloud Auto-Trader Failover (Runs When Home PC is Off)
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-autotrader-failover
+  cancel-in-progress: false
+
+jobs:
+  cloud-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Check if Home PC (DESKTOP-8RQUOSU) is currently active
+        id: check_pc
+        run: |
+          python3 -c '
+          import json
+          from datetime import datetime, timezone
+          try:
+              s = json.load(open("logs/home_pc_status.json"))
+              host = str(s.get("hostname", ""))
+              ts_str = str(s.get("updated_utc", ""))
+              dt = datetime.strptime(ts_str, "%Y-%m-%d %H:%M:%S UTC").replace(tzinfo=timezone.utc)
+              age_sec = (datetime.now(timezone.utc) - dt).total_seconds()
+              if host == "DESKTOP-8RQUOSU" and age_sec < 420:
+                  print(f"[CLOUD STANDBY] Home PC {host} is active ({age_sec:.0f}s ago). Yielding to Home PC RTX 5060.")
+                  open("skip_cloud.flag", "w").write("1")
+              else:
+                  print(f"[CLOUD FAILOVER ACTIVE] Home PC last seen {age_sec/60:.1f}m ago (host={host}). Running Cloud Auto-Trader.")
+          except Exception as e:
+              print("[CLOUD FAILOVER ACTIVE] Running Cloud Auto-Trader:", e)
+          '
+
+      - name: Install lightweight dependencies
+        if: ${{ !hashFiles('skip_cloud.flag') }}
+        run: |
+          pip install --quiet numpy pandas requests python-dotenv
+
+      - name: Run 24/7 Cloud Auto-Trader Cycle
+        if: ${{ !hashFiles('skip_cloud.flag') }}
+        env:
+          METAAPI_TOKEN: ${{ secrets.METAAPI_TOKEN }}
+          METAAPI_ACCOUNT_ID: ${{ secrets.METAAPI_ACCOUNT_ID }}
+          METAAPI_REGION: ${{ secrets.METAAPI_REGION }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          git config user.name "Cloud Auto-Trader Bot"
+          git config user.email "autotrader-bot@users.noreply.github.com"
+          python3 run_scanner.py --once
