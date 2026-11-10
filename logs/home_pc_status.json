@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-10 23:33:36 UTC",
+  "updated_utc": "2026-11-10 23:35:08 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73684.68,
-    "ETHUSD": 2049.82,
+    "BTCUSD": 73685.79,
+    "ETHUSD": 2049.62,
     "SOLUSD": 83.11,
-    "XAUUSD": 4035.0,
-    "EURUSD": 1.11682,
-    "USDJPY": 158.699
+    "XAUUSD": 4036.37,
+    "EURUSD": 1.11679,
+    "USDJPY": 158.729
   },
   "active_trades": {},
   "bot_stats": {
@@ -303,7 +303,7 @@
     "crypto_book_pnl": 62.91
   },
   "learned_weights": {
-    "updated_utc": "2026-11-10 23:27:49 UTC",
+    "updated_utc": "2026-11-10 23:35:05 UTC",
     "total_episodes": 91,
     "strategy_stats": {
       "SND": {
@@ -794,6 +794,21 @@
         "opened_epoch": 1794352507.65264,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 73685.79,
+        "sl_price": 73523.68126,
+        "sl_dist": 162.10874,
+        "tp1_price": 73770.08654,
+        "tp2_price": 73864.10961,
+        "opened_epoch": 1794353705.207967,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -804,7 +819,7 @@
       "ETHUSD:KRONOS": 1794352507.65264,
       "SOLUSD:BREAKOUT": 1794351911.05879,
       "SOLUSD:KRONOS": 1794352508.981065,
-      "BTCUSD:ICT": 1794346814.602687,
+      "BTCUSD:ICT": 1794353705.207967,
       "SOLUSD:SND": 1794352508.976063,
       "SOLUSD:ICT": 1794352508.979066,
       "ETHUSD:TREND_PULLBACK": 1794339618.086671,
@@ -814,5 +829,5 @@
     },
     "shadow_episodes": 67
   },
-  "cycle_count": 1015
+  "cycle_count": 1020
 }
