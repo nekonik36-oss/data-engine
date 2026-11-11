@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 14:30:20 UTC",
+  "updated_utc": "2026-11-11 14:30:44 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73548.53,
-    "ETHUSD": 2051.98,
-    "SOLUSD": 84.09,
-    "XAUUSD": 4029.57,
+    "BTCUSD": 73631.31,
+    "ETHUSD": 2054.36,
+    "SOLUSD": 84.29,
+    "XAUUSD": 4029.17,
     "EURUSD": 1.10878,
-    "USDJPY": 159.63
+    "USDJPY": 159.652
   },
   "active_trades": {},
   "bot_stats": {
@@ -347,8 +347,8 @@
     "crypto_book_pnl": 30.39
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 14:29:34 UTC",
-    "total_episodes": 180,
+    "updated_utc": "2026-11-11 14:30:43 UTC",
+    "total_episodes": 181,
     "strategy_stats": {
       "SND": {
         "trades": 9,
@@ -365,11 +365,11 @@
         "multiplier": 1.051
       },
       "BREAKOUT": {
-        "trades": 49,
-        "wins": 25,
+        "trades": 50,
+        "wins": 26,
         "losses": 23,
-        "ema_r": -0.141,
-        "multiplier": 0.965
+        "ema_r": -0.093,
+        "multiplier": 0.977
       },
       "TREND_PULLBACK": {
         "trades": 29,
@@ -393,7 +393,7 @@
       "RANGING:TREND_PULLBACK": 1.017,
       "TRENDING_DOWN:TREND_PULLBACK": 0.948,
       "SESSION_SWEEP_WINDOW:ICT": 0.949,
-      "SESSION_SWEEP_WINDOW:BREAKOUT": 0.92,
+      "SESSION_SWEEP_WINDOW:BREAKOUT": 0.927,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.825,
       "TRENDING_DOWN:ICT": 1.036,
       "TRENDING_DOWN:KRONOS": 1.059,
@@ -899,21 +899,6 @@
     "live_episodes": 10,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:BREAKOUT",
-        "symbol": "BTCUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "SHORT",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 73678.01,
-        "sl_price": 73841.12675,
-        "sl_dist": 163.11675,
-        "tp1_price": 73571.98412,
-        "tp2_price": 73441.49072,
-        "opened_epoch": 1794406505.907683,
-        "tp1_hit": true,
-        "peak_r": 0.994
-      },
-      {
         "key": "XAUUSD:BREAKOUT",
         "symbol": "XAUUSD",
         "strategy_name": "BREAKOUT",
@@ -947,7 +932,7 @@
       "BTCUSD:SND": 1794391803.182065,
       "XAUUSD:BREAKOUT": 1794406990.912481
     },
-    "shadow_episodes": 152
+    "shadow_episodes": 153
   },
-  "cycle_count": 115
+  "cycle_count": 116
 }
