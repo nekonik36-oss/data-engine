@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-11 01:40:45 UTC",
-  "total_episodes": 107,
+  "updated_utc": "2026-11-11 01:42:42 UTC",
+  "total_episodes": 109,
   "strategy_stats": {
     "SND": {
       "trades": 4,
@@ -17,11 +17,11 @@
       "multiplier": 0.944
     },
     "BREAKOUT": {
-      "trades": 29,
-      "wins": 14,
+      "trades": 30,
+      "wins": 15,
       "losses": 14,
-      "ema_r": -0.209,
-      "multiplier": 0.948
+      "ema_r": -0.155,
+      "multiplier": 0.961
     },
     "TREND_PULLBACK": {
       "trades": 25,
@@ -31,16 +31,16 @@
       "multiplier": 0.894
     },
     "KRONOS": {
-      "trades": 34,
-      "wins": 12,
+      "trades": 35,
+      "wins": 13,
       "losses": 21,
-      "ema_r": -0.336,
-      "multiplier": 0.916
+      "ema_r": -0.272,
+      "multiplier": 0.932
     }
   },
   "regime_strategy_multipliers": {
     "RANGING:ICT": 0.801,
-    "RANGING:KRONOS": 0.686,
+    "RANGING:KRONOS": 0.693,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.93,
     "RANGING:TREND_PULLBACK": 1.017,
     "TRENDING_DOWN:TREND_PULLBACK": 0.948,
@@ -49,7 +49,7 @@
     "SESSION_SWEEP_WINDOW:KRONOS": 0.867,
     "TRENDING_DOWN:ICT": 1.029,
     "TRENDING_DOWN:KRONOS": 1.059,
-    "RANGING:BREAKOUT": 0.931,
+    "RANGING:BREAKOUT": 0.938,
     "RANGING:SND": 1.025,
     "TRENDING_DOWN:BREAKOUT": 1.042,
     "TRENDING_DOWN:SND": 1.013
@@ -502,36 +502,6 @@
   "live_episodes": 7,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:BREAKOUT",
-      "symbol": "BTCUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 73898.0,
-      "sl_price": 73722.80408,
-      "sl_dist": 175.19592,
-      "tp1_price": 74011.87735,
-      "tp2_price": 74152.03409,
-      "opened_epoch": 1794361243.290412,
-      "tp1_hit": true,
-      "peak_r": 0.724
-    },
-    {
-      "key": "BTCUSD:KRONOS",
-      "symbol": "BTCUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 73898.0,
-      "sl_price": 73722.80408,
-      "sl_dist": 175.19592,
-      "tp1_price": 74011.87735,
-      "tp2_price": 74152.03409,
-      "opened_epoch": 1794361243.298857,
-      "tp1_hit": true,
-      "peak_r": 0.724
-    },
-    {
       "key": "ETHUSD:BREAKOUT",
       "symbol": "ETHUSD",
       "strategy_name": "BREAKOUT",
@@ -608,5 +578,5 @@
     "SOLUSD:TREND_PULLBACK": 1794301523.702785,
     "ETHUSD:SND": 1794352507.650639
   },
-  "shadow_episodes": 82
+  "shadow_episodes": 84
 }
