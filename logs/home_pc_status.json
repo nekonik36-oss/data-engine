@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 14:00:11 UTC",
+  "updated_utc": "2026-11-11 14:00:33 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73803.09,
-    "ETHUSD": 2058.39,
-    "SOLUSD": 84.61,
-    "XAUUSD": 4035.77,
-    "EURUSD": 1.11021,
-    "USDJPY": 159.551
+    "BTCUSD": 73811.75,
+    "ETHUSD": 2058.73,
+    "SOLUSD": 84.66,
+    "XAUUSD": 4035.25,
+    "EURUSD": 1.11006,
+    "USDJPY": 159.561
   },
   "active_trades": {},
   "bot_stats": {
@@ -347,8 +347,8 @@
     "crypto_book_pnl": 30.39
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 14:00:10 UTC",
-    "total_episodes": 172,
+    "updated_utc": "2026-11-11 14:00:31 UTC",
+    "total_episodes": 173,
     "strategy_stats": {
       "SND": {
         "trades": 9,
@@ -379,11 +379,11 @@
         "multiplier": 0.845
       },
       "KRONOS": {
-        "trades": 59,
-        "wins": 24,
+        "trades": 60,
+        "wins": 25,
         "losses": 33,
-        "ema_r": -0.093,
-        "multiplier": 0.977
+        "ema_r": -0.049,
+        "multiplier": 0.988
       }
     },
     "regime_strategy_multipliers": {
@@ -402,7 +402,8 @@
       "TRENDING_DOWN:BREAKOUT": 1.042,
       "TRENDING_DOWN:SND": 1.013,
       "TRENDING_UP:ICT": 1.019,
-      "SESSION_SWEEP_WINDOW:SND": 0.92
+      "SESSION_SWEEP_WINDOW:SND": 0.92,
+      "TRENDING_UP:KRONOS": 1.007
     },
     "symbol_streaks": {
       "BTCUSD": {
@@ -972,21 +973,6 @@
         "peak_r": 0.0
       },
       {
-        "key": "SOLUSD:KRONOS",
-        "symbol": "SOLUSD",
-        "strategy_name": "KRONOS",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 84.74,
-        "sl_price": 85.07831,
-        "sl_dist": 0.33831,
-        "tp1_price": 84.5201,
-        "tp2_price": 84.24945,
-        "opened_epoch": 1794405309.777928,
-        "tp1_hit": true,
-        "peak_r": 0.739
-      },
-      {
         "key": "SOLUSD:ICT",
         "symbol": "SOLUSD",
         "strategy_name": "ICT",
@@ -1020,7 +1006,7 @@
       "BTCUSD:SND": 1794391803.182065,
       "XAUUSD:BREAKOUT": 1794404876.227776
     },
-    "shadow_episodes": 144
+    "shadow_episodes": 145
   },
-  "cycle_count": 25
+  "cycle_count": 26
 }
