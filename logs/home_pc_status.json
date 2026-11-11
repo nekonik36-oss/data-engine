@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 09:48:47 UTC",
+  "updated_utc": "2026-11-11 09:50:44 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73680.0,
-    "ETHUSD": 2054.24,
+    "BTCUSD": 73664.01,
+    "ETHUSD": 2054.44,
     "SOLUSD": 83.44
   },
   "active_trades": {},
@@ -333,7 +333,7 @@
     "crypto_book_pnl": 77.32
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 09:45:14 UTC",
+    "updated_utc": "2026-11-11 09:50:20 UTC",
     "total_episodes": 160,
     "strategy_stats": {
       "SND": {
@@ -872,15 +872,45 @@
         "opened_epoch": 1794389105.500417,
         "tp1_hit": false,
         "peak_r": 0.37
+      },
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 2053.58,
+        "sl_price": 2047.82064,
+        "sl_dist": 5.75936,
+        "tp1_price": 2057.32358,
+        "tp2_price": 2061.93107,
+        "opened_epoch": 1794390619.89494,
+        "tp1_hit": false,
+        "peak_r": 0.149
+      },
+      {
+        "key": "SOLUSD:BREAKOUT",
+        "symbol": "SOLUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 83.4,
+        "sl_price": 83.07744,
+        "sl_dist": 0.32256,
+        "tp1_price": 83.60966,
+        "tp2_price": 83.86771,
+        "opened_epoch": 1794390620.52847,
+        "tp1_hit": false,
+        "peak_r": 0.124
       }
     ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1794381613.542973,
+      "ETHUSD:ICT": 1794390619.89494,
       "BTCUSD:BREAKOUT": 1794388504.067204,
       "BTCUSD:KRONOS": 1794386144.867792,
       "ETHUSD:BREAKOUT": 1794388504.806439,
       "ETHUSD:KRONOS": 1794388504.822509,
-      "SOLUSD:BREAKOUT": 1794384012.266593,
+      "SOLUSD:BREAKOUT": 1794390620.52847,
       "SOLUSD:KRONOS": 1794384012.278583,
       "BTCUSD:ICT": 1794385203.81342,
       "SOLUSD:SND": 1794352508.976063,
@@ -893,5 +923,5 @@
     },
     "shadow_episodes": 133
   },
-  "cycle_count": 1170
+  "cycle_count": 1175
 }
