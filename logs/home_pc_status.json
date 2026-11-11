@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 07:01:47 UTC",
+  "updated_utc": "2026-11-11 07:03:44 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73590.13,
-    "ETHUSD": 2055.48,
-    "SOLUSD": 82.58
+    "BTCUSD": 73556.08,
+    "ETHUSD": 2053.14,
+    "SOLUSD": 82.4
   },
   "active_trades": {},
   "bot_stats": {
@@ -869,7 +869,7 @@
         "tp2_price": 73424.9947,
         "opened_epoch": 1794379503.925218,
         "tp1_hit": false,
-        "peak_r": 0.554
+        "peak_r": 0.641
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -884,7 +884,7 @@
         "tp2_price": 73424.9947,
         "opened_epoch": 1794379503.932994,
         "tp1_hit": false,
-        "peak_r": 0.554
+        "peak_r": 0.641
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -898,8 +898,8 @@
         "tp1_price": 82.44205,
         "tp2_price": 82.21073,
         "opened_epoch": 1794379504.605766,
-        "tp1_hit": false,
-        "peak_r": 0.311
+        "tp1_hit": true,
+        "peak_r": 0.795
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -913,8 +913,8 @@
         "tp1_price": 82.44205,
         "tp2_price": 82.21073,
         "opened_epoch": 1794379504.615205,
-        "tp1_hit": false,
-        "peak_r": 0.311
+        "tp1_hit": true,
+        "peak_r": 0.795
       }
     ],
     "shadow_cooldowns": {
@@ -936,5 +936,5 @@
     },
     "shadow_episodes": 110
   },
-  "cycle_count": 780
+  "cycle_count": 785
 }
