@@ -562,8 +562,8 @@
       "tp1_price": 4009.19163,
       "tp2_price": 4001.05825,
       "opened_epoch": 1794409105.08686,
-      "tp1_hit": false,
-      "peak_r": 0.501
+      "tp1_hit": true,
+      "peak_r": 0.8
     },
     {
       "key": "SOLUSD:TREND_PULLBACK",
@@ -593,7 +593,7 @@
       "tp2_price": 2044.25677,
       "opened_epoch": 1794410412.023231,
       "tp1_hit": false,
-      "peak_r": 0.429
+      "peak_r": 0.487
     }
   ],
   "shadow_cooldowns": {
