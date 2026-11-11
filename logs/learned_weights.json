@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 14:42:32 UTC",
+  "updated_utc": "2026-11-11 14:45:07 UTC",
   "total_episodes": 185,
   "strategy_stats": {
     "SND": {
@@ -607,8 +607,23 @@
       "tp1_price": 84.13399,
       "tp2_price": 83.79428,
       "opened_epoch": 1794408013.224234,
+      "tp1_hit": true,
+      "peak_r": 0.754
+    },
+    {
+      "key": "XAUUSD:SND",
+      "symbol": "XAUUSD",
+      "strategy_name": "SND",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 4015.8,
+      "sl_price": 4025.96673,
+      "sl_dist": 10.16673,
+      "tp1_price": 4009.19163,
+      "tp2_price": 4001.05825,
+      "opened_epoch": 1794408307.296196,
       "tp1_hit": false,
-      "peak_r": 0.565
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -627,7 +642,8 @@
     "SOLUSD:TREND_PULLBACK": 1794301523.702785,
     "ETHUSD:SND": 1794407709.480985,
     "BTCUSD:SND": 1794391803.182065,
-    "XAUUSD:BREAKOUT": 1794406990.912481
+    "XAUUSD:BREAKOUT": 1794406990.912481,
+    "XAUUSD:SND": 1794408307.296196
   },
   "shadow_episodes": 157
 }
