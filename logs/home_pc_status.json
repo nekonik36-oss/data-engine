@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 06:53:56 UTC",
+  "updated_utc": "2026-11-11 06:55:30 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,45 +20,17 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73578.61,
-    "SOLUSD": 82.62
+    "BTCUSD": 73629.65,
+    "ETHUSD": 2056.59,
+    "SOLUSD": 82.67
   },
-  "active_trades": {
-    "84378318": {
-      "ticket": 84378318,
-      "symbol": "ETHUSD",
-      "broker_symbol": "ETHUSD",
-      "broker_source": "CRYPTO_24_7_LIVE",
-      "direction": "SHORT",
-      "entry_price": 2065.15,
-      "sl_price": 2056.03,
-      "initial_sl_price": 2074.75,
-      "tp1_price": 2058.91,
-      "tp2_price": 2051.24,
-      "volume": 5.09,
-      "initial_volume": 5.09,
-      "risk_usd": 48.84,
-      "confluence_score": 88.4,
-      "regime": "RANGING",
-      "agreeing_strategies": [
-        "ICT",
-        "KRONOS"
-      ],
-      "opened_at_utc": "2026-11-11 06:25:18 UTC",
-      "tp1_hit": true,
-      "partial_pnl": 11.11,
-      "peak_favorable_r": 1.209,
-      "be_shield_active": true,
-      "pre_tp1_ratchet": true,
-      "runner_stage": 2
-    }
-  },
+  "active_trades": {},
   "bot_stats": {
-    "total_closed": 26,
-    "wins": 10,
+    "total_closed": 27,
+    "wins": 11,
     "losses": 13,
     "breakevens": 3,
-    "cumulative_pnl": -227.3,
+    "cumulative_pnl": -186.03,
     "history": [
       {
         "ticket": 1078980632,
@@ -345,13 +317,24 @@
         "r_multiple": 0.04,
         "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-11 05:11:59 UTC"
+      },
+      {
+        "ticket": 84378318,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 2065.15,
+        "exit_price": 2056.03,
+        "net_pnl": 41.27,
+        "r_multiple": 0.85,
+        "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-11 06:55:26 UTC"
       }
     ],
-    "crypto_book_pnl": 36.05
+    "crypto_book_pnl": 77.32
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 06:45:04 UTC",
-    "total_episodes": 136,
+    "updated_utc": "2026-11-11 06:55:26 UTC",
+    "total_episodes": 137,
     "strategy_stats": {
       "SND": {
         "trades": 5,
@@ -361,11 +344,11 @@
         "multiplier": 1.027
       },
       "ICT": {
-        "trades": 46,
-        "wins": 27,
+        "trades": 47,
+        "wins": 28,
         "losses": 18,
-        "ema_r": 0.174,
-        "multiplier": 1.043
+        "ema_r": 0.322,
+        "multiplier": 1.08
       },
       "BREAKOUT": {
         "trades": 36,
@@ -382,16 +365,16 @@
         "multiplier": 0.894
       },
       "KRONOS": {
-        "trades": 45,
-        "wins": 18,
+        "trades": 46,
+        "wins": 19,
         "losses": 25,
-        "ema_r": -0.181,
-        "multiplier": 0.955
+        "ema_r": 0.045,
+        "multiplier": 1.011
       }
     },
     "regime_strategy_multipliers": {
-      "RANGING:ICT": 0.896,
-      "RANGING:KRONOS": 0.68,
+      "RANGING:ICT": 0.934,
+      "RANGING:KRONOS": 0.718,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.93,
       "RANGING:TREND_PULLBACK": 1.017,
       "TRENDING_DOWN:TREND_PULLBACK": 0.948,
@@ -412,9 +395,9 @@
         "net_r": -2.48
       },
       "ETHUSD": {
-        "win_streak": 0,
-        "loss_streak": 2,
-        "net_r": -1.96
+        "win_streak": 1,
+        "loss_streak": 0,
+        "net_r": -1.11
       },
       "SOLUSD": {
         "win_streak": 0,
@@ -853,9 +836,25 @@
           "KRONOS"
         ],
         "auto_fix_action": "NONE"
+      },
+      {
+        "timestamp_utc": "2026-11-11 06:55:26 UTC",
+        "event": "TRADE_CLOSED_DIAGNOSTIC",
+        "ticket": 84378318,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "net_pnl": 41.27,
+        "r_multiple": 0.85,
+        "peak_favorable_r": 1.21,
+        "regime": "RANGING",
+        "strategies": [
+          "ICT",
+          "KRONOS"
+        ],
+        "auto_fix_action": "NONE"
       }
     ],
-    "live_episodes": 8,
+    "live_episodes": 9,
     "active_shadow_trades": [
       {
         "key": "BTCUSD:BREAKOUT",
@@ -937,5 +936,5 @@
     },
     "shadow_episodes": 110
   },
-  "cycle_count": 760
+  "cycle_count": 764
 }

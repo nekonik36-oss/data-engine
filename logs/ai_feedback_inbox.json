@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-11 06:53:56 UTC",
+  "updated_utc": "2026-11-11 06:55:30 UTC",
   "hostname": "GB-5CD52876MS",
   "live_equity": 9772.7,
   "bot_stats": {
-    "total_closed": 26,
-    "wins": 10,
+    "total_closed": 27,
+    "wins": 11,
     "losses": 13,
     "breakevens": 3,
-    "cumulative_pnl": -227.3,
+    "cumulative_pnl": -186.03,
     "history": [
       {
         "ticket": 1078980632,
@@ -294,9 +294,20 @@
         "r_multiple": 0.04,
         "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-11 05:11:59 UTC"
+      },
+      {
+        "ticket": 84378318,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 2065.15,
+        "exit_price": 2056.03,
+        "net_pnl": 41.27,
+        "r_multiple": 0.85,
+        "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-11 06:55:26 UTC"
       }
     ],
-    "crypto_book_pnl": 36.05
+    "crypto_book_pnl": 77.32
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -327,9 +338,9 @@
       "net_r": -2.48
     },
     "ETHUSD": {
-      "win_streak": 0,
-      "loss_streak": 2,
-      "net_r": -1.96
+      "win_streak": 1,
+      "loss_streak": 0,
+      "net_r": -1.11
     },
     "SOLUSD": {
       "win_streak": 0,
@@ -354,21 +365,6 @@
   },
   "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 07:36:45 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1079412826,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "net_pnl": -0.15,
-      "r_multiple": -0.0,
-      "peak_favorable_r": 0.56,
-      "regime": "TRENDING_DOWN",
-      "strategies": [
-        "TREND_PULLBACK"
-      ],
-      "auto_fix_action": "NONE"
-    },
     {
       "timestamp_utc": "2026-11-09 08:51:40 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -695,6 +691,22 @@
       "net_pnl": 1.95,
       "r_multiple": 0.04,
       "peak_favorable_r": 0.21,
+      "regime": "RANGING",
+      "strategies": [
+        "ICT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-11 06:55:26 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 84378318,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "net_pnl": 41.27,
+      "r_multiple": 0.85,
+      "peak_favorable_r": 1.21,
       "regime": "RANGING",
       "strategies": [
         "ICT",
