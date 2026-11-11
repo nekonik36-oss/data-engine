@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 22:16:01 UTC",
+  "updated_utc": "2026-11-11 22:17:15 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 74466.01,
-    "ETHUSD": 2073.48,
-    "SOLUSD": 84.69,
+    "BTCUSD": 74538.01,
+    "ETHUSD": 2079.1,
+    "SOLUSD": 84.85,
     "XAUUSD": 3987.64,
-    "EURUSD": 1.10891,
+    "EURUSD": 1.10881,
     "USDJPY": 159.696
   },
   "active_trades": {},
@@ -347,8 +347,8 @@
     "crypto_book_pnl": 30.39
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 22:15:08 UTC",
-    "total_episodes": 240,
+    "updated_utc": "2026-11-11 22:17:14 UTC",
+    "total_episodes": 241,
     "strategy_stats": {
       "SND": {
         "trades": 12,
@@ -379,16 +379,16 @@
         "multiplier": 0.949
       },
       "KRONOS": {
-        "trades": 79,
+        "trades": 80,
         "wins": 40,
-        "losses": 37,
-        "ema_r": 0.252,
-        "multiplier": 1.063
+        "losses": 38,
+        "ema_r": 0.152,
+        "multiplier": 1.038
       }
     },
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.986,
-      "RANGING:KRONOS": 0.739,
+      "RANGING:KRONOS": 0.723,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.891,
       "RANGING:TREND_PULLBACK": 1.011,
       "TRENDING_DOWN:TREND_PULLBACK": 0.948,
@@ -911,23 +911,8 @@
         "tp1_price": 2076.34639,
         "tp2_price": 2080.46502,
         "opened_epoch": 1794435308.120398,
-        "tp1_hit": false,
-        "peak_r": 0.095
-      },
-      {
-        "key": "ETHUSD:KRONOS",
-        "symbol": "ETHUSD",
-        "strategy_name": "KRONOS",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 2073.0,
-        "sl_price": 2078.14829,
-        "sl_dist": 5.14829,
-        "tp1_price": 2069.65361,
-        "tp2_price": 2065.53498,
-        "opened_epoch": 1794435308.1234,
-        "tp1_hit": false,
-        "peak_r": 0.002
+        "tp1_hit": true,
+        "peak_r": 1.185
       }
     ],
     "shadow_cooldowns": {
@@ -950,7 +935,7 @@
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931
     },
-    "shadow_episodes": 212
+    "shadow_episodes": 213
   },
-  "cycle_count": 1560
+  "cycle_count": 1564
 }
