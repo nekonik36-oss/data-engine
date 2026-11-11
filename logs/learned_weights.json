@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 07:20:14 UTC",
+  "updated_utc": "2026-11-11 07:25:06 UTC",
   "total_episodes": 141,
   "strategy_stats": {
     "SND": {
@@ -535,7 +535,7 @@
       "tp2_price": 2068.5988,
       "opened_epoch": 1794381613.542973,
       "tp1_hit": true,
-      "peak_r": 0.747
+      "peak_r": 1.105
     },
     {
       "key": "SOLUSD:ICT",
@@ -550,17 +550,77 @@
       "tp2_price": 83.17542,
       "opened_epoch": 1794381614.208862,
       "tp1_hit": true,
-      "peak_r": 0.779
+      "peak_r": 1.153
+    },
+    {
+      "key": "BTCUSD:BREAKOUT",
+      "symbol": "BTCUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 73971.64,
+      "sl_price": 73804.78009,
+      "sl_dist": 166.85991,
+      "tp1_price": 74080.09894,
+      "tp2_price": 74213.58687,
+      "opened_epoch": 1794381905.702295,
+      "tp1_hit": false,
+      "peak_r": 0.035
+    },
+    {
+      "key": "BTCUSD:KRONOS",
+      "symbol": "BTCUSD",
+      "strategy_name": "KRONOS",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 73971.64,
+      "sl_price": 73804.78009,
+      "sl_dist": 166.85991,
+      "tp1_price": 74080.09894,
+      "tp2_price": 74213.58687,
+      "opened_epoch": 1794381905.715599,
+      "tp1_hit": false,
+      "peak_r": 0.035
+    },
+    {
+      "key": "ETHUSD:KRONOS",
+      "symbol": "ETHUSD",
+      "strategy_name": "KRONOS",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 2065.99,
+      "sl_price": 2059.82107,
+      "sl_dist": 6.16893,
+      "tp1_price": 2069.9998,
+      "tp2_price": 2074.93494,
+      "opened_epoch": 1794381906.372901,
+      "tp1_hit": false,
+      "peak_r": 0.11
+    },
+    {
+      "key": "SOLUSD:KRONOS",
+      "symbol": "SOLUSD",
+      "strategy_name": "KRONOS",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 83.05,
+      "sl_price": 82.70159,
+      "sl_dist": 0.34841,
+      "tp1_price": 83.27647,
+      "tp2_price": 83.5552,
+      "opened_epoch": 1794381906.993918,
+      "tp1_hit": false,
+      "peak_r": 0.086
     }
   ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794381613.542973,
-    "BTCUSD:BREAKOUT": 1794379503.925218,
-    "BTCUSD:KRONOS": 1794379503.932994,
+    "BTCUSD:BREAKOUT": 1794381905.702295,
+    "BTCUSD:KRONOS": 1794381905.715599,
     "ETHUSD:BREAKOUT": 1794376237.056195,
-    "ETHUSD:KRONOS": 1794376237.06634,
+    "ETHUSD:KRONOS": 1794381906.372901,
     "SOLUSD:BREAKOUT": 1794379504.605766,
-    "SOLUSD:KRONOS": 1794379504.615205,
+    "SOLUSD:KRONOS": 1794381906.993918,
     "BTCUSD:ICT": 1794377407.607041,
     "SOLUSD:SND": 1794352508.976063,
     "SOLUSD:ICT": 1794381614.208862,
