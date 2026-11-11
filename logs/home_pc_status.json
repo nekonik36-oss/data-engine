@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 15:33:33 UTC",
+  "updated_utc": "2026-11-11 15:34:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73787.07,
-    "ETHUSD": 2063.8,
-    "SOLUSD": 84.24,
-    "XAUUSD": 4006.42,
-    "EURUSD": 1.10909,
-    "USDJPY": 159.782
+    "BTCUSD": 73902.15,
+    "ETHUSD": 2068.56,
+    "SOLUSD": 84.43,
+    "XAUUSD": 4007.85,
+    "EURUSD": 1.10914,
+    "USDJPY": 159.765
   },
   "active_trades": {},
   "bot_stats": {
@@ -347,8 +347,8 @@
     "crypto_book_pnl": 30.39
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 15:28:36 UTC",
-    "total_episodes": 192,
+    "updated_utc": "2026-11-11 15:34:02 UTC",
+    "total_episodes": 193,
     "strategy_stats": {
       "SND": {
         "trades": 12,
@@ -358,11 +358,11 @@
         "multiplier": 0.908
       },
       "ICT": {
-        "trades": 58,
+        "trades": 59,
         "wins": 33,
-        "losses": 24,
-        "ema_r": -0.027,
-        "multiplier": 0.993
+        "losses": 25,
+        "ema_r": -0.105,
+        "multiplier": 0.974
       },
       "BREAKOUT": {
         "trades": 52,
@@ -392,7 +392,7 @@
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.872,
       "RANGING:TREND_PULLBACK": 1.017,
       "TRENDING_DOWN:TREND_PULLBACK": 0.948,
-      "SESSION_SWEEP_WINDOW:ICT": 0.908,
+      "SESSION_SWEEP_WINDOW:ICT": 0.892,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.927,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.841,
       "TRENDING_DOWN:ICT": 1.036,
@@ -910,23 +910,8 @@
         "tp1_price": 84.36997,
         "tp2_price": 84.72685,
         "opened_epoch": 1794410117.030711,
-        "tp1_hit": false,
-        "peak_r": 0.493
-      },
-      {
-        "key": "ETHUSD:ICT",
-        "symbol": "ETHUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 2057.1,
-        "sl_price": 2065.9574,
-        "sl_dist": 8.8574,
-        "tp1_price": 2051.34269,
-        "tp2_price": 2044.25677,
-        "opened_epoch": 1794410412.023231,
-        "tp1_hit": false,
-        "peak_r": 0.639
+        "tp1_hit": true,
+        "peak_r": 0.785
       }
     ],
     "shadow_cooldowns": {
@@ -948,7 +933,7 @@
       "XAUUSD:BREAKOUT": 1794409105.08686,
       "XAUUSD:SND": 1794408307.296196
     },
-    "shadow_episodes": 164
+    "shadow_episodes": 165
   },
-  "cycle_count": 300
+  "cycle_count": 301
 }
