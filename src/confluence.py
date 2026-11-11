@@ -346,19 +346,17 @@ class ConfluenceEngine:
                         and kronos_fc.direction == direction
                         and kronos_fc.confidence >= 0.35
                     )
-                    # Ban unconfirmed solo TREND_PULLBACK (25% live WR vs 75%-100% multi-strategy WR)
+                    # Ban unconfirmed solo TREND_PULLBACK & block TREND_PULLBACK inside SESSION_SWEEP_WINDOW (0.853x RL stop-hunt trap)
                     if len(agreeing_pa) < 2 and not kronos_confirms:
                         return None
-                    if regime == MarketRegime.SESSION_SWEEP_WINDOW and not any(
-                        v.strategy_name in {"SND", "ICT"} for v in agreeing_pa
-                    ):
+                    if regime == MarketRegime.SESSION_SWEEP_WINDOW:
                         return None
-                    best_learned_m = max(
+                    avg_learned_m = sum(
                         self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
                         for v in agreeing_pa
-                    )
+                    ) / len(agreeing_pa)
                     synergy_bonus = 5.0 if len(agreeing_pa) >= 2 else 0.0
-                    confluence_score = min(100.0, 88.0 * best_learned_m + synergy_bonus)
+                    confluence_score = min(100.0, 88.0 * avg_learned_m + synergy_bonus)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 else:
                     # Path B: Multi-Strategy Consensus from SND (100% RL WR), BREAKOUT (58.3% RL WR), ICT (55.2% RL WR)
@@ -408,19 +406,17 @@ class ConfluenceEngine:
                         and kronos_fc.direction == direction
                         and kronos_fc.confidence >= 0.35
                     )
-                    # Ban unconfirmed solo TREND_PULLBACK & require structural SND/ICT confirmation during session sweeps
+                    # Ban unconfirmed solo TREND_PULLBACK & block TREND_PULLBACK inside SESSION_SWEEP_WINDOW (0.853x RL stop-hunt trap)
                     if len(agreeing_pa) < 2 and not kronos_confirms:
                         return None
-                    if regime == MarketRegime.SESSION_SWEEP_WINDOW and not any(
-                        v.strategy_name in {"SND", "ICT"} for v in agreeing_pa
-                    ):
+                    if regime == MarketRegime.SESSION_SWEEP_WINDOW:
                         return None
-                    best_learned_m = max(
+                    avg_learned_m = sum(
                         self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
                         for v in agreeing_pa
-                    )
+                    ) / len(agreeing_pa)
                     synergy_bonus = 5.0 if len(agreeing_pa) >= 2 else 0.0
-                    confluence_score = min(100.0, 88.0 * best_learned_m + synergy_bonus)
+                    confluence_score = min(100.0, 88.0 * avg_learned_m + synergy_bonus)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 elif rev_votes:
                     long_rev = [v for v in rev_votes if v.direction == Direction.LONG]

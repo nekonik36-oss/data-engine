@@ -107,7 +107,7 @@ def write_and_push_telemetry(
             if changed_files:
                 code_updated = True
             subprocess.run(
-                ["git", "pull", "--rebase", "--autostash", "origin", "main"],
+                ["git", "reset", "--hard", "origin/main"],
                 cwd=REPO_ROOT,
                 check=False,
                 capture_output=True,
