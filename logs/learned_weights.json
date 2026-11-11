@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 02:45:07 UTC",
+  "updated_utc": "2026-11-11 02:58:51 UTC",
   "total_episodes": 119,
   "strategy_stats": {
     "SND": {
@@ -108,26 +108,7 @@
       "be_shield_r": 0.55
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 84359136,
-      "symbol": "SOLUSD",
-      "direction": "SHORT",
-      "entry_price": 82.97,
-      "exit_price": 83.27,
-      "tp1_price": 82.71,
-      "tp2_price": 82.41,
-      "agreeing_strategies": [
-        "ICT",
-        "BREAKOUT",
-        "KRONOS"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1794360529.893796,
-      "closed_at_utc": "2026-11-11 01:28:49 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-09 05:26:06 UTC",
@@ -497,6 +478,14 @@
         "KRONOS"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if SOLUSD reaches TP1=82.71)"
+    },
+    {
+      "timestamp_utc": "2026-11-11 02:58:51 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 84359136,
+      "symbol": "SOLUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #84359136 (SOLUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ],
   "live_episodes": 7,

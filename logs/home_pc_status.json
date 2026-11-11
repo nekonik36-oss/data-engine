@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-11 02:58:16 UTC",
-  "hostname": "runnervmwuk1x",
-  "python_version": "3.12.16",
+  "updated_utc": "2026-11-11 03:00:06 UTC",
+  "hostname": "GB-5CD52876MS",
+  "python_version": "3.14.6",
   "gpu": {
     "torch_installed": false,
     "torch_version": null,
@@ -14,15 +14,15 @@
   "pending_hot_reload": false,
   "execution_mode": "auto",
   "mt5_connected": false,
-  "mt5_error": "No module named 'MetaTrader5'",
+  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9770.75,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73672.01,
-    "ETHUSD": 2059.32,
-    "SOLUSD": 83.29
+    "BTCUSD": 73646.02,
+    "ETHUSD": 2058.85,
+    "SOLUSD": 83.26
   },
   "active_trades": {},
   "bot_stats": {
@@ -311,7 +311,7 @@
     "crypto_book_pnl": 34.1
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 02:45:07 UTC",
+    "updated_utc": "2026-11-11 02:58:51 UTC",
     "total_episodes": 119,
     "strategy_stats": {
       "SND": {
@@ -420,26 +420,7 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [
-      {
-        "ticket": 84359136,
-        "symbol": "SOLUSD",
-        "direction": "SHORT",
-        "entry_price": 82.97,
-        "exit_price": 83.27,
-        "tp1_price": 82.71,
-        "tp2_price": 82.41,
-        "agreeing_strategies": [
-          "ICT",
-          "BREAKOUT",
-          "KRONOS"
-        ],
-        "regime": "RANGING",
-        "closed_epoch": 1794360529.893796,
-        "closed_at_utc": "2026-11-11 01:28:49 UTC",
-        "audited": false
-      }
-    ],
+    "pending_post_mortems": [],
     "ai_feedback_feed": [
       {
         "timestamp_utc": "2026-11-09 05:26:06 UTC",
@@ -809,6 +790,14 @@
           "KRONOS"
         ],
         "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if SOLUSD reaches TP1=82.71)"
+      },
+      {
+        "timestamp_utc": "2026-11-11 02:58:51 UTC",
+        "event": "TRUE_TREND_LOSS_CONFIRMED",
+        "ticket": 84359136,
+        "symbol": "SOLUSD",
+        "direction": "SHORT",
+        "summary": "Ticket #84359136 (SOLUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
       }
     ],
     "live_episodes": 7,
@@ -831,5 +820,5 @@
     },
     "shadow_episodes": 94
   },
-  "cycle_count": 5
+  "cycle_count": 220
 }
