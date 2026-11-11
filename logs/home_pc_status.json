@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 01:28:53 UTC",
+  "updated_utc": "2026-11-11 01:29:44 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -16,13 +16,13 @@
   "mt5_connected": false,
   "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9799.56,
+  "live_equity": 9770.75,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73647.84,
-    "ETHUSD": 2053.06,
-    "SOLUSD": 83.31
+    "BTCUSD": 73778.01,
+    "ETHUSD": 2056.56,
+    "SOLUSD": 83.46
   },
   "active_trades": {},
   "bot_stats": {
@@ -311,8 +311,8 @@
     "crypto_book_pnl": 34.1
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 01:28:51 UTC",
-    "total_episodes": 105,
+    "updated_utc": "2026-11-11 01:29:41 UTC",
+    "total_episodes": 106,
     "strategy_stats": {
       "SND": {
         "trades": 4,
@@ -322,11 +322,11 @@
         "multiplier": 1.041
       },
       "ICT": {
-        "trades": 33,
-        "wins": 17,
+        "trades": 34,
+        "wins": 18,
         "losses": 16,
-        "ema_r": -0.274,
-        "multiplier": 0.931
+        "ema_r": -0.158,
+        "multiplier": 0.96
       },
       "BREAKOUT": {
         "trades": 29,
@@ -359,7 +359,7 @@
       "SESSION_SWEEP_WINDOW:ICT": 0.983,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.947,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.867,
-      "TRENDING_DOWN:ICT": 1.01,
+      "TRENDING_DOWN:ICT": 1.029,
       "TRENDING_DOWN:KRONOS": 1.059,
       "RANGING:BREAKOUT": 0.931,
       "RANGING:SND": 1.025,
@@ -812,23 +812,7 @@
       }
     ],
     "live_episodes": 7,
-    "active_shadow_trades": [
-      {
-        "key": "BTCUSD:ICT",
-        "symbol": "BTCUSD",
-        "strategy_name": "ICT",
-        "direction": "LONG",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 73524.76,
-        "sl_price": 73363.00553,
-        "sl_dist": 161.75447,
-        "tp1_price": 73608.87233,
-        "tp2_price": 73702.68992,
-        "opened_epoch": 1794360014.192344,
-        "tp1_hit": true,
-        "peak_r": 0.761
-      }
-    ],
+    "active_shadow_trades": [],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794354003.848472,
       "BTCUSD:BREAKOUT": 1794359135.405503,
@@ -845,7 +829,7 @@
       "SOLUSD:TREND_PULLBACK": 1794301523.702785,
       "ETHUSD:SND": 1794352507.650639
     },
-    "shadow_episodes": 80
+    "shadow_episodes": 81
   },
-  "cycle_count": 2
+  "cycle_count": 4
 }
