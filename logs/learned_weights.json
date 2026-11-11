@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-11 18:35:05 UTC",
-  "total_episodes": 219,
+  "updated_utc": "2026-11-11 18:50:22 UTC",
+  "total_episodes": 221,
   "strategy_stats": {
     "SND": {
       "trades": 12,
@@ -24,18 +24,18 @@
       "multiplier": 1.008
     },
     "TREND_PULLBACK": {
-      "trades": 35,
+      "trades": 36,
       "wins": 15,
-      "losses": 18,
-      "ema_r": -0.099,
-      "multiplier": 0.975
+      "losses": 19,
+      "ema_r": -0.133,
+      "multiplier": 0.967
     },
     "KRONOS": {
-      "trades": 72,
-      "wins": 33,
+      "trades": 73,
+      "wins": 34,
       "losses": 37,
-      "ema_r": -0.008,
-      "multiplier": 0.998
+      "ema_r": 0.034,
+      "multiplier": 1.009
     }
   },
   "regime_strategy_multipliers": {
@@ -55,9 +55,9 @@
     "TRENDING_DOWN:SND": 1.012,
     "TRENDING_UP:ICT": 1.041,
     "SESSION_SWEEP_WINDOW:SND": 0.888,
-    "TRENDING_UP:KRONOS": 1.009,
+    "TRENDING_UP:KRONOS": 1.017,
     "TRENDING_UP:BREAKOUT": 0.968,
-    "TRENDING_UP:TREND_PULLBACK": 1.032
+    "TRENDING_UP:TREND_PULLBACK": 1.024
   },
   "symbol_streaks": {
     "BTCUSD": {
@@ -552,36 +552,6 @@
   "live_episodes": 10,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:TREND_PULLBACK",
-      "symbol": "ETHUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 2091.5,
-      "sl_price": 2083.09458,
-      "sl_dist": 8.40542,
-      "tp1_price": 2096.96352,
-      "tp2_price": 2103.68785,
-      "opened_epoch": 1794421218.343782,
-      "tp1_hit": false,
-      "peak_r": 0.14
-    },
-    {
-      "key": "ETHUSD:KRONOS",
-      "symbol": "ETHUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 2091.5,
-      "sl_price": 2099.90542,
-      "sl_dist": 8.40542,
-      "tp1_price": 2086.03648,
-      "tp2_price": 2079.31215,
-      "opened_epoch": 1794421218.34579,
-      "tp1_hit": false,
-      "peak_r": 0.617
-    },
-    {
       "key": "SOLUSD:TREND_PULLBACK",
       "symbol": "SOLUSD",
       "strategy_name": "TREND_PULLBACK",
@@ -632,5 +602,5 @@
     "XAUUSD:SND": 1794408307.296196,
     "EURUSD:ICT": 1794412816.194931
   },
-  "shadow_episodes": 191
+  "shadow_episodes": 193
 }
