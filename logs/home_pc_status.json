@@ -1,31 +1,28 @@
 {
-  "updated_utc": "2026-11-11 00:07:09 UTC",
-  "hostname": "DESKTOP-8RQUOSU",
-  "python_version": "3.12.10",
+  "updated_utc": "2026-11-11 00:32:32 UTC",
+  "hostname": "GB-5CD52876MS",
+  "python_version": "3.14.6",
   "gpu": {
-    "torch_installed": true,
-    "torch_version": "2.11.0+cu128",
-    "cuda_version": "12.8",
-    "cuda_available": true,
-    "gpu_name": "NVIDIA GeForce RTX 5060",
-    "cuda_kernel_ok": true,
-    "cuda_error": null
+    "torch_installed": false,
+    "torch_version": null,
+    "cuda_version": null,
+    "cuda_available": false,
+    "gpu_name": null,
+    "cuda_kernel_ok": false,
+    "cuda_error": "No module named 'torch'"
   },
   "pending_hot_reload": false,
   "execution_mode": "auto",
-  "mt5_connected": true,
-  "mt5_error": null,
+  "mt5_connected": false,
+  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9799.56,
-  "telegram_configured": true,
-  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
+  "telegram_configured": false,
+  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73749.0,
-    "ETHUSD": 2052.2,
-    "SOLUSD": 83.44,
-    "XAUUSD": 4038.89,
-    "EURUSD": 1.11654,
-    "USDJPY": 158.785
+    "BTCUSD": 73698.01,
+    "ETHUSD": 2053.47,
+    "SOLUSD": 83.46
   },
   "active_trades": {},
   "bot_stats": {
@@ -303,8 +300,8 @@
     "crypto_book_pnl": 62.91
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 00:05:38 UTC",
-    "total_episodes": 95,
+    "updated_utc": "2026-11-11 00:32:30 UTC",
+    "total_episodes": 96,
     "strategy_stats": {
       "SND": {
         "trades": 4,
@@ -314,11 +311,11 @@
         "multiplier": 1.041
       },
       "ICT": {
-        "trades": 29,
-        "wins": 16,
+        "trades": 30,
+        "wins": 17,
         "losses": 13,
-        "ema_r": -0.097,
-        "multiplier": 0.976
+        "ema_r": -0.081,
+        "multiplier": 0.98
       },
       "BREAKOUT": {
         "trades": 25,
@@ -343,7 +340,7 @@
       }
     },
     "regime_strategy_multipliers": {
-      "RANGING:ICT": 0.866,
+      "RANGING:ICT": 0.868,
       "RANGING:KRONOS": 0.746,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.93,
       "RANGING:TREND_PULLBACK": 1.017,
@@ -766,19 +763,19 @@
     "live_episodes": 6,
     "active_shadow_trades": [
       {
-        "key": "ETHUSD:ICT",
-        "symbol": "ETHUSD",
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
         "strategy_name": "ICT",
         "direction": "LONG",
         "regime": "RANGING",
-        "entry_price": 2052.98,
-        "sl_price": 2048.09774,
-        "sl_dist": 4.88226,
-        "tp1_price": 2055.51878,
-        "tp2_price": 2058.35049,
-        "opened_epoch": 1794354003.848472,
+        "entry_price": 73662.84,
+        "sl_price": 73500.78175,
+        "sl_dist": 162.05825,
+        "tp1_price": 73747.11029,
+        "tp2_price": 73841.10407,
+        "opened_epoch": 1794357149.896787,
         "tp1_hit": false,
-        "peak_r": 0.43
+        "peak_r": 0.217
       }
     ],
     "shadow_cooldowns": {
@@ -789,7 +786,7 @@
       "ETHUSD:KRONOS": 1794352507.65264,
       "SOLUSD:BREAKOUT": 1794351911.05879,
       "SOLUSD:KRONOS": 1794352508.981065,
-      "BTCUSD:ICT": 1794353705.207967,
+      "BTCUSD:ICT": 1794357149.896787,
       "SOLUSD:SND": 1794352508.976063,
       "SOLUSD:ICT": 1794352508.979066,
       "ETHUSD:TREND_PULLBACK": 1794339618.086671,
@@ -797,7 +794,7 @@
       "SOLUSD:TREND_PULLBACK": 1794301523.702785,
       "ETHUSD:SND": 1794352507.650639
     },
-    "shadow_episodes": 71
+    "shadow_episodes": 72
   },
-  "cycle_count": 1125
+  "cycle_count": 1
 }
