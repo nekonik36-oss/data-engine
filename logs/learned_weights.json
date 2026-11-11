@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-11 04:54:37 UTC",
-  "total_episodes": 124,
+  "updated_utc": "2026-11-11 05:12:01 UTC",
+  "total_episodes": 126,
   "strategy_stats": {
     "SND": {
       "trades": 4,
@@ -10,11 +10,11 @@
       "multiplier": 1.041
     },
     "ICT": {
-      "trades": 40,
-      "wins": 23,
+      "trades": 42,
+      "wins": 24,
       "losses": 17,
-      "ema_r": 0.146,
-      "multiplier": 1.037
+      "ema_r": 0.172,
+      "multiplier": 1.043
     },
     "BREAKOUT": {
       "trades": 34,
@@ -31,16 +31,16 @@
       "multiplier": 0.894
     },
     "KRONOS": {
-      "trades": 41,
+      "trades": 42,
       "wins": 17,
       "losses": 23,
-      "ema_r": -0.163,
-      "multiplier": 0.959
+      "ema_r": -0.118,
+      "multiplier": 0.97
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.872,
-    "RANGING:KRONOS": 0.696,
+    "RANGING:ICT": 0.886,
+    "RANGING:KRONOS": 0.698,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.93,
     "RANGING:TREND_PULLBACK": 1.017,
     "TRENDING_DOWN:TREND_PULLBACK": 0.948,
@@ -63,7 +63,7 @@
     "ETHUSD": {
       "win_streak": 0,
       "loss_streak": 2,
-      "net_r": -2.0
+      "net_r": -1.96
     },
     "SOLUSD": {
       "win_streak": 0,
@@ -486,26 +486,26 @@
       "symbol": "SOLUSD",
       "direction": "SHORT",
       "summary": "Ticket #84359136 (SOLUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    }
-  ],
-  "live_episodes": 7,
-  "active_shadow_trades": [
+    },
     {
-      "key": "ETHUSD:ICT",
+      "timestamp_utc": "2026-11-11 05:11:59 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 84373208,
       "symbol": "ETHUSD",
-      "strategy_name": "ICT",
       "direction": "SHORT",
+      "net_pnl": 1.95,
+      "r_multiple": 0.04,
+      "peak_favorable_r": 0.21,
       "regime": "RANGING",
-      "entry_price": 2068.46,
-      "sl_price": 2074.18142,
-      "sl_dist": 5.72142,
-      "tp1_price": 2064.74108,
-      "tp2_price": 2060.16394,
-      "opened_epoch": 1794372031.066803,
-      "tp1_hit": true,
-      "peak_r": 0.916
+      "strategies": [
+        "ICT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
     }
   ],
+  "live_episodes": 8,
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794372031.066803,
     "BTCUSD:BREAKOUT": 1794361243.290412,
@@ -522,5 +522,5 @@
     "SOLUSD:TREND_PULLBACK": 1794301523.702785,
     "ETHUSD:SND": 1794352507.650639
   },
-  "shadow_episodes": 99
+  "shadow_episodes": 100
 }
