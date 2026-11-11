@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-11 20:55:10 UTC",
-  "total_episodes": 231,
+  "updated_utc": "2026-11-11 21:07:16 UTC",
+  "total_episodes": 232,
   "strategy_stats": {
     "SND": {
       "trades": 12,
@@ -31,16 +31,16 @@
       "multiplier": 0.951
     },
     "KRONOS": {
-      "trades": 76,
-      "wins": 37,
+      "trades": 77,
+      "wins": 38,
       "losses": 37,
-      "ema_r": 0.152,
-      "multiplier": 1.038
+      "ema_r": 0.177,
+      "multiplier": 1.044
     }
   },
   "regime_strategy_multipliers": {
     "RANGING:ICT": 0.986,
-    "RANGING:KRONOS": 0.732,
+    "RANGING:KRONOS": 0.739,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.891,
     "RANGING:TREND_PULLBACK": 1.017,
     "TRENDING_DOWN:TREND_PULLBACK": 0.948,
@@ -612,21 +612,6 @@
       "peak_r": 0.477
     },
     {
-      "key": "ETHUSD:KRONOS",
-      "symbol": "ETHUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 2082.12,
-      "sl_price": 2087.58945,
-      "sl_dist": 5.46945,
-      "tp1_price": 2078.56486,
-      "tp2_price": 2074.1893,
-      "opened_epoch": 1794430216.838561,
-      "tp1_hit": true,
-      "peak_r": 0.713
-    },
-    {
       "key": "BTCUSD:ICT",
       "symbol": "BTCUSD",
       "strategy_name": "ICT",
@@ -662,5 +647,5 @@
     "XAUUSD:SND": 1794408307.296196,
     "EURUSD:ICT": 1794412816.194931
   },
-  "shadow_episodes": 203
+  "shadow_episodes": 204
 }
