@@ -323,32 +323,71 @@ class ConfluenceEngine:
         else:
             # HYBRID_REGIME_KRONOS: 3-Engine Per-Instrument Specialized Quant Architecture + Online Learner
             if symbol in {"BTCUSD", "SOLUSD"}:
-                # Engine 1 (Momentum Leaders BTCUSD & SOLUSD — 65.0%-75.0% 7-Day Real M5 Win Rate):
-                # Uses H1 Trend (EMA60 vs EMA240) + EMA50/200 Stack + Connors RSI(2) Pullback + Prior-Bar Break
+                # Engine 1 (Momentum Leaders BTCUSD & SOLUSD):
+                # Path A: H1 Trend + EMA50/200 Stack + Connors RSI(2) Pullback confirmed by >=1 peer module (SND/ICT/BREAKOUT/KRONOS)
+                # Path B: Multi-Strategy Structural Consensus (>=2 of SND/ICT/BREAKOUT aligned with H1 trend)
                 tpb_votes = [
                     v
                     for v in pa_votes
                     if v.strategy_name == "TREND_PULLBACK" and v.confidence >= 0.85
                 ]
-                if not tpb_votes:
-                    return None
-                direction = tpb_votes[0].direction
-                if any(v.direction != direction and v.confidence >= 0.72 for v in pa_votes):
-                    return None
-                if kronos_fc is not None:
-                    if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
+                if tpb_votes:
+                    direction = tpb_votes[0].direction
+                    if any(v.direction != direction and v.confidence >= 0.72 for v in pa_votes):
                         return None
-                    if direction == Direction.LONG and kronos_fc.bullish_prob <= 0.32:
+                    if kronos_fc is not None:
+                        if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
+                            return None
+                        if direction == Direction.LONG and kronos_fc.bullish_prob <= 0.32:
+                            return None
+                    agreeing_pa = [v for v in pa_votes if v.direction == direction]
+                    kronos_confirms = (
+                        kronos_fc is not None
+                        and kronos_fc.direction == direction
+                        and kronos_fc.confidence >= 0.35
+                    )
+                    # Ban unconfirmed solo TREND_PULLBACK (25% live WR vs 75%-100% multi-strategy WR)
+                    if len(agreeing_pa) < 2 and not kronos_confirms:
                         return None
-                agreeing_pa = [v for v in pa_votes if v.direction == direction]
-                learned_m = self.learner.get_strategy_multiplier(
-                    "TREND_PULLBACK", regime.value
-                )
-                confluence_score = min(100.0, 88.0 * learned_m)
-                threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
+                    if regime == MarketRegime.SESSION_SWEEP_WINDOW and not any(
+                        v.strategy_name in {"SND", "ICT"} for v in agreeing_pa
+                    ):
+                        return None
+                    best_learned_m = max(
+                        self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
+                        for v in agreeing_pa
+                    )
+                    synergy_bonus = 5.0 if len(agreeing_pa) >= 2 else 0.0
+                    confluence_score = min(100.0, 88.0 * best_learned_m + synergy_bonus)
+                    threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
+                else:
+                    # Path B: Multi-Strategy Consensus from SND (100% RL WR), BREAKOUT (58.3% RL WR), ICT (55.2% RL WR)
+                    if any(v.confidence >= 0.72 for v in opposing_pa):
+                        return None
+                    strong_agree = [v for v in agreeing_pa if v.confidence >= 0.75]
+                    if len(strong_agree) < 2:
+                        return None
+                    e60, e240 = ind.ema60[idx], ind.ema240[idx]
+                    if direction == Direction.LONG and e60 < e240:
+                        return None
+                    if direction == Direction.SHORT and e60 > e240:
+                        return None
+                    if kronos_fc is not None:
+                        if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
+                            return None
+                        if direction == Direction.LONG and kronos_fc.bullish_prob <= 0.32:
+                            return None
+                    agreeing_pa = strong_agree
+                    best_pa_conf = max(
+                        v.confidence
+                        * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
+                        for v in agreeing_pa
+                    )
+                    confluence_score = min(100.0, best_pa_conf * 100.0 + 12.0)
+                    threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
 
             elif symbol == "ETHUSD":
-                # Engine 2 (ETHUSD Dual-Engine: Liquidity-Sweep + Volume Climax OR H1 Trend RSI(2) Pullback Break):
+                # Engine 2 (ETHUSD Dual-Engine: Liquidity-Sweep + Volume Climax OR Confirmed H1 Trend Pullback):
                 tpb_votes = [
                     v
                     for v in pa_votes
@@ -364,10 +403,24 @@ class ConfluenceEngine:
                     if any(v.direction != direction and v.confidence >= 0.72 for v in pa_votes):
                         return None
                     agreeing_pa = [v for v in pa_votes if v.direction == direction]
-                    learned_m = self.learner.get_strategy_multiplier(
-                        "TREND_PULLBACK", regime.value
+                    kronos_confirms = (
+                        kronos_fc is not None
+                        and kronos_fc.direction == direction
+                        and kronos_fc.confidence >= 0.35
                     )
-                    confluence_score = min(100.0, 88.0 * learned_m)
+                    # Ban unconfirmed solo TREND_PULLBACK & require structural SND/ICT confirmation during session sweeps
+                    if len(agreeing_pa) < 2 and not kronos_confirms:
+                        return None
+                    if regime == MarketRegime.SESSION_SWEEP_WINDOW and not any(
+                        v.strategy_name in {"SND", "ICT"} for v in agreeing_pa
+                    ):
+                        return None
+                    best_learned_m = max(
+                        self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
+                        for v in agreeing_pa
+                    )
+                    synergy_bonus = 5.0 if len(agreeing_pa) >= 2 else 0.0
+                    confluence_score = min(100.0, 88.0 * best_learned_m + synergy_bonus)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 elif rev_votes:
                     long_rev = [v for v in rev_votes if v.direction == Direction.LONG]
