@@ -1,28 +1,31 @@
 {
-  "updated_utc": "2026-11-11 10:38:18 UTC",
-  "hostname": "runnervmwuk1x",
-  "python_version": "3.12.16",
+  "updated_utc": "2026-11-11 13:47:58 UTC",
+  "hostname": "DESKTOP-8RQUOSU",
+  "python_version": "3.12.10",
   "gpu": {
-    "torch_installed": false,
-    "torch_version": null,
-    "cuda_version": null,
-    "cuda_available": false,
-    "gpu_name": null,
-    "cuda_kernel_ok": false,
-    "cuda_error": "No module named 'torch'"
+    "torch_installed": true,
+    "torch_version": "2.11.0+cu128",
+    "cuda_version": "12.8",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 5060",
+    "cuda_kernel_ok": true,
+    "cuda_error": null
   },
   "pending_hot_reload": false,
   "execution_mode": "auto",
-  "mt5_connected": false,
-  "mt5_error": "No module named 'MetaTrader5'",
+  "mt5_connected": true,
+  "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9767.04,
-  "telegram_configured": false,
-  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
+  "telegram_configured": true,
+  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 74096.13,
-    "ETHUSD": 2064.02,
-    "SOLUSD": 84.09
+    "BTCUSD": 73772.0,
+    "ETHUSD": 2052.58,
+    "SOLUSD": 84.35,
+    "XAUUSD": 4034.63,
+    "EURUSD": 1.11138,
+    "USDJPY": 159.486
   },
   "active_trades": {},
   "bot_stats": {
@@ -344,7 +347,7 @@
     "crypto_book_pnl": 30.39
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 10:35:31 UTC",
+    "updated_utc": "2026-11-11 13:47:56 UTC",
     "total_episodes": 172,
     "strategy_stats": {
       "SND": {
@@ -455,25 +458,7 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [
-      {
-        "ticket": 84391803,
-        "symbol": "BTCUSD",
-        "direction": "SHORT",
-        "entry_price": 73675.61,
-        "exit_price": 73968.91,
-        "tp1_price": 73484.97,
-        "tp2_price": 73250.33,
-        "agreeing_strategies": [
-          "SND",
-          "TREND_PULLBACK"
-        ],
-        "regime": "SESSION_SWEEP_WINDOW",
-        "closed_epoch": 1794392859.331137,
-        "closed_at_utc": "2026-11-11 10:27:39 UTC",
-        "audited": false
-      }
-    ],
+    "pending_post_mortems": [],
     "ai_feedback_feed": [
       {
         "timestamp_utc": "2026-11-09 05:26:06 UTC",
@@ -899,10 +884,34 @@
           "TREND_PULLBACK"
         ],
         "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=73484.97)"
+      },
+      {
+        "timestamp_utc": "2026-11-11 13:47:56 UTC",
+        "event": "TRUE_TREND_LOSS_CONFIRMED",
+        "ticket": 84391803,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "summary": "Ticket #84391803 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
       }
     ],
     "live_episodes": 10,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "XAUUSD:BREAKOUT",
+        "symbol": "XAUUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 4032.87,
+        "sl_price": 4041.2124,
+        "sl_dist": 8.3424,
+        "tp1_price": 4027.44744,
+        "tp2_price": 4020.77352,
+        "opened_epoch": 1794404876.227776,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794390619.89494,
       "BTCUSD:BREAKOUT": 1794392860.491725,
@@ -918,9 +927,10 @@
       "BTCUSD:TREND_PULLBACK": 1794391803.186042,
       "SOLUSD:TREND_PULLBACK": 1794301523.702785,
       "ETHUSD:SND": 1794386712.355769,
-      "BTCUSD:SND": 1794391803.182065
+      "BTCUSD:SND": 1794391803.182065,
+      "XAUUSD:BREAKOUT": 1794404876.227776
     },
     "shadow_episodes": 144
   },
-  "cycle_count": 20
+  "cycle_count": 1
 }

@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-11 10:38:18 UTC",
-  "hostname": "runnervmwuk1x",
+  "updated_utc": "2026-11-11 13:47:58 UTC",
+  "hostname": "DESKTOP-8RQUOSU",
   "live_equity": 9767.04,
   "bot_stats": {
     "total_closed": 28,
@@ -374,41 +374,8 @@
       "net_r": -1.02
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 84391803,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "entry_price": 73675.61,
-      "exit_price": 73968.91,
-      "tp1_price": 73484.97,
-      "tp2_price": 73250.33,
-      "agreeing_strategies": [
-        "SND",
-        "TREND_PULLBACK"
-      ],
-      "regime": "SESSION_SWEEP_WINDOW",
-      "closed_epoch": 1794392859.331137,
-      "closed_at_utc": "2026-11-11 10:27:39 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 11:17:07 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1079533010,
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "net_pnl": -0.95,
-      "r_multiple": -0.02,
-      "peak_favorable_r": 0.71,
-      "regime": "SESSION_SWEEP_WINDOW",
-      "strategies": [
-        "TREND_PULLBACK"
-      ],
-      "auto_fix_action": "NONE"
-    },
     {
       "timestamp_utc": "2026-11-09 11:17:28 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -743,6 +710,14 @@
         "TREND_PULLBACK"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=73484.97)"
+    },
+    {
+      "timestamp_utc": "2026-11-11 13:47:56 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 84391803,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #84391803 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }
