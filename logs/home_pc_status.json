@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 14:22:27 UTC",
+  "updated_utc": "2026-11-11 14:24:03 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73640.0,
-    "ETHUSD": 2048.56,
-    "SOLUSD": 83.91,
-    "XAUUSD": 4030.04,
-    "EURUSD": 1.10899,
-    "USDJPY": 159.563
+    "BTCUSD": 73643.5,
+    "ETHUSD": 2049.08,
+    "SOLUSD": 83.88,
+    "XAUUSD": 4029.95,
+    "EURUSD": 1.10891,
+    "USDJPY": 159.549
   },
   "active_trades": {},
   "bot_stats": {
@@ -347,7 +347,7 @@
     "crypto_book_pnl": 30.39
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 14:18:02 UTC",
+    "updated_utc": "2026-11-11 14:23:10 UTC",
     "total_episodes": 179,
     "strategy_stats": {
       "SND": {
@@ -911,7 +911,7 @@
         "tp2_price": 2048.12748,
         "opened_epoch": 1794406213.569087,
         "tp1_hit": true,
-        "peak_r": 1.375
+        "peak_r": 1.422
       },
       {
         "key": "BTCUSD:BREAKOUT",
@@ -927,6 +927,21 @@
         "opened_epoch": 1794406505.907683,
         "tp1_hit": false,
         "peak_r": 0.294
+      },
+      {
+        "key": "XAUUSD:BREAKOUT",
+        "symbol": "XAUUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 4030.47,
+        "sl_price": 4039.29712,
+        "sl_dist": 8.82712,
+        "tp1_price": 4024.73237,
+        "tp2_price": 4017.67068,
+        "opened_epoch": 1794406990.912481,
+        "tp1_hit": false,
+        "peak_r": 0.059
       }
     ],
     "shadow_cooldowns": {
@@ -945,9 +960,9 @@
       "SOLUSD:TREND_PULLBACK": 1794301523.702785,
       "ETHUSD:SND": 1794386712.355769,
       "BTCUSD:SND": 1794391803.182065,
-      "XAUUSD:BREAKOUT": 1794404876.227776
+      "XAUUSD:BREAKOUT": 1794406990.912481
     },
     "shadow_episodes": 151
   },
-  "cycle_count": 90
+  "cycle_count": 95
 }
