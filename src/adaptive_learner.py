@@ -448,8 +448,8 @@ class AdaptiveLearner:
 
         is_long = direction.upper() == "LONG"
         sl_price = entry_price - sl_dist if is_long else entry_price + sl_dist
-        tp1_price = entry_price + (0.52 * sl_dist if is_long else -0.52 * sl_dist)
-        tp2_price = entry_price + (1.10 * sl_dist if is_long else -1.10 * sl_dist)
+        tp1_price = entry_price + (0.65 * sl_dist if is_long else -0.65 * sl_dist)
+        tp2_price = entry_price + (1.45 * sl_dist if is_long else -1.45 * sl_dist)
 
         cooldown_map[key] = now_ts
         active_shadows.append(
@@ -507,19 +507,22 @@ class AdaptiveLearner:
             peak_r = max(float(sh.get("peak_r", 0.0)), round(cur_r, 3))
             sh["peak_r"] = peak_r
 
-            if peak_r >= 0.52:
+            if peak_r >= 0.65:
                 sh["tp1_hit"] = True
 
-            # Resolve on TP2 (+1.10R), SL (-1.00R), Post-TP1 pullback (+0.20R runner stop), or 30m Fast-Scalp horizon
+            # Resolve on TP2 (+1.45R -> +1.17R net), Post-TP1 pullback (+0.35R runner -> +0.46R net),
+            # 18m Failed-Impulse (-0.55R cap), SL (-1.00R), or 30m Fast-Scalp horizon
             resolved_r: float | None = None
-            if cur_r >= 1.10:
-                resolved_r = 0.81  # 50% @ +0.52R + 50% @ +1.10R
-            elif sh.get("tp1_hit") and cur_r <= 0.20:
-                resolved_r = 0.36  # 50% @ +0.52R + 50% @ +0.20R
+            if cur_r >= 1.45:
+                resolved_r = 1.17  # 35% @ +0.65R + 65% @ +1.45R
+            elif sh.get("tp1_hit") and cur_r <= 0.35:
+                resolved_r = 0.46  # 35% @ +0.65R + 65% @ +0.35R
+            elif age_min >= 18.0 and peak_r < 0.12 and cur_r <= -0.55:
+                resolved_r = -0.55  # 18m Failed-Impulse Shield cap
             elif cur_r <= -1.00:
                 resolved_r = -1.00
             elif age_min >= 30.0:
-                resolved_r = round(max(-1.0, min(1.10, cur_r)), 2)
+                resolved_r = round(max(-0.55, min(1.17, cur_r)), 2)
 
             if resolved_r is not None:
                 changed = True
