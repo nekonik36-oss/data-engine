@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 14:09:28 UTC",
+  "updated_utc": "2026-11-11 14:09:52 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73794.0,
-    "ETHUSD": 2057.01,
-    "SOLUSD": 84.45,
-    "XAUUSD": 4029.88,
+    "BTCUSD": 73761.7,
+    "ETHUSD": 2055.76,
+    "SOLUSD": 84.38,
+    "XAUUSD": 4029.6,
     "EURUSD": 1.10972,
-    "USDJPY": 159.55
+    "USDJPY": 159.551
   },
   "active_trades": {},
   "bot_stats": {
@@ -347,8 +347,8 @@
     "crypto_book_pnl": 30.39
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 14:00:31 UTC",
-    "total_episodes": 173,
+    "updated_utc": "2026-11-11 14:09:51 UTC",
+    "total_episodes": 175,
     "strategy_stats": {
       "SND": {
         "trades": 9,
@@ -358,18 +358,18 @@
         "multiplier": 0.93
       },
       "ICT": {
-        "trades": 53,
+        "trades": 54,
         "wins": 32,
-        "losses": 20,
-        "ema_r": 0.217,
-        "multiplier": 1.054
+        "losses": 21,
+        "ema_r": 0.12,
+        "multiplier": 1.03
       },
       "BREAKOUT": {
-        "trades": 46,
+        "trades": 47,
         "wins": 24,
-        "losses": 21,
-        "ema_r": -0.028,
-        "multiplier": 0.993
+        "losses": 22,
+        "ema_r": -0.106,
+        "multiplier": 0.974
       },
       "TREND_PULLBACK": {
         "trades": 28,
@@ -392,7 +392,7 @@
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.853,
       "RANGING:TREND_PULLBACK": 1.017,
       "TRENDING_DOWN:TREND_PULLBACK": 0.948,
-      "SESSION_SWEEP_WINDOW:ICT": 0.965,
+      "SESSION_SWEEP_WINDOW:ICT": 0.949,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.932,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.806,
       "TRENDING_DOWN:ICT": 1.036,
@@ -403,7 +403,8 @@
       "TRENDING_DOWN:SND": 1.013,
       "TRENDING_UP:ICT": 1.019,
       "SESSION_SWEEP_WINDOW:SND": 0.92,
-      "TRENDING_UP:KRONOS": 1.007
+      "TRENDING_UP:KRONOS": 1.007,
+      "TRENDING_UP:BREAKOUT": 0.984
     },
     "symbol_streaks": {
       "BTCUSD": {
@@ -910,22 +911,7 @@
         "tp2_price": 4020.77352,
         "opened_epoch": 1794404876.227776,
         "tp1_hit": false,
-        "peak_r": 0.358
-      },
-      {
-        "key": "BTCUSD:ICT",
-        "symbol": "BTCUSD",
-        "strategy_name": "ICT",
-        "direction": "LONG",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 73938.01,
-        "sl_price": 73775.34638,
-        "sl_dist": 162.66362,
-        "tp1_price": 74043.74135,
-        "tp2_price": 74173.87225,
-        "opened_epoch": 1794405306.99327,
-        "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.392
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -940,7 +926,7 @@
         "tp2_price": 73702.14775,
         "opened_epoch": 1794405306.997272,
         "tp1_hit": true,
-        "peak_r": 0.934
+        "peak_r": 1.084
       },
       {
         "key": "ETHUSD:BREAKOUT",
@@ -958,21 +944,6 @@
         "peak_r": 0.247
       },
       {
-        "key": "SOLUSD:BREAKOUT",
-        "symbol": "SOLUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "LONG",
-        "regime": "TRENDING_UP",
-        "entry_price": 84.74,
-        "sl_price": 84.40169,
-        "sl_dist": 0.33831,
-        "tp1_price": 84.9599,
-        "tp2_price": 85.23055,
-        "opened_epoch": 1794405309.775928,
-        "tp1_hit": false,
-        "peak_r": 0.059
-      },
-      {
         "key": "SOLUSD:ICT",
         "symbol": "SOLUSD",
         "strategy_name": "ICT",
@@ -985,7 +956,7 @@
         "tp2_price": 84.08565,
         "opened_epoch": 1794405610.077445,
         "tp1_hit": false,
-        "peak_r": 0.381
+        "peak_r": 0.587
       }
     ],
     "shadow_cooldowns": {
@@ -1006,7 +977,7 @@
       "BTCUSD:SND": 1794391803.182065,
       "XAUUSD:BREAKOUT": 1794404876.227776
     },
-    "shadow_episodes": 145
+    "shadow_episodes": 147
   },
-  "cycle_count": 55
+  "cycle_count": 56
 }
