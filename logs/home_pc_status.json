@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 10:21:48 UTC",
+  "updated_utc": "2026-11-11 10:22:15 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 2058.2,
-    "SOLUSD": 83.67
+    "ETHUSD": 2059.61,
+    "SOLUSD": 83.78
   },
   "active_trades": {
     "84391803": {
@@ -357,8 +357,8 @@
     "crypto_book_pnl": 77.32
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 10:21:46 UTC",
-    "total_episodes": 165,
+    "updated_utc": "2026-11-11 10:22:13 UTC",
+    "total_episodes": 166,
     "strategy_stats": {
       "SND": {
         "trades": 7,
@@ -382,11 +382,11 @@
         "multiplier": 0.967
       },
       "TREND_PULLBACK": {
-        "trades": 25,
+        "trades": 26,
         "wins": 10,
-        "losses": 13,
-        "ema_r": -0.423,
-        "multiplier": 0.894
+        "losses": 14,
+        "ema_r": -0.469,
+        "multiplier": 0.883
       },
       "KRONOS": {
         "trades": 57,
@@ -399,7 +399,7 @@
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.934,
       "RANGING:KRONOS": 0.732,
-      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.93,
+      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.914,
       "RANGING:TREND_PULLBACK": 1.017,
       "TRENDING_DOWN:TREND_PULLBACK": 0.948,
       "SESSION_SWEEP_WINDOW:ICT": 0.965,
@@ -895,7 +895,7 @@
         "tp2_price": 2066.55128,
         "opened_epoch": 1794391211.271786,
         "tp1_hit": false,
-        "peak_r": 0.159
+        "peak_r": 0.236
       },
       {
         "key": "BTCUSD:SND",
@@ -926,21 +926,6 @@
         "opened_epoch": 1794391803.186042,
         "tp1_hit": false,
         "peak_r": 0.0
-      },
-      {
-        "key": "ETHUSD:TREND_PULLBACK",
-        "symbol": "ETHUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "SHORT",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 2053.79,
-        "sl_price": 2059.51052,
-        "sl_dist": 5.72052,
-        "tp1_price": 2050.07166,
-        "tp2_price": 2045.49524,
-        "opened_epoch": 1794391804.22289,
-        "tp1_hit": false,
-        "peak_r": 0.005
       }
     ],
     "shadow_cooldowns": {
@@ -960,7 +945,7 @@
       "ETHUSD:SND": 1794386712.355769,
       "BTCUSD:SND": 1794391803.182065
     },
-    "shadow_episodes": 138
+    "shadow_episodes": 139
   },
-  "cycle_count": 1254
+  "cycle_count": 1255
 }
