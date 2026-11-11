@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-11 14:46:39 UTC",
-  "total_episodes": 186,
+  "updated_utc": "2026-11-11 14:47:53 UTC",
+  "total_episodes": 187,
   "strategy_stats": {
     "SND": {
       "trades": 10,
@@ -31,11 +31,11 @@
       "multiplier": 0.881
     },
     "KRONOS": {
-      "trades": 62,
-      "wins": 27,
+      "trades": 63,
+      "wins": 28,
       "losses": 33,
-      "ema_r": 0.082,
-      "multiplier": 1.02
+      "ema_r": 0.112,
+      "multiplier": 1.028
     }
   },
   "regime_strategy_multipliers": {
@@ -46,7 +46,7 @@
     "TRENDING_DOWN:TREND_PULLBACK": 0.948,
     "SESSION_SWEEP_WINDOW:ICT": 0.917,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.927,
-    "SESSION_SWEEP_WINDOW:KRONOS": 0.832,
+    "SESSION_SWEEP_WINDOW:KRONOS": 0.839,
     "TRENDING_DOWN:ICT": 1.036,
     "TRENDING_DOWN:KRONOS": 1.059,
     "RANGING:BREAKOUT": 0.939,
@@ -581,21 +581,6 @@
       "peak_r": 0.024
     },
     {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 84.41,
-      "sl_price": 84.83464,
-      "sl_dist": 0.42464,
-      "tp1_price": 84.13399,
-      "tp2_price": 83.79428,
-      "opened_epoch": 1794408013.224234,
-      "tp1_hit": true,
-      "peak_r": 0.754
-    },
-    {
       "key": "XAUUSD:SND",
       "symbol": "XAUUSD",
       "strategy_name": "SND",
@@ -608,7 +593,7 @@
       "tp2_price": 4001.05825,
       "opened_epoch": 1794408307.296196,
       "tp1_hit": false,
-      "peak_r": 0.022
+      "peak_r": 0.179
     }
   ],
   "shadow_cooldowns": {
@@ -630,5 +615,5 @@
     "XAUUSD:BREAKOUT": 1794406990.912481,
     "XAUUSD:SND": 1794408307.296196
   },
-  "shadow_episodes": 158
+  "shadow_episodes": 159
 }
