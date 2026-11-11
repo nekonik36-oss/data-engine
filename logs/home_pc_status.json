@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 06:03:09 UTC",
+  "updated_utc": "2026-11-11 06:04:32 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73860.28,
-    "ETHUSD": 2068.66,
-    "SOLUSD": 83.31
+    "BTCUSD": 73887.07,
+    "ETHUSD": 2068.97,
+    "SOLUSD": 83.24
   },
   "active_trades": {},
   "bot_stats": {
@@ -322,8 +322,8 @@
     "crypto_book_pnl": 36.05
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 06:00:05 UTC",
-    "total_episodes": 129,
+    "updated_utc": "2026-11-11 06:04:28 UTC",
+    "total_episodes": 130,
     "strategy_stats": {
       "SND": {
         "trades": 5,
@@ -354,16 +354,16 @@
         "multiplier": 0.894
       },
       "KRONOS": {
-        "trades": 42,
-        "wins": 17,
+        "trades": 43,
+        "wins": 18,
         "losses": 23,
-        "ema_r": -0.118,
-        "multiplier": 0.97
+        "ema_r": -0.072,
+        "multiplier": 0.982
       }
     },
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.884,
-      "RANGING:KRONOS": 0.698,
+      "RANGING:KRONOS": 0.705,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.93,
       "RANGING:TREND_PULLBACK": 1.017,
       "TRENDING_DOWN:TREND_PULLBACK": 0.948,
@@ -830,21 +830,6 @@
     "live_episodes": 8,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:KRONOS",
-        "symbol": "SOLUSD",
-        "strategy_name": "KRONOS",
-        "direction": "LONG",
-        "regime": "RANGING",
-        "entry_price": 83.17,
-        "sl_price": 82.88969,
-        "sl_dist": 0.28031,
-        "tp1_price": 83.3522,
-        "tp2_price": 83.57645,
-        "opened_epoch": 1794375313.572011,
-        "tp1_hit": true,
-        "peak_r": 1.035
-      },
-      {
         "key": "BTCUSD:BREAKOUT",
         "symbol": "BTCUSD",
         "strategy_name": "BREAKOUT",
@@ -937,7 +922,7 @@
       "ETHUSD:SND": 1794352507.650639,
       "BTCUSD:SND": 1794375017.204142
     },
-    "shadow_episodes": 103
+    "shadow_episodes": 104
   },
-  "cycle_count": 640
+  "cycle_count": 643
 }
