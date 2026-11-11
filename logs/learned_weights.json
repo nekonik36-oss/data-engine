@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-11 19:30:18 UTC",
-  "total_episodes": 226,
+  "updated_utc": "2026-11-11 19:31:33 UTC",
+  "total_episodes": 228,
   "strategy_stats": {
     "SND": {
       "trades": 12,
@@ -10,11 +10,11 @@
       "multiplier": 0.908
     },
     "ICT": {
-      "trades": 66,
-      "wins": 37,
+      "trades": 68,
+      "wins": 39,
       "losses": 28,
-      "ema_r": 0.058,
-      "multiplier": 1.014
+      "ema_r": 0.12,
+      "multiplier": 1.03
     },
     "BREAKOUT": {
       "trades": 60,
@@ -39,7 +39,7 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.972,
+    "RANGING:ICT": 0.986,
     "RANGING:KRONOS": 0.732,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.891,
     "RANGING:TREND_PULLBACK": 1.017,
@@ -552,36 +552,6 @@
   "live_episodes": 10,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 2077.31,
-      "sl_price": 2070.46689,
-      "sl_dist": 6.84311,
-      "tp1_price": 2081.75802,
-      "tp2_price": 2087.23251,
-      "opened_epoch": 1794425122.071721,
-      "tp1_hit": true,
-      "peak_r": 1.036
-    },
-    {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 84.69,
-      "sl_price": 84.3706,
-      "sl_dist": 0.3194,
-      "tp1_price": 84.89761,
-      "tp2_price": 85.15313,
-      "opened_epoch": 1794425123.497336,
-      "tp1_hit": true,
-      "peak_r": 0.908
-    },
-    {
       "key": "BTCUSD:TREND_PULLBACK",
       "symbol": "BTCUSD",
       "strategy_name": "TREND_PULLBACK",
@@ -609,7 +579,7 @@
       "tp2_price": 74151.67656,
       "opened_epoch": 1794425417.468584,
       "tp1_hit": false,
-      "peak_r": 0.192
+      "peak_r": 0.354
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -624,7 +594,7 @@
       "tp2_price": 2071.82747,
       "opened_epoch": 1794425418.781797,
       "tp1_hit": false,
-      "peak_r": 0.171
+      "peak_r": 0.352
     }
   ],
   "shadow_cooldowns": {
@@ -647,5 +617,5 @@
     "XAUUSD:SND": 1794408307.296196,
     "EURUSD:ICT": 1794412816.194931
   },
-  "shadow_episodes": 198
+  "shadow_episodes": 200
 }
