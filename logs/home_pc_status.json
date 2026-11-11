@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 06:46:12 UTC",
+  "updated_utc": "2026-11-11 06:48:08 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73670.74,
-    "SOLUSD": 82.67
+    "BTCUSD": 73589.07,
+    "SOLUSD": 82.6
   },
   "active_trades": {
     "84378318": {
@@ -31,7 +31,7 @@
       "broker_source": "CRYPTO_24_7_LIVE",
       "direction": "SHORT",
       "entry_price": 2065.15,
-      "sl_price": 2061.79,
+      "sl_price": 2058.91,
       "initial_sl_price": 2074.75,
       "tp1_price": 2058.91,
       "tp2_price": 2051.24,
@@ -47,9 +47,10 @@
       "opened_at_utc": "2026-11-11 06:25:18 UTC",
       "tp1_hit": true,
       "partial_pnl": 11.11,
-      "peak_favorable_r": 0.811,
+      "peak_favorable_r": 1.046,
       "be_shield_active": true,
-      "pre_tp1_ratchet": true
+      "pre_tp1_ratchet": true,
+      "runner_stage": 1
     }
   },
   "bot_stats": {
@@ -869,7 +870,7 @@
         "tp2_price": 73424.9947,
         "opened_epoch": 1794379503.925218,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.438
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -884,7 +885,7 @@
         "tp2_price": 73424.9947,
         "opened_epoch": 1794379503.932994,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.438
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -899,7 +900,7 @@
         "tp2_price": 82.21073,
         "opened_epoch": 1794379504.605766,
         "tp1_hit": false,
-        "peak_r": 0.035
+        "peak_r": 0.104
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -914,7 +915,7 @@
         "tp2_price": 82.21073,
         "opened_epoch": 1794379504.615205,
         "tp1_hit": false,
-        "peak_r": 0.035
+        "peak_r": 0.104
       }
     ],
     "shadow_cooldowns": {
@@ -936,5 +937,5 @@
     },
     "shadow_episodes": 110
   },
-  "cycle_count": 740
+  "cycle_count": 745
 }
