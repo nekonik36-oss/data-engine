@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-11 14:09:51 UTC",
-  "total_episodes": 175,
+  "updated_utc": "2026-11-11 14:10:32 UTC",
+  "total_episodes": 176,
   "strategy_stats": {
     "SND": {
       "trades": 9,
@@ -17,11 +17,11 @@
       "multiplier": 1.03
     },
     "BREAKOUT": {
-      "trades": 47,
+      "trades": 48,
       "wins": 24,
-      "losses": 22,
-      "ema_r": -0.106,
-      "multiplier": 0.974
+      "losses": 23,
+      "ema_r": -0.178,
+      "multiplier": 0.956
     },
     "TREND_PULLBACK": {
       "trades": 28,
@@ -45,7 +45,7 @@
     "RANGING:TREND_PULLBACK": 1.017,
     "TRENDING_DOWN:TREND_PULLBACK": 0.948,
     "SESSION_SWEEP_WINDOW:ICT": 0.949,
-    "SESSION_SWEEP_WINDOW:BREAKOUT": 0.932,
+    "SESSION_SWEEP_WINDOW:BREAKOUT": 0.916,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.806,
     "TRENDING_DOWN:ICT": 1.036,
     "TRENDING_DOWN:KRONOS": 1.059,
@@ -563,7 +563,7 @@
       "tp2_price": 4020.77352,
       "opened_epoch": 1794404876.227776,
       "tp1_hit": false,
-      "peak_r": 0.392
+      "peak_r": 0.458
     },
     {
       "key": "BTCUSD:KRONOS",
@@ -578,22 +578,7 @@
       "tp2_price": 73702.14775,
       "opened_epoch": 1794405306.997272,
       "tp1_hit": true,
-      "peak_r": 1.084
-    },
-    {
-      "key": "ETHUSD:BREAKOUT",
-      "symbol": "ETHUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 2059.09,
-      "sl_price": 2053.10548,
-      "sl_dist": 5.98452,
-      "tp1_price": 2062.97994,
-      "tp2_price": 2067.76755,
-      "opened_epoch": 1794405308.388868,
-      "tp1_hit": false,
-      "peak_r": 0.247
+      "peak_r": 1.39
     },
     {
       "key": "SOLUSD:ICT",
@@ -607,8 +592,23 @@
       "tp1_price": 84.35839,
       "tp2_price": 84.08565,
       "opened_epoch": 1794405610.077445,
-      "tp1_hit": false,
-      "peak_r": 0.587
+      "tp1_hit": true,
+      "peak_r": 0.939
+    },
+    {
+      "key": "ETHUSD:TREND_PULLBACK",
+      "symbol": "ETHUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "SHORT",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 2056.53,
+      "sl_price": 2062.32484,
+      "sl_dist": 5.79484,
+      "tp1_price": 2052.76335,
+      "tp2_price": 2048.12748,
+      "opened_epoch": 1794406213.569087,
+      "tp1_hit": true,
+      "peak_r": 0.689
     }
   ],
   "shadow_cooldowns": {
@@ -622,12 +622,12 @@
     "BTCUSD:ICT": 1794405306.99327,
     "SOLUSD:SND": 1794352508.976063,
     "SOLUSD:ICT": 1794405610.077445,
-    "ETHUSD:TREND_PULLBACK": 1794391804.22289,
+    "ETHUSD:TREND_PULLBACK": 1794406213.569087,
     "BTCUSD:TREND_PULLBACK": 1794391803.186042,
     "SOLUSD:TREND_PULLBACK": 1794301523.702785,
     "ETHUSD:SND": 1794386712.355769,
     "BTCUSD:SND": 1794391803.182065,
     "XAUUSD:BREAKOUT": 1794404876.227776
   },
-  "shadow_episodes": 147
+  "shadow_episodes": 148
 }
