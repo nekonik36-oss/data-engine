@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 14:27:10 UTC",
+  "updated_utc": "2026-11-11 14:28:40 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 73610.01,
-    "ETHUSD": 2048.56,
-    "SOLUSD": 83.82,
-    "XAUUSD": 4029.62,
-    "EURUSD": 1.10877,
-    "USDJPY": 159.619
+    "BTCUSD": 73566.0,
+    "ETHUSD": 2048.29,
+    "SOLUSD": 83.92,
+    "XAUUSD": 4031.01,
+    "EURUSD": 1.10889,
+    "USDJPY": 159.601
   },
   "active_trades": {},
   "bot_stats": {
@@ -925,8 +925,8 @@
         "tp1_price": 73571.98412,
         "tp2_price": 73441.49072,
         "opened_epoch": 1794406505.907683,
-        "tp1_hit": false,
-        "peak_r": 0.417
+        "tp1_hit": true,
+        "peak_r": 0.687
       },
       {
         "key": "XAUUSD:BREAKOUT",
@@ -964,5 +964,5 @@
     },
     "shadow_episodes": 151
   },
-  "cycle_count": 105
+  "cycle_count": 110
 }
