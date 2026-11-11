@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-11 01:28:25 UTC",
+  "updated_utc": "2026-11-11 01:28:53 UTC",
   "hostname": "GB-5CD52876MS",
   "live_equity": 9799.56,
   "bot_stats": {
-    "total_closed": 24,
+    "total_closed": 25,
     "wins": 9,
-    "losses": 12,
+    "losses": 13,
     "breakevens": 3,
-    "cumulative_pnl": -200.44,
+    "cumulative_pnl": -229.25,
     "history": [
       {
         "ticket": 1078980632,
@@ -272,9 +272,20 @@
         "r_multiple": -0.67,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-10 20:15:42 UTC"
+      },
+      {
+        "ticket": 84359136,
+        "symbol": "SOLUSD",
+        "direction": "SHORT",
+        "entry_price": 82.97,
+        "exit_price": 83.27,
+        "net_pnl": -28.81,
+        "r_multiple": -0.59,
+        "close_reason": "18m/30m Impulse Time-Decay Stop Hit \u23f1\ufe0f\ud83d\udee1\ufe0f",
+        "closed_at_utc": "2026-11-11 01:28:49 UTC"
       }
     ],
-    "crypto_book_pnl": 62.91
+    "crypto_book_pnl": 34.1
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -292,6 +303,10 @@
     "EURUSD": {
       "sl_floor_mult": 1.0,
       "be_shield_r": 0.55
+    },
+    "SOLUSD": {
+      "sl_floor_mult": 1.0,
+      "be_shield_r": 0.55
     }
   },
   "symbol_streaks": {
@@ -306,9 +321,9 @@
       "net_r": -2.0
     },
     "SOLUSD": {
-      "win_streak": 2,
-      "loss_streak": 0,
-      "net_r": 2.05
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": 1.46
     },
     "XAUUSD": {
       "win_streak": 0,
@@ -326,23 +341,27 @@
       "net_r": -1.02
     }
   },
-  "pending_post_mortems": [],
-  "ai_feedback_feed": [
+  "pending_post_mortems": [
     {
-      "timestamp_utc": "2026-11-09 05:26:06 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1079289556,
-      "symbol": "BTCUSD",
+      "ticket": 84359136,
+      "symbol": "SOLUSD",
       "direction": "SHORT",
-      "net_pnl": 55.49,
-      "r_multiple": 1.17,
-      "peak_favorable_r": 0.79,
-      "regime": "RANGING",
-      "strategies": [
-        "TREND_PULLBACK"
+      "entry_price": 82.97,
+      "exit_price": 83.27,
+      "tp1_price": 82.71,
+      "tp2_price": 82.41,
+      "agreeing_strategies": [
+        "ICT",
+        "BREAKOUT",
+        "KRONOS"
       ],
-      "auto_fix_action": "NONE"
-    },
+      "regime": "RANGING",
+      "closed_epoch": 1794360529.893796,
+      "closed_at_utc": "2026-11-11 01:28:49 UTC",
+      "audited": false
+    }
+  ],
+  "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-09 06:46:06 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -679,6 +698,23 @@
       "symbol": "BTCUSD",
       "direction": "SHORT",
       "summary": "Ticket #1081472006 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+    },
+    {
+      "timestamp_utc": "2026-11-11 01:28:49 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 84359136,
+      "symbol": "SOLUSD",
+      "direction": "SHORT",
+      "net_pnl": -28.81,
+      "r_multiple": -0.59,
+      "peak_favorable_r": 0.0,
+      "regime": "RANGING",
+      "strategies": [
+        "ICT",
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if SOLUSD reaches TP1=82.71)"
     }
   ]
 }
