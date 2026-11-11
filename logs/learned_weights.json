@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-11 15:35:09 UTC",
-  "total_episodes": 194,
+  "updated_utc": "2026-11-11 15:35:59 UTC",
+  "total_episodes": 196,
   "strategy_stats": {
     "SND": {
       "trades": 12,
@@ -31,11 +31,11 @@
       "multiplier": 0.914
     },
     "KRONOS": {
-      "trades": 64,
+      "trades": 66,
       "wins": 29,
-      "losses": 33,
-      "ema_r": 0.114,
-      "multiplier": 1.029
+      "losses": 35,
+      "ema_r": -0.057,
+      "multiplier": 0.986
     }
   },
   "regime_strategy_multipliers": {
@@ -46,7 +46,7 @@
     "TRENDING_DOWN:TREND_PULLBACK": 0.948,
     "SESSION_SWEEP_WINDOW:ICT": 0.892,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.927,
-    "SESSION_SWEEP_WINDOW:KRONOS": 0.841,
+    "SESSION_SWEEP_WINDOW:KRONOS": 0.809,
     "TRENDING_DOWN:ICT": 1.036,
     "TRENDING_DOWN:KRONOS": 1.059,
     "RANGING:BREAKOUT": 0.939,
@@ -563,7 +563,7 @@
       "tp2_price": 74459.15222,
       "opened_epoch": 1794411306.599276,
       "tp1_hit": true,
-      "peak_r": 0.719
+      "peak_r": 1.262
     },
     {
       "key": "ETHUSD:BREAKOUT",
@@ -578,37 +578,7 @@
       "tp2_price": 2092.063,
       "opened_epoch": 1794411308.087172,
       "tp1_hit": true,
-      "peak_r": 0.732
-    },
-    {
-      "key": "ETHUSD:KRONOS",
-      "symbol": "ETHUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 2076.27,
-      "sl_price": 2087.16172,
-      "sl_dist": 10.89172,
-      "tp1_price": 2069.19038,
-      "tp2_price": 2060.477,
-      "opened_epoch": 1794411308.089173,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 84.69,
-      "sl_price": 85.18925,
-      "sl_dist": 0.49925,
-      "tp1_price": 84.36548,
-      "tp2_price": 83.96608,
-      "opened_epoch": 1794411309.777494,
-      "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 1.295
     }
   ],
   "shadow_cooldowns": {
@@ -630,5 +600,5 @@
     "XAUUSD:BREAKOUT": 1794409105.08686,
     "XAUUSD:SND": 1794408307.296196
   },
-  "shadow_episodes": 166
+  "shadow_episodes": 168
 }
