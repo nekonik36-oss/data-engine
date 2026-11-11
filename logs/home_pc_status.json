@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-11 03:00:58 UTC",
-  "hostname": "runnervmwuk1x",
-  "python_version": "3.12.16",
+  "updated_utc": "2026-11-11 03:02:12 UTC",
+  "hostname": "GB-5CD52876MS",
+  "python_version": "3.14.6",
   "gpu": {
     "torch_installed": false,
     "torch_version": null,
@@ -14,14 +14,14 @@
   "pending_hot_reload": false,
   "execution_mode": "auto",
   "mt5_connected": false,
-  "mt5_error": "No module named 'MetaTrader5'",
+  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9770.75,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73632.0,
-    "ETHUSD": 2058.18,
+    "BTCUSD": 73660.01,
+    "ETHUSD": 2059.29,
     "SOLUSD": 83.22
   },
   "active_trades": {},
@@ -311,7 +311,7 @@
     "crypto_book_pnl": 34.1
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 02:59:21 UTC",
+    "updated_utc": "2026-11-11 02:58:51 UTC",
     "total_episodes": 119,
     "strategy_stats": {
       "SND": {
@@ -792,7 +792,7 @@
         "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if SOLUSD reaches TP1=82.71)"
       },
       {
-        "timestamp_utc": "2026-11-11 02:59:21 UTC",
+        "timestamp_utc": "2026-11-11 02:58:51 UTC",
         "event": "TRUE_TREND_LOSS_CONFIRMED",
         "ticket": 84359136,
         "symbol": "SOLUSD",
@@ -820,5 +820,5 @@
     },
     "shadow_episodes": 94
   },
-  "cycle_count": 10
+  "cycle_count": 225
 }
