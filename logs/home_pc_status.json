@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 16:29:58 UTC",
+  "updated_utc": "2026-11-11 16:30:21 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 74314.96,
-    "ETHUSD": 2080.0,
+    "BTCUSD": 74313.86,
+    "ETHUSD": 2079.8,
     "SOLUSD": 84.88,
-    "XAUUSD": 4002.78,
-    "EURUSD": 1.10942,
-    "USDJPY": 159.832
+    "XAUUSD": 4002.74,
+    "EURUSD": 1.1094,
+    "USDJPY": 159.842
   },
   "active_trades": {},
   "bot_stats": {
@@ -347,8 +347,8 @@
     "crypto_book_pnl": 30.39
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 16:15:32 UTC",
-    "total_episodes": 200,
+    "updated_utc": "2026-11-11 16:30:20 UTC",
+    "total_episodes": 201,
     "strategy_stats": {
       "SND": {
         "trades": 12,
@@ -358,11 +358,11 @@
         "multiplier": 0.908
       },
       "ICT": {
-        "trades": 61,
+        "trades": 62,
         "wins": 33,
-        "losses": 27,
-        "ema_r": -0.196,
-        "multiplier": 0.951
+        "losses": 28,
+        "ema_r": -0.19,
+        "multiplier": 0.953
       },
       "BREAKOUT": {
         "trades": 54,
@@ -395,7 +395,7 @@
       "SESSION_SWEEP_WINDOW:ICT": 0.869,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.941,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.809,
-      "TRENDING_DOWN:ICT": 1.036,
+      "TRENDING_DOWN:ICT": 1.034,
       "TRENDING_DOWN:KRONOS": 1.059,
       "RANGING:BREAKOUT": 0.939,
       "RANGING:SND": 1.016,
@@ -899,21 +899,6 @@
     "live_episodes": 10,
     "active_shadow_trades": [
       {
-        "key": "EURUSD:ICT",
-        "symbol": "EURUSD",
-        "strategy_name": "ICT",
-        "direction": "LONG",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 1.10953,
-        "sl_price": 1.10848,
-        "sl_dist": 0.00105,
-        "tp1_price": 1.11021,
-        "tp2_price": 1.11106,
-        "opened_epoch": 1794412816.194931,
-        "tp1_hit": false,
-        "peak_r": 0.248
-      },
-      {
         "key": "SOLUSD:TREND_PULLBACK",
         "symbol": "SOLUSD",
         "strategy_name": "TREND_PULLBACK",
@@ -964,7 +949,7 @@
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931
     },
-    "shadow_episodes": 172
+    "shadow_episodes": 173
   },
-  "cycle_count": 465
+  "cycle_count": 466
 }
