@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-11 18:04:40 UTC",
+  "updated_utc": "2026-11-11 18:05:19 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 74488.92,
-    "ETHUSD": 2091.31,
-    "SOLUSD": 85.41,
-    "XAUUSD": 3988.8,
-    "EURUSD": 1.10918,
-    "USDJPY": 159.857
+    "BTCUSD": 74435.09,
+    "ETHUSD": 2088.8,
+    "SOLUSD": 85.27,
+    "XAUUSD": 3987.55,
+    "EURUSD": 1.10914,
+    "USDJPY": 159.86
   },
   "active_trades": {},
   "bot_stats": {
@@ -347,8 +347,8 @@
     "crypto_book_pnl": 30.39
   },
   "learned_weights": {
-    "updated_utc": "2026-11-11 18:00:36 UTC",
-    "total_episodes": 213,
+    "updated_utc": "2026-11-11 18:05:18 UTC",
+    "total_episodes": 215,
     "strategy_stats": {
       "SND": {
         "trades": 12,
@@ -358,11 +358,11 @@
         "multiplier": 0.908
       },
       "ICT": {
-        "trades": 63,
-        "wins": 34,
+        "trades": 64,
+        "wins": 35,
         "losses": 28,
-        "ema_r": -0.164,
-        "multiplier": 0.959
+        "ema_r": -0.144,
+        "multiplier": 0.964
       },
       "BREAKOUT": {
         "trades": 57,
@@ -379,11 +379,11 @@
         "multiplier": 0.995
       },
       "KRONOS": {
-        "trades": 70,
-        "wins": 31,
+        "trades": 71,
+        "wins": 32,
         "losses": 37,
-        "ema_r": -0.127,
-        "multiplier": 0.968
+        "ema_r": -0.11,
+        "multiplier": 0.973
       }
     },
     "regime_strategy_multipliers": {
@@ -401,9 +401,9 @@
       "RANGING:SND": 1.016,
       "TRENDING_DOWN:BREAKOUT": 1.074,
       "TRENDING_DOWN:SND": 1.012,
-      "TRENDING_UP:ICT": 1.04,
+      "TRENDING_UP:ICT": 1.041,
       "SESSION_SWEEP_WINDOW:SND": 0.888,
-      "TRENDING_UP:KRONOS": 0.989,
+      "TRENDING_UP:KRONOS": 0.99,
       "TRENDING_UP:BREAKOUT": 0.968,
       "TRENDING_UP:TREND_PULLBACK": 1.048
     },
@@ -898,68 +898,7 @@
       }
     ],
     "live_episodes": 10,
-    "active_shadow_trades": [
-      {
-        "key": "BTCUSD:ICT",
-        "symbol": "BTCUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 74430.63,
-        "sl_price": 74710.72845,
-        "sl_dist": 280.09845,
-        "tp1_price": 74248.56601,
-        "tp2_price": 74024.48725,
-        "opened_epoch": 1794418516.789948,
-        "tp1_hit": false,
-        "peak_r": 0.0
-      },
-      {
-        "key": "BTCUSD:KRONOS",
-        "symbol": "BTCUSD",
-        "strategy_name": "KRONOS",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 74430.63,
-        "sl_price": 74710.72845,
-        "sl_dist": 280.09845,
-        "tp1_price": 74248.56601,
-        "tp2_price": 74024.48725,
-        "opened_epoch": 1794418516.792948,
-        "tp1_hit": false,
-        "peak_r": 0.0
-      },
-      {
-        "key": "ETHUSD:ICT",
-        "symbol": "ETHUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 2089.79,
-        "sl_price": 2100.45539,
-        "sl_dist": 10.66539,
-        "tp1_price": 2082.8575,
-        "tp2_price": 2074.32519,
-        "opened_epoch": 1794418518.249041,
-        "tp1_hit": false,
-        "peak_r": 0.064
-      },
-      {
-        "key": "ETHUSD:KRONOS",
-        "symbol": "ETHUSD",
-        "strategy_name": "KRONOS",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 2089.79,
-        "sl_price": 2100.45539,
-        "sl_dist": 10.66539,
-        "tp1_price": 2082.8575,
-        "tp2_price": 2074.32519,
-        "opened_epoch": 1794418518.252043,
-        "tp1_hit": false,
-        "peak_r": 0.064
-      }
-    ],
+    "active_shadow_trades": [],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794418518.249041,
       "BTCUSD:BREAKOUT": 1794417613.265514,
@@ -980,7 +919,7 @@
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931
     },
-    "shadow_episodes": 185
+    "shadow_episodes": 187
   },
-  "cycle_count": 750
+  "cycle_count": 752
 }
