@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-12 19:58:35 UTC",
+  "updated_utc": "2026-11-12 20:00:13 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 71707.91,
-    "ETHUSD": 2018.27,
-    "SOLUSD": 81.67,
-    "XAUUSD": 3883.47,
-    "EURUSD": 1.10541,
-    "USDJPY": 159.821
+    "BTCUSD": 71699.77,
+    "ETHUSD": 2017.55,
+    "SOLUSD": 81.63,
+    "XAUUSD": 3882.82,
+    "EURUSD": 1.10547,
+    "USDJPY": 159.81
   },
   "active_trades": {},
   "bot_stats": {
@@ -380,7 +380,7 @@
     "crypto_book_pnl": 67.8
   },
   "learned_weights": {
-    "updated_utc": "2026-11-12 19:55:07 UTC",
+    "updated_utc": "2026-11-12 20:00:11 UTC",
     "total_episodes": 263,
     "strategy_stats": {
       "SND": {
@@ -1017,6 +1017,21 @@
         "opened_epoch": 1794513307.529269,
         "tp1_hit": false,
         "peak_r": 0.052
+      },
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 81.64,
+        "sl_price": 81.96356,
+        "sl_dist": 0.32356,
+        "tp1_price": 81.42969,
+        "tp2_price": 81.17084,
+        "opened_epoch": 1794513611.447565,
+        "tp1_hit": false,
+        "peak_r": 0.031
       }
     ],
     "shadow_cooldowns": {
@@ -1029,7 +1044,7 @@
       "SOLUSD:KRONOS": 1794501613.948583,
       "BTCUSD:ICT": 1794512718.326914,
       "SOLUSD:SND": 1794408013.22123,
-      "SOLUSD:ICT": 1794501483.240366,
+      "SOLUSD:ICT": 1794513611.447565,
       "ETHUSD:TREND_PULLBACK": 1794430216.835559,
       "BTCUSD:TREND_PULLBACK": 1794509120.366444,
       "SOLUSD:TREND_PULLBACK": 1794469632.846694,
@@ -1041,5 +1056,5 @@
     },
     "shadow_episodes": 232
   },
-  "cycle_count": 405
+  "cycle_count": 410
 }
