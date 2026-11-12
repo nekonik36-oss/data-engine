@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-12 07:57:22 UTC",
-  "hostname": "runnervmwuk1x",
-  "python_version": "3.12.16",
+  "updated_utc": "2026-11-12 09:59:41 UTC",
+  "hostname": "GB-5CD52876MS",
+  "python_version": "3.14.6",
   "gpu": {
     "torch_installed": false,
     "torch_version": null,
@@ -14,14 +14,14 @@
   "pending_hot_reload": false,
   "execution_mode": "auto",
   "mt5_connected": false,
-  "mt5_error": "No module named 'MetaTrader5'",
+  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9747.33,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73646.7,
-    "SOLUSD": 83.0
+    "BTCUSD": 73491.47,
+    "SOLUSD": 83.15
   },
   "active_trades": {
     "84445474": {
@@ -47,7 +47,7 @@
       "opened_at_utc": "2026-11-12 01:04:34 UTC",
       "tp1_hit": true,
       "partial_pnl": 11.11,
-      "peak_favorable_r": 0.652,
+      "peak_favorable_r": 0.842,
       "be_shield_active": true,
       "pre_tp1_ratchet": true
     }
@@ -382,8 +382,8 @@
     "crypto_book_pnl": 10.68
   },
   "learned_weights": {
-    "updated_utc": "2026-11-12 07:47:12 UTC",
-    "total_episodes": 248,
+    "updated_utc": "2026-11-12 09:59:40 UTC",
+    "total_episodes": 250,
     "strategy_stats": {
       "SND": {
         "trades": 13,
@@ -407,11 +407,11 @@
         "multiplier": 1.082
       },
       "TREND_PULLBACK": {
-        "trades": 41,
-        "wins": 15,
-        "losses": 24,
-        "ema_r": -0.252,
-        "multiplier": 0.937
+        "trades": 43,
+        "wins": 16,
+        "losses": 25,
+        "ema_r": -0.225,
+        "multiplier": 0.944
       },
       "KRONOS": {
         "trades": 80,
@@ -424,9 +424,9 @@
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.989,
       "RANGING:KRONOS": 0.723,
-      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.872,
+      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.863,
       "RANGING:TREND_PULLBACK": 1.011,
-      "TRENDING_DOWN:TREND_PULLBACK": 0.948,
+      "TRENDING_DOWN:TREND_PULLBACK": 0.955,
       "SESSION_SWEEP_WINDOW:ICT": 0.869,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.941,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.809,
@@ -959,32 +959,17 @@
     "live_episodes": 11,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:TREND_PULLBACK",
-        "symbol": "BTCUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "SHORT",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 73561.0,
-        "sl_price": 73722.8342,
-        "sl_dist": 161.8342,
-        "tp1_price": 73455.80777,
-        "tp2_price": 73326.34041,
-        "opened_epoch": 1794469632.208602,
-        "tp1_hit": false,
-        "peak_r": 0.0
-      },
-      {
-        "key": "SOLUSD:TREND_PULLBACK",
+        "key": "SOLUSD:ICT",
         "symbol": "SOLUSD",
-        "strategy_name": "TREND_PULLBACK",
+        "strategy_name": "ICT",
         "direction": "SHORT",
         "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 82.8,
-        "sl_price": 83.03561,
-        "sl_dist": 0.23561,
-        "tp1_price": 82.64685,
-        "tp2_price": 82.45836,
-        "opened_epoch": 1794469632.846694,
+        "entry_price": 83.03,
+        "sl_price": 83.21267,
+        "sl_dist": 0.18267,
+        "tp1_price": 82.91127,
+        "tp2_price": 82.76513,
+        "opened_epoch": 1794477580.072863,
         "tp1_hit": false,
         "peak_r": 0.0
       }
@@ -999,7 +984,7 @@
       "SOLUSD:KRONOS": 1794422105.536884,
       "BTCUSD:ICT": 1794432902.712353,
       "SOLUSD:SND": 1794408013.22123,
-      "SOLUSD:ICT": 1794435610.528205,
+      "SOLUSD:ICT": 1794477580.072863,
       "ETHUSD:TREND_PULLBACK": 1794430216.835559,
       "BTCUSD:TREND_PULLBACK": 1794469632.208602,
       "SOLUSD:TREND_PULLBACK": 1794469632.846694,
@@ -1009,7 +994,7 @@
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931
     },
-    "shadow_episodes": 219
+    "shadow_episodes": 221
   },
-  "cycle_count": 20
+  "cycle_count": 1
 }
