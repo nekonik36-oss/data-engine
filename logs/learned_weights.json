@@ -620,7 +620,7 @@
       "tp2_price": 71418.94476,
       "opened_epoch": 1794513307.529269,
       "tp1_hit": true,
-      "peak_r": 0.656
+      "peak_r": 0.911
     },
     {
       "key": "SOLUSD:ICT",
@@ -635,7 +635,7 @@
       "tp2_price": 81.17084,
       "opened_epoch": 1794513611.447565,
       "tp1_hit": false,
-      "peak_r": 0.525
+      "peak_r": 0.587
     },
     {
       "key": "BTCUSD:TREND_PULLBACK",
@@ -649,8 +649,8 @@
       "tp1_price": 71524.99325,
       "tp2_price": 71383.12649,
       "opened_epoch": 1794513917.684186,
-      "tp1_hit": false,
-      "peak_r": 0.424
+      "tp1_hit": true,
+      "peak_r": 0.689
     }
   ],
   "shadow_cooldowns": {
