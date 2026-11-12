@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-12 10:00:09 UTC",
-  "hostname": "GB-5CD52876MS",
+  "updated_utc": "2026-11-12 16:38:03 UTC",
+  "hostname": "runnervmwuk1x",
   "live_equity": 9747.33,
   "bot_stats": {
-    "total_closed": 29,
-    "wins": 11,
+    "total_closed": 30,
+    "wins": 12,
     "losses": 15,
     "breakevens": 3,
-    "cumulative_pnl": -252.67,
+    "cumulative_pnl": -195.55,
     "history": [
       {
         "ticket": 1078980632,
@@ -327,9 +327,20 @@
         "r_multiple": -0.42,
         "close_reason": "18m/30m Impulse Time-Decay Stop Hit \u23f1\ufe0f\ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-12 01:04:31 UTC"
+      },
+      {
+        "ticket": 84445474,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 2056.24,
+        "exit_price": 2039.27,
+        "net_pnl": 57.12,
+        "r_multiple": 1.17,
+        "close_reason": "Take Profit 2 Target Hit \ud83c\udfaf",
+        "closed_at_utc": "2026-11-12 16:38:01 UTC"
       }
     ],
-    "crypto_book_pnl": 10.68
+    "crypto_book_pnl": 67.8
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -360,9 +371,9 @@
       "net_r": -3.9
     },
     "ETHUSD": {
-      "win_streak": 1,
+      "win_streak": 2,
       "loss_streak": 0,
-      "net_r": -1.11
+      "net_r": 0.06
     },
     "SOLUSD": {
       "win_streak": 0,
@@ -387,23 +398,6 @@
   },
   "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 12:33:22 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1079632418,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "net_pnl": -46.05,
-      "r_multiple": -1.04,
-      "peak_favorable_r": 0.12,
-      "regime": "RANGING",
-      "strategies": [
-        "ICT",
-        "TREND_PULLBACK",
-        "KRONOS"
-      ],
-      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=74056.68)"
-    },
     {
       "timestamp_utc": "2026-11-09 12:49:59 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -721,6 +715,22 @@
       "symbol": "BTCUSD",
       "direction": "SHORT",
       "summary": "Ticket #84391803 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+    },
+    {
+      "timestamp_utc": "2026-11-12 16:38:01 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 84445474,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "net_pnl": 57.12,
+      "r_multiple": 1.17,
+      "peak_favorable_r": 4.55,
+      "regime": "RANGING",
+      "strategies": [
+        "SND",
+        "TREND_PULLBACK"
+      ],
+      "auto_fix_action": "NONE"
     }
   ]
 }
