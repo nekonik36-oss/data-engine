@@ -1,31 +1,28 @@
 {
-  "updated_utc": "2026-11-11 23:22:49 UTC",
-  "hostname": "DESKTOP-8RQUOSU",
-  "python_version": "3.12.10",
+  "updated_utc": "2026-11-12 00:44:24 UTC",
+  "hostname": "runnervmwuk1x",
+  "python_version": "3.12.16",
   "gpu": {
-    "torch_installed": true,
-    "torch_version": "2.11.0+cu128",
-    "cuda_version": "12.8",
-    "cuda_available": true,
-    "gpu_name": "NVIDIA GeForce RTX 5060",
-    "cuda_kernel_ok": true,
-    "cuda_error": null
+    "torch_installed": false,
+    "torch_version": null,
+    "cuda_version": null,
+    "cuda_available": false,
+    "gpu_name": null,
+    "cuda_kernel_ok": false,
+    "cuda_error": "No module named 'torch'"
   },
   "pending_hot_reload": false,
   "execution_mode": "auto",
-  "mt5_connected": true,
-  "mt5_error": null,
+  "mt5_connected": false,
+  "mt5_error": "No module named 'MetaTrader5'",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9767.04,
-  "telegram_configured": true,
-  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
+  "telegram_configured": false,
+  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 73586.01,
-    "ETHUSD": 2042.07,
-    "SOLUSD": 82.73,
-    "XAUUSD": 3983.25,
-    "EURUSD": 1.10967,
-    "USDJPY": 159.628
+    "BTCUSD": 74126.0,
+    "ETHUSD": 2064.06,
+    "SOLUSD": 83.77
   },
   "active_trades": {},
   "bot_stats": {
@@ -921,5 +918,5 @@
     },
     "shadow_episodes": 219
   },
-  "cycle_count": 1775
+  "cycle_count": 1
 }
