@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-12 19:35:01 UTC",
+  "updated_utc": "2026-11-12 19:35:24 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9798.62,
+  "live_equity": 9796.56,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 2012.32,
-    "SOLUSD": 81.59,
-    "XAUUSD": 3881.34,
-    "EURUSD": 1.10551,
-    "USDJPY": 159.838
+    "ETHUSD": 2012.83,
+    "SOLUSD": 81.62,
+    "XAUUSD": 3880.46,
+    "EURUSD": 1.10542,
+    "USDJPY": 159.841
   },
   "active_trades": {
     "1083876139": {
@@ -34,7 +34,7 @@
       "broker_source": "MT5_LIVE",
       "direction": "SHORT",
       "entry_price": 71529.65,
-      "sl_price": 71820.62,
+      "sl_price": 71751.85,
       "initial_sl_price": 72058.69,
       "tp1_price": 71185.774,
       "tp2_price": 70762.542,
@@ -53,7 +53,8 @@
       "scalp_upgraded": true,
       "fast_scalp_upgraded": true,
       "failed_impulse_shield": true,
-      "time_decay_applied": true
+      "time_decay_applied": true,
+      "time_decay_30m": true
     }
   },
   "bot_stats": {
@@ -397,7 +398,7 @@
     "crypto_book_pnl": 67.8
   },
   "learned_weights": {
-    "updated_utc": "2026-11-12 19:23:25 UTC",
+    "updated_utc": "2026-11-12 19:35:22 UTC",
     "total_episodes": 260,
     "strategy_stats": {
       "SND": {
@@ -990,21 +991,6 @@
     "live_episodes": 12,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:BREAKOUT",
-        "symbol": "BTCUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 71621.74,
-        "sl_price": 71848.70216,
-        "sl_dist": 226.96216,
-        "tp1_price": 71474.2146,
-        "tp2_price": 71292.64487,
-        "opened_epoch": 1794509406.8037,
-        "tp1_hit": false,
-        "peak_r": 0.442
-      },
-      {
         "key": "BTCUSD:SND",
         "symbol": "BTCUSD",
         "strategy_name": "SND",
@@ -1042,5 +1028,5 @@
     },
     "shadow_episodes": 230
   },
-  "cycle_count": 330
+  "cycle_count": 331
 }
