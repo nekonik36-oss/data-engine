@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-12 16:40:14 UTC",
+  "updated_utc": "2026-11-12 16:42:55 UTC",
   "hostname": "runnervmwuk1x",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,9 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 71712.66,
-    "ETHUSD": 2004.23,
-    "SOLUSD": 81.32
+    "BTCUSD": 71581.36,
+    "ETHUSD": 2002.73
   },
   "active_trades": {
     "84501614": {
@@ -47,7 +46,8 @@
       ],
       "opened_at_utc": "2026-11-12 16:40:14 UTC",
       "tp1_hit": false,
-      "partial_pnl": 0.0
+      "partial_pnl": 0.0,
+      "peak_favorable_r": 0.089
     }
   },
   "bot_stats": {
@@ -996,7 +996,7 @@
         "tp2_price": 1993.81517,
         "opened_epoch": 1794501482.553154,
         "tp1_hit": true,
-        "peak_r": 0.761
+        "peak_r": 0.765
       },
       {
         "key": "SOLUSD:ICT",
@@ -1051,5 +1051,5 @@
     },
     "shadow_episodes": 223
   },
-  "cycle_count": 5
+  "cycle_count": 10
 }
