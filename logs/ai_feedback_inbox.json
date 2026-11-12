@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-12 22:00:55 UTC",
+  "updated_utc": "2026-11-12 22:01:46 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9807.38,
+  "live_equity": 9803.25,
   "bot_stats": {
-    "total_closed": 31,
+    "total_closed": 32,
     "wins": 12,
     "losses": 15,
-    "breakevens": 4,
-    "cumulative_pnl": -194.05,
+    "breakevens": 5,
+    "cumulative_pnl": -196.75,
     "history": [
       {
         "ticket": 1078980632,
@@ -349,6 +349,17 @@
         "r_multiple": 0.03,
         "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-12 19:41:46 UTC"
+      },
+      {
+        "ticket": 1083929221,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 71558.85,
+        "exit_price": 71550.25,
+        "net_pnl": -2.7,
+        "r_multiple": -0.06,
+        "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
+        "closed_at_utc": "2026-11-12 22:01:31 UTC"
       }
     ],
     "crypto_book_pnl": 67.8
@@ -378,8 +389,8 @@
   "symbol_streaks": {
     "BTCUSD": {
       "win_streak": 0,
-      "loss_streak": 4,
-      "net_r": -3.87
+      "loss_streak": 5,
+      "net_r": -3.93
     },
     "ETHUSD": {
       "win_streak": 2,
@@ -409,22 +420,6 @@
   },
   "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 13:01:18 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1079469593,
-      "symbol": "USDJPY",
-      "direction": "SHORT",
-      "net_pnl": 1.77,
-      "r_multiple": 0.04,
-      "peak_favorable_r": 0.35,
-      "regime": "SESSION_SWEEP_WINDOW",
-      "strategies": [
-        "BREAKOUT",
-        "KRONOS"
-      ],
-      "auto_fix_action": "NONE"
-    },
     {
       "timestamp_utc": "2026-11-09 13:10:06 UTC",
       "event": "TRUE_TREND_LOSS_CONFIRMED",
@@ -740,6 +735,22 @@
       "strategies": [
         "SND",
         "BREAKOUT"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-12 22:01:31 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1083929221,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "net_pnl": -2.7,
+      "r_multiple": -0.06,
+      "peak_favorable_r": 0.17,
+      "regime": "RANGING",
+      "strategies": [
+        "TREND_PULLBACK",
+        "KRONOS"
       ],
       "auto_fix_action": "NONE"
     }
