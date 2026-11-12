@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-12 23:20:18 UTC",
-  "total_episodes": 279,
+  "updated_utc": "2026-11-12 23:23:07 UTC",
+  "total_episodes": 280,
   "strategy_stats": {
     "SND": {
       "trades": 17,
@@ -10,11 +10,11 @@
       "multiplier": 0.991
     },
     "ICT": {
-      "trades": 82,
+      "trades": 83,
       "wins": 49,
-      "losses": 32,
-      "ema_r": 0.215,
-      "multiplier": 1.054
+      "losses": 33,
+      "ema_r": 0.118,
+      "multiplier": 1.029
     },
     "BREAKOUT": {
       "trades": 72,
@@ -47,7 +47,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.888,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.932,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.809,
-    "TRENDING_DOWN:ICT": 1.041,
+    "TRENDING_DOWN:ICT": 1.025,
     "TRENDING_DOWN:KRONOS": 1.065,
     "RANGING:BREAKOUT": 0.979,
     "RANGING:SND": 1.064,
@@ -624,21 +624,6 @@
   "live_episodes": 14,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:ICT",
-      "symbol": "BTCUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 71460.01,
-      "sl_price": 71302.79798,
-      "sl_dist": 157.21202,
-      "tp1_price": 71562.19781,
-      "tp2_price": 71687.96743,
-      "opened_epoch": 1794524717.866695,
-      "tp1_hit": false,
-      "peak_r": 0.509
-    },
-    {
       "key": "SOLUSD:BREAKOUT",
       "symbol": "SOLUSD",
       "strategy_name": "BREAKOUT",
@@ -681,7 +666,7 @@
       "tp2_price": 71106.78346,
       "opened_epoch": 1794525615.821161,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.219
     },
     {
       "key": "SOLUSD:ICT",
@@ -719,5 +704,5 @@
     "XAUUSD:SND": 1794408307.296196,
     "EURUSD:ICT": 1794412816.194931
   },
-  "shadow_episodes": 247
+  "shadow_episodes": 248
 }
