@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-12 18:48:52 UTC",
+  "updated_utc": "2026-11-12 18:50:28 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 71657.11,
-    "ETHUSD": 2011.74,
-    "SOLUSD": 81.24,
-    "XAUUSD": 3881.24,
-    "EURUSD": 1.10505,
-    "USDJPY": 159.804
+    "BTCUSD": 71594.22,
+    "ETHUSD": 2009.65,
+    "SOLUSD": 81.25,
+    "XAUUSD": 3880.69,
+    "EURUSD": 1.1050200000000001,
+    "USDJPY": 159.8
   },
   "active_trades": {},
   "bot_stats": {
@@ -369,7 +369,7 @@
     "crypto_book_pnl": 67.8
   },
   "learned_weights": {
-    "updated_utc": "2026-11-12 18:45:20 UTC",
+    "updated_utc": "2026-11-12 18:50:06 UTC",
     "total_episodes": 257,
     "strategy_stats": {
       "SND": {
@@ -974,7 +974,7 @@
         "tp2_price": 2009.22157,
         "opened_epoch": 1794508206.183858,
         "tp1_hit": true,
-        "peak_r": 1.207
+        "peak_r": 1.396
       },
       {
         "key": "BTCUSD:TREND_PULLBACK",
@@ -988,13 +988,28 @@
         "tp1_price": 71655.63524,
         "tp2_price": 71477.95553,
         "opened_epoch": 1794509120.366444,
+        "tp1_hit": true,
+        "peak_r": 0.927
+      },
+      {
+        "key": "BTCUSD:BREAKOUT",
+        "symbol": "BTCUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 71621.74,
+        "sl_price": 71848.70216,
+        "sl_dist": 226.96216,
+        "tp1_price": 71474.2146,
+        "tp2_price": 71292.64487,
+        "opened_epoch": 1794509406.8037,
         "tp1_hit": false,
-        "peak_r": 0.643
+        "peak_r": 0.121
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794501482.553154,
-      "BTCUSD:BREAKOUT": 1794436225.063085,
+      "BTCUSD:BREAKOUT": 1794509406.8037,
       "BTCUSD:KRONOS": 1794432902.715596,
       "ETHUSD:BREAKOUT": 1794508206.182859,
       "ETHUSD:KRONOS": 1794508206.183858,
@@ -1014,5 +1029,5 @@
     },
     "shadow_episodes": 227
   },
-  "cycle_count": 180
+  "cycle_count": 185
 }
