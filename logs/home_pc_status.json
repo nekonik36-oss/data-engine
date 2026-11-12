@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-12 19:04:54 UTC",
+  "updated_utc": "2026-11-12 19:05:21 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,14 +20,40 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 71521.42,
-    "ETHUSD": 2009.29,
-    "SOLUSD": 81.28,
-    "XAUUSD": 3876.06,
-    "EURUSD": 1.10476,
-    "USDJPY": 159.852
+    "BTCUSD": 71540.07,
+    "ETHUSD": 2010.24,
+    "SOLUSD": 81.32,
+    "XAUUSD": 3877.36,
+    "EURUSD": 1.10482,
+    "USDJPY": 159.853
   },
-  "active_trades": {},
+  "active_trades": {
+    "1083876139": {
+      "ticket": 1083876139,
+      "symbol": "BTCUSD",
+      "broker_symbol": "BTCUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 71529.65,
+      "sl_price": 72058.69,
+      "initial_sl_price": 72058.69,
+      "tp1_price": 71185.77,
+      "tp2_price": 70762.54,
+      "volume": 0.09,
+      "initial_volume": 0.09,
+      "risk_usd": 47.61,
+      "confluence_score": 100.0,
+      "regime": "RANGING",
+      "agreeing_strategies": [
+        "SND",
+        "BREAKOUT"
+      ],
+      "opened_at_utc": "2026-11-12 19:05:15 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0,
+      "scalp_upgraded": true
+    }
+  },
   "bot_stats": {
     "total_closed": 30,
     "wins": 12,
@@ -369,7 +395,7 @@
     "crypto_book_pnl": 67.8
   },
   "learned_weights": {
-    "updated_utc": "2026-11-12 19:00:28 UTC",
+    "updated_utc": "2026-11-12 19:05:18 UTC",
     "total_episodes": 259,
     "strategy_stats": {
       "SND": {
@@ -975,6 +1001,36 @@
         "opened_epoch": 1794509406.8037,
         "tp1_hit": false,
         "peak_r": 0.442
+      },
+      {
+        "key": "BTCUSD:SND",
+        "symbol": "BTCUSD",
+        "strategy_name": "SND",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 71526.44,
+        "sl_price": 71755.67689,
+        "sl_dist": 229.23689,
+        "tp1_price": 71377.43602,
+        "tp2_price": 71194.04651,
+        "opened_epoch": 1794510315.537447,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:SND",
+        "symbol": "ETHUSD",
+        "strategy_name": "SND",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 2009.56,
+        "sl_price": 2017.59561,
+        "sl_dist": 8.03561,
+        "tp1_price": 2004.33685,
+        "tp2_price": 1997.90836,
+        "opened_epoch": 1794510318.622883,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -991,13 +1047,13 @@
       "ETHUSD:TREND_PULLBACK": 1794430216.835559,
       "BTCUSD:TREND_PULLBACK": 1794509120.366444,
       "SOLUSD:TREND_PULLBACK": 1794469632.846694,
-      "ETHUSD:SND": 1794407709.480985,
-      "BTCUSD:SND": 1794391803.182065,
+      "ETHUSD:SND": 1794510318.622883,
+      "BTCUSD:SND": 1794510315.537447,
       "XAUUSD:BREAKOUT": 1794409105.08686,
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931
     },
     "shadow_episodes": 229
   },
-  "cycle_count": 230
+  "cycle_count": 231
 }

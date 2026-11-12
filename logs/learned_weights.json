@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-12 19:00:28 UTC",
+  "updated_utc": "2026-11-12 19:05:18 UTC",
   "total_episodes": 259,
   "strategy_stats": {
     "SND": {
@@ -605,6 +605,36 @@
       "opened_epoch": 1794509406.8037,
       "tp1_hit": false,
       "peak_r": 0.442
+    },
+    {
+      "key": "BTCUSD:SND",
+      "symbol": "BTCUSD",
+      "strategy_name": "SND",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 71526.44,
+      "sl_price": 71755.67689,
+      "sl_dist": 229.23689,
+      "tp1_price": 71377.43602,
+      "tp2_price": 71194.04651,
+      "opened_epoch": 1794510315.537447,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "ETHUSD:SND",
+      "symbol": "ETHUSD",
+      "strategy_name": "SND",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 2009.56,
+      "sl_price": 2017.59561,
+      "sl_dist": 8.03561,
+      "tp1_price": 2004.33685,
+      "tp2_price": 1997.90836,
+      "opened_epoch": 1794510318.622883,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -621,8 +651,8 @@
     "ETHUSD:TREND_PULLBACK": 1794430216.835559,
     "BTCUSD:TREND_PULLBACK": 1794509120.366444,
     "SOLUSD:TREND_PULLBACK": 1794469632.846694,
-    "ETHUSD:SND": 1794407709.480985,
-    "BTCUSD:SND": 1794391803.182065,
+    "ETHUSD:SND": 1794510318.622883,
+    "BTCUSD:SND": 1794510315.537447,
     "XAUUSD:BREAKOUT": 1794409105.08686,
     "XAUUSD:SND": 1794408307.296196,
     "EURUSD:ICT": 1794412816.194931
