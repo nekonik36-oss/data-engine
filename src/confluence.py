@@ -359,11 +359,25 @@ class ConfluenceEngine:
                     confluence_score = min(100.0, 88.0 * avg_learned_m + synergy_bonus)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 else:
-                    # Path B: Multi-Strategy Consensus from SND (100% RL WR), BREAKOUT (58.3% RL WR), ICT (55.2% RL WR)
+                    # Path B: Multi-Strategy Consensus from Top RL Leaders:
+                    #   - >=2 PA modules (SND/ICT/BREAKOUT) agreeing, OR
+                    #   - BREAKOUT (1.082x, +0.328R EMA) or ICT (1.039x, +0.155R EMA) confirmed by KRONOS (1.038x)
                     if any(v.confidence >= 0.72 for v in opposing_pa):
                         return None
                     strong_agree = [v for v in agreeing_pa if v.confidence >= 0.75]
-                    if len(strong_agree) < 2:
+                    kronos_strong = (
+                        kronos_fc is not None
+                        and kronos_fc.direction == direction
+                        and kronos_fc.confidence >= 0.40
+                        and regime not in {MarketRegime.RANGING, MarketRegime.SESSION_SWEEP_WINDOW}
+                    )
+                    top_pa_with_kronos = (
+                        len(strong_agree) == 1
+                        and strong_agree[0].strategy_name in {"BREAKOUT", "ICT"}
+                        and strong_agree[0].confidence >= 0.78
+                        and kronos_strong
+                    )
+                    if len(strong_agree) < 2 and not top_pa_with_kronos:
                         return None
                     e60, e240 = ind.ema60[idx], ind.ema240[idx]
                     if direction == Direction.LONG and e60 < e240:
@@ -381,7 +395,8 @@ class ConfluenceEngine:
                         * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
                         for v in agreeing_pa
                     )
-                    confluence_score = min(100.0, best_pa_conf * 100.0 + 12.0)
+                    synergy_b = 12.0 if len(agreeing_pa) >= 2 else 8.0
+                    confluence_score = min(100.0, best_pa_conf * 100.0 + synergy_b)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
 
             elif symbol == "ETHUSD":
@@ -462,7 +477,37 @@ class ConfluenceEngine:
                     confluence_score = min(100.0, best_pa_conf * 100.0 + synergy)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 else:
-                    return None
+                    # Path C: H1-Trend BREAKOUT (1.082x, +0.328R EMA) confirmed by KRONOS (1.038x)
+                    brk_votes = [
+                        v
+                        for v in pa_votes
+                        if v.strategy_name == "BREAKOUT" and v.confidence >= 0.78
+                    ]
+                    if not brk_votes:
+                        return None
+                    direction = brk_votes[0].direction
+                    if any(v.direction != direction and v.confidence >= 0.72 for v in pa_votes):
+                        return None
+                    e60, e240 = ind.ema60[idx], ind.ema240[idx]
+                    if direction == Direction.LONG and e60 < e240:
+                        return None
+                    if direction == Direction.SHORT and e60 > e240:
+                        return None
+                    if (
+                        kronos_fc is None
+                        or kronos_fc.direction != direction
+                        or kronos_fc.confidence < 0.40
+                        or regime in {MarketRegime.RANGING, MarketRegime.SESSION_SWEEP_WINDOW}
+                    ):
+                        return None
+                    agreeing_pa = [v for v in pa_votes if v.direction == direction]
+                    best_pa_conf = max(
+                        v.confidence
+                        * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
+                        for v in agreeing_pa
+                    )
+                    confluence_score = min(100.0, best_pa_conf * 100.0 + 8.0)
+                    threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 if kronos_fc is not None:
                     if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
                         return None
