@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-12 22:54:00 UTC",
+  "updated_utc": "2026-11-12 22:55:16 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 71447.54,
-    "ETHUSD": 2014.21,
-    "SOLUSD": 81.46,
+    "BTCUSD": 71443.0,
+    "ETHUSD": 2013.68,
+    "SOLUSD": 81.45,
     "XAUUSD": 3877.34,
-    "EURUSD": 1.1053,
-    "USDJPY": 159.823
+    "EURUSD": 1.10531,
+    "USDJPY": 159.824
   },
   "active_trades": {},
   "bot_stats": {
@@ -391,8 +391,8 @@
     "crypto_book_pnl": 67.8
   },
   "learned_weights": {
-    "updated_utc": "2026-11-12 22:41:11 UTC",
-    "total_episodes": 275,
+    "updated_utc": "2026-11-12 22:55:14 UTC",
+    "total_episodes": 276,
     "strategy_stats": {
       "SND": {
         "trades": 17,
@@ -402,11 +402,11 @@
         "multiplier": 0.991
       },
       "ICT": {
-        "trades": 80,
+        "trades": 81,
         "wins": 48,
-        "losses": 31,
-        "ema_r": 0.227,
-        "multiplier": 1.057
+        "losses": 32,
+        "ema_r": 0.194,
+        "multiplier": 1.048
       },
       "BREAKOUT": {
         "trades": 72,
@@ -439,7 +439,7 @@
       "SESSION_SWEEP_WINDOW:ICT": 0.888,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.932,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.809,
-      "TRENDING_DOWN:ICT": 1.037,
+      "TRENDING_DOWN:ICT": 1.034,
       "TRENDING_DOWN:KRONOS": 1.058,
       "RANGING:BREAKOUT": 0.979,
       "RANGING:SND": 1.064,
@@ -1016,21 +1016,6 @@
     "live_episodes": 14,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:ICT",
-        "symbol": "BTCUSD",
-        "strategy_name": "ICT",
-        "direction": "LONG",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 71473.45,
-        "sl_price": 71316.20841,
-        "sl_dist": 157.24159,
-        "tp1_price": 71575.65703,
-        "tp2_price": 71701.45031,
-        "opened_epoch": 1794522309.893217,
-        "tp1_hit": false,
-        "peak_r": 0.223
-      },
-      {
         "key": "BTCUSD:KRONOS",
         "symbol": "BTCUSD",
         "strategy_name": "KRONOS",
@@ -1081,7 +1066,7 @@
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931
     },
-    "shadow_episodes": 243
+    "shadow_episodes": 244
   },
-  "cycle_count": 965
+  "cycle_count": 969
 }
