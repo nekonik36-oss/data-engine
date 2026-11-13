@@ -152,6 +152,14 @@ class AdaptiveLearner:
             f"{s}={float((s_stats.get(s) or {}).get('multiplier', 1.0)):.2f}x"
             for s in STRATEGIES
         ]
+        df_info = s_stats.get("DERIV_FLOW")
+        if isinstance(df_info, dict):
+            df_tr = int(df_info.get("trades", 0))
+            df_mult = float(df_info.get("multiplier", 1.0))
+            tag = "LIVE" if df_tr >= 30 else f"Shadow {df_tr}/30"
+            parts.append(f"DERIV_FLOW={df_mult:.2f}x[{tag}]")
+        else:
+            parts.append("DERIV_FLOW=Shadow[0/30]")
         return f"Dual-Speed RL Active ({ep} total / {sh_ep} shadow episodes | {', '.join(parts)})"
 
     def record_trade_outcome(

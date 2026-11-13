@@ -31,6 +31,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from src.adaptive_learner import AdaptiveLearner
 from src.config import ALL_INSTRUMENTS, CRYPTO_INSTRUMENTS, INSTRUMENTS, InstrumentProfile
 from src.crypto_exchange import CryptoLiveFeed
+from src.fundamental_guard import MacroNewsShield
 from src.models import Candle, Direction, SetupSignal
 from src.telegram_notifier import TelegramNotifier
 
@@ -52,6 +53,7 @@ class MT5Connector:
         self.terminal_path: str | None = None
         self.telegram = TelegramNotifier()
         self.crypto_feed = CryptoLiveFeed()
+        self.news_shield = MacroNewsShield()
         self.learner = learner or AdaptiveLearner()
         self.active_trades: Dict[str, Dict[str, Any]] = self._load_json(ACTIVE_TRADES_PATH, {})
         self.stats: Dict[str, Any] = self._load_json(
@@ -495,6 +497,14 @@ class MT5Connector:
             )
 
         is_crypto_sig = signal.symbol.upper() in CRYPTO_INSTRUMENTS
+
+        # 1a. Tier-1 Red-Folder Macro News Blackout Shield (-20m / +15m around CPI, PPI, NFP, FOMC, etc.)
+        news_blocked, news_reason = self.news_shield.is_blackout_active(signal.symbol)
+        if news_blocked:
+            return (
+                f"[MACRO NEWS SHIELD] Skipping {signal.symbol} {signal.direction.value}: "
+                f"{news_reason}. Protecting equity from macro whipsaw."
+            )
 
         # 1b. Correlated Crypto Risk Cap: Never open a 2nd Crypto trade while another Crypto trade is unprotected (< BE Shield)
         if is_crypto_sig:

@@ -4,8 +4,10 @@ from __future__ import annotations
 
 from datetime import datetime
 import math
+from typing import Optional, Tuple
 
 from src.config import EngineConfig, InstrumentProfile
+from src.fundamental_guard import MacroNewsShield
 
 
 class RiskGuard:
@@ -15,12 +17,19 @@ class RiskGuard:
       2. Dynamic lot size calculation based on exact Stop Loss distance and instrument contract spec.
       3. Daily max drawdown circuit breaker (default 2.0% daily loss lock).
       4. Live bid-ask spread guard.
+      5. Tier-1 Red-Folder Macro News Blackout Shield (-20m / +15m around CPI, PPI, NFP, FOMC, etc.).
     """
 
-    def __init__(self, config: EngineConfig) -> None:
+    def __init__(self, config: EngineConfig, allow_network_news: bool = True) -> None:
         self.config = config
         self.daily_realized_pnl_usd: float = 0.0
         self.current_day: str = ""
+        self.news_shield = MacroNewsShield(allow_network=allow_network_news)
+
+    def is_news_blackout(
+        self, symbol: str, now_utc: Optional[datetime] = None
+    ) -> Tuple[bool, str]:
+        return self.news_shield.is_blackout_active(symbol, now_utc=now_utc)
 
     def update_day(self, ts: datetime) -> None:
         day_str = ts.strftime("%Y-%m-%d")

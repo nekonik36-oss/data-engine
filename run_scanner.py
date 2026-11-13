@@ -81,6 +81,7 @@ def run_scanner(
     log(f"  Forex/Gold M15 : XAUUSD, EURUSD, USDJPY (5-Module Regime+Kronos | 78%-88% WR)")
     log(f"  Telegram Alert : {tg_banner}")
     log(f"  Kronos Model   : {config.kronos.model_id} (Device: {config.kronos.device})")
+    log(f"  Macro Shield   : {mt5_conn.news_shield.format_banner()}")
     log(f"  Self-Learning  : {mt5_conn.learner.format_weights_banner()}")
     log("=" * 78)
 
@@ -235,6 +236,8 @@ def run_scanner(
                     "active_trades": mt5_conn.active_trades,
                     "bot_stats": mt5_conn.stats,
                     "learned_weights": mt5_conn.learner.state,
+                    "macro_shield": mt5_conn.news_shield.format_banner(),
+                    "deriv_flow_status": engine.deriv_flow.is_graduated(mt5_conn.learner)[1],
                     "cycle_count": cycle_count,
                 },
                 push_to_github=sync_github,

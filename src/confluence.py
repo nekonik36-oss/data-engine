@@ -14,6 +14,7 @@ from typing import Dict, List, Optional, Sequence, Set
 
 from src.adaptive_learner import AdaptiveLearner
 from src.config import ALL_INSTRUMENTS, EngineConfig, INSTRUMENTS, InstrumentProfile
+from src.fundamental_guard import CryptoDerivativesFlow
 from src.indicators import (
     compute_adx,
     compute_atr,
@@ -97,6 +98,7 @@ class ConfluenceEngine:
         self.breakout = SessionBreakoutStrategy()
         self.trend_pullback = TrendPullbackStrategy()
         self.kronos = KronosForecaster(self.config.kronos)
+        self.deriv_flow = CryptoDerivativesFlow()
 
     def precompute(self, candles: Sequence[Candle]) -> PrecomputedSeries:
         return PrecomputedSeries(candles)
@@ -237,6 +239,28 @@ class ConfluenceEngine:
                     )
                 )
 
+        deriv_vote: Optional[StrategyVote] = None
+        shadow_regime = regime.value
+        sh_sl_dist = max(
+            1.50 * cur_atr,
+            (curr.close * 0.0022) if profile.is_crypto else (1.50 * cur_atr),
+        )
+        if record_shadow and use_regime_gate:
+            in_news_window, _ = self.risk_guard.is_news_blackout(symbol, now_utc=curr.timestamp)
+            if in_news_window:
+                shadow_regime = "MACRO_NEWS_WINDOW"
+            if profile.is_crypto:
+                deriv_vote = self.deriv_flow.evaluate_vote(symbol)
+                if deriv_vote.direction != Direction.NEUTRAL and deriv_vote.confidence >= 0.65:
+                    self.learner.open_shadow_trade(
+                        symbol=symbol,
+                        strategy_name="DERIV_FLOW",
+                        direction=deriv_vote.direction.value,
+                        regime=shadow_regime,
+                        entry_price=curr.close,
+                        sl_dist=sh_sl_dist,
+                    )
+
         pa_votes = [
             v
             for v in votes
@@ -251,17 +275,13 @@ class ConfluenceEngine:
             votes.append(k_vote)
 
         if record_shadow and use_regime_gate:
-            sh_sl_dist = max(
-                1.50 * cur_atr,
-                (curr.close * 0.0022) if profile.is_crypto else (1.50 * cur_atr),
-            )
             for sv in votes:
                 if sv.direction != Direction.NEUTRAL and sv.confidence >= 0.65:
                     self.learner.open_shadow_trade(
                         symbol=symbol,
                         strategy_name=sv.strategy_name,
                         direction=sv.direction.value,
-                        regime=regime.value,
+                        regime=shadow_regime,
                         entry_price=curr.close,
                         sl_dist=sh_sl_dist,
                     )
@@ -586,6 +606,22 @@ class ConfluenceEngine:
                     max(self.config.min_confluence_score, 78.0)
                     + self.learner.get_symbol_threshold_offset(symbol)
                 )
+
+        # Shadow-First Graduation Gate for Crypto Perpetual Derivatives Flow (`DERIV_FLOW`):
+        # Strictly 0.0 live weight until >= 30 shadow episodes with >= 55% WR and >= +0.05R EMA.
+        if deriv_vote is not None:
+            graduated, _ = self.deriv_flow.is_graduated(self.learner)
+            if graduated:
+                votes.append(deriv_vote)
+                if deriv_vote.direction == direction and deriv_vote.confidence >= 0.65:
+                    d_mult = self.learner.get_strategy_multiplier("DERIV_FLOW", regime.value)
+                    confluence_score = min(100.0, confluence_score + 3.5 * d_mult)
+                elif (
+                    deriv_vote.direction != Direction.NEUTRAL
+                    and deriv_vote.direction != direction
+                    and deriv_vote.confidence >= 0.72
+                ):
+                    confluence_score -= 4.0
 
         if confluence_score < threshold:
             return None

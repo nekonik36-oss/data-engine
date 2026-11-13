@@ -142,10 +142,97 @@ def test_signal_card_rendering() -> None:
     assert "+$45.00 USD (+3.00R)" in closed_html
 
 
+def test_macro_news_shield_and_shadow_first_deriv_flow() -> None:
+    from datetime import datetime, timezone
+    from pathlib import Path
+    import tempfile
+
+    from src.adaptive_learner import AdaptiveLearner
+    from src.fundamental_guard import CryptoDerivativesFlow, MacroNewsShield
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        shield = MacroNewsShield(
+            pre_minutes=20.0,
+            post_minutes=15.0,
+            cache_path=Path(tmpdir) / "cal.json",
+            allow_network=False,
+        )
+        shield.set_events_for_testing(
+            [
+                {
+                    "title": "Core PPI m/m",
+                    "country": "USD",
+                    "date": "2026-11-13T08:30:00-05:00",  # 13:30 UTC
+                    "impact": "High",
+                },
+                {
+                    "title": "ECB Press Conference",
+                    "country": "EUR",
+                    "date": "2026-11-13T15:00:00+00:00",
+                    "impact": "High",
+                },
+            ]
+        )
+
+        # 13:15 UTC (15m before USD Core PPI) -> blocks BTCUSD, XAUUSD, EURUSD
+        t_pre = datetime(2026, 11, 13, 13, 15, tzinfo=timezone.utc)
+        assert shield.is_blackout_active("BTCUSD", now_utc=t_pre)[0] is True
+        assert shield.is_blackout_active("XAUUSD", now_utc=t_pre)[0] is True
+        assert shield.is_blackout_active("EURUSD", now_utc=t_pre)[0] is True
+
+        # 13:50 UTC (20m after USD Core PPI) -> blackout cleared
+        t_after = datetime(2026, 11, 13, 13, 50, tzinfo=timezone.utc)
+        assert shield.is_blackout_active("BTCUSD", now_utc=t_after)[0] is False
+
+        # 14:50 UTC (10m before EUR event) -> blocks EURUSD, does NOT block BTCUSD or USDJPY
+        t_eur = datetime(2026, 11, 13, 14, 50, tzinfo=timezone.utc)
+        assert shield.is_blackout_active("EURUSD", now_utc=t_eur)[0] is True
+        assert shield.is_blackout_active("BTCUSD", now_utc=t_eur)[0] is False
+        assert shield.is_blackout_active("USDJPY", now_utc=t_eur)[0] is False
+
+        # Test CryptoDerivativesFlow deterministic scoring & Shadow-First graduation gate
+        bear_vote = CryptoDerivativesFlow.score_snapshot(
+            {
+                "source": "binance_fapi",
+                "funding_rate": 0.00038,
+                "basis_bps": -4.2,
+                "long_account_pct": 0.75,
+                "taker_buy_sell_ratio": 0.85,
+            }
+        )
+        assert bear_vote.direction == Direction.SHORT
+        assert bear_vote.confidence >= 0.70
+
+        # Buyer taker aggression (>1.05) must cancel premature contrarian shorts
+        blocked_short = CryptoDerivativesFlow.score_snapshot(
+            {
+                "source": "binance_fapi",
+                "funding_rate": 0.00038,
+                "basis_bps": 2.0,
+                "long_account_pct": 0.75,
+                "taker_buy_sell_ratio": 1.12,
+            }
+        )
+        assert blocked_short.direction != Direction.SHORT
+
+        learner = AdaptiveLearner(path=Path(tmpdir) / "weights.json")
+        assert CryptoDerivativesFlow.is_graduated(learner)[0] is False
+
+        # Feed 30 realistic interleaved shadow episodes (20W / 10L = 66.7% WR, >+0.05R EMA) -> graduates automatically
+        for _ in range(10):
+            learner.record_trade_outcome("BTCUSD", ["DERIV_FLOW"], 0.85, "TRENDING_DOWN", is_shadow=True)
+            learner.record_trade_outcome("BTCUSD", ["DERIV_FLOW"], 0.85, "TRENDING_DOWN", is_shadow=True)
+            learner.record_trade_outcome("BTCUSD", ["DERIV_FLOW"], -0.55, "TRENDING_DOWN", is_shadow=True)
+        assert CryptoDerivativesFlow.is_graduated(learner)[0] is True
+        # Existing 5 strategy counts remain 0 (100% isolated)
+        assert learner.state["strategy_stats"]["ICT"]["trades"] == 0
+
+
 if __name__ == "__main__":
     test_causal_indicators_have_no_lookahead()
     test_risk_guard_lot_sizing_across_pairs()
     test_all_five_strategy_modules_and_tournament()
     test_signal_card_rendering()
-    print("[PASS] All 4 test suites passed successfully!")
+    test_macro_news_shield_and_shadow_first_deriv_flow()
+    print("[PASS] All 5 test suites passed successfully!")
 
