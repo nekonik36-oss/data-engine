@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 07:00:20 UTC",
+  "updated_utc": "2026-11-13 07:01:16 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 69090.39,
-    "ETHUSD": 1940.18,
-    "SOLUSD": 80.22
+    "BTCUSD": 69292.06,
+    "ETHUSD": 1943.59,
+    "SOLUSD": 80.37
   },
   "active_trades": {},
   "bot_stats": {
@@ -399,8 +399,8 @@
     "crypto_book_pnl": 90.07
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 06:55:39 UTC",
-    "total_episodes": 313,
+    "updated_utc": "2026-11-13 07:01:13 UTC",
+    "total_episodes": 314,
     "strategy_stats": {
       "SND": {
         "trades": 17,
@@ -438,11 +438,11 @@
         "multiplier": 1.106
       },
       "DERIV_FLOW": {
-        "trades": 14,
+        "trades": 15,
         "wins": 11,
-        "losses": 3,
-        "ema_r": 0.245,
-        "multiplier": 1.061
+        "losses": 4,
+        "ema_r": 0.145,
+        "multiplier": 1.036
       }
     },
     "regime_strategy_multipliers": {
@@ -466,7 +466,7 @@
       "TRENDING_UP:BREAKOUT": 0.973,
       "TRENDING_UP:TREND_PULLBACK": 1.004,
       "RANGING:DERIV_FLOW": 0.991,
-      "TRENDING_DOWN:DERIV_FLOW": 1.106
+      "TRENDING_DOWN:DERIV_FLOW": 1.09
     },
     "symbol_streaks": {
       "BTCUSD": {
@@ -1049,21 +1049,6 @@
     "live_episodes": 15,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:DERIV_FLOW",
-        "symbol": "BTCUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 68918.01,
-        "sl_price": 69261.64189,
-        "sl_dist": 343.63189,
-        "tp1_price": 68694.64927,
-        "tp2_price": 68419.74377,
-        "opened_epoch": 1794552576.015026,
-        "tp1_hit": false,
-        "peak_r": 0.271
-      },
-      {
         "key": "ETHUSD:DERIV_FLOW",
         "symbol": "ETHUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1102,9 +1087,9 @@
       "BTCUSD:DERIV_FLOW": 1794552576.015026,
       "ETHUSD:DERIV_FLOW": 1794552577.010543
     },
-    "shadow_episodes": 280
+    "shadow_episodes": 281
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 6h 29m)",
-  "deriv_flow_status": "Shadow Incubation (14/30 eps, 79% WR, +0.24R)",
-  "cycle_count": 405
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 6h 28m)",
+  "deriv_flow_status": "Shadow Incubation (15/30 eps, 73% WR, +0.14R)",
+  "cycle_count": 407
 }
