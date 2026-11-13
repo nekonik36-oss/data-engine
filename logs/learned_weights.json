@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-13 05:57:43 UTC",
-  "total_episodes": 304,
+  "updated_utc": "2026-11-13 05:58:16 UTC",
+  "total_episodes": 305,
   "strategy_stats": {
     "SND": {
       "trades": 17,
@@ -38,11 +38,11 @@
       "multiplier": 1.079
     },
     "DERIV_FLOW": {
-      "trades": 12,
-      "wins": 10,
+      "trades": 13,
+      "wins": 11,
       "losses": 2,
-      "ema_r": 0.344,
-      "multiplier": 1.086
+      "ema_r": 0.353,
+      "multiplier": 1.088
     }
   },
   "regime_strategy_multipliers": {
@@ -66,7 +66,7 @@
     "TRENDING_UP:BREAKOUT": 0.973,
     "TRENDING_UP:TREND_PULLBACK": 1.004,
     "RANGING:DERIV_FLOW": 0.991,
-    "TRENDING_DOWN:DERIV_FLOW": 1.115
+    "TRENDING_DOWN:DERIV_FLOW": 1.122
   },
   "symbol_streaks": {
     "BTCUSD": {
@@ -647,23 +647,7 @@
     }
   ],
   "live_episodes": 15,
-  "active_shadow_trades": [
-    {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 78.86,
-      "sl_price": 79.35475,
-      "sl_dist": 0.49475,
-      "tp1_price": 78.53841,
-      "tp2_price": 78.14261,
-      "opened_epoch": 1794548774.605331,
-      "tp1_hit": true,
-      "peak_r": 1.415
-    }
-  ],
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794524416.079263,
     "BTCUSD:BREAKOUT": 1794509406.8037,
@@ -687,5 +671,5 @@
     "BTCUSD:DERIV_FLOW": 1794548772.53335,
     "ETHUSD:DERIV_FLOW": 1794544401.974698
   },
-  "shadow_episodes": 271
+  "shadow_episodes": 272
 }
