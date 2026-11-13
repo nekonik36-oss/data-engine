@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 04:59:16 UTC",
+  "updated_utc": "2026-11-13 05:01:25 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 68603.05,
-    "ETHUSD": 1926.63,
-    "SOLUSD": 78.42
+    "BTCUSD": 68429.73,
+    "ETHUSD": 1921.86,
+    "SOLUSD": 78.31
   },
   "active_trades": {},
   "bot_stats": {
@@ -1060,8 +1060,8 @@
         "tp1_price": 1920.82128,
         "tp2_price": 1908.4044,
         "opened_epoch": 1794544401.974698,
-        "tp1_hit": false,
-        "peak_r": 0.535
+        "tp1_hit": true,
+        "peak_r": 0.751
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1075,8 +1075,8 @@
         "tp1_price": 68383.55681,
         "tp2_price": 68074.38366,
         "opened_epoch": 1794545327.081715,
-        "tp1_hit": false,
-        "peak_r": 0.116
+        "tp1_hit": true,
+        "peak_r": 0.687
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1091,7 +1091,7 @@
         "tp2_price": 77.39361,
         "opened_epoch": 1794545328.999413,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.098
       }
     ],
     "shadow_cooldowns": {
@@ -1119,7 +1119,7 @@
     },
     "shadow_episodes": 265
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 8h 30m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 8h 28m)",
   "deriv_flow_status": "Shadow Incubation (8/30 eps, 88% WR, +0.32R)",
-  "cycle_count": 195
+  "cycle_count": 200
 }
