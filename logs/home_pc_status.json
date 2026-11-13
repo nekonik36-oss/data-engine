@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 06:25:47 UTC",
+  "updated_utc": "2026-11-13 06:27:57 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 68794.02,
-    "ETHUSD": 1934.83,
-    "SOLUSD": 79.71
+    "BTCUSD": 68808.0,
+    "ETHUSD": 1935.53,
+    "SOLUSD": 79.72
   },
   "active_trades": {},
   "bot_stats": {
@@ -1061,7 +1061,7 @@
         "tp2_price": 68881.1855,
         "opened_epoch": 1794550532.67596,
         "tp1_hit": true,
-        "peak_r": 1.219
+        "peak_r": 1.256
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1076,7 +1076,7 @@
         "tp2_price": 69136.03904,
         "opened_epoch": 1794550807.208541,
         "tp1_hit": false,
-        "peak_r": 0.55
+        "peak_r": 0.587
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1091,7 +1091,7 @@
         "tp2_price": 1947.11581,
         "opened_epoch": 1794550807.817843,
         "tp1_hit": false,
-        "peak_r": 0.486
+        "peak_r": 0.541
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1106,7 +1106,7 @@
         "tp2_price": 79.97595,
         "opened_epoch": 1794550808.383304,
         "tp1_hit": true,
-        "peak_r": 0.933
+        "peak_r": 0.991
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1121,7 +1121,7 @@
         "tp2_price": 79.97595,
         "opened_epoch": 1794550808.395544,
         "tp1_hit": true,
-        "peak_r": 0.933
+        "peak_r": 0.991
       },
       {
         "key": "ETHUSD:BREAKOUT",
@@ -1136,7 +1136,7 @@
         "tp2_price": 1953.35897,
         "opened_epoch": 1794551120.276222,
         "tp1_hit": false,
-        "peak_r": 0.015
+        "peak_r": 0.069
       }
     ],
     "shadow_cooldowns": {
@@ -1164,7 +1164,7 @@
     },
     "shadow_episodes": 274
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 7h 4m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 7h 2m)",
   "deriv_flow_status": "Shadow Incubation (14/30 eps, 79% WR, +0.24R)",
-  "cycle_count": 325
+  "cycle_count": 330
 }
