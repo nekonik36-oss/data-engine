@@ -66,13 +66,37 @@ class MT5Connector:
             },
         )
         # Hydrate synced state from logs/home_pc_status.json on cloud / office failover machines
+        state_changed = False
         synced_status = self._load_json(LOGS_DIR / "home_pc_status.json", {})
         if isinstance(synced_status, dict):
             synced_stats = synced_status.get("bot_stats")
             if isinstance(synced_stats, dict) and int(synced_stats.get("total_closed", 0)) > int(self.stats.get("total_closed", 0)):
                 self.stats = dict(synced_stats)
-            if not self.active_trades and isinstance(synced_status.get("active_trades"), dict):
+                if isinstance(synced_status.get("active_trades"), dict):
+                    self.active_trades = dict(synced_status["active_trades"])
+                state_changed = True
+            elif not self.active_trades and isinstance(synced_status.get("active_trades"), dict):
                 self.active_trades = dict(synced_status["active_trades"])
+                if self.active_trades:
+                    state_changed = True
+
+        # Purge any stale local active_trades already recorded as closed in bot_stats history
+        closed_tickets = {
+            str(h.get("ticket"))
+            for h in (self.stats.get("history") or [])
+            if isinstance(h, dict) and h.get("ticket") is not None
+        }
+        if closed_tickets and self.active_trades:
+            stale_keys = [
+                k for k, v in self.active_trades.items()
+                if str(k) in closed_tickets or (isinstance(v, dict) and str(v.get("ticket")) in closed_tickets)
+            ]
+            for k in stale_keys:
+                self.active_trades.pop(k, None)
+                state_changed = True
+
+        if state_changed:
+            self._save_state()
 
     @staticmethod
     def _load_json(path: Path, default: Any) -> Any:
