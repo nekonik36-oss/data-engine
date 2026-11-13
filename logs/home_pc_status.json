@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 09:33:36 UTC",
+  "updated_utc": "2026-11-13 09:35:31 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 69013.71,
-    "ETHUSD": 1940.52,
-    "SOLUSD": 79.91
+    "BTCUSD": 69044.01,
+    "ETHUSD": 1940.51,
+    "SOLUSD": 79.89
   },
   "active_trades": {},
   "bot_stats": {
@@ -410,7 +410,7 @@
     "crypto_book_pnl": 103.65
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 09:30:09 UTC",
+    "updated_utc": "2026-11-13 09:35:30 UTC",
     "total_episodes": 326,
     "strategy_stats": {
       "SND": {
@@ -1089,7 +1089,7 @@
         "tp2_price": 69297.39372,
         "opened_epoch": 1794562209.456499,
         "tp1_hit": false,
-        "peak_r": 0.306
+        "peak_r": 0.529
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1104,7 +1104,22 @@
         "tp2_price": 69297.39372,
         "opened_epoch": 1794562209.466097,
         "tp1_hit": false,
-        "peak_r": 0.306
+        "peak_r": 0.529
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 79.9,
+        "sl_price": 80.24532,
+        "sl_dist": 0.34532,
+        "tp1_price": 79.67554,
+        "tp2_price": 79.39929,
+        "opened_epoch": 1794562530.283305,
+        "tp1_hit": false,
+        "peak_r": 0.029
       }
     ],
     "shadow_cooldowns": {
@@ -1126,13 +1141,13 @@
       "XAUUSD:BREAKOUT": 1794409105.08686,
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931,
-      "SOLUSD:DERIV_FLOW": 1794559568.037541,
+      "SOLUSD:DERIV_FLOW": 1794562530.283305,
       "BTCUSD:DERIV_FLOW": 1794558854.671719,
       "ETHUSD:DERIV_FLOW": 1794556860.992621
     },
     "shadow_episodes": 292
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 3h 56m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 3h 54m)",
   "deriv_flow_status": "Shadow Incubation (22/30 eps, 68% WR, +0.15R)",
-  "cycle_count": 780
+  "cycle_count": 785
 }
