@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-13 02:53:10 UTC",
+  "updated_utc": "2026-11-13 02:53:45 UTC",
   "hostname": "runnervmwuk1x",
   "live_equity": 9803.25,
   "bot_stats": {
-    "total_closed": 32,
-    "wins": 12,
+    "total_closed": 33,
+    "wins": 13,
     "losses": 15,
     "breakevens": 5,
-    "cumulative_pnl": -196.75,
+    "cumulative_pnl": -183.46,
     "history": [
       {
         "ticket": 1078980632,
@@ -360,9 +360,20 @@
         "r_multiple": -0.06,
         "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-12 22:01:31 UTC"
+      },
+      {
+        "ticket": 84538255,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 70224.31,
+        "exit_price": 70103.46,
+        "net_pnl": 13.29,
+        "r_multiple": 0.28,
+        "close_reason": "+0.28R Pre-TP1 Profit Ratchet Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-13 02:53:42 UTC"
       }
     ],
-    "crypto_book_pnl": 67.8
+    "crypto_book_pnl": 81.09
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -388,9 +399,9 @@
   },
   "symbol_streaks": {
     "BTCUSD": {
-      "win_streak": 0,
-      "loss_streak": 5,
-      "net_r": -3.93
+      "win_streak": 1,
+      "loss_streak": 0,
+      "net_r": -3.65
     },
     "ETHUSD": {
       "win_streak": 2,
@@ -420,14 +431,6 @@
   },
   "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 13:10:06 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 1079451390,
-      "symbol": "XAUUSD",
-      "direction": "SHORT",
-      "summary": "Ticket #1079451390 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
     {
       "timestamp_utc": "2026-11-09 13:55:08 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -750,6 +753,22 @@
       "regime": "RANGING",
       "strategies": [
         "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-13 02:53:42 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 84538255,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "net_pnl": 13.29,
+      "r_multiple": 0.28,
+      "peak_favorable_r": 0.54,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "BREAKOUT",
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
