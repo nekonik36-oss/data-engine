@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 09:02:37 UTC",
+  "updated_utc": "2026-11-13 09:03:27 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 68801.72,
-    "ETHUSD": 1937.47,
-    "SOLUSD": 80.0
+    "BTCUSD": 68934.62,
+    "ETHUSD": 1940.84,
+    "SOLUSD": 80.11
   },
   "active_trades": {},
   "bot_stats": {
@@ -410,8 +410,8 @@
     "crypto_book_pnl": 103.65
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 08:46:08 UTC",
-    "total_episodes": 323,
+    "updated_utc": "2026-11-13 09:03:26 UTC",
+    "total_episodes": 324,
     "strategy_stats": {
       "SND": {
         "trades": 17,
@@ -435,11 +435,11 @@
         "multiplier": 1.049
       },
       "TREND_PULLBACK": {
-        "trades": 52,
+        "trades": 53,
         "wins": 21,
-        "losses": 29,
-        "ema_r": -0.05,
-        "multiplier": 0.988
+        "losses": 30,
+        "ema_r": -0.09,
+        "multiplier": 0.978
       },
       "KRONOS": {
         "trades": 94,
@@ -459,7 +459,7 @@
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.981,
       "RANGING:KRONOS": 0.762,
-      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.863,
+      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.854,
       "RANGING:TREND_PULLBACK": 1.043,
       "TRENDING_DOWN:TREND_PULLBACK": 0.953,
       "SESSION_SWEEP_WINDOW:ICT": 0.895,
@@ -1092,21 +1092,6 @@
         "peak_r": 0.131
       },
       {
-        "key": "ETHUSD:TREND_PULLBACK",
-        "symbol": "ETHUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "SHORT",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 1932.19,
-        "sl_price": 1940.13247,
-        "sl_dist": 7.94247,
-        "tp1_price": 1927.02739,
-        "tp2_price": 1920.67342,
-        "opened_epoch": 1794559519.125549,
-        "tp1_hit": false,
-        "peak_r": 0.044
-      },
-      {
         "key": "SOLUSD:DERIV_FLOW",
         "symbol": "SOLUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1145,9 +1130,9 @@
       "BTCUSD:DERIV_FLOW": 1794558854.671719,
       "ETHUSD:DERIV_FLOW": 1794556860.992621
     },
-    "shadow_episodes": 289
+    "shadow_episodes": 290
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 4h 27m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 4h 26m)",
   "deriv_flow_status": "Shadow Incubation (20/30 eps, 75% WR, +0.24R)",
-  "cycle_count": 700
+  "cycle_count": 702
 }
