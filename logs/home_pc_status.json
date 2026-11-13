@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 06:15:00 UTC",
+  "updated_utc": "2026-11-13 06:17:10 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 68322.88,
-    "ETHUSD": 1917.41,
-    "SOLUSD": 78.85
+    "BTCUSD": 68409.99,
+    "ETHUSD": 1921.14,
+    "SOLUSD": 79.07
   },
   "active_trades": {},
   "bot_stats": {
@@ -399,7 +399,7 @@
     "crypto_book_pnl": 90.07
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 06:10:18 UTC",
+    "updated_utc": "2026-11-13 06:15:32 UTC",
     "total_episodes": 305,
     "strategy_stats": {
       "SND": {
@@ -1076,7 +1076,22 @@
         "tp2_price": 1933.27351,
         "opened_epoch": 1794550218.863106,
         "tp1_hit": false,
-        "peak_r": 0.242
+        "peak_r": 0.505
+      },
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 68333.35,
+        "sl_price": 67955.53241,
+        "sl_dist": 377.81759,
+        "tp1_price": 68578.93143,
+        "tp2_price": 68881.1855,
+        "opened_epoch": 1794550532.67596,
+        "tp1_hit": false,
+        "peak_r": 0.245
       }
     ],
     "shadow_cooldowns": {
@@ -1087,7 +1102,7 @@
       "ETHUSD:KRONOS": 1794540033.204416,
       "SOLUSD:BREAKOUT": 1794525014.731489,
       "SOLUSD:KRONOS": 1794525014.733491,
-      "BTCUSD:ICT": 1794546629.550742,
+      "BTCUSD:ICT": 1794550532.67596,
       "SOLUSD:SND": 1794408013.22123,
       "SOLUSD:ICT": 1794531796.511658,
       "ETHUSD:TREND_PULLBACK": 1794430216.835559,
@@ -1104,7 +1119,7 @@
     },
     "shadow_episodes": 272
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 7h 15m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 7h 12m)",
   "deriv_flow_status": "Shadow Incubation (13/30 eps, 85% WR, +0.35R)",
-  "cycle_count": 300
+  "cycle_count": 305
 }
