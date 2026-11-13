@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 03:24:22 UTC",
+  "updated_utc": "2026-11-13 03:26:30 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -16,13 +16,13 @@
   "mt5_connected": false,
   "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9803.25,
+  "live_equity": 9825.52,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 69397.07,
-    "ETHUSD": 1964.06,
-    "SOLUSD": 79.29
+    "BTCUSD": 69215.83,
+    "ETHUSD": 1957.44,
+    "SOLUSD": 79.16
   },
   "active_trades": {},
   "bot_stats": {
@@ -1060,8 +1060,8 @@
         "tp1_price": 1963.49561,
         "tp2_price": 1953.92714,
         "opened_epoch": 1794540033.193207,
-        "tp1_hit": false,
-        "peak_r": 0.603
+        "tp1_hit": true,
+        "peak_r": 1.325
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1075,8 +1075,8 @@
         "tp1_price": 1963.49561,
         "tp2_price": 1953.92714,
         "opened_epoch": 1794540033.204416,
-        "tp1_hit": false,
-        "peak_r": 0.603
+        "tp1_hit": true,
+        "peak_r": 1.325
       }
     ],
     "shadow_cooldowns": {
@@ -1104,7 +1104,7 @@
     },
     "shadow_episodes": 260
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 10h 5m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 10h 3m)",
   "deriv_flow_status": "Shadow Incubation (6/30 eps, 83% WR, +0.29R)",
-  "cycle_count": 55
+  "cycle_count": 60
 }
