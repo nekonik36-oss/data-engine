@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 07:23:41 UTC",
+  "updated_utc": "2026-11-13 07:25:49 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 69182.53,
-    "ETHUSD": 1944.51,
-    "SOLUSD": 80.58
+    "BTCUSD": 69134.28,
+    "ETHUSD": 1943.63,
+    "SOLUSD": 80.63
   },
   "active_trades": {},
   "bot_stats": {
@@ -399,7 +399,7 @@
     "crypto_book_pnl": 90.07
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 07:20:18 UTC",
+    "updated_utc": "2026-11-13 07:25:45 UTC",
     "total_episodes": 315,
     "strategy_stats": {
       "SND": {
@@ -1061,7 +1061,22 @@
         "tp2_price": 68687.39251,
         "opened_epoch": 1794554418.679431,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.017
+      },
+      {
+        "key": "ETHUSD:DERIV_FLOW",
+        "symbol": "ETHUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 1943.95,
+        "sl_price": 1954.20813,
+        "sl_dist": 10.25813,
+        "tp1_price": 1937.28221,
+        "tp2_price": 1929.07571,
+        "opened_epoch": 1794554745.884765,
+        "tp1_hit": false,
+        "peak_r": 0.031
       }
     ],
     "shadow_cooldowns": {
@@ -1085,11 +1100,11 @@
       "EURUSD:ICT": 1794412816.194931,
       "SOLUSD:DERIV_FLOW": 1794548774.605331,
       "BTCUSD:DERIV_FLOW": 1794552576.015026,
-      "ETHUSD:DERIV_FLOW": 1794552577.010543
+      "ETHUSD:DERIV_FLOW": 1794554745.884765
     },
     "shadow_episodes": 282
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 6h 6m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 6h 4m)",
   "deriv_flow_status": "Shadow Incubation (16/30 eps, 69% WR, +0.05R)",
-  "cycle_count": 460
+  "cycle_count": 465
 }
