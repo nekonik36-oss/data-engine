@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-13 09:54:38 UTC",
-  "hostname": "GB-5CD52876MS",
-  "python_version": "3.14.6",
+  "updated_utc": "2026-11-13 10:37:56 UTC",
+  "hostname": "runnervmwuk1x",
+  "python_version": "3.12.16",
   "gpu": {
     "torch_installed": false,
     "torch_version": null,
@@ -14,15 +14,15 @@
   "pending_hot_reload": false,
   "execution_mode": "auto",
   "mt5_connected": false,
-  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
+  "mt5_error": "No module named 'MetaTrader5'",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9839.1,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 69060.16,
-    "ETHUSD": 1939.65,
-    "SOLUSD": 80.0
+    "BTCUSD": 69331.9,
+    "ETHUSD": 1953.35,
+    "SOLUSD": 80.38
   },
   "active_trades": {},
   "bot_stats": {
@@ -410,8 +410,8 @@
     "crypto_book_pnl": 103.65
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 09:50:18 UTC",
-    "total_episodes": 328,
+    "updated_utc": "2026-11-13 10:37:56 UTC",
+    "total_episodes": 330,
     "strategy_stats": {
       "SND": {
         "trades": 17,
@@ -435,11 +435,11 @@
         "multiplier": 1.055
       },
       "TREND_PULLBACK": {
-        "trades": 53,
+        "trades": 54,
         "wins": 21,
-        "losses": 30,
-        "ema_r": -0.09,
-        "multiplier": 0.978
+        "losses": 31,
+        "ema_r": -0.127,
+        "multiplier": 0.968
       },
       "KRONOS": {
         "trades": 95,
@@ -449,17 +449,17 @@
         "multiplier": 1.102
       },
       "DERIV_FLOW": {
-        "trades": 22,
+        "trades": 23,
         "wins": 15,
-        "losses": 7,
-        "ema_r": 0.151,
-        "multiplier": 1.038
+        "losses": 8,
+        "ema_r": 0.095,
+        "multiplier": 1.024
       }
     },
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.981,
       "RANGING:KRONOS": 0.762,
-      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.854,
+      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.845,
       "RANGING:TREND_PULLBACK": 1.043,
       "TRENDING_DOWN:TREND_PULLBACK": 0.953,
       "SESSION_SWEEP_WINDOW:ICT": 0.895,
@@ -478,7 +478,7 @@
       "TRENDING_UP:TREND_PULLBACK": 1.004,
       "RANGING:DERIV_FLOW": 0.991,
       "TRENDING_DOWN:DERIV_FLOW": 1.074,
-      "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.034
+      "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.025
     },
     "symbol_streaks": {
       "BTCUSD": {
@@ -1075,38 +1075,7 @@
       }
     ],
     "live_episodes": 16,
-    "active_shadow_trades": [
-      {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 79.9,
-        "sl_price": 80.24532,
-        "sl_dist": 0.34532,
-        "tp1_price": 79.67554,
-        "tp2_price": 79.39929,
-        "opened_epoch": 1794562530.283305,
-        "tp1_hit": false,
-        "peak_r": 0.087
-      },
-      {
-        "key": "ETHUSD:TREND_PULLBACK",
-        "symbol": "ETHUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "SHORT",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 1937.04,
-        "sl_price": 1943.82535,
-        "sl_dist": 6.78535,
-        "tp1_price": 1932.62953,
-        "tp2_price": 1927.20125,
-        "opened_epoch": 1794563418.635339,
-        "tp1_hit": false,
-        "peak_r": 0.018
-      }
-    ],
+    "active_shadow_trades": [],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794555316.739103,
       "BTCUSD:BREAKOUT": 1794562209.456499,
@@ -1130,9 +1099,9 @@
       "BTCUSD:DERIV_FLOW": 1794558854.671719,
       "ETHUSD:DERIV_FLOW": 1794556860.992621
     },
-    "shadow_episodes": 294
+    "shadow_episodes": 296
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 3h 35m)",
-  "deriv_flow_status": "Shadow Incubation (22/30 eps, 68% WR, +0.15R)",
-  "cycle_count": 830
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 2h 52m)",
+  "deriv_flow_status": "Shadow Incubation (23/30 eps, 65% WR, +0.10R)",
+  "cycle_count": 1
 }
