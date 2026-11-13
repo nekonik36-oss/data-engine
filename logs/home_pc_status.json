@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 02:53:45 UTC",
+  "updated_utc": "2026-11-13 02:55:59 UTC",
   "hostname": "runnervmwuk1x",
   "python_version": "3.12.16",
   "gpu": {
@@ -16,13 +16,13 @@
   "mt5_connected": false,
   "mt5_error": "No module named 'MetaTrader5'",
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9803.25,
+  "live_equity": 9816.54,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 70172.87,
-    "ETHUSD": 1985.66,
-    "SOLUSD": 80.04
+    "BTCUSD": 70340.8,
+    "ETHUSD": 1993.94,
+    "SOLUSD": 80.34
   },
   "active_trades": {},
   "bot_stats": {
@@ -1073,7 +1073,7 @@
     },
     "shadow_episodes": 257
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 10h 36m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 10h 34m)",
   "deriv_flow_status": "Shadow Incubation (3/30 eps, 100% WR, +0.21R)",
-  "cycle_count": 6
+  "cycle_count": 10
 }
