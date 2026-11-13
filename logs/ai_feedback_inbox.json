@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-13 03:22:18 UTC",
+  "updated_utc": "2026-11-13 03:24:22 UTC",
   "hostname": "GB-5CD52876MS",
   "live_equity": 9803.25,
   "bot_stats": {
-    "total_closed": 32,
-    "wins": 12,
+    "total_closed": 33,
+    "wins": 13,
     "losses": 15,
     "breakevens": 5,
-    "cumulative_pnl": -196.75,
+    "cumulative_pnl": -174.48,
     "history": [
       {
         "ticket": 1078980632,
@@ -360,9 +360,20 @@
         "r_multiple": -0.06,
         "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-12 22:01:31 UTC"
+      },
+      {
+        "ticket": 84540033,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 1971.44,
+        "exit_price": 1963.69,
+        "net_pnl": 22.27,
+        "r_multiple": 0.45,
+        "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-13 03:24:17 UTC"
       }
     ],
-    "crypto_book_pnl": 67.8
+    "crypto_book_pnl": 90.07
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -393,9 +404,9 @@
       "net_r": -3.93
     },
     "ETHUSD": {
-      "win_streak": 2,
+      "win_streak": 3,
       "loss_streak": 0,
-      "net_r": 0.06
+      "net_r": 0.51
     },
     "SOLUSD": {
       "win_streak": 0,
@@ -420,14 +431,6 @@
   },
   "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 13:10:06 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 1079451390,
-      "symbol": "XAUUSD",
-      "direction": "SHORT",
-      "summary": "Ticket #1079451390 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
     {
       "timestamp_utc": "2026-11-09 13:55:08 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -750,6 +753,22 @@
       "regime": "RANGING",
       "strategies": [
         "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-13 03:24:17 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 84540033,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "net_pnl": 22.27,
+      "r_multiple": 0.45,
+      "peak_favorable_r": 0.9,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "BREAKOUT",
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
