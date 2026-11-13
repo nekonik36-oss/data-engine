@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-13 08:27:04 UTC",
+  "updated_utc": "2026-11-13 08:29:09 UTC",
   "hostname": "GB-5CD52876MS",
   "live_equity": 9825.52,
   "bot_stats": {
-    "total_closed": 33,
-    "wins": 13,
+    "total_closed": 34,
+    "wins": 14,
     "losses": 15,
     "breakevens": 5,
-    "cumulative_pnl": -174.48,
+    "cumulative_pnl": -160.9,
     "history": [
       {
         "ticket": 1078980632,
@@ -371,9 +371,20 @@
         "r_multiple": 0.45,
         "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
         "closed_at_utc": "2026-11-13 03:24:17 UTC"
+      },
+      {
+        "ticket": 84555316,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 68867.51,
+        "exit_price": 68697.75,
+        "net_pnl": 13.58,
+        "r_multiple": 0.28,
+        "close_reason": "+0.28R Pre-TP1 Profit Ratchet Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-13 08:29:04 UTC"
       }
     ],
-    "crypto_book_pnl": 90.07
+    "crypto_book_pnl": 103.65
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -399,9 +410,9 @@
   },
   "symbol_streaks": {
     "BTCUSD": {
-      "win_streak": 0,
-      "loss_streak": 5,
-      "net_r": -3.93
+      "win_streak": 1,
+      "loss_streak": 0,
+      "net_r": -3.65
     },
     "ETHUSD": {
       "win_streak": 3,
@@ -431,22 +442,6 @@
   },
   "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 13:55:08 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1079668118,
-      "symbol": "EURUSD",
-      "direction": "SHORT",
-      "net_pnl": -48.0,
-      "r_multiple": -1.02,
-      "peak_favorable_r": 0.0,
-      "regime": "SESSION_SWEEP_WINDOW",
-      "strategies": [
-        "ICT",
-        "KRONOS"
-      ],
-      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if EURUSD reaches TP1=1.11735)"
-    },
     {
       "timestamp_utc": "2026-11-09 14:03:40 UTC",
       "event": "TRUE_TREND_LOSS_CONFIRMED",
@@ -769,6 +764,22 @@
       "regime": "TRENDING_DOWN",
       "strategies": [
         "BREAKOUT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-13 08:29:04 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 84555316,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "net_pnl": 13.58,
+      "r_multiple": 0.28,
+      "peak_favorable_r": 0.55,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "ICT",
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
