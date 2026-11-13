@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 07:19:25 UTC",
+  "updated_utc": "2026-11-13 07:21:33 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 69108.74,
-    "ETHUSD": 1944.64,
-    "SOLUSD": 80.49
+    "BTCUSD": 69218.38,
+    "ETHUSD": 1947.03,
+    "SOLUSD": 80.66
   },
   "active_trades": {},
   "bot_stats": {
@@ -399,7 +399,7 @@
     "crypto_book_pnl": 90.07
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 07:10:00 UTC",
+    "updated_utc": "2026-11-13 07:20:18 UTC",
     "total_episodes": 315,
     "strategy_stats": {
       "SND": {
@@ -1047,7 +1047,23 @@
       }
     ],
     "live_episodes": 15,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 69137.45,
+        "sl_price": 69447.83448,
+        "sl_dist": 310.38448,
+        "tp1_price": 68935.70009,
+        "tp2_price": 68687.39251,
+        "opened_epoch": 1794554418.679431,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794550218.863106,
       "BTCUSD:BREAKOUT": 1794509406.8037,
@@ -1056,7 +1072,7 @@
       "ETHUSD:KRONOS": 1794550807.817843,
       "SOLUSD:BREAKOUT": 1794550808.383304,
       "SOLUSD:KRONOS": 1794550808.395544,
-      "BTCUSD:ICT": 1794550532.67596,
+      "BTCUSD:ICT": 1794554418.679431,
       "SOLUSD:SND": 1794408013.22123,
       "SOLUSD:ICT": 1794531796.511658,
       "ETHUSD:TREND_PULLBACK": 1794430216.835559,
@@ -1073,7 +1089,7 @@
     },
     "shadow_episodes": 282
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 6h 10m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 6h 8m)",
   "deriv_flow_status": "Shadow Incubation (16/30 eps, 69% WR, +0.05R)",
-  "cycle_count": 450
+  "cycle_count": 455
 }
