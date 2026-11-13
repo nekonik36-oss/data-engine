@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-13 01:57:49 UTC",
-  "total_episodes": 287,
+  "updated_utc": "2026-11-13 02:50:58 UTC",
+  "total_episodes": 289,
   "strategy_stats": {
     "SND": {
       "trades": 17,
@@ -38,11 +38,11 @@
       "multiplier": 1.046
     },
     "DERIV_FLOW": {
-      "trades": 1,
-      "wins": 1,
+      "trades": 3,
+      "wins": 3,
       "losses": 0,
-      "ema_r": 0.037,
-      "multiplier": 1.002
+      "ema_r": 0.211,
+      "multiplier": 1.04
     }
   },
   "regime_strategy_multipliers": {
@@ -65,7 +65,8 @@
     "TRENDING_UP:KRONOS": 1.066,
     "TRENDING_UP:BREAKOUT": 0.973,
     "TRENDING_UP:TREND_PULLBACK": 1.004,
-    "RANGING:DERIV_FLOW": 1.007
+    "RANGING:DERIV_FLOW": 1.026,
+    "TRENDING_DOWN:DERIV_FLOW": 1.019
   },
   "symbol_streaks": {
     "BTCUSD": {
@@ -630,38 +631,7 @@
     }
   ],
   "live_episodes": 14,
-  "active_shadow_trades": [
-    {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 70972.0,
-      "sl_price": 71242.91573,
-      "sl_dist": 270.91573,
-      "tp1_price": 70795.90478,
-      "tp2_price": 70579.17219,
-      "opened_epoch": 1794534487.903408,
-      "tp1_hit": false,
-      "peak_r": 0.347
-    },
-    {
-      "key": "ETHUSD:DERIV_FLOW",
-      "symbol": "ETHUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 2011.35,
-      "sl_price": 2018.65683,
-      "sl_dist": 7.30683,
-      "tp1_price": 2006.60056,
-      "tp2_price": 2000.75509,
-      "opened_epoch": 1794534488.95701,
-      "tp1_hit": false,
-      "peak_r": 0.163
-    }
-  ],
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794524416.079263,
     "BTCUSD:BREAKOUT": 1794509406.8037,
@@ -685,5 +655,5 @@
     "BTCUSD:DERIV_FLOW": 1794534487.903408,
     "ETHUSD:DERIV_FLOW": 1794534488.95701
   },
-  "shadow_episodes": 255
+  "shadow_episodes": 257
 }
