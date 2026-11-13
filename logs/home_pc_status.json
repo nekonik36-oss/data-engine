@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 07:50:40 UTC",
+  "updated_utc": "2026-11-13 07:52:43 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 1940.27,
-    "SOLUSD": 79.91
+    "ETHUSD": 1939.41,
+    "SOLUSD": 80.0
   },
   "active_trades": {
     "84555316": {
@@ -47,7 +47,7 @@
       "opened_at_utc": "2026-11-13 07:35:16 UTC",
       "tp1_hit": false,
       "partial_pnl": 0.0,
-      "peak_favorable_r": 0.254
+      "peak_favorable_r": 0.299
     }
   },
   "bot_stats": {
@@ -1116,7 +1116,7 @@
         "tp2_price": 1926.42475,
         "opened_epoch": 1794555316.739103,
         "tp1_hit": false,
-        "peak_r": 0.154
+        "peak_r": 0.279
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1131,7 +1131,7 @@
         "tp2_price": 79.78017,
         "opened_epoch": 1794555356.895044,
         "tp1_hit": true,
-        "peak_r": 1.169
+        "peak_r": 1.212
       },
       {
         "key": "SOLUSD:ICT",
@@ -1146,7 +1146,7 @@
         "tp2_price": 79.58228,
         "opened_epoch": 1794555623.765337,
         "tp1_hit": true,
-        "peak_r": 0.728
+        "peak_r": 0.772
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1161,7 +1161,7 @@
         "tp2_price": 79.33165,
         "opened_epoch": 1794556215.40418,
         "tp1_hit": false,
-        "peak_r": 0.136
+        "peak_r": 0.182
       }
     ],
     "shadow_cooldowns": {
@@ -1189,7 +1189,7 @@
     },
     "shadow_episodes": 282
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 5h 39m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 5h 37m)",
   "deriv_flow_status": "Shadow Incubation (16/30 eps, 69% WR, +0.05R)",
-  "cycle_count": 525
+  "cycle_count": 530
 }
