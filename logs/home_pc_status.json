@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 03:20:36 UTC",
+  "updated_utc": "2026-11-13 03:22:18 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 69648.11,
-    "ETHUSD": 1971.33,
-    "SOLUSD": 79.65
+    "BTCUSD": 69208.86,
+    "SOLUSD": 78.9
   },
   "active_trades": {
     "84540033": {
@@ -32,7 +31,7 @@
       "broker_source": "CRYPTO_24_7_LIVE",
       "direction": "SHORT",
       "entry_price": 1971.44,
-      "sl_price": 1993.59,
+      "sl_price": 1963.69,
       "initial_sl_price": 1993.59,
       "tp1_price": 1957.04,
       "tp2_price": 1939.32,
@@ -46,8 +45,11 @@
         "KRONOS"
       ],
       "opened_at_utc": "2026-11-13 03:20:33 UTC",
-      "tp1_hit": false,
-      "partial_pnl": 0.0
+      "tp1_hit": true,
+      "partial_pnl": 11.14,
+      "peak_favorable_r": 0.805,
+      "be_shield_active": true,
+      "pre_tp1_ratchet": true
     }
   },
   "bot_stats": {
@@ -413,8 +415,8 @@
     "crypto_book_pnl": 67.8
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 03:20:33 UTC",
-    "total_episodes": 291,
+    "updated_utc": "2026-11-13 03:22:15 UTC",
+    "total_episodes": 292,
     "strategy_stats": {
       "SND": {
         "trades": 17,
@@ -452,11 +454,11 @@
         "multiplier": 1.046
       },
       "DERIV_FLOW": {
-        "trades": 5,
-        "wins": 4,
+        "trades": 6,
+        "wins": 5,
         "losses": 1,
-        "ema_r": 0.212,
-        "multiplier": 1.053
+        "ema_r": 0.289,
+        "multiplier": 1.072
       }
     },
     "regime_strategy_multipliers": {
@@ -480,7 +482,7 @@
       "TRENDING_UP:BREAKOUT": 0.973,
       "TRENDING_UP:TREND_PULLBACK": 1.004,
       "RANGING:DERIV_FLOW": 0.991,
-      "TRENDING_DOWN:DERIV_FLOW": 1.057
+      "TRENDING_DOWN:DERIV_FLOW": 1.076
     },
     "symbol_streaks": {
       "BTCUSD": {
@@ -1047,21 +1049,6 @@
     "live_episodes": 14,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:DERIV_FLOW",
-        "symbol": "BTCUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 69721.0,
-        "sl_price": 70023.90726,
-        "sl_dist": 302.90726,
-        "tp1_price": 69524.11028,
-        "tp2_price": 69281.78448,
-        "opened_epoch": 1794539897.818682,
-        "tp1_hit": false,
-        "peak_r": 0.408
-      },
-      {
         "key": "ETHUSD:BREAKOUT",
         "symbol": "ETHUSD",
         "strategy_name": "BREAKOUT",
@@ -1115,9 +1102,9 @@
       "BTCUSD:DERIV_FLOW": 1794539897.818682,
       "ETHUSD:DERIV_FLOW": 1794539897.999707
     },
-    "shadow_episodes": 259
+    "shadow_episodes": 260
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 10h 9m)",
-  "deriv_flow_status": "Shadow Incubation (5/30 eps, 80% WR, +0.21R)",
-  "cycle_count": 46
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 10h 7m)",
+  "deriv_flow_status": "Shadow Incubation (6/30 eps, 83% WR, +0.29R)",
+  "cycle_count": 50
 }
