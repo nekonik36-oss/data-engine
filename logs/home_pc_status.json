@@ -1,31 +1,28 @@
 {
-  "updated_utc": "2026-11-12 23:45:30 UTC",
-  "hostname": "DESKTOP-8RQUOSU",
-  "python_version": "3.12.10",
+  "updated_utc": "2026-11-13 01:03:17 UTC",
+  "hostname": "GB-5CD52876MS",
+  "python_version": "3.14.6",
   "gpu": {
-    "torch_installed": true,
-    "torch_version": "2.11.0+cu128",
-    "cuda_version": "12.8",
-    "cuda_available": true,
-    "gpu_name": "NVIDIA GeForce RTX 5060",
-    "cuda_kernel_ok": true,
-    "cuda_error": null
+    "torch_installed": false,
+    "torch_version": null,
+    "cuda_version": null,
+    "cuda_available": false,
+    "gpu_name": null,
+    "cuda_kernel_ok": false,
+    "cuda_error": "No module named 'torch'"
   },
   "pending_hot_reload": false,
   "execution_mode": "auto",
-  "mt5_connected": true,
-  "mt5_error": null,
+  "mt5_connected": false,
+  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9803.25,
-  "telegram_configured": true,
-  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
+  "telegram_configured": false,
+  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 71305.56,
-    "ETHUSD": 2017.73,
-    "SOLUSD": 81.69,
-    "XAUUSD": 3879.65,
-    "EURUSD": 1.10497,
-    "USDJPY": 159.86
+    "BTCUSD": 70977.69,
+    "ETHUSD": 2009.62,
+    "SOLUSD": 81.45
   },
   "active_trades": {},
   "bot_stats": {
@@ -391,7 +388,7 @@
     "crypto_book_pnl": 67.8
   },
   "learned_weights": {
-    "updated_utc": "2026-11-12 23:31:21 UTC",
+    "updated_utc": "2026-11-13 01:03:16 UTC",
     "total_episodes": 284,
     "strategy_stats": {
       "SND": {
@@ -1014,7 +1011,23 @@
       }
     ],
     "live_episodes": 14,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 81.57,
+        "sl_price": 81.29685,
+        "sl_dist": 0.27315,
+        "tp1_price": 81.74755,
+        "tp2_price": 81.96606,
+        "opened_epoch": 1794531796.511658,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794524416.079263,
       "BTCUSD:BREAKOUT": 1794509406.8037,
@@ -1025,7 +1038,7 @@
       "SOLUSD:KRONOS": 1794525014.733491,
       "BTCUSD:ICT": 1794524717.866695,
       "SOLUSD:SND": 1794408013.22123,
-      "SOLUSD:ICT": 1794525618.22491,
+      "SOLUSD:ICT": 1794531796.511658,
       "ETHUSD:TREND_PULLBACK": 1794430216.835559,
       "BTCUSD:TREND_PULLBACK": 1794525615.821161,
       "SOLUSD:TREND_PULLBACK": 1794523218.331599,
@@ -1037,5 +1050,5 @@
     },
     "shadow_episodes": 252
   },
-  "cycle_count": 1130
+  "cycle_count": 1
 }
