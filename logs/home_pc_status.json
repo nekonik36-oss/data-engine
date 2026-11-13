@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 08:05:37 UTC",
+  "updated_utc": "2026-11-13 08:06:13 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 1936.16,
-    "SOLUSD": 80.0
+    "ETHUSD": 1937.2,
+    "SOLUSD": 80.11
   },
   "active_trades": {
     "84555316": {
@@ -425,8 +425,8 @@
     "crypto_book_pnl": 90.07
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 08:05:34 UTC",
-    "total_episodes": 318,
+    "updated_utc": "2026-11-13 08:06:10 UTC",
+    "total_episodes": 319,
     "strategy_stats": {
       "SND": {
         "trades": 17,
@@ -436,11 +436,11 @@
         "multiplier": 0.991
       },
       "ICT": {
-        "trades": 90,
-        "wins": 53,
+        "trades": 91,
+        "wins": 54,
         "losses": 36,
-        "ema_r": 0.128,
-        "multiplier": 1.032
+        "ema_r": 0.155,
+        "multiplier": 1.039
       },
       "BREAKOUT": {
         "trades": 77,
@@ -477,7 +477,7 @@
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.863,
       "RANGING:TREND_PULLBACK": 1.043,
       "TRENDING_DOWN:TREND_PULLBACK": 0.953,
-      "SESSION_SWEEP_WINDOW:ICT": 0.888,
+      "SESSION_SWEEP_WINDOW:ICT": 0.895,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.932,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.809,
       "TRENDING_DOWN:ICT": 1.059,
@@ -1076,21 +1076,6 @@
     "live_episodes": 15,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:ICT",
-        "symbol": "SOLUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 80.24,
-        "sl_price": 80.6936,
-        "sl_dist": 0.4536,
-        "tp1_price": 79.94516,
-        "tp2_price": 79.58228,
-        "opened_epoch": 1794555623.765337,
-        "tp1_hit": true,
-        "peak_r": 1.102
-      },
-      {
         "key": "SOLUSD:KRONOS",
         "symbol": "SOLUSD",
         "strategy_name": "KRONOS",
@@ -1144,9 +1129,9 @@
       "BTCUSD:DERIV_FLOW": 1794552576.015026,
       "ETHUSD:DERIV_FLOW": 1794556860.992621
     },
-    "shadow_episodes": 285
+    "shadow_episodes": 286
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 5h 24m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 5h 23m)",
   "deriv_flow_status": "Shadow Incubation (18/30 eps, 72% WR, +0.20R)",
-  "cycle_count": 560
+  "cycle_count": 561
 }
