@@ -661,7 +661,7 @@
       "tp2_price": 1933.27351,
       "opened_epoch": 1794550218.863106,
       "tp1_hit": true,
-      "peak_r": 1.071
+      "peak_r": 1.386
     },
     {
       "key": "BTCUSD:ICT",
@@ -675,8 +675,8 @@
       "tp1_price": 68578.93143,
       "tp2_price": 68881.1855,
       "opened_epoch": 1794550532.67596,
-      "tp1_hit": false,
-      "peak_r": 0.616
+      "tp1_hit": true,
+      "peak_r": 0.96
     },
     {
       "key": "BTCUSD:KRONOS",
@@ -691,7 +691,7 @@
       "tp2_price": 69136.03904,
       "opened_epoch": 1794550807.208541,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.292
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -706,7 +706,7 @@
       "tp2_price": 1947.11581,
       "opened_epoch": 1794550807.817843,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.3
     },
     {
       "key": "SOLUSD:BREAKOUT",
@@ -721,7 +721,7 @@
       "tp2_price": 79.97595,
       "opened_epoch": 1794550808.383304,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.408
     },
     {
       "key": "SOLUSD:KRONOS",
@@ -736,7 +736,7 @@
       "tp2_price": 79.97595,
       "opened_epoch": 1794550808.395544,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.408
     }
   ],
   "shadow_cooldowns": {
