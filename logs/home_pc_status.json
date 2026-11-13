@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 05:09:59 UTC",
+  "updated_utc": "2026-11-13 05:12:06 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 68518.01,
-    "ETHUSD": 1920.78,
-    "SOLUSD": 78.31
+    "BTCUSD": 68621.15,
+    "ETHUSD": 1924.2,
+    "SOLUSD": 78.4
   },
   "active_trades": {},
   "bot_stats": {
@@ -399,7 +399,7 @@
     "crypto_book_pnl": 90.07
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 05:03:38 UTC",
+    "updated_utc": "2026-11-13 05:10:29 UTC",
     "total_episodes": 300,
     "strategy_stats": {
       "SND": {
@@ -1062,6 +1062,21 @@
         "opened_epoch": 1794545328.999413,
         "tp1_hit": false,
         "peak_r": 0.098
+      },
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 68542.84,
+        "sl_price": 68186.46358,
+        "sl_dist": 356.37642,
+        "tp1_price": 68774.48467,
+        "tp2_price": 69059.58581,
+        "opened_epoch": 1794546629.550742,
+        "tp1_hit": false,
+        "peak_r": 0.36
       }
     ],
     "shadow_cooldowns": {
@@ -1072,7 +1087,7 @@
       "ETHUSD:KRONOS": 1794540033.204416,
       "SOLUSD:BREAKOUT": 1794525014.731489,
       "SOLUSD:KRONOS": 1794525014.733491,
-      "BTCUSD:ICT": 1794543411.756286,
+      "BTCUSD:ICT": 1794546629.550742,
       "SOLUSD:SND": 1794408013.22123,
       "SOLUSD:ICT": 1794531796.511658,
       "ETHUSD:TREND_PULLBACK": 1794430216.835559,
@@ -1089,7 +1104,7 @@
     },
     "shadow_episodes": 267
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 8h 20m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 8h 17m)",
   "deriv_flow_status": "Shadow Incubation (10/30 eps, 90% WR, +0.34R)",
-  "cycle_count": 220
+  "cycle_count": 225
 }
