@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 09:48:15 UTC",
+  "updated_utc": "2026-11-13 09:50:22 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 69018.21,
-    "ETHUSD": 1938.37,
+    "BTCUSD": 68966.13,
+    "ETHUSD": 1936.92,
     "SOLUSD": 79.94
   },
   "active_trades": {},
@@ -410,7 +410,7 @@
     "crypto_book_pnl": 103.65
   },
   "learned_weights": {
-    "updated_utc": "2026-11-13 09:42:11 UTC",
+    "updated_utc": "2026-11-13 09:50:18 UTC",
     "total_episodes": 328,
     "strategy_stats": {
       "SND": {
@@ -1090,6 +1090,21 @@
         "opened_epoch": 1794562530.283305,
         "tp1_hit": false,
         "peak_r": 0.087
+      },
+      {
+        "key": "ETHUSD:TREND_PULLBACK",
+        "symbol": "ETHUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 1937.04,
+        "sl_price": 1943.82535,
+        "sl_dist": 6.78535,
+        "tp1_price": 1932.62953,
+        "tp2_price": 1927.20125,
+        "opened_epoch": 1794563418.635339,
+        "tp1_hit": false,
+        "peak_r": 0.018
       }
     ],
     "shadow_cooldowns": {
@@ -1103,7 +1118,7 @@
       "BTCUSD:ICT": 1794554418.679431,
       "SOLUSD:SND": 1794408013.22123,
       "SOLUSD:ICT": 1794555623.765337,
-      "ETHUSD:TREND_PULLBACK": 1794559519.125549,
+      "ETHUSD:TREND_PULLBACK": 1794563418.635339,
       "BTCUSD:TREND_PULLBACK": 1794525615.821161,
       "SOLUSD:TREND_PULLBACK": 1794549305.403043,
       "ETHUSD:SND": 1794510318.622883,
@@ -1117,7 +1132,7 @@
     },
     "shadow_episodes": 294
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 3h 41m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 3h 39m)",
   "deriv_flow_status": "Shadow Incubation (22/30 eps, 68% WR, +0.15R)",
-  "cycle_count": 815
+  "cycle_count": 820
 }
