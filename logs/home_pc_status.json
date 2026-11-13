@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-13 04:38:33 UTC",
+  "updated_utc": "2026-11-13 04:40:37 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 68800.0,
-    "ETHUSD": 1926.5,
+    "BTCUSD": 68787.48,
+    "ETHUSD": 1925.81,
     "SOLUSD": 78.31
   },
   "active_trades": {},
@@ -1089,7 +1089,7 @@
     },
     "shadow_episodes": 265
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 8h 51m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core PPI m/m @ 2026-11-13 13:30 UTC (in 8h 49m)",
   "deriv_flow_status": "Shadow Incubation (8/30 eps, 88% WR, +0.32R)",
-  "cycle_count": 145
+  "cycle_count": 150
 }
