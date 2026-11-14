@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 09:45:44 UTC",
+  "updated_utc": "2026-11-14 09:46:59 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 67180.32,
-    "ETHUSD": 1909.55,
-    "SOLUSD": 75.74
+    "BTCUSD": 67248.0,
+    "ETHUSD": 1910.73,
+    "SOLUSD": 75.85
   },
   "active_trades": {},
   "bot_stats": {
@@ -421,8 +421,8 @@
     "crypto_book_pnl": 160.08
   },
   "learned_weights": {
-    "updated_utc": "2026-11-14 09:38:39 UTC",
-    "total_episodes": 358,
+    "updated_utc": "2026-11-14 09:46:58 UTC",
+    "total_episodes": 359,
     "strategy_stats": {
       "SND": {
         "trades": 17,
@@ -446,11 +446,11 @@
         "multiplier": 1.107
       },
       "TREND_PULLBACK": {
-        "trades": 56,
+        "trades": 57,
         "wins": 21,
-        "losses": 33,
-        "ema_r": -0.261,
-        "multiplier": 0.935
+        "losses": 34,
+        "ema_r": -0.32,
+        "multiplier": 0.92
       },
       "KRONOS": {
         "trades": 99,
@@ -470,7 +470,7 @@
     "regime_strategy_multipliers": {
       "RANGING:ICT": 1.0,
       "RANGING:KRONOS": 0.762,
-      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.845,
+      "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.829,
       "RANGING:TREND_PULLBACK": 1.043,
       "TRENDING_DOWN:TREND_PULLBACK": 0.921,
       "SESSION_SWEEP_WINDOW:ICT": 0.902,
@@ -1104,21 +1104,6 @@
     "live_episodes": 17,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:TREND_PULLBACK",
-        "symbol": "BTCUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "SHORT",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 67072.98,
-        "sl_price": 67247.3253,
-        "sl_dist": 174.3453,
-        "tp1_price": 66959.65555,
-        "tp2_price": 66820.17931,
-        "opened_epoch": 1794648312.246081,
-        "tp1_hit": false,
-        "peak_r": 0.213
-      },
-      {
         "key": "SOLUSD:BREAKOUT",
         "symbol": "SOLUSD",
         "strategy_name": "BREAKOUT",
@@ -1131,7 +1116,7 @@
         "tp2_price": 76.12989,
         "opened_epoch": 1794648606.629408,
         "tp1_hit": false,
-        "peak_r": 0.304
+        "peak_r": 0.506
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1161,7 +1146,7 @@
         "tp2_price": 1918.27204,
         "opened_epoch": 1794648912.631752,
         "tp1_hit": false,
-        "peak_r": 0.156
+        "peak_r": 0.294
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1232,9 +1217,9 @@
       "BTCUSD:DERIV_FLOW": 1794649117.321788,
       "ETHUSD:DERIV_FLOW": 1794649118.318846
     },
-    "shadow_episodes": 323
+    "shadow_episodes": 324
   },
   "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Shadow Incubation (36/30 eps, 56% WR, -0.13R)",
-  "cycle_count": 545
+  "cycle_count": 549
 }
