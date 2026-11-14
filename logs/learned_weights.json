@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 13:49:38 UTC",
+  "updated_utc": "2026-11-14 13:50:49 UTC",
   "total_episodes": 394,
   "strategy_stats": {
     "SND": {
@@ -725,6 +725,36 @@
       "opened_epoch": 1794664111.739527,
       "tp1_hit": false,
       "peak_r": 0.0
+    },
+    {
+      "key": "SOLUSD:ICT",
+      "symbol": "SOLUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 75.66,
+      "sl_price": 75.36745,
+      "sl_dist": 0.29255,
+      "tp1_price": 75.85016,
+      "tp2_price": 76.0842,
+      "opened_epoch": 1794664249.699876,
+      "tp1_hit": false,
+      "peak_r": 0.103
+    },
+    {
+      "key": "SOLUSD:KRONOS",
+      "symbol": "SOLUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 75.66,
+      "sl_price": 75.95255,
+      "sl_dist": 0.29255,
+      "tp1_price": 75.46984,
+      "tp2_price": 75.2358,
+      "opened_epoch": 1794664249.704405,
+      "tp1_hit": false,
+      "peak_r": 0.068
     }
   ],
   "shadow_cooldowns": {
@@ -734,10 +764,10 @@
     "ETHUSD:BREAKOUT": 1794660919.081215,
     "ETHUSD:KRONOS": 1794661518.280721,
     "SOLUSD:BREAKOUT": 1794662710.966505,
-    "SOLUSD:KRONOS": 1794662138.318991,
+    "SOLUSD:KRONOS": 1794664249.704405,
     "BTCUSD:ICT": 1794663927.20326,
     "SOLUSD:SND": 1794408013.22123,
-    "SOLUSD:ICT": 1794662138.316991,
+    "SOLUSD:ICT": 1794664249.699876,
     "ETHUSD:TREND_PULLBACK": 1794630909.75936,
     "BTCUSD:TREND_PULLBACK": 1794660330.245415,
     "SOLUSD:TREND_PULLBACK": 1794549305.403043,
