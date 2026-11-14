@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-14 20:53:39 UTC",
-  "total_episodes": 472,
+  "updated_utc": "2026-11-14 20:54:21 UTC",
+  "total_episodes": 473,
   "strategy_stats": {
     "SND": {
       "trades": 20,
@@ -31,11 +31,11 @@
       "multiplier": 1.034
     },
     "KRONOS": {
-      "trades": 114,
+      "trades": 115,
       "wins": 65,
-      "losses": 47,
-      "ema_r": 0.23,
-      "multiplier": 1.058
+      "losses": 48,
+      "ema_r": 0.132,
+      "multiplier": 1.033
     },
     "DERIV_FLOW": {
       "trades": 85,
@@ -47,7 +47,7 @@
   },
   "regime_strategy_multipliers": {
     "RANGING:ICT": 0.917,
-    "RANGING:KRONOS": 0.772,
+    "RANGING:KRONOS": 0.756,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.829,
     "RANGING:TREND_PULLBACK": 1.077,
     "TRENDING_DOWN:TREND_PULLBACK": 0.973,
@@ -680,23 +680,7 @@
     }
   ],
   "live_episodes": 17,
-  "active_shadow_trades": [
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 71.52,
-      "sl_price": 70.95979,
-      "sl_dist": 0.56021,
-      "tp1_price": 71.88413,
-      "tp2_price": 72.3323,
-      "opened_epoch": 1794688516.572002,
-      "tp1_hit": false,
-      "peak_r": 0.518
-    }
-  ],
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794688822.805909,
     "BTCUSD:BREAKOUT": 1794678002.605287,
@@ -720,5 +704,5 @@
     "BTCUSD:DERIV_FLOW": 1794686729.506474,
     "ETHUSD:DERIV_FLOW": 1794687255.124306
   },
-  "shadow_episodes": 437
+  "shadow_episodes": 438
 }
