@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-14 16:44:13 UTC",
-  "total_episodes": 432,
+  "updated_utc": "2026-11-14 16:46:32 UTC",
+  "total_episodes": 433,
   "strategy_stats": {
     "SND": {
       "trades": 19,
@@ -10,11 +10,11 @@
       "multiplier": 0.972
     },
     "ICT": {
-      "trades": 115,
+      "trades": 116,
       "wins": 62,
-      "losses": 52,
-      "ema_r": -0.501,
-      "multiplier": 0.875
+      "losses": 53,
+      "ema_r": -0.541,
+      "multiplier": 0.865
     },
     "BREAKOUT": {
       "trades": 90,
@@ -54,7 +54,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.904,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.958,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.816,
-    "TRENDING_DOWN:ICT": 0.912,
+    "TRENDING_DOWN:ICT": 0.896,
     "TRENDING_DOWN:KRONOS": 1.184,
     "RANGING:BREAKOUT": 1.004,
     "RANGING:SND": 1.064,
@@ -694,7 +694,7 @@
       "tp2_price": 64758.46907,
       "opened_epoch": 1794673007.834767,
       "tp1_hit": false,
-      "peak_r": 0.322
+      "peak_r": 0.627
     },
     {
       "key": "SOLUSD:BREAKOUT",
@@ -709,22 +709,7 @@
       "tp2_price": 71.49963,
       "opened_epoch": 1794673823.535981,
       "tp1_hit": false,
-      "peak_r": 0.215
-    },
-    {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1828.07,
-      "sl_price": 1813.73396,
-      "sl_dist": 14.33604,
-      "tp1_price": 1837.38843,
-      "tp2_price": 1848.85726,
-      "opened_epoch": 1794674413.501584,
-      "tp1_hit": false,
-      "peak_r": 0.234
+      "peak_r": 0.517
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -739,7 +724,7 @@
       "tp2_price": 71.88297,
       "opened_epoch": 1794674454.096197,
       "tp1_hit": true,
-      "peak_r": 0.756
+      "peak_r": 1.062
     }
   ],
   "shadow_cooldowns": {
@@ -765,5 +750,5 @@
     "BTCUSD:DERIV_FLOW": 1794673007.834767,
     "ETHUSD:DERIV_FLOW": 1794672450.683109
   },
-  "shadow_episodes": 397
+  "shadow_episodes": 398
 }
