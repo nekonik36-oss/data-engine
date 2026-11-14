@@ -293,13 +293,19 @@ class MT5Connector:
         return base_symbol
 
     def fetch_recent_candles(
-        self, symbol: str, timeframe: str = "M15", count: int = 500
+        self,
+        symbol: str,
+        timeframe: str = "M15",
+        count: int = 500,
+        allow_synthetic: bool = True,
+        max_stale_minutes: float = 0.0,
     ) -> List[Candle]:
         """
         Fetch recent OHLCV candles:
           - For 24/7 Crypto (`BTCUSD`, `ETHUSD`, `SOLUSD`): Uses live 24/7 Crypto Exchange feed
-            (or active MT5 feed if MT5 is streaming fresh weekend crypto bars).
-          - For Forex/Gold (`XAUUSD`, `EURUSD`, `USDJPY`): Uses live MT5 terminal bars.
+            (never falls back to frozen weekend MT5 crypto bars when `max_stale_minutes > 0`).
+          - For Forex/Gold (`XAUUSD`, `EURUSD`, `USDJPY`): Uses live MT5 terminal bars and skips
+            frozen weekend bars when `max_stale_minutes > 0`.
         """
         sym_upper = symbol.upper()
         is_crypto = sym_upper in CRYPTO_INSTRUMENTS
@@ -311,6 +317,9 @@ class MT5Connector:
             )
             if len(live_crypto) >= 60:
                 return live_crypto
+            if not allow_synthetic and max_stale_minutes > 0:
+                # Never fall through to stale/paused weekend MT5 CFD bars on a transient CDN timeout
+                return []
 
         # 2. Try connected MetaTrader 5 terminal
         if self.connected and self._mt5 is not None:
@@ -324,6 +333,11 @@ class MT5Connector:
             mt5_tf = tf_map.get(timeframe, self._mt5.TIMEFRAME_M15)
             rates = self._mt5.copy_rates_from_pos(broker_sym, mt5_tf, 0, count)
             if rates is not None and len(rates) > 0:
+                last_ts = datetime.fromtimestamp(int(rates[-1]["time"]), tz=timezone.utc)
+                if max_stale_minutes > 0:
+                    age_min = (datetime.now(timezone.utc) - last_ts).total_seconds() / 60.0
+                    if age_min > max_stale_minutes:
+                        return []
                 return [
                     Candle(
                         timestamp=datetime.fromtimestamp(int(r["time"]), tz=timezone.utc),
@@ -335,6 +349,8 @@ class MT5Connector:
                     )
                     for r in rates
                 ]
+            return []
+        if not allow_synthetic:
             return []
         return generate_realistic_market_candles(symbol=symbol, count=count)
 

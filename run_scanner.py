@@ -153,7 +153,13 @@ def run_scanner(
             if mt5_conn._has_open_trade_on_symbol(symbol) is not None:
                 continue
 
-            candles = mt5_conn.fetch_recent_candles(symbol=symbol, timeframe=tf, count=360)
+            candles = mt5_conn.fetch_recent_candles(
+                symbol=symbol,
+                timeframe=tf,
+                count=360,
+                allow_synthetic=False,
+                max_stale_minutes=45.0,
+            )
             if len(candles) < 60:
                 continue
 
