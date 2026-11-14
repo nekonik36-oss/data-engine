@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 12:51:55 UTC",
+  "updated_utc": "2026-11-14 12:52:53 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 67136.0,
-    "ETHUSD": 1901.76,
-    "SOLUSD": 75.66
+    "BTCUSD": 67091.01,
+    "ETHUSD": 1900.06,
+    "SOLUSD": 75.63
   },
   "active_trades": {},
   "bot_stats": {
@@ -421,8 +421,8 @@
     "crypto_book_pnl": 160.08
   },
   "learned_weights": {
-    "updated_utc": "2026-11-14 12:50:24 UTC",
-    "total_episodes": 378,
+    "updated_utc": "2026-11-14 12:52:51 UTC",
+    "total_episodes": 379,
     "strategy_stats": {
       "SND": {
         "trades": 18,
@@ -460,11 +460,11 @@
         "multiplier": 1.097
       },
       "DERIV_FLOW": {
-        "trades": 47,
-        "wins": 24,
+        "trades": 48,
+        "wins": 25,
         "losses": 23,
-        "ema_r": -0.247,
-        "multiplier": 0.938
+        "ema_r": -0.134,
+        "multiplier": 0.967
       }
     },
     "regime_strategy_multipliers": {
@@ -487,7 +487,7 @@
       "TRENDING_UP:KRONOS": 1.066,
       "TRENDING_UP:BREAKOUT": 0.973,
       "TRENDING_UP:TREND_PULLBACK": 1.004,
-      "RANGING:DERIV_FLOW": 0.951,
+      "RANGING:DERIV_FLOW": 0.97,
       "TRENDING_DOWN:DERIV_FLOW": 1.105,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.932
     },
@@ -1119,21 +1119,6 @@
         "peak_r": 1.128
       },
       {
-        "key": "ETHUSD:DERIV_FLOW",
-        "symbol": "ETHUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 1907.33,
-        "sl_price": 1911.73024,
-        "sl_dist": 4.40024,
-        "tp1_price": 1904.46985,
-        "tp2_price": 1900.94966,
-        "opened_epoch": 1794659767.872808,
-        "tp1_hit": true,
-        "peak_r": 1.266
-      },
-      {
         "key": "BTCUSD:TREND_PULLBACK",
         "symbol": "BTCUSD",
         "strategy_name": "TREND_PULLBACK",
@@ -1146,7 +1131,7 @@
         "tp2_price": 66915.8553,
         "opened_epoch": 1794660330.245415,
         "tp1_hit": false,
-        "peak_r": 0.081
+        "peak_r": 0.264
       },
       {
         "key": "BTCUSD:ICT",
@@ -1187,9 +1172,9 @@
       "BTCUSD:DERIV_FLOW": 1794658820.408547,
       "ETHUSD:DERIV_FLOW": 1794659767.872808
     },
-    "shadow_episodes": 343
+    "shadow_episodes": 344
   },
   "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
-  "deriv_flow_status": "Shadow Incubation (47/30 eps, 51% WR, -0.25R)",
-  "cycle_count": 115
+  "deriv_flow_status": "Shadow Incubation (48/30 eps, 52% WR, -0.13R)",
+  "cycle_count": 118
 }
