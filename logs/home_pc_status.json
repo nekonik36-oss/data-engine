@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 03:10:43 UTC",
+  "updated_utc": "2026-11-14 03:12:13 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 67678.0,
-    "ETHUSD": 1912.56,
-    "SOLUSD": 76.23
+    "BTCUSD": 67662.22,
+    "ETHUSD": 1913.08,
+    "SOLUSD": 76.25
   },
   "active_trades": {},
   "bot_stats": {
@@ -1116,7 +1116,7 @@
         "tp2_price": 1929.06353,
         "opened_epoch": 1794625206.258243,
         "tp1_hit": false,
-        "peak_r": 0.06
+        "peak_r": 0.214
       },
       {
         "key": "SOLUSD:ICT",
@@ -1131,7 +1131,7 @@
         "tp2_price": 77.03384,
         "opened_epoch": 1794625208.022265,
         "tp1_hit": false,
-        "peak_r": 0.018
+        "peak_r": 0.16
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1176,5 +1176,5 @@
   },
   "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Shadow Incubation (26/30 eps, 58% WR, -0.15R)",
-  "cycle_count": 55
+  "cycle_count": 60
 }
