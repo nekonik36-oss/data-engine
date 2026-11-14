@@ -694,7 +694,7 @@
       "tp2_price": 73.41699,
       "opened_epoch": 1794668110.590952,
       "tp1_hit": false,
-      "peak_r": 0.41
+      "peak_r": 0.535
     },
     {
       "key": "ETHUSD:DERIV_FLOW",
@@ -708,8 +708,8 @@
       "tp1_price": 1843.62156,
       "tp2_price": 1832.01733,
       "opened_epoch": 1794668237.481482,
-      "tp1_hit": false,
-      "peak_r": 0.297
+      "tp1_hit": true,
+      "peak_r": 0.814
     },
     {
       "key": "ETHUSD:ICT",
@@ -769,7 +769,7 @@
       "tp2_price": 65478.92705,
       "opened_epoch": 1794668779.797261,
       "tp1_hit": true,
-      "peak_r": 0.759
+      "peak_r": 1.034
     },
     {
       "key": "BTCUSD:BREAKOUT",
@@ -784,7 +784,7 @@
       "tp2_price": 65238.95035,
       "opened_epoch": 1794669025.591005,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.313
     }
   ],
   "shadow_cooldowns": {
