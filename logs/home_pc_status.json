@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 13:04:53 UTC",
+  "updated_utc": "2026-11-14 13:05:57 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 66795.75,
-    "ETHUSD": 1892.41,
-    "SOLUSD": 75.31
+    "BTCUSD": 66809.52,
+    "ETHUSD": 1893.25,
+    "SOLUSD": 75.45
   },
   "active_trades": {},
   "bot_stats": {
@@ -421,7 +421,7 @@
     "crypto_book_pnl": 160.08
   },
   "learned_weights": {
-    "updated_utc": "2026-11-14 13:04:50 UTC",
+    "updated_utc": "2026-11-14 13:05:18 UTC",
     "total_episodes": 384,
     "strategy_stats": {
       "SND": {
@@ -1117,6 +1117,21 @@
         "opened_epoch": 1794661319.983395,
         "tp1_hit": true,
         "peak_r": 1.373
+      },
+      {
+        "key": "ETHUSD:KRONOS",
+        "symbol": "ETHUSD",
+        "strategy_name": "KRONOS",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 1894.33,
+        "sl_price": 1888.9167,
+        "sl_dist": 5.4133,
+        "tp1_price": 1897.84865,
+        "tp2_price": 1902.17929,
+        "opened_epoch": 1794661518.280721,
+        "tp1_hit": false,
+        "peak_r": 0.301
       }
     ],
     "shadow_cooldowns": {
@@ -1124,7 +1139,7 @@
       "BTCUSD:BREAKOUT": 1794660917.065326,
       "BTCUSD:KRONOS": 1794651610.837839,
       "ETHUSD:BREAKOUT": 1794660919.081215,
-      "ETHUSD:KRONOS": 1794550807.817843,
+      "ETHUSD:KRONOS": 1794661518.280721,
       "SOLUSD:BREAKOUT": 1794648606.629408,
       "SOLUSD:KRONOS": 1794648606.632408,
       "BTCUSD:ICT": 1794660621.784041,
@@ -1146,5 +1161,5 @@
   },
   "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Shadow Incubation (49/30 eps, 53% WR, -0.03R)",
-  "cycle_count": 153
+  "cycle_count": 155
 }
