@@ -51,8 +51,9 @@ class RegimeDetector:
         if cur_adx >= 22.0 and e20 < e50 <= e200 and c.close <= e50:
             return MarketRegime.TRENDING_DOWN
 
-        # 3. Detect prime London/NY opening liquidity sweep & breakout window
-        if (7 <= hour_utc <= 10) or (12 <= hour_utc <= 15):
+        # 3. Detect prime London/NY opening liquidity sweep & breakout window (Weekdays Mon-Fri only;
+        #    London & NY traditional exchanges are closed on Saturday/Sunday).
+        if c.timestamp.weekday() < 5 and ((7 <= hour_utc <= 10) or (12 <= hour_utc <= 15)):
             return MarketRegime.SESSION_SWEEP_WINDOW
 
         return MarketRegime.RANGING

@@ -385,21 +385,37 @@ class ConfluenceEngine:
                     if any(v.confidence >= 0.72 for v in opposing_pa):
                         return None
                     strong_agree = [v for v in agreeing_pa if v.confidence >= 0.75]
+                    e50, e200 = ind.ema50[idx], ind.ema200[idx]
+                    e60, e240 = ind.ema60[idx], ind.ema240[idx]
+                    macro_trend_intact = (
+                        (direction == Direction.LONG and e50 > e200 and (e60 - e240) >= 0.80 * cur_atr)
+                        or (direction == Direction.SHORT and e50 < e200 and (e240 - e60) >= 0.80 * cur_atr)
+                    )
                     kronos_strong = (
                         kronos_fc is not None
                         and kronos_fc.direction == direction
                         and kronos_fc.confidence >= 0.40
-                        and regime not in {MarketRegime.RANGING, MarketRegime.SESSION_SWEEP_WINDOW}
+                        and regime != MarketRegime.SESSION_SWEEP_WINDOW
                     )
-                    top_pa_with_kronos = (
-                        len(strong_agree) == 1
-                        and strong_agree[0].strategy_name in {"BREAKOUT", "ICT"}
-                        and strong_agree[0].confidence >= 0.78
-                        and kronos_strong
-                    )
+                    top_pa_with_kronos = False
+                    if len(strong_agree) == 1 and kronos_strong:
+                        lead_v = strong_agree[0]
+                        if (
+                            lead_v.strategy_name == "BREAKOUT"
+                            and lead_v.confidence >= 0.78
+                            and regime != MarketRegime.RANGING
+                        ):
+                            top_pa_with_kronos = True
+                        elif (
+                            lead_v.strategy_name == "ICT"
+                            and lead_v.confidence >= 0.80
+                            and kronos_fc is not None
+                            and kronos_fc.confidence >= 0.42
+                            and (regime != MarketRegime.RANGING or macro_trend_intact)
+                        ):
+                            top_pa_with_kronos = True
                     if len(strong_agree) < 2 and not top_pa_with_kronos:
                         return None
-                    e60, e240 = ind.ema60[idx], ind.ema240[idx]
                     if direction == Direction.LONG and e60 < e240:
                         return None
                     if direction == Direction.SHORT and e60 > e240:
@@ -453,7 +469,10 @@ class ConfluenceEngine:
                     synergy_bonus = 5.0 if len(agreeing_pa) >= 2 else 0.0
                     confluence_score = min(100.0, 88.0 * avg_learned_m + synergy_bonus)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
-                elif rev_votes:
+                elif rev_votes and max(
+                    curr.volume / max(ind.vol_ma20[idx], 1e-9),
+                    candles[idx - 1].volume / max(ind.vol_ma20[idx - 1], 1e-9),
+                ) >= 1.20:
                     long_rev = [v for v in rev_votes if v.direction == Direction.LONG]
                     short_rev = [v for v in rev_votes if v.direction == Direction.SHORT]
                     if long_rev and short_rev:
@@ -462,11 +481,6 @@ class ConfluenceEngine:
                     agreeing_pa = long_rev if long_rev else short_rev
 
                     prev = candles[idx - 1]
-                    vol_ratio = curr.volume / max(ind.vol_ma20[idx], 1e-9)
-                    prev_vol_ratio = prev.volume / max(ind.vol_ma20[idx - 1], 1e-9)
-                    if max(vol_ratio, prev_vol_ratio) < 1.20:
-                        return None
-
                     e60, e240 = ind.ema60[idx], ind.ema240[idx]
                     h1_bull = e60 > e240 and (e60 - ind.ema60[idx - 12]) > 0
                     h1_bear = e60 < e240 and (ind.ema60[idx - 12] - e60) > 0
@@ -497,27 +511,39 @@ class ConfluenceEngine:
                     confluence_score = min(100.0, best_pa_conf * 100.0 + synergy)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 else:
-                    # Path C: H1-Trend BREAKOUT (1.082x, +0.328R EMA) confirmed by KRONOS (1.038x)
-                    brk_votes = [
+                    # Path C: H1-Trend BREAKOUT (>=0.78) or Macro-Trend ICT (>=0.80) confirmed by KRONOS
+                    cand_votes = [
                         v
                         for v in pa_votes
-                        if v.strategy_name == "BREAKOUT" and v.confidence >= 0.78
+                        if (v.strategy_name == "BREAKOUT" and v.confidence >= 0.78)
+                        or (v.strategy_name == "ICT" and v.confidence >= 0.80)
                     ]
-                    if not brk_votes:
+                    if not cand_votes:
                         return None
-                    direction = brk_votes[0].direction
+                    lead_c = max(cand_votes, key=lambda x: x.confidence)
+                    direction = lead_c.direction
                     if any(v.direction != direction and v.confidence >= 0.72 for v in pa_votes):
                         return None
+                    e50, e200 = ind.ema50[idx], ind.ema200[idx]
                     e60, e240 = ind.ema60[idx], ind.ema240[idx]
                     if direction == Direction.LONG and e60 < e240:
                         return None
                     if direction == Direction.SHORT and e60 > e240:
                         return None
+                    macro_trend_intact = (
+                        (direction == Direction.LONG and e50 > e200 and (e60 - e240) >= 0.80 * cur_atr)
+                        or (direction == Direction.SHORT and e50 < e200 and (e240 - e60) >= 0.80 * cur_atr)
+                    )
+                    min_k_conf = 0.42 if lead_c.strategy_name == "ICT" else 0.40
                     if (
                         kronos_fc is None
                         or kronos_fc.direction != direction
-                        or kronos_fc.confidence < 0.40
-                        or regime in {MarketRegime.RANGING, MarketRegime.SESSION_SWEEP_WINDOW}
+                        or kronos_fc.confidence < min_k_conf
+                        or regime == MarketRegime.SESSION_SWEEP_WINDOW
+                        or (
+                            regime == MarketRegime.RANGING
+                            and not (lead_c.strategy_name == "ICT" and macro_trend_intact)
+                        )
                     ):
                         return None
                     agreeing_pa = [v for v in pa_votes if v.direction == direction]
