@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-14 04:01:02 UTC",
-  "total_episodes": 343,
+  "updated_utc": "2026-11-14 04:10:18 UTC",
+  "total_episodes": 345,
   "strategy_stats": {
     "SND": {
       "trades": 17,
@@ -10,11 +10,11 @@
       "multiplier": 0.991
     },
     "ICT": {
-      "trades": 97,
+      "trades": 98,
       "wins": 56,
-      "losses": 40,
-      "ema_r": -0.06,
-      "multiplier": 0.985
+      "losses": 41,
+      "ema_r": -0.096,
+      "multiplier": 0.976
     },
     "BREAKOUT": {
       "trades": 79,
@@ -31,11 +31,11 @@
       "multiplier": 0.968
     },
     "KRONOS": {
-      "trades": 96,
+      "trades": 97,
       "wins": 54,
-      "losses": 40,
-      "ema_r": 0.575,
-      "multiplier": 1.144
+      "losses": 41,
+      "ema_r": 0.488,
+      "multiplier": 1.122
     },
     "DERIV_FLOW": {
       "trades": 30,
@@ -54,8 +54,8 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.895,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.939,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.825,
-    "TRENDING_DOWN:ICT": 1.015,
-    "TRENDING_DOWN:KRONOS": 1.19,
+    "TRENDING_DOWN:ICT": 1.007,
+    "TRENDING_DOWN:KRONOS": 1.182,
     "RANGING:BREAKOUT": 0.982,
     "RANGING:SND": 1.064,
     "TRENDING_DOWN:BREAKOUT": 1.168,
@@ -682,36 +682,6 @@
   "live_episodes": 17,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:ICT",
-      "symbol": "BTCUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 66974.0,
-      "sl_price": 66591.51544,
-      "sl_dist": 382.48456,
-      "tp1_price": 67222.61496,
-      "tp2_price": 67528.60261,
-      "opened_epoch": 1794627604.219838,
-      "tp1_hit": false,
-      "peak_r": 0.211
-    },
-    {
-      "key": "BTCUSD:KRONOS",
-      "symbol": "BTCUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 66974.0,
-      "sl_price": 66591.51544,
-      "sl_dist": 382.48456,
-      "tp1_price": 67222.61496,
-      "tp2_price": 67528.60261,
-      "opened_epoch": 1794627604.22235,
-      "tp1_hit": false,
-      "peak_r": 0.211
-    },
-    {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
       "strategy_name": "DERIV_FLOW",
@@ -795,5 +765,5 @@
     "BTCUSD:DERIV_FLOW": 1794627914.326252,
     "ETHUSD:DERIV_FLOW": 1794628204.510904
   },
-  "shadow_episodes": 308
+  "shadow_episodes": 310
 }
