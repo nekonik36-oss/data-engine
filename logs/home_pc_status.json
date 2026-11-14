@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 10:43:23 UTC",
+  "updated_utc": "2026-11-14 10:45:06 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 67339.85,
-    "ETHUSD": 1911.91,
-    "SOLUSD": 75.88
+    "BTCUSD": 67297.9,
+    "ETHUSD": 1911.09,
+    "SOLUSD": 75.83
   },
   "active_trades": {},
   "bot_stats": {
@@ -421,7 +421,7 @@
     "crypto_book_pnl": 160.08
   },
   "learned_weights": {
-    "updated_utc": "2026-11-14 10:42:56 UTC",
+    "updated_utc": "2026-11-14 10:44:06 UTC",
     "total_episodes": 370,
     "strategy_stats": {
       "SND": {
@@ -1104,21 +1104,6 @@
     "live_episodes": 17,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "LONG",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 75.89,
-        "sl_price": 75.59325,
-        "sl_dist": 0.29675,
-        "tp1_price": 76.08289,
-        "tp2_price": 76.32029,
-        "opened_epoch": 1794651236.340513,
-        "tp1_hit": false,
-        "peak_r": 0.202
-      },
-      {
         "key": "SOLUSD:ICT",
         "symbol": "SOLUSD",
         "strategy_name": "ICT",
@@ -1191,5 +1176,5 @@
   },
   "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Shadow Incubation (40/30 eps, 52% WR, -0.26R)",
-  "cycle_count": 720
+  "cycle_count": 725
 }
