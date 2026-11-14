@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 14:24:43 UTC",
+  "updated_utc": "2026-11-14 14:25:29 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 66171.22,
-    "ETHUSD": 1854.0,
-    "SOLUSD": 74.5
+    "BTCUSD": 66177.25,
+    "ETHUSD": 1857.27,
+    "SOLUSD": 74.49
   },
   "active_trades": {},
   "bot_stats": {
@@ -421,7 +421,7 @@
     "crypto_book_pnl": 160.08
   },
   "learned_weights": {
-    "updated_utc": "2026-11-14 14:24:42 UTC",
+    "updated_utc": "2026-11-14 14:25:05 UTC",
     "total_episodes": 407,
     "strategy_stats": {
       "SND": {
@@ -1102,10 +1102,26 @@
       }
     ],
     "live_episodes": 17,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "BTCUSD:BREAKOUT",
+        "symbol": "BTCUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 66217.45,
+        "sl_price": 66501.23309,
+        "sl_dist": 283.78309,
+        "tp1_price": 66032.99099,
+        "tp2_price": 65805.96452,
+        "opened_epoch": 1794666305.714445,
+        "tp1_hit": false,
+        "peak_r": 0.142
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794663932.52765,
-      "BTCUSD:BREAKOUT": 1794660917.065326,
+      "BTCUSD:BREAKOUT": 1794666305.714445,
       "BTCUSD:KRONOS": 1794665108.838147,
       "ETHUSD:BREAKOUT": 1794665112.385176,
       "ETHUSD:KRONOS": 1794665112.387695,
@@ -1130,5 +1146,5 @@
   },
   "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (58 eps, 60.3% WR, +0.57R EMA)",
-  "cycle_count": 373
+  "cycle_count": 375
 }
