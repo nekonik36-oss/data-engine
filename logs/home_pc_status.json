@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 12:04:30 UTC",
+  "updated_utc": "2026-11-14 12:06:01 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": true,
   "kronos_active_backend": "statistical_mc_fallback",
   "latest_prices": {
-    "BTCUSD": 67270.01,
-    "ETHUSD": 1910.19,
+    "BTCUSD": 67240.01,
+    "ETHUSD": 1909.62,
     "SOLUSD": 75.95
   },
   "active_trades": {},
@@ -1161,5 +1161,5 @@
   },
   "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Shadow Incubation (45/30 eps, 51% WR, -0.27R)",
-  "cycle_count": 1
+  "cycle_count": 5
 }
