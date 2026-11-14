@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 23:00:42 UTC",
+  "updated_utc": "2026-11-14 23:05:05 UTC",
   "total_episodes": 502,
   "strategy_stats": {
     "SND": {
@@ -682,36 +682,6 @@
   "live_episodes": 17,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:TREND_PULLBACK",
-      "symbol": "SOLUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 69.11,
-      "sl_price": 70.00434,
-      "sl_dist": 0.89434,
-      "tp1_price": 68.52868,
-      "tp2_price": 67.8132,
-      "opened_epoch": 1794695703.047276,
-      "tp1_hit": false,
-      "peak_r": 0.157
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 69.11,
-      "sl_price": 68.21566,
-      "sl_dist": 0.89434,
-      "tp1_price": 69.69132,
-      "tp2_price": 70.4068,
-      "opened_epoch": 1794695703.050291,
-      "tp1_hit": false,
-      "peak_r": 0.637
-    },
-    {
       "key": "ETHUSD:KRONOS",
       "symbol": "ETHUSD",
       "strategy_name": "KRONOS",
@@ -739,7 +709,7 @@
       "tp2_price": 67.77835,
       "opened_epoch": 1794696088.194617,
       "tp1_hit": false,
-      "peak_r": 0.08
+      "peak_r": 0.126
     },
     {
       "key": "ETHUSD:DERIV_FLOW",
@@ -754,7 +724,7 @@
       "tp2_price": 1718.42238,
       "opened_epoch": 1794697154.473389,
       "tp1_hit": false,
-      "peak_r": 0.296
+      "peak_r": 0.553
     }
   ],
   "shadow_cooldowns": {
