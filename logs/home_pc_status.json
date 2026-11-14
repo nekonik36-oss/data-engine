@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 02:39:48 UTC",
+  "updated_utc": "2026-11-14 02:41:21 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 67500.0,
-    "ETHUSD": 1904.39,
-    "SOLUSD": 75.8,
+    "BTCUSD": 67486.92,
+    "ETHUSD": 1902.81,
+    "SOLUSD": 75.73,
     "XAUUSD": 3882.55,
     "EURUSD": 1.10227,
     "USDJPY": 159.673
@@ -424,7 +424,7 @@
     "crypto_book_pnl": 160.08
   },
   "learned_weights": {
-    "updated_utc": "2026-11-14 02:35:30 UTC",
+    "updated_utc": "2026-11-14 02:40:28 UTC",
     "total_episodes": 334,
     "strategy_stats": {
       "SND": {
@@ -1135,6 +1135,21 @@
         "opened_epoch": 1794623719.656918,
         "tp1_hit": false,
         "peak_r": 0.128
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 75.85,
+        "sl_price": 76.40535,
+        "sl_dist": 0.55535,
+        "tp1_price": 75.48902,
+        "tp2_price": 75.04475,
+        "opened_epoch": 1794624028.648044,
+        "tp1_hit": false,
+        "peak_r": 0.396
       }
     ],
     "shadow_cooldowns": {
@@ -1156,7 +1171,7 @@
       "XAUUSD:BREAKOUT": 1794409105.08686,
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931,
-      "SOLUSD:DERIV_FLOW": 1794562530.283305,
+      "SOLUSD:DERIV_FLOW": 1794624028.648044,
       "BTCUSD:DERIV_FLOW": 1794623700.687725,
       "ETHUSD:DERIV_FLOW": 1794623719.656918
     },
@@ -1164,5 +1179,5 @@
   },
   "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Shadow Incubation (23/30 eps, 65% WR, +0.10R)",
-  "cycle_count": 15
+  "cycle_count": 20
 }
