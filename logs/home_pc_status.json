@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-14 13:09:20 UTC",
+  "updated_utc": "2026-11-14 13:10:51 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 66815.64,
-    "ETHUSD": 1893.59,
-    "SOLUSD": 75.43
+    "BTCUSD": 66868.17,
+    "ETHUSD": 1895.56,
+    "SOLUSD": 75.55
   },
   "active_trades": {},
   "bot_stats": {
@@ -421,7 +421,7 @@
     "crypto_book_pnl": 160.08
   },
   "learned_weights": {
-    "updated_utc": "2026-11-14 13:05:18 UTC",
+    "updated_utc": "2026-11-14 13:09:58 UTC",
     "total_episodes": 384,
     "strategy_stats": {
       "SND": {
@@ -1116,7 +1116,7 @@
         "tp2_price": 66784.45581,
         "opened_epoch": 1794661319.983395,
         "tp1_hit": true,
-        "peak_r": 1.373
+        "peak_r": 1.393
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1132,6 +1132,21 @@
         "opened_epoch": 1794661518.280721,
         "tp1_hit": false,
         "peak_r": 0.301
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 75.48,
+        "sl_price": 75.73437,
+        "sl_dist": 0.25437,
+        "tp1_price": 75.31466,
+        "tp2_price": 75.11116,
+        "opened_epoch": 1794661798.512477,
+        "tp1_hit": false,
+        "peak_r": 0.079
       }
     ],
     "shadow_cooldowns": {
@@ -1153,7 +1168,7 @@
       "XAUUSD:BREAKOUT": 1794409105.08686,
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931,
-      "SOLUSD:DERIV_FLOW": 1794659687.588878,
+      "SOLUSD:DERIV_FLOW": 1794661798.512477,
       "BTCUSD:DERIV_FLOW": 1794661319.983395,
       "ETHUSD:DERIV_FLOW": 1794659767.872808
     },
@@ -1161,5 +1176,5 @@
   },
   "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Shadow Incubation (49/30 eps, 53% WR, -0.03R)",
-  "cycle_count": 165
+  "cycle_count": 170
 }
