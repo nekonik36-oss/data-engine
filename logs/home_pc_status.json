@@ -1,30 +1,55 @@
 {
-  "updated_utc": "2026-11-15 04:20:34 UTC",
-  "hostname": "DESKTOP-8RQUOSU",
-  "python_version": "3.12.10",
+  "updated_utc": "2026-11-15 07:52:27 UTC",
+  "hostname": "runnervmccnms",
+  "python_version": "3.12.16",
   "gpu": {
-    "torch_installed": true,
-    "torch_version": "2.11.0+cu128",
-    "cuda_version": "12.8",
-    "cuda_available": true,
-    "gpu_name": "NVIDIA GeForce RTX 5060",
-    "cuda_kernel_ok": true,
-    "cuda_error": null
+    "torch_installed": false,
+    "torch_version": null,
+    "cuda_version": null,
+    "cuda_available": false,
+    "gpu_name": null,
+    "cuda_kernel_ok": false,
+    "cuda_error": "No module named 'torch'"
   },
   "pending_hot_reload": false,
   "execution_mode": "auto",
-  "mt5_connected": true,
-  "mt5_error": null,
+  "mt5_connected": false,
+  "mt5_error": "No module named 'MetaTrader5'",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9880.83,
-  "telegram_configured": true,
-  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
+  "telegram_configured": false,
+  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64886.72,
-    "ETHUSD": 1818.59,
-    "SOLUSD": 71.39
+    "BTCUSD": 63846.22,
+    "ETHUSD": 1775.55,
+    "SOLUSD": 69.58
   },
-  "active_trades": {},
+  "active_trades": {
+    "84729146": {
+      "ticket": 84729146,
+      "symbol": "ETHUSD",
+      "broker_symbol": "ETHUSD",
+      "broker_source": "CRYPTO_24_7_LIVE",
+      "direction": "SHORT",
+      "entry_price": 1775.41,
+      "sl_price": 1789.69,
+      "initial_sl_price": 1789.69,
+      "tp1_price": 1766.13,
+      "tp2_price": 1754.71,
+      "volume": 3.45,
+      "initial_volume": 3.45,
+      "risk_usd": 49.26,
+      "confluence_score": 100.0,
+      "regime": "TRENDING_DOWN",
+      "agreeing_strategies": [
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "opened_at_utc": "2026-11-15 07:52:26 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0
+    }
+  },
   "bot_stats": {
     "total_closed": 36,
     "wins": 15,
@@ -432,8 +457,8 @@
     "crypto_book_pnl": 160.08
   },
   "learned_weights": {
-    "updated_utc": "2026-11-15 04:15:24 UTC",
-    "total_episodes": 549,
+    "updated_utc": "2026-11-15 07:52:27 UTC",
+    "total_episodes": 552,
     "strategy_stats": {
       "SND": {
         "trades": 21,
@@ -446,8 +471,8 @@
         "trades": 139,
         "wins": 70,
         "losses": 68,
-        "ema_r": -0.239,
-        "multiplier": 0.94
+        "ema_r": -0.059,
+        "multiplier": 0.985
       },
       "BREAKOUT": {
         "trades": 106,
@@ -467,15 +492,15 @@
         "trades": 129,
         "wins": 73,
         "losses": 54,
-        "ema_r": -0.022,
-        "multiplier": 0.995
+        "ema_r": 0.158,
+        "multiplier": 1.04
       },
       "DERIV_FLOW": {
-        "trades": 113,
-        "wins": 74,
+        "trades": 116,
+        "wins": 77,
         "losses": 39,
-        "ema_r": 0.086,
-        "multiplier": 1.021
+        "ema_r": 0.466,
+        "multiplier": 1.117
       }
     },
     "regime_strategy_multipliers": {
@@ -498,7 +523,7 @@
       "TRENDING_UP:KRONOS": 1.066,
       "TRENDING_UP:BREAKOUT": 0.973,
       "TRENDING_UP:TREND_PULLBACK": 1.004,
-      "RANGING:DERIV_FLOW": 1.076,
+      "RANGING:DERIV_FLOW": 1.133,
       "TRENDING_DOWN:DERIV_FLOW": 1.384,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.932
     },
@@ -510,7 +535,7 @@
       },
       "ETHUSD": {
         "win_streak": 0,
-        "loss_streak": 1,
+        "loss_streak": 0,
         "net_r": -0.31
       },
       "SOLUSD": {
@@ -544,7 +569,7 @@
         "be_shield_r": 0.55
       },
       "ETHUSD": {
-        "sl_floor_mult": 1.0,
+        "sl_floor_mult": 1.12,
         "be_shield_r": 0.55
       },
       "EURUSD": {
@@ -556,42 +581,8 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [
-      {
-        "ticket": 1085338207,
-        "symbol": "ETHUSD",
-        "direction": "SHORT",
-        "entry_price": 1814.37,
-        "exit_price": 1822.77,
-        "tp1_price": 1801.39725,
-        "tp2_price": 1785.4308,
-        "agreeing_strategies": [
-          "ICT",
-          "KRONOS",
-          "DERIV_FLOW"
-        ],
-        "regime": "RANGING",
-        "closed_epoch": 1794716117.744973,
-        "closed_at_utc": "2026-11-15 04:15:17 UTC",
-        "audited": false
-      }
-    ],
+    "pending_post_mortems": [],
     "ai_feedback_feed": [
-      {
-        "timestamp_utc": "2026-11-09 05:26:06 UTC",
-        "event": "TRADE_CLOSED_DIAGNOSTIC",
-        "ticket": 1079289556,
-        "symbol": "BTCUSD",
-        "direction": "SHORT",
-        "net_pnl": 55.49,
-        "r_multiple": 1.17,
-        "peak_favorable_r": 0.79,
-        "regime": "RANGING",
-        "strategies": [
-          "TREND_PULLBACK"
-        ],
-        "auto_fix_action": "NONE"
-      },
       {
         "timestamp_utc": "2026-11-09 06:46:06 UTC",
         "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -1146,56 +1137,23 @@
           "DERIV_FLOW"
         ],
         "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1801.39725)"
+      },
+      {
+        "timestamp_utc": "2026-11-15 07:52:27 UTC",
+        "event": "WICK_OUT_AUTO_TUNED",
+        "ticket": 1085338207,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "tp1_price": 1801.39725,
+        "current_price": 1775.55,
+        "minutes_after_close": 217.2,
+        "old_sl_floor_mult": 1.0,
+        "new_sl_floor_mult": 1.12,
+        "summary": "[AI POST-MORTEM SELF-FIX] Ticket #1085338207 (ETHUSD SHORT) was wicked out @ 1822.77 before reaching TP1 (1801.39725 -> 1775.55)! Auto-widened ETHUSD Stop-Floor Multiplier 1.00x -> 1.12x & restored strategy weight."
       }
     ],
     "live_episodes": 18,
-    "active_shadow_trades": [
-      {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 71.2,
-        "sl_price": 71.84587,
-        "sl_dist": 0.64587,
-        "tp1_price": 70.78018,
-        "tp2_price": 70.26348,
-        "opened_epoch": 1794715576.603144,
-        "tp1_hit": false,
-        "peak_r": 0.17
-      },
-      {
-        "key": "BTCUSD:DERIV_FLOW",
-        "symbol": "BTCUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 64745.26,
-        "sl_price": 65205.22253,
-        "sl_dist": 459.96253,
-        "tp1_price": 64446.28435,
-        "tp2_price": 64078.31433,
-        "opened_epoch": 1794715703.916883,
-        "tp1_hit": false,
-        "peak_r": 0.168
-      },
-      {
-        "key": "ETHUSD:DERIV_FLOW",
-        "symbol": "ETHUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 1820.57,
-        "sl_price": 1834.70552,
-        "sl_dist": 14.13552,
-        "tp1_price": 1811.38191,
-        "tp2_price": 1800.0735,
-        "opened_epoch": 1794716123.248789,
-        "tp1_hit": false,
-        "peak_r": 0.245
-      }
-    ],
+    "active_shadow_trades": [],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794713704.673238,
       "BTCUSD:BREAKOUT": 1794704704.462779,
@@ -1219,9 +1177,9 @@
       "BTCUSD:DERIV_FLOW": 1794715703.916883,
       "ETHUSD:DERIV_FLOW": 1794716123.248789
     },
-    "shadow_episodes": 513
+    "shadow_episodes": 516
   },
-  "macro_shield": "Armed (-20m/+15m Red-Folder USD/EUR/JPY)",
-  "deriv_flow_status": "Graduated Live (113 eps, 65.5% WR, +0.09R EMA)",
-  "cycle_count": 2790
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 33h 7m)",
+  "deriv_flow_status": "Graduated Live (116 eps, 66.4% WR, +0.47R EMA)",
+  "cycle_count": 1
 }

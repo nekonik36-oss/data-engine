@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-15 04:20:34 UTC",
-  "hostname": "DESKTOP-8RQUOSU",
+  "updated_utc": "2026-11-15 07:52:27 UTC",
+  "hostname": "runnervmccnms",
   "live_equity": 9880.83,
   "bot_stats": {
     "total_closed": 36,
@@ -418,7 +418,7 @@
       "be_shield_r": 0.55
     },
     "ETHUSD": {
-      "sl_floor_mult": 1.0,
+      "sl_floor_mult": 1.12,
       "be_shield_r": 0.55
     },
     "EURUSD": {
@@ -438,7 +438,7 @@
     },
     "ETHUSD": {
       "win_streak": 0,
-      "loss_streak": 1,
+      "loss_streak": 0,
       "net_r": -0.31
     },
     "SOLUSD": {
@@ -462,35 +462,8 @@
       "net_r": -1.02
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1085338207,
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "entry_price": 1814.37,
-      "exit_price": 1822.77,
-      "tp1_price": 1801.39725,
-      "tp2_price": 1785.4308,
-      "agreeing_strategies": [
-        "ICT",
-        "KRONOS",
-        "DERIV_FLOW"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1794716117.744973,
-      "closed_at_utc": "2026-11-15 04:15:17 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 15:25:10 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 1079668118,
-      "symbol": "EURUSD",
-      "direction": "SHORT",
-      "summary": "Ticket #1079668118 (EURUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
     {
       "timestamp_utc": "2026-11-10 03:43:21 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -841,6 +814,19 @@
         "DERIV_FLOW"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1801.39725)"
+    },
+    {
+      "timestamp_utc": "2026-11-15 07:52:27 UTC",
+      "event": "WICK_OUT_AUTO_TUNED",
+      "ticket": 1085338207,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "tp1_price": 1801.39725,
+      "current_price": 1775.55,
+      "minutes_after_close": 217.2,
+      "old_sl_floor_mult": 1.0,
+      "new_sl_floor_mult": 1.12,
+      "summary": "[AI POST-MORTEM SELF-FIX] Ticket #1085338207 (ETHUSD SHORT) was wicked out @ 1822.77 before reaching TP1 (1801.39725 -> 1775.55)! Auto-widened ETHUSD Stop-Floor Multiplier 1.00x -> 1.12x & restored strategy weight."
     }
   ]
 }
