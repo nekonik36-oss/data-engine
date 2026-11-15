@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-15 04:13:47 UTC",
+  "updated_utc": "2026-11-15 04:15:25 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9887.62,
+  "live_equity": 9880.83,
   "bot_stats": {
-    "total_closed": 35,
+    "total_closed": 36,
     "wins": 15,
-    "losses": 15,
+    "losses": 16,
     "breakevens": 5,
-    "cumulative_pnl": -104.47,
+    "cumulative_pnl": -119.17,
     "history": [
       {
         "ticket": 1078980632,
@@ -393,6 +393,17 @@
         "r_multiple": 1.17,
         "close_reason": "Take Profit 2 Target Hit \ud83c\udfaf",
         "closed_at_utc": "2026-11-14 02:34:55 UTC"
+      },
+      {
+        "ticket": 1085338207,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 1814.37,
+        "exit_price": 1822.77,
+        "net_pnl": -14.7,
+        "r_multiple": -0.82,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-15 04:15:17 UTC"
       }
     ],
     "crypto_book_pnl": 160.08
@@ -426,9 +437,9 @@
       "net_r": -2.48
     },
     "ETHUSD": {
-      "win_streak": 3,
-      "loss_streak": 0,
-      "net_r": 0.51
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": -0.31
     },
     "SOLUSD": {
       "win_streak": 0,
@@ -451,16 +462,27 @@
       "net_r": -1.02
     }
   },
-  "pending_post_mortems": [],
-  "ai_feedback_feed": [
+  "pending_post_mortems": [
     {
-      "timestamp_utc": "2026-11-09 14:20:04 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 1079629696,
+      "ticket": 1085338207,
       "symbol": "ETHUSD",
       "direction": "SHORT",
-      "summary": "Ticket #1079629696 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
+      "entry_price": 1814.37,
+      "exit_price": 1822.77,
+      "tp1_price": 1801.39725,
+      "tp2_price": 1785.4308,
+      "agreeing_strategies": [
+        "ICT",
+        "KRONOS",
+        "DERIV_FLOW"
+      ],
+      "regime": "RANGING",
+      "closed_epoch": 1794716117.744973,
+      "closed_at_utc": "2026-11-15 04:15:17 UTC",
+      "audited": false
+    }
+  ],
+  "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-09 15:25:10 UTC",
       "event": "TRUE_TREND_LOSS_CONFIRMED",
@@ -802,6 +824,23 @@
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-15 04:15:17 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1085338207,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "net_pnl": -14.7,
+      "r_multiple": -0.82,
+      "peak_favorable_r": 0.02,
+      "regime": "RANGING",
+      "strategies": [
+        "ICT",
+        "KRONOS",
+        "DERIV_FLOW"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1801.39725)"
     }
   ]
 }
