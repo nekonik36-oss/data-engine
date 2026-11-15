@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15 15:34:59 UTC",
+  "updated_utc": "2026-11-15 20:29:43 UTC",
   "hostname": "runnervmccnms",
   "live_equity": 9762.65,
   "bot_stats": {
@@ -473,42 +473,8 @@
       "net_r": -1.02
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 84729146,
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "entry_price": 1775.41,
-      "exit_price": 1809.67,
-      "tp1_price": 1766.13,
-      "tp2_price": 1754.71,
-      "agreeing_strategies": [
-        "BREAKOUT",
-        "KRONOS"
-      ],
-      "regime": "TRENDING_DOWN",
-      "closed_epoch": 1794756392.072418,
-      "closed_at_utc": "2026-11-15 15:26:32 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-10 04:37:02 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": null,
-      "symbol": "ETHUSD",
-      "direction": null,
-      "net_pnl": 12.32,
-      "r_multiple": 0.25,
-      "peak_favorable_r": 0.0,
-      "regime": "TRENDING_DOWN",
-      "strategies": [
-        "ICT",
-        "KRONOS"
-      ],
-      "auto_fix_action": "NONE"
-    },
     {
       "timestamp_utc": "2026-11-10 05:36:09 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -856,6 +822,14 @@
         "KRONOS"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1766.13)"
+    },
+    {
+      "timestamp_utc": "2026-11-15 20:29:43 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 84729146,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #84729146 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15 15:34:59 UTC",
+  "updated_utc": "2026-11-15 20:29:43 UTC",
   "hostname": "runnervmccnms",
   "python_version": "3.12.16",
   "gpu": {
@@ -18,11 +18,11 @@
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9762.65,
   "telegram_configured": false,
-  "kronos_active_backend": "statistical_mc_fallback",
+  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64719.14,
-    "ETHUSD": 1811.51,
-    "SOLUSD": 71.26
+    "BTCUSD": 64886.89,
+    "ETHUSD": 1824.7,
+    "SOLUSD": 71.61
   },
   "active_trades": {},
   "bot_stats": {
@@ -443,7 +443,7 @@
     "crypto_book_pnl": 41.9
   },
   "learned_weights": {
-    "updated_utc": "2026-11-15 15:26:32 UTC",
+    "updated_utc": "2026-11-15 20:29:43 UTC",
     "total_episodes": 553,
     "strategy_stats": {
       "SND": {
@@ -567,41 +567,8 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [
-      {
-        "ticket": 84729146,
-        "symbol": "ETHUSD",
-        "direction": "SHORT",
-        "entry_price": 1775.41,
-        "exit_price": 1809.67,
-        "tp1_price": 1766.13,
-        "tp2_price": 1754.71,
-        "agreeing_strategies": [
-          "BREAKOUT",
-          "KRONOS"
-        ],
-        "regime": "TRENDING_DOWN",
-        "closed_epoch": 1794756392.072418,
-        "closed_at_utc": "2026-11-15 15:26:32 UTC",
-        "audited": false
-      }
-    ],
+    "pending_post_mortems": [],
     "ai_feedback_feed": [
-      {
-        "timestamp_utc": "2026-11-09 07:12:30 UTC",
-        "event": "TRADE_CLOSED_DIAGNOSTIC",
-        "ticket": 1079309287,
-        "symbol": "SOLUSD",
-        "direction": "SHORT",
-        "net_pnl": 13.77,
-        "r_multiple": 0.77,
-        "peak_favorable_r": 0.49,
-        "regime": "RANGING",
-        "strategies": [
-          "TREND_PULLBACK"
-        ],
-        "auto_fix_action": "NONE"
-      },
       {
         "timestamp_utc": "2026-11-09 07:36:45 UTC",
         "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -1155,10 +1122,34 @@
           "KRONOS"
         ],
         "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1766.13)"
+      },
+      {
+        "timestamp_utc": "2026-11-15 20:29:43 UTC",
+        "event": "TRUE_TREND_LOSS_CONFIRMED",
+        "ticket": 84729146,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "summary": "Ticket #84729146 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
       }
     ],
     "live_episodes": 19,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "ETHUSD:TREND_PULLBACK",
+        "symbol": "ETHUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 1824.3,
+        "sl_price": 1818.33002,
+        "sl_dist": 5.96998,
+        "tp1_price": 1828.18048,
+        "tp2_price": 1832.95646,
+        "opened_epoch": 1794774582.376476,
+        "tp1_hit": false,
+        "peak_r": 0.067
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794713704.673238,
       "BTCUSD:BREAKOUT": 1794704704.462779,
@@ -1170,7 +1161,7 @@
       "BTCUSD:ICT": 1794713733.666792,
       "SOLUSD:SND": 1794408013.22123,
       "SOLUSD:ICT": 1794713709.493578,
-      "ETHUSD:TREND_PULLBACK": 1794699013.080893,
+      "ETHUSD:TREND_PULLBACK": 1794774582.376476,
       "BTCUSD:TREND_PULLBACK": 1794699011.354492,
       "SOLUSD:TREND_PULLBACK": 1794702615.053181,
       "ETHUSD:SND": 1794689725.065801,
@@ -1184,7 +1175,7 @@
     },
     "shadow_episodes": 516
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 25h 25m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 20h 30m)",
   "deriv_flow_status": "Graduated Live (116 eps, 66.4% WR, +0.47R EMA)",
-  "cycle_count": 20
+  "cycle_count": 1
 }
