@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-15 04:03:16 UTC",
-  "total_episodes": 543,
+  "updated_utc": "2026-11-15 04:05:10 UTC",
+  "total_episodes": 545,
   "strategy_stats": {
     "SND": {
       "trades": 21,
@@ -10,11 +10,11 @@
       "multiplier": 0.967
     },
     "ICT": {
-      "trades": 135,
-      "wins": 68,
+      "trades": 136,
+      "wins": 69,
       "losses": 66,
-      "ema_r": -0.093,
-      "multiplier": 0.977
+      "ema_r": -0.066,
+      "multiplier": 0.983
     },
     "BREAKOUT": {
       "trades": 106,
@@ -31,11 +31,11 @@
       "multiplier": 1.05
     },
     "KRONOS": {
-      "trades": 126,
-      "wins": 72,
+      "trades": 127,
+      "wins": 73,
       "losses": 52,
-      "ema_r": 0.255,
-      "multiplier": 1.064
+      "ema_r": 0.254,
+      "multiplier": 1.063
     },
     "DERIV_FLOW": {
       "trades": 112,
@@ -46,8 +46,8 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.936,
-    "RANGING:KRONOS": 0.763,
+    "RANGING:ICT": 0.94,
+    "RANGING:KRONOS": 0.767,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.829,
     "RANGING:TREND_PULLBACK": 1.077,
     "TRENDING_DOWN:TREND_PULLBACK": 1.027,
@@ -712,36 +712,6 @@
       "peak_r": 0.0
     },
     {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 71.38,
-      "sl_price": 72.08919,
-      "sl_dist": 0.70919,
-      "tp1_price": 70.91903,
-      "tp2_price": 70.35167,
-      "opened_epoch": 1794713709.493578,
-      "tp1_hit": false,
-      "peak_r": 0.353
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 71.38,
-      "sl_price": 72.08919,
-      "sl_dist": 0.70919,
-      "tp1_price": 70.91903,
-      "tp2_price": 70.35167,
-      "opened_epoch": 1794713709.496581,
-      "tp1_hit": false,
-      "peak_r": 0.353
-    },
-    {
       "key": "BTCUSD:ICT",
       "symbol": "BTCUSD",
       "strategy_name": "ICT",
@@ -780,5 +750,5 @@
     "BTCUSD:DERIV_FLOW": 1794713594.113453,
     "ETHUSD:DERIV_FLOW": 1794712683.592824
   },
-  "shadow_episodes": 508
+  "shadow_episodes": 510
 }
