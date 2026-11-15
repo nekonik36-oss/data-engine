@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15 02:17:19 UTC",
+  "updated_utc": "2026-11-15 02:20:21 UTC",
   "total_episodes": 538,
   "strategy_stats": {
     "SND": {
@@ -695,6 +695,21 @@
       "opened_epoch": 1794708607.823554,
       "tp1_hit": true,
       "peak_r": 1.281
+    },
+    {
+      "key": "SOLUSD:BREAKOUT",
+      "symbol": "SOLUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 70.69,
+      "sl_price": 69.64929,
+      "sl_dist": 1.04071,
+      "tp1_price": 71.36646,
+      "tp2_price": 72.19903,
+      "opened_epoch": 1794709221.214864,
+      "tp1_hit": false,
+      "peak_r": 0.01
     }
   ],
   "shadow_cooldowns": {
@@ -703,7 +718,7 @@
     "BTCUSD:KRONOS": 1794708006.351562,
     "ETHUSD:BREAKOUT": 1794708606.204204,
     "ETHUSD:KRONOS": 1794708008.466486,
-    "SOLUSD:BREAKOUT": 1794706825.956973,
+    "SOLUSD:BREAKOUT": 1794709221.214864,
     "SOLUSD:KRONOS": 1794706825.960967,
     "BTCUSD:ICT": 1794708006.349563,
     "SOLUSD:SND": 1794408013.22123,
