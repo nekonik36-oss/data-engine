@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15 20:35:19 UTC",
+  "updated_utc": "2026-11-15 20:37:31 UTC",
   "hostname": "runnervmccnms",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,9 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65054.0,
-    "ETHUSD": 1830.93,
-    "SOLUSD": 71.91
+    "BTCUSD": 65061.7,
+    "SOLUSD": 71.89
   },
   "active_trades": {
     "84774918": {
@@ -1230,7 +1229,7 @@
     },
     "shadow_episodes": 516
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 20h 24m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 20h 22m)",
   "deriv_flow_status": "Graduated Live (116 eps, 66.4% WR, +0.47R EMA)",
-  "cycle_count": 11
+  "cycle_count": 15
 }
