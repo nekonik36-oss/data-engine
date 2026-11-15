@@ -1,30 +1,3 @@
-[2026-11-15 03:27:43 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 15W-15L ($-104.47) | Equity: $9,895.53
-  [BTCUSD (M5  Live data-api.binance.vision)] Price=65124.92   | Watching for A+ Sniper setup...
-  [ETHUSD (M5  Live data-api.binance.vision)] Price=1824.23    | Watching for A+ Sniper setup...
-  [SOLUSD (M5  Live data-api.binance.vision)] Price=71.7       | Watching for A+ Sniper setup...
-
-[2026-11-15 03:28:06 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 15W-15L ($-104.47) | Equity: $9,895.53
-  [BTCUSD (M5  Live data-api.binance.vision)] Price=65073.29   | Watching for A+ Sniper setup...
-  [ETHUSD (M5  Live data-api.binance.vision)] Price=1823.82    | Watching for A+ Sniper setup...
-  [SOLUSD (M5  Live data-api.binance.vision)] Price=71.58      | Watching for A+ Sniper setup...
-
-[2026-11-15 03:28:33 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 15W-15L ($-104.47) | Equity: $9,895.53
-  [BTCUSD (M5  Live data-api.binance.vision)] Price=65083.99   | Watching for A+ Sniper setup...
-  [ETHUSD (M5  Live data-api.binance.vision)] Price=1823.89    | Watching for A+ Sniper setup...
-  [SOLUSD (M5  Live data-api.binance.vision)] Price=71.54      | Watching for A+ Sniper setup...
-
-[2026-11-15 03:29:00 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 15W-15L ($-104.47) | Equity: $9,895.53
-  [BTCUSD (M5  Live data-api.binance.vision)] Price=65032.73   | Watching for A+ Sniper setup...
-  [ETHUSD (M5  Live data-api.binance.vision)] Price=1822.58    | Watching for A+ Sniper setup...
-  [SOLUSD (M5  Live data-api.binance.vision)] Price=71.52      | Watching for A+ Sniper setup...
-
-[2026-11-15 03:29:19 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 15W-15L ($-104.47) | Equity: $9,895.53
-  [BTCUSD (M5  Live data-api.binance.vision)] Price=65010.89   | Watching for A+ Sniper setup...
-  [ETHUSD (M5  Live data-api.binance.vision)] Price=1821.78    | Watching for A+ Sniper setup...
-  [SOLUSD (M5  Live data-api.binance.vision)] Price=71.48      | Watching for A+ Sniper setup...
-
-[2026-11-15 03:29:38 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 15W-15L ($-104.47) | Equity: $9,895.53
-  [BTCUSD (M5  Live data-api.binance.vision)] Price=65000.01   | Watching for A+ Sniper setup...
   [ETHUSD (M5  Live data-api.binance.vision)] Price=1819.87    | Watching for A+ Sniper setup...
   [SOLUSD (M5  Live data-api.binance.vision)] Price=71.41      | Watching for A+ Sniper setup...
 
@@ -148,3 +121,30 @@
   KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=14.3% | Exp Move=-1.33 ATR (Max Up +0.63 ATR / Max Down -2.02 ATR)
 ==========================================================================
   [CORRELATED CRYPTO GUARD] Skipping SOLUSD: ETHUSD (Ticket #1085338207) is still unprotected (< Break-Even Shield). Capping simultaneous unprotected Crypto risk at 1 trade.
+
+[2026-11-15 03:35:30 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 15W-15L ($-104.47) | Equity: $9,888.07
+  [OPEN #1085338207] ETHUSD SHORT @ 1814.37 | SL=1834.33 | TP1=1801.39725 | TP2=1785.4308
+==========================================================================
+  HIGH-CONFLUENCE SETUP DETECTED | BTCUSD (M5) | SELL (SHORT)
+==========================================================================
+  Timestamp (UTC)   : 2026-11-15 03:30 UTC
+  Market Regime     : RANGING
+  Confluence Score  : 90.7 / 100.0  [HYBRID_REGIME_KRONOS]
+--------------------------------------------------------------------------
+  Entry Price       : 64814.25000
+  Stop Loss (SL)    : 65750.35514  (Invalidation + ATR Buffer)
+  Take Profit 1     : 64205.78166  (0.7R -> Close 50% & Move SL to BE)
+  Take Profit 2     : 63456.89755  (1.4R -> Runner Target)
+  Suggested Lot     : 0.05 lots  (Risk: $46.81 / 0.50%)
+--------------------------------------------------------------------------
+  STRATEGY BREAKDOWN (Why this setup triggered):
+    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (0 unmitigated zones tracked)
+    [AGREES ] ICT             (conf   82%): BSL Liquidity Sweep above 65111.93 (high 65595.77) + Bearish FVG [65000.01-65067.09]
+    [NEUTRAL] BREAKOUT        (conf    0%): Prior range too wide for clean breakout (9.8x ATR)
+    [NEUTRAL] TREND_PULLBACK  (conf    0%): Waiting for H1-aligned Connors RSI(2) pullback break
+    [AGREES ] KRONOS          (conf   51%): Bullish Prob=27.0% | Exp Move=-0.74 ATR (Max Up +0.47 ATR / Max Down -1.32 ATR)
+    [AGREES ] DERIV_FLOW      (conf   88%): [binance_fapi] Bearish Long-Squeeze Flow: Crowd 75% Long, Seller Taker 0.60x, Perp Discount -4.4bps
+--------------------------------------------------------------------------
+  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=27.0% | Exp Move=-0.74 ATR (Max Up +0.47 ATR / Max Down -1.32 ATR)
+==========================================================================
+  [CORRELATED CRYPTO GUARD] Skipping BTCUSD: ETHUSD (Ticket #1085338207) is still unprotected (< Break-Even Shield). Capping simultaneous unprotected Crypto risk at 1 trade.
