@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-15 15:24:21 UTC",
+  "updated_utc": "2026-11-15 15:26:35 UTC",
   "hostname": "runnervmccnms",
   "live_equity": 9880.83,
   "bot_stats": {
-    "total_closed": 36,
+    "total_closed": 37,
     "wins": 15,
-    "losses": 16,
+    "losses": 17,
     "breakevens": 5,
-    "cumulative_pnl": -119.17,
+    "cumulative_pnl": -237.35,
     "history": [
       {
         "ticket": 1078980632,
@@ -404,9 +404,20 @@
         "r_multiple": -0.82,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-15 04:15:17 UTC"
+      },
+      {
+        "ticket": 84729146,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 1775.41,
+        "exit_price": 1809.67,
+        "net_pnl": -118.18,
+        "r_multiple": -2.4,
+        "close_reason": "18m/30m Impulse Time-Decay Stop Hit \u23f1\ufe0f\ud83d\udee1\ufe0f",
+        "closed_at_utc": "2026-11-15 15:26:32 UTC"
       }
     ],
-    "crypto_book_pnl": 160.08
+    "crypto_book_pnl": 41.9
   },
   "symbol_tuning": {
     "BTCUSD": {
@@ -438,8 +449,8 @@
     },
     "ETHUSD": {
       "win_streak": 0,
-      "loss_streak": 0,
-      "net_r": -0.31
+      "loss_streak": 1,
+      "net_r": -1.81
     },
     "SOLUSD": {
       "win_streak": 0,
@@ -462,24 +473,26 @@
       "net_r": -1.02
     }
   },
-  "pending_post_mortems": [],
-  "ai_feedback_feed": [
+  "pending_post_mortems": [
     {
-      "timestamp_utc": "2026-11-10 03:43:21 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": null,
-      "symbol": "SOLUSD",
-      "direction": null,
-      "net_pnl": 62.84,
-      "r_multiple": 1.28,
-      "peak_favorable_r": 0.0,
-      "regime": "RANGING",
-      "strategies": [
-        "TREND_PULLBACK",
+      "ticket": 84729146,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "entry_price": 1775.41,
+      "exit_price": 1809.67,
+      "tp1_price": 1766.13,
+      "tp2_price": 1754.71,
+      "agreeing_strategies": [
+        "BREAKOUT",
         "KRONOS"
       ],
-      "auto_fix_action": "NONE"
-    },
+      "regime": "TRENDING_DOWN",
+      "closed_epoch": 1794756392.072418,
+      "closed_at_utc": "2026-11-15 15:26:32 UTC",
+      "audited": false
+    }
+  ],
+  "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-10 04:37:02 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -827,6 +840,22 @@
       "old_sl_floor_mult": 1.0,
       "new_sl_floor_mult": 1.12,
       "summary": "[AI POST-MORTEM SELF-FIX] Ticket #1085338207 (ETHUSD SHORT) was wicked out @ 1822.77 before reaching TP1 (1801.39725 -> 1775.55)! Auto-widened ETHUSD Stop-Floor Multiplier 1.00x -> 1.12x & restored strategy weight."
+    },
+    {
+      "timestamp_utc": "2026-11-15 15:26:32 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 84729146,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "net_pnl": -118.18,
+      "r_multiple": -2.4,
+      "peak_favorable_r": 0.02,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1766.13)"
     }
   ]
 }
