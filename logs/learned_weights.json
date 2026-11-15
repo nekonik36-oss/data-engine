@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-15 02:07:44 UTC",
-  "total_episodes": 535,
+  "updated_utc": "2026-11-15 02:09:05 UTC",
+  "total_episodes": 536,
   "strategy_stats": {
     "SND": {
       "trades": 21,
@@ -31,11 +31,11 @@
       "multiplier": 1.05
     },
     "KRONOS": {
-      "trades": 125,
-      "wins": 71,
+      "trades": 126,
+      "wins": 72,
       "losses": 52,
-      "ema_r": 0.175,
-      "multiplier": 1.044
+      "ema_r": 0.255,
+      "multiplier": 1.064
     },
     "DERIV_FLOW": {
       "trades": 108,
@@ -55,7 +55,7 @@
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.958,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.816,
     "TRENDING_DOWN:ICT": 0.895,
-    "TRENDING_DOWN:KRONOS": 1.226,
+    "TRENDING_DOWN:KRONOS": 1.245,
     "RANGING:BREAKOUT": 0.991,
     "RANGING:SND": 1.055,
     "TRENDING_DOWN:BREAKOUT": 1.201,
@@ -680,23 +680,7 @@
     }
   ],
   "live_episodes": 17,
-  "active_shadow_trades": [
-    {
-      "key": "ETHUSD:KRONOS",
-      "symbol": "ETHUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1730.61,
-      "sl_price": 1710.4811,
-      "sl_dist": 20.1289,
-      "tp1_price": 1743.69379,
-      "tp2_price": 1759.79691,
-      "opened_epoch": 1794708008.466486,
-      "tp1_hit": true,
-      "peak_r": 1.429
-    }
-  ],
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794707419.792869,
     "BTCUSD:BREAKOUT": 1794704704.462779,
@@ -720,5 +704,5 @@
     "BTCUSD:DERIV_FLOW": 1794707441.978284,
     "ETHUSD:DERIV_FLOW": 1794705604.187647
   },
-  "shadow_episodes": 500
+  "shadow_episodes": 501
 }
