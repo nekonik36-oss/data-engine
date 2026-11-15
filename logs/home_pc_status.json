@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15 20:34:44 UTC",
+  "updated_utc": "2026-11-15 20:35:19 UTC",
   "hostname": "runnervmccnms",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,11 +20,36 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65086.02,
-    "ETHUSD": 1831.51,
-    "SOLUSD": 71.93
+    "BTCUSD": 65054.0,
+    "ETHUSD": 1830.93,
+    "SOLUSD": 71.91
   },
-  "active_trades": {},
+  "active_trades": {
+    "84774918": {
+      "ticket": 84774918,
+      "symbol": "ETHUSD",
+      "broker_symbol": "ETHUSD",
+      "broker_source": "CRYPTO_24_7_LIVE",
+      "direction": "LONG",
+      "entry_price": 1830.94,
+      "sl_price": 1818.46,
+      "initial_sl_price": 1818.46,
+      "tp1_price": 1839.05,
+      "tp2_price": 1849.04,
+      "volume": 3.91,
+      "initial_volume": 3.91,
+      "risk_usd": 48.81,
+      "confluence_score": 91.0,
+      "regime": "TRENDING_UP",
+      "agreeing_strategies": [
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "opened_at_utc": "2026-11-15 20:35:18 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0
+    }
+  },
   "bot_stats": {
     "total_closed": 37,
     "wins": 15,
@@ -443,7 +468,7 @@
     "crypto_book_pnl": 41.9
   },
   "learned_weights": {
-    "updated_utc": "2026-11-15 20:29:43 UTC",
+    "updated_utc": "2026-11-15 20:35:17 UTC",
     "total_episodes": 553,
     "strategy_stats": {
       "SND": {
@@ -1148,14 +1173,44 @@
         "opened_epoch": 1794774582.376476,
         "tp1_hit": true,
         "peak_r": 1.295
+      },
+      {
+        "key": "ETHUSD:BREAKOUT",
+        "symbol": "ETHUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 1831.81,
+        "sl_price": 1825.21783,
+        "sl_dist": 6.59217,
+        "tp1_price": 1836.09491,
+        "tp2_price": 1841.36865,
+        "opened_epoch": 1794774917.832964,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:KRONOS",
+        "symbol": "ETHUSD",
+        "strategy_name": "KRONOS",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 1831.81,
+        "sl_price": 1825.21783,
+        "sl_dist": 6.59217,
+        "tp1_price": 1836.09491,
+        "tp2_price": 1841.36865,
+        "opened_epoch": 1794774917.834382,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794713704.673238,
       "BTCUSD:BREAKOUT": 1794704704.462779,
       "BTCUSD:KRONOS": 1794708006.351562,
-      "ETHUSD:BREAKOUT": 1794708606.204204,
-      "ETHUSD:KRONOS": 1794713704.67523,
+      "ETHUSD:BREAKOUT": 1794774917.832964,
+      "ETHUSD:KRONOS": 1794774917.834382,
       "SOLUSD:BREAKOUT": 1794709221.214864,
       "SOLUSD:KRONOS": 1794713709.496581,
       "BTCUSD:ICT": 1794713733.666792,
@@ -1175,7 +1230,7 @@
     },
     "shadow_episodes": 516
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 20h 25m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 20h 24m)",
   "deriv_flow_status": "Graduated Live (116 eps, 66.4% WR, +0.47R EMA)",
-  "cycle_count": 10
+  "cycle_count": 11
 }

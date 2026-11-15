@@ -59,3 +59,31 @@
   [BTCUSD (M5  Live data-api.binance.vision)] Price=65086.02   | Watching for A+ Sniper setup...
   [ETHUSD (M5  Live data-api.binance.vision)] Price=1831.51    | Watching for A+ Sniper setup...
   [SOLUSD (M5  Live data-api.binance.vision)] Price=71.93      | Watching for A+ Sniper setup...
+
+[2026-11-15 20:35:15 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 15W-17L ($-237.35) | Equity: $9,762.65
+  [BTCUSD (M5  Live data-api.binance.vision)] Price=65054.0    | Watching for A+ Sniper setup...
+==========================================================================
+  HIGH-CONFLUENCE SETUP DETECTED | ETHUSD (M5) | BUY (LONG)
+==========================================================================
+  Timestamp (UTC)   : 2026-11-15 20:30 UTC
+  Market Regime     : TRENDING_UP
+  Confluence Score  : 91.0 / 100.0  [HYBRID_REGIME_KRONOS]
+--------------------------------------------------------------------------
+  Entry Price       : 1831.81000
+  Stop Loss (SL)    : 1819.32626  (Invalidation + ATR Buffer)
+  Take Profit 1     : 1839.92443  (0.7R -> Close 50% & Move SL to BE)
+  Take Profit 2     : 1849.91142  (1.4R -> Runner Target)
+  Suggested Lot     : 3.91 lots  (Risk: $48.81 / 0.50%)
+--------------------------------------------------------------------------
+  STRATEGY BREAKDOWN (Why this setup triggered):
+    [NEUTRAL] SND             (conf    0%): No active SND zone rejection (1 unmitigated zones tracked)
+    [NEUTRAL] ICT             (conf    0%): Waiting for BSL (1830.50) or SSL (1803.15) liquidity sweep
+    [AGREES ] BREAKOUT        (conf   86%): Bullish volatility breakout above compression high 1830.50 (body=1.64x ATR, ADX=25.8)
+    [NEUTRAL] TREND_PULLBACK  (conf    0%): Waiting for H1-aligned Connors RSI(2) pullback break
+    [AGREES ] KRONOS          (conf   92%): 10-Path Forecast: Bullish=92.6%, Bearish=7.4% | Expected 8-Bar Drift=+1.63 ATR
+    [NEUTRAL] DERIV_FLOW      (conf    0%): [okx_swap] Balanced perp flow (funding=+0.001%, longs=50%, taker=1.00x, basis=+0.0bps)
+--------------------------------------------------------------------------
+  KRONOS AI FORECAST (NeoQuasar/Kronos-base [Offline-Ready Simulation]): 10-Path Forecast: Bullish=92.6%, Bearish=7.4% | Expected 8-Bar Drift=+1.63 ATR
+==========================================================================
+  [24/7 CRYPTO AUTO-TRADE EXECUTED] Ticket #84774918 | LONG 3.91 lots ETHUSD @ 1830.94 (SL=1818.46, TP1=1839.05, TP2=1849.04)
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=71.91      | Watching for A+ Sniper setup...
