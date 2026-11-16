@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 11:27:40 UTC",
+  "updated_utc": "2026-11-16 11:29:19 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64630.87,
-    "ETHUSD": 1809.13,
+    "BTCUSD": 64652.09,
+    "ETHUSD": 1808.99,
     "SOLUSD": 71.52,
-    "XAUUSD": 3873.75,
-    "EURUSD": 1.10043,
-    "USDJPY": 159.601
+    "XAUUSD": 3874.74,
+    "EURUSD": 1.10063,
+    "USDJPY": 159.583
   },
   "active_trades": {},
   "bot_stats": {
@@ -1252,7 +1252,7 @@
         "tp2_price": 1.10167,
         "opened_epoch": 1794826814.811608,
         "tp1_hit": false,
-        "peak_r": 0.256
+        "peak_r": 0.289
       },
       {
         "key": "BTCUSD:BREAKOUT",
@@ -1282,7 +1282,7 @@
         "tp2_price": 64457.58793,
         "opened_epoch": 1794828008.254549,
         "tp1_hit": false,
-        "peak_r": 0.521
+        "peak_r": 0.548
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1297,7 +1297,7 @@
         "tp2_price": 64457.58793,
         "opened_epoch": 1794828213.66377,
         "tp1_hit": false,
-        "peak_r": 0.521
+        "peak_r": 0.548
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1312,7 +1312,7 @@
         "tp2_price": 71.20664,
         "opened_epoch": 1794828215.418121,
         "tp1_hit": false,
-        "peak_r": 0.448
+        "peak_r": 0.512
       },
       {
         "key": "BTCUSD:ICT",
@@ -1327,7 +1327,7 @@
         "tp2_price": 64430.6614,
         "opened_epoch": 1794828309.975354,
         "tp1_hit": false,
-        "peak_r": 0.332
+        "peak_r": 0.36
       },
       {
         "key": "SOLUSD:ICT",
@@ -1342,7 +1342,7 @@
         "tp2_price": 71.11417,
         "opened_epoch": 1794828312.14323,
         "tp1_hit": false,
-        "peak_r": 0.13
+        "peak_r": 0.195
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1357,7 +1357,7 @@
         "tp2_price": 71.11417,
         "opened_epoch": 1794828312.146227,
         "tp1_hit": false,
-        "peak_r": 0.13
+        "peak_r": 0.195
       }
     ],
     "shadow_cooldowns": {
@@ -1393,7 +1393,7 @@
     },
     "shadow_episodes": 647
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 32m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 30m)",
   "deriv_flow_status": "Shadow Incubation (156/30 eps, 64% WR, -0.04R)",
-  "cycle_count": 140
+  "cycle_count": 145
 }
