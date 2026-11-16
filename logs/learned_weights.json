@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 04:40:37 UTC",
+  "updated_utc": "2026-11-16 04:45:14 UTC",
   "total_episodes": 590,
   "strategy_stats": {
     "SND": {
@@ -698,7 +698,7 @@
       "tp2_price": 1808.58868,
       "opened_epoch": 1794802693.46491,
       "tp1_hit": false,
-      "peak_r": 0.257
+      "peak_r": 0.458
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -713,7 +713,7 @@
       "tp2_price": 71.26333,
       "opened_epoch": 1794803031.880856,
       "tp1_hit": true,
-      "peak_r": 0.658
+      "peak_r": 0.964
     },
     {
       "key": "EURUSD:BREAKOUT",
@@ -742,8 +742,38 @@
       "tp1_price": 64831.16943,
       "tp2_price": 64659.36566,
       "opened_epoch": 1794804037.846776,
+      "tp1_hit": true,
+      "peak_r": 0.752
+    },
+    {
+      "key": "SOLUSD:BREAKOUT",
+      "symbol": "SOLUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 71.55,
+      "sl_price": 71.94803,
+      "sl_dist": 0.39803,
+      "tp1_price": 71.29128,
+      "tp2_price": 70.97286,
+      "opened_epoch": 1794804314.35965,
       "tp1_hit": false,
-      "peak_r": 0.407
+      "peak_r": 0.201
+    },
+    {
+      "key": "SOLUSD:KRONOS",
+      "symbol": "SOLUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 71.55,
+      "sl_price": 71.94803,
+      "sl_dist": 0.39803,
+      "tp1_price": 71.29128,
+      "tp2_price": 70.97286,
+      "opened_epoch": 1794804314.367656,
+      "tp1_hit": false,
+      "peak_r": 0.201
     }
   ],
   "shadow_cooldowns": {
@@ -752,8 +782,8 @@
     "BTCUSD:KRONOS": 1794794415.972303,
     "ETHUSD:BREAKOUT": 1794774917.832964,
     "ETHUSD:KRONOS": 1794796415.184808,
-    "SOLUSD:BREAKOUT": 1794795604.046458,
-    "SOLUSD:KRONOS": 1794795604.047444,
+    "SOLUSD:BREAKOUT": 1794804314.35965,
+    "SOLUSD:KRONOS": 1794804314.367656,
     "BTCUSD:ICT": 1794794726.965574,
     "SOLUSD:SND": 1794408013.22123,
     "SOLUSD:ICT": 1794794703.647917,
