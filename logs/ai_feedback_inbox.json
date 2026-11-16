@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-16 09:01:59 UTC",
+  "updated_utc": "2026-11-16 09:02:25 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9711.15,
+  "live_equity": 9703.4,
   "bot_stats": {
-    "total_closed": 41,
+    "total_closed": 42,
     "wins": 16,
     "losses": 20,
-    "breakevens": 5,
-    "cumulative_pnl": -298.55,
+    "breakevens": 6,
+    "cumulative_pnl": -296.6,
     "history": [
       {
         "ticket": 1078980632,
@@ -459,6 +459,17 @@
         "r_multiple": -0.55,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-16 06:26:10 UTC"
+      },
+      {
+        "ticket": 1085994307,
+        "symbol": "ETHUSD",
+        "direction": "SHORT",
+        "entry_price": 1803.98,
+        "exit_price": 1803.36,
+        "net_pnl": 1.95,
+        "r_multiple": 0.04,
+        "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
+        "closed_at_utc": "2026-11-16 09:02:18 UTC"
       }
     ],
     "crypto_book_pnl": 19.22
@@ -494,7 +505,7 @@
     "ETHUSD": {
       "win_streak": 0,
       "loss_streak": 1,
-      "net_r": -2.54
+      "net_r": -2.5
     },
     "SOLUSD": {
       "win_streak": 0,
@@ -519,23 +530,6 @@
   },
   "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-11 01:28:49 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 84359136,
-      "symbol": "SOLUSD",
-      "direction": "SHORT",
-      "net_pnl": -28.81,
-      "r_multiple": -0.59,
-      "peak_favorable_r": 0.0,
-      "regime": "RANGING",
-      "strategies": [
-        "ICT",
-        "BREAKOUT",
-        "KRONOS"
-      ],
-      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if SOLUSD reaches TP1=82.71)"
-    },
     {
       "timestamp_utc": "2026-11-11 02:58:51 UTC",
       "event": "TRUE_TREND_LOSS_CONFIRMED",
@@ -861,6 +855,22 @@
       "symbol": "ETHUSD",
       "direction": "LONG",
       "summary": "Ticket #1085830147 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+    },
+    {
+      "timestamp_utc": "2026-11-16 09:02:18 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1085994307,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "net_pnl": 1.95,
+      "r_multiple": 0.04,
+      "peak_favorable_r": 0.2,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
     }
   ]
 }
