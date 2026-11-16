@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 07:55:23 UTC",
+  "updated_utc": "2026-11-16 07:57:00 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "live_equity": 9701.45,
   "bot_stats": {
@@ -517,34 +517,8 @@
       "net_r": -1.02
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1085830147,
-      "symbol": "ETHUSD",
-      "direction": "LONG",
-      "entry_price": 1815.87,
-      "exit_price": 1807.04,
-      "tp1_price": 1826.244,
-      "tp2_price": 1839.012,
-      "agreeing_strategies": [
-        "SND",
-        "ICT"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1794810370.366722,
-      "closed_at_utc": "2026-11-16 06:26:10 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-10 21:45:51 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 1081472006,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "summary": "Ticket #1081472006 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
     {
       "timestamp_utc": "2026-11-11 01:28:49 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -879,6 +853,14 @@
       "symbol": "XAUUSD",
       "direction": "SHORT",
       "summary": "Ticket #1085819383 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+    },
+    {
+      "timestamp_utc": "2026-11-16 07:56:21 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1085830147,
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "summary": "Ticket #1085830147 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 07:53:37 UTC",
+  "updated_utc": "2026-11-16 07:56:21 UTC",
   "total_episodes": 644,
   "strategy_stats": {
     "SND": {
@@ -123,42 +123,8 @@
       "be_shield_r": 0.55
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1085830147,
-      "symbol": "ETHUSD",
-      "direction": "LONG",
-      "entry_price": 1815.87,
-      "exit_price": 1807.04,
-      "tp1_price": 1826.244,
-      "tp2_price": 1839.012,
-      "agreeing_strategies": [
-        "SND",
-        "ICT"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1794810370.366722,
-      "closed_at_utc": "2026-11-16 06:26:10 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 12:49:59 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1079629696,
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "net_pnl": -50.45,
-      "r_multiple": -1.02,
-      "peak_favorable_r": 0.22,
-      "regime": "RANGING",
-      "strategies": [
-        "TREND_PULLBACK",
-        "KRONOS"
-      ],
-      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=2108.33)"
-    },
     {
       "timestamp_utc": "2026-11-09 13:01:18 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -690,6 +656,14 @@
       "symbol": "XAUUSD",
       "direction": "SHORT",
       "summary": "Ticket #1085819383 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+    },
+    {
+      "timestamp_utc": "2026-11-16 07:56:21 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1085830147,
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "summary": "Ticket #1085830147 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ],
   "live_episodes": 23,
@@ -707,7 +681,7 @@
       "tp2_price": 65273.27165,
       "opened_epoch": 1794814509.508479,
       "tp1_hit": false,
-      "peak_r": 0.498
+      "peak_r": 0.53
     },
     {
       "key": "BTCUSD:KRONOS",
@@ -722,7 +696,7 @@
       "tp2_price": 65273.27165,
       "opened_epoch": 1794814509.511487,
       "tp1_hit": false,
-      "peak_r": 0.498
+      "peak_r": 0.53
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -767,7 +741,7 @@
       "tp2_price": 159.61791,
       "opened_epoch": 1794815106.961931,
       "tp1_hit": false,
-      "peak_r": 0.277
+      "peak_r": 0.415
     },
     {
       "key": "USDJPY:KRONOS",
