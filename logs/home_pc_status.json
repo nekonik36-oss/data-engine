@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 20:27:03 UTC",
+  "updated_utc": "2026-11-16 20:27:44 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65124.01,
-    "ETHUSD": 1821.26,
-    "SOLUSD": 71.48,
-    "XAUUSD": 3858.28,
-    "EURUSD": 1.10007,
-    "USDJPY": 159.445
+    "BTCUSD": 65223.01,
+    "ETHUSD": 1824.09,
+    "SOLUSD": 71.62,
+    "XAUUSD": 3857.5,
+    "EURUSD": 1.10004,
+    "USDJPY": 159.447
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,15 +534,15 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 20:27:02 UTC",
-    "total_episodes": 785,
+    "updated_utc": "2026-11-16 20:27:43 UTC",
+    "total_episodes": 786,
     "strategy_stats": {
       "SND": {
-        "trades": 29,
+        "trades": 30,
         "wins": 10,
-        "losses": 18,
-        "ema_r": -0.268,
-        "multiplier": 0.933
+        "losses": 19,
+        "ema_r": -0.327,
+        "multiplier": 0.918
       },
       "ICT": {
         "trades": 195,
@@ -592,7 +592,7 @@
       "TRENDING_DOWN:ICT": 0.937,
       "TRENDING_DOWN:KRONOS": 1.041,
       "RANGING:BREAKOUT": 0.941,
-      "RANGING:SND": 1.032,
+      "RANGING:SND": 1.016,
       "TRENDING_DOWN:BREAKOUT": 1.08,
       "TRENDING_DOWN:SND": 1.001,
       "TRENDING_UP:ICT": 1.073,
@@ -1228,21 +1228,6 @@
     "live_episodes": 27,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:SND",
-        "symbol": "BTCUSD",
-        "strategy_name": "SND",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 65032.01,
-        "sl_price": 65210.35419,
-        "sl_dist": 178.34419,
-        "tp1_price": 64916.08628,
-        "tp2_price": 64773.41093,
-        "opened_epoch": 1794860101.724117,
-        "tp1_hit": false,
-        "peak_r": 0.424
-      },
-      {
         "key": "ETHUSD:DERIV_FLOW",
         "symbol": "ETHUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1291,9 +1276,9 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 740
+    "shadow_episodes": 741
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 17h 3m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 17h 2m)",
   "deriv_flow_status": "Graduated Live (196 eps, 63.6% WR, +0.06R EMA)",
-  "cycle_count": 1801
+  "cycle_count": 1803
 }
