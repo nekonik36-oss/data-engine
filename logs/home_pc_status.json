@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 04:29:39 UTC",
+  "updated_utc": "2026-11-16 04:31:09 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65056.2,
-    "ETHUSD": 1826.85,
-    "SOLUSD": 71.99,
-    "XAUUSD": 3873.16,
-    "EURUSD": 1.10119,
-    "USDJPY": 159.652
+    "BTCUSD": 64998.01,
+    "ETHUSD": 1824.32,
+    "SOLUSD": 71.83,
+    "XAUUSD": 3873.39,
+    "EURUSD": 1.10133,
+    "USDJPY": 159.655
   },
   "active_trades": {},
   "bot_stats": {
@@ -468,7 +468,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 04:23:51 UTC",
+    "updated_utc": "2026-11-16 04:30:17 UTC",
     "total_episodes": 590,
     "strategy_stats": {
       "SND": {
@@ -1182,6 +1182,21 @@
         "tp2_price": 71.26333,
         "opened_epoch": 1794803031.880856,
         "tp1_hit": false,
+        "peak_r": 0.141
+      },
+      {
+        "key": "EURUSD:BREAKOUT",
+        "symbol": "EURUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 1.10118,
+        "sl_price": 1.10178,
+        "sl_dist": 0.0006,
+        "tp1_price": 1.10079,
+        "tp2_price": 1.10031,
+        "opened_epoch": 1794803417.002553,
+        "tp1_hit": false,
         "peak_r": 0.0
       }
     ],
@@ -1206,11 +1221,12 @@
       "EURUSD:ICT": 1794412816.194931,
       "SOLUSD:DERIV_FLOW": 1794803031.880856,
       "BTCUSD:DERIV_FLOW": 1794801920.210853,
-      "ETHUSD:DERIV_FLOW": 1794802693.46491
+      "ETHUSD:DERIV_FLOW": 1794802693.46491,
+      "EURUSD:BREAKOUT": 1794803417.002553
     },
     "shadow_episodes": 551
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 12h 30m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 12h 28m)",
   "deriv_flow_status": "Graduated Live (130 eps, 65.4% WR, +0.09R EMA)",
-  "cycle_count": 550
+  "cycle_count": 555
 }
