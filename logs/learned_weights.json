@@ -704,8 +704,8 @@
       "tp1_price": 65384.34076,
       "tp2_price": 65541.90478,
       "opened_epoch": 1794864309.665771,
-      "tp1_hit": false,
-      "peak_r": 0.567
+      "tp1_hit": true,
+      "peak_r": 0.775
     },
     {
       "key": "ETHUSD:BREAKOUT",
@@ -720,7 +720,7 @@
       "tp2_price": 1836.90346,
       "opened_epoch": 1794865218.029921,
       "tp1_hit": false,
-      "peak_r": 0.254
+      "peak_r": 0.549
     },
     {
       "key": "SOLUSD:BREAKOUT",
@@ -735,7 +735,7 @@
       "tp2_price": 72.42013,
       "opened_epoch": 1794865219.45954,
       "tp1_hit": false,
-      "peak_r": 0.035
+      "peak_r": 0.177
     },
     {
       "key": "SOLUSD:KRONOS",
