@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 11:24:32 UTC",
+  "updated_utc": "2026-11-16 11:26:06 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64717.58,
-    "ETHUSD": 1811.85,
-    "SOLUSD": 71.6,
+    "BTCUSD": 64675.0,
+    "ETHUSD": 1810.75,
+    "SOLUSD": 71.59,
     "XAUUSD": 3875.01,
-    "EURUSD": 1.10041,
-    "USDJPY": 159.62
+    "EURUSD": 1.10035,
+    "USDJPY": 159.611
   },
   "active_trades": {},
   "bot_stats": {
@@ -512,7 +512,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 11:23:35 UTC",
+    "updated_utc": "2026-11-16 11:25:12 UTC",
     "total_episodes": 690,
     "strategy_stats": {
       "SND": {
@@ -1282,7 +1282,7 @@
         "tp2_price": 64457.58793,
         "opened_epoch": 1794828008.254549,
         "tp1_hit": false,
-        "peak_r": 0.215
+        "peak_r": 0.363
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1297,7 +1297,7 @@
         "tp2_price": 64457.58793,
         "opened_epoch": 1794828213.66377,
         "tp1_hit": false,
-        "peak_r": 0.134
+        "peak_r": 0.363
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1312,7 +1312,52 @@
         "tp2_price": 71.20664,
         "opened_epoch": 1794828215.418121,
         "tp1_hit": false,
-        "peak_r": 0.32
+        "peak_r": 0.352
+      },
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 64690.34,
+        "sl_price": 64869.42869,
+        "sl_dist": 179.08869,
+        "tp1_price": 64573.93235,
+        "tp2_price": 64430.6614,
+        "opened_epoch": 1794828309.975354,
+        "tp1_hit": false,
+        "peak_r": 0.168
+      },
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 71.56,
+        "sl_price": 71.86747,
+        "sl_dist": 0.30747,
+        "tp1_price": 71.36014,
+        "tp2_price": 71.11417,
+        "opened_epoch": 1794828312.14323,
+        "tp1_hit": false,
+        "peak_r": 0.033
+      },
+      {
+        "key": "SOLUSD:KRONOS",
+        "symbol": "SOLUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 71.56,
+        "sl_price": 71.86747,
+        "sl_dist": 0.30747,
+        "tp1_price": 71.36014,
+        "tp2_price": 71.11417,
+        "opened_epoch": 1794828312.146227,
+        "tp1_hit": false,
+        "peak_r": 0.033
       }
     ],
     "shadow_cooldowns": {
@@ -1322,10 +1367,10 @@
       "ETHUSD:BREAKOUT": 1794820206.182055,
       "ETHUSD:KRONOS": 1794820206.184056,
       "SOLUSD:BREAKOUT": 1794826813.598846,
-      "SOLUSD:KRONOS": 1794823810.129176,
-      "BTCUSD:ICT": 1794821117.881395,
+      "SOLUSD:KRONOS": 1794828312.146227,
+      "BTCUSD:ICT": 1794828309.975354,
       "SOLUSD:SND": 1794408013.22123,
-      "SOLUSD:ICT": 1794821119.612153,
+      "SOLUSD:ICT": 1794828312.14323,
       "ETHUSD:TREND_PULLBACK": 1794819319.725868,
       "BTCUSD:TREND_PULLBACK": 1794813008.588738,
       "SOLUSD:TREND_PULLBACK": 1794819302.250192,
@@ -1348,7 +1393,7 @@
     },
     "shadow_episodes": 647
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 35m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 33m)",
   "deriv_flow_status": "Shadow Incubation (156/30 eps, 64% WR, -0.04R)",
-  "cycle_count": 130
+  "cycle_count": 135
 }
