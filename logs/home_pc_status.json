@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 07:48:47 UTC",
+  "updated_utc": "2026-11-16 07:50:28 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65000.11,
-    "ETHUSD": 1821.71,
-    "SOLUSD": 71.34,
-    "XAUUSD": 3856.56,
-    "EURUSD": 1.10184,
-    "USDJPY": 159.365
+    "BTCUSD": 64978.48,
+    "ETHUSD": 1821.17,
+    "SOLUSD": 71.35,
+    "XAUUSD": 3857.37,
+    "EURUSD": 1.10178,
+    "USDJPY": 159.399
   },
   "active_trades": {},
   "bot_stats": {
@@ -490,7 +490,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 07:45:30 UTC",
+    "updated_utc": "2026-11-16 07:50:09 UTC",
     "total_episodes": 644,
     "strategy_stats": {
       "SND": {
@@ -616,23 +616,6 @@
     },
     "pending_post_mortems": [
       {
-        "ticket": 1085819383,
-        "symbol": "XAUUSD",
-        "direction": "SHORT",
-        "entry_price": 3833.63,
-        "exit_price": 3858.78,
-        "tp1_price": 3810.8995,
-        "tp2_price": 3782.9235,
-        "agreeing_strategies": [
-          "BREAKOUT",
-          "KRONOS"
-        ],
-        "regime": "TRENDING_DOWN",
-        "closed_epoch": 1794809952.19592,
-        "closed_at_utc": "2026-11-16 06:19:12 UTC",
-        "audited": false
-      },
-      {
         "ticket": 1085830147,
         "symbol": "ETHUSD",
         "direction": "LONG",
@@ -651,23 +634,6 @@
       }
     ],
     "ai_feedback_feed": [
-      {
-        "timestamp_utc": "2026-11-09 12:33:22 UTC",
-        "event": "TRADE_CLOSED_DIAGNOSTIC",
-        "ticket": 1079632418,
-        "symbol": "BTCUSD",
-        "direction": "SHORT",
-        "net_pnl": -46.05,
-        "r_multiple": -1.04,
-        "peak_favorable_r": 0.12,
-        "regime": "RANGING",
-        "strategies": [
-          "ICT",
-          "TREND_PULLBACK",
-          "KRONOS"
-        ],
-        "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=74056.68)"
-      },
       {
         "timestamp_utc": "2026-11-09 12:49:59 UTC",
         "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -1207,6 +1173,14 @@
           "ICT"
         ],
         "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1826.244)"
+      },
+      {
+        "timestamp_utc": "2026-11-16 07:49:14 UTC",
+        "event": "TRUE_TREND_LOSS_CONFIRMED",
+        "ticket": 1085819383,
+        "symbol": "XAUUSD",
+        "direction": "SHORT",
+        "summary": "Ticket #1085819383 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
       }
     ],
     "live_episodes": 23,
@@ -1299,7 +1273,22 @@
         "tp2_price": 159.17809,
         "opened_epoch": 1794815106.963935,
         "tp1_hit": false,
-        "peak_r": 0.251
+        "peak_r": 0.277
+      },
+      {
+        "key": "EURUSD:ICT",
+        "symbol": "EURUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 1.10193,
+        "sl_price": 1.10123,
+        "sl_dist": 0.0007,
+        "tp1_price": 1.10238,
+        "tp2_price": 1.10294,
+        "opened_epoch": 1794815409.292788,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1320,7 +1309,7 @@
       "BTCUSD:SND": 1794790813.437793,
       "XAUUSD:BREAKOUT": 1794808810.256364,
       "XAUUSD:SND": 1794811517.619458,
-      "EURUSD:ICT": 1794813307.020203,
+      "EURUSD:ICT": 1794815409.292788,
       "SOLUSD:DERIV_FLOW": 1794813795.781668,
       "BTCUSD:DERIV_FLOW": 1794813482.334261,
       "ETHUSD:DERIV_FLOW": 1794813504.184776,
@@ -1334,7 +1323,7 @@
     },
     "shadow_episodes": 603
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 9h 11m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 9h 9m)",
   "deriv_flow_status": "Shadow Incubation (144/30 eps, 65% WR, +0.01R)",
-  "cycle_count": 1180
+  "cycle_count": 1185
 }
