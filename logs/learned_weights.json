@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 10:32:40 UTC",
-  "total_episodes": 682,
+  "updated_utc": "2026-11-16 10:45:23 UTC",
+  "total_episodes": 683,
   "strategy_stats": {
     "SND": {
       "trades": 25,
@@ -31,11 +31,11 @@
       "multiplier": 1.048
     },
     "KRONOS": {
-      "trades": 158,
-      "wins": 81,
+      "trades": 159,
+      "wins": 82,
       "losses": 74,
-      "ema_r": -0.394,
-      "multiplier": 0.902
+      "ema_r": -0.333,
+      "multiplier": 0.917
     },
     "DERIV_FLOW": {
       "trades": 153,
@@ -53,7 +53,7 @@
     "TRENDING_DOWN:TREND_PULLBACK": 1.048,
     "SESSION_SWEEP_WINDOW:ICT": 0.922,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.914,
-    "SESSION_SWEEP_WINDOW:KRONOS": 0.754,
+    "SESSION_SWEEP_WINDOW:KRONOS": 0.76,
     "TRENDING_DOWN:ICT": 0.925,
     "TRENDING_DOWN:KRONOS": 1.073,
     "RANGING:BREAKOUT": 0.975,
@@ -697,21 +697,6 @@
   "live_episodes": 25,
   "active_shadow_trades": [
     {
-      "key": "USDJPY:KRONOS",
-      "symbol": "USDJPY",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 159.599,
-      "sl_price": 159.45098,
-      "sl_dist": 0.14802,
-      "tp1_price": 159.69521,
-      "tp2_price": 159.81363,
-      "opened_epoch": 1794824120.825775,
-      "tp1_hit": false,
-      "peak_r": 0.412
-    },
-    {
       "key": "USDJPY:ICT",
       "symbol": "USDJPY",
       "strategy_name": "ICT",
@@ -740,6 +725,21 @@
       "opened_epoch": 1794825006.116496,
       "tp1_hit": false,
       "peak_r": 0.241
+    },
+    {
+      "key": "EURUSD:TREND_PULLBACK",
+      "symbol": "EURUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "SHORT",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 1.10077,
+      "sl_price": 1.10166,
+      "sl_dist": 0.00089,
+      "tp1_price": 1.10019,
+      "tp2_price": 1.09947,
+      "opened_epoch": 1794825906.70458,
+      "tp1_hit": false,
+      "peak_r": 0.011
     }
   ],
   "shadow_cooldowns": {
@@ -770,7 +770,8 @@
     "EURUSD:KRONOS": 1794819601.472935,
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1794811517.623454,
-    "USDJPY:ICT": 1794824435.383822
+    "USDJPY:ICT": 1794824435.383822,
+    "EURUSD:TREND_PULLBACK": 1794825906.70458
   },
-  "shadow_episodes": 639
+  "shadow_episodes": 640
 }
