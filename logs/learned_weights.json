@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 06:40:20 UTC",
+  "updated_utc": "2026-11-16 06:45:17 UTC",
   "total_episodes": 625,
   "strategy_stats": {
     "SND": {
@@ -779,6 +779,51 @@
       "opened_epoch": 1794811220.89723,
       "tp1_hit": false,
       "peak_r": 0.324
+    },
+    {
+      "key": "XAUUSD:SND",
+      "symbol": "XAUUSD",
+      "strategy_name": "SND",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 3841.89,
+      "sl_price": 3859.59916,
+      "sl_dist": 17.70916,
+      "tp1_price": 3830.37904,
+      "tp2_price": 3816.21172,
+      "opened_epoch": 1794811517.619458,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "XAUUSD:KRONOS",
+      "symbol": "XAUUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 3841.89,
+      "sl_price": 3859.59916,
+      "sl_dist": 17.70916,
+      "tp1_price": 3830.37904,
+      "tp2_price": 3816.21172,
+      "opened_epoch": 1794811517.623454,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "USDJPY:ICT",
+      "symbol": "USDJPY",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 159.551,
+      "sl_price": 159.40123,
+      "sl_dist": 0.14977,
+      "tp1_price": 159.64835,
+      "tp2_price": 159.76817,
+      "opened_epoch": 1794811517.637609,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -798,7 +843,7 @@
     "ETHUSD:SND": 1794809111.058203,
     "BTCUSD:SND": 1794790813.437793,
     "XAUUSD:BREAKOUT": 1794808810.256364,
-    "XAUUSD:SND": 1794408307.296196,
+    "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1794807325.795479,
     "SOLUSD:DERIV_FLOW": 1794809381.040707,
     "BTCUSD:DERIV_FLOW": 1794810977.384313,
@@ -808,7 +853,8 @@
     "USDJPY:KRONOS": 1794806117.107247,
     "EURUSD:KRONOS": 1794807003.749546,
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
-    "XAUUSD:KRONOS": 1794808810.259365
+    "XAUUSD:KRONOS": 1794811517.623454,
+    "USDJPY:ICT": 1794811517.637609
   },
   "shadow_episodes": 584
 }
