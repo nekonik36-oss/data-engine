@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 06:42:58 UTC",
+  "updated_utc": "2026-11-16 06:44:38 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64613.85,
-    "ETHUSD": 1813.25,
-    "SOLUSD": 71.17,
-    "XAUUSD": 3840.5,
-    "EURUSD": 1.10112,
-    "USDJPY": 159.582
+    "BTCUSD": 64595.44,
+    "ETHUSD": 1812.01,
+    "SOLUSD": 71.13,
+    "XAUUSD": 3840.84,
+    "EURUSD": 1.10126,
+    "USDJPY": 159.559
   },
   "active_trades": {},
   "bot_stats": {
@@ -1254,7 +1254,7 @@
         "tp2_price": 64297.37528,
         "opened_epoch": 1794810977.384313,
         "tp1_hit": false,
-        "peak_r": 0.053
+        "peak_r": 0.169
       },
       {
         "key": "SOLUSD:ICT",
@@ -1303,7 +1303,7 @@
     },
     "shadow_episodes": 584
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 10h 17m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 10h 15m)",
   "deriv_flow_status": "Graduated Live (140 eps, 66.4% WR, +0.38R EMA)",
-  "cycle_count": 980
+  "cycle_count": 985
 }
