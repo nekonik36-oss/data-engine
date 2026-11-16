@@ -398,12 +398,17 @@ class ConfluenceEngine:
                         and regime != MarketRegime.SESSION_SWEEP_WINDOW
                     )
                     top_pa_with_kronos = False
+                    brk_exhausted = (
+                        (direction == Direction.SHORT and (ind.rsi[idx] < 30.0 or (ind.ema20[idx] - curr.close) > 2.2 * cur_atr))
+                        or (direction == Direction.LONG and (ind.rsi[idx] > 70.0 or (curr.close - ind.ema20[idx]) > 2.2 * cur_atr))
+                    )
                     if len(strong_agree) == 1 and kronos_strong:
                         lead_v = strong_agree[0]
                         if (
                             lead_v.strategy_name == "BREAKOUT"
                             and lead_v.confidence >= 0.78
                             and regime != MarketRegime.RANGING
+                            and not brk_exhausted
                         ):
                             top_pa_with_kronos = True
                         elif (
@@ -535,10 +540,15 @@ class ConfluenceEngine:
                         or (direction == Direction.SHORT and e50 < e200 and (e240 - e60) >= 0.80 * cur_atr)
                     )
                     min_k_conf = 0.42 if lead_c.strategy_name == "ICT" else 0.40
+                    brk_exhausted_c = lead_c.strategy_name == "BREAKOUT" and (
+                        (direction == Direction.SHORT and (ind.rsi[idx] < 30.0 or (ind.ema20[idx] - curr.close) > 2.2 * cur_atr))
+                        or (direction == Direction.LONG and (ind.rsi[idx] > 70.0 or (curr.close - ind.ema20[idx]) > 2.2 * cur_atr))
+                    )
                     if (
                         kronos_fc is None
                         or kronos_fc.direction != direction
                         or kronos_fc.confidence < min_k_conf
+                        or brk_exhausted_c
                         or regime == MarketRegime.SESSION_SWEEP_WINDOW
                         or (
                             regime == MarketRegime.RANGING

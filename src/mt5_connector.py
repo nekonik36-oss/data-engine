@@ -788,7 +788,7 @@ class MT5Connector:
         init_vol = float(trade.get("initial_volume", trade.get("volume", 0.01)))
 
         if "initial_sl_price" not in trade or abs(entry_price - float(trade["initial_sl_price"])) < 1e-5:
-            inferred_dist = max(abs(tp1_price - entry_price) / 0.75, abs(entry_price - sl_price), 1e-4)
+            inferred_dist = max(abs(tp1_price - entry_price) / 0.65, abs(entry_price - sl_price), 1e-4)
             trade["initial_sl_price"] = round(
                 entry_price - inferred_dist if is_long else entry_price + inferred_dist, 2
             )
@@ -800,7 +800,10 @@ class MT5Connector:
         if peak_r > float(trade.get("peak_favorable_r", 0.0)):
             trade["peak_favorable_r"] = peak_r
 
-        # Compute elapsed trade age in minutes for 20m / 35m Fast-Scalp Time-Decay Shield
+        # Check whether existing SL is already breached BEFORE running time-decay modifiers
+        already_hit_sl = (cur_price <= sl_price) if is_long else (cur_price >= sl_price)
+
+        # Compute elapsed trade age in minutes for 18m / 30m Fast-Scalp Time-Decay Shield
         age_min = 0.0
         opened_str = str(trade.get("opened_at_utc", ""))
         if opened_str:
@@ -811,7 +814,7 @@ class MT5Connector:
                 pass
 
         # Tier 1 (+0.35R excursion, +0.18R peak pullback, OR >=20m open with >=+0.10R) -> +0.04R BE Shield
-        if not trade.get("be_shield_active", False) and not trade.get("tp1_hit", False):
+        if not already_hit_sl and not trade.get("be_shield_active", False) and not trade.get("tp1_hit", False):
             if (
                 excursion_r >= 0.35
                 or (peak_r >= 0.18 and 0.04 <= excursion_r <= 0.14)
@@ -827,9 +830,10 @@ class MT5Connector:
                     f"Locked SL at +0.04R ({be_sl})."
                 )
 
-        # 18-Minute Failed-Impulse Shield (cuts risk to -0.55R if trade never bounced >=+0.12R in first 18m)
+        # 18-Minute Failed-Impulse Shield (cuts risk to -0.55R; strictly monotonic — NEVER widens SL!)
         if (
-            age_min >= 18.0
+            not already_hit_sl
+            and age_min >= 18.0
             and peak_r < 0.12
             and excursion_r <= -0.15
             and not trade.get("be_shield_active", False)
@@ -838,9 +842,9 @@ class MT5Connector:
         ):
             imp_dist = 0.55 * sl_dist
             if is_long:
-                imp_sl = round(min(cur_price - 0.05 * sl_dist, max(sl_price, entry_price - imp_dist)), 2)
+                imp_sl = round(max(sl_price, min(cur_price - 0.05 * sl_dist, entry_price - imp_dist)), 2)
             else:
-                imp_sl = round(max(cur_price + 0.05 * sl_dist, min(sl_price, entry_price + imp_dist)), 2)
+                imp_sl = round(min(sl_price, max(cur_price + 0.05 * sl_dist, entry_price + imp_dist)), 2)
             trade["failed_impulse_shield"] = True
             trade["time_decay_applied"] = True
             trade["sl_price"] = imp_sl
@@ -851,18 +855,19 @@ class MT5Connector:
                 f"tightened SL to {imp_sl} (-0.55R cap)."
             )
 
-        # 30-Minute Fast-Scalp Time-Decay Stagnation Shield (cuts risk to -0.42R on stale >30m scalps that never popped)
+        # 30-Minute Fast-Scalp Time-Decay Stagnation Shield (cuts risk to -0.42R; strictly monotonic — NEVER widens SL!)
         if (
-            age_min >= 30.0
+            not already_hit_sl
+            and age_min >= 30.0
             and not trade.get("be_shield_active", False)
             and not trade.get("tp1_hit", False)
             and not trade.get("time_decay_30m", False)
         ):
             decay_dist = 0.42 * sl_dist
             if is_long:
-                decay_sl = round(min(cur_price - 0.05 * sl_dist, max(sl_price, entry_price - decay_dist)), 2)
+                decay_sl = round(max(sl_price, min(cur_price - 0.05 * sl_dist, entry_price - decay_dist)), 2)
             else:
-                decay_sl = round(max(cur_price + 0.05 * sl_dist, min(sl_price, entry_price + decay_dist)), 2)
+                decay_sl = round(min(sl_price, max(cur_price + 0.05 * sl_dist, entry_price + decay_dist)), 2)
             trade["time_decay_30m"] = True
             trade["time_decay_applied"] = True
             trade["sl_price"] = decay_sl
@@ -954,7 +959,7 @@ class MT5Connector:
                     net_pnl = round(max(locked_r, 0.04) * risk_usd, 2)
                     close_reason = "Break-Even Shield Hit 🛡️"
                 elif trade.get("time_decay_applied", False):
-                    net_pnl = round(locked_r * risk_usd, 2)
+                    net_pnl = round(max(-1.0, locked_r) * risk_usd, 2)
                     close_reason = "18m/30m Impulse Time-Decay Stop Hit ⏱️🛡️"
                 else:
                     net_pnl = round(-risk_usd, 2)
@@ -1223,19 +1228,20 @@ class MT5Connector:
                     imp_dist = 0.55 * r_dist
                     cur_sl_val = float(pos.sl) if float(pos.sl) > 0 else float(trade.get("sl_price", entry_price))
                     if is_long:
-                        imp_sl = round(min(cur_price - 0.05 * r_dist, max(cur_sl_val, entry_price - imp_dist)), digits)
+                        imp_sl = round(max(cur_sl_val, min(cur_price - 0.05 * r_dist, entry_price - imp_dist)), digits)
                     else:
-                        imp_sl = round(max(cur_price + 0.05 * r_dist, min(cur_sl_val, entry_price + imp_dist)), digits)
+                        imp_sl = round(min(cur_sl_val, max(cur_price + 0.05 * r_dist, entry_price + imp_dist)), digits)
                     cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
-                    self._mt5.order_send(
-                        {
-                            "action": self._mt5.TRADE_ACTION_SLTP,
-                            "position": int(pos.ticket),
-                            "symbol": broker_sym,
-                            "sl": imp_sl,
-                            "tp": cur_tp,
-                        }
-                    )
+                    if (is_long and imp_sl > cur_sl_val) or (not is_long and imp_sl < cur_sl_val):
+                        self._mt5.order_send(
+                            {
+                                "action": self._mt5.TRADE_ACTION_SLTP,
+                                "position": int(pos.ticket),
+                                "symbol": broker_sym,
+                                "sl": imp_sl,
+                                "tp": cur_tp,
+                            }
+                        )
                     trade["failed_impulse_shield"] = True
                     trade["time_decay_applied"] = True
                     trade["sl_price"] = imp_sl
@@ -1258,19 +1264,20 @@ class MT5Connector:
                     decay_dist = 0.42 * r_dist
                     cur_sl_val = float(pos.sl) if float(pos.sl) > 0 else float(trade.get("sl_price", entry_price))
                     if is_long:
-                        decay_sl = round(min(cur_price - 0.05 * r_dist, max(cur_sl_val, entry_price - decay_dist)), digits)
+                        decay_sl = round(max(cur_sl_val, min(cur_price - 0.05 * r_dist, entry_price - decay_dist)), digits)
                     else:
-                        decay_sl = round(max(cur_price + 0.05 * r_dist, min(cur_sl_val, entry_price + decay_dist)), digits)
+                        decay_sl = round(min(cur_sl_val, max(cur_price + 0.05 * r_dist, entry_price + decay_dist)), digits)
                     cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
-                    self._mt5.order_send(
-                        {
-                            "action": self._mt5.TRADE_ACTION_SLTP,
-                            "position": int(pos.ticket),
-                            "symbol": broker_sym,
-                            "sl": decay_sl,
-                            "tp": cur_tp,
-                        }
-                    )
+                    if (is_long and decay_sl > cur_sl_val) or (not is_long and decay_sl < cur_sl_val):
+                        self._mt5.order_send(
+                            {
+                                "action": self._mt5.TRADE_ACTION_SLTP,
+                                "position": int(pos.ticket),
+                                "symbol": broker_sym,
+                                "sl": decay_sl,
+                                "tp": cur_tp,
+                            }
+                        )
                     trade["time_decay_30m"] = True
                     trade["time_decay_applied"] = True
                     trade["sl_price"] = decay_sl
