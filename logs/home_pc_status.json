@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 03:18:40 UTC",
+  "updated_utc": "2026-11-16 03:20:18 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65108.01,
-    "ETHUSD": 1822.55,
-    "SOLUSD": 72.16,
-    "XAUUSD": 3870.04,
-    "EURUSD": 1.1017,
-    "USDJPY": 159.68
+    "BTCUSD": 65094.0,
+    "ETHUSD": 1822.48,
+    "SOLUSD": 72.15,
+    "XAUUSD": 3866.68,
+    "EURUSD": 1.10171,
+    "USDJPY": 159.691
   },
   "active_trades": {},
   "bot_stats": {
@@ -468,7 +468,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 03:18:38 UTC",
+    "updated_utc": "2026-11-16 03:19:36 UTC",
     "total_episodes": 582,
     "strategy_stats": {
       "SND": {
@@ -1155,21 +1155,6 @@
     "live_episodes": 21,
     "active_shadow_trades": [
       {
-        "key": "ETHUSD:DERIV_FLOW",
-        "symbol": "ETHUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 1824.86,
-        "sl_price": 1835.11444,
-        "sl_dist": 10.25444,
-        "tp1_price": 1818.19461,
-        "tp2_price": 1809.99106,
-        "opened_epoch": 1794797356.096699,
-        "tp1_hit": false,
-        "peak_r": 0.543
-      },
-      {
         "key": "ETHUSD:TREND_PULLBACK",
         "symbol": "ETHUSD",
         "strategy_name": "TREND_PULLBACK",
@@ -1240,7 +1225,7 @@
     },
     "shadow_episodes": 543
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 13h 41m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 13h 39m)",
   "deriv_flow_status": "Graduated Live (127 eps, 65.4% WR, +0.07R EMA)",
-  "cycle_count": 361
+  "cycle_count": 365
 }
