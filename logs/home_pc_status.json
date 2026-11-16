@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 02:48:36 UTC",
+  "updated_utc": "2026-11-16 02:50:15 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65194.01,
-    "ETHUSD": 1825.31,
+    "BTCUSD": 65166.0,
+    "ETHUSD": 1823.93,
     "SOLUSD": 72.26,
-    "XAUUSD": 3875.8,
-    "EURUSD": 1.1019,
-    "USDJPY": 159.725
+    "XAUUSD": 3873.08,
+    "EURUSD": 1.10198,
+    "USDJPY": 159.714
   },
   "active_trades": {},
   "bot_stats": {
@@ -468,7 +468,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 02:48:14 UTC",
+    "updated_utc": "2026-11-16 02:49:16 UTC",
     "total_episodes": 579,
     "strategy_stats": {
       "SND": {
@@ -1198,6 +1198,21 @@
         "opened_epoch": 1794797294.742067,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:DERIV_FLOW",
+        "symbol": "ETHUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 1824.86,
+        "sl_price": 1835.11444,
+        "sl_dist": 10.25444,
+        "tp1_price": 1818.19461,
+        "tp2_price": 1809.99106,
+        "opened_epoch": 1794797356.096699,
+        "tp1_hit": false,
+        "peak_r": 0.142
       }
     ],
     "shadow_cooldowns": {
@@ -1221,11 +1236,11 @@
       "EURUSD:ICT": 1794412816.194931,
       "SOLUSD:DERIV_FLOW": 1794796652.93804,
       "BTCUSD:DERIV_FLOW": 1794797294.742067,
-      "ETHUSD:DERIV_FLOW": 1794794550.852218
+      "ETHUSD:DERIV_FLOW": 1794797356.096699
     },
     "shadow_episodes": 540
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 14h 11m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 14h 9m)",
   "deriv_flow_status": "Shadow Incubation (125/30 eps, 65% WR, +0.04R)",
-  "cycle_count": 270
+  "cycle_count": 275
 }
