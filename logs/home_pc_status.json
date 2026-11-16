@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 22:47:36 UTC",
+  "updated_utc": "2026-11-16 22:49:11 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65468.74,
-    "ETHUSD": 1831.93,
-    "SOLUSD": 71.98,
+    "BTCUSD": 65430.4,
+    "ETHUSD": 1831.51,
+    "SOLUSD": 71.95,
     "XAUUSD": 3856.01,
-    "EURUSD": 1.09929,
-    "USDJPY": 159.39
+    "EURUSD": 1.09927,
+    "USDJPY": 159.393
   },
   "active_trades": {},
   "bot_stats": {
@@ -1285,7 +1285,7 @@
         "tp2_price": 1823.91581,
         "opened_epoch": 1794868809.926921,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.039
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1315,7 +1315,7 @@
         "tp2_price": 1823.91581,
         "opened_epoch": 1794868828.047911,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.039
       },
       {
         "key": "ETHUSD:DERIV_FLOW",
@@ -1330,7 +1330,7 @@
         "tp2_price": 1823.91581,
         "opened_epoch": 1794868996.404572,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.039
       },
       {
         "key": "BTCUSD:TREND_PULLBACK",
@@ -1413,7 +1413,7 @@
     },
     "shadow_episodes": 760
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 14h 42m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 14h 40m)",
   "deriv_flow_status": "Shadow Incubation (206/30 eps, 63% WR, -0.10R)",
-  "cycle_count": 2245
+  "cycle_count": 2250
 }
