@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 22:23:53 UTC",
+  "updated_utc": "2026-11-16 22:25:27 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65398.02,
-    "ETHUSD": 1833.63,
+    "BTCUSD": 65371.36,
+    "ETHUSD": 1833.65,
     "SOLUSD": 72.01,
     "XAUUSD": 3856.01,
-    "EURUSD": 1.09945,
-    "USDJPY": 159.389
+    "EURUSD": 1.09939,
+    "USDJPY": 159.394
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,7 +534,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 22:17:16 UTC",
+    "updated_utc": "2026-11-16 22:25:08 UTC",
     "total_episodes": 799,
     "strategy_stats": {
       "SND": {
@@ -1301,6 +1301,21 @@
         "opened_epoch": 1794867436.971618,
         "tp1_hit": false,
         "peak_r": 0.488
+      },
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 72.01,
+        "sl_price": 72.28713,
+        "sl_dist": 0.27713,
+        "tp1_price": 71.82986,
+        "tp2_price": 71.60816,
+        "opened_epoch": 1794867908.116336,
+        "tp1_hit": false,
+        "peak_r": 0.072
       }
     ],
     "shadow_cooldowns": {
@@ -1313,7 +1328,7 @@
       "SOLUSD:KRONOS": 1794865219.462533,
       "BTCUSD:ICT": 1794861302.667321,
       "SOLUSD:SND": 1794408013.22123,
-      "SOLUSD:ICT": 1794843912.841014,
+      "SOLUSD:ICT": 1794867908.116336,
       "ETHUSD:TREND_PULLBACK": 1794846318.264104,
       "BTCUSD:TREND_PULLBACK": 1794862512.439312,
       "SOLUSD:TREND_PULLBACK": 1794845104.239543,
@@ -1338,7 +1353,7 @@
     },
     "shadow_episodes": 754
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 15h 6m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 15h 4m)",
   "deriv_flow_status": "Shadow Incubation (202/30 eps, 63% WR, -0.16R)",
-  "cycle_count": 2170
+  "cycle_count": 2175
 }
