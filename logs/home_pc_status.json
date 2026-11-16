@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 02:37:09 UTC",
+  "updated_utc": "2026-11-16 02:38:50 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65213.14,
-    "ETHUSD": 1829.3,
-    "SOLUSD": 72.43,
-    "XAUUSD": 3881.93,
+    "BTCUSD": 65262.01,
+    "ETHUSD": 1829.49,
+    "SOLUSD": 72.41,
+    "XAUUSD": 3885.39,
     "EURUSD": 1.1019700000000001,
-    "USDJPY": 159.733
+    "USDJPY": 159.732
   },
   "active_trades": {},
   "bot_stats": {
@@ -468,7 +468,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 02:33:35 UTC",
+    "updated_utc": "2026-11-16 02:37:32 UTC",
     "total_episodes": 579,
     "strategy_stats": {
       "SND": {
@@ -1168,6 +1168,21 @@
         "opened_epoch": 1794796415.184808,
         "tp1_hit": false,
         "peak_r": 0.024
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 72.3,
+        "sl_price": 72.77113,
+        "sl_dist": 0.47113,
+        "tp1_price": 71.99377,
+        "tp2_price": 71.61686,
+        "opened_epoch": 1794796652.93804,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1189,13 +1204,13 @@
       "XAUUSD:BREAKOUT": 1794409105.08686,
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931,
-      "SOLUSD:DERIV_FLOW": 1794794552.344367,
+      "SOLUSD:DERIV_FLOW": 1794796652.93804,
       "BTCUSD:DERIV_FLOW": 1794794511.63408,
       "ETHUSD:DERIV_FLOW": 1794794550.852218
     },
     "shadow_episodes": 540
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 14h 22m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 14h 21m)",
   "deriv_flow_status": "Shadow Incubation (125/30 eps, 65% WR, +0.04R)",
-  "cycle_count": 235
+  "cycle_count": 240
 }
