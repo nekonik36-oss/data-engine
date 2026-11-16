@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-16 17:01:01 UTC",
+  "updated_utc": "2026-11-16 17:01:44 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9677.53,
+  "live_equity": 9672.49,
   "bot_stats": {
-    "total_closed": 44,
+    "total_closed": 45,
     "wins": 16,
-    "losses": 21,
+    "losses": 22,
     "breakevens": 7,
-    "cumulative_pnl": -315.1,
+    "cumulative_pnl": -327.51,
     "history": [
       {
         "ticket": 1078980632,
@@ -492,6 +492,17 @@
         "r_multiple": 0.05,
         "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-16 15:17:13 UTC"
+      },
+      {
+        "ticket": 1086537289,
+        "symbol": "XAUUSD",
+        "direction": "SHORT",
+        "entry_price": 3858.46,
+        "exit_price": 3870.87,
+        "net_pnl": -12.41,
+        "r_multiple": -0.43,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-16 17:01:37 UTC"
       }
     ],
     "crypto_book_pnl": 19.22
@@ -536,8 +547,8 @@
     },
     "XAUUSD": {
       "win_streak": 0,
-      "loss_streak": 2,
-      "net_r": -1.72
+      "loss_streak": 3,
+      "net_r": -2.15
     },
     "USDJPY": {
       "win_streak": 0,
@@ -550,24 +561,26 @@
       "net_r": -1.44
     }
   },
-  "pending_post_mortems": [],
-  "ai_feedback_feed": [
+  "pending_post_mortems": [
     {
-      "timestamp_utc": "2026-11-11 10:27:39 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 84391803,
-      "symbol": "BTCUSD",
+      "ticket": 1086537289,
+      "symbol": "XAUUSD",
       "direction": "SHORT",
-      "net_pnl": -46.93,
-      "r_multiple": -1.0,
-      "peak_favorable_r": 0.0,
-      "regime": "SESSION_SWEEP_WINDOW",
-      "strategies": [
-        "SND",
-        "TREND_PULLBACK"
+      "entry_price": 3858.46,
+      "exit_price": 3870.87,
+      "tp1_price": 3839.493,
+      "tp2_price": 3816.149,
+      "agreeing_strategies": [
+        "ICT",
+        "KRONOS"
       ],
-      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=73484.97)"
-    },
+      "regime": "RANGING",
+      "closed_epoch": 1794848497.88792,
+      "closed_at_utc": "2026-11-16 17:01:37 UTC",
+      "audited": false
+    }
+  ],
+  "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-11 13:47:56 UTC",
       "event": "TRUE_TREND_LOSS_CONFIRMED",
@@ -895,6 +908,22 @@
         "DERIV_FLOW"
       ],
       "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-16 17:01:37 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1086537289,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "net_pnl": -12.41,
+      "r_multiple": -0.43,
+      "peak_favorable_r": 0.06,
+      "regime": "RANGING",
+      "strategies": [
+        "ICT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if XAUUSD reaches TP1=3839.493)"
     }
   ]
 }
