@@ -721,8 +721,8 @@
       "tp1_price": 64785.44729,
       "tp2_price": 64587.24088,
       "opened_epoch": 1794790294.731446,
-      "tp1_hit": false,
-      "peak_r": 0.498
+      "tp1_hit": true,
+      "peak_r": 0.704
     },
     {
       "key": "BTCUSD:ICT",
@@ -751,8 +751,8 @@
       "tp1_price": 1810.05144,
       "tp2_price": 1802.8409,
       "opened_epoch": 1794790319.123026,
-      "tp1_hit": false,
-      "peak_r": 0.62
+      "tp1_hit": true,
+      "peak_r": 0.683
     },
     {
       "key": "ETHUSD:ICT",
@@ -782,7 +782,7 @@
       "tp2_price": 71.41813,
       "opened_epoch": 1794790325.214293,
       "tp1_hit": true,
-      "peak_r": 0.723
+      "peak_r": 0.843
     },
     {
       "key": "SOLUSD:ICT",
@@ -812,7 +812,7 @@
       "tp2_price": 64576.70334,
       "opened_epoch": 1794790813.437793,
       "tp1_hit": false,
-      "peak_r": 0.421
+      "peak_r": 0.635
     }
   ],
   "shadow_cooldowns": {

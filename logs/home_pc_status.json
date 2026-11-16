@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 01:03:06 UTC",
+  "updated_utc": "2026-11-16 01:04:57 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64823.16,
-    "ETHUSD": 1810.94,
-    "SOLUSD": 71.75,
-    "XAUUSD": 3868.7,
-    "EURUSD": 1.10208,
-    "USDJPY": 159.743
+    "BTCUSD": 64772.01,
+    "ETHUSD": 1809.75,
+    "SOLUSD": 71.67,
+    "XAUUSD": 3866.15,
+    "EURUSD": 1.10219,
+    "USDJPY": 159.738
   },
   "active_trades": {},
   "bot_stats": {
@@ -1179,8 +1179,8 @@
         "tp1_price": 64785.44729,
         "tp2_price": 64587.24088,
         "opened_epoch": 1794790294.731446,
-        "tp1_hit": false,
-        "peak_r": 0.498
+        "tp1_hit": true,
+        "peak_r": 0.704
       },
       {
         "key": "BTCUSD:ICT",
@@ -1209,8 +1209,8 @@
         "tp1_price": 1810.05144,
         "tp2_price": 1802.8409,
         "opened_epoch": 1794790319.123026,
-        "tp1_hit": false,
-        "peak_r": 0.62
+        "tp1_hit": true,
+        "peak_r": 0.683
       },
       {
         "key": "ETHUSD:ICT",
@@ -1240,7 +1240,7 @@
         "tp2_price": 71.41813,
         "opened_epoch": 1794790325.214293,
         "tp1_hit": true,
-        "peak_r": 0.723
+        "peak_r": 0.843
       },
       {
         "key": "SOLUSD:ICT",
@@ -1270,7 +1270,7 @@
         "tp2_price": 64576.70334,
         "opened_epoch": 1794790813.437793,
         "tp1_hit": false,
-        "peak_r": 0.421
+        "peak_r": 0.635
       }
     ],
     "shadow_cooldowns": {
@@ -1298,7 +1298,7 @@
     },
     "shadow_episodes": 516
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 15h 57m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 15h 55m)",
   "deriv_flow_status": "Graduated Live (116 eps, 66.4% WR, +0.47R EMA)",
-  "cycle_count": 30
+  "cycle_count": 35
 }
