@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-16 06:25:14 UTC",
+  "updated_utc": "2026-11-16 06:26:17 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9706.31,
+  "live_equity": 9701.45,
   "bot_stats": {
-    "total_closed": 40,
+    "total_closed": 41,
     "wins": 16,
-    "losses": 19,
+    "losses": 20,
     "breakevens": 5,
-    "cumulative_pnl": -271.71,
+    "cumulative_pnl": -298.55,
     "history": [
       {
         "ticket": 1078980632,
@@ -448,6 +448,17 @@
         "r_multiple": -0.72,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-16 06:19:12 UTC"
+      },
+      {
+        "ticket": 1085830147,
+        "symbol": "ETHUSD",
+        "direction": "LONG",
+        "entry_price": 1815.87,
+        "exit_price": 1807.04,
+        "net_pnl": -26.84,
+        "r_multiple": -0.55,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-16 06:26:10 UTC"
       }
     ],
     "crypto_book_pnl": 19.22
@@ -481,9 +492,9 @@
       "net_r": -2.48
     },
     "ETHUSD": {
-      "win_streak": 1,
-      "loss_streak": 0,
-      "net_r": -1.99
+      "win_streak": 0,
+      "loss_streak": 1,
+      "net_r": -2.54
     },
     "SOLUSD": {
       "win_streak": 0,
@@ -523,24 +534,26 @@
       "closed_epoch": 1794809952.19592,
       "closed_at_utc": "2026-11-16 06:19:12 UTC",
       "audited": false
+    },
+    {
+      "ticket": 1085830147,
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "entry_price": 1815.87,
+      "exit_price": 1807.04,
+      "tp1_price": 1826.244,
+      "tp2_price": 1839.012,
+      "agreeing_strategies": [
+        "SND",
+        "ICT"
+      ],
+      "regime": "RANGING",
+      "closed_epoch": 1794810370.366722,
+      "closed_at_utc": "2026-11-16 06:26:10 UTC",
+      "audited": false
     }
   ],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-10 18:36:56 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1081421364,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "net_pnl": -46.0,
-      "r_multiple": -1.01,
-      "peak_favorable_r": 0.06,
-      "regime": "TRENDING_DOWN",
-      "strategies": [
-        "TREND_PULLBACK"
-      ],
-      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=72902.7088)"
-    },
     {
       "timestamp_utc": "2026-11-10 20:15:42 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -874,6 +887,22 @@
         "KRONOS"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if XAUUSD reaches TP1=3810.8995)"
+    },
+    {
+      "timestamp_utc": "2026-11-16 06:26:10 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1085830147,
+      "symbol": "ETHUSD",
+      "direction": "LONG",
+      "net_pnl": -26.84,
+      "r_multiple": -0.55,
+      "peak_favorable_r": 0.0,
+      "regime": "RANGING",
+      "strategies": [
+        "SND",
+        "ICT"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1826.244)"
     }
   ]
 }
