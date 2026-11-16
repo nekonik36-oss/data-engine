@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 17:02:26 UTC",
+  "updated_utc": "2026-11-16 17:04:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64962.01,
-    "ETHUSD": 1829.61,
-    "SOLUSD": 71.58,
-    "XAUUSD": 3869.66,
-    "EURUSD": 1.1004,
-    "USDJPY": 159.612
+    "BTCUSD": 64893.13,
+    "ETHUSD": 1826.46,
+    "SOLUSD": 71.54,
+    "XAUUSD": 3868.64,
+    "EURUSD": 1.10038,
+    "USDJPY": 159.599
   },
   "active_trades": {},
   "bot_stats": {
@@ -1301,7 +1301,7 @@
         "tp2_price": 72.17872,
         "opened_epoch": 1794848420.617333,
         "tp1_hit": false,
-        "peak_r": 0.349
+        "peak_r": 0.368
       }
     ],
     "shadow_cooldowns": {
@@ -1339,7 +1339,7 @@
     },
     "shadow_episodes": 717
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks released 2m ago (17:00 UTC) [-20m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks released 4m ago (17:00 UTC) [-20m/+15m shield])",
   "deriv_flow_status": "Shadow Incubation (182/30 eps, 64% WR, -0.10R)",
-  "cycle_count": 1160
+  "cycle_count": 1165
 }
