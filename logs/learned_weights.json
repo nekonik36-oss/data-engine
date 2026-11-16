@@ -681,8 +681,8 @@
       "tp1_price": 1805.17583,
       "tp2_price": 1811.41071,
       "opened_epoch": 1794834021.195064,
-      "tp1_hit": false,
-      "peak_r": 0.462
+      "tp1_hit": true,
+      "peak_r": 0.662
     },
     {
       "key": "EURUSD:ICT",
@@ -712,7 +712,7 @@
       "tp2_price": 1.10008,
       "opened_epoch": 1794834023.375942,
       "tp1_hit": false,
-      "peak_r": 0.247
+      "peak_r": 0.282
     }
   ],
   "shadow_cooldowns": {
