@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 21:54:59 UTC",
+  "updated_utc": "2026-11-16 21:55:21 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65324.37,
-    "ETHUSD": 1828.25,
-    "SOLUSD": 71.88,
-    "XAUUSD": 3854.76,
-    "EURUSD": 1.09966,
-    "USDJPY": 159.417
+    "BTCUSD": 65313.86,
+    "ETHUSD": 1828.13,
+    "SOLUSD": 71.87,
+    "XAUUSD": 3855.0,
+    "EURUSD": 1.0996299999999999,
+    "USDJPY": 159.416
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,7 +534,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 21:54:58 UTC",
+    "updated_utc": "2026-11-16 21:55:19 UTC",
     "total_episodes": 795,
     "strategy_stats": {
       "SND": {
@@ -1271,10 +1271,25 @@
         "opened_epoch": 1794865219.462533,
         "tp1_hit": false,
         "peak_r": 0.566
+      },
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 1827.97,
+        "sl_price": 1834.0195,
+        "sl_dist": 6.0495,
+        "tp1_price": 1824.03783,
+        "tp2_price": 1819.19823,
+        "opened_epoch": 1794866119.969288,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1794841511.496846,
+      "ETHUSD:ICT": 1794866119.969288,
       "BTCUSD:BREAKOUT": 1794864309.665771,
       "BTCUSD:KRONOS": 1794858615.796756,
       "ETHUSD:BREAKOUT": 1794865218.029921,
@@ -1308,7 +1323,7 @@
     },
     "shadow_episodes": 750
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 15h 35m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 15h 34m)",
   "deriv_flow_status": "Shadow Incubation (202/30 eps, 63% WR, -0.16R)",
-  "cycle_count": 2079
+  "cycle_count": 2080
 }
