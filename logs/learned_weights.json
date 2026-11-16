@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 07:45:06 UTC",
-  "total_episodes": 641,
+  "updated_utc": "2026-11-16 07:45:30 UTC",
+  "total_episodes": 644,
   "strategy_stats": {
     "SND": {
       "trades": 25,
@@ -10,18 +10,18 @@
       "multiplier": 0.939
     },
     "ICT": {
-      "trades": 161,
-      "wins": 79,
+      "trades": 162,
+      "wins": 80,
       "losses": 81,
-      "ema_r": -0.011,
-      "multiplier": 0.997
+      "ema_r": 0.027,
+      "multiplier": 1.007
     },
     "BREAKOUT": {
-      "trades": 120,
+      "trades": 121,
       "wins": 67,
-      "losses": 51,
-      "ema_r": -0.315,
-      "multiplier": 0.921
+      "losses": 52,
+      "ema_r": -0.37,
+      "multiplier": 0.908
     },
     "TREND_PULLBACK": {
       "trades": 80,
@@ -31,11 +31,11 @@
       "multiplier": 1.016
     },
     "KRONOS": {
-      "trades": 148,
+      "trades": 149,
       "wins": 80,
-      "losses": 66,
-      "ema_r": -0.312,
-      "multiplier": 0.922
+      "losses": 67,
+      "ema_r": -0.367,
+      "multiplier": 0.908
     },
     "DERIV_FLOW": {
       "trades": 144,
@@ -51,9 +51,9 @@
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.855,
     "RANGING:TREND_PULLBACK": 1.029,
     "TRENDING_DOWN:TREND_PULLBACK": 1.027,
-    "SESSION_SWEEP_WINDOW:ICT": 0.921,
-    "SESSION_SWEEP_WINDOW:BREAKOUT": 0.948,
-    "SESSION_SWEEP_WINDOW:KRONOS": 0.797,
+    "SESSION_SWEEP_WINDOW:ICT": 0.928,
+    "SESSION_SWEEP_WINDOW:BREAKOUT": 0.932,
+    "SESSION_SWEEP_WINDOW:KRONOS": 0.781,
     "TRENDING_DOWN:ICT": 0.917,
     "TRENDING_DOWN:KRONOS": 1.119,
     "RANGING:BREAKOUT": 1.003,
@@ -721,21 +721,6 @@
   "live_episodes": 23,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 71.04,
-      "sl_price": 70.6773,
-      "sl_dist": 0.3627,
-      "tp1_price": 71.27576,
-      "tp2_price": 71.56592,
-      "opened_epoch": 1794813915.640022,
-      "tp1_hit": true,
-      "peak_r": 1.434
-    },
-    {
       "key": "BTCUSD:BREAKOUT",
       "symbol": "BTCUSD",
       "strategy_name": "BREAKOUT",
@@ -781,36 +766,6 @@
       "peak_r": 0.381
     },
     {
-      "key": "SOLUSD:BREAKOUT",
-      "symbol": "SOLUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 71.53,
-      "sl_price": 71.14769,
-      "sl_dist": 0.38231,
-      "tp1_price": 71.7785,
-      "tp2_price": 72.08434,
-      "opened_epoch": 1794814511.344024,
-      "tp1_hit": false,
-      "peak_r": 0.078
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 71.53,
-      "sl_price": 71.14769,
-      "sl_dist": 0.38231,
-      "tp1_price": 71.7785,
-      "tp2_price": 72.08434,
-      "opened_epoch": 1794814511.347021,
-      "tp1_hit": false,
-      "peak_r": 0.078
-    },
-    {
       "key": "SOLUSD:TREND_PULLBACK",
       "symbol": "SOLUSD",
       "strategy_name": "TREND_PULLBACK",
@@ -823,7 +778,7 @@
       "tp2_price": 70.61524,
       "opened_epoch": 1794815106.941226,
       "tp1_hit": false,
-      "peak_r": 0.026
+      "peak_r": 0.154
     },
     {
       "key": "USDJPY:ICT",
@@ -886,5 +841,5 @@
     "XAUUSD:KRONOS": 1794811517.623454,
     "USDJPY:ICT": 1794815106.961931
   },
-  "shadow_episodes": 600
+  "shadow_episodes": 603
 }
