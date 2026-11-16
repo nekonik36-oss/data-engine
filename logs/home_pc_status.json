@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 07:40:32 UTC",
+  "updated_utc": "2026-11-16 07:42:08 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64998.07,
-    "ETHUSD": 1822.66,
+    "BTCUSD": 65032.01,
+    "ETHUSD": 1823.38,
     "SOLUSD": 71.51,
-    "XAUUSD": 3857.87,
-    "EURUSD": 1.10184,
-    "USDJPY": 159.431
+    "XAUUSD": 3857.15,
+    "EURUSD": 1.10225,
+    "USDJPY": 159.421
   },
   "active_trades": {},
   "bot_stats": {
@@ -1223,8 +1223,8 @@
         "tp1_price": 1.1021,
         "tp2_price": 1.10262,
         "opened_epoch": 1794813307.020203,
-        "tp1_hit": false,
-        "peak_r": 0.4
+        "tp1_hit": true,
+        "peak_r": 0.877
       },
       {
         "key": "SOLUSD:ICT",
@@ -1239,7 +1239,7 @@
         "tp2_price": 71.56592,
         "opened_epoch": 1794813915.640022,
         "tp1_hit": true,
-        "peak_r": 1.406
+        "peak_r": 1.434
       },
       {
         "key": "BTCUSD:BREAKOUT",
@@ -1254,7 +1254,7 @@
         "tp2_price": 65273.27165,
         "opened_epoch": 1794814509.508479,
         "tp1_hit": false,
-        "peak_r": 0.279
+        "peak_r": 0.498
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1269,7 +1269,7 @@
         "tp2_price": 65273.27165,
         "opened_epoch": 1794814509.511487,
         "tp1_hit": false,
-        "peak_r": 0.279
+        "peak_r": 0.498
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1284,7 +1284,7 @@
         "tp2_price": 1832.34061,
         "opened_epoch": 1794814510.56253,
         "tp1_hit": false,
-        "peak_r": 0.197
+        "peak_r": 0.381
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1299,7 +1299,7 @@
         "tp2_price": 72.08434,
         "opened_epoch": 1794814511.344024,
         "tp1_hit": false,
-        "peak_r": 0.052
+        "peak_r": 0.078
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1314,7 +1314,7 @@
         "tp2_price": 72.08434,
         "opened_epoch": 1794814511.347021,
         "tp1_hit": false,
-        "peak_r": 0.052
+        "peak_r": 0.078
       }
     ],
     "shadow_cooldowns": {
@@ -1349,7 +1349,7 @@
     },
     "shadow_episodes": 599
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 9h 19m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 9h 17m)",
   "deriv_flow_status": "Shadow Incubation (144/30 eps, 65% WR, +0.01R)",
-  "cycle_count": 1155
+  "cycle_count": 1160
 }
