@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 22:03:12 UTC",
+  "updated_utc": "2026-11-16 22:03:35 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65436.87,
-    "ETHUSD": 1833.11,
-    "SOLUSD": 72.01,
+    "BTCUSD": 65508.46,
+    "ETHUSD": 1834.44,
+    "SOLUSD": 72.07,
     "XAUUSD": 3856.01,
     "EURUSD": 1.09937,
     "USDJPY": 159.388
@@ -534,8 +534,8 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 21:55:19 UTC",
-    "total_episodes": 795,
+    "updated_utc": "2026-11-16 22:03:33 UTC",
+    "total_episodes": 796,
     "strategy_stats": {
       "SND": {
         "trades": 30,
@@ -545,11 +545,11 @@
         "multiplier": 0.918
       },
       "ICT": {
-        "trades": 196,
+        "trades": 197,
         "wins": 103,
-        "losses": 91,
-        "ema_r": 0.187,
-        "multiplier": 1.047
+        "losses": 92,
+        "ema_r": 0.092,
+        "multiplier": 1.023
       },
       "BREAKOUT": {
         "trades": 145,
@@ -581,7 +581,7 @@
       }
     },
     "regime_strategy_multipliers": {
-      "RANGING:ICT": 0.818,
+      "RANGING:ICT": 0.802,
       "RANGING:KRONOS": 0.679,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.86,
       "RANGING:TREND_PULLBACK": 1.045,
@@ -1240,7 +1240,7 @@
         "tp2_price": 1836.90346,
         "opened_epoch": 1794865218.029921,
         "tp1_hit": true,
-        "peak_r": 0.847
+        "peak_r": 1.039
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1255,7 +1255,7 @@
         "tp2_price": 72.42013,
         "opened_epoch": 1794865219.45954,
         "tp1_hit": false,
-        "peak_r": 0.177
+        "peak_r": 0.212
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1271,21 +1271,6 @@
         "opened_epoch": 1794865219.462533,
         "tp1_hit": false,
         "peak_r": 0.566
-      },
-      {
-        "key": "ETHUSD:ICT",
-        "symbol": "ETHUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 1827.97,
-        "sl_price": 1834.0195,
-        "sl_dist": 6.0495,
-        "tp1_price": 1824.03783,
-        "tp2_price": 1819.19823,
-        "opened_epoch": 1794866119.969288,
-        "tp1_hit": false,
-        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1321,9 +1306,9 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 750
+    "shadow_episodes": 751
   },
   "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 15h 26m)",
   "deriv_flow_status": "Shadow Incubation (202/30 eps, 63% WR, -0.16R)",
-  "cycle_count": 2105
+  "cycle_count": 2106
 }
