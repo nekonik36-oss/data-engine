@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 02:23:34 UTC",
-  "total_episodes": 576,
+  "updated_utc": "2026-11-16 02:31:06 UTC",
+  "total_episodes": 578,
   "strategy_stats": {
     "SND": {
       "trades": 22,
@@ -17,11 +17,11 @@
       "multiplier": 0.984
     },
     "BREAKOUT": {
-      "trades": 110,
-      "wins": 62,
+      "trades": 111,
+      "wins": 63,
       "losses": 46,
-      "ema_r": -0.29,
-      "multiplier": 0.928
+      "ema_r": -0.23,
+      "multiplier": 0.943
     },
     "TREND_PULLBACK": {
       "trades": 73,
@@ -31,11 +31,11 @@
       "multiplier": 1.05
     },
     "KRONOS": {
-      "trades": 133,
-      "wins": 73,
+      "trades": 134,
+      "wins": 74,
       "losses": 58,
-      "ema_r": -0.319,
-      "multiplier": 0.92
+      "ema_r": -0.257,
+      "multiplier": 0.936
     },
     "DERIV_FLOW": {
       "trades": 125,
@@ -47,7 +47,7 @@
   },
   "regime_strategy_multipliers": {
     "RANGING:ICT": 0.871,
-    "RANGING:KRONOS": 0.702,
+    "RANGING:KRONOS": 0.709,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.829,
     "RANGING:TREND_PULLBACK": 1.077,
     "TRENDING_DOWN:TREND_PULLBACK": 1.027,
@@ -56,7 +56,7 @@
     "SESSION_SWEEP_WINDOW:KRONOS": 0.816,
     "TRENDING_DOWN:ICT": 0.895,
     "TRENDING_DOWN:KRONOS": 1.178,
-    "RANGING:BREAKOUT": 0.996,
+    "RANGING:BREAKOUT": 1.003,
     "RANGING:SND": 1.062,
     "TRENDING_DOWN:BREAKOUT": 1.134,
     "TRENDING_DOWN:SND": 1.003,
@@ -683,38 +683,7 @@
     }
   ],
   "live_episodes": 20,
-  "active_shadow_trades": [
-    {
-      "key": "SOLUSD:BREAKOUT",
-      "symbol": "SOLUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 72.29,
-      "sl_price": 71.83551,
-      "sl_dist": 0.45449,
-      "tp1_price": 72.58542,
-      "tp2_price": 72.94901,
-      "opened_epoch": 1794795604.046458,
-      "tp1_hit": true,
-      "peak_r": 0.99
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 72.29,
-      "sl_price": 71.83551,
-      "sl_dist": 0.45449,
-      "tp1_price": 72.58542,
-      "tp2_price": 72.94901,
-      "opened_epoch": 1794795604.047444,
-      "tp1_hit": true,
-      "peak_r": 0.99
-    }
-  ],
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794794728.094394,
     "BTCUSD:BREAKOUT": 1794794415.970298,
@@ -738,5 +707,5 @@
     "BTCUSD:DERIV_FLOW": 1794794511.63408,
     "ETHUSD:DERIV_FLOW": 1794794550.852218
   },
-  "shadow_episodes": 538
+  "shadow_episodes": 540
 }
