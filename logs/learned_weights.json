@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 22:42:00 UTC",
-  "total_episodes": 804,
+  "updated_utc": "2026-11-16 22:44:29 UTC",
+  "total_episodes": 805,
   "strategy_stats": {
     "SND": {
       "trades": 30,
@@ -38,11 +38,11 @@
       "multiplier": 0.941
     },
     "DERIV_FLOW": {
-      "trades": 205,
+      "trades": 206,
       "wins": 129,
-      "losses": 75,
-      "ema_r": -0.023,
-      "multiplier": 0.994
+      "losses": 76,
+      "ema_r": -0.101,
+      "multiplier": 0.975
     }
   },
   "regime_strategy_multipliers": {
@@ -71,7 +71,7 @@
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.984,
     "MACRO_NEWS_WINDOW:ICT": 1.027,
-    "TRENDING_UP:DERIV_FLOW": 1.016,
+    "TRENDING_UP:DERIV_FLOW": 1.0,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.975,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.014
   },
@@ -783,17 +783,17 @@
       "peak_r": 0.0
     },
     {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
+      "key": "ETHUSD:DERIV_FLOW",
+      "symbol": "ETHUSD",
       "strategy_name": "DERIV_FLOW",
       "direction": "SHORT",
       "regime": "TRENDING_UP",
-      "entry_price": 65324.99,
-      "sl_price": 65491.12295,
-      "sl_dist": 166.13295,
-      "tp1_price": 65217.00358,
-      "tp2_price": 65084.09722,
-      "opened_epoch": 1794868920.51057,
+      "entry_price": 1831.72,
+      "sl_price": 1837.1022,
+      "sl_dist": 5.3822,
+      "tp1_price": 1828.22157,
+      "tp2_price": 1823.91581,
+      "opened_epoch": 1794868996.404572,
       "tp1_hit": false,
       "peak_r": 0.0
     }
@@ -819,7 +819,7 @@
     "EURUSD:ICT": 1794846924.06586,
     "SOLUSD:DERIV_FLOW": 1794867436.971618,
     "BTCUSD:DERIV_FLOW": 1794868920.51057,
-    "ETHUSD:DERIV_FLOW": 1794866879.169843,
+    "ETHUSD:DERIV_FLOW": 1794868996.404572,
     "EURUSD:BREAKOUT": 1794826814.809407,
     "USDJPY:BREAKOUT": 1794806117.104245,
     "USDJPY:KRONOS": 1794824120.825775,
@@ -831,5 +831,5 @@
     "XAUUSD:ICT": 1794845444.657765,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 759
+  "shadow_episodes": 760
 }
