@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 18:53:30 UTC",
+  "updated_utc": "2026-11-16 18:55:03 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65115.69,
-    "ETHUSD": 1825.18,
-    "SOLUSD": 71.5,
-    "XAUUSD": 3853.42,
-    "EURUSD": 1.09959,
+    "BTCUSD": 65104.0,
+    "ETHUSD": 1824.85,
+    "SOLUSD": 71.46,
+    "XAUUSD": 3853.39,
+    "EURUSD": 1.09964,
     "USDJPY": 159.42
   },
   "active_trades": {},
@@ -1255,7 +1255,7 @@
         "tp2_price": 70.88395,
         "opened_epoch": 1794855062.492736,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.025
       }
     ],
     "shadow_cooldowns": {
@@ -1293,7 +1293,7 @@
     },
     "shadow_episodes": 729
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 18h 36m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 18h 35m)",
   "deriv_flow_status": "Graduated Live (189 eps, 63.8% WR, +0.08R EMA)",
-  "cycle_count": 1505
+  "cycle_count": 1510
 }
