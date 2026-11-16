@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 12:13:29 UTC",
-  "total_episodes": 705,
+  "updated_utc": "2026-11-16 12:15:15 UTC",
+  "total_episodes": 707,
   "strategy_stats": {
     "SND": {
       "trades": 25,
@@ -17,11 +17,11 @@
       "multiplier": 1.015
     },
     "BREAKOUT": {
-      "trades": 133,
-      "wins": 71,
+      "trades": 135,
+      "wins": 73,
       "losses": 60,
-      "ema_r": -0.205,
-      "multiplier": 0.949
+      "ema_r": -0.103,
+      "multiplier": 0.974
     },
     "TREND_PULLBACK": {
       "trades": 85,
@@ -52,13 +52,13 @@
     "RANGING:TREND_PULLBACK": 1.029,
     "TRENDING_DOWN:TREND_PULLBACK": 1.048,
     "SESSION_SWEEP_WINDOW:ICT": 0.914,
-    "SESSION_SWEEP_WINDOW:BREAKOUT": 0.92,
+    "SESSION_SWEEP_WINDOW:BREAKOUT": 0.927,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.764,
     "TRENDING_DOWN:ICT": 0.925,
     "TRENDING_DOWN:KRONOS": 1.057,
     "RANGING:BREAKOUT": 0.966,
     "RANGING:SND": 1.028,
-    "TRENDING_DOWN:BREAKOUT": 1.073,
+    "TRENDING_DOWN:BREAKOUT": 1.08,
     "TRENDING_DOWN:SND": 0.994,
     "TRENDING_UP:ICT": 1.056,
     "SESSION_SWEEP_WINDOW:SND": 0.86,
@@ -685,21 +685,6 @@
       "peak_r": 0.643
     },
     {
-      "key": "ETHUSD:BREAKOUT",
-      "symbol": "ETHUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1798.61,
-      "sl_price": 1804.96524,
-      "sl_dist": 6.35524,
-      "tp1_price": 1794.47909,
-      "tp2_price": 1789.3949,
-      "opened_epoch": 1794831020.068545,
-      "tp1_hit": true,
-      "peak_r": 0.82
-    },
-    {
       "key": "ETHUSD:KRONOS",
       "symbol": "ETHUSD",
       "strategy_name": "KRONOS",
@@ -713,21 +698,6 @@
       "opened_epoch": 1794831020.070098,
       "tp1_hit": false,
       "peak_r": 0.0
-    },
-    {
-      "key": "SOLUSD:BREAKOUT",
-      "symbol": "SOLUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 70.96,
-      "sl_price": 71.25609,
-      "sl_dist": 0.29609,
-      "tp1_price": 70.76754,
-      "tp2_price": 70.53067,
-      "opened_epoch": 1794831021.855328,
-      "tp1_hit": false,
-      "peak_r": 0.642
     }
   ],
   "shadow_cooldowns": {
@@ -761,5 +731,5 @@
     "USDJPY:ICT": 1794824435.383822,
     "EURUSD:TREND_PULLBACK": 1794825906.70458
   },
-  "shadow_episodes": 662
+  "shadow_episodes": 664
 }
