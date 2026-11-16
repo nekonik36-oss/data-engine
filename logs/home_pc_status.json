@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 11:03:30 UTC",
+  "updated_utc": "2026-11-16 11:05:02 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64602.17,
-    "ETHUSD": 1811.2,
-    "SOLUSD": 71.8,
-    "XAUUSD": 3871.45,
-    "EURUSD": 1.10059,
-    "USDJPY": 159.64
+    "BTCUSD": 64576.3,
+    "ETHUSD": 1809.48,
+    "SOLUSD": 71.78,
+    "XAUUSD": 3871.58,
+    "EURUSD": 1.10035,
+    "USDJPY": 159.649
   },
   "active_trades": {},
   "bot_stats": {
@@ -1297,7 +1297,7 @@
         "tp2_price": 1.09907,
         "opened_epoch": 1794826814.809407,
         "tp1_hit": false,
-        "peak_r": 0.011
+        "peak_r": 0.022
       },
       {
         "key": "EURUSD:KRONOS",
@@ -1312,7 +1312,7 @@
         "tp2_price": 1.10167,
         "opened_epoch": 1794826814.811608,
         "tp1_hit": false,
-        "peak_r": 0.244
+        "peak_r": 0.256
       }
     ],
     "shadow_cooldowns": {
@@ -1348,7 +1348,7 @@
     },
     "shadow_episodes": 643
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 56m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 55m)",
   "deriv_flow_status": "Graduated Live (154 eps, 64.9% WR, +0.13R EMA)",
-  "cycle_count": 65
+  "cycle_count": 70
 }
