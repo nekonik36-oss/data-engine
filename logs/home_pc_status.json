@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 22:35:18 UTC",
+  "updated_utc": "2026-11-16 22:35:57 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65300.01,
-    "ETHUSD": 1831.94,
-    "SOLUSD": 71.94,
+    "BTCUSD": 65354.02,
+    "ETHUSD": 1832.71,
+    "SOLUSD": 71.99,
     "XAUUSD": 3856.01,
     "EURUSD": 1.0994,
-    "USDJPY": 159.394
+    "USDJPY": 159.398
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,8 +534,8 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 22:35:16 UTC",
-    "total_episodes": 801,
+    "updated_utc": "2026-11-16 22:35:56 UTC",
+    "total_episodes": 802,
     "strategy_stats": {
       "SND": {
         "trades": 30,
@@ -573,11 +573,11 @@
         "multiplier": 0.941
       },
       "DERIV_FLOW": {
-        "trades": 202,
-        "wins": 126,
+        "trades": 203,
+        "wins": 127,
         "losses": 75,
-        "ema_r": -0.158,
-        "multiplier": 0.96
+        "ema_r": -0.109,
+        "multiplier": 0.973
       }
     },
     "regime_strategy_multipliers": {
@@ -600,7 +600,7 @@
       "TRENDING_UP:KRONOS": 1.045,
       "TRENDING_UP:BREAKOUT": 0.952,
       "TRENDING_UP:TREND_PULLBACK": 1.004,
-      "RANGING:DERIV_FLOW": 1.246,
+      "RANGING:DERIV_FLOW": 1.253,
       "TRENDING_DOWN:DERIV_FLOW": 1.365,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.92,
       "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -1258,21 +1258,6 @@
         "peak_r": 0.246
       },
       {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 72.08,
-        "sl_price": 72.36679,
-        "sl_dist": 0.28679,
-        "tp1_price": 71.89358,
-        "tp2_price": 71.66415,
-        "opened_epoch": 1794867436.971618,
-        "tp1_hit": true,
-        "peak_r": 0.663
-      },
-      {
         "key": "SOLUSD:ICT",
         "symbol": "SOLUSD",
         "strategy_name": "ICT",
@@ -1351,9 +1336,9 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 756
+    "shadow_episodes": 757
   },
   "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 14h 54m)",
-  "deriv_flow_status": "Shadow Incubation (202/30 eps, 63% WR, -0.16R)",
-  "cycle_count": 2206
+  "deriv_flow_status": "Shadow Incubation (203/30 eps, 63% WR, -0.11R)",
+  "cycle_count": 2208
 }
