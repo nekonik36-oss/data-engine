@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 18:50:39 UTC",
+  "updated_utc": "2026-11-16 18:51:56 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65106.01,
-    "ETHUSD": 1824.81,
-    "SOLUSD": 71.54,
-    "XAUUSD": 3854.1,
-    "EURUSD": 1.09942,
-    "USDJPY": 159.457
+    "BTCUSD": 65088.01,
+    "ETHUSD": 1824.25,
+    "SOLUSD": 71.52,
+    "XAUUSD": 3853.93,
+    "EURUSD": 1.0995,
+    "USDJPY": 159.441
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,7 +534,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 18:50:38 UTC",
+    "updated_utc": "2026-11-16 18:51:02 UTC",
     "total_episodes": 774,
     "strategy_stats": {
       "SND": {
@@ -1241,6 +1241,21 @@
         "opened_epoch": 1794854717.267325,
         "tp1_hit": true,
         "peak_r": 0.661
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 71.47,
+        "sl_price": 71.87417,
+        "sl_dist": 0.40417,
+        "tp1_price": 71.20729,
+        "tp2_price": 70.88395,
+        "opened_epoch": 1794855062.492736,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1262,7 +1277,7 @@
       "XAUUSD:BREAKOUT": 1794844811.013358,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794846924.06586,
-      "SOLUSD:DERIV_FLOW": 1794852550.699892,
+      "SOLUSD:DERIV_FLOW": 1794855062.492736,
       "BTCUSD:DERIV_FLOW": 1794853798.370266,
       "ETHUSD:DERIV_FLOW": 1794852301.456113,
       "EURUSD:BREAKOUT": 1794826814.809407,
@@ -1278,7 +1293,7 @@
     },
     "shadow_episodes": 729
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 18h 39m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 18h 38m)",
   "deriv_flow_status": "Graduated Live (189 eps, 63.8% WR, +0.08R EMA)",
-  "cycle_count": 1496
+  "cycle_count": 1500
 }
