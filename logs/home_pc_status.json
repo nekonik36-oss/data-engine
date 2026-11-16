@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 11:38:51 UTC",
+  "updated_utc": "2026-11-16 11:40:27 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64622.91,
-    "ETHUSD": 1807.55,
-    "SOLUSD": 71.53,
-    "XAUUSD": 3874.31,
-    "EURUSD": 1.1007,
-    "USDJPY": 159.596
+    "BTCUSD": 64573.67,
+    "ETHUSD": 1806.43,
+    "SOLUSD": 71.5,
+    "XAUUSD": 3873.95,
+    "EURUSD": 1.10069,
+    "USDJPY": 159.599
   },
   "active_trades": {},
   "bot_stats": {
@@ -1221,8 +1221,8 @@
         "tp1_price": 64606.81942,
         "tp2_price": 64457.58793,
         "opened_epoch": 1794828008.254549,
-        "tp1_hit": false,
-        "peak_r": 0.63
+        "tp1_hit": true,
+        "peak_r": 0.828
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1236,8 +1236,8 @@
         "tp1_price": 64606.81942,
         "tp2_price": 64457.58793,
         "opened_epoch": 1794828213.66377,
-        "tp1_hit": false,
-        "peak_r": 0.63
+        "tp1_hit": true,
+        "peak_r": 0.828
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1266,8 +1266,8 @@
         "tp1_price": 64573.93235,
         "tp2_price": 64430.6614,
         "opened_epoch": 1794828309.975354,
-        "tp1_hit": false,
-        "peak_r": 0.445
+        "tp1_hit": true,
+        "peak_r": 0.651
       },
       {
         "key": "SOLUSD:ICT",
@@ -1312,7 +1312,7 @@
         "tp2_price": 1799.96904,
         "opened_epoch": 1794828616.643264,
         "tp1_hit": false,
-        "peak_r": 0.259
+        "peak_r": 0.417
       },
       {
         "key": "ETHUSD:DERIV_FLOW",
@@ -1327,7 +1327,7 @@
         "tp2_price": 1799.96904,
         "opened_epoch": 1794828842.717882,
         "tp1_hit": false,
-        "peak_r": 0.259
+        "peak_r": 0.417
       }
     ],
     "shadow_cooldowns": {
@@ -1363,7 +1363,7 @@
     },
     "shadow_episodes": 651
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 21m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 19m)",
   "deriv_flow_status": "Shadow Incubation (156/30 eps, 64% WR, -0.04R)",
-  "cycle_count": 175
+  "cycle_count": 180
 }
