@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 16:59:36 UTC",
+  "updated_utc": "2026-11-16 17:00:39 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9678.99,
+  "live_equity": 9677.81,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64923.18,
-    "ETHUSD": 1829.36,
-    "SOLUSD": 71.39,
-    "EURUSD": 1.10022,
-    "USDJPY": 159.644
+    "BTCUSD": 64890.7,
+    "ETHUSD": 1828.13,
+    "SOLUSD": 71.38,
+    "EURUSD": 1.10043,
+    "USDJPY": 159.617
   },
   "active_trades": {
     "1086537289": {
@@ -553,7 +553,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 16:59:35 UTC",
+    "updated_utc": "2026-11-16 17:00:20 UTC",
     "total_episodes": 760,
     "strategy_stats": {
       "SND": {
@@ -1237,21 +1237,6 @@
     "live_episodes": 26,
     "active_shadow_trades": [
       {
-        "key": "XAUUSD:KRONOS",
-        "symbol": "XAUUSD",
-        "strategy_name": "KRONOS",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 3858.56,
-        "sl_price": 3871.95174,
-        "sl_dist": 13.39174,
-        "tp1_price": 3849.85537,
-        "tp2_price": 3839.14198,
-        "opened_epoch": 1794845706.195009,
-        "tp1_hit": false,
-        "peak_r": 0.006
-      },
-      {
         "key": "BTCUSD:DERIV_FLOW",
         "symbol": "BTCUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1295,15 +1280,45 @@
         "opened_epoch": 1794848130.684465,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "BTCUSD:BREAKOUT",
+        "symbol": "BTCUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "MACRO_NEWS_WINDOW",
+        "entry_price": 64927.22,
+        "sl_price": 64610.80543,
+        "sl_dist": 316.41457,
+        "tp1_price": 65132.88947,
+        "tp2_price": 65386.02113,
+        "opened_epoch": 1794848415.9662,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:BREAKOUT",
+        "symbol": "SOLUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "MACRO_NEWS_WINDOW",
+        "entry_price": 71.39,
+        "sl_price": 70.84606,
+        "sl_dist": 0.54394,
+        "tp1_price": 71.74356,
+        "tp2_price": 72.17872,
+        "opened_epoch": 1794848420.617333,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794841511.496846,
-      "BTCUSD:BREAKOUT": 1794838507.624665,
+      "BTCUSD:BREAKOUT": 1794848415.9662,
       "BTCUSD:KRONOS": 1794839708.785874,
       "ETHUSD:BREAKOUT": 1794838509.388307,
       "ETHUSD:KRONOS": 1794839710.353251,
-      "SOLUSD:BREAKOUT": 1794841821.170017,
+      "SOLUSD:BREAKOUT": 1794848420.617333,
       "SOLUSD:KRONOS": 1794839711.861186,
       "BTCUSD:ICT": 1794841816.488044,
       "SOLUSD:SND": 1794408013.22123,
@@ -1332,7 +1347,7 @@
     },
     "shadow_episodes": 716
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks releases in 0m (17:00 UTC) [-20m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks released 1m ago (17:00 UTC) [-20m/+15m shield])",
   "deriv_flow_status": "Shadow Incubation (181/30 eps, 64% WR, -0.06R)",
-  "cycle_count": 1152
+  "cycle_count": 1155
 }
