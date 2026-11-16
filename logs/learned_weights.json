@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 10:15:20 UTC",
-  "total_episodes": 677,
+  "updated_utc": "2026-11-16 10:21:34 UTC",
+  "total_episodes": 679,
   "strategy_stats": {
     "SND": {
       "trades": 25,
@@ -10,18 +10,18 @@
       "multiplier": 0.939
     },
     "ICT": {
-      "trades": 173,
+      "trades": 174,
       "wins": 87,
-      "losses": 85,
-      "ema_r": 0.105,
-      "multiplier": 1.026
+      "losses": 86,
+      "ema_r": -0.011,
+      "multiplier": 0.997
     },
     "BREAKOUT": {
-      "trades": 125,
+      "trades": 127,
       "wins": 67,
-      "losses": 56,
-      "ema_r": -0.52,
-      "multiplier": 0.87
+      "losses": 58,
+      "ema_r": -0.502,
+      "multiplier": 0.874
     },
     "TREND_PULLBACK": {
       "trades": 84,
@@ -31,11 +31,11 @@
       "multiplier": 1.048
     },
     "KRONOS": {
-      "trades": 156,
+      "trades": 157,
       "wins": 80,
-      "losses": 73,
-      "ema_r": -0.481,
-      "multiplier": 0.88
+      "losses": 74,
+      "ema_r": -0.468,
+      "multiplier": 0.883
     },
     "DERIV_FLOW": {
       "trades": 152,
@@ -46,8 +46,8 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.824,
-    "RANGING:KRONOS": 0.715,
+    "RANGING:ICT": 0.805,
+    "RANGING:KRONOS": 0.696,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.869,
     "RANGING:TREND_PULLBACK": 1.029,
     "TRENDING_DOWN:TREND_PULLBACK": 1.048,
@@ -56,7 +56,7 @@
     "SESSION_SWEEP_WINDOW:KRONOS": 0.747,
     "TRENDING_DOWN:ICT": 0.925,
     "TRENDING_DOWN:KRONOS": 1.073,
-    "RANGING:BREAKOUT": 1.003,
+    "RANGING:BREAKOUT": 0.975,
     "RANGING:SND": 1.028,
     "TRENDING_DOWN:BREAKOUT": 1.054,
     "TRENDING_DOWN:SND": 0.994,
@@ -97,8 +97,8 @@
     },
     "EURUSD": {
       "win_streak": 0,
-      "loss_streak": 1,
-      "net_r": -1.02
+      "loss_streak": 2,
+      "net_r": -1.44
     }
   },
   "symbol_tuning": {
@@ -123,16 +123,27 @@
       "be_shield_r": 0.55
     }
   },
-  "pending_post_mortems": [],
-  "ai_feedback_feed": [
+  "pending_post_mortems": [
     {
-      "timestamp_utc": "2026-11-09 13:10:06 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 1079451390,
-      "symbol": "XAUUSD",
+      "ticket": 1086034837,
+      "symbol": "EURUSD",
       "direction": "SHORT",
-      "summary": "Ticket #1079451390 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
+      "entry_price": 1.10056,
+      "exit_price": 1.10144,
+      "tp1_price": 1.0992,
+      "tp2_price": 1.09753,
+      "agreeing_strategies": [
+        "ICT",
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "regime": "RANGING",
+      "closed_epoch": 1794824488.924326,
+      "closed_at_utc": "2026-11-16 10:21:28 UTC",
+      "audited": false
+    }
+  ],
+  "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-09 13:55:08 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -664,25 +675,27 @@
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-16 10:21:28 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1086034837,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "net_pnl": -19.36,
+      "r_multiple": -0.42,
+      "peak_favorable_r": 0.0,
+      "regime": "RANGING",
+      "strategies": [
+        "ICT",
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if EURUSD reaches TP1=1.0992)"
     }
   ],
-  "live_episodes": 24,
+  "live_episodes": 25,
   "active_shadow_trades": [
-    {
-      "key": "EURUSD:BREAKOUT",
-      "symbol": "EURUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 1.10064,
-      "sl_price": 1.10153,
-      "sl_dist": 0.00089,
-      "tp1_price": 1.10006,
-      "tp2_price": 1.09935,
-      "opened_epoch": 1794822314.656217,
-      "tp1_hit": false,
-      "peak_r": 0.09
-    },
     {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
@@ -742,6 +755,21 @@
       "opened_epoch": 1794824120.825775,
       "tp1_hit": false,
       "peak_r": 0.291
+    },
+    {
+      "key": "USDJPY:ICT",
+      "symbol": "USDJPY",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 159.599,
+      "sl_price": 159.45098,
+      "sl_dist": 0.14802,
+      "tp1_price": 159.69521,
+      "tp2_price": 159.81363,
+      "opened_epoch": 1794824435.383822,
+      "tp1_hit": false,
+      "peak_r": 0.284
     }
   ],
   "shadow_cooldowns": {
@@ -772,7 +800,7 @@
     "EURUSD:KRONOS": 1794819601.472935,
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1794811517.623454,
-    "USDJPY:ICT": 1794822316.458596
+    "USDJPY:ICT": 1794824435.383822
   },
-  "shadow_episodes": 635
+  "shadow_episodes": 636
 }

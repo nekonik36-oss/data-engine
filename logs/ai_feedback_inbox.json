@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-16 10:20:13 UTC",
+  "updated_utc": "2026-11-16 10:21:35 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9689.54,
+  "live_equity": 9684.04,
   "bot_stats": {
-    "total_closed": 42,
+    "total_closed": 43,
     "wins": 16,
-    "losses": 20,
+    "losses": 21,
     "breakevens": 6,
-    "cumulative_pnl": -296.6,
+    "cumulative_pnl": -315.96,
     "history": [
       {
         "ticket": 1078980632,
@@ -470,6 +470,17 @@
         "r_multiple": 0.04,
         "close_reason": "Break-Even Shield Hit \ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-16 09:02:18 UTC"
+      },
+      {
+        "ticket": 1086034837,
+        "symbol": "EURUSD",
+        "direction": "SHORT",
+        "entry_price": 1.10056,
+        "exit_price": 1.10144,
+        "net_pnl": -19.36,
+        "r_multiple": -0.42,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-16 10:21:28 UTC"
       }
     ],
     "crypto_book_pnl": 19.22
@@ -524,20 +535,31 @@
     },
     "EURUSD": {
       "win_streak": 0,
-      "loss_streak": 1,
-      "net_r": -1.02
+      "loss_streak": 2,
+      "net_r": -1.44
     }
   },
-  "pending_post_mortems": [],
-  "ai_feedback_feed": [
+  "pending_post_mortems": [
     {
-      "timestamp_utc": "2026-11-11 02:58:51 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 84359136,
-      "symbol": "SOLUSD",
+      "ticket": 1086034837,
+      "symbol": "EURUSD",
       "direction": "SHORT",
-      "summary": "Ticket #84359136 (SOLUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
+      "entry_price": 1.10056,
+      "exit_price": 1.10144,
+      "tp1_price": 1.0992,
+      "tp2_price": 1.09753,
+      "agreeing_strategies": [
+        "ICT",
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "regime": "RANGING",
+      "closed_epoch": 1794824488.924326,
+      "closed_at_utc": "2026-11-16 10:21:28 UTC",
+      "audited": false
+    }
+  ],
+  "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-11 05:11:59 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -871,6 +893,23 @@
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-16 10:21:28 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1086034837,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "net_pnl": -19.36,
+      "r_multiple": -0.42,
+      "peak_favorable_r": 0.0,
+      "regime": "RANGING",
+      "strategies": [
+        "ICT",
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if EURUSD reaches TP1=1.0992)"
     }
   ]
 }
