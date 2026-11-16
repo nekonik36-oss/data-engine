@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 18:30:18 UTC",
+  "updated_utc": "2026-11-16 18:31:41 UTC",
   "total_episodes": 771,
   "strategy_stats": {
     "SND": {
@@ -129,34 +129,8 @@
       "be_shield_r": 0.55
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1086537289,
-      "symbol": "XAUUSD",
-      "direction": "SHORT",
-      "entry_price": 3858.46,
-      "exit_price": 3870.87,
-      "tp1_price": 3839.493,
-      "tp2_price": 3816.149,
-      "agreeing_strategies": [
-        "ICT",
-        "KRONOS"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1794848497.88792,
-      "closed_at_utc": "2026-11-16 17:01:37 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-09 15:25:10 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 1079668118,
-      "symbol": "EURUSD",
-      "direction": "SHORT",
-      "summary": "Ticket #1079668118 (EURUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
     {
       "timestamp_utc": "2026-11-10 03:43:21 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -706,6 +680,14 @@
         "KRONOS"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if XAUUSD reaches TP1=3839.493)"
+    },
+    {
+      "timestamp_utc": "2026-11-16 18:31:41 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1086537289,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1086537289 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ],
   "live_episodes": 27,
