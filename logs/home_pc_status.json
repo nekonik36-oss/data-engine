@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 02:38:50 UTC",
+  "updated_utc": "2026-11-16 02:40:25 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65262.01,
-    "ETHUSD": 1829.49,
-    "SOLUSD": 72.41,
-    "XAUUSD": 3885.39,
-    "EURUSD": 1.1019700000000001,
-    "USDJPY": 159.732
+    "BTCUSD": 65322.43,
+    "ETHUSD": 1832.39,
+    "SOLUSD": 72.55,
+    "XAUUSD": 3885.59,
+    "EURUSD": 1.10174,
+    "USDJPY": 159.739
   },
   "active_trades": {},
   "bot_stats": {
@@ -1167,7 +1167,7 @@
         "tp2_price": 1844.25849,
         "opened_epoch": 1794796415.184808,
         "tp1_hit": false,
-        "peak_r": 0.024
+        "peak_r": 0.297
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1210,7 +1210,7 @@
     },
     "shadow_episodes": 540
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 14h 21m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 14h 19m)",
   "deriv_flow_status": "Shadow Incubation (125/30 eps, 65% WR, +0.04R)",
-  "cycle_count": 240
+  "cycle_count": 245
 }
