@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 12:00:03 UTC",
-  "total_episodes": 698,
+  "updated_utc": "2026-11-16 12:00:27 UTC",
+  "total_episodes": 699,
   "strategy_stats": {
     "SND": {
       "trades": 25,
@@ -10,11 +10,11 @@
       "multiplier": 0.939
     },
     "ICT": {
-      "trades": 177,
-      "wins": 89,
+      "trades": 178,
+      "wins": 90,
       "losses": 87,
-      "ema_r": 0.001,
-      "multiplier": 1.0
+      "ema_r": 0.059,
+      "multiplier": 1.015
     },
     "BREAKOUT": {
       "trades": 132,
@@ -46,7 +46,7 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.815,
+    "RANGING:ICT": 0.827,
     "RANGING:KRONOS": 0.714,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.876,
     "RANGING:TREND_PULLBACK": 1.029,
@@ -670,21 +670,6 @@
   "live_episodes": 25,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 1809.04,
-      "sl_price": 1815.29584,
-      "sl_dist": 6.25584,
-      "tp1_price": 1804.97371,
-      "tp2_price": 1799.96904,
-      "opened_epoch": 1794828616.643264,
-      "tp1_hit": false,
-      "peak_r": 0.473
-    },
-    {
       "key": "ETHUSD:DERIV_FLOW",
       "symbol": "ETHUSD",
       "strategy_name": "DERIV_FLOW",
@@ -696,8 +681,8 @@
       "tp1_price": 1804.97371,
       "tp2_price": 1799.96904,
       "opened_epoch": 1794828842.717882,
-      "tp1_hit": false,
-      "peak_r": 0.473
+      "tp1_hit": true,
+      "peak_r": 0.734
     },
     {
       "key": "BTCUSD:DERIV_FLOW",
@@ -711,8 +696,8 @@
       "tp1_price": 64434.32249,
       "tp2_price": 64296.94709,
       "opened_epoch": 1794830326.349751,
-      "tp1_hit": false,
-      "peak_r": 0.568
+      "tp1_hit": true,
+      "peak_r": 0.793
     },
     {
       "key": "EURUSD:ICT",
@@ -761,5 +746,5 @@
     "USDJPY:ICT": 1794824435.383822,
     "EURUSD:TREND_PULLBACK": 1794825906.70458
   },
-  "shadow_episodes": 655
+  "shadow_episodes": 656
 }
