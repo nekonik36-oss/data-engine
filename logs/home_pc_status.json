@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 02:58:40 UTC",
+  "updated_utc": "2026-11-16 03:00:12 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65112.01,
-    "ETHUSD": 1823.4,
-    "SOLUSD": 72.12,
-    "XAUUSD": 3874.04,
-    "EURUSD": 1.10196,
-    "USDJPY": 159.705
+    "BTCUSD": 65188.01,
+    "ETHUSD": 1825.82,
+    "SOLUSD": 72.26,
+    "XAUUSD": 3874.81,
+    "EURUSD": 1.10186,
+    "USDJPY": 159.712
   },
   "active_trades": {},
   "bot_stats": {
@@ -468,7 +468,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 02:51:49 UTC",
+    "updated_utc": "2026-11-16 03:00:07 UTC",
     "total_episodes": 580,
     "strategy_stats": {
       "SND": {
@@ -1198,6 +1198,21 @@
         "opened_epoch": 1794797356.096699,
         "tp1_hit": false,
         "peak_r": 0.472
+      },
+      {
+        "key": "ETHUSD:TREND_PULLBACK",
+        "symbol": "ETHUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 1825.47,
+        "sl_price": 1815.94679,
+        "sl_dist": 9.52321,
+        "tp1_price": 1831.66009,
+        "tp2_price": 1839.27865,
+        "opened_epoch": 1794798007.750207,
+        "tp1_hit": false,
+        "peak_r": 0.037
       }
     ],
     "shadow_cooldowns": {
@@ -1211,7 +1226,7 @@
       "BTCUSD:ICT": 1794794726.965574,
       "SOLUSD:SND": 1794408013.22123,
       "SOLUSD:ICT": 1794794703.647917,
-      "ETHUSD:TREND_PULLBACK": 1794774582.376476,
+      "ETHUSD:TREND_PULLBACK": 1794798007.750207,
       "BTCUSD:TREND_PULLBACK": 1794699011.354492,
       "SOLUSD:TREND_PULLBACK": 1794702615.053181,
       "ETHUSD:SND": 1794689725.065801,
@@ -1225,7 +1240,7 @@
     },
     "shadow_episodes": 541
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 14h 1m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 13h 59m)",
   "deriv_flow_status": "Shadow Incubation (125/30 eps, 65% WR, +0.04R)",
-  "cycle_count": 300
+  "cycle_count": 305
 }
