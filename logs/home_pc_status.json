@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 21:53:44 UTC",
+  "updated_utc": "2026-11-16 21:54:59 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65392.81,
-    "ETHUSD": 1830.5,
-    "SOLUSD": 72.0,
-    "XAUUSD": 3856.13,
-    "EURUSD": 1.09972,
-    "USDJPY": 159.412
+    "BTCUSD": 65324.37,
+    "ETHUSD": 1828.25,
+    "SOLUSD": 71.88,
+    "XAUUSD": 3854.76,
+    "EURUSD": 1.09966,
+    "USDJPY": 159.417
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,8 +534,8 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 21:40:19 UTC",
-    "total_episodes": 794,
+    "updated_utc": "2026-11-16 21:54:58 UTC",
+    "total_episodes": 795,
     "strategy_stats": {
       "SND": {
         "trades": 30,
@@ -552,11 +552,11 @@
         "multiplier": 1.047
       },
       "BREAKOUT": {
-        "trades": 144,
-        "wins": 80,
+        "trades": 145,
+        "wins": 81,
         "losses": 62,
-        "ema_r": 0.065,
-        "multiplier": 1.016
+        "ema_r": 0.097,
+        "multiplier": 1.024
       },
       "TREND_PULLBACK": {
         "trades": 94,
@@ -591,7 +591,7 @@
       "SESSION_SWEEP_WINDOW:KRONOS": 0.774,
       "TRENDING_DOWN:ICT": 0.937,
       "TRENDING_DOWN:KRONOS": 1.041,
-      "RANGING:BREAKOUT": 0.941,
+      "RANGING:BREAKOUT": 0.948,
       "RANGING:SND": 1.016,
       "TRENDING_DOWN:BREAKOUT": 1.08,
       "TRENDING_DOWN:SND": 1.001,
@@ -1228,21 +1228,6 @@
     "live_episodes": 27,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:BREAKOUT",
-        "symbol": "BTCUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "LONG",
-        "regime": "RANGING",
-        "entry_price": 65256.32,
-        "sl_price": 65059.36498,
-        "sl_dist": 196.95502,
-        "tp1_price": 65384.34076,
-        "tp2_price": 65541.90478,
-        "opened_epoch": 1794864309.665771,
-        "tp1_hit": true,
-        "peak_r": 0.775
-      },
-      {
         "key": "ETHUSD:BREAKOUT",
         "symbol": "ETHUSD",
         "strategy_name": "BREAKOUT",
@@ -1321,9 +1306,9 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 749
+    "shadow_episodes": 750
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 15h 36m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 15h 35m)",
   "deriv_flow_status": "Shadow Incubation (202/30 eps, 63% WR, -0.16R)",
-  "cycle_count": 2075
+  "cycle_count": 2079
 }
