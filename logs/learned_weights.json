@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 12:11:01 UTC",
-  "total_episodes": 703,
+  "updated_utc": "2026-11-16 12:13:04 UTC",
+  "total_episodes": 704,
   "strategy_stats": {
     "SND": {
       "trades": 25,
@@ -17,11 +17,11 @@
       "multiplier": 1.015
     },
     "BREAKOUT": {
-      "trades": 132,
-      "wins": 70,
+      "trades": 133,
+      "wins": 71,
       "losses": 60,
-      "ema_r": -0.325,
-      "multiplier": 0.919
+      "ema_r": -0.205,
+      "multiplier": 0.949
     },
     "TREND_PULLBACK": {
       "trades": 85,
@@ -58,7 +58,7 @@
     "TRENDING_DOWN:KRONOS": 1.057,
     "RANGING:BREAKOUT": 0.966,
     "RANGING:SND": 1.028,
-    "TRENDING_DOWN:BREAKOUT": 1.054,
+    "TRENDING_DOWN:BREAKOUT": 1.073,
     "TRENDING_DOWN:SND": 0.994,
     "TRENDING_UP:ICT": 1.056,
     "SESSION_SWEEP_WINDOW:SND": 0.86,
@@ -682,22 +682,7 @@
       "tp2_price": 1.10204,
       "opened_epoch": 1794830403.594731,
       "tp1_hit": false,
-      "peak_r": 0.452
-    },
-    {
-      "key": "BTCUSD:BREAKOUT",
-      "symbol": "BTCUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 64303.81,
-      "sl_price": 64481.88377,
-      "sl_dist": 178.07377,
-      "tp1_price": 64188.06205,
-      "tp2_price": 64045.60304,
-      "opened_epoch": 1794830712.363994,
-      "tp1_hit": true,
-      "peak_r": 1.328
+      "peak_r": 0.643
     },
     {
       "key": "ETHUSD:DERIV_FLOW",
@@ -712,7 +697,7 @@
       "tp2_price": 1793.79343,
       "opened_epoch": 1794830962.100379,
       "tp1_hit": true,
-      "peak_r": 1.155
+      "peak_r": 1.344
     },
     {
       "key": "ETHUSD:BREAKOUT",
@@ -726,8 +711,8 @@
       "tp1_price": 1794.47909,
       "tp2_price": 1789.3949,
       "opened_epoch": 1794831020.068545,
-      "tp1_hit": false,
-      "peak_r": 0.474
+      "tp1_hit": true,
+      "peak_r": 0.656
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -791,5 +776,5 @@
     "USDJPY:ICT": 1794824435.383822,
     "EURUSD:TREND_PULLBACK": 1794825906.70458
   },
-  "shadow_episodes": 660
+  "shadow_episodes": 661
 }
