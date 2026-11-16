@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 11:29:19 UTC",
+  "updated_utc": "2026-11-16 11:30:19 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64652.09,
-    "ETHUSD": 1808.99,
-    "SOLUSD": 71.52,
-    "XAUUSD": 3874.74,
-    "EURUSD": 1.10063,
-    "USDJPY": 159.583
+    "BTCUSD": 64638.96,
+    "ETHUSD": 1808.26,
+    "SOLUSD": 71.48,
+    "XAUUSD": 3874.67,
+    "EURUSD": 1.10058,
+    "USDJPY": 159.598
   },
   "active_trades": {},
   "bot_stats": {
@@ -512,8 +512,8 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 11:25:12 UTC",
-    "total_episodes": 690,
+    "updated_utc": "2026-11-16 11:30:18 UTC",
+    "total_episodes": 693,
     "strategy_stats": {
       "SND": {
         "trades": 25,
@@ -530,11 +530,11 @@
         "multiplier": 0.987
       },
       "BREAKOUT": {
-        "trades": 129,
-        "wins": 69,
-        "losses": 58,
-        "ema_r": -0.354,
-        "multiplier": 0.911
+        "trades": 131,
+        "wins": 70,
+        "losses": 59,
+        "ema_r": -0.305,
+        "multiplier": 0.924
       },
       "TREND_PULLBACK": {
         "trades": 85,
@@ -544,11 +544,11 @@
         "multiplier": 1.053
       },
       "KRONOS": {
-        "trades": 159,
-        "wins": 82,
+        "trades": 160,
+        "wins": 83,
         "losses": 74,
-        "ema_r": -0.333,
-        "multiplier": 0.917
+        "ema_r": -0.288,
+        "multiplier": 0.928
       },
       "DERIV_FLOW": {
         "trades": 156,
@@ -565,8 +565,8 @@
       "RANGING:TREND_PULLBACK": 1.029,
       "TRENDING_DOWN:TREND_PULLBACK": 1.048,
       "SESSION_SWEEP_WINDOW:ICT": 0.914,
-      "SESSION_SWEEP_WINDOW:BREAKOUT": 0.921,
-      "SESSION_SWEEP_WINDOW:KRONOS": 0.76,
+      "SESSION_SWEEP_WINDOW:BREAKOUT": 0.92,
+      "SESSION_SWEEP_WINDOW:KRONOS": 0.764,
       "TRENDING_DOWN:ICT": 0.925,
       "TRENDING_DOWN:KRONOS": 1.073,
       "RANGING:BREAKOUT": 0.975,
@@ -1210,51 +1210,6 @@
     "live_episodes": 25,
     "active_shadow_trades": [
       {
-        "key": "XAUUSD:BREAKOUT",
-        "symbol": "XAUUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "LONG",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 3872.53,
-        "sl_price": 3859.72589,
-        "sl_dist": 12.80411,
-        "tp1_price": 3880.85267,
-        "tp2_price": 3891.09596,
-        "opened_epoch": 1794826814.206256,
-        "tp1_hit": false,
-        "peak_r": 0.258
-      },
-      {
-        "key": "EURUSD:BREAKOUT",
-        "symbol": "EURUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "SHORT",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 1.10037,
-        "sl_price": 1.10127,
-        "sl_dist": 0.0009,
-        "tp1_price": 1.09979,
-        "tp2_price": 1.09907,
-        "opened_epoch": 1794826814.809407,
-        "tp1_hit": false,
-        "peak_r": 0.178
-      },
-      {
-        "key": "EURUSD:KRONOS",
-        "symbol": "EURUSD",
-        "strategy_name": "KRONOS",
-        "direction": "LONG",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 1.10037,
-        "sl_price": 1.09947,
-        "sl_dist": 0.0009,
-        "tp1_price": 1.10095,
-        "tp2_price": 1.10167,
-        "opened_epoch": 1794826814.811608,
-        "tp1_hit": false,
-        "peak_r": 0.289
-      },
-      {
         "key": "BTCUSD:BREAKOUT",
         "symbol": "BTCUSD",
         "strategy_name": "BREAKOUT",
@@ -1312,7 +1267,7 @@
         "tp2_price": 71.20664,
         "opened_epoch": 1794828215.418121,
         "tp1_hit": false,
-        "peak_r": 0.512
+        "peak_r": 0.576
       },
       {
         "key": "BTCUSD:ICT",
@@ -1342,7 +1297,7 @@
         "tp2_price": 71.11417,
         "opened_epoch": 1794828312.14323,
         "tp1_hit": false,
-        "peak_r": 0.195
+        "peak_r": 0.26
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1357,11 +1312,26 @@
         "tp2_price": 71.11417,
         "opened_epoch": 1794828312.146227,
         "tp1_hit": false,
-        "peak_r": 0.195
+        "peak_r": 0.26
+      },
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 1809.04,
+        "sl_price": 1815.29584,
+        "sl_dist": 6.25584,
+        "tp1_price": 1804.97371,
+        "tp2_price": 1799.96904,
+        "opened_epoch": 1794828616.643264,
+        "tp1_hit": false,
+        "peak_r": 0.125
       }
     ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1794822313.701763,
+      "ETHUSD:ICT": 1794828616.643264,
       "BTCUSD:BREAKOUT": 1794828008.251546,
       "BTCUSD:KRONOS": 1794828008.254549,
       "ETHUSD:BREAKOUT": 1794820206.182055,
@@ -1391,9 +1361,9 @@
       "USDJPY:ICT": 1794824435.383822,
       "EURUSD:TREND_PULLBACK": 1794825906.70458
     },
-    "shadow_episodes": 647
+    "shadow_episodes": 650
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 30m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 29m)",
   "deriv_flow_status": "Shadow Incubation (156/30 eps, 64% WR, -0.04R)",
-  "cycle_count": 145
+  "cycle_count": 148
 }
