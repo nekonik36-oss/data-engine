@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 14:55:58 UTC",
+  "updated_utc": "2026-11-16 15:00:14 UTC",
   "total_episodes": 737,
   "strategy_stats": {
     "SND": {
@@ -681,8 +681,53 @@
       "tp1_price": 71.85342,
       "tp2_price": 71.41454,
       "opened_epoch": 1794839711.861186,
+      "tp1_hit": true,
+      "peak_r": 1.276
+    },
+    {
+      "key": "XAUUSD:ICT",
+      "symbol": "XAUUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "MACRO_NEWS_WINDOW",
+      "entry_price": 3878.25,
+      "sl_price": 3891.23592,
+      "sl_dist": 12.98592,
+      "tp1_price": 3869.80915,
+      "tp2_price": 3859.42041,
+      "opened_epoch": 1794841213.929903,
       "tp1_hit": false,
-      "peak_r": 0.51
+      "peak_r": 0.115
+    },
+    {
+      "key": "EURUSD:SND",
+      "symbol": "EURUSD",
+      "strategy_name": "SND",
+      "direction": "SHORT",
+      "regime": "MACRO_NEWS_WINDOW",
+      "entry_price": 1.10034,
+      "sl_price": 1.10125,
+      "sl_dist": 0.00091,
+      "tp1_price": 1.09975,
+      "tp2_price": 1.09901,
+      "opened_epoch": 1794841214.521494,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "EURUSD:TREND_PULLBACK",
+      "symbol": "EURUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "SHORT",
+      "regime": "MACRO_NEWS_WINDOW",
+      "entry_price": 1.10034,
+      "sl_price": 1.10125,
+      "sl_dist": 0.00091,
+      "tp1_price": 1.09975,
+      "tp2_price": 1.09901,
+      "opened_epoch": 1794841214.524497,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -714,7 +759,9 @@
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1794811517.623454,
     "USDJPY:ICT": 1794824435.383822,
-    "EURUSD:TREND_PULLBACK": 1794825906.70458
+    "EURUSD:TREND_PULLBACK": 1794841214.524497,
+    "XAUUSD:ICT": 1794841213.929903,
+    "EURUSD:SND": 1794841214.521494
   },
   "shadow_episodes": 694
 }

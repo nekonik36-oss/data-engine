@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 14:58:51 UTC",
+  "updated_utc": "2026-11-16 15:00:35 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65217.83,
-    "ETHUSD": 1849.67,
-    "SOLUSD": 71.96,
-    "XAUUSD": 3879.9,
-    "EURUSD": 1.10036,
-    "USDJPY": 159.637
+    "BTCUSD": 65079.42,
+    "ETHUSD": 1839.61,
+    "SOLUSD": 71.51,
+    "XAUUSD": 3876.76,
+    "EURUSD": 1.10063,
+    "USDJPY": 159.557
   },
   "active_trades": {},
   "bot_stats": {
@@ -512,7 +512,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 14:55:58 UTC",
+    "updated_utc": "2026-11-16 15:00:14 UTC",
     "total_episodes": 737,
     "strategy_stats": {
       "SND": {
@@ -1194,8 +1194,53 @@
         "tp1_price": 71.85342,
         "tp2_price": 71.41454,
         "opened_epoch": 1794839711.861186,
+        "tp1_hit": true,
+        "peak_r": 1.276
+      },
+      {
+        "key": "XAUUSD:ICT",
+        "symbol": "XAUUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "MACRO_NEWS_WINDOW",
+        "entry_price": 3878.25,
+        "sl_price": 3891.23592,
+        "sl_dist": 12.98592,
+        "tp1_price": 3869.80915,
+        "tp2_price": 3859.42041,
+        "opened_epoch": 1794841213.929903,
         "tp1_hit": false,
-        "peak_r": 0.51
+        "peak_r": 0.115
+      },
+      {
+        "key": "EURUSD:SND",
+        "symbol": "EURUSD",
+        "strategy_name": "SND",
+        "direction": "SHORT",
+        "regime": "MACRO_NEWS_WINDOW",
+        "entry_price": 1.10034,
+        "sl_price": 1.10125,
+        "sl_dist": 0.00091,
+        "tp1_price": 1.09975,
+        "tp2_price": 1.09901,
+        "opened_epoch": 1794841214.521494,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "EURUSD:TREND_PULLBACK",
+        "symbol": "EURUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "SHORT",
+        "regime": "MACRO_NEWS_WINDOW",
+        "entry_price": 1.10034,
+        "sl_price": 1.10125,
+        "sl_dist": 0.00091,
+        "tp1_price": 1.09975,
+        "tp2_price": 1.09901,
+        "opened_epoch": 1794841214.524497,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1227,11 +1272,13 @@
       "XAUUSD:TREND_PULLBACK": 1794807916.277754,
       "XAUUSD:KRONOS": 1794811517.623454,
       "USDJPY:ICT": 1794824435.383822,
-      "EURUSD:TREND_PULLBACK": 1794825906.70458
+      "EURUSD:TREND_PULLBACK": 1794841214.524497,
+      "XAUUSD:ICT": 1794841213.929903,
+      "EURUSD:SND": 1794841214.521494
     },
     "shadow_episodes": 694
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 2h 1m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 1h 59m)",
   "deriv_flow_status": "Graduated Live (172 eps, 64.5% WR, +0.07R EMA)",
-  "cycle_count": 780
+  "cycle_count": 785
 }
