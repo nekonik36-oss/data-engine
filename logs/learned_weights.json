@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 10:10:10 UTC",
-  "total_episodes": 675,
+  "updated_utc": "2026-11-16 10:15:20 UTC",
+  "total_episodes": 677,
   "strategy_stats": {
     "SND": {
       "trades": 25,
@@ -10,11 +10,11 @@
       "multiplier": 0.939
     },
     "ICT": {
-      "trades": 171,
-      "wins": 85,
+      "trades": 173,
+      "wins": 87,
       "losses": 85,
-      "ema_r": 0.067,
-      "multiplier": 1.017
+      "ema_r": 0.105,
+      "multiplier": 1.026
     },
     "BREAKOUT": {
       "trades": 125,
@@ -54,7 +54,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.922,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.907,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.747,
-    "TRENDING_DOWN:ICT": 0.915,
+    "TRENDING_DOWN:ICT": 0.925,
     "TRENDING_DOWN:KRONOS": 1.073,
     "RANGING:BREAKOUT": 1.003,
     "RANGING:SND": 1.028,
@@ -669,21 +669,6 @@
   "live_episodes": 24,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1799.49,
-      "sl_price": 1791.65841,
-      "sl_dist": 7.83159,
-      "tp1_price": 1804.58054,
-      "tp2_price": 1810.84581,
-      "opened_epoch": 1794822313.701763,
-      "tp1_hit": false,
-      "peak_r": 0.418
-    },
-    {
       "key": "EURUSD:BREAKOUT",
       "symbol": "EURUSD",
       "strategy_name": "BREAKOUT",
@@ -697,21 +682,6 @@
       "opened_epoch": 1794822314.656217,
       "tp1_hit": false,
       "peak_r": 0.09
-    },
-    {
-      "key": "USDJPY:ICT",
-      "symbol": "USDJPY",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 159.542,
-      "sl_price": 159.38504,
-      "sl_dist": 0.15696,
-      "tp1_price": 159.64402,
-      "tp2_price": 159.76959,
-      "opened_epoch": 1794822316.458596,
-      "tp1_hit": false,
-      "peak_r": 0.331
     },
     {
       "key": "BTCUSD:DERIV_FLOW",
@@ -757,6 +727,21 @@
       "opened_epoch": 1794823810.129176,
       "tp1_hit": false,
       "peak_r": 0.145
+    },
+    {
+      "key": "USDJPY:KRONOS",
+      "symbol": "USDJPY",
+      "strategy_name": "KRONOS",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 159.599,
+      "sl_price": 159.45098,
+      "sl_dist": 0.14802,
+      "tp1_price": 159.69521,
+      "tp2_price": 159.81363,
+      "opened_epoch": 1794824120.825775,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -783,11 +768,11 @@
     "ETHUSD:DERIV_FLOW": 1794819743.518102,
     "EURUSD:BREAKOUT": 1794822314.656217,
     "USDJPY:BREAKOUT": 1794806117.104245,
-    "USDJPY:KRONOS": 1794815106.963935,
+    "USDJPY:KRONOS": 1794824120.825775,
     "EURUSD:KRONOS": 1794819601.472935,
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1794811517.623454,
     "USDJPY:ICT": 1794822316.458596
   },
-  "shadow_episodes": 633
+  "shadow_episodes": 635
 }
