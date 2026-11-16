@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 18:10:25 UTC",
+  "updated_utc": "2026-11-16 18:11:59 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64953.2,
-    "ETHUSD": 1819.45,
-    "SOLUSD": 71.2,
-    "XAUUSD": 3841.61,
-    "EURUSD": 1.09983,
-    "USDJPY": 159.532
+    "BTCUSD": 64875.02,
+    "ETHUSD": 1817.41,
+    "SOLUSD": 71.15,
+    "XAUUSD": 3842.74,
+    "EURUSD": 1.09979,
+    "USDJPY": 159.535
   },
   "active_trades": {},
   "bot_stats": {
@@ -1258,7 +1258,7 @@
         "tp2_price": 1807.72691,
         "opened_epoch": 1794852301.456113,
         "tp1_hit": false,
-        "peak_r": 0.353
+        "peak_r": 0.415
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1311,7 +1311,7 @@
     },
     "shadow_episodes": 726
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 19h 19m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 19h 18m)",
   "deriv_flow_status": "Shadow Incubation (187/30 eps, 63% WR, +0.01R)",
-  "cycle_count": 1370
+  "cycle_count": 1375
 }
