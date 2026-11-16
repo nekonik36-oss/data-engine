@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 04:03:45 UTC",
+  "updated_utc": "2026-11-16 04:05:23 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65050.01,
-    "ETHUSD": 1824.69,
-    "SOLUSD": 71.94,
-    "XAUUSD": 3873.53,
-    "EURUSD": 1.1014,
-    "USDJPY": 159.6
+    "BTCUSD": 65006.01,
+    "ETHUSD": 1822.48,
+    "SOLUSD": 71.89,
+    "XAUUSD": 3873.44,
+    "EURUSD": 1.10147,
+    "USDJPY": 159.592
   },
   "active_trades": {},
   "bot_stats": {
@@ -468,7 +468,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 03:48:40 UTC",
+    "updated_utc": "2026-11-16 04:05:20 UTC",
     "total_episodes": 585,
     "strategy_stats": {
       "SND": {
@@ -1213,6 +1213,21 @@
         "opened_epoch": 1794800920.566636,
         "tp1_hit": false,
         "peak_r": 0.637
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 64977.05,
+        "sl_price": 65217.38939,
+        "sl_dist": 240.33939,
+        "tp1_price": 64820.8294,
+        "tp2_price": 64628.55789,
+        "opened_epoch": 1794801920.210853,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1235,12 +1250,12 @@
       "XAUUSD:SND": 1794408307.296196,
       "EURUSD:ICT": 1794412816.194931,
       "SOLUSD:DERIV_FLOW": 1794800920.566636,
-      "BTCUSD:DERIV_FLOW": 1794799816.824261,
+      "BTCUSD:DERIV_FLOW": 1794801920.210853,
       "ETHUSD:DERIV_FLOW": 1794797356.096699
     },
     "shadow_episodes": 546
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 12h 56m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 12h 54m)",
   "deriv_flow_status": "Graduated Live (128 eps, 65.6% WR, +0.10R EMA)",
-  "cycle_count": 475
+  "cycle_count": 480
 }
