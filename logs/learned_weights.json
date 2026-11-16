@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-15 20:35:17 UTC",
+  "updated_utc": "2026-11-16 00:18:41 UTC",
   "total_episodes": 553,
   "strategy_stats": {
     "SND": {
@@ -689,53 +689,7 @@
     }
   ],
   "live_episodes": 19,
-  "active_shadow_trades": [
-    {
-      "key": "ETHUSD:TREND_PULLBACK",
-      "symbol": "ETHUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 1824.3,
-      "sl_price": 1818.33002,
-      "sl_dist": 5.96998,
-      "tp1_price": 1828.18048,
-      "tp2_price": 1832.95646,
-      "opened_epoch": 1794774582.376476,
-      "tp1_hit": true,
-      "peak_r": 1.295
-    },
-    {
-      "key": "ETHUSD:BREAKOUT",
-      "symbol": "ETHUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 1831.81,
-      "sl_price": 1825.21783,
-      "sl_dist": 6.59217,
-      "tp1_price": 1836.09491,
-      "tp2_price": 1841.36865,
-      "opened_epoch": 1794774917.832964,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
-      "key": "ETHUSD:KRONOS",
-      "symbol": "ETHUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 1831.81,
-      "sl_price": 1825.21783,
-      "sl_dist": 6.59217,
-      "tp1_price": 1836.09491,
-      "tp2_price": 1841.36865,
-      "opened_epoch": 1794774917.834382,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    }
-  ],
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794713704.673238,
     "BTCUSD:BREAKOUT": 1794704704.462779,
