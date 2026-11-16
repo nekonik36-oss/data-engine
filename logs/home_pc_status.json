@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 17:17:04 UTC",
+  "updated_utc": "2026-11-16 17:18:42 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64996.08,
-    "ETHUSD": 1828.27,
-    "SOLUSD": 71.65,
-    "XAUUSD": 3865.84,
-    "EURUSD": 1.10102,
-    "USDJPY": 159.57
+    "BTCUSD": 65109.38,
+    "ETHUSD": 1834.12,
+    "SOLUSD": 71.85,
+    "XAUUSD": 3868.21,
+    "EURUSD": 1.10111,
+    "USDJPY": 159.571
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,7 +534,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 17:13:48 UTC",
+    "updated_utc": "2026-11-16 17:18:37 UTC",
     "total_episodes": 763,
     "strategy_stats": {
       "SND": {
@@ -1272,7 +1272,7 @@
         "tp2_price": 65386.02113,
         "opened_epoch": 1794848415.9662,
         "tp1_hit": false,
-        "peak_r": 0.468
+        "peak_r": 0.606
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1287,7 +1287,22 @@
         "tp2_price": 72.17872,
         "opened_epoch": 1794848420.617333,
         "tp1_hit": true,
-        "peak_r": 0.735
+        "peak_r": 0.846
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "MACRO_NEWS_WINDOW",
+        "entry_price": 64954.3,
+        "sl_price": 65245.56548,
+        "sl_dist": 291.26548,
+        "tp1_price": 64764.97744,
+        "tp2_price": 64531.96505,
+        "opened_epoch": 1794849517.966724,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1310,7 +1325,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794846924.06586,
       "SOLUSD:DERIV_FLOW": 1794848130.684465,
-      "BTCUSD:DERIV_FLOW": 1794846639.390494,
+      "BTCUSD:DERIV_FLOW": 1794849517.966724,
       "ETHUSD:DERIV_FLOW": 1794848075.448857,
       "EURUSD:BREAKOUT": 1794826814.809407,
       "USDJPY:BREAKOUT": 1794806117.104245,
@@ -1325,7 +1340,7 @@
     },
     "shadow_episodes": 718
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 20h 13m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 20h 11m)",
   "deriv_flow_status": "Shadow Incubation (183/30 eps, 63% WR, -0.13R)",
-  "cycle_count": 1205
+  "cycle_count": 1210
 }
