@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 08:38:09 UTC",
+  "updated_utc": "2026-11-16 08:39:44 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64556.58,
-    "ETHUSD": 1807.11,
-    "SOLUSD": 70.92,
-    "XAUUSD": 3856.82,
-    "EURUSD": 1.10139,
-    "USDJPY": 159.385
+    "BTCUSD": 64588.32,
+    "ETHUSD": 1807.37,
+    "SOLUSD": 70.98,
+    "XAUUSD": 3858.11,
+    "EURUSD": 1.10142,
+    "USDJPY": 159.404
   },
   "active_trades": {},
   "bot_stats": {
@@ -490,7 +490,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 08:35:13 UTC",
+    "updated_utc": "2026-11-16 08:39:41 UTC",
     "total_episodes": 655,
     "strategy_stats": {
       "SND": {
@@ -1233,6 +1233,21 @@
         "opened_epoch": 1794818113.811359,
         "tp1_hit": false,
         "peak_r": 0.094
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 64580.01,
+        "sl_price": 64794.97043,
+        "sl_dist": 214.96043,
+        "tp1_price": 64440.28572,
+        "tp2_price": 64268.31738,
+        "opened_epoch": 1794818381.021294,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1255,7 +1270,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794817826.379768,
       "SOLUSD:DERIV_FLOW": 1794818017.159921,
-      "BTCUSD:DERIV_FLOW": 1794816274.382049,
+      "BTCUSD:DERIV_FLOW": 1794818381.021294,
       "ETHUSD:DERIV_FLOW": 1794815617.550842,
       "EURUSD:BREAKOUT": 1794812407.837591,
       "USDJPY:BREAKOUT": 1794806117.104245,
@@ -1267,7 +1282,7 @@
     },
     "shadow_episodes": 614
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 8h 21m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 8h 20m)",
   "deriv_flow_status": "Graduated Live (147 eps, 65.3% WR, +0.27R EMA)",
-  "cycle_count": 1330
+  "cycle_count": 1335
 }
