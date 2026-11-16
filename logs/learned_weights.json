@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 06:14:20 UTC",
-  "total_episodes": 614,
+  "updated_utc": "2026-11-16 06:16:49 UTC",
+  "total_episodes": 616,
   "strategy_stats": {
     "SND": {
       "trades": 22,
@@ -17,11 +17,11 @@
       "multiplier": 0.937
     },
     "BREAKOUT": {
-      "trades": 115,
-      "wins": 65,
+      "trades": 116,
+      "wins": 66,
       "losses": 48,
-      "ema_r": -0.216,
-      "multiplier": 0.946
+      "ema_r": -0.162,
+      "multiplier": 0.96
     },
     "TREND_PULLBACK": {
       "trades": 79,
@@ -31,11 +31,11 @@
       "multiplier": 1.007
     },
     "KRONOS": {
-      "trades": 140,
-      "wins": 77,
+      "trades": 141,
+      "wins": 78,
       "losses": 61,
-      "ema_r": -0.208,
-      "multiplier": 0.948
+      "ema_r": -0.155,
+      "multiplier": 0.961
     },
     "DERIV_FLOW": {
       "trades": 139,
@@ -47,7 +47,7 @@
   },
   "regime_strategy_multipliers": {
     "RANGING:ICT": 0.835,
-    "RANGING:KRONOS": 0.696,
+    "RANGING:KRONOS": 0.703,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.848,
     "RANGING:TREND_PULLBACK": 1.029,
     "TRENDING_DOWN:TREND_PULLBACK": 1.027,
@@ -56,7 +56,7 @@
     "SESSION_SWEEP_WINDOW:KRONOS": 0.813,
     "TRENDING_DOWN:ICT": 0.895,
     "TRENDING_DOWN:KRONOS": 1.178,
-    "RANGING:BREAKOUT": 0.984,
+    "RANGING:BREAKOUT": 0.991,
     "RANGING:SND": 1.062,
     "TRENDING_DOWN:BREAKOUT": 1.134,
     "TRENDING_DOWN:SND": 1.003,
@@ -716,36 +716,6 @@
       "peak_r": 1.06
     },
     {
-      "key": "BTCUSD:BREAKOUT",
-      "symbol": "BTCUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 64459.59,
-      "sl_price": 64656.44196,
-      "sl_dist": 196.85196,
-      "tp1_price": 64331.63623,
-      "tp2_price": 64174.15466,
-      "opened_epoch": 1794808509.875934,
-      "tp1_hit": true,
-      "peak_r": 0.802
-    },
-    {
-      "key": "BTCUSD:KRONOS",
-      "symbol": "BTCUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 64459.59,
-      "sl_price": 64656.44196,
-      "sl_dist": 196.85196,
-      "tp1_price": 64331.63623,
-      "tp2_price": 64174.15466,
-      "opened_epoch": 1794808509.878926,
-      "tp1_hit": true,
-      "peak_r": 0.802
-    },
-    {
       "key": "ETHUSD:ICT",
       "symbol": "ETHUSD",
       "strategy_name": "ICT",
@@ -850,5 +820,5 @@
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1794808810.259365
   },
-  "shadow_episodes": 575
+  "shadow_episodes": 577
 }
