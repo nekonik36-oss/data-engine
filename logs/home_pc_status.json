@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 13:59:42 UTC",
+  "updated_utc": "2026-11-16 14:00:25 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64184.09,
-    "ETHUSD": 1803.57,
-    "SOLUSD": 70.82,
-    "XAUUSD": 3865.35,
-    "EURUSD": 1.10099,
-    "USDJPY": 159.622
+    "BTCUSD": 64188.36,
+    "ETHUSD": 1804.58,
+    "SOLUSD": 70.9,
+    "XAUUSD": 3866.11,
+    "EURUSD": 1.10111,
+    "USDJPY": 159.611
   },
   "active_trades": {},
   "bot_stats": {
@@ -512,8 +512,8 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 13:59:18 UTC",
-    "total_episodes": 725,
+    "updated_utc": "2026-11-16 14:00:24 UTC",
+    "total_episodes": 726,
     "strategy_stats": {
       "SND": {
         "trades": 26,
@@ -537,11 +537,11 @@
         "multiplier": 0.974
       },
       "TREND_PULLBACK": {
-        "trades": 87,
-        "wins": 41,
+        "trades": 88,
+        "wins": 42,
         "losses": 43,
-        "ema_r": 0.026,
-        "multiplier": 1.006
+        "ema_r": 0.061,
+        "multiplier": 1.015
       },
       "KRONOS": {
         "trades": 164,
@@ -563,7 +563,7 @@
       "RANGING:KRONOS": 0.714,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.86,
       "RANGING:TREND_PULLBACK": 1.029,
-      "TRENDING_DOWN:TREND_PULLBACK": 1.032,
+      "TRENDING_DOWN:TREND_PULLBACK": 1.039,
       "SESSION_SWEEP_WINDOW:ICT": 0.919,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.927,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.766,
@@ -1198,21 +1198,6 @@
         "peak_r": 1.026
       },
       {
-        "key": "SOLUSD:TREND_PULLBACK",
-        "symbol": "SOLUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "SHORT",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 71.01,
-        "sl_price": 71.38185,
-        "sl_dist": 0.37185,
-        "tp1_price": 70.7683,
-        "tp2_price": 70.47082,
-        "opened_epoch": 1794836713.417774,
-        "tp1_hit": true,
-        "peak_r": 0.968
-      },
-      {
         "key": "SOLUSD:DERIV_FLOW",
         "symbol": "SOLUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1289,9 +1274,9 @@
       "USDJPY:ICT": 1794824435.383822,
       "EURUSD:TREND_PULLBACK": 1794825906.70458
     },
-    "shadow_episodes": 682
+    "shadow_episodes": 683
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 3h 0m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 2h 59m)",
   "deriv_flow_status": "Graduated Live (169 eps, 64.5% WR, +0.05R EMA)",
-  "cycle_count": 600
+  "cycle_count": 602
 }
