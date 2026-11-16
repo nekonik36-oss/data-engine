@@ -1,20 +1,20 @@
 {
-  "updated_utc": "2026-11-16 07:14:27 UTC",
-  "total_episodes": 632,
+  "updated_utc": "2026-11-16 07:15:24 UTC",
+  "total_episodes": 635,
   "strategy_stats": {
     "SND": {
-      "trades": 24,
+      "trades": 25,
       "wins": 8,
-      "losses": 15,
-      "ema_r": -0.218,
-      "multiplier": 0.946
+      "losses": 16,
+      "ema_r": -0.245,
+      "multiplier": 0.939
     },
     "ICT": {
-      "trades": 158,
+      "trades": 159,
       "wins": 77,
-      "losses": 80,
-      "ema_r": -0.148,
-      "multiplier": 0.963
+      "losses": 81,
+      "ema_r": -0.158,
+      "multiplier": 0.961
     },
     "BREAKOUT": {
       "trades": 120,
@@ -31,11 +31,11 @@
       "multiplier": 1.007
     },
     "KRONOS": {
-      "trades": 147,
+      "trades": 148,
       "wins": 80,
-      "losses": 65,
-      "ema_r": -0.291,
-      "multiplier": 0.927
+      "losses": 66,
+      "ema_r": -0.312,
+      "multiplier": 0.922
     },
     "DERIV_FLOW": {
       "trades": 141,
@@ -54,12 +54,12 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.895,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.948,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.797,
-    "TRENDING_DOWN:ICT": 0.921,
-    "TRENDING_DOWN:KRONOS": 1.128,
+    "TRENDING_DOWN:ICT": 0.917,
+    "TRENDING_DOWN:KRONOS": 1.119,
     "RANGING:BREAKOUT": 1.003,
     "RANGING:SND": 1.028,
     "TRENDING_DOWN:BREAKOUT": 1.086,
-    "TRENDING_DOWN:SND": 1.003,
+    "TRENDING_DOWN:SND": 0.994,
     "TRENDING_UP:ICT": 1.056,
     "SESSION_SWEEP_WINDOW:SND": 0.86,
     "TRENDING_UP:KRONOS": 1.045,
@@ -721,51 +721,6 @@
   "live_episodes": 23,
   "active_shadow_trades": [
     {
-      "key": "XAUUSD:SND",
-      "symbol": "XAUUSD",
-      "strategy_name": "SND",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 3841.89,
-      "sl_price": 3859.59916,
-      "sl_dist": 17.70916,
-      "tp1_price": 3830.37904,
-      "tp2_price": 3816.21172,
-      "opened_epoch": 1794811517.619458,
-      "tp1_hit": false,
-      "peak_r": 0.188
-    },
-    {
-      "key": "XAUUSD:KRONOS",
-      "symbol": "XAUUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 3841.89,
-      "sl_price": 3859.59916,
-      "sl_dist": 17.70916,
-      "tp1_price": 3830.37904,
-      "tp2_price": 3816.21172,
-      "opened_epoch": 1794811517.623454,
-      "tp1_hit": false,
-      "peak_r": 0.188
-    },
-    {
-      "key": "USDJPY:ICT",
-      "symbol": "USDJPY",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 159.551,
-      "sl_price": 159.40123,
-      "sl_dist": 0.14977,
-      "tp1_price": 159.64835,
-      "tp2_price": 159.76817,
-      "opened_epoch": 1794811517.637609,
-      "tp1_hit": false,
-      "peak_r": 0.147
-    },
-    {
       "key": "BTCUSD:TREND_PULLBACK",
       "symbol": "BTCUSD",
       "strategy_name": "TREND_PULLBACK",
@@ -778,7 +733,22 @@
       "tp2_price": 64389.91324,
       "opened_epoch": 1794813008.588738,
       "tp1_hit": true,
-      "peak_r": 0.861
+      "peak_r": 0.925
+    },
+    {
+      "key": "EURUSD:ICT",
+      "symbol": "EURUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 1.10168,
+      "sl_price": 1.10103,
+      "sl_dist": 0.00065,
+      "tp1_price": 1.1021,
+      "tp2_price": 1.10262,
+      "opened_epoch": 1794813307.020203,
+      "tp1_hit": false,
+      "peak_r": 0.169
     }
   ],
   "shadow_cooldowns": {
@@ -799,7 +769,7 @@
     "BTCUSD:SND": 1794790813.437793,
     "XAUUSD:BREAKOUT": 1794808810.256364,
     "XAUUSD:SND": 1794811517.619458,
-    "EURUSD:ICT": 1794807325.795479,
+    "EURUSD:ICT": 1794813307.020203,
     "SOLUSD:DERIV_FLOW": 1794809381.040707,
     "BTCUSD:DERIV_FLOW": 1794810977.384313,
     "ETHUSD:DERIV_FLOW": 1794806902.783247,
@@ -811,5 +781,5 @@
     "XAUUSD:KRONOS": 1794811517.623454,
     "USDJPY:ICT": 1794811517.637609
   },
-  "shadow_episodes": 591
+  "shadow_episodes": 594
 }
