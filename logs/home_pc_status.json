@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 06:22:16 UTC",
+  "updated_utc": "2026-11-16 06:23:27 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9708.5,
+  "live_equity": 9705.89,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64432.99,
-    "SOLUSD": 71.03,
-    "XAUUSD": 3860.81,
-    "EURUSD": 1.10168,
-    "USDJPY": 159.389
+    "BTCUSD": 64400.43,
+    "SOLUSD": 70.97,
+    "XAUUSD": 3856.28,
+    "EURUSD": 1.10163,
+    "USDJPY": 159.392
   },
   "active_trades": {
     "1085830147": {
@@ -34,7 +34,7 @@
       "broker_source": "MT5_LIVE",
       "direction": "LONG",
       "entry_price": 1815.87,
-      "sl_price": 1799.91,
+      "sl_price": 1807.09,
       "initial_sl_price": 1799.91,
       "tp1_price": 1826.244,
       "tp2_price": 1839.012,
@@ -51,7 +51,9 @@
       "tp1_hit": false,
       "partial_pnl": 0.0,
       "scalp_upgraded": true,
-      "fast_scalp_upgraded": true
+      "fast_scalp_upgraded": true,
+      "failed_impulse_shield": true,
+      "time_decay_applied": true
     }
   },
   "bot_stats": {
@@ -1286,7 +1288,7 @@
     },
     "shadow_episodes": 581
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 10h 37m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 10h 36m)",
   "deriv_flow_status": "Graduated Live (139 eps, 66.2% WR, +0.35R EMA)",
-  "cycle_count": 915
+  "cycle_count": 919
 }
