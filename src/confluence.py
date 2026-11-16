@@ -493,14 +493,16 @@ class ConfluenceEngine:
                     adx_val = ind.adx[idx]
 
                     if direction == Direction.LONG:
-                        if not (curr.is_bullish and curr.close > prev.open and rsi_val < 55.0):
+                        max_rev_rsi = 42.0 if e60 < e240 else 55.0
+                        if not (curr.is_bullish and curr.close > prev.open and rsi_val < max_rev_rsi):
                             return None
                         if h1_bear and adx_val > 25.0:
                             return None
                         if len(agreeing_pa) < 2 and (regime == MarketRegime.TRENDING_DOWN or e60 < e240):
                             return None
                     else:
-                        if not (curr.is_bearish and curr.close < prev.open and rsi_val > 45.0):
+                        min_rev_rsi = 58.0 if e60 > e240 else 45.0
+                        if not (curr.is_bearish and curr.close < prev.open and rsi_val > min_rev_rsi):
                             return None
                         if h1_bull and adx_val > 25.0:
                             return None
@@ -580,8 +582,26 @@ class ConfluenceEngine:
                     if len(agreeing_pa) < 2 or max_opp_weight >= 0.70:
                         return None
 
+                if regime == MarketRegime.RANGING:
+                    # Do not let range-floor/ceiling BREAKOUT votes inflate mean-reversion synergy inside RANGING
+                    agreeing_pa = [v for v in agreeing_pa if v.strategy_name != "BREAKOUT"]
+                    agreeing_names = {v.strategy_name for v in agreeing_pa}
+                    if not agreeing_pa:
+                        return None
+                    if len(agreeing_pa) < 2 and "ICT" not in agreeing_names:
+                        return None
+
                 if agreeing_names == {"BREAKOUT"}:
                     if ind.adx[idx] < 20.0:
+                        return None
+                    # Block climax exhaustion chases on Gold & Forex (matches Engine 1/2 guard)
+                    if direction == Direction.SHORT and (
+                        ind.rsi[idx] < 30.0 or (ind.ema20[idx] - curr.close) > 2.2 * cur_atr
+                    ):
+                        return None
+                    if direction == Direction.LONG and (
+                        ind.rsi[idx] > 70.0 or (curr.close - ind.ema20[idx]) > 2.2 * cur_atr
+                    ):
                         return None
                     # Block solo counter-trend BREAKOUT traps (e.g. Judas Swing sweeps in SESSION_SWEEP_WINDOW)
                     if direction == Direction.SHORT and ind.ema50[idx] > ind.ema200[idx]:
@@ -589,12 +609,6 @@ class ConfluenceEngine:
                     if direction == Direction.LONG and ind.ema50[idx] < ind.ema200[idx]:
                         return None
                     if regime == MarketRegime.SESSION_SWEEP_WINDOW and ind.adx[idx] < 25.0:
-                        return None
-
-                if regime == MarketRegime.RANGING:
-                    if agreeing_names == {"BREAKOUT"}:
-                        return None
-                    if len(agreeing_pa) < 2 and "ICT" not in agreeing_names:
                         return None
 
                 # Block solo counter-trend entries in Engine 3 (Gold & Forex M15) across all regimes

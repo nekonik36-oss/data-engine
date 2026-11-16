@@ -33,16 +33,23 @@ class KronosForecaster:
         self._predictor = None
         self._active_backend = "statistical_mc_fallback"
         self._tried_loading = False
+        self._next_retry_epoch = 0.0
         # Eco-Power GPU Cache: maps (first_bar_open_bucket, last_bar_timestamp) -> (last_close, KronosForecast)
         # Prevents waking the RTX 5060 out of P8 idle (~8W) every 20s for the same M5/M15 candle
         # unless live price moves >= 0.20 ATR intra-bar.
         self._forecast_cache: dict[tuple[float, object], tuple[float, KronosForecast]] = {}
 
     def _lazy_load_kronos(self) -> None:
-        """Attempt to load `NeoQuasar/Kronos-base` on CUDA if installed on the Personal PC."""
-        if self._tried_loading:
+        """Attempt to load `NeoQuasar/Kronos-base` on CUDA (cache-first, network-resilient)."""
+        import time
+
+        if self._predictor is not None:
+            return
+        now_ts = time.time()
+        if self._tried_loading and now_ts < self._next_retry_epoch:
             return
         self._tried_loading = True
+        local_repo_present = False
         try:
             import os
             from pathlib import Path
@@ -55,7 +62,8 @@ class KronosForecaster:
 
             # Automatically add local `./kronos_repo` to sys.path if cloned inside data-engine
             local_kronos = Path(__file__).resolve().parent.parent.parent / "kronos_repo"
-            if local_kronos.is_dir() and str(local_kronos) not in sys.path:
+            local_repo_present = local_kronos.is_dir()
+            if local_repo_present and str(local_kronos) not in sys.path:
                 sys.path.insert(0, str(local_kronos))
 
             import torch  # type: ignore
@@ -71,8 +79,18 @@ class KronosForecaster:
                     device = "cpu"
 
             model_id = self.config.model_id
-            tokenizer = KronosTokenizer.from_pretrained(self.config.tokenizer_id)
-            model = Kronos.from_pretrained(model_id)
+            try:
+                # Cache-first load: zero network calls when weights are already cached on disk,
+                # preventing transient HuggingFace Hub DNS/TLS hiccups during hot-reload from
+                # knocking RTX 5060 inference into simulation mode.
+                tokenizer = KronosTokenizer.from_pretrained(
+                    self.config.tokenizer_id, local_files_only=True
+                )
+                model = Kronos.from_pretrained(model_id, local_files_only=True)
+            except Exception:
+                tokenizer = KronosTokenizer.from_pretrained(self.config.tokenizer_id)
+                model = Kronos.from_pretrained(model_id)
+
             self._predictor = KronosPredictor(
                 model,
                 tokenizer,
@@ -80,11 +98,13 @@ class KronosForecaster:
                 max_context=min(512, max(256, self.config.lookback)),
             )
             self._active_backend = f"{model_id} ({device})"
+            self._next_retry_epoch = float("inf")
         except Exception:
-            # When running offline on the company laptop or before cloning shiyu-coder/Kronos,
-            # use the causal statistical K-line trajectory estimator.
+            # When running offline on the company laptop (no kronos_repo), do not retry repeatedly.
+            # When kronos_repo is present on the GPU PC, retry every 120s if transient load failed.
             self._predictor = None
             self._active_backend = f"{self.config.model_id} [Offline-Ready Simulation]"
+            self._next_retry_epoch = (now_ts + 120.0) if local_repo_present else float("inf")
 
     def forecast(
         self, candles: Sequence[Candle], atr: Sequence[float], idx: int
