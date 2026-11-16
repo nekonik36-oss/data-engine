@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 21:41:16 UTC",
+  "updated_utc": "2026-11-16 21:42:49 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65307.12,
-    "ETHUSD": 1827.5,
-    "SOLUSD": 71.98,
-    "XAUUSD": 3856.36,
-    "EURUSD": 1.09961,
-    "USDJPY": 159.432
+    "BTCUSD": 65309.74,
+    "ETHUSD": 1828.17,
+    "SOLUSD": 71.96,
+    "XAUUSD": 3856.86,
+    "EURUSD": 1.09966,
+    "USDJPY": 159.435
   },
   "active_trades": {},
   "bot_stats": {
@@ -1255,7 +1255,7 @@
         "tp2_price": 1836.90346,
         "opened_epoch": 1794865218.029921,
         "tp1_hit": false,
-        "peak_r": 0.02
+        "peak_r": 0.025
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1285,7 +1285,7 @@
         "tp2_price": 71.59987,
         "opened_epoch": 1794865219.462533,
         "tp1_hit": false,
-        "peak_r": 0.106
+        "peak_r": 0.177
       }
     ],
     "shadow_cooldowns": {
@@ -1323,7 +1323,7 @@
     },
     "shadow_episodes": 749
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 15h 48m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 15h 47m)",
   "deriv_flow_status": "Shadow Incubation (202/30 eps, 63% WR, -0.16R)",
-  "cycle_count": 2035
+  "cycle_count": 2040
 }
