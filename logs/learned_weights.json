@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 22:45:10 UTC",
+  "updated_utc": "2026-11-16 22:52:38 UTC",
   "total_episodes": 805,
   "strategy_stats": {
     "SND": {
@@ -704,8 +704,8 @@
       "tp1_price": 71.82986,
       "tp2_price": 71.60816,
       "opened_epoch": 1794867908.116336,
-      "tp1_hit": false,
-      "peak_r": 0.433
+      "tp1_hit": true,
+      "peak_r": 0.686
     },
     {
       "key": "BTCUSD:ICT",
@@ -750,7 +750,7 @@
       "tp2_price": 1823.91581,
       "opened_epoch": 1794868809.926921,
       "tp1_hit": false,
-      "peak_r": 0.217
+      "peak_r": 0.377
     },
     {
       "key": "SOLUSD:KRONOS",
@@ -765,7 +765,7 @@
       "tp2_price": 71.54955,
       "opened_epoch": 1794868811.333403,
       "tp1_hit": false,
-      "peak_r": 0.117
+      "peak_r": 0.391
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -780,7 +780,7 @@
       "tp2_price": 1823.91581,
       "opened_epoch": 1794868828.047911,
       "tp1_hit": false,
-      "peak_r": 0.217
+      "peak_r": 0.377
     },
     {
       "key": "ETHUSD:DERIV_FLOW",
@@ -795,7 +795,7 @@
       "tp2_price": 1823.91581,
       "opened_epoch": 1794868996.404572,
       "tp1_hit": false,
-      "peak_r": 0.217
+      "peak_r": 0.377
     },
     {
       "key": "BTCUSD:TREND_PULLBACK",
@@ -841,6 +841,21 @@
       "opened_epoch": 1794869110.670552,
       "tp1_hit": false,
       "peak_r": 0.04
+    },
+    {
+      "key": "SOLUSD:DERIV_FLOW",
+      "symbol": "SOLUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 71.98,
+      "sl_price": 72.22708,
+      "sl_dist": 0.24708,
+      "tp1_price": 71.8194,
+      "tp2_price": 71.62174,
+      "opened_epoch": 1794869558.1166,
+      "tp1_hit": false,
+      "peak_r": 0.648
     }
   ],
   "shadow_cooldowns": {
@@ -862,7 +877,7 @@
     "XAUUSD:BREAKOUT": 1794844811.013358,
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1794846924.06586,
-    "SOLUSD:DERIV_FLOW": 1794867436.971618,
+    "SOLUSD:DERIV_FLOW": 1794869558.1166,
     "BTCUSD:DERIV_FLOW": 1794868920.51057,
     "ETHUSD:DERIV_FLOW": 1794868996.404572,
     "EURUSD:BREAKOUT": 1794826814.809407,
