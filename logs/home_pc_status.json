@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 11:22:54 UTC",
+  "updated_utc": "2026-11-16 11:24:32 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64688.0,
-    "ETHUSD": 1810.02,
-    "SOLUSD": 71.51,
-    "XAUUSD": 3874.86,
-    "EURUSD": 1.10034,
-    "USDJPY": 159.623
+    "BTCUSD": 64717.58,
+    "ETHUSD": 1811.85,
+    "SOLUSD": 71.6,
+    "XAUUSD": 3875.01,
+    "EURUSD": 1.10041,
+    "USDJPY": 159.62
   },
   "active_trades": {},
   "bot_stats": {
@@ -512,7 +512,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 11:20:08 UTC",
+    "updated_utc": "2026-11-16 11:23:35 UTC",
     "total_episodes": 690,
     "strategy_stats": {
       "SND": {
@@ -1222,7 +1222,7 @@
         "tp2_price": 3891.09596,
         "opened_epoch": 1794826814.206256,
         "tp1_hit": false,
-        "peak_r": 0.244
+        "peak_r": 0.258
       },
       {
         "key": "EURUSD:BREAKOUT",
@@ -1283,6 +1283,36 @@
         "opened_epoch": 1794828008.254549,
         "tp1_hit": false,
         "peak_r": 0.215
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 64728.07,
+        "sl_price": 64914.60936,
+        "sl_dist": 186.53936,
+        "tp1_price": 64606.81942,
+        "tp2_price": 64457.58793,
+        "opened_epoch": 1794828213.66377,
+        "tp1_hit": false,
+        "peak_r": 0.134
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 71.66,
+        "sl_price": 71.97266,
+        "sl_dist": 0.31266,
+        "tp1_price": 71.45677,
+        "tp2_price": 71.20664,
+        "opened_epoch": 1794828215.418121,
+        "tp1_hit": false,
+        "peak_r": 0.32
       }
     ],
     "shadow_cooldowns": {
@@ -1304,8 +1334,8 @@
       "XAUUSD:BREAKOUT": 1794826814.206256,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794825006.116496,
-      "SOLUSD:DERIV_FLOW": 1794826101.196951,
-      "BTCUSD:DERIV_FLOW": 1794826097.144949,
+      "SOLUSD:DERIV_FLOW": 1794828215.418121,
+      "BTCUSD:DERIV_FLOW": 1794828213.66377,
       "ETHUSD:DERIV_FLOW": 1794826099.316336,
       "EURUSD:BREAKOUT": 1794826814.809407,
       "USDJPY:BREAKOUT": 1794806117.104245,
@@ -1318,7 +1348,7 @@
     },
     "shadow_episodes": 647
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 37m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 5h 35m)",
   "deriv_flow_status": "Shadow Incubation (156/30 eps, 64% WR, -0.04R)",
-  "cycle_count": 125
+  "cycle_count": 130
 }
