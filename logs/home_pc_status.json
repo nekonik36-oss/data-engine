@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 17:24:49 UTC",
+  "updated_utc": "2026-11-16 17:25:14 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65142.75,
-    "ETHUSD": 1836.09,
-    "SOLUSD": 71.87,
-    "XAUUSD": 3867.88,
-    "EURUSD": 1.101,
-    "USDJPY": 159.535
+    "BTCUSD": 65112.8,
+    "ETHUSD": 1834.43,
+    "SOLUSD": 71.81,
+    "XAUUSD": 3867.6,
+    "EURUSD": 1.10094,
+    "USDJPY": 159.534
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,7 +534,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 17:24:47 UTC",
+    "updated_utc": "2026-11-16 17:25:11 UTC",
     "total_episodes": 764,
     "strategy_stats": {
       "SND": {
@@ -1288,13 +1288,28 @@
         "opened_epoch": 1794849517.966724,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:BREAKOUT",
+        "symbol": "ETHUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 1835.55,
+        "sl_price": 1824.96427,
+        "sl_dist": 10.58573,
+        "tp1_price": 1842.43073,
+        "tp2_price": 1850.89931,
+        "opened_epoch": 1794849911.485146,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794841511.496846,
       "BTCUSD:BREAKOUT": 1794848415.9662,
       "BTCUSD:KRONOS": 1794839708.785874,
-      "ETHUSD:BREAKOUT": 1794838509.388307,
+      "ETHUSD:BREAKOUT": 1794849911.485146,
       "ETHUSD:KRONOS": 1794839710.353251,
       "SOLUSD:BREAKOUT": 1794848420.617333,
       "SOLUSD:KRONOS": 1794839711.861186,
@@ -1325,7 +1340,7 @@
     },
     "shadow_episodes": 719
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 20h 5m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 20h 4m)",
   "deriv_flow_status": "Shadow Incubation (184/30 eps, 63% WR, -0.20R)",
-  "cycle_count": 1229
+  "cycle_count": 1230
 }
