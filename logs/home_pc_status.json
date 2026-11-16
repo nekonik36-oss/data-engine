@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 16:43:58 UTC",
+  "updated_utc": "2026-11-16 16:45:19 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9684.47,
+  "live_equity": 9685.79,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64581.8,
-    "ETHUSD": 1821.54,
-    "SOLUSD": 70.92,
-    "EURUSD": 1.10067,
-    "USDJPY": 159.611
+    "BTCUSD": 64623.11,
+    "ETHUSD": 1822.6,
+    "SOLUSD": 70.97,
+    "EURUSD": 1.10069,
+    "USDJPY": 159.635
   },
   "active_trades": {
     "1086537289": {
@@ -34,7 +34,7 @@
       "broker_source": "MT5_LIVE",
       "direction": "SHORT",
       "entry_price": 3858.46,
-      "sl_price": 3887.64,
+      "sl_price": 3870.72,
       "initial_sl_price": 3887.64,
       "tp1_price": 3839.493,
       "tp2_price": 3816.149,
@@ -52,7 +52,9 @@
       "partial_pnl": 0.0,
       "scalp_upgraded": true,
       "peak_favorable_r": 0.06,
-      "fast_scalp_upgraded": true
+      "fast_scalp_upgraded": true,
+      "time_decay_30m": true,
+      "time_decay_applied": true
     }
   },
   "bot_stats": {
@@ -550,7 +552,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 16:43:34 UTC",
+    "updated_utc": "2026-11-16 16:45:17 UTC",
     "total_episodes": 759,
     "strategy_stats": {
       "SND": {
@@ -1234,21 +1236,6 @@
     "live_episodes": 26,
     "active_shadow_trades": [
       {
-        "key": "XAUUSD:BREAKOUT",
-        "symbol": "XAUUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 3858.75,
-        "sl_price": 3872.53034,
-        "sl_dist": 13.78034,
-        "tp1_price": 3849.79278,
-        "tp2_price": 3838.76851,
-        "opened_epoch": 1794844811.013358,
-        "tp1_hit": false,
-        "peak_r": 0.166
-      },
-      {
         "key": "XAUUSD:ICT",
         "symbol": "XAUUSD",
         "strategy_name": "ICT",
@@ -1344,7 +1331,7 @@
     },
     "shadow_episodes": 715
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks releases in 16m (17:00 UTC) [-20m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks releases in 15m (17:00 UTC) [-20m/+15m shield])",
   "deriv_flow_status": "Shadow Incubation (181/30 eps, 64% WR, -0.06R)",
-  "cycle_count": 1105
+  "cycle_count": 1109
 }
