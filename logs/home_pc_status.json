@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 17:13:50 UTC",
+  "updated_utc": "2026-11-16 17:15:25 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64864.54,
-    "ETHUSD": 1825.4,
-    "SOLUSD": 71.53,
-    "XAUUSD": 3867.16,
-    "EURUSD": 1.10093,
-    "USDJPY": 159.56
+    "BTCUSD": 65075.32,
+    "ETHUSD": 1831.44,
+    "SOLUSD": 71.79,
+    "XAUUSD": 3866.74,
+    "EURUSD": 1.10094,
+    "USDJPY": 159.571
   },
   "active_trades": {},
   "bot_stats": {
@@ -1272,7 +1272,7 @@
         "tp2_price": 65386.02113,
         "opened_epoch": 1794848415.9662,
         "tp1_hit": false,
-        "peak_r": 0.11
+        "peak_r": 0.468
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1286,8 +1286,8 @@
         "tp1_price": 71.74356,
         "tp2_price": 72.17872,
         "opened_epoch": 1794848420.617333,
-        "tp1_hit": false,
-        "peak_r": 0.496
+        "tp1_hit": true,
+        "peak_r": 0.735
       }
     ],
     "shadow_cooldowns": {
@@ -1325,7 +1325,7 @@
     },
     "shadow_episodes": 718
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks released 14m ago (17:00 UTC) [-20m/+15m shield])",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 20h 14m)",
   "deriv_flow_status": "Shadow Incubation (183/30 eps, 63% WR, -0.13R)",
-  "cycle_count": 1195
+  "cycle_count": 1200
 }
