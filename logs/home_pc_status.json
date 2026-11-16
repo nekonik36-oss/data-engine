@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 15:20:00 UTC",
+  "updated_utc": "2026-11-16 15:21:37 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64317.97,
-    "ETHUSD": 1814.99,
-    "SOLUSD": 70.34,
-    "XAUUSD": 3871.72,
-    "EURUSD": 1.10139,
-    "USDJPY": 159.472
+    "BTCUSD": 64252.92,
+    "ETHUSD": 1810.77,
+    "SOLUSD": 70.21,
+    "XAUUSD": 3868.25,
+    "EURUSD": 1.10119,
+    "USDJPY": 159.449
   },
   "active_trades": {},
   "bot_stats": {
@@ -523,7 +523,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 15:17:13 UTC",
+    "updated_utc": "2026-11-16 15:20:22 UTC",
     "total_episodes": 741,
     "strategy_stats": {
       "SND": {
@@ -1216,8 +1216,8 @@
         "tp1_price": 3869.80915,
         "tp2_price": 3859.42041,
         "opened_epoch": 1794841213.929903,
-        "tp1_hit": false,
-        "peak_r": 0.581
+        "tp1_hit": true,
+        "peak_r": 0.77
       },
       {
         "key": "ETHUSD:ICT",
@@ -1308,6 +1308,21 @@
         "opened_epoch": 1794841821.170017,
         "tp1_hit": true,
         "peak_r": 0.713
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 64352.4,
+        "sl_price": 64769.91533,
+        "sl_dist": 417.51533,
+        "tp1_price": 64081.01504,
+        "tp2_price": 63747.00278,
+        "opened_epoch": 1794842422.091054,
+        "tp1_hit": false,
+        "peak_r": 0.279
       }
     ],
     "shadow_cooldowns": {
@@ -1330,7 +1345,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794834023.374942,
       "SOLUSD:DERIV_FLOW": 1794841798.193052,
-      "BTCUSD:DERIV_FLOW": 1794836657.735142,
+      "BTCUSD:DERIV_FLOW": 1794842422.091054,
       "ETHUSD:DERIV_FLOW": 1794841530.617243,
       "EURUSD:BREAKOUT": 1794826814.809407,
       "USDJPY:BREAKOUT": 1794806117.104245,
@@ -1345,7 +1360,7 @@
     },
     "shadow_episodes": 697
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 1h 40m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 1h 38m)",
   "deriv_flow_status": "Graduated Live (173 eps, 64.5% WR, +0.07R EMA)",
-  "cycle_count": 845
+  "cycle_count": 850
 }
