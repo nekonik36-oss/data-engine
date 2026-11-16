@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 05:56:27 UTC",
+  "updated_utc": "2026-11-16 05:58:00 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64361.98,
-    "ETHUSD": 1807.65,
-    "SOLUSD": 71.07,
-    "XAUUSD": 3835.18,
-    "EURUSD": 1.10194,
-    "USDJPY": 159.39
+    "BTCUSD": 64379.68,
+    "ETHUSD": 1808.46,
+    "SOLUSD": 71.12,
+    "XAUUSD": 3833.28,
+    "EURUSD": 1.10181,
+    "USDJPY": 159.416
   },
   "active_trades": {},
   "bot_stats": {
@@ -1167,7 +1167,7 @@
         "tp2_price": 70.74029,
         "opened_epoch": 1794808209.699893,
         "tp1_hit": false,
-        "peak_r": 0.53
+        "peak_r": 0.586
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1182,7 +1182,7 @@
         "tp2_price": 70.74029,
         "opened_epoch": 1794808209.704043,
         "tp1_hit": false,
-        "peak_r": 0.53
+        "peak_r": 0.586
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1197,7 +1197,7 @@
         "tp2_price": 64353.036,
         "opened_epoch": 1794808265.992005,
         "tp1_hit": true,
-        "peak_r": 1.403
+        "peak_r": 1.416
       },
       {
         "key": "BTCUSD:BREAKOUT",
@@ -1212,7 +1212,7 @@
         "tp2_price": 64174.15466,
         "opened_epoch": 1794808509.875934,
         "tp1_hit": false,
-        "peak_r": 0.496
+        "peak_r": 0.509
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1227,7 +1227,7 @@
         "tp2_price": 64174.15466,
         "opened_epoch": 1794808509.878926,
         "tp1_hit": false,
-        "peak_r": 0.496
+        "peak_r": 0.509
       }
     ],
     "shadow_cooldowns": {
@@ -1260,7 +1260,7 @@
     },
     "shadow_episodes": 573
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 11h 3m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 11h 2m)",
   "deriv_flow_status": "Graduated Live (138 eps, 65.9% WR, +0.28R EMA)",
-  "cycle_count": 830
+  "cycle_count": 835
 }
