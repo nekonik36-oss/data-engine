@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 19:23:28 UTC",
+  "updated_utc": "2026-11-16 19:24:45 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64899.67,
-    "ETHUSD": 1817.12,
-    "SOLUSD": 71.24,
-    "XAUUSD": 3861.71,
-    "EURUSD": 1.10009,
-    "USDJPY": 159.422
+    "BTCUSD": 64881.74,
+    "ETHUSD": 1818.31,
+    "SOLUSD": 71.28,
+    "XAUUSD": 3863.58,
+    "EURUSD": 1.10016,
+    "USDJPY": 159.421
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,8 +534,8 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 19:21:51 UTC",
-    "total_episodes": 776,
+    "updated_utc": "2026-11-16 19:24:44 UTC",
+    "total_episodes": 777,
     "strategy_stats": {
       "SND": {
         "trades": 29,
@@ -573,11 +573,11 @@
         "multiplier": 0.953
       },
       "DERIV_FLOW": {
-        "trades": 190,
-        "wins": 121,
+        "trades": 191,
+        "wins": 122,
         "losses": 68,
-        "ema_r": 0.156,
-        "multiplier": 1.039
+        "ema_r": 0.18,
+        "multiplier": 1.045
       }
     },
     "regime_strategy_multipliers": {
@@ -600,7 +600,7 @@
       "TRENDING_UP:KRONOS": 1.045,
       "TRENDING_UP:BREAKOUT": 0.952,
       "TRENDING_UP:TREND_PULLBACK": 1.004,
-      "RANGING:DERIV_FLOW": 1.293,
+      "RANGING:DERIV_FLOW": 1.3,
       "TRENDING_DOWN:DERIV_FLOW": 1.365,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.92,
       "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -1243,21 +1243,6 @@
         "peak_r": 0.99
       },
       {
-        "key": "ETHUSD:DERIV_FLOW",
-        "symbol": "ETHUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 1821.29,
-        "sl_price": 1829.81487,
-        "sl_dist": 8.52487,
-        "tp1_price": 1815.74884,
-        "tp2_price": 1808.92894,
-        "opened_epoch": 1794855800.771437,
-        "tp1_hit": true,
-        "peak_r": 0.848
-      },
-      {
         "key": "BTCUSD:DERIV_FLOW",
         "symbol": "BTCUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1306,9 +1291,9 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 731
+    "shadow_episodes": 732
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 18h 6m)",
-  "deriv_flow_status": "Graduated Live (190 eps, 64.0% WR, +0.16R EMA)",
-  "cycle_count": 1600
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 18h 5m)",
+  "deriv_flow_status": "Graduated Live (191 eps, 64.2% WR, +0.18R EMA)",
+  "cycle_count": 1604
 }
