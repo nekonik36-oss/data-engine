@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 09:08:24 UTC",
+  "updated_utc": "2026-11-16 09:09:24 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64365.47,
-    "ETHUSD": 1796.27,
-    "SOLUSD": 70.63,
-    "XAUUSD": 3864.62,
-    "EURUSD": 1.10254,
-    "USDJPY": 159.39
+    "BTCUSD": 64334.26,
+    "ETHUSD": 1795.95,
+    "SOLUSD": 70.65,
+    "XAUUSD": 3864.67,
+    "EURUSD": 1.10243,
+    "USDJPY": 159.387
   },
   "active_trades": {},
   "bot_stats": {
@@ -501,7 +501,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 09:08:23 UTC",
+    "updated_utc": "2026-11-16 09:08:47 UTC",
     "total_episodes": 662,
     "strategy_stats": {
       "SND": {
@@ -1182,8 +1182,8 @@
         "tp1_price": 70.60327,
         "tp2_price": 70.32421,
         "opened_epoch": 1794819302.250192,
-        "tp1_hit": false,
-        "peak_r": 0.602
+        "tp1_hit": true,
+        "peak_r": 0.688
       },
       {
         "key": "ETHUSD:TREND_PULLBACK",
@@ -1198,7 +1198,7 @@
         "tp2_price": 1795.31827,
         "opened_epoch": 1794819319.725868,
         "tp1_hit": true,
-        "peak_r": 1.311
+        "peak_r": 1.402
       },
       {
         "key": "EURUSD:BREAKOUT",
@@ -1244,6 +1244,21 @@
         "opened_epoch": 1794819601.488943,
         "tp1_hit": false,
         "peak_r": 0.074
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 70.84,
+        "sl_price": 71.19725,
+        "sl_dist": 0.35725,
+        "tp1_price": 70.60779,
+        "tp2_price": 70.32199,
+        "opened_epoch": 1794820127.820056,
+        "tp1_hit": true,
+        "peak_r": 0.7
       }
     ],
     "shadow_cooldowns": {
@@ -1265,7 +1280,7 @@
       "XAUUSD:BREAKOUT": 1794808810.256364,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794817826.379768,
-      "SOLUSD:DERIV_FLOW": 1794818017.159921,
+      "SOLUSD:DERIV_FLOW": 1794820127.820056,
       "BTCUSD:DERIV_FLOW": 1794818381.021294,
       "ETHUSD:DERIV_FLOW": 1794819743.518102,
       "EURUSD:BREAKOUT": 1794819601.469438,
@@ -1278,7 +1293,7 @@
     },
     "shadow_episodes": 620
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 7h 51m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 7h 50m)",
   "deriv_flow_status": "Graduated Live (150 eps, 65.3% WR, +0.27R EMA)",
-  "cycle_count": 1422
+  "cycle_count": 1425
 }
