@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 16:15:18 UTC",
-  "total_episodes": 753,
+  "updated_utc": "2026-11-16 16:15:58 UTC",
+  "total_episodes": 754,
   "strategy_stats": {
     "SND": {
       "trades": 28,
@@ -38,11 +38,11 @@
       "multiplier": 0.97
     },
     "DERIV_FLOW": {
-      "trades": 178,
-      "wins": 114,
+      "trades": 179,
+      "wins": 115,
       "losses": 63,
-      "ema_r": 0.08,
-      "multiplier": 1.02
+      "ema_r": 0.11,
+      "multiplier": 1.028
     }
   },
   "regime_strategy_multipliers": {
@@ -67,7 +67,7 @@
     "TRENDING_UP:TREND_PULLBACK": 1.004,
     "RANGING:DERIV_FLOW": 1.265,
     "TRENDING_DOWN:DERIV_FLOW": 1.365,
-    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.913,
+    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.92,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.984,
     "MACRO_NEWS_WINDOW:ICT": 1.027,
@@ -683,21 +683,6 @@
   "live_episodes": 26,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 64563.58,
-      "sl_price": 64947.77159,
-      "sl_dist": 384.19159,
-      "tp1_price": 64313.85546,
-      "tp2_price": 64006.50219,
-      "opened_epoch": 1794844524.650536,
-      "tp1_hit": true,
-      "peak_r": 0.847
-    },
-    {
       "key": "XAUUSD:BREAKOUT",
       "symbol": "XAUUSD",
       "strategy_name": "BREAKOUT",
@@ -806,5 +791,5 @@
     "XAUUSD:ICT": 1794845444.657765,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 709
+  "shadow_episodes": 710
 }
