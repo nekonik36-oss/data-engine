@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 13:05:08 UTC",
+  "updated_utc": "2026-11-16 13:06:29 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64264.93,
-    "ETHUSD": 1803.65,
-    "SOLUSD": 70.94,
-    "XAUUSD": 3872.49,
-    "EURUSD": 1.10115,
-    "USDJPY": 159.572
+    "BTCUSD": 64223.92,
+    "ETHUSD": 1802.61,
+    "SOLUSD": 70.91,
+    "XAUUSD": 3872.39,
+    "EURUSD": 1.10112,
+    "USDJPY": 159.584
   },
   "active_trades": {},
   "bot_stats": {
@@ -512,15 +512,15 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 13:04:06 UTC",
-    "total_episodes": 716,
+    "updated_utc": "2026-11-16 13:06:27 UTC",
+    "total_episodes": 717,
     "strategy_stats": {
       "SND": {
-        "trades": 25,
-        "wins": 8,
+        "trades": 26,
+        "wins": 9,
         "losses": 16,
-        "ema_r": -0.245,
-        "multiplier": 0.939
+        "ema_r": -0.189,
+        "multiplier": 0.953
       },
       "ICT": {
         "trades": 182,
@@ -572,7 +572,7 @@
       "RANGING:BREAKOUT": 0.966,
       "RANGING:SND": 1.028,
       "TRENDING_DOWN:BREAKOUT": 1.08,
-      "TRENDING_DOWN:SND": 0.994,
+      "TRENDING_DOWN:SND": 1.001,
       "TRENDING_UP:ICT": 1.056,
       "SESSION_SWEEP_WINDOW:SND": 0.86,
       "TRENDING_UP:KRONOS": 1.045,
@@ -1183,21 +1183,6 @@
     "live_episodes": 25,
     "active_shadow_trades": [
       {
-        "key": "ETHUSD:SND",
-        "symbol": "ETHUSD",
-        "strategy_name": "SND",
-        "direction": "LONG",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 1800.11,
-        "sl_price": 1792.31641,
-        "sl_dist": 7.79359,
-        "tp1_price": 1805.17583,
-        "tp2_price": 1811.41071,
-        "opened_epoch": 1794834021.195064,
-        "tp1_hit": true,
-        "peak_r": 0.662
-      },
-      {
         "key": "EURUSD:ICT",
         "symbol": "EURUSD",
         "strategy_name": "ICT",
@@ -1259,9 +1244,9 @@
       "USDJPY:ICT": 1794824435.383822,
       "EURUSD:TREND_PULLBACK": 1794825906.70458
     },
-    "shadow_episodes": 673
+    "shadow_episodes": 674
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 3h 54m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 3h 53m)",
   "deriv_flow_status": "Graduated Live (165 eps, 64.8% WR, +0.18R EMA)",
-  "cycle_count": 435
+  "cycle_count": 439
 }
