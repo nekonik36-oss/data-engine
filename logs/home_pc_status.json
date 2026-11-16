@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 02:04:21 UTC",
+  "updated_utc": "2026-11-16 02:05:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64860.0,
-    "ETHUSD": 1815.93,
-    "SOLUSD": 71.77,
-    "XAUUSD": 3877.91,
-    "EURUSD": 1.10228,
-    "USDJPY": 159.739
+    "BTCUSD": 64800.0,
+    "ETHUSD": 1813.92,
+    "SOLUSD": 71.66,
+    "XAUUSD": 3877.25,
+    "EURUSD": 1.10223,
+    "USDJPY": 159.749
   },
   "active_trades": {},
   "bot_stats": {
@@ -457,7 +457,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 02:04:20 UTC",
+    "updated_utc": "2026-11-16 02:05:03 UTC",
     "total_episodes": 573,
     "strategy_stats": {
       "SND": {
@@ -1141,7 +1141,23 @@
       }
     ],
     "live_episodes": 20,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 71.69,
+        "sl_price": 71.27195,
+        "sl_dist": 0.41805,
+        "tp1_price": 71.96173,
+        "tp2_price": 72.29618,
+        "opened_epoch": 1794794703.647917,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794792606.654802,
       "BTCUSD:BREAKOUT": 1794794415.970298,
@@ -1152,7 +1168,7 @@
       "SOLUSD:KRONOS": 1794792315.766443,
       "BTCUSD:ICT": 1794792604.94131,
       "SOLUSD:SND": 1794408013.22123,
-      "SOLUSD:ICT": 1794790326.070093,
+      "SOLUSD:ICT": 1794794703.647917,
       "ETHUSD:TREND_PULLBACK": 1794774582.376476,
       "BTCUSD:TREND_PULLBACK": 1794699011.354492,
       "SOLUSD:TREND_PULLBACK": 1794702615.053181,
@@ -1167,7 +1183,7 @@
     },
     "shadow_episodes": 535
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 14h 55m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 14h 54m)",
   "deriv_flow_status": "Shadow Incubation (125/30 eps, 65% WR, +0.04R)",
-  "cycle_count": 138
+  "cycle_count": 140
 }
