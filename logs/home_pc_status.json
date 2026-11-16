@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 10:31:42 UTC",
+  "updated_utc": "2026-11-16 10:32:41 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64568.74,
-    "ETHUSD": 1806.43,
-    "SOLUSD": 71.36,
-    "XAUUSD": 3861.93,
-    "EURUSD": 1.10142,
-    "USDJPY": 159.613
+    "BTCUSD": 64530.26,
+    "ETHUSD": 1804.46,
+    "SOLUSD": 71.25,
+    "XAUUSD": 3862.78,
+    "EURUSD": 1.10139,
+    "USDJPY": 159.603
   },
   "active_trades": {},
   "bot_stats": {
@@ -512,8 +512,8 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 10:30:06 UTC",
-    "total_episodes": 680,
+    "updated_utc": "2026-11-16 10:32:40 UTC",
+    "total_episodes": 682,
     "strategy_stats": {
       "SND": {
         "trades": 25,
@@ -530,11 +530,11 @@
         "multiplier": 0.997
       },
       "BREAKOUT": {
-        "trades": 127,
-        "wins": 67,
+        "trades": 128,
+        "wins": 68,
         "losses": 58,
-        "ema_r": -0.502,
-        "multiplier": 0.874
+        "ema_r": -0.425,
+        "multiplier": 0.894
       },
       "TREND_PULLBACK": {
         "trades": 84,
@@ -544,11 +544,11 @@
         "multiplier": 1.048
       },
       "KRONOS": {
-        "trades": 157,
-        "wins": 80,
+        "trades": 158,
+        "wins": 81,
         "losses": 74,
-        "ema_r": -0.468,
-        "multiplier": 0.883
+        "ema_r": -0.394,
+        "multiplier": 0.902
       },
       "DERIV_FLOW": {
         "trades": 153,
@@ -565,8 +565,8 @@
       "RANGING:TREND_PULLBACK": 1.029,
       "TRENDING_DOWN:TREND_PULLBACK": 1.048,
       "SESSION_SWEEP_WINDOW:ICT": 0.922,
-      "SESSION_SWEEP_WINDOW:BREAKOUT": 0.907,
-      "SESSION_SWEEP_WINDOW:KRONOS": 0.747,
+      "SESSION_SWEEP_WINDOW:BREAKOUT": 0.914,
+      "SESSION_SWEEP_WINDOW:KRONOS": 0.754,
       "TRENDING_DOWN:ICT": 0.925,
       "TRENDING_DOWN:KRONOS": 1.073,
       "RANGING:BREAKOUT": 0.975,
@@ -1210,36 +1210,6 @@
     "live_episodes": 25,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:BREAKOUT",
-        "symbol": "SOLUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "LONG",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 71.17,
-        "sl_price": 70.82481,
-        "sl_dist": 0.34519,
-        "tp1_price": 71.39438,
-        "tp2_price": 71.67053,
-        "opened_epoch": 1794823810.116174,
-        "tp1_hit": true,
-        "peak_r": 1.159
-      },
-      {
-        "key": "SOLUSD:KRONOS",
-        "symbol": "SOLUSD",
-        "strategy_name": "KRONOS",
-        "direction": "LONG",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 71.17,
-        "sl_price": 70.82481,
-        "sl_dist": 0.34519,
-        "tp1_price": 71.39438,
-        "tp2_price": 71.67053,
-        "opened_epoch": 1794823810.129176,
-        "tp1_hit": true,
-        "peak_r": 1.159
-      },
-      {
         "key": "USDJPY:KRONOS",
         "symbol": "USDJPY",
         "strategy_name": "KRONOS",
@@ -1315,9 +1285,9 @@
       "XAUUSD:KRONOS": 1794811517.623454,
       "USDJPY:ICT": 1794824435.383822
     },
-    "shadow_episodes": 637
+    "shadow_episodes": 639
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 6h 28m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 6h 27m)",
   "deriv_flow_status": "Graduated Live (153 eps, 65.4% WR, +0.23R EMA)",
-  "cycle_count": 1675
+  "cycle_count": 1678
 }
