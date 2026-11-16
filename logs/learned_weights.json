@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 21:30:30 UTC",
+  "updated_utc": "2026-11-16 21:40:19 UTC",
   "total_episodes": 794,
   "strategy_stats": {
     "SND": {
@@ -705,17 +705,62 @@
       "tp2_price": 65541.90478,
       "opened_epoch": 1794864309.665771,
       "tp1_hit": false,
-      "peak_r": 0.227
+      "peak_r": 0.407
+    },
+    {
+      "key": "ETHUSD:BREAKOUT",
+      "symbol": "ETHUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 1828.21,
+      "sl_price": 1822.21451,
+      "sl_dist": 5.99549,
+      "tp1_price": 1832.10707,
+      "tp2_price": 1836.90346,
+      "opened_epoch": 1794865218.029921,
+      "tp1_hit": false,
+      "peak_r": 0.02
+    },
+    {
+      "key": "SOLUSD:BREAKOUT",
+      "symbol": "SOLUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 72.01,
+      "sl_price": 71.72715,
+      "sl_dist": 0.28285,
+      "tp1_price": 72.19385,
+      "tp2_price": 72.42013,
+      "opened_epoch": 1794865219.45954,
+      "tp1_hit": false,
+      "peak_r": 0.035
+    },
+    {
+      "key": "SOLUSD:KRONOS",
+      "symbol": "SOLUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 72.01,
+      "sl_price": 72.29285,
+      "sl_dist": 0.28285,
+      "tp1_price": 71.82615,
+      "tp2_price": 71.59987,
+      "opened_epoch": 1794865219.462533,
+      "tp1_hit": false,
+      "peak_r": 0.106
     }
   ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794841511.496846,
     "BTCUSD:BREAKOUT": 1794864309.665771,
     "BTCUSD:KRONOS": 1794858615.796756,
-    "ETHUSD:BREAKOUT": 1794853818.422485,
+    "ETHUSD:BREAKOUT": 1794865218.029921,
     "ETHUSD:KRONOS": 1794839710.353251,
-    "SOLUSD:BREAKOUT": 1794848420.617333,
-    "SOLUSD:KRONOS": 1794839711.861186,
+    "SOLUSD:BREAKOUT": 1794865219.45954,
+    "SOLUSD:KRONOS": 1794865219.462533,
     "BTCUSD:ICT": 1794861302.667321,
     "SOLUSD:SND": 1794408013.22123,
     "SOLUSD:ICT": 1794843912.841014,
