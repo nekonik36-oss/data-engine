@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 11:53:50 UTC",
-  "total_episodes": 697,
+  "updated_utc": "2026-11-16 11:55:35 UTC",
+  "total_episodes": 698,
   "strategy_stats": {
     "SND": {
       "trades": 25,
@@ -10,11 +10,11 @@
       "multiplier": 0.939
     },
     "ICT": {
-      "trades": 176,
-      "wins": 88,
+      "trades": 177,
+      "wins": 89,
       "losses": 87,
-      "ema_r": -0.052,
-      "multiplier": 0.987
+      "ema_r": 0.001,
+      "multiplier": 1.0
     },
     "BREAKOUT": {
       "trades": 132,
@@ -46,7 +46,7 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.805,
+    "RANGING:ICT": 0.815,
     "RANGING:KRONOS": 0.714,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.876,
     "RANGING:TREND_PULLBACK": 1.029,
@@ -670,51 +670,6 @@
   "live_episodes": 25,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:ICT",
-      "symbol": "BTCUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 64690.34,
-      "sl_price": 64869.42869,
-      "sl_dist": 179.08869,
-      "tp1_price": 64573.93235,
-      "tp2_price": 64430.6614,
-      "opened_epoch": 1794828309.975354,
-      "tp1_hit": true,
-      "peak_r": 1.286
-    },
-    {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 71.56,
-      "sl_price": 71.86747,
-      "sl_dist": 0.30747,
-      "tp1_price": 71.36014,
-      "tp2_price": 71.11417,
-      "opened_epoch": 1794828312.14323,
-      "tp1_hit": false,
-      "peak_r": 0.325
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 71.56,
-      "sl_price": 71.86747,
-      "sl_dist": 0.30747,
-      "tp1_price": 71.36014,
-      "tp2_price": 71.11417,
-      "opened_epoch": 1794828312.146227,
-      "tp1_hit": false,
-      "peak_r": 0.325
-    },
-    {
       "key": "ETHUSD:ICT",
       "symbol": "ETHUSD",
       "strategy_name": "ICT",
@@ -776,5 +731,5 @@
     "USDJPY:ICT": 1794824435.383822,
     "EURUSD:TREND_PULLBACK": 1794825906.70458
   },
-  "shadow_episodes": 654
+  "shadow_episodes": 655
 }
