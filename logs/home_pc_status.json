@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 00:20:53 UTC",
+  "updated_utc": "2026-11-16 00:21:28 UTC",
   "hostname": "runnervmccnms",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,45 +20,17 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 65032.01,
-    "SOLUSD": 72.17
+    "BTCUSD": 64987.29,
+    "ETHUSD": 1824.48,
+    "SOLUSD": 72.11
   },
-  "active_trades": {
-    "84774918": {
-      "ticket": 84774918,
-      "symbol": "ETHUSD",
-      "broker_symbol": "ETHUSD",
-      "broker_source": "CRYPTO_24_7_LIVE",
-      "direction": "LONG",
-      "entry_price": 1830.94,
-      "sl_price": 1825.14,
-      "initial_sl_price": 1818.46,
-      "tp1_price": 1839.05,
-      "tp2_price": 1849.04,
-      "volume": 3.91,
-      "initial_volume": 3.91,
-      "risk_usd": 48.81,
-      "confluence_score": 91.0,
-      "regime": "TRENDING_UP",
-      "agreeing_strategies": [
-        "BREAKOUT",
-        "KRONOS"
-      ],
-      "opened_at_utc": "2026-11-15 20:35:18 UTC",
-      "tp1_hit": false,
-      "partial_pnl": 0.0,
-      "peak_favorable_r": 0.08,
-      "failed_impulse_shield": true,
-      "time_decay_applied": true,
-      "time_decay_30m": true
-    }
-  },
+  "active_trades": {},
   "bot_stats": {
-    "total_closed": 37,
+    "total_closed": 38,
     "wins": 15,
-    "losses": 17,
+    "losses": 18,
     "breakevens": 5,
-    "cumulative_pnl": -237.35,
+    "cumulative_pnl": -260.03,
     "history": [
       {
         "ticket": 1078980632,
@@ -466,13 +438,24 @@
         "r_multiple": -2.4,
         "close_reason": "18m/30m Impulse Time-Decay Stop Hit \u23f1\ufe0f\ud83d\udee1\ufe0f",
         "closed_at_utc": "2026-11-15 15:26:32 UTC"
+      },
+      {
+        "ticket": 84774918,
+        "symbol": "ETHUSD",
+        "direction": "LONG",
+        "entry_price": 1830.94,
+        "exit_price": 1825.14,
+        "net_pnl": -22.68,
+        "r_multiple": -0.46,
+        "close_reason": "18m/30m Impulse Time-Decay Stop Hit \u23f1\ufe0f\ud83d\udee1\ufe0f",
+        "closed_at_utc": "2026-11-16 00:21:25 UTC"
       }
     ],
-    "crypto_book_pnl": 41.9
+    "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 00:18:41 UTC",
-    "total_episodes": 553,
+    "updated_utc": "2026-11-16 00:21:25 UTC",
+    "total_episodes": 554,
     "strategy_stats": {
       "SND": {
         "trades": 21,
@@ -489,11 +472,11 @@
         "multiplier": 0.985
       },
       "BREAKOUT": {
-        "trades": 107,
+        "trades": 108,
         "wins": 62,
-        "losses": 43,
-        "ema_r": -0.162,
-        "multiplier": 0.959
+        "losses": 44,
+        "ema_r": -0.229,
+        "multiplier": 0.943
       },
       "TREND_PULLBACK": {
         "trades": 73,
@@ -503,11 +486,11 @@
         "multiplier": 1.05
       },
       "KRONOS": {
-        "trades": 130,
+        "trades": 131,
         "wins": 73,
-        "losses": 55,
-        "ema_r": -0.207,
-        "multiplier": 0.948
+        "losses": 56,
+        "ema_r": -0.264,
+        "multiplier": 0.934
       },
       "DERIV_FLOW": {
         "trades": 116,
@@ -534,8 +517,8 @@
       "TRENDING_DOWN:SND": 1.003,
       "TRENDING_UP:ICT": 1.056,
       "SESSION_SWEEP_WINDOW:SND": 0.86,
-      "TRENDING_UP:KRONOS": 1.066,
-      "TRENDING_UP:BREAKOUT": 0.973,
+      "TRENDING_UP:KRONOS": 1.045,
+      "TRENDING_UP:BREAKOUT": 0.952,
       "TRENDING_UP:TREND_PULLBACK": 1.004,
       "RANGING:DERIV_FLOW": 1.133,
       "TRENDING_DOWN:DERIV_FLOW": 1.384,
@@ -549,8 +532,8 @@
       },
       "ETHUSD": {
         "win_streak": 0,
-        "loss_streak": 1,
-        "net_r": -1.81
+        "loss_streak": 2,
+        "net_r": -2.27
       },
       "SOLUSD": {
         "win_streak": 0,
@@ -595,23 +578,26 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [],
-    "ai_feedback_feed": [
+    "pending_post_mortems": [
       {
-        "timestamp_utc": "2026-11-09 07:36:45 UTC",
-        "event": "TRADE_CLOSED_DIAGNOSTIC",
-        "ticket": 1079412826,
-        "symbol": "BTCUSD",
-        "direction": "SHORT",
-        "net_pnl": -0.15,
-        "r_multiple": -0.0,
-        "peak_favorable_r": 0.56,
-        "regime": "TRENDING_DOWN",
-        "strategies": [
-          "TREND_PULLBACK"
+        "ticket": 84774918,
+        "symbol": "ETHUSD",
+        "direction": "LONG",
+        "entry_price": 1830.94,
+        "exit_price": 1825.14,
+        "tp1_price": 1839.05,
+        "tp2_price": 1849.04,
+        "agreeing_strategies": [
+          "BREAKOUT",
+          "KRONOS"
         ],
-        "auto_fix_action": "NONE"
-      },
+        "regime": "TRENDING_UP",
+        "closed_epoch": 1794788485.278146,
+        "closed_at_utc": "2026-11-16 00:21:25 UTC",
+        "audited": false
+      }
+    ],
+    "ai_feedback_feed": [
       {
         "timestamp_utc": "2026-11-09 08:51:40 UTC",
         "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -1158,9 +1144,25 @@
         "symbol": "ETHUSD",
         "direction": "SHORT",
         "summary": "Ticket #84729146 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+      },
+      {
+        "timestamp_utc": "2026-11-16 00:21:25 UTC",
+        "event": "TRADE_CLOSED_DIAGNOSTIC",
+        "ticket": 84774918,
+        "symbol": "ETHUSD",
+        "direction": "LONG",
+        "net_pnl": -22.68,
+        "r_multiple": -0.46,
+        "peak_favorable_r": 0.08,
+        "regime": "TRENDING_UP",
+        "strategies": [
+          "BREAKOUT",
+          "KRONOS"
+        ],
+        "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1839.05)"
       }
     ],
-    "live_episodes": 19,
+    "live_episodes": 20,
     "active_shadow_trades": [],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794713704.673238,
@@ -1187,7 +1189,7 @@
     },
     "shadow_episodes": 516
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 16h 39m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Fed Chairman Warsh Speaks @ 2026-11-16 17:00 UTC (in 16h 38m)",
   "deriv_flow_status": "Graduated Live (116 eps, 66.4% WR, +0.47R EMA)",
-  "cycle_count": 5
+  "cycle_count": 6
 }
