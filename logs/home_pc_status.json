@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 16:42:19 UTC",
+  "updated_utc": "2026-11-16 16:43:35 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9684.27,
+  "live_equity": 9683.84,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64695.13,
-    "ETHUSD": 1824.24,
-    "SOLUSD": 71.08,
-    "EURUSD": 1.10069,
-    "USDJPY": 159.607
+    "BTCUSD": 64613.54,
+    "ETHUSD": 1822.5,
+    "SOLUSD": 70.97,
+    "EURUSD": 1.10072,
+    "USDJPY": 159.61
   },
   "active_trades": {
     "1086537289": {
@@ -550,8 +550,8 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 16:35:24 UTC",
-    "total_episodes": 758,
+    "updated_utc": "2026-11-16 16:43:34 UTC",
+    "total_episodes": 759,
     "strategy_stats": {
       "SND": {
         "trades": 28,
@@ -575,11 +575,11 @@
         "multiplier": 1.055
       },
       "TREND_PULLBACK": {
-        "trades": 90,
+        "trades": 91,
         "wins": 42,
-        "losses": 45,
-        "ema_r": -0.102,
-        "multiplier": 0.974
+        "losses": 46,
+        "ema_r": -0.138,
+        "multiplier": 0.966
       },
       "KRONOS": {
         "trades": 169,
@@ -600,7 +600,7 @@
       "RANGING:ICT": 0.831,
       "RANGING:KRONOS": 0.714,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.86,
-      "RANGING:TREND_PULLBACK": 1.013,
+      "RANGING:TREND_PULLBACK": 1.004,
       "TRENDING_DOWN:TREND_PULLBACK": 1.039,
       "SESSION_SWEEP_WINDOW:ICT": 0.955,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 0.991,
@@ -1279,21 +1279,6 @@
         "peak_r": 0.006
       },
       {
-        "key": "ETHUSD:TREND_PULLBACK",
-        "symbol": "ETHUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "LONG",
-        "regime": "RANGING",
-        "entry_price": 1830.57,
-        "sl_price": 1816.41695,
-        "sl_dist": 14.15305,
-        "tp1_price": 1839.76949,
-        "tp2_price": 1851.09193,
-        "opened_epoch": 1794846318.264104,
-        "tp1_hit": false,
-        "peak_r": 0.023
-      },
-      {
         "key": "BTCUSD:DERIV_FLOW",
         "symbol": "BTCUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1357,9 +1342,9 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 714
+    "shadow_episodes": 715
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks releases in 18m (17:00 UTC) [-20m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks releases in 16m (17:00 UTC) [-20m/+15m shield])",
   "deriv_flow_status": "Shadow Incubation (181/30 eps, 64% WR, -0.06R)",
-  "cycle_count": 1100
+  "cycle_count": 1104
 }
