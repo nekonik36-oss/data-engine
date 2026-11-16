@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 22:39:49 UTC",
+  "updated_utc": "2026-11-16 22:41:23 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65325.0,
-    "ETHUSD": 1831.73,
-    "SOLUSD": 71.92,
+    "BTCUSD": 65385.31,
+    "ETHUSD": 1832.44,
+    "SOLUSD": 71.98,
     "XAUUSD": 3856.01,
-    "EURUSD": 1.09927,
-    "USDJPY": 159.412
+    "EURUSD": 1.09939,
+    "USDJPY": 159.4
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,7 +534,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 22:38:14 UTC",
+    "updated_utc": "2026-11-16 22:40:28 UTC",
     "total_episodes": 804,
     "strategy_stats": {
       "SND": {
@@ -1271,16 +1271,61 @@
         "opened_epoch": 1794868208.59836,
         "tp1_hit": false,
         "peak_r": 0.351
+      },
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 1831.72,
+        "sl_price": 1837.1022,
+        "sl_dist": 5.3822,
+        "tp1_price": 1828.22157,
+        "tp2_price": 1823.91581,
+        "opened_epoch": 1794868809.926921,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:KRONOS",
+        "symbol": "SOLUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 71.92,
+        "sl_price": 72.17548,
+        "sl_dist": 0.25548,
+        "tp1_price": 71.75393,
+        "tp2_price": 71.54955,
+        "opened_epoch": 1794868811.333403,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:KRONOS",
+        "symbol": "ETHUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 1831.72,
+        "sl_price": 1837.1022,
+        "sl_dist": 5.3822,
+        "tp1_price": 1828.22157,
+        "tp2_price": 1823.91581,
+        "opened_epoch": 1794868828.047911,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1794866119.969288,
+      "ETHUSD:ICT": 1794868809.926921,
       "BTCUSD:BREAKOUT": 1794866710.964572,
       "BTCUSD:KRONOS": 1794868208.59836,
       "ETHUSD:BREAKOUT": 1794865218.029921,
-      "ETHUSD:KRONOS": 1794866712.368296,
+      "ETHUSD:KRONOS": 1794868828.047911,
       "SOLUSD:BREAKOUT": 1794865219.45954,
-      "SOLUSD:KRONOS": 1794865219.462533,
+      "SOLUSD:KRONOS": 1794868811.333403,
       "BTCUSD:ICT": 1794868208.59636,
       "SOLUSD:SND": 1794408013.22123,
       "SOLUSD:ICT": 1794867908.116336,
@@ -1308,7 +1353,7 @@
     },
     "shadow_episodes": 759
   },
-  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 14h 50m)",
+  "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 14h 48m)",
   "deriv_flow_status": "Shadow Incubation (205/30 eps, 63% WR, -0.02R)",
-  "cycle_count": 2220
+  "cycle_count": 2225
 }
