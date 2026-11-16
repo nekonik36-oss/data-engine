@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-16 06:16:49 UTC",
-  "total_episodes": 616,
+  "updated_utc": "2026-11-16 06:19:14 UTC",
+  "total_episodes": 619,
   "strategy_stats": {
     "SND": {
       "trades": 22,
@@ -17,11 +17,11 @@
       "multiplier": 0.937
     },
     "BREAKOUT": {
-      "trades": 116,
+      "trades": 118,
       "wins": 66,
-      "losses": 48,
-      "ema_r": -0.162,
-      "multiplier": 0.96
+      "losses": 50,
+      "ema_r": -0.342,
+      "multiplier": 0.914
     },
     "TREND_PULLBACK": {
       "trades": 79,
@@ -31,11 +31,11 @@
       "multiplier": 1.007
     },
     "KRONOS": {
-      "trades": 141,
+      "trades": 143,
       "wins": 78,
-      "losses": 61,
-      "ema_r": -0.155,
-      "multiplier": 0.961
+      "losses": 63,
+      "ema_r": -0.337,
+      "multiplier": 0.916
     },
     "DERIV_FLOW": {
       "trades": 139,
@@ -55,10 +55,10 @@
     "SESSION_SWEEP_WINDOW:BREAKOUT": 0.964,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.813,
     "TRENDING_DOWN:ICT": 0.895,
-    "TRENDING_DOWN:KRONOS": 1.178,
+    "TRENDING_DOWN:KRONOS": 1.13,
     "RANGING:BREAKOUT": 0.991,
     "RANGING:SND": 1.062,
-    "TRENDING_DOWN:BREAKOUT": 1.134,
+    "TRENDING_DOWN:BREAKOUT": 1.086,
     "TRENDING_DOWN:SND": 1.003,
     "TRENDING_UP:ICT": 1.056,
     "SESSION_SWEEP_WINDOW:SND": 0.86,
@@ -87,8 +87,8 @@
     },
     "XAUUSD": {
       "win_streak": 0,
-      "loss_streak": 1,
-      "net_r": -1.0
+      "loss_streak": 2,
+      "net_r": -1.72
     },
     "USDJPY": {
       "win_streak": 0,
@@ -123,24 +123,26 @@
       "be_shield_r": 0.55
     }
   },
-  "pending_post_mortems": [],
-  "ai_feedback_feed": [
+  "pending_post_mortems": [
     {
-      "timestamp_utc": "2026-11-09 11:17:28 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1079532966,
-      "symbol": "BTCUSD",
+      "ticket": 1085819383,
+      "symbol": "XAUUSD",
       "direction": "SHORT",
-      "net_pnl": 21.19,
-      "r_multiple": 0.45,
-      "peak_favorable_r": 0.74,
-      "regime": "SESSION_SWEEP_WINDOW",
-      "strategies": [
-        "ICT",
-        "TREND_PULLBACK"
+      "entry_price": 3833.63,
+      "exit_price": 3858.78,
+      "tp1_price": 3810.8995,
+      "tp2_price": 3782.9235,
+      "agreeing_strategies": [
+        "BREAKOUT",
+        "KRONOS"
       ],
-      "auto_fix_action": "NONE"
-    },
+      "regime": "TRENDING_DOWN",
+      "closed_epoch": 1794809952.19592,
+      "closed_at_utc": "2026-11-16 06:19:12 UTC",
+      "audited": false
+    }
+  ],
+  "ai_feedback_feed": [
     {
       "timestamp_utc": "2026-11-09 11:39:54 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -681,9 +683,25 @@
         "KRONOS"
       ],
       "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-16 06:19:12 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1085819383,
+      "symbol": "XAUUSD",
+      "direction": "SHORT",
+      "net_pnl": -25.15,
+      "r_multiple": -0.72,
+      "peak_favorable_r": 0.0,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "BREAKOUT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if XAUUSD reaches TP1=3810.8995)"
     }
   ],
-  "live_episodes": 21,
+  "live_episodes": 22,
   "active_shadow_trades": [
     {
       "key": "SOLUSD:BREAKOUT",
@@ -729,36 +747,6 @@
       "opened_epoch": 1794808809.342343,
       "tp1_hit": false,
       "peak_r": 0.337
-    },
-    {
-      "key": "XAUUSD:BREAKOUT",
-      "symbol": "XAUUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 3836.84,
-      "sl_price": 3852.9744,
-      "sl_dist": 16.1344,
-      "tp1_price": 3826.35264,
-      "tp2_price": 3813.44512,
-      "opened_epoch": 1794808810.256364,
-      "tp1_hit": false,
-      "peak_r": 0.198
-    },
-    {
-      "key": "XAUUSD:KRONOS",
-      "symbol": "XAUUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 3836.84,
-      "sl_price": 3852.9744,
-      "sl_dist": 16.1344,
-      "tp1_price": 3826.35264,
-      "tp2_price": 3813.44512,
-      "opened_epoch": 1794808810.259365,
-      "tp1_hit": false,
-      "peak_r": 0.198
     },
     {
       "key": "ETHUSD:SND",
@@ -820,5 +808,5 @@
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1794808810.259365
   },
-  "shadow_episodes": 577
+  "shadow_episodes": 579
 }
