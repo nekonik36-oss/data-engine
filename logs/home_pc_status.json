@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 19:21:13 UTC",
+  "updated_utc": "2026-11-16 19:21:55 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64837.53,
-    "ETHUSD": 1814.51,
-    "SOLUSD": 71.04,
-    "XAUUSD": 3860.41,
-    "EURUSD": 1.09986,
-    "USDJPY": 159.428
+    "BTCUSD": 64832.01,
+    "ETHUSD": 1814.34,
+    "SOLUSD": 71.05,
+    "XAUUSD": 3860.06,
+    "EURUSD": 1.09985,
+    "USDJPY": 159.42
   },
   "active_trades": {},
   "bot_stats": {
@@ -534,7 +534,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 19:21:12 UTC",
+    "updated_utc": "2026-11-16 19:21:51 UTC",
     "total_episodes": 776,
     "strategy_stats": {
       "SND": {
@@ -1256,6 +1256,21 @@
         "opened_epoch": 1794855800.771437,
         "tp1_hit": true,
         "peak_r": 0.848
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 64874.01,
+        "sl_price": 65082.72529,
+        "sl_dist": 208.71529,
+        "tp1_price": 64738.34506,
+        "tp2_price": 64571.37283,
+        "opened_epoch": 1794856911.186515,
+        "tp1_hit": false,
+        "peak_r": 0.201
       }
     ],
     "shadow_cooldowns": {
@@ -1278,7 +1293,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794846924.06586,
       "SOLUSD:DERIV_FLOW": 1794855062.492736,
-      "BTCUSD:DERIV_FLOW": 1794853798.370266,
+      "BTCUSD:DERIV_FLOW": 1794856911.186515,
       "ETHUSD:DERIV_FLOW": 1794855800.771437,
       "EURUSD:BREAKOUT": 1794826814.809407,
       "USDJPY:BREAKOUT": 1794806117.104245,
@@ -1295,5 +1310,5 @@
   },
   "macro_shield": "Armed (-20m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 18h 8m)",
   "deriv_flow_status": "Graduated Live (190 eps, 64.0% WR, +0.16R EMA)",
-  "cycle_count": 1593
+  "cycle_count": 1595
 }
