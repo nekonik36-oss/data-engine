@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 11:50:34 UTC",
+  "updated_utc": "2026-11-16 11:51:51 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "live_equity": 9684.04,
   "bot_stats": {
@@ -539,43 +539,8 @@
       "net_r": -1.44
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1086034837,
-      "symbol": "EURUSD",
-      "direction": "SHORT",
-      "entry_price": 1.10056,
-      "exit_price": 1.10144,
-      "tp1_price": 1.0992,
-      "tp2_price": 1.09753,
-      "agreeing_strategies": [
-        "ICT",
-        "BREAKOUT",
-        "KRONOS"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1794824488.924326,
-      "closed_at_utc": "2026-11-16 10:21:28 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-11 05:11:59 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 84373208,
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "net_pnl": 1.95,
-      "r_multiple": 0.04,
-      "peak_favorable_r": 0.21,
-      "regime": "RANGING",
-      "strategies": [
-        "ICT",
-        "KRONOS"
-      ],
-      "auto_fix_action": "NONE"
-    },
     {
       "timestamp_utc": "2026-11-11 06:55:26 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -910,6 +875,14 @@
         "KRONOS"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if EURUSD reaches TP1=1.0992)"
+    },
+    {
+      "timestamp_utc": "2026-11-16 11:51:32 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1086034837,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1086034837 (EURUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }
