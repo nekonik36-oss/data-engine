@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 16:55:32 UTC",
+  "updated_utc": "2026-11-16 16:57:10 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9684.3,
+  "live_equity": 9681.33,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64682.68,
-    "ETHUSD": 1822.9,
-    "SOLUSD": 71.17,
-    "EURUSD": 1.10049,
-    "USDJPY": 159.62
+    "BTCUSD": 64790.0,
+    "ETHUSD": 1825.99,
+    "SOLUSD": 71.32,
+    "EURUSD": 1.10038,
+    "USDJPY": 159.622
   },
   "active_trades": {
     "1086537289": {
@@ -552,7 +552,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-16 16:55:30 UTC",
+    "updated_utc": "2026-11-16 16:55:54 UTC",
     "total_episodes": 759,
     "strategy_stats": {
       "SND": {
@@ -1236,21 +1236,6 @@
     "live_episodes": 26,
     "active_shadow_trades": [
       {
-        "key": "XAUUSD:ICT",
-        "symbol": "XAUUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 3858.75,
-        "sl_price": 3872.53034,
-        "sl_dist": 13.78034,
-        "tp1_price": 3849.79278,
-        "tp2_price": 3838.76851,
-        "opened_epoch": 1794845444.657765,
-        "tp1_hit": false,
-        "peak_r": 0.065
-      },
-      {
         "key": "XAUUSD:KRONOS",
         "symbol": "XAUUSD",
         "strategy_name": "KRONOS",
@@ -1361,7 +1346,7 @@
     },
     "shadow_episodes": 715
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks releases in 4m (17:00 UTC) [-20m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Fed Chairman Warsh Speaks releases in 3m (17:00 UTC) [-20m/+15m shield])",
   "deriv_flow_status": "Shadow Incubation (181/30 eps, 64% WR, -0.06R)",
-  "cycle_count": 1140
+  "cycle_count": 1145
 }

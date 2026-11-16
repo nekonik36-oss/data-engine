@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-16 16:55:30 UTC",
+  "updated_utc": "2026-11-16 16:55:54 UTC",
   "total_episodes": 759,
   "strategy_stats": {
     "SND": {
@@ -682,21 +682,6 @@
   ],
   "live_episodes": 26,
   "active_shadow_trades": [
-    {
-      "key": "XAUUSD:ICT",
-      "symbol": "XAUUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 3858.75,
-      "sl_price": 3872.53034,
-      "sl_dist": 13.78034,
-      "tp1_price": 3849.79278,
-      "tp2_price": 3838.76851,
-      "opened_epoch": 1794845444.657765,
-      "tp1_hit": false,
-      "peak_r": 0.065
-    },
     {
       "key": "XAUUSD:KRONOS",
       "symbol": "XAUUSD",
