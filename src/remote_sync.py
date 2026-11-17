@@ -116,9 +116,43 @@ def write_and_push_telemetry(
         except Exception:
             pass
 
+    local_host = platform.node()
+
+    # Monotonic RL Episode Guard: never let a newly booted host overwrite a higher-episode
+    # `learned_weights.json` synced earlier by another host; adopt the newer brain in-place!
+    lw_path = LOGS_DIR / "learned_weights.json"
+    if extra_status and isinstance(extra_status.get("learned_weights"), dict) and lw_path.exists():
+        try:
+            remote_lw = json.loads(lw_path.read_text(encoding="utf-8"))
+            local_lw = extra_status["learned_weights"]
+            if int(remote_lw.get("total_episodes", 0)) > int(local_lw.get("total_episodes", 0)):
+                local_lw.clear()
+                local_lw.update(remote_lw)
+        except Exception:
+            pass
+
+    # Primary-Host Auto-Yield: secondary hosts (Office Laptop / Cloud) automatically yield
+    # GitHub telemetry writes whenever Home PC (`DESKTOP-8RQUOSU`) is actively syncing (<5m).
+    if push_to_github and local_host.upper() != "DESKTOP-8RQUOSU" and STATUS_JSON_PATH.exists():
+        try:
+            rem_st = json.loads(STATUS_JSON_PATH.read_text(encoding="utf-8"))
+            rem_host = str(rem_st.get("hostname", "")).upper()
+            rem_ts = str(rem_st.get("updated_utc", ""))
+            if rem_host == "DESKTOP-8RQUOSU" and rem_ts:
+                rem_dt = datetime.strptime(rem_ts, "%Y-%m-%d %H:%M:%S UTC").replace(
+                    tzinfo=timezone.utc
+                )
+                age_s = (datetime.now(timezone.utc) - rem_dt).total_seconds()
+                if 0 <= age_s < 300:
+                    if code_updated and "--once" not in sys.argv:
+                        os.execv(sys.executable, [sys.executable] + sys.argv)
+                    return False
+        except Exception:
+            pass
+
     status_payload: dict[str, Any] = {
         "updated_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
-        "hostname": platform.node(),
+        "hostname": local_host,
         "python_version": sys.version.split()[0],
         "gpu": collect_gpu_diagnostics(),
         "pending_hot_reload": code_updated,
