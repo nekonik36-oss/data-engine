@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 19:54:29 UTC",
+  "updated_utc": "2026-11-17 19:55:08 UTC",
   "total_episodes": 987,
   "strategy_stats": {
     "SND": {
@@ -680,21 +680,6 @@
   ],
   "live_episodes": 29,
   "active_shadow_trades": [
-    {
-      "key": "BTCUSD:TREND_PULLBACK",
-      "symbol": "BTCUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 63796.51,
-      "sl_price": 64020.85966,
-      "sl_dist": 224.34966,
-      "tp1_price": 63650.68272,
-      "tp2_price": 63471.203,
-      "opened_epoch": 1794943503.832944,
-      "tp1_hit": false,
-      "peak_r": 0.59
-    },
     {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
