@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 22:36:13 UTC",
+  "updated_utc": "2026-11-17 22:38:07 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64741.72,
-    "ETHUSD": 1811.76,
-    "SOLUSD": 74.0,
+    "BTCUSD": 64717.06,
+    "ETHUSD": 1811.15,
+    "SOLUSD": 73.94,
     "XAUUSD": 3849.08,
     "EURUSD": 1.09964,
-    "USDJPY": 159.355
+    "USDJPY": 159.357
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 22:34:36 UTC",
+    "updated_utc": "2026-11-17 22:36:42 UTC",
     "total_episodes": 1016,
     "strategy_stats": {
       "SND": {
@@ -1266,6 +1266,21 @@
         "opened_epoch": 1794954876.737396,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 73.91,
+        "sl_price": 74.27303,
+        "sl_dist": 0.36303,
+        "tp1_price": 73.67403,
+        "tp2_price": 73.38361,
+        "opened_epoch": 1794955002.63772,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1287,7 +1302,7 @@
       "XAUUSD:BREAKOUT": 1794844811.013358,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794927609.018028,
-      "SOLUSD:DERIV_FLOW": 1794952185.503664,
+      "SOLUSD:DERIV_FLOW": 1794955002.63772,
       "BTCUSD:DERIV_FLOW": 1794954649.559151,
       "ETHUSD:DERIV_FLOW": 1794954876.737396,
       "EURUSD:BREAKOUT": 1794930338.39185,
@@ -1306,7 +1321,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 20h 23m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 20h 21m)",
   "deriv_flow_status": "Shadow Incubation (272/30 eps, 62% WR, +0.04R)",
-  "cycle_count": 1890
+  "cycle_count": 1895
 }
