@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 05:28:02 UTC",
+  "updated_utc": "2026-11-17 05:30:32 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 1838.45,
-    "SOLUSD": 72.94
+    "ETHUSD": 1840.68,
+    "SOLUSD": 72.99
   },
   "active_trades": {
     "84893129": {
@@ -47,7 +47,8 @@
       ],
       "opened_at_utc": "2026-11-17 05:25:29 UTC",
       "tp1_hit": false,
-      "partial_pnl": 0.0
+      "partial_pnl": 0.0,
+      "peak_favorable_r": 0.024
     }
   },
   "bot_stats": {
@@ -567,7 +568,7 @@
     "crypto_book_pnl": -0.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 05:26:58 UTC",
+    "updated_utc": "2026-11-17 05:30:30 UTC",
     "total_episodes": 851,
     "strategy_stats": {
       "SND": {
@@ -1312,6 +1313,21 @@
         "opened_epoch": 1794893130.552113,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 72.95,
+        "sl_price": 73.27806,
+        "sl_dist": 0.32806,
+        "tp1_price": 72.73676,
+        "tp2_price": 72.47432,
+        "opened_epoch": 1794893430.192264,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1324,7 +1340,7 @@
       "SOLUSD:KRONOS": 1794885023.829378,
       "BTCUSD:ICT": 1794888308.470685,
       "SOLUSD:SND": 1794891618.545652,
-      "SOLUSD:ICT": 1794890728.272654,
+      "SOLUSD:ICT": 1794893430.192264,
       "ETHUSD:TREND_PULLBACK": 1794869109.319579,
       "BTCUSD:TREND_PULLBACK": 1794892803.942715,
       "SOLUSD:TREND_PULLBACK": 1794892805.18618,
@@ -1354,5 +1370,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 540
+  "cycle_count": 545
 }
