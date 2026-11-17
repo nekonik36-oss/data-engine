@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 07:35:38 UTC",
-  "total_episodes": 874,
+  "updated_utc": "2026-11-17 07:49:19 UTC",
+  "total_episodes": 875,
   "strategy_stats": {
     "SND": {
       "trades": 36,
@@ -38,11 +38,11 @@
       "multiplier": 0.972
     },
     "DERIV_FLOW": {
-      "trades": 217,
-      "wins": 137,
+      "trades": 218,
+      "wins": 138,
       "losses": 79,
-      "ema_r": 0.154,
-      "multiplier": 1.038
+      "ema_r": 0.177,
+      "multiplier": 1.044
     }
   },
   "regime_strategy_multipliers": {
@@ -67,7 +67,7 @@
     "TRENDING_UP:TREND_PULLBACK": 0.936,
     "RANGING:DERIV_FLOW": 1.319,
     "TRENDING_DOWN:DERIV_FLOW": 1.349,
-    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.92,
+    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.927,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.984,
     "MACRO_NEWS_WINDOW:ICT": 1.027,
@@ -680,21 +680,6 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 72.79,
-      "sl_price": 72.45189,
-      "sl_dist": 0.33811,
-      "tp1_price": 73.00977,
-      "tp2_price": 73.28026,
-      "opened_epoch": 1794899948.142226,
-      "tp1_hit": false,
-      "peak_r": 0.592
-    },
-    {
       "key": "ETHUSD:DERIV_FLOW",
       "symbol": "ETHUSD",
       "strategy_name": "DERIV_FLOW",
@@ -758,7 +743,7 @@
     "XAUUSD:ICT": 1794845444.657765,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 827,
+  "shadow_episodes": 828,
   "probation_strategies": [
     "SND"
   ]
