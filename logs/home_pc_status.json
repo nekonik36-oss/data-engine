@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 05:07:47 UTC",
+  "updated_utc": "2026-11-17 05:10:20 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64926.71,
-    "ETHUSD": 1833.67,
-    "SOLUSD": 72.9
+    "BTCUSD": 64827.49,
+    "ETHUSD": 1830.43,
+    "SOLUSD": 72.74
   },
   "active_trades": {},
   "bot_stats": {
@@ -542,8 +542,8 @@
     "crypto_book_pnl": -0.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 05:00:18 UTC",
-    "total_episodes": 847,
+    "updated_utc": "2026-11-17 05:10:17 UTC",
+    "total_episodes": 848,
     "strategy_stats": {
       "SND": {
         "trades": 31,
@@ -567,11 +567,11 @@
         "multiplier": 0.998
       },
       "TREND_PULLBACK": {
-        "trades": 98,
+        "trades": 99,
         "wins": 46,
-        "losses": 49,
-        "ema_r": -0.104,
-        "multiplier": 0.974
+        "losses": 50,
+        "ema_r": -0.14,
+        "multiplier": 0.965
       },
       "KRONOS": {
         "trades": 183,
@@ -607,7 +607,7 @@
       "SESSION_SWEEP_WINDOW:SND": 0.844,
       "TRENDING_UP:KRONOS": 1.073,
       "TRENDING_UP:BREAKOUT": 0.945,
-      "TRENDING_UP:TREND_PULLBACK": 0.972,
+      "TRENDING_UP:TREND_PULLBACK": 0.963,
       "RANGING:DERIV_FLOW": 1.332,
       "TRENDING_DOWN:DERIV_FLOW": 1.365,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.92,
@@ -1228,21 +1228,6 @@
     "live_episodes": 28,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:TREND_PULLBACK",
-        "symbol": "SOLUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "LONG",
-        "regime": "TRENDING_UP",
-        "entry_price": 72.95,
-        "sl_price": 72.63051,
-        "sl_dist": 0.31949,
-        "tp1_price": 73.15767,
-        "tp2_price": 73.41326,
-        "opened_epoch": 1794890416.633435,
-        "tp1_hit": false,
-        "peak_r": 0.438
-      },
-      {
         "key": "SOLUSD:ICT",
         "symbol": "SOLUSD",
         "strategy_name": "ICT",
@@ -1255,7 +1240,7 @@
         "tp2_price": 72.45187,
         "opened_epoch": 1794890728.272654,
         "tp1_hit": false,
-        "peak_r": 0.317
+        "peak_r": 0.538
       },
       {
         "key": "SOLUSD:SND",
@@ -1306,12 +1291,12 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 801,
+    "shadow_episodes": 802,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 500
+  "cycle_count": 505
 }
