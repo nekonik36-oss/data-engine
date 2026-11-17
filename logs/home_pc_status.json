@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 22:49:21 UTC",
+  "updated_utc": "2026-11-17 22:51:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64852.26,
-    "ETHUSD": 1815.3,
-    "SOLUSD": 73.96,
+    "BTCUSD": 64777.4,
+    "ETHUSD": 1813.7,
+    "SOLUSD": 73.94,
     "XAUUSD": 3849.08,
     "EURUSD": 1.09964,
-    "USDJPY": 159.38
+    "USDJPY": 159.387
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 22:42:21 UTC",
+    "updated_utc": "2026-11-17 22:50:08 UTC",
     "total_episodes": 1017,
     "strategy_stats": {
       "SND": {
@@ -1266,6 +1266,36 @@
         "opened_epoch": 1794955002.63772,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 73.9,
+        "sl_price": 74.23516,
+        "sl_dist": 0.33516,
+        "tp1_price": 73.68215,
+        "tp2_price": 73.41402,
+        "opened_epoch": 1794955808.073743,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:KRONOS",
+        "symbol": "SOLUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 73.9,
+        "sl_price": 74.23516,
+        "sl_dist": 0.33516,
+        "tp1_price": 73.68215,
+        "tp2_price": 73.41402,
+        "opened_epoch": 1794955808.077267,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1275,10 +1305,10 @@
       "ETHUSD:BREAKOUT": 1794950715.973553,
       "ETHUSD:KRONOS": 1794949814.678681,
       "SOLUSD:BREAKOUT": 1794949518.716341,
-      "SOLUSD:KRONOS": 1794951327.139721,
+      "SOLUSD:KRONOS": 1794955808.077267,
       "BTCUSD:ICT": 1794953119.460027,
       "SOLUSD:SND": 1794941719.92021,
-      "SOLUSD:ICT": 1794952516.114395,
+      "SOLUSD:ICT": 1794955808.073743,
       "ETHUSD:TREND_PULLBACK": 1794943212.248429,
       "BTCUSD:TREND_PULLBACK": 1794943503.832944,
       "SOLUSD:TREND_PULLBACK": 1794949222.109999,
@@ -1306,7 +1336,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 20h 10m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 20h 8m)",
   "deriv_flow_status": "Shadow Incubation (273/30 eps, 61% WR, -0.04R)",
-  "cycle_count": 1925
+  "cycle_count": 1930
 }
