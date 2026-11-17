@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 08:23:22 UTC",
+  "updated_utc": "2026-11-17 08:24:46 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64566.59,
-    "ETHUSD": 1829.97,
+    "BTCUSD": 64576.43,
+    "ETHUSD": 1829.94,
     "SOLUSD": 72.66
   },
   "active_trades": {},
@@ -553,8 +553,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 08:21:35 UTC",
-    "total_episodes": 877,
+    "updated_utc": "2026-11-17 08:24:43 UTC",
+    "total_episodes": 878,
     "strategy_stats": {
       "SND": {
         "trades": 36,
@@ -592,11 +592,11 @@
         "multiplier": 0.972
       },
       "DERIV_FLOW": {
-        "trades": 220,
+        "trades": 221,
         "wins": 140,
-        "losses": 79,
-        "ema_r": 0.221,
-        "multiplier": 1.055
+        "losses": 80,
+        "ema_r": 0.159,
+        "multiplier": 1.04
       }
     },
     "regime_strategy_multipliers": {
@@ -621,7 +621,7 @@
       "TRENDING_UP:TREND_PULLBACK": 0.936,
       "RANGING:DERIV_FLOW": 1.319,
       "TRENDING_DOWN:DERIV_FLOW": 1.349,
-      "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.941,
+      "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.932,
       "MACRO_NEWS_WINDOW:SND": 0.984,
       "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.984,
       "MACRO_NEWS_WINDOW:ICT": 1.027,
@@ -1234,21 +1234,6 @@
     "live_episodes": 29,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "LONG",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 72.91,
-        "sl_price": 72.60814,
-        "sl_dist": 0.30186,
-        "tp1_price": 73.10621,
-        "tp2_price": 73.34769,
-        "opened_epoch": 1794902060.443908,
-        "tp1_hit": false,
-        "peak_r": 0.331
-      },
-      {
         "key": "ETHUSD:SND",
         "symbol": "ETHUSD",
         "strategy_name": "SND",
@@ -1327,12 +1312,12 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 830,
+    "shadow_episodes": 831,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
-  "deriv_flow_status": "Graduated Live (220 eps, 63.9% WR, +0.22R EMA)",
-  "cycle_count": 290
+  "deriv_flow_status": "Graduated Live (221 eps, 63.6% WR, +0.16R EMA)",
+  "cycle_count": 293
 }
