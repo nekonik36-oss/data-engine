@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 13:25:13 UTC",
-  "total_episodes": 913,
+  "updated_utc": "2026-11-17 13:25:55 UTC",
+  "total_episodes": 914,
   "strategy_stats": {
     "SND": {
       "trades": 38,
@@ -38,11 +38,11 @@
       "multiplier": 0.955
     },
     "DERIV_FLOW": {
-      "trades": 235,
+      "trades": 236,
       "wins": 148,
-      "losses": 86,
-      "ema_r": 0.037,
-      "multiplier": 1.009
+      "losses": 87,
+      "ema_r": -0.01,
+      "multiplier": 0.998
     }
   },
   "regime_strategy_multipliers": {
@@ -72,7 +72,7 @@
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.984,
     "MACRO_NEWS_WINDOW:ICT": 1.025,
     "TRENDING_UP:DERIV_FLOW": 1.048,
-    "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.975,
+    "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.966,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.014,
     "TRENDING_UP:SND": 0.95
   },
@@ -680,21 +680,6 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "MACRO_NEWS_WINDOW",
-      "entry_price": 73.83,
-      "sl_price": 74.17188,
-      "sl_dist": 0.34188,
-      "tp1_price": 73.60778,
-      "tp2_price": 73.33427,
-      "opened_epoch": 1794920762.70004,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
       "key": "SOLUSD:BREAKOUT",
       "symbol": "SOLUSD",
       "strategy_name": "BREAKOUT",
@@ -833,7 +818,7 @@
     "XAUUSD:ICT": 1794917462.910452,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 866,
+  "shadow_episodes": 867,
   "probation_strategies": [
     "SND"
   ]
