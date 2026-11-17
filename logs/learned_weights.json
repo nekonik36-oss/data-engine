@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 20:59:38 UTC",
-  "total_episodes": 998,
+  "updated_utc": "2026-11-17 21:01:15 UTC",
+  "total_episodes": 1000,
   "strategy_stats": {
     "SND": {
       "trades": 41,
@@ -10,11 +10,11 @@
       "multiplier": 0.957
     },
     "ICT": {
-      "trades": 244,
+      "trades": 245,
       "wins": 130,
-      "losses": 112,
-      "ema_r": 0.012,
-      "multiplier": 1.003
+      "losses": 113,
+      "ema_r": -0.069,
+      "multiplier": 0.983
     },
     "BREAKOUT": {
       "trades": 180,
@@ -31,11 +31,11 @@
       "multiplier": 1.018
     },
     "KRONOS": {
-      "trades": 195,
+      "trades": 196,
       "wins": 101,
-      "losses": 90,
-      "ema_r": 0.024,
-      "multiplier": 1.006
+      "losses": 91,
+      "ema_r": -0.058,
+      "multiplier": 0.986
     },
     "DERIV_FLOW": {
       "trades": 267,
@@ -46,8 +46,8 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.81,
-    "RANGING:KRONOS": 0.72,
+    "RANGING:ICT": 0.794,
+    "RANGING:KRONOS": 0.704,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.871,
     "RANGING:TREND_PULLBACK": 1.028,
     "TRENDING_DOWN:TREND_PULLBACK": 1.087,
@@ -681,34 +681,19 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:ICT",
+      "key": "SOLUSD:TREND_PULLBACK",
       "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "LONG",
       "regime": "RANGING",
-      "entry_price": 72.92,
-      "sl_price": 73.25274,
-      "sl_dist": 0.33274,
-      "tp1_price": 72.70372,
-      "tp2_price": 72.43753,
-      "opened_epoch": 1794948909.817395,
+      "entry_price": 73.12,
+      "sl_price": 72.7821,
+      "sl_dist": 0.3379,
+      "tp1_price": 73.33963,
+      "tp2_price": 73.60995,
+      "opened_epoch": 1794949222.109999,
       "tp1_hit": false,
-      "peak_r": 0.12
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 72.92,
-      "sl_price": 73.25274,
-      "sl_dist": 0.33274,
-      "tp1_price": 72.70372,
-      "tp2_price": 72.43753,
-      "opened_epoch": 1794948909.82039,
-      "tp1_hit": false,
-      "peak_r": 0.12
+      "peak_r": 0.621
     }
   ],
   "shadow_cooldowns": {
@@ -724,7 +709,7 @@
     "SOLUSD:ICT": 1794948909.817395,
     "ETHUSD:TREND_PULLBACK": 1794943212.248429,
     "BTCUSD:TREND_PULLBACK": 1794943503.832944,
-    "SOLUSD:TREND_PULLBACK": 1794926430.177576,
+    "SOLUSD:TREND_PULLBACK": 1794949222.109999,
     "ETHUSD:SND": 1794932124.693626,
     "BTCUSD:SND": 1794892803.932495,
     "XAUUSD:BREAKOUT": 1794844811.013358,
@@ -744,7 +729,7 @@
     "XAUUSD:ICT": 1794933348.760101,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 951,
+  "shadow_episodes": 953,
   "probation_strategies": [
     "SND"
   ]
