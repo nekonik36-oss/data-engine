@@ -692,8 +692,8 @@
       "tp1_price": 64566.25673,
       "tp2_price": 64732.16039,
       "opened_epoch": 1794950713.785303,
-      "tp1_hit": false,
-      "peak_r": 0.143
+      "tp1_hit": true,
+      "peak_r": 1.013
     },
     {
       "key": "ETHUSD:BREAKOUT",
@@ -707,8 +707,8 @@
       "tp1_price": 1814.35242,
       "tp2_price": 1821.13693,
       "opened_epoch": 1794950715.973553,
-      "tp1_hit": false,
-      "peak_r": 0.0
+      "tp1_hit": true,
+      "peak_r": 1.002
     }
   ],
   "shadow_cooldowns": {
