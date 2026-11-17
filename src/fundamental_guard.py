@@ -295,6 +295,7 @@ class CryptoDerivativesFlow:
     def __init__(self, allow_network: bool = True) -> None:
         self.allow_network = allow_network
         self._cache: Dict[str, Tuple[float, Dict[str, float | str]]] = {}
+        self._preferred_source: Optional[str] = None
 
     @classmethod
     def is_graduated(cls, learner: Any) -> Tuple[bool, str]:
@@ -332,18 +333,19 @@ class CryptoDerivativesFlow:
             return cached[1] if cached is not None else None
 
         usdt_sym, okx_sym = self.SYMBOL_MAP[sym]
+        base_ccy = okx_sym.split("-")[0]
+        idx_sym = f"{base_ccy}-USDT"
         snap: Dict[str, float | str] = {}
 
-        # 1. Primary: Binance USD-M Futures (Funding + Basis + Crowd Ratio + Taker Aggression)
-        try:
+        def _try_binance() -> Dict[str, float | str]:
             prem = _http_get_json(
-                f"https://fapi.binance.com/fapi/v1/premiumIndex?symbol={usdt_sym}", timeout=3.5
+                f"https://fapi.binance.com/fapi/v1/premiumIndex?symbol={usdt_sym}", timeout=2.5
             )
             mark_p = float(prem.get("markPrice", 0.0))
             index_p = float(prem.get("indexPrice", 0.0))
             funding = float(prem.get("lastFundingRate", 0.0))
             basis_bps = ((mark_p - index_p) / index_p * 10000.0) if index_p > 0 else 0.0
-            snap = {
+            res: Dict[str, float | str] = {
                 "source": "binance_fapi",
                 "funding_rate": funding,
                 "basis_bps": round(basis_bps, 2),
@@ -353,64 +355,122 @@ class CryptoDerivativesFlow:
             try:
                 crowd = _http_get_json(
                     f"https://fapi.binance.com/futures/data/globalLongShortAccountRatio?symbol={usdt_sym}&period=15m&limit=1",
-                    timeout=3.0,
+                    timeout=2.5,
                 )
                 if isinstance(crowd, list) and crowd:
-                    snap["long_account_pct"] = round(float(crowd[-1].get("longAccount", 0.50)), 4)
+                    res["long_account_pct"] = round(float(crowd[-1].get("longAccount", 0.50)), 4)
             except Exception:
                 pass
             try:
                 taker = _http_get_json(
                     f"https://fapi.binance.com/futures/data/takerlongshortRatio?symbol={usdt_sym}&period=15m&limit=1",
-                    timeout=3.0,
+                    timeout=2.5,
                 )
                 if isinstance(taker, list) and taker:
-                    snap["taker_buy_sell_ratio"] = round(float(taker[-1].get("buySellRatio", 1.00)), 4)
+                    res["taker_buy_sell_ratio"] = round(float(taker[-1].get("buySellRatio", 1.00)), 4)
             except Exception:
                 pass
-        except Exception:
-            snap = {}
+            return res
 
-        # 2. Fallback A: Bybit V5 Linear Perps
-        if not snap:
+        def _try_okx() -> Dict[str, float | str]:
+            okx_f = _http_get_json(
+                f"https://www.okx.com/api/v5/public/funding-rate?instId={okx_sym}",
+                timeout=2.8,
+            )
+            f_rows = okx_f.get("data") or []
+            if not f_rows:
+                return {}
+            funding = float(f_rows[0].get("fundingRate", 0.0))
+            basis_bps = 0.0
+            long_pct = 0.50
+            taker_ratio = 1.00
             try:
-                byb = _http_get_json(
-                    f"https://api.bybit.com/v5/market/tickers?category=linear&symbol={usdt_sym}",
-                    timeout=3.5,
+                mp = _http_get_json(
+                    f"https://www.okx.com/api/v5/public/mark-price?instType=SWAP&instId={okx_sym}",
+                    timeout=2.5,
                 )
-                rows = ((byb.get("result") or {}).get("list")) or []
-                if rows:
-                    row = rows[0]
-                    mark_p = float(row.get("markPrice", 0.0))
-                    index_p = float(row.get("indexPrice", 0.0))
-                    funding = float(row.get("fundingRate", 0.0))
-                    basis_bps = ((mark_p - index_p) / index_p * 10000.0) if index_p > 0 else 0.0
-                    snap = {
-                        "source": "bybit_linear",
-                        "funding_rate": funding,
-                        "basis_bps": round(basis_bps, 2),
-                        "long_account_pct": 0.50,
-                        "taker_buy_sell_ratio": 1.00,
-                    }
+                ip = _http_get_json(
+                    f"https://www.okx.com/api/v5/market/index-tickers?instId={idx_sym}",
+                    timeout=2.5,
+                )
+                m_rows = mp.get("data") or []
+                i_rows = ip.get("data") or []
+                if m_rows and i_rows:
+                    mark_p = float(m_rows[0].get("markPx", 0.0))
+                    index_p = float(i_rows[0].get("idxPx", 0.0))
+                    if index_p > 0:
+                        basis_bps = (mark_p - index_p) / index_p * 10000.0
             except Exception:
-                snap = {}
-
-        # 3. Fallback B: OKX Public Swap Funding
-        if not snap:
+                pass
             try:
-                okx = _http_get_json(
-                    f"https://www.okx.com/api/v5/public/funding-rate?instId={okx_sym}",
-                    timeout=3.5,
+                ls = _http_get_json(
+                    f"https://www.okx.com/api/v5/rubik/stat/contracts/long-short-account-ratio?ccy={base_ccy}&period=5m",
+                    timeout=2.5,
                 )
-                rows = okx.get("data") or []
-                if rows:
-                    snap = {
-                        "source": "okx_swap",
-                        "funding_rate": float(rows[0].get("fundingRate", 0.0)),
-                        "basis_bps": 0.0,
-                        "long_account_pct": 0.50,
-                        "taker_buy_sell_ratio": 1.00,
-                    }
+                ls_rows = ls.get("data") or []
+                if ls_rows and len(ls_rows[0]) >= 2:
+                    ls_ratio = float(ls_rows[0][1])
+                    if ls_ratio > 0:
+                        long_pct = ls_ratio / (1.0 + ls_ratio)
+            except Exception:
+                pass
+            try:
+                tk = _http_get_json(
+                    f"https://www.okx.com/api/v5/rubik/stat/taker-volume?ccy={base_ccy}&instType=CONTRACTS&period=5m",
+                    timeout=2.5,
+                )
+                tk_rows = (tk.get("data") or [])[:3]
+                if tk_rows:
+                    # OKX Rubik taker-volume columns: [ts, sellVol, buyVol]
+                    sell_sum = sum(float(r[1]) for r in tk_rows if len(r) >= 3)
+                    buy_sum = sum(float(r[2]) for r in tk_rows if len(r) >= 3)
+                    if sell_sum > 0:
+                        taker_ratio = buy_sum / sell_sum
+            except Exception:
+                pass
+            return {
+                "source": "okx_swap_full",
+                "funding_rate": funding,
+                "basis_bps": round(basis_bps, 2),
+                "long_account_pct": round(long_pct, 4),
+                "taker_buy_sell_ratio": round(taker_ratio, 4),
+            }
+
+        def _try_bybit() -> Dict[str, float | str]:
+            byb = _http_get_json(
+                f"https://api.bybit.com/v5/market/tickers?category=linear&symbol={usdt_sym}",
+                timeout=2.5,
+            )
+            rows = ((byb.get("result") or {}).get("list")) or []
+            if not rows:
+                return {}
+            row = rows[0]
+            mark_p = float(row.get("markPrice", 0.0))
+            index_p = float(row.get("indexPrice", 0.0))
+            funding = float(row.get("fundingRate", 0.0))
+            basis_bps = ((mark_p - index_p) / index_p * 10000.0) if index_p > 0 else 0.0
+            return {
+                "source": "bybit_linear",
+                "funding_rate": funding,
+                "basis_bps": round(basis_bps, 2),
+                "long_account_pct": 0.50,
+                "taker_buy_sell_ratio": 1.00,
+            }
+
+        providers = [
+            ("binance", _try_binance),
+            ("okx", _try_okx),
+            ("bybit", _try_bybit),
+        ]
+        if self._preferred_source is not None:
+            providers.sort(key=lambda item: 0 if item[0] == self._preferred_source else 1)
+
+        for p_name, fn in providers:
+            try:
+                snap = fn()
+                if snap:
+                    self._preferred_source = p_name
+                    break
             except Exception:
                 snap = {}
 

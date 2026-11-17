@@ -276,6 +276,9 @@ class ConfluenceEngine:
 
         if record_shadow and use_regime_gate:
             for sv in votes:
+                if sv.strategy_name == "KRONOS" and not self.kronos.is_real_gpu_model:
+                    # Never pollute KRONOS RL weights with CPU drift simulation fallback
+                    continue
                 if sv.direction != Direction.NEUTRAL and sv.confidence >= 0.65:
                     self.learner.open_shadow_trade(
                         symbol=symbol,
@@ -357,10 +360,16 @@ class ConfluenceEngine:
                 if deriv_vote is not None
                 else False
             )
+            kronos_real_ok = self.kronos.is_real_gpu_model or not record_shadow
+            tpb_mult_global = float(
+                ((self.learner.state.get("strategy_stats") or {}).get("TREND_PULLBACK") or {}).get(
+                    "multiplier", 1.0
+                )
+            )
             if symbol in {"BTCUSD", "SOLUSD"}:
                 # Engine 1 (Momentum Leaders BTCUSD & SOLUSD):
-                # Path A: H1 Trend + EMA50/200 Stack + Connors RSI(2) Pullback confirmed by >=1 peer module (ICT/BREAKOUT/KRONOS/DERIV_FLOW)
-                # Path B: Multi-Strategy Structural Consensus (>=2 modules or Top PA + KRONOS/DERIV_FLOW)
+                # Path A: H1 Trend + EMA50/200 Stack + Connors RSI(2) Pullback confirmed by >=1 peer module (ICT/BREAKOUT/DERIV_FLOW)
+                # Path B: Multi-Strategy Structural Consensus (>=2 modules or ICT/BREAKOUT + DERIV_FLOW, or ICT + Real GPU KRONOS)
                 tpb_votes = [
                     v
                     for v in pa_votes
@@ -370,16 +379,18 @@ class ConfluenceEngine:
                     direction = tpb_votes[0].direction
                     if any(v.direction != direction and v.confidence >= 0.72 for v in pa_votes):
                         return None
-                    if kronos_fc is not None:
+                    if kronos_fc is not None and kronos_real_ok:
                         if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
                             return None
                         if direction == Direction.LONG and kronos_fc.bullish_prob <= 0.32:
                             return None
                     agreeing_pa = [v for v in pa_votes if v.direction == direction]
                     kronos_confirms = (
-                        kronos_fc is not None
+                        kronos_real_ok
+                        and (not record_shadow or tpb_mult_global >= 1.03)
+                        and kronos_fc is not None
                         and kronos_fc.direction == direction
-                        and kronos_fc.confidence >= 0.35
+                        and kronos_fc.confidence >= 0.42
                     )
                     deriv_confirms = (
                         deriv_graduated
@@ -388,7 +399,7 @@ class ConfluenceEngine:
                         and deriv_vote.confidence >= 0.68
                         and regime != MarketRegime.SESSION_SWEEP_WINDOW
                     )
-                    # Ban unconfirmed solo TREND_PULLBACK & block TREND_PULLBACK inside SESSION_SWEEP_WINDOW (0.853x RL stop-hunt trap)
+                    # Require >=2 PA modules or DERIV_FLOW (solo TREND_PULLBACK + KRONOS benched until TPB >= 1.03x on real GPU)
                     if len(agreeing_pa) < 2 and not (kronos_confirms or deriv_confirms):
                         return None
                     if regime == MarketRegime.SESSION_SWEEP_WINDOW:
@@ -403,7 +414,7 @@ class ConfluenceEngine:
                 else:
                     # Path B: Multi-Strategy Consensus from Top RL Leaders:
                     #   - >=2 PA modules agreeing, OR
-                    #   - BREAKOUT / ICT confirmed by KRONOS or graduated DERIV_FLOW (63.8% WR)
+                    #   - ICT confirmed by Real GPU KRONOS or graduated DERIV_FLOW, OR BREAKOUT confirmed by DERIV_FLOW
                     if any(v.confidence >= 0.72 for v in opposing_pa):
                         return None
                     strong_agree = [v for v in agreeing_pa if v.confidence >= 0.75]
@@ -414,7 +425,8 @@ class ConfluenceEngine:
                         or (direction == Direction.SHORT and e50 < e200 and (e240 - e60) >= 0.80 * cur_atr)
                     )
                     kronos_strong = (
-                        kronos_fc is not None
+                        kronos_real_ok
+                        and kronos_fc is not None
                         and kronos_fc.direction == direction
                         and kronos_fc.confidence >= 0.40
                         and regime != MarketRegime.SESSION_SWEEP_WINDOW
@@ -438,13 +450,15 @@ class ConfluenceEngine:
                             and lead_v.confidence >= 0.78
                             and regime != MarketRegime.RANGING
                             and not brk_exhausted
+                            and (deriv_confirms or not record_shadow)
                         ):
+                            # Live solo BREAKOUT requires institutional DERIV_FLOW confirmation (0W-5L without flow)
                             top_pa_with_kronos = True
                         elif (
                             lead_v.strategy_name == "ICT"
                             and lead_v.confidence >= 0.80
                             and (
-                                (kronos_fc is not None and kronos_fc.confidence >= 0.42)
+                                (kronos_strong and kronos_fc is not None and kronos_fc.confidence >= 0.42)
                                 or deriv_confirms
                             )
                             and (
@@ -460,7 +474,7 @@ class ConfluenceEngine:
                         return None
                     if direction == Direction.SHORT and e60 > e240 and not deriv_confirms:
                         return None
-                    if kronos_fc is not None:
+                    if kronos_fc is not None and kronos_real_ok:
                         if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
                             return None
                         if direction == Direction.LONG and kronos_fc.bullish_prob <= 0.32:
@@ -497,9 +511,11 @@ class ConfluenceEngine:
                         return None
                     agreeing_pa = [v for v in pa_votes if v.direction == direction]
                     kronos_confirms = (
-                        kronos_fc is not None
+                        kronos_real_ok
+                        and (not record_shadow or tpb_mult_global >= 1.03)
+                        and kronos_fc is not None
                         and kronos_fc.direction == direction
-                        and kronos_fc.confidence >= 0.35
+                        and kronos_fc.confidence >= 0.42
                     )
                     deriv_confirms = (
                         deriv_graduated
@@ -508,7 +524,6 @@ class ConfluenceEngine:
                         and deriv_vote.confidence >= 0.68
                         and regime != MarketRegime.SESSION_SWEEP_WINDOW
                     )
-                    # Ban unconfirmed solo TREND_PULLBACK & block TREND_PULLBACK inside SESSION_SWEEP_WINDOW (0.853x RL stop-hunt trap)
                     if len(agreeing_pa) < 2 and not (kronos_confirms or deriv_confirms):
                         return None
                     if regime == MarketRegime.SESSION_SWEEP_WINDOW:
@@ -571,7 +586,7 @@ class ConfluenceEngine:
                     confluence_score = min(100.0, best_pa_conf * 100.0 + synergy)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 else:
-                    # Path C: H1-Trend BREAKOUT (>=0.78) or Macro-Trend ICT (>=0.80) confirmed by KRONOS or DERIV_FLOW
+                    # Path C: H1-Trend BREAKOUT (>=0.78, requires DERIV_FLOW live) or Macro-Trend ICT (>=0.80)
                     cand_votes = [
                         v
                         for v in pa_votes
@@ -591,6 +606,8 @@ class ConfluenceEngine:
                         and deriv_vote.confidence >= 0.68
                         and regime != MarketRegime.SESSION_SWEEP_WINDOW
                     )
+                    if lead_c.strategy_name == "BREAKOUT" and record_shadow and not deriv_confirms:
+                        return None
                     e50, e200 = ind.ema50[idx], ind.ema200[idx]
                     e60, e240 = ind.ema60[idx], ind.ema240[idx]
                     if direction == Direction.LONG and e60 < e240 and not deriv_confirms:
@@ -603,7 +620,8 @@ class ConfluenceEngine:
                     )
                     min_k_conf = 0.42 if lead_c.strategy_name == "ICT" else 0.40
                     kronos_ok_c = (
-                        kronos_fc is not None
+                        kronos_real_ok
+                        and kronos_fc is not None
                         and kronos_fc.direction == direction
                         and kronos_fc.confidence >= min_k_conf
                     )
@@ -632,7 +650,7 @@ class ConfluenceEngine:
                     )
                     confluence_score = min(100.0, best_pa_conf * 100.0 + 8.5)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
-                if kronos_fc is not None:
+                if kronos_fc is not None and kronos_real_ok:
                     if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
                         return None
                     if direction == Direction.LONG and kronos_fc.bullish_prob <= 0.32:
@@ -658,6 +676,9 @@ class ConfluenceEngine:
                         return None
 
                 if agreeing_names == {"BREAKOUT"}:
+                    if record_shadow:
+                        # Live solo BREAKOUT on Forex/Gold benched (requires >=2 PA modules like ICT + BREAKOUT)
+                        return None
                     if ind.adx[idx] < 20.0:
                         return None
                     # Block climax exhaustion chases on Gold & Forex (matches Engine 1/2 guard)
@@ -692,7 +713,7 @@ class ConfluenceEngine:
                         return None
 
                 kronos_boost = 0.0
-                if kronos_fc is not None:
+                if kronos_fc is not None and kronos_real_ok:
                     k_learned = self.learner.get_strategy_multiplier(
                         "KRONOS", regime.value
                     )
@@ -743,6 +764,16 @@ class ConfluenceEngine:
 
         if confluence_score < threshold:
             return None
+
+        if use_regime_gate and record_shadow:
+            # Strip benched strategies (e.g. SND) and CPU-simulated KRONOS from live signal attribution
+            votes = [
+                v
+                for v in votes
+                if v.strategy_name == "DERIV_FLOW"
+                or (v.strategy_name == "KRONOS" and self.kronos.is_real_gpu_model)
+                or (v.strategy_name != "KRONOS" and self.learner.is_strategy_live_active(v.strategy_name))
+            ]
 
         # 4. Calculate Structural + ATR Stop Loss (with Self-Tuned Anti-Wick Crypto Floor), TP1, TP2, and Lot Size
         entry_price = curr.close

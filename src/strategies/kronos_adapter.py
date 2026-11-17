@@ -39,6 +39,11 @@ class KronosForecaster:
         # unless live price moves >= 0.20 ATR intra-bar.
         self._forecast_cache: dict[tuple[float, object], tuple[float, KronosForecast]] = {}
 
+    @property
+    def is_real_gpu_model(self) -> bool:
+        """True only when actual `NeoQuasar/Kronos` neural weights are loaded (never CPU drift simulation)."""
+        return self._predictor is not None
+
     def _lazy_load_kronos(self) -> None:
         """Attempt to load `NeoQuasar/Kronos-base` on CUDA (cache-first, network-resilient)."""
         import time
