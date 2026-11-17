@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 09:47:45 UTC",
+  "updated_utc": "2026-11-17 09:50:09 UTC",
   "total_episodes": 892,
   "strategy_stats": {
     "SND": {
@@ -722,7 +722,22 @@
       "tp2_price": 64216.03974,
       "opened_epoch": 1794908865.075845,
       "tp1_hit": false,
-      "peak_r": 0.265
+      "peak_r": 0.445
+    },
+    {
+      "key": "BTCUSD:TREND_PULLBACK",
+      "symbol": "BTCUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 64384.0,
+      "sl_price": 64542.41555,
+      "sl_dist": 158.41555,
+      "tp1_price": 64281.02989,
+      "tp2_price": 64154.29745,
+      "opened_epoch": 1794909009.163327,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -737,7 +752,7 @@
     "SOLUSD:SND": 1794905119.045626,
     "SOLUSD:ICT": 1794906623.328625,
     "ETHUSD:TREND_PULLBACK": 1794902122.864408,
-    "BTCUSD:TREND_PULLBACK": 1794900912.483504,
+    "BTCUSD:TREND_PULLBACK": 1794909009.163327,
     "SOLUSD:TREND_PULLBACK": 1794896310.383112,
     "ETHUSD:SND": 1794902122.845636,
     "BTCUSD:SND": 1794892803.932495,
