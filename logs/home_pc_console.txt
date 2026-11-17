@@ -6,15 +6,11 @@
   Forex/Gold M15 : XAUUSD, EURUSD, USDJPY (5-Module Regime+Kronos | 78%-88% WR)
   Telegram Alert : Not configured (Run `python setup_telegram.py`)
   Kronos Model   : NeoQuasar/Kronos-base (Device: cuda)
-  Macro Shield   : Armed (-35m/+15m Red-Folder USD/EUR/JPY)
-  Self-Learning  : Dual-Speed RL Active (820 total / 775 shadow episodes | SND=0.92x, ICT=1.07x, BREAKOUT=1.04x, TREND_PULLBACK=0.96x, KRONOS=1.01x, DERIV_FLOW=1.07x[LIVE])
+  Macro Shield   : Armed (-35m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 12h 41m)
+  Self-Learning  : Dual-Speed RL Active (824 total / 779 shadow episodes | SND=0.92x, ICT=1.07x, BREAKOUT=1.06x, TREND_PULLBACK=0.96x, KRONOS=1.03x, DERIV_FLOW=1.07x[LIVE])
 ==============================================================================
 
-[2026-11-17 00:47:36 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 16W-22L ($-327.51) | Equity: $9,672.49
-  [BTCUSD (M5  Live data-api.binance.vision)] Price=64621.91   | Watching for A+ Sniper setup...
-  [ETHUSD (M5  Live data-api.binance.vision)] Price=1814.6     | Watching for A+ Sniper setup...
-  [SOLUSD (M5  Live data-api.binance.vision)] Price=71.5       | Watching for A+ Sniper setup...
-  [SHADOW RL EPISODE #821] BTCUSD (RANGING): BREAKOUT ^1.03x (+1.17R)
-  [SHADOW RL EPISODE #822] BTCUSD (RANGING): KRONOS ^0.90x (+1.17R)
-  [SHADOW RL EPISODE #823] ETHUSD (RANGING): BREAKOUT ^1.04x (+0.92R)
-  [SHADOW RL EPISODE #824] SOLUSD (RANGING): BREAKOUT v1.03x (-0.55R)
+[2026-11-17 00:48:27 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 0 | Record: 16W-22L ($-327.51) | Equity: $9,672.49
+  [BTCUSD (M5  Live data-api.binance.vision)] Price=64654.23   | Watching for A+ Sniper setup...
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1815.32    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=71.56      | Watching for A+ Sniper setup...
