@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 16:26:46 UTC",
-  "total_episodes": 967,
+  "updated_utc": "2026-11-17 16:31:53 UTC",
+  "total_episodes": 968,
   "strategy_stats": {
     "SND": {
       "trades": 39,
@@ -38,11 +38,11 @@
       "multiplier": 1.011
     },
     "DERIV_FLOW": {
-      "trades": 249,
+      "trades": 250,
       "wins": 155,
-      "losses": 93,
-      "ema_r": 0.052,
-      "multiplier": 1.013
+      "losses": 94,
+      "ema_r": 0.004,
+      "multiplier": 1.001
     }
   },
   "regime_strategy_multipliers": {
@@ -66,7 +66,7 @@
     "TRENDING_UP:BREAKOUT": 0.913,
     "TRENDING_UP:TREND_PULLBACK": 0.93,
     "RANGING:DERIV_FLOW": 1.319,
-    "TRENDING_DOWN:DERIV_FLOW": 1.359,
+    "TRENDING_DOWN:DERIV_FLOW": 1.35,
     "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.012,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.968,
@@ -681,21 +681,6 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:DERIV_FLOW",
-      "symbol": "ETHUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1794.98,
-      "sl_price": 1777.48167,
-      "sl_dist": 17.49833,
-      "tp1_price": 1806.35391,
-      "tp2_price": 1820.35257,
-      "opened_epoch": 1794932022.809679,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
       "key": "ETHUSD:SND",
       "symbol": "ETHUSD",
       "strategy_name": "SND",
@@ -708,7 +693,7 @@
       "tp2_price": 1761.40536,
       "opened_epoch": 1794932124.693626,
       "tp1_hit": false,
-      "peak_r": 0.375
+      "peak_r": 0.445
     },
     {
       "key": "ETHUSD:TREND_PULLBACK",
@@ -723,7 +708,7 @@
       "tp2_price": 1761.40536,
       "opened_epoch": 1794932124.694633,
       "tp1_hit": false,
-      "peak_r": 0.375
+      "peak_r": 0.445
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -783,7 +768,7 @@
       "tp2_price": 63424.69622,
       "opened_epoch": 1794932420.449403,
       "tp1_hit": false,
-      "peak_r": 0.458
+      "peak_r": 0.612
     }
   ],
   "shadow_cooldowns": {
@@ -819,7 +804,7 @@
     "XAUUSD:ICT": 1794931231.936578,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 920,
+  "shadow_episodes": 921,
   "probation_strategies": [
     "SND"
   ]

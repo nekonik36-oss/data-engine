@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 16:30:35 UTC",
+  "updated_utc": "2026-11-17 16:31:57 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -15,17 +15,17 @@
   "execution_mode": "auto",
   "mt5_connected": true,
   "mt5_error": null,
-  "crypto_feed_source": "data-api.binance.vision",
+  "crypto_feed_source": "api.binance.com",
   "live_equity": 9628.26,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63893.76,
-    "ETHUSD": 1780.33,
-    "SOLUSD": 72.44,
-    "XAUUSD": 3867.92,
-    "EURUSD": 1.10115,
-    "USDJPY": 159.255
+    "BTCUSD": 63874.91,
+    "ETHUSD": 1781.1,
+    "SOLUSD": 72.47,
+    "XAUUSD": 3868.3,
+    "EURUSD": 1.10131,
+    "USDJPY": 159.245
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,8 +556,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 16:26:46 UTC",
-    "total_episodes": 967,
+    "updated_utc": "2026-11-17 16:31:53 UTC",
+    "total_episodes": 968,
     "strategy_stats": {
       "SND": {
         "trades": 39,
@@ -595,11 +595,11 @@
         "multiplier": 1.011
       },
       "DERIV_FLOW": {
-        "trades": 249,
+        "trades": 250,
         "wins": 155,
-        "losses": 93,
-        "ema_r": 0.052,
-        "multiplier": 1.013
+        "losses": 94,
+        "ema_r": 0.004,
+        "multiplier": 1.001
       }
     },
     "regime_strategy_multipliers": {
@@ -623,7 +623,7 @@
       "TRENDING_UP:BREAKOUT": 0.913,
       "TRENDING_UP:TREND_PULLBACK": 0.93,
       "RANGING:DERIV_FLOW": 1.319,
-      "TRENDING_DOWN:DERIV_FLOW": 1.359,
+      "TRENDING_DOWN:DERIV_FLOW": 1.35,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.012,
       "MACRO_NEWS_WINDOW:SND": 0.984,
       "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.968,
@@ -1238,21 +1238,6 @@
     "live_episodes": 29,
     "active_shadow_trades": [
       {
-        "key": "ETHUSD:DERIV_FLOW",
-        "symbol": "ETHUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "LONG",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 1794.98,
-        "sl_price": 1777.48167,
-        "sl_dist": 17.49833,
-        "tp1_price": 1806.35391,
-        "tp2_price": 1820.35257,
-        "opened_epoch": 1794932022.809679,
-        "tp1_hit": false,
-        "peak_r": 0.0
-      },
-      {
         "key": "ETHUSD:SND",
         "symbol": "ETHUSD",
         "strategy_name": "SND",
@@ -1265,7 +1250,7 @@
         "tp2_price": 1761.40536,
         "opened_epoch": 1794932124.693626,
         "tp1_hit": false,
-        "peak_r": 0.375
+        "peak_r": 0.445
       },
       {
         "key": "ETHUSD:TREND_PULLBACK",
@@ -1280,7 +1265,7 @@
         "tp2_price": 1761.40536,
         "opened_epoch": 1794932124.694633,
         "tp1_hit": false,
-        "peak_r": 0.375
+        "peak_r": 0.445
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1340,7 +1325,7 @@
         "tp2_price": 63424.69622,
         "opened_epoch": 1794932420.449403,
         "tp1_hit": false,
-        "peak_r": 0.458
+        "peak_r": 0.612
       }
     ],
     "shadow_cooldowns": {
@@ -1376,12 +1361,12 @@
       "XAUUSD:ICT": 1794931231.936578,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 920,
+    "shadow_episodes": 921,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 26h 29m)",
-  "deriv_flow_status": "Graduated Live (249 eps, 62.5% WR, +0.05R EMA)",
-  "cycle_count": 695
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 26h 28m)",
+  "deriv_flow_status": "Shadow Incubation (250/30 eps, 62% WR, +0.00R)",
+  "cycle_count": 698
 }
