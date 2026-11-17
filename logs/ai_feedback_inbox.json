@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 04:30:33 UTC",
+  "updated_utc": "2026-11-17 04:32:41 UTC",
   "hostname": "GB-5CD52876MS",
   "live_equity": 9653.26,
   "bot_stats": {
@@ -572,34 +572,8 @@
       "net_r": -1.44
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 84882616,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "entry_price": 64420.34,
-      "exit_price": 64568.27,
-      "tp1_price": 64156.18,
-      "tp2_price": 63856.79,
-      "agreeing_strategies": [
-        "BREAKOUT",
-        "KRONOS"
-      ],
-      "regime": "TRENDING_DOWN",
-      "closed_epoch": 1794884495.342195,
-      "closed_at_utc": "2026-11-17 03:01:35 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-12 07:47:12 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 84391803,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "summary": "Ticket #84391803 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
     {
       "timestamp_utc": "2026-11-12 16:38:01 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -935,6 +909,14 @@
         "KRONOS"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=64156.18)"
+    },
+    {
+      "timestamp_utc": "2026-11-17 04:32:13 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 84882616,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #84882616 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }

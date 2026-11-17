@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 04:30:33 UTC",
+  "updated_utc": "2026-11-17 04:32:41 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64929.65,
-    "ETHUSD": 1826.93,
-    "SOLUSD": 72.67
+    "BTCUSD": 64960.02,
+    "ETHUSD": 1827.62,
+    "SOLUSD": 72.64
   },
   "active_trades": {},
   "bot_stats": {
@@ -542,7 +542,7 @@
     "crypto_book_pnl": -0.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 04:30:30 UTC",
+    "updated_utc": "2026-11-17 04:32:13 UTC",
     "total_episodes": 844,
     "strategy_stats": {
       "SND": {
@@ -672,42 +672,8 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [
-      {
-        "ticket": 84882616,
-        "symbol": "BTCUSD",
-        "direction": "SHORT",
-        "entry_price": 64420.34,
-        "exit_price": 64568.27,
-        "tp1_price": 64156.18,
-        "tp2_price": 63856.79,
-        "agreeing_strategies": [
-          "BREAKOUT",
-          "KRONOS"
-        ],
-        "regime": "TRENDING_DOWN",
-        "closed_epoch": 1794884495.342195,
-        "closed_at_utc": "2026-11-17 03:01:35 UTC",
-        "audited": false
-      }
-    ],
+    "pending_post_mortems": [],
     "ai_feedback_feed": [
-      {
-        "timestamp_utc": "2026-11-10 04:37:02 UTC",
-        "event": "TRADE_CLOSED_DIAGNOSTIC",
-        "ticket": null,
-        "symbol": "ETHUSD",
-        "direction": null,
-        "net_pnl": 12.32,
-        "r_multiple": 0.25,
-        "peak_favorable_r": 0.0,
-        "regime": "TRENDING_DOWN",
-        "strategies": [
-          "ICT",
-          "KRONOS"
-        ],
-        "auto_fix_action": "NONE"
-      },
       {
         "timestamp_utc": "2026-11-10 05:36:09 UTC",
         "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -1249,6 +1215,14 @@
           "KRONOS"
         ],
         "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=64156.18)"
+      },
+      {
+        "timestamp_utc": "2026-11-17 04:32:13 UTC",
+        "event": "TRUE_TREND_LOSS_CONFIRMED",
+        "ticket": 84882616,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "summary": "Ticket #84882616 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
       }
     ],
     "live_episodes": 28,
@@ -1281,7 +1255,7 @@
         "tp2_price": 1821.14699,
         "opened_epoch": 1794888309.09921,
         "tp1_hit": false,
-        "peak_r": 0.56
+        "peak_r": 0.64
       },
       {
         "key": "SOLUSD:ICT",
@@ -1296,7 +1270,7 @@
         "tp2_price": 72.19732,
         "opened_epoch": 1794888617.541077,
         "tp1_hit": false,
-        "peak_r": 0.059
+        "peak_r": 0.265
       }
     ],
     "shadow_cooldowns": {
@@ -1339,5 +1313,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 426
+  "cycle_count": 430
 }
