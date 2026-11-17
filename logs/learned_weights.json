@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 15:43:29 UTC",
-  "total_episodes": 957,
+  "updated_utc": "2026-11-17 15:45:00 UTC",
+  "total_episodes": 959,
   "strategy_stats": {
     "SND": {
       "trades": 39,
@@ -24,11 +24,11 @@
       "multiplier": 0.956
     },
     "TREND_PULLBACK": {
-      "trades": 112,
-      "wins": 52,
+      "trades": 113,
+      "wins": 53,
       "losses": 57,
-      "ema_r": -0.196,
-      "multiplier": 0.951
+      "ema_r": -0.087,
+      "multiplier": 0.978
     },
     "KRONOS": {
       "trades": 193,
@@ -38,17 +38,17 @@
       "multiplier": 1.034
     },
     "DERIV_FLOW": {
-      "trades": 246,
-      "wins": 153,
+      "trades": 247,
+      "wins": 154,
       "losses": 92,
-      "ema_r": -0.043,
-      "multiplier": 0.989
+      "ema_r": 0.054,
+      "multiplier": 1.014
     }
   },
   "regime_strategy_multipliers": {
     "RANGING:ICT": 0.814,
     "RANGING:KRONOS": 0.72,
-    "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.852,
+    "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.871,
     "RANGING:TREND_PULLBACK": 1.02,
     "TRENDING_DOWN:TREND_PULLBACK": 1.065,
     "SESSION_SWEEP_WINDOW:ICT": 0.911,
@@ -67,7 +67,7 @@
     "TRENDING_UP:TREND_PULLBACK": 0.93,
     "RANGING:DERIV_FLOW": 1.319,
     "TRENDING_DOWN:DERIV_FLOW": 1.359,
-    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.99,
+    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.009,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.968,
     "MACRO_NEWS_WINDOW:ICT": 1.039,
@@ -681,34 +681,19 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:DERIV_FLOW",
-      "symbol": "ETHUSD",
+      "key": "SOLUSD:DERIV_FLOW",
+      "symbol": "SOLUSD",
       "strategy_name": "DERIV_FLOW",
       "direction": "SHORT",
       "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 1798.09,
-      "sl_price": 1809.69463,
-      "sl_dist": 11.60463,
-      "tp1_price": 1790.54699,
-      "tp2_price": 1781.26329,
-      "opened_epoch": 1794929715.512601,
+      "entry_price": 72.92,
+      "sl_price": 73.45706,
+      "sl_dist": 0.53706,
+      "tp1_price": 72.57091,
+      "tp2_price": 72.14127,
+      "opened_epoch": 1794930278.842716,
       "tp1_hit": true,
-      "peak_r": 1.019
-    },
-    {
-      "key": "ETHUSD:TREND_PULLBACK",
-      "symbol": "ETHUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 1798.09,
-      "sl_price": 1809.69463,
-      "sl_dist": 11.60463,
-      "tp1_price": 1790.54699,
-      "tp2_price": 1781.26329,
-      "opened_epoch": 1794929716.278255,
-      "tp1_hit": true,
-      "peak_r": 1.019
+      "peak_r": 1.248
     }
   ],
   "shadow_cooldowns": {
@@ -730,7 +715,7 @@
     "XAUUSD:BREAKOUT": 1794844811.013358,
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1794927609.018028,
-    "SOLUSD:DERIV_FLOW": 1794928156.363637,
+    "SOLUSD:DERIV_FLOW": 1794930278.842716,
     "BTCUSD:DERIV_FLOW": 1794929075.962539,
     "ETHUSD:DERIV_FLOW": 1794929715.512601,
     "EURUSD:BREAKOUT": 1794826814.809407,
@@ -744,7 +729,7 @@
     "XAUUSD:ICT": 1794927025.170117,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 910,
+  "shadow_episodes": 912,
   "probation_strategies": [
     "SND"
   ]
