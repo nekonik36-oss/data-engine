@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 18:55:19 UTC",
-  "total_episodes": 979,
+  "updated_utc": "2026-11-17 19:08:24 UTC",
+  "total_episodes": 980,
   "strategy_stats": {
     "SND": {
       "trades": 40,
@@ -10,11 +10,11 @@
       "multiplier": 0.949
     },
     "ICT": {
-      "trades": 242,
+      "trades": 243,
       "wins": 129,
-      "losses": 111,
-      "ema_r": 0.019,
-      "multiplier": 1.005
+      "losses": 112,
+      "ema_r": -0.027,
+      "multiplier": 0.993
     },
     "BREAKOUT": {
       "trades": 177,
@@ -46,7 +46,7 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.812,
+    "RANGING:ICT": 0.803,
     "RANGING:KRONOS": 0.72,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.871,
     "RANGING:TREND_PULLBACK": 1.027,
@@ -726,21 +726,6 @@
       "peak_r": 0.325
     },
     {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 1786.86,
-      "sl_price": 1796.91578,
-      "sl_dist": 10.05578,
-      "tp1_price": 1780.32374,
-      "tp2_price": 1772.27911,
-      "opened_epoch": 1794941403.300735,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
       "key": "SOLUSD:SND",
       "symbol": "SOLUSD",
       "strategy_name": "SND",
@@ -753,7 +738,7 @@
       "tp2_price": 73.18551,
       "opened_epoch": 1794941719.92021,
       "tp1_hit": false,
-      "peak_r": 0.111
+      "peak_r": 0.221
     }
   ],
   "shadow_cooldowns": {
@@ -789,7 +774,7 @@
     "XAUUSD:ICT": 1794933348.760101,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 932,
+  "shadow_episodes": 933,
   "probation_strategies": [
     "SND"
   ]
