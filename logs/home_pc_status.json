@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 14:38:19 UTC",
+  "updated_utc": "2026-11-17 14:40:51 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65208.4,
-    "ETHUSD": 1832.3,
-    "SOLUSD": 74.26,
-    "XAUUSD": 3867.59,
+    "BTCUSD": 65255.46,
+    "ETHUSD": 1826.45,
+    "SOLUSD": 74.15,
+    "XAUUSD": 3864.81,
     "EURUSD": 1.09879,
-    "USDJPY": 159.335
+    "USDJPY": 159.318
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 14:36:23 UTC",
+    "updated_utc": "2026-11-17 14:40:30 UTC",
     "total_episodes": 933,
     "strategy_stats": {
       "SND": {
@@ -1281,22 +1281,82 @@
         "opened_epoch": 1794926117.400199,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "BTCUSD:BREAKOUT",
+        "symbol": "BTCUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 65241.81,
+        "sl_price": 65028.47213,
+        "sl_dist": 213.33787,
+        "tp1_price": 65380.47961,
+        "tp2_price": 65551.14991,
+        "opened_epoch": 1794926413.186518,
+        "tp1_hit": false,
+        "peak_r": 0.064
+      },
+      {
+        "key": "BTCUSD:TREND_PULLBACK",
+        "symbol": "BTCUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 65241.81,
+        "sl_price": 65028.47213,
+        "sl_dist": 213.33787,
+        "tp1_price": 65380.47961,
+        "tp2_price": 65551.14991,
+        "opened_epoch": 1794926413.187518,
+        "tp1_hit": false,
+        "peak_r": 0.064
+      },
+      {
+        "key": "SOLUSD:TREND_PULLBACK",
+        "symbol": "SOLUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 74.11,
+        "sl_price": 73.71316,
+        "sl_dist": 0.39684,
+        "tp1_price": 74.36795,
+        "tp2_price": 74.68542,
+        "opened_epoch": 1794926430.177576,
+        "tp1_hit": false,
+        "peak_r": 0.101
+      },
+      {
+        "key": "SOLUSD:KRONOS",
+        "symbol": "SOLUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 74.11,
+        "sl_price": 74.50684,
+        "sl_dist": 0.39684,
+        "tp1_price": 73.85205,
+        "tp2_price": 73.53458,
+        "opened_epoch": 1794926430.178583,
+        "tp1_hit": false,
+        "peak_r": 0.151
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794924618.470571,
-      "BTCUSD:BREAKOUT": 1794904536.118477,
+      "BTCUSD:BREAKOUT": 1794926413.186518,
       "BTCUSD:KRONOS": 1794924025.656234,
       "ETHUSD:BREAKOUT": 1794924008.282651,
       "ETHUSD:KRONOS": 1794893130.552113,
       "SOLUSD:BREAKOUT": 1794921004.626609,
-      "SOLUSD:KRONOS": 1794921021.993951,
+      "SOLUSD:KRONOS": 1794926430.178583,
       "BTCUSD:ICT": 1794921613.508128,
       "SOLUSD:SND": 1794905119.045626,
       "SOLUSD:ICT": 1794922818.096432,
       "ETHUSD:TREND_PULLBACK": 1794902122.864408,
-      "BTCUSD:TREND_PULLBACK": 1794922209.103378,
-      "SOLUSD:TREND_PULLBACK": 1794923714.870221,
+      "BTCUSD:TREND_PULLBACK": 1794926413.187518,
+      "SOLUSD:TREND_PULLBACK": 1794926430.177576,
       "ETHUSD:SND": 1794902122.845636,
       "BTCUSD:SND": 1794892803.932495,
       "XAUUSD:BREAKOUT": 1794844811.013358,
@@ -1321,7 +1381,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 28h 21m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 28h 19m)",
   "deriv_flow_status": "Shadow Incubation (242/30 eps, 62% WR, -0.21R)",
-  "cycle_count": 440
+  "cycle_count": 445
 }
