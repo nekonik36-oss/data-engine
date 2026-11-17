@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 12:15:09 UTC",
+  "updated_utc": "2026-11-17 12:25:03 UTC",
   "total_episodes": 900,
   "strategy_stats": {
     "SND": {
@@ -783,6 +783,21 @@
       "opened_epoch": 1794917709.280192,
       "tp1_hit": false,
       "peak_r": 0.034
+    },
+    {
+      "key": "SOLUSD:TREND_PULLBACK",
+      "symbol": "SOLUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "entry_price": 73.4,
+      "sl_price": 73.08009,
+      "sl_dist": 0.31991,
+      "tp1_price": 73.60794,
+      "tp2_price": 73.86387,
+      "opened_epoch": 1794918303.594385,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -798,7 +813,7 @@
     "SOLUSD:ICT": 1794917462.314304,
     "ETHUSD:TREND_PULLBACK": 1794902122.864408,
     "BTCUSD:TREND_PULLBACK": 1794909009.163327,
-    "SOLUSD:TREND_PULLBACK": 1794896310.383112,
+    "SOLUSD:TREND_PULLBACK": 1794918303.594385,
     "ETHUSD:SND": 1794902122.845636,
     "BTCUSD:SND": 1794892803.932495,
     "XAUUSD:BREAKOUT": 1794844811.013358,
