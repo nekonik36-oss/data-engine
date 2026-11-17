@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 13:10:23 UTC",
+  "updated_utc": "2026-11-17 13:11:57 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65085.86,
-    "ETHUSD": 1823.0,
-    "SOLUSD": 73.96,
-    "XAUUSD": 3858.9,
-    "EURUSD": 1.09878,
-    "USDJPY": 159.267
+    "BTCUSD": 65050.0,
+    "ETHUSD": 1821.24,
+    "SOLUSD": 73.99,
+    "XAUUSD": 3857.75,
+    "EURUSD": 1.09884,
+    "USDJPY": 159.265
   },
   "active_trades": {},
   "bot_stats": {
@@ -1279,7 +1279,7 @@
         "tp2_price": 74.48071,
         "opened_epoch": 1794921004.626609,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.145
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1335,7 +1335,7 @@
       "SND"
     ]
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core Retail Sales m/m / USD Retail Sales m/m releases in 20m (13:30 UTC) [-35m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core Retail Sales m/m / USD Retail Sales m/m releases in 18m (13:30 UTC) [-35m/+15m shield])",
   "deriv_flow_status": "Shadow Incubation (235/30 eps, 63% WR, +0.04R)",
-  "cycle_count": 190
+  "cycle_count": 195
 }
