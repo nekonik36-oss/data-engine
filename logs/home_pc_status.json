@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 13:20:18 UTC",
+  "updated_utc": "2026-11-17 13:21:36 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64974.01,
-    "ETHUSD": 1819.41,
-    "SOLUSD": 73.97,
-    "XAUUSD": 3853.97,
-    "EURUSD": 1.09822,
-    "USDJPY": 159.341
+    "BTCUSD": 64995.85,
+    "ETHUSD": 1819.91,
+    "SOLUSD": 74.07,
+    "XAUUSD": 3854.69,
+    "EURUSD": 1.09833,
+    "USDJPY": 159.344
   },
   "active_trades": {},
   "bot_stats": {
@@ -1294,7 +1294,7 @@
         "tp2_price": 1812.71343,
         "opened_epoch": 1794921308.284518,
         "tp1_hit": false,
-        "peak_r": 0.481
+        "peak_r": 0.607
       },
       {
         "key": "EURUSD:TREND_PULLBACK",
@@ -1324,7 +1324,7 @@
         "tp2_price": 64779.71254,
         "opened_epoch": 1794921613.508128,
         "tp1_hit": false,
-        "peak_r": 0.205
+        "peak_r": 0.347
       }
     ],
     "shadow_cooldowns": {
@@ -1365,7 +1365,7 @@
       "SND"
     ]
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core Retail Sales m/m / USD Retail Sales m/m releases in 10m (13:30 UTC) [-35m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core Retail Sales m/m / USD Retail Sales m/m releases in 8m (13:30 UTC) [-35m/+15m shield])",
   "deriv_flow_status": "Shadow Incubation (235/30 eps, 63% WR, +0.04R)",
-  "cycle_count": 221
+  "cycle_count": 225
 }
