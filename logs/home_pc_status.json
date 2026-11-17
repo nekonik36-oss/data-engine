@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 21:34:58 UTC",
+  "updated_utc": "2026-11-17 21:36:43 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64566.0,
-    "ETHUSD": 1814.87,
-    "SOLUSD": 73.91,
-    "XAUUSD": 3856.39,
-    "EURUSD": 1.1,
-    "USDJPY": 159.371
+    "BTCUSD": 64582.01,
+    "ETHUSD": 1813.96,
+    "SOLUSD": 73.84,
+    "XAUUSD": 3856.21,
+    "EURUSD": 1.10004,
+    "USDJPY": 159.367
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 21:25:15 UTC",
+    "updated_utc": "2026-11-17 21:35:27 UTC",
     "total_episodes": 1007,
     "strategy_stats": {
       "SND": {
@@ -1266,6 +1266,21 @@
         "opened_epoch": 1794950715.973553,
         "tp1_hit": true,
         "peak_r": 1.009
+      },
+      {
+        "key": "SOLUSD:KRONOS",
+        "symbol": "SOLUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 73.9,
+        "sl_price": 74.29738,
+        "sl_dist": 0.39738,
+        "tp1_price": 73.6417,
+        "tp2_price": 73.3238,
+        "opened_epoch": 1794951327.139721,
+        "tp1_hit": false,
+        "peak_r": 0.352
       }
     ],
     "shadow_cooldowns": {
@@ -1275,7 +1290,7 @@
       "ETHUSD:BREAKOUT": 1794950715.973553,
       "ETHUSD:KRONOS": 1794949814.678681,
       "SOLUSD:BREAKOUT": 1794949518.716341,
-      "SOLUSD:KRONOS": 1794948909.82039,
+      "SOLUSD:KRONOS": 1794951327.139721,
       "BTCUSD:ICT": 1794949812.886457,
       "SOLUSD:SND": 1794941719.92021,
       "SOLUSD:ICT": 1794948909.817395,
@@ -1306,7 +1321,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 21h 25m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 21h 23m)",
   "deriv_flow_status": "Shadow Incubation (269/30 eps, 61% WR, -0.08R)",
-  "cycle_count": 1720
+  "cycle_count": 1725
 }
