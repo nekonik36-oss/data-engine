@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 12:25:03 UTC",
-  "total_episodes": 900,
+  "updated_utc": "2026-11-17 12:29:03 UTC",
+  "total_episodes": 901,
   "strategy_stats": {
     "SND": {
       "trades": 38,
@@ -10,11 +10,11 @@
       "multiplier": 0.919
     },
     "ICT": {
-      "trades": 218,
+      "trades": 219,
       "wins": 116,
-      "losses": 100,
-      "ema_r": 0.148,
-      "multiplier": 1.037
+      "losses": 101,
+      "ema_r": 0.092,
+      "multiplier": 1.023
     },
     "BREAKOUT": {
       "trades": 167,
@@ -70,7 +70,7 @@
     "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.006,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.984,
-    "MACRO_NEWS_WINDOW:ICT": 1.027,
+    "MACRO_NEWS_WINDOW:ICT": 1.018,
     "TRENDING_UP:DERIV_FLOW": 1.057,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.975,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.014,
@@ -755,21 +755,6 @@
       "peak_r": 0.461
     },
     {
-      "key": "XAUUSD:ICT",
-      "symbol": "XAUUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "MACRO_NEWS_WINDOW",
-      "entry_price": 3867.87,
-      "sl_price": 3858.72329,
-      "sl_dist": 9.14671,
-      "tp1_price": 3873.81536,
-      "tp2_price": 3881.13273,
-      "opened_epoch": 1794917462.910452,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
       "key": "EURUSD:ICT",
       "symbol": "EURUSD",
       "strategy_name": "ICT",
@@ -797,7 +782,7 @@
       "tp2_price": 73.86387,
       "opened_epoch": 1794918303.594385,
       "tp1_hit": false,
-      "peak_r": 0.531
+      "peak_r": 0.563
     }
   ],
   "shadow_cooldowns": {
@@ -833,7 +818,7 @@
     "XAUUSD:ICT": 1794917462.910452,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 853,
+  "shadow_episodes": 854,
   "probation_strategies": [
     "SND"
   ]
