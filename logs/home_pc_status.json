@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 22:05:36 UTC",
+  "updated_utc": "2026-11-17 22:06:22 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64234.76,
-    "ETHUSD": 1800.68,
-    "SOLUSD": 73.37,
+    "BTCUSD": 64216.87,
+    "ETHUSD": 1800.52,
+    "SOLUSD": 73.39,
     "XAUUSD": 3849.08,
-    "EURUSD": 1.09962,
+    "EURUSD": 1.09961,
     "USDJPY": 159.315
   },
   "active_trades": {},
@@ -1250,7 +1250,7 @@
         "tp2_price": 64165.55422,
         "opened_epoch": 1794951870.486378,
         "tp1_hit": true,
-        "peak_r": 1.13
+        "peak_r": 1.346
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1264,8 +1264,8 @@
         "tp1_price": 73.28172,
         "tp2_price": 72.96383,
         "opened_epoch": 1794952185.503664,
-        "tp1_hit": false,
-        "peak_r": 0.528
+        "tp1_hit": true,
+        "peak_r": 0.705
       },
       {
         "key": "SOLUSD:ICT",
@@ -1280,7 +1280,7 @@
         "tp2_price": 72.8536,
         "opened_epoch": 1794952516.114395,
         "tp1_hit": false,
-        "peak_r": 0.186
+        "peak_r": 0.372
       },
       {
         "key": "ETHUSD:DERIV_FLOW",
@@ -1294,8 +1294,8 @@
         "tp1_price": 1799.96847,
         "tp2_price": 1793.52966,
         "opened_epoch": 1794952761.332107,
-        "tp1_hit": false,
-        "peak_r": 0.595
+        "tp1_hit": true,
+        "peak_r": 0.788
       },
       {
         "key": "BTCUSD:ICT",
@@ -1310,7 +1310,7 @@
         "tp2_price": 63951.4991,
         "opened_epoch": 1794953119.460027,
         "tp1_hit": false,
-        "peak_r": 0.014
+        "peak_r": 0.25
       }
     ],
     "shadow_cooldowns": {
@@ -1351,7 +1351,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 20h 54m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 20h 53m)",
   "deriv_flow_status": "Shadow Incubation (269/30 eps, 61% WR, -0.08R)",
-  "cycle_count": 1808
+  "cycle_count": 1810
 }
