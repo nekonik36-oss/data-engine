@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 13:28:13 UTC",
+  "updated_utc": "2026-11-17 13:28:34 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65071.34,
-    "ETHUSD": 1825.05,
-    "SOLUSD": 74.07,
-    "XAUUSD": 3856.62,
-    "EURUSD": 1.09852,
+    "BTCUSD": 65122.39,
+    "ETHUSD": 1827.0,
+    "SOLUSD": 74.15,
+    "XAUUSD": 3858.18,
+    "EURUSD": 1.09856,
     "USDJPY": 159.355
   },
   "active_trades": {},
@@ -556,8 +556,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 13:25:55 UTC",
-    "total_episodes": 914,
+    "updated_utc": "2026-11-17 13:28:33 UTC",
+    "total_episodes": 915,
     "strategy_stats": {
       "SND": {
         "trades": 38,
@@ -595,11 +595,11 @@
         "multiplier": 0.955
       },
       "DERIV_FLOW": {
-        "trades": 236,
+        "trades": 237,
         "wins": 148,
-        "losses": 87,
-        "ema_r": -0.01,
-        "multiplier": 0.998
+        "losses": 88,
+        "ema_r": -0.089,
+        "multiplier": 0.978
       }
     },
     "regime_strategy_multipliers": {
@@ -629,7 +629,7 @@
       "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.984,
       "MACRO_NEWS_WINDOW:ICT": 1.025,
       "TRENDING_UP:DERIV_FLOW": 1.048,
-      "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.966,
+      "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.95,
       "MACRO_NEWS_WINDOW:BREAKOUT": 1.014,
       "TRENDING_UP:SND": 0.95
     },
@@ -1249,7 +1249,7 @@
         "tp2_price": 74.48071,
         "opened_epoch": 1794921004.626609,
         "tp1_hit": false,
-        "peak_r": 0.376
+        "peak_r": 0.492
       },
       {
         "key": "SOLUSD:KRONOS",
@@ -1312,21 +1312,6 @@
         "peak_r": 0.352
       },
       {
-        "key": "ETHUSD:DERIV_FLOW",
-        "symbol": "ETHUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "MACRO_NEWS_WINDOW",
-        "entry_price": 1819.9,
-        "sl_price": 1826.76776,
-        "sl_dist": 6.86776,
-        "tp1_price": 1815.43595,
-        "tp2_price": 1809.94174,
-        "opened_epoch": 1794921774.993966,
-        "tp1_hit": false,
-        "peak_r": 0.264
-      },
-      {
         "key": "BTCUSD:KRONOS",
         "symbol": "BTCUSD",
         "strategy_name": "KRONOS",
@@ -1375,12 +1360,12 @@
       "XAUUSD:ICT": 1794917462.910452,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 867,
+    "shadow_episodes": 868,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core Retail Sales m/m / USD Retail Sales m/m releases in 2m (13:30 UTC) [-35m/+15m shield])",
-  "deriv_flow_status": "Shadow Incubation (236/30 eps, 63% WR, -0.01R)",
-  "cycle_count": 245
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core Retail Sales m/m / USD Retail Sales m/m releases in 1m (13:30 UTC) [-35m/+15m shield])",
+  "deriv_flow_status": "Shadow Incubation (237/30 eps, 63% WR, -0.09R)",
+  "cycle_count": 246
 }
