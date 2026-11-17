@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 05:42:30 UTC",
+  "updated_utc": "2026-11-17 05:43:51 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,7 +20,7 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 1835.46,
+    "ETHUSD": 1835.89,
     "SOLUSD": 72.8
   },
   "active_trades": {
@@ -31,7 +31,7 @@
       "broker_source": "CRYPTO_24_7_LIVE",
       "direction": "LONG",
       "entry_price": 65003.77,
-      "sl_price": 64679.03,
+      "sl_price": 64825.16,
       "initial_sl_price": 64679.03,
       "tp1_price": 65247.32,
       "tp2_price": 65523.35,
@@ -48,7 +48,9 @@
       "opened_at_utc": "2026-11-17 05:25:29 UTC",
       "tp1_hit": false,
       "partial_pnl": 0.0,
-      "peak_favorable_r": 0.1
+      "peak_favorable_r": 0.1,
+      "failed_impulse_shield": true,
+      "time_decay_applied": true
     }
   },
   "bot_stats": {
@@ -1297,7 +1299,7 @@
         "tp2_price": 72.47432,
         "opened_epoch": 1794893430.192264,
         "tp1_hit": false,
-        "peak_r": 0.457
+        "peak_r": 0.518
       }
     ],
     "shadow_cooldowns": {
@@ -1340,5 +1342,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 572
+  "cycle_count": 575
 }
