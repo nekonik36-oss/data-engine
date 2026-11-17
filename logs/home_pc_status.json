@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 05:52:50 UTC",
+  "updated_utc": "2026-11-17 05:55:07 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 1835.18,
-    "SOLUSD": 72.76
+    "ETHUSD": 1834.88,
+    "SOLUSD": 72.74
   },
   "active_trades": {
     "84893129": {
@@ -570,7 +570,7 @@
     "crypto_book_pnl": -0.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 05:45:07 UTC",
+    "updated_utc": "2026-11-17 05:55:02 UTC",
     "total_episodes": 853,
     "strategy_stats": {
       "SND": {
@@ -1298,8 +1298,8 @@
         "tp1_price": 72.73676,
         "tp2_price": 72.47432,
         "opened_epoch": 1794893430.192264,
-        "tp1_hit": false,
-        "peak_r": 0.61
+        "tp1_hit": true,
+        "peak_r": 0.762
       },
       {
         "key": "ETHUSD:ICT",
@@ -1314,7 +1314,22 @@
         "tp2_price": 1828.37901,
         "opened_epoch": 1794894307.70232,
         "tp1_hit": false,
-        "peak_r": 0.364
+        "peak_r": 0.371
+      },
+      {
+        "key": "SOLUSD:KRONOS",
+        "symbol": "SOLUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 72.74,
+        "sl_price": 73.03177,
+        "sl_dist": 0.29177,
+        "tp1_price": 72.55035,
+        "tp2_price": 72.31693,
+        "opened_epoch": 1794894902.610852,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1324,7 +1339,7 @@
       "ETHUSD:BREAKOUT": 1794893130.540788,
       "ETHUSD:KRONOS": 1794893130.552113,
       "SOLUSD:BREAKOUT": 1794888005.223338,
-      "SOLUSD:KRONOS": 1794885023.829378,
+      "SOLUSD:KRONOS": 1794894902.610852,
       "BTCUSD:ICT": 1794888308.470685,
       "SOLUSD:SND": 1794891618.545652,
       "SOLUSD:ICT": 1794893430.192264,
@@ -1357,5 +1372,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 595
+  "cycle_count": 600
 }
