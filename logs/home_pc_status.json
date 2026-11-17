@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 20:20:11 UTC",
+  "updated_utc": "2026-11-17 20:21:16 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63953.89,
-    "ETHUSD": 1796.59,
-    "SOLUSD": 72.93,
-    "XAUUSD": 3846.66,
-    "EURUSD": 1.10033,
-    "USDJPY": 159.343
+    "BTCUSD": 63991.91,
+    "ETHUSD": 1797.9,
+    "SOLUSD": 73.0,
+    "XAUUSD": 3847.49,
+    "EURUSD": 1.10035,
+    "USDJPY": 159.349
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 20:20:07 UTC",
+    "updated_utc": "2026-11-17 20:20:32 UTC",
     "total_episodes": 989,
     "strategy_stats": {
       "SND": {
@@ -1266,11 +1266,26 @@
         "opened_epoch": 1794945581.412385,
         "tp1_hit": false,
         "peak_r": 0.4
+      },
+      {
+        "key": "BTCUSD:BREAKOUT",
+        "symbol": "BTCUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 63953.89,
+        "sl_price": 63774.46806,
+        "sl_dist": 179.42194,
+        "tp1_price": 64070.51426,
+        "tp2_price": 64214.05181,
+        "opened_epoch": 1794946832.545829,
+        "tp1_hit": false,
+        "peak_r": 0.212
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794941403.300735,
-      "BTCUSD:BREAKOUT": 1794930333.726445,
+      "BTCUSD:BREAKOUT": 1794946832.545829,
       "BTCUSD:KRONOS": 1794930400.393225,
       "ETHUSD:BREAKOUT": 1794930335.165655,
       "ETHUSD:KRONOS": 1794932124.695626,
@@ -1306,7 +1321,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 22h 39m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 22h 38m)",
   "deriv_flow_status": "Shadow Incubation (262/30 eps, 61% WR, -0.12R)",
-  "cycle_count": 1492
+  "cycle_count": 1495
 }
