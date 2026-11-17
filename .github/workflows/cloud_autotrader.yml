@@ -40,11 +40,11 @@ jobs:
               ts_str = str(s.get("updated_utc", ""))
               dt = datetime.strptime(ts_str, "%Y-%m-%d %H:%M:%S UTC").replace(tzinfo=timezone.utc)
               age_sec = (datetime.now(timezone.utc) - dt).total_seconds()
-              if host == "DESKTOP-8RQUOSU" and age_sec < 420:
-                  print(f"[CLOUD STANDBY] Home PC {host} is active ({age_sec:.0f}s ago). Yielding to Home PC RTX 5060.")
+              if host in ("DESKTOP-8RQUOSU", "GB-5CD52876MS") and age_sec < 420:
+                  print(f"[CLOUD STANDBY] Local host {host} is active ({age_sec:.0f}s ago). Yielding.")
                   open("skip_cloud.flag", "w").write("1")
               else:
-                  print(f"[CLOUD FAILOVER ACTIVE] Home PC last seen {age_sec/60:.1f}m ago (host={host}). Running Cloud Auto-Trader.")
+                  print(f"[CLOUD SHADOW-RL ACTIVE] Local hosts idle ({age_sec/60:.1f}m ago, host={host}). Running Shadow-RL Trainer.")
           except Exception as e:
               print("[CLOUD FAILOVER ACTIVE] Running Cloud Auto-Trader:", e)
           '
@@ -65,4 +65,4 @@ jobs:
         run: |
           git config user.name "Cloud Auto-Trader Bot"
           git config user.email "autotrader-bot@users.noreply.github.com"
-          python3 run_scanner.py --interval 30 --max-cycles 20
+          python3 run_scanner.py --signal-only --interval 30 --max-cycles 20
