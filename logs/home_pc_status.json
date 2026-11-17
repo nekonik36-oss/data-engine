@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 12:12:20 UTC",
+  "updated_utc": "2026-11-17 12:13:53 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64846.68,
-    "ETHUSD": 1812.78,
-    "SOLUSD": 73.2,
-    "XAUUSD": 3865.16,
-    "EURUSD": 1.09913,
+    "BTCUSD": 64830.97,
+    "ETHUSD": 1812.9,
+    "SOLUSD": 73.19,
+    "XAUUSD": 3863.16,
+    "EURUSD": 1.0990199999999999,
     "USDJPY": 159.23
   },
   "active_trades": {},
@@ -1249,7 +1249,7 @@
         "tp2_price": 64620.50039,
         "opened_epoch": 1794917447.217473,
         "tp1_hit": false,
-        "peak_r": 0.194
+        "peak_r": 0.253
       },
       {
         "key": "ETHUSD:DERIV_FLOW",
@@ -1264,7 +1264,7 @@
         "tp2_price": 1803.4716,
         "opened_epoch": 1794917448.940005,
         "tp1_hit": false,
-        "peak_r": 0.267
+        "peak_r": 0.292
       },
       {
         "key": "ETHUSD:ICT",
@@ -1279,7 +1279,7 @@
         "tp2_price": 1803.4716,
         "opened_epoch": 1794917459.310128,
         "tp1_hit": false,
-        "peak_r": 0.267
+        "peak_r": 0.292
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1294,7 +1294,7 @@
         "tp2_price": 72.81823,
         "opened_epoch": 1794917461.7281,
         "tp1_hit": false,
-        "peak_r": 0.277
+        "peak_r": 0.307
       },
       {
         "key": "SOLUSD:ICT",
@@ -1309,7 +1309,7 @@
         "tp2_price": 72.81823,
         "opened_epoch": 1794917462.314304,
         "tp1_hit": false,
-        "peak_r": 0.277
+        "peak_r": 0.307
       },
       {
         "key": "XAUUSD:ICT",
@@ -1365,7 +1365,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 1h 17m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 1h 16m)",
   "deriv_flow_status": "Graduated Live (231 eps, 64.3% WR, +0.32R EMA)",
-  "cycle_count": 5
+  "cycle_count": 10
 }
