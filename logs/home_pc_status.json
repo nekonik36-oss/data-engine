@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 13:36:22 UTC",
+  "updated_utc": "2026-11-17 13:37:59 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64980.0,
-    "ETHUSD": 1823.17,
-    "SOLUSD": 73.84,
-    "XAUUSD": 3848.34,
-    "EURUSD": 1.09696,
-    "USDJPY": 159.438
+    "BTCUSD": 64986.0,
+    "ETHUSD": 1822.78,
+    "SOLUSD": 73.76,
+    "XAUUSD": 3846.87,
+    "EURUSD": 1.0969,
+    "USDJPY": 159.456
   },
   "active_trades": {},
   "bot_stats": {
@@ -1264,7 +1264,7 @@
         "tp2_price": 73.47929,
         "opened_epoch": 1794921021.993951,
         "tp1_hit": false,
-        "peak_r": 0.463
+        "peak_r": 0.637
       },
       {
         "key": "BTCUSD:ICT",
@@ -1380,7 +1380,7 @@
       "SND"
     ]
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core Retail Sales m/m / USD Retail Sales m/m released 6m ago (13:30 UTC) [-35m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core Retail Sales m/m / USD Retail Sales m/m released 8m ago (13:30 UTC) [-35m/+15m shield])",
   "deriv_flow_status": "Shadow Incubation (237/30 eps, 63% WR, -0.09R)",
-  "cycle_count": 270
+  "cycle_count": 275
 }
