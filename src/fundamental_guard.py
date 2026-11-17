@@ -5,7 +5,7 @@ Architecture & RL-Safety Guarantees:
   1. `MacroNewsShield`:
      - Pulls the official weekly economic calendar (`ff_calendar_thisweek.json`) with a 4-hour
        memory + disk cache (`logs/macro_calendar_cache.json`).
-     - Blocks new live executions 20m BEFORE through 15m AFTER Red-Folder (`High` impact)
+     - Blocks new live executions 35m BEFORE through 15m AFTER Red-Folder (`High` impact)
        macro releases (`CPI`, `PPI`, `NFP`, `FOMC`, `Core PCE`, `Powell`, `GDP`, etc.) for all
        affected pairs (`USD` events shield Crypto + Gold + Forex; `EUR`/`JPY` shield their pairs).
      - Isolates Shadow RL episodes opened during news shocks under `MACRO_NEWS_WINDOW` so
@@ -66,7 +66,7 @@ class MacroNewsShield:
 
     def __init__(
         self,
-        pre_minutes: float = 20.0,
+        pre_minutes: float = 35.0,
         post_minutes: float = 15.0,
         cache_path: Path = CALENDAR_CACHE_PATH,
         allow_network: bool = True,
