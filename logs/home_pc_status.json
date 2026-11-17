@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 15:58:54 UTC",
+  "updated_utc": "2026-11-17 15:59:56 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64024.43,
-    "ETHUSD": 1778.17,
-    "SOLUSD": 72.27,
-    "XAUUSD": 3875.99,
-    "EURUSD": 1.10029,
-    "USDJPY": 159.241
+    "BTCUSD": 64152.05,
+    "ETHUSD": 1785.68,
+    "SOLUSD": 72.51,
+    "XAUUSD": 3876.23,
+    "EURUSD": 1.10026,
+    "USDJPY": 159.261
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,8 +556,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 15:49:32 UTC",
-    "total_episodes": 964,
+    "updated_utc": "2026-11-17 15:59:41 UTC",
+    "total_episodes": 965,
     "strategy_stats": {
       "SND": {
         "trades": 39,
@@ -595,11 +595,11 @@
         "multiplier": 1.011
       },
       "DERIV_FLOW": {
-        "trades": 248,
+        "trades": 249,
         "wins": 155,
-        "losses": 92,
-        "ema_r": 0.143,
-        "multiplier": 1.036
+        "losses": 93,
+        "ema_r": 0.052,
+        "multiplier": 1.013
       }
     },
     "regime_strategy_multipliers": {
@@ -624,7 +624,7 @@
       "TRENDING_UP:TREND_PULLBACK": 0.93,
       "RANGING:DERIV_FLOW": 1.319,
       "TRENDING_DOWN:DERIV_FLOW": 1.359,
-      "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.028,
+      "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.012,
       "MACRO_NEWS_WINDOW:SND": 0.984,
       "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.968,
       "MACRO_NEWS_WINDOW:ICT": 1.039,
@@ -1273,7 +1273,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794927609.018028,
       "SOLUSD:DERIV_FLOW": 1794930278.842716,
-      "BTCUSD:DERIV_FLOW": 1794929075.962539,
+      "BTCUSD:DERIV_FLOW": 1794931179.232572,
       "ETHUSD:DERIV_FLOW": 1794929715.512601,
       "EURUSD:BREAKOUT": 1794930338.39185,
       "USDJPY:BREAKOUT": 1794922211.802075,
@@ -1286,12 +1286,12 @@
       "XAUUSD:ICT": 1794927025.170117,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 917,
+    "shadow_episodes": 918,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 27h 1m)",
-  "deriv_flow_status": "Graduated Live (248 eps, 62.8% WR, +0.14R EMA)",
-  "cycle_count": 625
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 27h 0m)",
+  "deriv_flow_status": "Graduated Live (249 eps, 62.5% WR, +0.05R EMA)",
+  "cycle_count": 627
 }
