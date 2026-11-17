@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 19:53:52 UTC",
+  "updated_utc": "2026-11-17 19:54:30 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63795.01,
-    "ETHUSD": 1792.26,
-    "SOLUSD": 72.84,
-    "XAUUSD": 3848.79,
+    "BTCUSD": 63772.61,
+    "ETHUSD": 1791.06,
+    "SOLUSD": 72.78,
+    "XAUUSD": 3848.96,
     "EURUSD": 1.10091,
-    "USDJPY": 159.319
+    "USDJPY": 159.322
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,8 +556,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 19:53:13 UTC",
-    "total_episodes": 986,
+    "updated_utc": "2026-11-17 19:54:29 UTC",
+    "total_episodes": 987,
     "strategy_stats": {
       "SND": {
         "trades": 41,
@@ -595,11 +595,11 @@
         "multiplier": 1.006
       },
       "DERIV_FLOW": {
-        "trades": 259,
+        "trades": 260,
         "wins": 160,
-        "losses": 98,
-        "ema_r": -0.008,
-        "multiplier": 0.998
+        "losses": 99,
+        "ema_r": -0.031,
+        "multiplier": 0.992
       }
     },
     "regime_strategy_multipliers": {
@@ -622,7 +622,7 @@
       "TRENDING_UP:KRONOS": 1.061,
       "TRENDING_UP:BREAKOUT": 0.913,
       "TRENDING_UP:TREND_PULLBACK": 0.93,
-      "RANGING:DERIV_FLOW": 1.317,
+      "RANGING:DERIV_FLOW": 1.312,
       "TRENDING_DOWN:DERIV_FLOW": 1.358,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.012,
       "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -1238,21 +1238,6 @@
     "live_episodes": 29,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 72.66,
-        "sl_price": 73.05798,
-        "sl_dist": 0.39798,
-        "tp1_price": 72.40131,
-        "tp2_price": 72.08293,
-        "opened_epoch": 1794943469.66634,
-        "tp1_hit": false,
-        "peak_r": 0.628
-      },
-      {
         "key": "BTCUSD:TREND_PULLBACK",
         "symbol": "BTCUSD",
         "strategy_name": "TREND_PULLBACK",
@@ -1316,12 +1301,12 @@
       "XAUUSD:ICT": 1794933348.760101,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 939,
+    "shadow_episodes": 940,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 23h 6m)",
-  "deriv_flow_status": "Shadow Incubation (259/30 eps, 62% WR, -0.01R)",
-  "cycle_count": 1410
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 23h 5m)",
+  "deriv_flow_status": "Shadow Incubation (260/30 eps, 62% WR, -0.03R)",
+  "cycle_count": 1412
 }
