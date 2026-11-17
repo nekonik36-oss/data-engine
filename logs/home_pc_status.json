@@ -1,28 +1,31 @@
 {
-  "updated_utc": "2026-11-17 18:23:11 UTC",
-  "hostname": "ip-10-0-130-184",
-  "python_version": "3.12.16",
+  "updated_utc": "2026-11-17 18:31:51 UTC",
+  "hostname": "DESKTOP-8RQUOSU",
+  "python_version": "3.12.10",
   "gpu": {
-    "torch_installed": false,
-    "torch_version": null,
-    "cuda_version": null,
-    "cuda_available": false,
-    "gpu_name": null,
-    "cuda_kernel_ok": false,
-    "cuda_error": "No module named 'torch'"
+    "torch_installed": true,
+    "torch_version": "2.11.0+cu128",
+    "cuda_version": "12.8",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 5060",
+    "cuda_kernel_ok": true,
+    "cuda_error": null
   },
   "pending_hot_reload": false,
-  "execution_mode": "signal_only",
-  "mt5_connected": false,
-  "mt5_error": "No module named 'MetaTrader5'",
+  "execution_mode": "auto",
+  "mt5_connected": true,
+  "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9628.26,
-  "telegram_configured": false,
-  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
+  "telegram_configured": true,
+  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63863.61,
-    "ETHUSD": 1794.61,
-    "SOLUSD": 72.43
+    "BTCUSD": 63898.48,
+    "ETHUSD": 1797.77,
+    "SOLUSD": 72.71,
+    "XAUUSD": 3865.98,
+    "EURUSD": 1.10122,
+    "USDJPY": 159.248
   },
   "active_trades": {},
   "bot_stats": {
@@ -1318,7 +1321,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 24h 36m)",
-  "deriv_flow_status": "Graduated Live (252 eps, 62.5% WR, +0.09R EMA)",
-  "cycle_count": 20
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 24h 28m)",
+  "deriv_flow_status": "Shadow Incubation (250/30 eps, 62% WR, +0.00R)",
+  "cycle_count": 1150
 }
