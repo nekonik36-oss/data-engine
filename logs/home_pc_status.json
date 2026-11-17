@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 05:56:40 UTC",
+  "updated_utc": "2026-11-17 05:58:01 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -16,13 +16,13 @@
   "mt5_connected": false,
   "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9653.26,
+  "live_equity": 9628.26,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64818.01,
-    "ETHUSD": 1834.47,
-    "SOLUSD": 72.68
+    "BTCUSD": 64815.37,
+    "ETHUSD": 1834.73,
+    "SOLUSD": 72.67
   },
   "active_trades": {},
   "bot_stats": {
@@ -1273,7 +1273,7 @@
         "tp2_price": 72.47432,
         "opened_epoch": 1794893430.192264,
         "tp1_hit": true,
-        "peak_r": 0.823
+        "peak_r": 0.854
       },
       {
         "key": "ETHUSD:ICT",
@@ -1303,7 +1303,7 @@
         "tp2_price": 72.31693,
         "opened_epoch": 1794894902.610852,
         "tp1_hit": false,
-        "peak_r": 0.206
+        "peak_r": 0.24
       }
     ],
     "shadow_cooldowns": {
@@ -1346,5 +1346,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 602
+  "cycle_count": 605
 }
