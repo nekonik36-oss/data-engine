@@ -691,8 +691,8 @@
       "tp1_price": 1793.47329,
       "tp2_price": 1787.60658,
       "opened_epoch": 1794910220.648585,
-      "tp1_hit": false,
-      "peak_r": 0.368
+      "tp1_hit": true,
+      "peak_r": 0.805
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -707,7 +707,7 @@
       "tp2_price": 71.9725,
       "opened_epoch": 1794910518.689536,
       "tp1_hit": false,
-      "peak_r": 0.259
+      "peak_r": 0.454
     },
     {
       "key": "BTCUSD:DERIV_FLOW",
@@ -721,8 +721,8 @@
       "tp1_price": 64238.65323,
       "tp2_price": 64105.83258,
       "opened_epoch": 1794910979.248422,
-      "tp1_hit": false,
-      "peak_r": 0.575
+      "tp1_hit": true,
+      "peak_r": 1.015
     }
   ],
   "shadow_cooldowns": {
