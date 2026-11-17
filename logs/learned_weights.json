@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 22:54:12 UTC",
-  "total_episodes": 1018,
+  "updated_utc": "2026-11-17 22:55:00 UTC",
+  "total_episodes": 1019,
   "strategy_stats": {
     "SND": {
       "trades": 41,
@@ -38,11 +38,11 @@
       "multiplier": 0.993
     },
     "DERIV_FLOW": {
-      "trades": 274,
+      "trades": 275,
       "wins": 167,
-      "losses": 106,
-      "ema_r": -0.082,
-      "multiplier": 0.98
+      "losses": 107,
+      "ema_r": -0.119,
+      "multiplier": 0.97
     }
   },
   "regime_strategy_multipliers": {
@@ -71,7 +71,7 @@
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.968,
     "MACRO_NEWS_WINDOW:ICT": 1.039,
-    "TRENDING_UP:DERIV_FLOW": 1.042,
+    "TRENDING_UP:DERIV_FLOW": 1.033,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.941,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.005,
     "TRENDING_UP:SND": 0.95,
@@ -681,21 +681,6 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 73.91,
-      "sl_price": 74.27303,
-      "sl_dist": 0.36303,
-      "tp1_price": 73.67403,
-      "tp2_price": 73.38361,
-      "opened_epoch": 1794955002.63772,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
       "key": "SOLUSD:ICT",
       "symbol": "SOLUSD",
       "strategy_name": "ICT",
@@ -759,7 +744,7 @@
     "XAUUSD:ICT": 1794933348.760101,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 971,
+  "shadow_episodes": 972,
   "probation_strategies": [
     "SND"
   ]
