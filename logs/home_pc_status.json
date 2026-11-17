@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-17 00:56:03 UTC",
-  "hostname": "runnervmccnms",
-  "python_version": "3.12.16",
+  "updated_utc": "2026-11-17 00:56:40 UTC",
+  "hostname": "GB-5CD52876MS",
+  "python_version": "3.14.6",
   "gpu": {
     "torch_installed": false,
     "torch_version": null,
@@ -14,15 +14,15 @@
   "pending_hot_reload": false,
   "execution_mode": "auto",
   "mt5_connected": false,
-  "mt5_error": "No module named 'MetaTrader5'",
+  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9672.49,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64593.12,
-    "ETHUSD": 1813.38,
-    "SOLUSD": 71.41
+    "BTCUSD": 64600.91,
+    "ETHUSD": 1813.39,
+    "SOLUSD": 71.42
   },
   "active_trades": {},
   "bot_stats": {
@@ -1259,7 +1259,7 @@
     },
     "shadow_episodes": 779
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core Retail Sales m/m @ 2026-11-17 13:30 UTC (in 12h 33m)",
+  "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 15
+  "cycle_count": 20
 }
