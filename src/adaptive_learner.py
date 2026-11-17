@@ -100,9 +100,42 @@ class AdaptiveLearner:
         return round(max(1.0, min(1.60, float(tuning.get("sl_floor_mult", 1.0)))), 3)
 
     def get_symbol_be_shield_r(self, symbol: str) -> float:
-        """Return dynamic Break-Even Shield trigger (`0.42R` to `0.55R`) learned from near-TP1 reversals."""
+        """Return dynamic Break-Even Shield trigger (`0.48R` to `0.60R`) learned from near-TP1 reversals."""
         tuning = (self.state.get("symbol_tuning") or {}).get(symbol.upper(), {})
-        return round(max(0.38, min(0.45, float(tuning.get("be_shield_r", 0.45)))), 3)
+        return round(max(0.48, min(0.60, float(tuning.get("be_shield_r", 0.55)))), 3)
+
+    def is_strategy_live_active(self, strategy_name: str) -> bool:
+        """
+        Autonomous RL Probation & Regraduation Governor:
+          - Automatically benches any strategy with >= 25 decided episodes, < 42.0% WR,
+            and <= -0.15R EMA into Shadow-Only Probation (`False`) so weak modules cannot
+            dilute live trades while still training in Shadow RL at $0 capital risk.
+          - Automatically re-graduates a benched strategy back to Live (`True`) once
+            Shadow RL recovery lifts its EMA >= +0.05R (or WR >= 48% with EMA >= 0.0R).
+        """
+        s_info = (self.state.get("strategy_stats") or {}).get(strategy_name, {})
+        wins = int(s_info.get("wins", 0))
+        losses = int(s_info.get("losses", 0))
+        decided = wins + losses
+        if decided < 25:
+            return True
+        wr = wins / decided
+        ema_r = float(s_info.get("ema_r", 0.0))
+        probation_list = list(self.state.get("probation_strategies") or [])
+        in_probation = strategy_name in probation_list
+
+        if in_probation:
+            if ema_r >= 0.05 or (wr >= 0.48 and ema_r >= 0.0):
+                probation_list = [s for s in probation_list if s != strategy_name]
+                self.state["probation_strategies"] = probation_list
+                return True
+            return False
+
+        if wr < 0.42 and ema_r <= -0.15:
+            probation_list.append(strategy_name)
+            self.state["probation_strategies"] = probation_list
+            return False
+        return True
 
     def get_strategy_multiplier(
         self, strategy_name: str, regime_name: str = "TREND_EXPANSION"
@@ -148,10 +181,11 @@ class AdaptiveLearner:
         ep = int(self.state.get("total_episodes", 0))
         sh_ep = int(self.state.get("shadow_episodes", 0))
         s_stats = self.state.get("strategy_stats") or {}
-        parts = [
-            f"{s}={float((s_stats.get(s) or {}).get('multiplier', 1.0)):.2f}x"
-            for s in STRATEGIES
-        ]
+        parts = []
+        for s in STRATEGIES:
+            mult = float((s_stats.get(s) or {}).get("multiplier", 1.0))
+            tag = "" if self.is_strategy_live_active(s) else "[SHADOW-BENCH]"
+            parts.append(f"{s}={mult:.2f}x{tag}")
         df_info = s_stats.get("DERIV_FLOW")
         if isinstance(df_info, dict):
             df_tr = int(df_info.get("trades", 0))

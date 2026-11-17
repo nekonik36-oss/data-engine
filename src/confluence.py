@@ -286,6 +286,16 @@ class ConfluenceEngine:
                         sl_dist=sh_sl_dist,
                     )
 
+        # 2b. Autonomous RL Probation Gate: bench weak modules (<42% WR & <=-0.15R EMA after >=25 trades)
+        # out of live scanner voting while keeping 100% of their Shadow RL training active above
+        # and keeping offline static WalkForwardBacktester preset comparisons deterministic.
+        if use_regime_gate and record_shadow:
+            pa_votes = [
+                v for v in pa_votes if self.learner.is_strategy_live_active(v.strategy_name)
+            ]
+            if not pa_votes:
+                return None
+
         # 3. Score LONG vs SHORT with Regime-Adaptive + Online Self-Learned Multipliers
         multipliers = (
             self.regime_detector.regime_multipliers(regime)
@@ -342,10 +352,15 @@ class ConfluenceEngine:
             threshold = 66.0
         else:
             # HYBRID_REGIME_KRONOS: 3-Engine Per-Instrument Specialized Quant Architecture + Online Learner
+            deriv_graduated = (
+                self.deriv_flow.is_graduated(self.learner)[0]
+                if deriv_vote is not None
+                else False
+            )
             if symbol in {"BTCUSD", "SOLUSD"}:
                 # Engine 1 (Momentum Leaders BTCUSD & SOLUSD):
-                # Path A: H1 Trend + EMA50/200 Stack + Connors RSI(2) Pullback confirmed by >=1 peer module (SND/ICT/BREAKOUT/KRONOS)
-                # Path B: Multi-Strategy Structural Consensus (>=2 of SND/ICT/BREAKOUT aligned with H1 trend)
+                # Path A: H1 Trend + EMA50/200 Stack + Connors RSI(2) Pullback confirmed by >=1 peer module (ICT/BREAKOUT/KRONOS/DERIV_FLOW)
+                # Path B: Multi-Strategy Structural Consensus (>=2 modules or Top PA + KRONOS/DERIV_FLOW)
                 tpb_votes = [
                     v
                     for v in pa_votes
@@ -366,8 +381,15 @@ class ConfluenceEngine:
                         and kronos_fc.direction == direction
                         and kronos_fc.confidence >= 0.35
                     )
+                    deriv_confirms = (
+                        deriv_graduated
+                        and deriv_vote is not None
+                        and deriv_vote.direction == direction
+                        and deriv_vote.confidence >= 0.68
+                        and regime != MarketRegime.SESSION_SWEEP_WINDOW
+                    )
                     # Ban unconfirmed solo TREND_PULLBACK & block TREND_PULLBACK inside SESSION_SWEEP_WINDOW (0.853x RL stop-hunt trap)
-                    if len(agreeing_pa) < 2 and not kronos_confirms:
+                    if len(agreeing_pa) < 2 and not (kronos_confirms or deriv_confirms):
                         return None
                     if regime == MarketRegime.SESSION_SWEEP_WINDOW:
                         return None
@@ -375,13 +397,13 @@ class ConfluenceEngine:
                         self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
                         for v in agreeing_pa
                     ) / len(agreeing_pa)
-                    synergy_bonus = 5.0 if len(agreeing_pa) >= 2 else 0.0
+                    synergy_bonus = 5.0 if (len(agreeing_pa) >= 2 or deriv_confirms) else 0.0
                     confluence_score = min(100.0, 88.0 * avg_learned_m + synergy_bonus)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 else:
                     # Path B: Multi-Strategy Consensus from Top RL Leaders:
-                    #   - >=2 PA modules (SND/ICT/BREAKOUT) agreeing, OR
-                    #   - BREAKOUT (1.082x, +0.328R EMA) or ICT (1.039x, +0.155R EMA) confirmed by KRONOS (1.038x)
+                    #   - >=2 PA modules agreeing, OR
+                    #   - BREAKOUT / ICT confirmed by KRONOS or graduated DERIV_FLOW (63.8% WR)
                     if any(v.confidence >= 0.72 for v in opposing_pa):
                         return None
                     strong_agree = [v for v in agreeing_pa if v.confidence >= 0.75]
@@ -397,12 +419,19 @@ class ConfluenceEngine:
                         and kronos_fc.confidence >= 0.40
                         and regime != MarketRegime.SESSION_SWEEP_WINDOW
                     )
+                    deriv_confirms = (
+                        deriv_graduated
+                        and deriv_vote is not None
+                        and deriv_vote.direction == direction
+                        and deriv_vote.confidence >= 0.68
+                        and regime != MarketRegime.SESSION_SWEEP_WINDOW
+                    )
                     top_pa_with_kronos = False
                     brk_exhausted = (
                         (direction == Direction.SHORT and (ind.rsi[idx] < 30.0 or (ind.ema20[idx] - curr.close) > 2.2 * cur_atr))
                         or (direction == Direction.LONG and (ind.rsi[idx] > 70.0 or (curr.close - ind.ema20[idx]) > 2.2 * cur_atr))
                     )
-                    if len(strong_agree) == 1 and kronos_strong:
+                    if len(strong_agree) == 1 and (kronos_strong or deriv_confirms):
                         lead_v = strong_agree[0]
                         if (
                             lead_v.strategy_name == "BREAKOUT"
@@ -414,16 +443,22 @@ class ConfluenceEngine:
                         elif (
                             lead_v.strategy_name == "ICT"
                             and lead_v.confidence >= 0.80
-                            and kronos_fc is not None
-                            and kronos_fc.confidence >= 0.42
-                            and (regime != MarketRegime.RANGING or macro_trend_intact)
+                            and (
+                                (kronos_fc is not None and kronos_fc.confidence >= 0.42)
+                                or deriv_confirms
+                            )
+                            and (
+                                regime != MarketRegime.RANGING
+                                or macro_trend_intact
+                                or deriv_confirms
+                            )
                         ):
                             top_pa_with_kronos = True
                     if len(strong_agree) < 2 and not top_pa_with_kronos:
                         return None
-                    if direction == Direction.LONG and e60 < e240:
+                    if direction == Direction.LONG and e60 < e240 and not deriv_confirms:
                         return None
-                    if direction == Direction.SHORT and e60 > e240:
+                    if direction == Direction.SHORT and e60 > e240 and not deriv_confirms:
                         return None
                     if kronos_fc is not None:
                         if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
@@ -436,7 +471,11 @@ class ConfluenceEngine:
                         * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
                         for v in agreeing_pa
                     )
-                    synergy_b = 12.0 if len(agreeing_pa) >= 2 else 8.0
+                    synergy_b = (
+                        12.0
+                        if (len(agreeing_pa) >= 2 or (kronos_strong and deriv_confirms))
+                        else 8.5
+                    )
                     confluence_score = min(100.0, best_pa_conf * 100.0 + synergy_b)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
 
@@ -462,8 +501,15 @@ class ConfluenceEngine:
                         and kronos_fc.direction == direction
                         and kronos_fc.confidence >= 0.35
                     )
+                    deriv_confirms = (
+                        deriv_graduated
+                        and deriv_vote is not None
+                        and deriv_vote.direction == direction
+                        and deriv_vote.confidence >= 0.68
+                        and regime != MarketRegime.SESSION_SWEEP_WINDOW
+                    )
                     # Ban unconfirmed solo TREND_PULLBACK & block TREND_PULLBACK inside SESSION_SWEEP_WINDOW (0.853x RL stop-hunt trap)
-                    if len(agreeing_pa) < 2 and not kronos_confirms:
+                    if len(agreeing_pa) < 2 and not (kronos_confirms or deriv_confirms):
                         return None
                     if regime == MarketRegime.SESSION_SWEEP_WINDOW:
                         return None
@@ -471,7 +517,7 @@ class ConfluenceEngine:
                         self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
                         for v in agreeing_pa
                     ) / len(agreeing_pa)
-                    synergy_bonus = 5.0 if len(agreeing_pa) >= 2 else 0.0
+                    synergy_bonus = 5.0 if (len(agreeing_pa) >= 2 or deriv_confirms) else 0.0
                     confluence_score = min(100.0, 88.0 * avg_learned_m + synergy_bonus)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 elif rev_votes and max(
@@ -484,6 +530,13 @@ class ConfluenceEngine:
                         return None
                     direction = Direction.LONG if long_rev else Direction.SHORT
                     agreeing_pa = long_rev if long_rev else short_rev
+                    deriv_confirms = (
+                        deriv_graduated
+                        and deriv_vote is not None
+                        and deriv_vote.direction == direction
+                        and deriv_vote.confidence >= 0.68
+                    )
+                    eff_agree = len(agreeing_pa) + (1 if deriv_confirms else 0)
 
                     prev = candles[idx - 1]
                     e60, e240 = ind.ema60[idx], ind.ema240[idx]
@@ -498,7 +551,7 @@ class ConfluenceEngine:
                             return None
                         if h1_bear and adx_val > 25.0:
                             return None
-                        if len(agreeing_pa) < 2 and (regime == MarketRegime.TRENDING_DOWN or e60 < e240):
+                        if eff_agree < 2 and (regime == MarketRegime.TRENDING_DOWN or e60 < e240):
                             return None
                     else:
                         min_rev_rsi = 58.0 if e60 > e240 else 45.0
@@ -506,7 +559,7 @@ class ConfluenceEngine:
                             return None
                         if h1_bull and adx_val > 25.0:
                             return None
-                        if len(agreeing_pa) < 2 and (regime == MarketRegime.TRENDING_UP or e60 > e240):
+                        if eff_agree < 2 and (regime == MarketRegime.TRENDING_UP or e60 > e240):
                             return None
 
                     best_pa_conf = max(
@@ -514,11 +567,11 @@ class ConfluenceEngine:
                         * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
                         for v in agreeing_pa
                     )
-                    synergy = 14.0 if len(agreeing_pa) >= 2 else 8.0
+                    synergy = 14.0 if eff_agree >= 2 else 8.0
                     confluence_score = min(100.0, best_pa_conf * 100.0 + synergy)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 else:
-                    # Path C: H1-Trend BREAKOUT (>=0.78) or Macro-Trend ICT (>=0.80) confirmed by KRONOS
+                    # Path C: H1-Trend BREAKOUT (>=0.78) or Macro-Trend ICT (>=0.80) confirmed by KRONOS or DERIV_FLOW
                     cand_votes = [
                         v
                         for v in pa_votes
@@ -531,30 +584,43 @@ class ConfluenceEngine:
                     direction = lead_c.direction
                     if any(v.direction != direction and v.confidence >= 0.72 for v in pa_votes):
                         return None
+                    deriv_confirms = (
+                        deriv_graduated
+                        and deriv_vote is not None
+                        and deriv_vote.direction == direction
+                        and deriv_vote.confidence >= 0.68
+                        and regime != MarketRegime.SESSION_SWEEP_WINDOW
+                    )
                     e50, e200 = ind.ema50[idx], ind.ema200[idx]
                     e60, e240 = ind.ema60[idx], ind.ema240[idx]
-                    if direction == Direction.LONG and e60 < e240:
+                    if direction == Direction.LONG and e60 < e240 and not deriv_confirms:
                         return None
-                    if direction == Direction.SHORT and e60 > e240:
+                    if direction == Direction.SHORT and e60 > e240 and not deriv_confirms:
                         return None
                     macro_trend_intact = (
                         (direction == Direction.LONG and e50 > e200 and (e60 - e240) >= 0.80 * cur_atr)
                         or (direction == Direction.SHORT and e50 < e200 and (e240 - e60) >= 0.80 * cur_atr)
                     )
                     min_k_conf = 0.42 if lead_c.strategy_name == "ICT" else 0.40
+                    kronos_ok_c = (
+                        kronos_fc is not None
+                        and kronos_fc.direction == direction
+                        and kronos_fc.confidence >= min_k_conf
+                    )
                     brk_exhausted_c = lead_c.strategy_name == "BREAKOUT" and (
                         (direction == Direction.SHORT and (ind.rsi[idx] < 30.0 or (ind.ema20[idx] - curr.close) > 2.2 * cur_atr))
                         or (direction == Direction.LONG and (ind.rsi[idx] > 70.0 or (curr.close - ind.ema20[idx]) > 2.2 * cur_atr))
                     )
                     if (
-                        kronos_fc is None
-                        or kronos_fc.direction != direction
-                        or kronos_fc.confidence < min_k_conf
+                        not (kronos_ok_c or deriv_confirms)
                         or brk_exhausted_c
                         or regime == MarketRegime.SESSION_SWEEP_WINDOW
                         or (
                             regime == MarketRegime.RANGING
-                            and not (lead_c.strategy_name == "ICT" and macro_trend_intact)
+                            and not (
+                                lead_c.strategy_name == "ICT"
+                                and (macro_trend_intact or deriv_confirms)
+                            )
                         )
                     ):
                         return None
@@ -564,7 +630,7 @@ class ConfluenceEngine:
                         * self.learner.get_strategy_multiplier(v.strategy_name, regime.value)
                         for v in agreeing_pa
                     )
-                    confluence_score = min(100.0, best_pa_conf * 100.0 + 8.0)
+                    confluence_score = min(100.0, best_pa_conf * 100.0 + 8.5)
                     threshold = 80.0 + self.learner.get_symbol_threshold_offset(symbol)
                 if kronos_fc is not None:
                     if direction == Direction.SHORT and kronos_fc.bullish_prob >= 0.68:
@@ -665,13 +731,15 @@ class ConfluenceEngine:
                 votes.append(deriv_vote)
                 if deriv_vote.direction == direction and deriv_vote.confidence >= 0.65:
                     d_mult = self.learner.get_strategy_multiplier("DERIV_FLOW", regime.value)
-                    confluence_score = min(100.0, confluence_score + 3.5 * d_mult)
+                    confluence_score = min(100.0, confluence_score + 4.0 * d_mult)
                 elif (
                     deriv_vote.direction != Direction.NEUTRAL
                     and deriv_vote.direction != direction
-                    and deriv_vote.confidence >= 0.72
                 ):
-                    confluence_score -= 4.0
+                    if deriv_vote.confidence >= 0.78:
+                        return None
+                    if deriv_vote.confidence >= 0.70:
+                        confluence_score -= 5.0
 
         if confluence_score < threshold:
             return None

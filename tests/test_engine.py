@@ -227,6 +227,19 @@ def test_macro_news_shield_and_shadow_first_deriv_flow() -> None:
         # Existing 5 strategy counts remain 0 (100% isolated)
         assert learner.state["strategy_stats"]["ICT"]["trades"] == 0
 
+        # Test Autonomous Strategy Probation & Regraduation Governor
+        assert learner.is_strategy_live_active("SND") is True
+        for _ in range(9):
+            learner.record_trade_outcome("ETHUSD", ["SND"], 0.50, "RANGING", is_shadow=True)
+            learner.record_trade_outcome("ETHUSD", ["SND"], -0.65, "RANGING", is_shadow=True)
+            learner.record_trade_outcome("ETHUSD", ["SND"], -0.65, "RANGING", is_shadow=True)
+        # 9W / 18L = 33.3% WR & negative EMA -> automatically benched to Shadow-Only
+        assert learner.is_strategy_live_active("SND") is False
+        # Feed Shadow RL recovery -> automatically re-graduates to Live once EMA >= +0.05R
+        for _ in range(12):
+            learner.record_trade_outcome("ETHUSD", ["SND"], 1.10, "RANGING", is_shadow=True)
+        assert learner.is_strategy_live_active("SND") is True
+
 
 if __name__ == "__main__":
     test_causal_indicators_have_no_lookahead()

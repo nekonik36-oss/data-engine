@@ -788,7 +788,7 @@ class MT5Connector:
         init_vol = float(trade.get("initial_volume", trade.get("volume", 0.01)))
 
         if "initial_sl_price" not in trade or abs(entry_price - float(trade["initial_sl_price"])) < 1e-5:
-            inferred_dist = max(abs(tp1_price - entry_price) / 0.65, abs(entry_price - sl_price), 1e-4)
+            inferred_dist = max(abs(tp1_price - entry_price) / 0.75, abs(entry_price - sl_price), 1e-4)
             trade["initial_sl_price"] = round(
                 entry_price - inferred_dist if is_long else entry_price + inferred_dist, 2
             )
@@ -813,21 +813,20 @@ class MT5Connector:
             except Exception:
                 pass
 
-        # Tier 1 (+0.35R excursion, +0.18R peak pullback, OR >=20m open with >=+0.10R) -> +0.04R BE Shield
+        # Tier 1 (+0.50R excursion OR >=25m open with >=+0.25R) -> +0.05R BE Shield (un-choked so M5 noise doesn't kill early winners)
         if not already_hit_sl and not trade.get("be_shield_active", False) and not trade.get("tp1_hit", False):
             if (
-                excursion_r >= 0.35
-                or (peak_r >= 0.18 and 0.04 <= excursion_r <= 0.14)
-                or (age_min >= 20.0 and excursion_r >= 0.10)
+                excursion_r >= 0.50
+                or (age_min >= 25.0 and excursion_r >= 0.25)
             ):
-                be_sl = round(entry_price + (0.04 * sl_dist if is_long else -0.04 * sl_dist), 2)
+                be_sl = round(entry_price + (0.05 * sl_dist if is_long else -0.05 * sl_dist), 2)
                 trade["be_shield_active"] = True
                 trade["sl_price"] = be_sl
                 sl_price = be_sl
                 self._save_state()
                 events.append(
                     f"[24/7 CRYPTO BE SHIELD] Ticket #{ticket} ({symbol}) reached {peak_r:+.2f}R! "
-                    f"Locked SL at +0.04R ({be_sl})."
+                    f"Locked SL at +0.05R ({be_sl})."
                 )
 
         # 18-Minute Failed-Impulse Shield (cuts risk to -0.55R; strictly monotonic — NEVER widens SL!)
@@ -878,33 +877,33 @@ class MT5Connector:
                 f"tightened SL to {decay_sl} (-0.42R cap)."
             )
 
-        # Tier 1.5 (+0.48R excursion) -> Lock +0.28R Guaranteed Profit Stop
-        if not trade.get("pre_tp1_ratchet", False) and not trade.get("tp1_hit", False) and excursion_r >= 0.48:
-            r28_sl = round(entry_price + (0.28 * sl_dist if is_long else -0.28 * sl_dist), 2)
+        # Tier 1.5 (+0.62R excursion) -> Lock +0.32R Guaranteed Profit Stop (0.30R room to breathe)
+        if not trade.get("pre_tp1_ratchet", False) and not trade.get("tp1_hit", False) and excursion_r >= 0.62:
+            r32_sl = round(entry_price + (0.32 * sl_dist if is_long else -0.32 * sl_dist), 2)
             trade["pre_tp1_ratchet"] = True
             trade["be_shield_active"] = True
-            trade["sl_price"] = r28_sl
-            sl_price = r28_sl
+            trade["sl_price"] = r32_sl
+            sl_price = r32_sl
             self._save_state()
             events.append(
-                f"[24/7 CRYPTO +0.28R RATCHET] Ticket #{ticket} ({symbol}) reached {excursion_r:+.2f}R! "
-                f"Locked SL at +0.28R ({r28_sl})."
+                f"[24/7 CRYPTO +0.32R RATCHET] Ticket #{ticket} ({symbol}) reached {excursion_r:+.2f}R! "
+                f"Locked SL at +0.32R ({r32_sl})."
             )
 
-        # Tier 2: Check if Positive-Asymmetry TP1 (+0.65R or tp1_price) was reached (close 35%, let 65% ride!)
+        # Tier 2: Check if Positive-Asymmetry TP1 (+0.75R or tp1_price) was reached (close 35%, let 65% ride!)
         if not trade.get("tp1_hit", False):
             reached_tp1 = (
-                excursion_r >= 0.65
+                excursion_r >= 0.75
                 or ((cur_price >= tp1_price) if is_long else (cur_price <= tp1_price))
             )
             if reached_tp1:
                 partial_lots = round(init_vol * 0.35, 2)
-                r35_sl = round(entry_price + (0.35 * sl_dist if is_long else -0.35 * sl_dist), 2)
+                r38_sl = round(entry_price + (0.38 * sl_dist if is_long else -0.38 * sl_dist), 2)
                 trade["tp1_hit"] = True
                 trade["be_shield_active"] = True
-                trade["sl_price"] = r35_sl
+                trade["sl_price"] = r38_sl
                 tp1_r = abs(tp1_price - entry_price) / sl_dist
-                trade["partial_pnl"] = round(0.35 * max(tp1_r, 0.65) * risk_usd, 2)
+                trade["partial_pnl"] = round(0.35 * max(tp1_r, 0.75) * risk_usd, 2)
                 self._save_state()
 
                 if self.telegram.is_configured:
@@ -917,23 +916,23 @@ class MT5Connector:
 
                 events.append(
                     f"[24/7 CRYPTO TP1 HIT] Ticket #{ticket} ({symbol}) reached TP1 @ {cur_price}! "
-                    f"Locked 35% (+${trade['partial_pnl']:.2f}) & moved 65% runner SL to +0.35R ({r35_sl})."
+                    f"Locked 35% (+${trade['partial_pnl']:.2f}) & moved 65% runner SL to +0.38R ({r38_sl})."
                 )
-                sl_price = r35_sl
+                sl_price = r38_sl
 
-        # Tier 2.5 (+0.95R -> +0.65R SL) & Tier 3 (+1.20R -> +0.95R SL) Post-TP1 65%-Runner Ratchet
+        # Tier 2.5 (+1.10R -> +0.72R SL) & Tier 3 (+1.35R -> +1.02R SL) Post-TP1 65%-Runner Ratchet
         if trade.get("tp1_hit", False):
-            if excursion_r >= 1.20 and int(trade.get("runner_stage", 0)) < 2:
-                r95_sl = round(entry_price + (0.95 * sl_dist if is_long else -0.95 * sl_dist), 2)
+            if excursion_r >= 1.35 and int(trade.get("runner_stage", 0)) < 2:
+                r102_sl = round(entry_price + (1.02 * sl_dist if is_long else -1.02 * sl_dist), 2)
                 trade["runner_stage"] = 2
-                trade["sl_price"] = r95_sl
-                sl_price = r95_sl
+                trade["sl_price"] = r102_sl
+                sl_price = r102_sl
                 self._save_state()
-            elif excursion_r >= 0.95 and int(trade.get("runner_stage", 0)) < 1:
-                r65_sl = round(entry_price + (0.65 * sl_dist if is_long else -0.65 * sl_dist), 2)
+            elif excursion_r >= 1.10 and int(trade.get("runner_stage", 0)) < 1:
+                r72_sl = round(entry_price + (0.72 * sl_dist if is_long else -0.72 * sl_dist), 2)
                 trade["runner_stage"] = 1
-                trade["sl_price"] = r65_sl
-                sl_price = r65_sl
+                trade["sl_price"] = r72_sl
+                sl_price = r72_sl
                 self._save_state()
 
         # 2. Check if TP2 or Stop Loss (or Ratchet/BE SL) was hit
@@ -1180,17 +1179,16 @@ class MT5Connector:
                     not trade.get("tp1_hit", False)
                     and not trade.get("be_shield_active", False)
                     and (
-                        cur_r >= 0.35
-                        or pos_profit >= 0.35 * risk_usd_val
-                        or (float(trade.get("peak_favorable_r", 0.0)) >= 0.18 and pos_profit >= 0.04 * risk_usd_val)
-                        or (age_min >= 20.0 and (cur_r >= 0.10 or pos_profit >= 0.10 * risk_usd_val))
+                        cur_r >= 0.50
+                        or pos_profit >= 0.50 * risk_usd_val
+                        or (age_min >= 25.0 and (cur_r >= 0.25 or pos_profit >= 0.25 * risk_usd_val))
                     )
                     and entry_price > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
                     digits = int(sym_info.digits) if sym_info is not None else 2
                     be_sl = round(
-                        entry_price + (0.04 * r_dist if is_long else -0.04 * r_dist)
+                        entry_price + (0.05 * r_dist if is_long else -0.05 * r_dist)
                         if r_dist > 0
                         else entry_price,
                         digits,
@@ -1287,17 +1285,17 @@ class MT5Connector:
                         f"tightened SL to {decay_sl} (-0.42R cap)."
                     )
 
-                # Step 1.5 - Near-TP1 Profit Cushion (+0.48R excursion): Lock SL at +0.28R guaranteed profit
+                # Step 1.5 - Near-TP1 Profit Cushion (+0.62R excursion): Lock SL at +0.32R guaranteed profit
                 if (
                     not trade.get("tp1_hit", False)
                     and not trade.get("near_tp1_cushion_active", False)
-                    and (cur_r >= 0.48 or pos_profit >= 0.48 * risk_usd_val)
+                    and (cur_r >= 0.62 or pos_profit >= 0.62 * risk_usd_val)
                     and r_dist > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
                     digits = int(sym_info.digits) if sym_info is not None else 2
                     cushion_sl = round(
-                        entry_price + (0.28 * r_dist if is_long else -0.28 * r_dist), digits
+                        entry_price + (0.32 * r_dist if is_long else -0.32 * r_dist), digits
                     )
                     cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
                     self._mt5.order_send(
@@ -1314,14 +1312,14 @@ class MT5Connector:
                     trade["sl_price"] = cushion_sl
                     self._save_state()
                     events.append(
-                        f"[NEAR-TP1 CUSHION +0.28R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
-                        f"SL ratcheted to +0.28R guaranteed profit ({cushion_sl})."
+                        f"[NEAR-TP1 CUSHION +0.32R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
+                        f"SL ratcheted to +0.32R guaranteed profit ({cushion_sl})."
                     )
 
-                # Step 2 - Positive-Asymmetry TP1 Hit (+0.65R floating/excursion or tp1_price): Close 35% partial & lock +0.35R runner
+                # Step 2 - Positive-Asymmetry TP1 Hit (+0.75R floating/excursion or tp1_price): Close 35% partial & lock +0.38R runner
                 if not trade.get("tp1_hit", False) and tp1_price > 0:
                     price_reached = (cur_price >= tp1_price) if is_long else (cur_price <= tp1_price)
-                    profit_reached = (pos_profit >= 0.65 * risk_usd_val) or (cur_r >= 0.65)
+                    profit_reached = (pos_profit >= 0.75 * risk_usd_val) or (cur_r >= 0.75)
                     if price_reached or profit_reached:
                         partial_closed = self._execute_tp1_protection(pos, trade)
                         trade["tp1_hit"] = True
@@ -1339,18 +1337,18 @@ class MT5Connector:
                             f"SL locked at {trade.get('sl_price', entry_price)}."
                         )
 
-                # Step 2.5 & Step 3 — Positive-Asymmetry 65%-Runner Ratchet (+0.95R -> +0.65R SL, +1.20R -> +0.95R SL)
+                # Step 2.5 & Step 3 — Positive-Asymmetry 65%-Runner Ratchet (+1.10R -> +0.72R SL, +1.35R -> +1.02R SL)
                 if (
                     trade.get("tp1_hit", False)
                     and not trade.get("mid_runner_lock_active", False)
                     and not trade.get("runner_ratchet_active", False)
-                    and cur_r >= 0.95
+                    and cur_r >= 1.10
                     and r_dist > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
                     digits = int(sym_info.digits) if sym_info is not None else 2
                     mid_sl = round(
-                        entry_price + (0.65 * r_dist if is_long else -0.65 * r_dist), digits
+                        entry_price + (0.72 * r_dist if is_long else -0.72 * r_dist), digits
                     )
                     cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
                     self._mt5.order_send(
@@ -1366,20 +1364,20 @@ class MT5Connector:
                     trade["sl_price"] = mid_sl
                     self._save_state()
                     events.append(
-                        f"[RUNNER LOCK +0.65R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
-                        f"SL ratcheted to +0.65R guaranteed profit ({mid_sl})."
+                        f"[RUNNER LOCK +0.72R] Ticket #{ticket} ({broker_sym}) reached +{cur_r:.2f}R (+${pos_profit:.2f})! "
+                        f"SL ratcheted to +0.72R guaranteed profit ({mid_sl})."
                     )
 
                 if (
                     trade.get("tp1_hit", False)
                     and not trade.get("runner_ratchet_active", False)
-                    and (cur_r >= 1.20 or pos_profit >= 1.20 * remaining_risk_usd)
+                    and (cur_r >= 1.35 or pos_profit >= 1.35 * remaining_risk_usd)
                     and r_dist > 0
                 ):
                     sym_info = self._mt5.symbol_info(broker_sym)
                     digits = int(sym_info.digits) if sym_info is not None else 2
                     ratchet_sl = round(
-                        entry_price + (0.95 * r_dist if is_long else -0.95 * r_dist), digits
+                        entry_price + (1.02 * r_dist if is_long else -1.02 * r_dist), digits
                     )
                     cur_tp = round(float(pos.tp), digits) if float(pos.tp) > 0 else round(float(trade.get("tp2_price", 0.0)), digits)
                     self._mt5.order_send(
@@ -1532,8 +1530,8 @@ class MT5Connector:
             # 0.01-lot Golden Ratchet: cannot split 0.01 lot, so lock SL at +0.45R guaranteed profit!
             be_sl = round(entry_price + (0.45 * r_dist if is_long else -0.45 * r_dist), digits)
         elif r_dist > 0:
-            # 35% partial closed at TP1 (+0.65R): lock remaining 65% runner at +0.35R profit cushion above entry!
-            be_sl = round(entry_price + (0.35 * r_dist if is_long else -0.35 * r_dist), digits)
+            # 35% partial closed at TP1 (+0.75R): lock remaining 65% runner at +0.38R profit cushion above entry!
+            be_sl = round(entry_price + (0.38 * r_dist if is_long else -0.38 * r_dist), digits)
         else:
             be_sl = round(entry_price, digits)
 
