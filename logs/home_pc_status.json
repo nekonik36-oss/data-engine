@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 03:01:45 UTC",
+  "updated_utc": "2026-11-17 03:02:59 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -16,13 +16,13 @@
   "mt5_connected": false,
   "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9672.49,
+  "live_equity": 9653.26,
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64568.47,
-    "ETHUSD": 1816.01,
-    "SOLUSD": 71.84
+    "BTCUSD": 64528.37,
+    "ETHUSD": 1814.99,
+    "SOLUSD": 71.8
   },
   "active_trades": {},
   "bot_stats": {
@@ -1266,7 +1266,7 @@
         "tp2_price": 64779.68072,
         "opened_epoch": 1794884503.203415,
         "tp1_hit": false,
-        "peak_r": 0.341
+        "peak_r": 0.412
       }
     ],
     "shadow_cooldowns": {
@@ -1309,5 +1309,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 237
+  "cycle_count": 240
 }
