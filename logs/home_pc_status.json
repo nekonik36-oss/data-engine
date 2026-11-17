@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 19:19:35 UTC",
+  "updated_utc": "2026-11-17 19:21:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63820.62,
-    "ETHUSD": 1791.22,
-    "SOLUSD": 72.65,
-    "XAUUSD": 3856.71,
-    "EURUSD": 1.1011,
-    "USDJPY": 159.296
+    "BTCUSD": 63789.22,
+    "ETHUSD": 1790.26,
+    "SOLUSD": 72.7,
+    "XAUUSD": 3856.81,
+    "EURUSD": 1.10103,
+    "USDJPY": 159.303
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 19:18:17 UTC",
+    "updated_utc": "2026-11-17 19:20:12 UTC",
     "total_episodes": 983,
     "strategy_stats": {
       "SND": {
@@ -1251,6 +1251,21 @@
         "opened_epoch": 1794941719.92021,
         "tp1_hit": false,
         "peak_r": 0.553
+      },
+      {
+        "key": "ETHUSD:TREND_PULLBACK",
+        "symbol": "ETHUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 1791.16,
+        "sl_price": 1799.83079,
+        "sl_dist": 8.67079,
+        "tp1_price": 1785.52399,
+        "tp2_price": 1778.58735,
+        "opened_epoch": 1794943212.248429,
+        "tp1_hit": false,
+        "peak_r": 0.122
       }
     ],
     "shadow_cooldowns": {
@@ -1264,7 +1279,7 @@
       "BTCUSD:ICT": 1794929109.920775,
       "SOLUSD:SND": 1794941719.92021,
       "SOLUSD:ICT": 1794932403.281884,
-      "ETHUSD:TREND_PULLBACK": 1794932124.694633,
+      "ETHUSD:TREND_PULLBACK": 1794943212.248429,
       "BTCUSD:TREND_PULLBACK": 1794940644.720989,
       "SOLUSD:TREND_PULLBACK": 1794926430.177576,
       "ETHUSD:SND": 1794932124.693626,
@@ -1291,7 +1306,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 23h 40m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 23h 38m)",
   "deriv_flow_status": "Shadow Incubation (258/30 eps, 62% WR, -0.02R)",
-  "cycle_count": 1305
+  "cycle_count": 1310
 }
