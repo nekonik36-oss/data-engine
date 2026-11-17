@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 02:48:07 UTC",
+  "updated_utc": "2026-11-17 02:48:49 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "ETHUSD": 1816.03,
-    "SOLUSD": 71.84
+    "ETHUSD": 1816.47,
+    "SOLUSD": 71.86
   },
   "active_trades": {
     "84882616": {
@@ -31,7 +31,7 @@
       "broker_source": "CRYPTO_24_7_LIVE",
       "direction": "SHORT",
       "entry_price": 64420.34,
-      "sl_price": 64772.56,
+      "sl_price": 64614.06,
       "initial_sl_price": 64772.56,
       "tp1_price": 64156.18,
       "tp2_price": 63856.79,
@@ -47,7 +47,9 @@
       "opened_at_utc": "2026-11-17 02:30:16 UTC",
       "tp1_hit": false,
       "partial_pnl": 0.0,
-      "peak_favorable_r": 0.094
+      "peak_favorable_r": 0.094,
+      "failed_impulse_shield": true,
+      "time_decay_applied": true
     }
   },
   "bot_stats": {
@@ -556,15 +558,15 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 02:40:25 UTC",
-    "total_episodes": 830,
+    "updated_utc": "2026-11-17 02:48:48 UTC",
+    "total_episodes": 831,
     "strategy_stats": {
       "SND": {
-        "trades": 30,
+        "trades": 31,
         "wins": 10,
-        "losses": 19,
-        "ema_r": -0.327,
-        "multiplier": 0.918
+        "losses": 20,
+        "ema_r": -0.345,
+        "multiplier": 0.914
       },
       "ICT": {
         "trades": 203,
@@ -614,7 +616,7 @@
       "TRENDING_DOWN:ICT": 0.937,
       "TRENDING_DOWN:KRONOS": 1.041,
       "RANGING:BREAKOUT": 0.961,
-      "RANGING:SND": 1.016,
+      "RANGING:SND": 1.007,
       "TRENDING_DOWN:BREAKOUT": 1.08,
       "TRENDING_DOWN:SND": 1.001,
       "TRENDING_UP:ICT": 1.114,
@@ -1280,21 +1282,6 @@
         "peak_r": 0.0
       },
       {
-        "key": "SOLUSD:SND",
-        "symbol": "SOLUSD",
-        "strategy_name": "SND",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 71.64,
-        "sl_price": 71.97913,
-        "sl_dist": 0.33913,
-        "tp1_price": 71.41957,
-        "tp2_price": 71.14827,
-        "opened_epoch": 1794882618.228457,
-        "tp1_hit": false,
-        "peak_r": 0.029
-      },
-      {
         "key": "ETHUSD:ICT",
         "symbol": "ETHUSD",
         "strategy_name": "ICT",
@@ -1343,12 +1330,12 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 785,
+    "shadow_episodes": 786,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 205
+  "cycle_count": 206
 }
