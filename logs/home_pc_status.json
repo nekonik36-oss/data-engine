@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 01:39:27 UTC",
+  "updated_utc": "2026-11-17 01:41:48 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64716.42,
-    "ETHUSD": 1819.89,
-    "SOLUSD": 71.76
+    "BTCUSD": 64804.07,
+    "ETHUSD": 1822.47,
+    "SOLUSD": 71.91
   },
   "active_trades": {},
   "bot_stats": {
@@ -531,7 +531,7 @@
     "crypto_book_pnl": 19.22
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 01:23:57 UTC",
+    "updated_utc": "2026-11-17 01:40:16 UTC",
     "total_episodes": 825,
     "strategy_stats": {
       "SND": {
@@ -1223,7 +1223,23 @@
       }
     ],
     "live_episodes": 27,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "SOLUSD:TREND_PULLBACK",
+        "symbol": "SOLUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 71.82,
+        "sl_price": 71.52267,
+        "sl_dist": 0.29733,
+        "tp1_price": 72.01326,
+        "tp2_price": 72.25113,
+        "opened_epoch": 1794879616.692135,
+        "tp1_hit": false,
+        "peak_r": 0.303
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794877206.232823,
       "BTCUSD:BREAKOUT": 1794872123.437195,
@@ -1237,7 +1253,7 @@
       "SOLUSD:ICT": 1794867908.116336,
       "ETHUSD:TREND_PULLBACK": 1794869109.319579,
       "BTCUSD:TREND_PULLBACK": 1794869107.914979,
-      "SOLUSD:TREND_PULLBACK": 1794869110.670552,
+      "SOLUSD:TREND_PULLBACK": 1794879616.692135,
       "ETHUSD:SND": 1794834021.195064,
       "BTCUSD:SND": 1794860101.724117,
       "XAUUSD:BREAKOUT": 1794844811.013358,
@@ -1264,5 +1280,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (211 eps, 63.8% WR, +0.28R EMA)",
-  "cycle_count": 45
+  "cycle_count": 50
 }
