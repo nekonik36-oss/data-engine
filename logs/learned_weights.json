@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 09:39:57 UTC",
-  "total_episodes": 890,
+  "updated_utc": "2026-11-17 09:40:24 UTC",
+  "total_episodes": 891,
   "strategy_stats": {
     "SND": {
       "trades": 38,
@@ -10,11 +10,11 @@
       "multiplier": 0.919
     },
     "ICT": {
-      "trades": 215,
-      "wins": 114,
+      "trades": 216,
+      "wins": 115,
       "losses": 99,
-      "ema_r": 0.166,
-      "multiplier": 1.041
+      "ema_r": 0.23,
+      "multiplier": 1.057
     },
     "BREAKOUT": {
       "trades": 166,
@@ -51,7 +51,7 @@
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.852,
     "RANGING:TREND_PULLBACK": 1.02,
     "TRENDING_DOWN:TREND_PULLBACK": 1.039,
-    "SESSION_SWEEP_WINDOW:ICT": 0.939,
+    "SESSION_SWEEP_WINDOW:ICT": 0.954,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.008,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.774,
     "TRENDING_DOWN:ICT": 0.937,
@@ -680,21 +680,6 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 72.29,
-      "sl_price": 71.99749,
-      "sl_dist": 0.29251,
-      "tp1_price": 72.48013,
-      "tp2_price": 72.71415,
-      "opened_epoch": 1794906623.328625,
-      "tp1_hit": true,
-      "peak_r": 0.991
-    },
-    {
       "key": "BTCUSD:ICT",
       "symbol": "BTCUSD",
       "strategy_name": "ICT",
@@ -723,10 +708,25 @@
       "opened_epoch": 1794908397.30193,
       "tp1_hit": false,
       "peak_r": 0.491
+    },
+    {
+      "key": "ETHUSD:ICT",
+      "symbol": "ETHUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 1816.51,
+      "sl_price": 1810.22541,
+      "sl_dist": 6.28459,
+      "tp1_price": 1820.59498,
+      "tp2_price": 1825.62265,
+      "opened_epoch": 1794908424.151558,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
-    "ETHUSD:ICT": 1794899124.215924,
+    "ETHUSD:ICT": 1794908424.151558,
     "BTCUSD:BREAKOUT": 1794904536.118477,
     "BTCUSD:KRONOS": 1794886231.667766,
     "ETHUSD:BREAKOUT": 1794904536.818432,
@@ -758,7 +758,7 @@
     "XAUUSD:ICT": 1794845444.657765,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 843,
+  "shadow_episodes": 844,
   "probation_strategies": [
     "SND"
   ]
