@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 13:20:15 UTC",
+  "updated_utc": "2026-11-17 13:22:54 UTC",
   "total_episodes": 912,
   "strategy_stats": {
     "SND": {
@@ -722,7 +722,7 @@
       "tp2_price": 73.47929,
       "opened_epoch": 1794921021.993951,
       "tp1_hit": false,
-      "peak_r": 0.145
+      "peak_r": 0.174
     },
     {
       "key": "ETHUSD:ICT",
@@ -736,8 +736,8 @@
       "tp1_price": 1818.23982,
       "tp2_price": 1812.71343,
       "opened_epoch": 1794921308.284518,
-      "tp1_hit": false,
-      "peak_r": 0.607
+      "tp1_hit": true,
+      "peak_r": 0.741
     },
     {
       "key": "EURUSD:TREND_PULLBACK",
@@ -768,6 +768,36 @@
       "opened_epoch": 1794921613.508128,
       "tp1_hit": false,
       "peak_r": 0.347
+    },
+    {
+      "key": "BTCUSD:DERIV_FLOW",
+      "symbol": "BTCUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "MACRO_NEWS_WINDOW",
+      "entry_price": 65006.01,
+      "sl_price": 65162.07721,
+      "sl_dist": 156.06721,
+      "tp1_price": 64904.56631,
+      "tp2_price": 64779.71254,
+      "opened_epoch": 1794921716.309741,
+      "tp1_hit": false,
+      "peak_r": 0.346
+    },
+    {
+      "key": "ETHUSD:DERIV_FLOW",
+      "symbol": "ETHUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "MACRO_NEWS_WINDOW",
+      "entry_price": 1819.9,
+      "sl_price": 1826.76776,
+      "sl_dist": 6.86776,
+      "tp1_price": 1815.43595,
+      "tp2_price": 1809.94174,
+      "opened_epoch": 1794921774.993966,
+      "tp1_hit": false,
+      "peak_r": 0.151
     }
   ],
   "shadow_cooldowns": {
@@ -790,8 +820,8 @@
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1794919830.442525,
     "SOLUSD:DERIV_FLOW": 1794920762.70004,
-    "BTCUSD:DERIV_FLOW": 1794919604.862867,
-    "ETHUSD:DERIV_FLOW": 1794917448.940005,
+    "BTCUSD:DERIV_FLOW": 1794921716.309741,
+    "ETHUSD:DERIV_FLOW": 1794921774.993966,
     "EURUSD:BREAKOUT": 1794826814.809407,
     "USDJPY:BREAKOUT": 1794806117.104245,
     "USDJPY:KRONOS": 1794824120.825775,
