@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 13:59:07 UTC",
+  "updated_utc": "2026-11-17 14:00:25 UTC",
   "total_episodes": 925,
   "strategy_stats": {
     "SND": {
@@ -709,13 +709,58 @@
       "opened_epoch": 1794923714.870221,
       "tp1_hit": false,
       "peak_r": 0.416
+    },
+    {
+      "key": "ETHUSD:BREAKOUT",
+      "symbol": "ETHUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 1829.12,
+      "sl_price": 1822.00756,
+      "sl_dist": 7.11244,
+      "tp1_price": 1833.74309,
+      "tp2_price": 1839.43304,
+      "opened_epoch": 1794924008.282651,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "USDJPY:ICT",
+      "symbol": "USDJPY",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 159.328,
+      "sl_price": 159.45334,
+      "sl_dist": 0.12534,
+      "tp1_price": 159.24653,
+      "tp2_price": 159.14625,
+      "opened_epoch": 1794924009.757119,
+      "tp1_hit": false,
+      "peak_r": 0.056
+    },
+    {
+      "key": "BTCUSD:KRONOS",
+      "symbol": "BTCUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "TRENDING_UP",
+      "entry_price": 65144.87,
+      "sl_price": 65312.28642,
+      "sl_dist": 167.41642,
+      "tp1_price": 65036.04932,
+      "tp2_price": 64902.11619,
+      "opened_epoch": 1794924025.656234,
+      "tp1_hit": false,
+      "peak_r": 0.355
     }
   ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794921308.284518,
     "BTCUSD:BREAKOUT": 1794904536.118477,
-    "BTCUSD:KRONOS": 1794921911.110989,
-    "ETHUSD:BREAKOUT": 1794910220.648585,
+    "BTCUSD:KRONOS": 1794924025.656234,
+    "ETHUSD:BREAKOUT": 1794924008.282651,
     "ETHUSD:KRONOS": 1794893130.552113,
     "SOLUSD:BREAKOUT": 1794921004.626609,
     "SOLUSD:KRONOS": 1794921021.993951,
@@ -739,7 +784,7 @@
     "EURUSD:KRONOS": 1794834023.375942,
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1794845706.195009,
-    "USDJPY:ICT": 1794824435.383822,
+    "USDJPY:ICT": 1794924009.757119,
     "EURUSD:TREND_PULLBACK": 1794921309.722345,
     "XAUUSD:ICT": 1794917462.910452,
     "EURUSD:SND": 1794841214.521494
