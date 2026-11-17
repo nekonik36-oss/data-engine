@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 16:15:59 UTC",
+  "updated_utc": "2026-11-17 16:17:34 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64182.19,
-    "ETHUSD": 1785.94,
-    "SOLUSD": 72.59,
-    "XAUUSD": 3871.62,
-    "EURUSD": 1.10124,
-    "USDJPY": 159.305
+    "BTCUSD": 64068.77,
+    "ETHUSD": 1781.12,
+    "SOLUSD": 72.43,
+    "XAUUSD": 3870.25,
+    "EURUSD": 1.10119,
+    "USDJPY": 159.295
   },
   "active_trades": {},
   "bot_stats": {
@@ -1280,7 +1280,7 @@
         "tp2_price": 1761.40536,
         "opened_epoch": 1794932124.693626,
         "tp1_hit": false,
-        "peak_r": 0.056
+        "peak_r": 0.33
       },
       {
         "key": "ETHUSD:TREND_PULLBACK",
@@ -1295,7 +1295,7 @@
         "tp2_price": 1761.40536,
         "opened_epoch": 1794932124.694633,
         "tp1_hit": false,
-        "peak_r": 0.056
+        "peak_r": 0.33
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1351,7 +1351,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 26h 44m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 26h 42m)",
   "deriv_flow_status": "Graduated Live (249 eps, 62.5% WR, +0.05R EMA)",
-  "cycle_count": 662
+  "cycle_count": 665
 }
