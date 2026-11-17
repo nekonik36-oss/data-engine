@@ -705,7 +705,7 @@
       "tp2_price": 1822.62889,
       "opened_epoch": 1794877206.232823,
       "tp1_hit": true,
-      "peak_r": 0.651
+      "peak_r": 0.689
     }
   ],
   "shadow_cooldowns": {
@@ -741,5 +741,8 @@
     "XAUUSD:ICT": 1794845444.657765,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 779
+  "shadow_episodes": 779,
+  "probation_strategies": [
+    "SND"
+  ]
 }
