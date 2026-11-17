@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 23:00:03 UTC",
+  "updated_utc": "2026-11-17 23:02:09 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64731.91,
-    "ETHUSD": 1814.55,
-    "SOLUSD": 74.08,
-    "XAUUSD": 3849.08,
-    "EURUSD": 1.09973,
-    "USDJPY": 159.417
+    "BTCUSD": 64811.96,
+    "ETHUSD": 1816.85,
+    "SOLUSD": 74.13,
+    "XAUUSD": 3853.67,
+    "EURUSD": 1.09937,
+    "USDJPY": 159.471
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 22:55:27 UTC",
+    "updated_utc": "2026-11-17 23:00:28 UTC",
     "total_episodes": 1019,
     "strategy_stats": {
       "SND": {
@@ -1296,10 +1296,25 @@
         "opened_epoch": 1794956127.945096,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 1814.52,
+        "sl_price": 1821.73381,
+        "sl_dist": 7.21381,
+        "tp1_price": 1809.83102,
+        "tp2_price": 1804.05997,
+        "opened_epoch": 1794956428.307206,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1794951916.578462,
+      "ETHUSD:ICT": 1794956428.307206,
       "BTCUSD:BREAKOUT": 1794950713.785303,
       "BTCUSD:KRONOS": 1794930400.393225,
       "ETHUSD:BREAKOUT": 1794956124.847493,
@@ -1336,7 +1351,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 20h 0m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 19h 57m)",
   "deriv_flow_status": "Shadow Incubation (275/30 eps, 61% WR, -0.12R)",
-  "cycle_count": 1955
+  "cycle_count": 1960
 }
