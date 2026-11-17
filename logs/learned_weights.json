@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 14:24:52 UTC",
-  "total_episodes": 927,
+  "updated_utc": "2026-11-17 14:25:22 UTC",
+  "total_episodes": 928,
   "strategy_stats": {
     "SND": {
       "trades": 38,
@@ -24,11 +24,11 @@
       "multiplier": 0.98
     },
     "TREND_PULLBACK": {
-      "trades": 109,
-      "wins": 51,
+      "trades": 110,
+      "wins": 52,
       "losses": 55,
-      "ema_r": -0.094,
-      "multiplier": 0.977
+      "ema_r": -0.05,
+      "multiplier": 0.988
     },
     "KRONOS": {
       "trades": 189,
@@ -64,7 +64,7 @@
     "SESSION_SWEEP_WINDOW:SND": 0.827,
     "TRENDING_UP:KRONOS": 1.023,
     "TRENDING_UP:BREAKOUT": 0.929,
-    "TRENDING_UP:TREND_PULLBACK": 0.955,
+    "TRENDING_UP:TREND_PULLBACK": 0.962,
     "RANGING:DERIV_FLOW": 1.319,
     "TRENDING_DOWN:DERIV_FLOW": 1.359,
     "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.973,
@@ -681,21 +681,6 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:TREND_PULLBACK",
-      "symbol": "SOLUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 73.66,
-      "sl_price": 73.29925,
-      "sl_dist": 0.36075,
-      "tp1_price": 73.89449,
-      "tp2_price": 74.18309,
-      "opened_epoch": 1794923714.870221,
-      "tp1_hit": true,
-      "peak_r": 0.97
-    },
-    {
       "key": "USDJPY:ICT",
       "symbol": "USDJPY",
       "strategy_name": "ICT",
@@ -783,7 +768,7 @@
       "tp2_price": 1814.86872,
       "opened_epoch": 1794925492.80395,
       "tp1_hit": false,
-      "peak_r": 0.075
+      "peak_r": 0.172
     }
   ],
   "shadow_cooldowns": {
@@ -819,7 +804,7 @@
     "XAUUSD:ICT": 1794924910.664532,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 880,
+  "shadow_episodes": 881,
   "probation_strategies": [
     "SND"
   ]
