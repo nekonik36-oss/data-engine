@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 13:57:08 UTC",
+  "updated_utc": "2026-11-17 13:58:44 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 65054.86,
-    "ETHUSD": 1828.49,
-    "SOLUSD": 73.8,
-    "XAUUSD": 3848.89,
-    "EURUSD": 1.09778,
-    "USDJPY": 159.362
+    "BTCUSD": 65086.02,
+    "ETHUSD": 1828.18,
+    "SOLUSD": 73.75,
+    "XAUUSD": 3850.85,
+    "EURUSD": 1.09784,
+    "USDJPY": 159.353
   },
   "active_trades": {},
   "bot_stats": {
@@ -1265,7 +1265,7 @@
         "tp2_price": 74.18309,
         "opened_epoch": 1794923714.870221,
         "tp1_hit": false,
-        "peak_r": 0.388
+        "peak_r": 0.416
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1321,7 +1321,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 29h 2m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 29h 1m)",
   "deriv_flow_status": "Shadow Incubation (238/30 eps, 63% WR, -0.04R)",
-  "cycle_count": 330
+  "cycle_count": 335
 }
