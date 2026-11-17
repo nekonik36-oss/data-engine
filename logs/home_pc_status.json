@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 20:33:34 UTC",
+  "updated_utc": "2026-11-17 20:35:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64066.79,
-    "ETHUSD": 1802.75,
-    "SOLUSD": 73.26,
-    "XAUUSD": 3852.17,
-    "EURUSD": 1.10055,
-    "USDJPY": 159.342
+    "BTCUSD": 64039.84,
+    "ETHUSD": 1799.63,
+    "SOLUSD": 73.13,
+    "XAUUSD": 3851.47,
+    "EURUSD": 1.10061,
+    "USDJPY": 159.331
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 20:30:08 UTC",
+    "updated_utc": "2026-11-17 20:34:46 UTC",
     "total_episodes": 992,
     "strategy_stats": {
       "SND": {
@@ -1281,6 +1281,21 @@
         "opened_epoch": 1794947408.752484,
         "tp1_hit": false,
         "peak_r": 0.178
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 73.07,
+        "sl_price": 72.7369,
+        "sl_dist": 0.3331,
+        "tp1_price": 73.28652,
+        "tp2_price": 73.553,
+        "opened_epoch": 1794947686.45099,
+        "tp1_hit": false,
+        "peak_r": 0.21
       }
     ],
     "shadow_cooldowns": {
@@ -1302,7 +1317,7 @@
       "XAUUSD:BREAKOUT": 1794844811.013358,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794927609.018028,
-      "SOLUSD:DERIV_FLOW": 1794945581.412385,
+      "SOLUSD:DERIV_FLOW": 1794947686.45099,
       "BTCUSD:DERIV_FLOW": 1794946203.558093,
       "ETHUSD:DERIV_FLOW": 1794945508.292807,
       "EURUSD:BREAKOUT": 1794930338.39185,
@@ -1321,7 +1336,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 22h 26m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 22h 24m)",
   "deriv_flow_status": "Shadow Incubation (264/30 eps, 61% WR, -0.26R)",
-  "cycle_count": 1535
+  "cycle_count": 1540
 }
