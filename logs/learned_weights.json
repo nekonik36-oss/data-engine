@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 21:07:22 UTC",
+  "updated_utc": "2026-11-17 21:10:14 UTC",
   "total_episodes": 1001,
   "strategy_stats": {
     "SND": {
@@ -694,17 +694,62 @@
       "opened_epoch": 1794949518.716341,
       "tp1_hit": false,
       "peak_r": 0.029
+    },
+    {
+      "key": "BTCUSD:ICT",
+      "symbol": "BTCUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 63998.23,
+      "sl_price": 64177.97837,
+      "sl_dist": 179.74837,
+      "tp1_price": 63881.39356,
+      "tp2_price": 63737.59487,
+      "opened_epoch": 1794949812.886457,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "ETHUSD:ICT",
+      "symbol": "ETHUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 1797.51,
+      "sl_price": 1805.74578,
+      "sl_dist": 8.23578,
+      "tp1_price": 1792.15674,
+      "tp2_price": 1785.56811,
+      "opened_epoch": 1794949814.676674,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "ETHUSD:KRONOS",
+      "symbol": "ETHUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 1797.51,
+      "sl_price": 1805.74578,
+      "sl_dist": 8.23578,
+      "tp1_price": 1792.15674,
+      "tp2_price": 1785.56811,
+      "opened_epoch": 1794949814.678681,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
-    "ETHUSD:ICT": 1794941403.300735,
+    "ETHUSD:ICT": 1794949814.676674,
     "BTCUSD:BREAKOUT": 1794946832.545829,
     "BTCUSD:KRONOS": 1794930400.393225,
     "ETHUSD:BREAKOUT": 1794947106.375091,
-    "ETHUSD:KRONOS": 1794932124.695626,
+    "ETHUSD:KRONOS": 1794949814.678681,
     "SOLUSD:BREAKOUT": 1794949518.716341,
     "SOLUSD:KRONOS": 1794948909.82039,
-    "BTCUSD:ICT": 1794947408.752484,
+    "BTCUSD:ICT": 1794949812.886457,
     "SOLUSD:SND": 1794941719.92021,
     "SOLUSD:ICT": 1794948909.817395,
     "ETHUSD:TREND_PULLBACK": 1794943212.248429,
