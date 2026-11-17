@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-17 09:37:53 UTC",
+  "updated_utc": "2026-11-17 09:38:44 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64412.0,
-    "ETHUSD": 1812.3,
-    "SOLUSD": 72.42
+    "BTCUSD": 64458.61,
+    "ETHUSD": 1813.64,
+    "SOLUSD": 72.5
   },
   "active_trades": {},
   "bot_stats": {
@@ -553,8 +553,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-17 09:30:56 UTC",
-    "total_episodes": 889,
+    "updated_utc": "2026-11-17 09:38:43 UTC",
+    "total_episodes": 890,
     "strategy_stats": {
       "SND": {
         "trades": 38,
@@ -592,11 +592,11 @@
         "multiplier": 0.972
       },
       "DERIV_FLOW": {
-        "trades": 225,
+        "trades": 226,
         "wins": 144,
-        "losses": 80,
-        "ema_r": 0.445,
-        "multiplier": 1.111
+        "losses": 81,
+        "ema_r": 0.329,
+        "multiplier": 1.082
       }
     },
     "regime_strategy_multipliers": {
@@ -620,7 +620,7 @@
       "TRENDING_UP:BREAKOUT": 0.929,
       "TRENDING_UP:TREND_PULLBACK": 0.936,
       "RANGING:DERIV_FLOW": 1.319,
-      "TRENDING_DOWN:DERIV_FLOW": 1.349,
+      "TRENDING_DOWN:DERIV_FLOW": 1.333,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.008,
       "MACRO_NEWS_WINDOW:SND": 0.984,
       "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.984,
@@ -1246,22 +1246,7 @@
         "tp2_price": 72.71415,
         "opened_epoch": 1794906623.328625,
         "tp1_hit": true,
-        "peak_r": 0.684
-      },
-      {
-        "key": "BTCUSD:DERIV_FLOW",
-        "symbol": "BTCUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 64290.5,
-        "sl_price": 64452.26305,
-        "sl_dist": 161.76305,
-        "tp1_price": 64185.35402,
-        "tp2_price": 64055.94358,
-        "opened_epoch": 1794906668.724477,
-        "tp1_hit": false,
-        "peak_r": 0.586
+        "peak_r": 0.718
       },
       {
         "key": "BTCUSD:ICT",
@@ -1275,8 +1260,8 @@
         "tp1_price": 64437.5848,
         "tp2_price": 64563.4861,
         "opened_epoch": 1794907514.322074,
-        "tp1_hit": false,
-        "peak_r": 0.596
+        "tp1_hit": true,
+        "peak_r": 0.784
       }
     ],
     "shadow_cooldowns": {
@@ -1312,12 +1297,12 @@
       "XAUUSD:ICT": 1794845444.657765,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 842,
+    "shadow_episodes": 843,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
-  "deriv_flow_status": "Graduated Live (225 eps, 64.3% WR, +0.45R EMA)",
-  "cycle_count": 465
+  "deriv_flow_status": "Graduated Live (226 eps, 64.0% WR, +0.33R EMA)",
+  "cycle_count": 467
 }
