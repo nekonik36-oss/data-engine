@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-17 05:10:17 UTC",
-  "total_episodes": 848,
+  "updated_utc": "2026-11-17 05:11:46 UTC",
+  "total_episodes": 849,
   "strategy_stats": {
     "SND": {
-      "trades": 31,
+      "trades": 32,
       "wins": 10,
-      "losses": 20,
-      "ema_r": -0.345,
-      "multiplier": 0.914
+      "losses": 21,
+      "ema_r": -0.397,
+      "multiplier": 0.901
     },
     "ICT": {
       "trades": 209,
@@ -73,7 +73,8 @@
     "MACRO_NEWS_WINDOW:ICT": 1.027,
     "TRENDING_UP:DERIV_FLOW": 1.019,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.975,
-    "MACRO_NEWS_WINDOW:BREAKOUT": 1.014
+    "MACRO_NEWS_WINDOW:BREAKOUT": 1.014,
+    "TRENDING_UP:SND": 0.984
   },
   "symbol_streaks": {
     "BTCUSD": {
@@ -696,23 +697,8 @@
       "tp1_price": 72.70463,
       "tp2_price": 72.45187,
       "opened_epoch": 1794890728.272654,
-      "tp1_hit": false,
-      "peak_r": 0.538
-    },
-    {
-      "key": "SOLUSD:SND",
-      "symbol": "SOLUSD",
-      "strategy_name": "SND",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 73.03,
-      "sl_price": 72.72585,
-      "sl_dist": 0.30415,
-      "tp1_price": 73.2277,
-      "tp2_price": 73.47101,
-      "opened_epoch": 1794891618.545652,
-      "tp1_hit": false,
-      "peak_r": 0.0
+      "tp1_hit": true,
+      "peak_r": 0.728
     }
   ],
   "shadow_cooldowns": {
@@ -748,7 +734,7 @@
     "XAUUSD:ICT": 1794845444.657765,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 802,
+  "shadow_episodes": 803,
   "probation_strategies": [
     "SND"
   ]
