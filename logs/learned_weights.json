@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-17 05:30:30 UTC",
-  "total_episodes": 851,
+  "updated_utc": "2026-11-17 05:42:28 UTC",
+  "total_episodes": 853,
   "strategy_stats": {
     "SND": {
       "trades": 32,
@@ -17,11 +17,11 @@
       "multiplier": 1.033
     },
     "BREAKOUT": {
-      "trades": 159,
+      "trades": 160,
       "wins": 88,
-      "losses": 69,
-      "ema_r": -0.007,
-      "multiplier": 0.998
+      "losses": 70,
+      "ema_r": -0.086,
+      "multiplier": 0.978
     },
     "TREND_PULLBACK": {
       "trades": 100,
@@ -31,11 +31,11 @@
       "multiplier": 0.977
     },
     "KRONOS": {
-      "trades": 183,
+      "trades": 184,
       "wins": 95,
-      "losses": 84,
-      "ema_r": 0.033,
-      "multiplier": 1.008
+      "losses": 85,
+      "ema_r": -0.05,
+      "multiplier": 0.988
     },
     "DERIV_FLOW": {
       "trades": 211,
@@ -62,8 +62,8 @@
     "TRENDING_DOWN:SND": 1.001,
     "TRENDING_UP:ICT": 1.118,
     "SESSION_SWEEP_WINDOW:SND": 0.844,
-    "TRENDING_UP:KRONOS": 1.073,
-    "TRENDING_UP:BREAKOUT": 0.945,
+    "TRENDING_UP:KRONOS": 1.057,
+    "TRENDING_UP:BREAKOUT": 0.929,
     "TRENDING_UP:TREND_PULLBACK": 0.97,
     "RANGING:DERIV_FLOW": 1.332,
     "TRENDING_DOWN:DERIV_FLOW": 1.365,
@@ -716,36 +716,6 @@
       "peak_r": 0.781
     },
     {
-      "key": "ETHUSD:BREAKOUT",
-      "symbol": "ETHUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 1841.43,
-      "sl_price": 1835.53444,
-      "sl_dist": 5.89556,
-      "tp1_price": 1845.26212,
-      "tp2_price": 1849.97857,
-      "opened_epoch": 1794893130.540788,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
-      "key": "ETHUSD:KRONOS",
-      "symbol": "ETHUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 1841.43,
-      "sl_price": 1835.53444,
-      "sl_dist": 5.89556,
-      "tp1_price": 1845.26212,
-      "tp2_price": 1849.97857,
-      "opened_epoch": 1794893130.552113,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
       "key": "SOLUSD:ICT",
       "symbol": "SOLUSD",
       "strategy_name": "ICT",
@@ -758,7 +728,7 @@
       "tp2_price": 72.47432,
       "opened_epoch": 1794893430.192264,
       "tp1_hit": false,
-      "peak_r": 0.427
+      "peak_r": 0.457
     }
   ],
   "shadow_cooldowns": {
@@ -794,7 +764,7 @@
     "XAUUSD:ICT": 1794845444.657765,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 805,
+  "shadow_episodes": 807,
   "probation_strategies": [
     "SND"
   ]
