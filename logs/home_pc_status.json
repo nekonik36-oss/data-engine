@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 17:05:30 UTC",
+  "updated_utc": "2026-11-18 17:07:36 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62820.0,
-    "ETHUSD": 1754.1,
-    "SOLUSD": 73.12,
-    "XAUUSD": 3744.71,
-    "EURUSD": 1.09672,
-    "USDJPY": 159.265
+    "BTCUSD": 62917.86,
+    "ETHUSD": 1758.71,
+    "SOLUSD": 73.37,
+    "XAUUSD": 3744.86,
+    "EURUSD": 1.09682,
+    "USDJPY": 159.28
   },
   "active_trades": {},
   "bot_stats": {
@@ -1272,8 +1272,8 @@
         "tp1_price": 1757.34154,
         "tp2_price": 1767.23883,
         "opened_epoch": 1795021203.384491,
-        "tp1_hit": false,
-        "peak_r": 0.597
+        "tp1_hit": true,
+        "peak_r": 0.761
       },
       {
         "key": "SOLUSD:ICT",
@@ -1288,7 +1288,7 @@
         "tp2_price": 73.642,
         "opened_epoch": 1795021205.729845,
         "tp1_hit": true,
-        "peak_r": 0.759
+        "peak_r": 0.958
       },
       {
         "key": "XAUUSD:ICT",
@@ -1333,7 +1333,7 @@
         "tp2_price": 63252.2739,
         "opened_epoch": 1795021230.003566,
         "tp1_hit": false,
-        "peak_r": 0.353
+        "peak_r": 0.465
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1348,7 +1348,7 @@
         "tp2_price": 63252.2739,
         "opened_epoch": 1795021230.005568,
         "tp1_hit": false,
-        "peak_r": 0.353
+        "peak_r": 0.465
       },
       {
         "key": "ETHUSD:ICT",
@@ -1362,8 +1362,8 @@
         "tp1_price": 1757.34154,
         "tp2_price": 1767.23883,
         "opened_epoch": 1795021231.483697,
-        "tp1_hit": false,
-        "peak_r": 0.597
+        "tp1_hit": true,
+        "peak_r": 0.761
       }
     ],
     "shadow_cooldowns": {
@@ -1405,7 +1405,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 1h 54m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 1h 52m)",
   "deriv_flow_status": "Graduated Live (325 eps, 61.2% WR, +0.55R EMA)",
-  "cycle_count": 1165
+  "cycle_count": 1170
 }
