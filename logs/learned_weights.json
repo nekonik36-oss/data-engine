@@ -692,8 +692,8 @@
       "tp1_price": 74.80362,
       "tp2_price": 75.05423,
       "opened_epoch": 1794968462.47371,
-      "tp1_hit": false,
-      "peak_r": 0.543
+      "tp1_hit": true,
+      "peak_r": 0.83
     },
     {
       "key": "SOLUSD:KRONOS",
@@ -723,7 +723,7 @@
       "tp2_price": 64743.36772,
       "opened_epoch": 1794968701.882861,
       "tp1_hit": false,
-      "peak_r": 0.237
+      "peak_r": 0.644
     }
   ],
   "shadow_cooldowns": {
