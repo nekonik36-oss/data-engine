@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 15:59:03 UTC",
-  "total_episodes": 1145,
+  "updated_utc": "2026-11-18 16:12:41 UTC",
+  "total_episodes": 1146,
   "strategy_stats": {
     "SND": {
       "trades": 49,
@@ -10,11 +10,11 @@
       "multiplier": 0.993
     },
     "ICT": {
-      "trades": 278,
+      "trades": 279,
       "wins": 143,
-      "losses": 133,
-      "ema_r": -0.137,
-      "multiplier": 0.966
+      "losses": 134,
+      "ema_r": -0.206,
+      "multiplier": 0.948
     },
     "BREAKOUT": {
       "trades": 203,
@@ -54,7 +54,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.914,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.033,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.771,
-    "TRENDING_DOWN:ICT": 0.895,
+    "TRENDING_DOWN:ICT": 0.879,
     "TRENDING_DOWN:KRONOS": 1.029,
     "RANGING:BREAKOUT": 0.944,
     "RANGING:SND": 1.042,
@@ -694,7 +694,7 @@
       "tp2_price": 1752.41865,
       "opened_epoch": 1795016997.39118,
       "tp1_hit": false,
-      "peak_r": 0.496
+      "peak_r": 0.519
     },
     {
       "key": "BTCUSD:BREAKOUT",
@@ -708,8 +708,8 @@
       "tp1_price": 62850.88395,
       "tp2_price": 62595.92267,
       "opened_epoch": 1795017020.848843,
-      "tp1_hit": false,
-      "peak_r": 0.195
+      "tp1_hit": true,
+      "peak_r": 0.796
     },
     {
       "key": "SOLUSD:BREAKOUT",
@@ -724,7 +724,7 @@
       "tp2_price": 72.53379,
       "opened_epoch": 1795017024.340028,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.276
     },
     {
       "key": "BTCUSD:DERIV_FLOW",
@@ -738,23 +738,8 @@
       "tp1_price": 62850.88395,
       "tp2_price": 62595.92267,
       "opened_epoch": 1795017080.753987,
-      "tp1_hit": false,
-      "peak_r": 0.195
-    },
-    {
-      "key": "BTCUSD:ICT",
-      "symbol": "BTCUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 63188.8,
-      "sl_price": 62872.39315,
-      "sl_dist": 316.40685,
-      "tp1_price": 63394.46445,
-      "tp2_price": 63647.58993,
-      "opened_epoch": 1795017311.220559,
-      "tp1_hit": false,
-      "peak_r": 0.269
+      "tp1_hit": true,
+      "peak_r": 0.796
     },
     {
       "key": "SOLUSD:ICT",
@@ -783,8 +768,8 @@
       "tp1_price": 73.25057,
       "tp2_price": 72.84511,
       "opened_epoch": 1795017442.350637,
-      "tp1_hit": false,
-      "peak_r": 0.592
+      "tp1_hit": true,
+      "peak_r": 0.888
     }
   ],
   "shadow_cooldowns": {
@@ -821,7 +806,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1096,
+  "shadow_episodes": 1097,
   "probation_strategies": [
     "SND"
   ]
