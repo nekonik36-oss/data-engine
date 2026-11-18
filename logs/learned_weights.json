@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 11:12:12 UTC",
+  "updated_utc": "2026-11-18 11:18:42 UTC",
   "total_episodes": 1076,
   "strategy_stats": {
     "SND": {
@@ -679,7 +679,38 @@
     }
   ],
   "live_episodes": 29,
-  "active_shadow_trades": [],
+  "active_shadow_trades": [
+    {
+      "key": "BTCUSD:DERIV_FLOW",
+      "symbol": "BTCUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 64177.51,
+      "sl_price": 64318.70052,
+      "sl_dist": 141.19052,
+      "tp1_price": 64085.73616,
+      "tp2_price": 63972.78374,
+      "opened_epoch": 1795000719.624654,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "ETHUSD:DERIV_FLOW",
+      "symbol": "ETHUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 1798.75,
+      "sl_price": 1803.92644,
+      "sl_dist": 5.17644,
+      "tp1_price": 1795.38532,
+      "tp2_price": 1791.24417,
+      "opened_epoch": 1795000722.719705,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    }
+  ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1794999629.095167,
     "BTCUSD:BREAKOUT": 1794997212.89977,
@@ -700,8 +731,8 @@
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1794927609.018028,
     "SOLUSD:DERIV_FLOW": 1794999115.569,
-    "BTCUSD:DERIV_FLOW": 1794997495.853918,
-    "ETHUSD:DERIV_FLOW": 1794997935.290809,
+    "BTCUSD:DERIV_FLOW": 1795000719.624654,
+    "ETHUSD:DERIV_FLOW": 1795000722.719705,
     "EURUSD:BREAKOUT": 1794930338.39185,
     "USDJPY:BREAKOUT": 1794922211.802075,
     "USDJPY:KRONOS": 1794824120.825775,
