@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 08:26:53 UTC",
+  "updated_utc": "2026-11-18 08:29:07 UTC",
   "hostname": "runnervmccnms",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64720.0,
-    "ETHUSD": 1811.66,
-    "SOLUSD": 74.89
+    "BTCUSD": 64748.07,
+    "ETHUSD": 1812.41,
+    "SOLUSD": 74.9
   },
   "active_trades": {},
   "bot_stats": {
@@ -1247,7 +1247,7 @@
         "tp2_price": 64982.10177,
         "opened_epoch": 1794990409.113617,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.013
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1303,7 +1303,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 10h 33m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 10h 30m)",
   "deriv_flow_status": "Graduated Live (290 eps, 59.9% WR, -0.33R EMA)",
-  "cycle_count": 1
+  "cycle_count": 5
 }
