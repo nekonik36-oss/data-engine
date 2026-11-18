@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 00:25:07 UTC",
-  "total_episodes": 1025,
+  "updated_utc": "2026-11-18 00:30:12 UTC",
+  "total_episodes": 1026,
   "strategy_stats": {
     "SND": {
       "trades": 42,
@@ -38,11 +38,11 @@
       "multiplier": 0.973
     },
     "DERIV_FLOW": {
-      "trades": 275,
-      "wins": 167,
+      "trades": 276,
+      "wins": 168,
       "losses": 107,
-      "ema_r": -0.119,
-      "multiplier": 0.97
+      "ema_r": -0.073,
+      "multiplier": 0.982
     }
   },
   "regime_strategy_multipliers": {
@@ -71,7 +71,7 @@
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.968,
     "MACRO_NEWS_WINDOW:ICT": 1.039,
-    "TRENDING_UP:DERIV_FLOW": 1.033,
+    "TRENDING_UP:DERIV_FLOW": 1.04,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.941,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.005,
     "TRENDING_UP:SND": 0.969,
@@ -681,21 +681,6 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 64852.81,
-      "sl_price": 65047.52781,
-      "sl_dist": 194.71781,
-      "tp1_price": 64726.24342,
-      "tp2_price": 64570.46917,
-      "opened_epoch": 1794961147.509044,
-      "tp1_hit": false,
-      "peak_r": 0.556
-    },
-    {
       "key": "ETHUSD:DERIV_FLOW",
       "symbol": "ETHUSD",
       "strategy_name": "DERIV_FLOW",
@@ -708,7 +693,7 @@
       "tp2_price": 1811.35352,
       "opened_epoch": 1794961148.480012,
       "tp1_hit": false,
-      "peak_r": 0.481
+      "peak_r": 0.498
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -738,7 +723,7 @@
       "tp2_price": 75.7565,
       "opened_epoch": 1794961507.82145,
       "tp1_hit": false,
-      "peak_r": 0.08
+      "peak_r": 0.133
     }
   ],
   "shadow_cooldowns": {
@@ -774,7 +759,7 @@
     "XAUUSD:ICT": 1794933348.760101,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 978,
+  "shadow_episodes": 979,
   "probation_strategies": [
     "SND"
   ]
