@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 17:11:13 UTC",
+  "updated_utc": "2026-11-18 17:15:16 UTC",
   "total_episodes": 1162,
   "strategy_stats": {
     "SND": {
@@ -740,6 +740,51 @@
       "opened_epoch": 1795021230.005568,
       "tp1_hit": false,
       "peak_r": 0.465
+    },
+    {
+      "key": "BTCUSD:TREND_PULLBACK",
+      "symbol": "BTCUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 62668.0,
+      "sl_price": 62988.89075,
+      "sl_dist": 320.89075,
+      "tp1_price": 62459.42102,
+      "tp2_price": 62202.70842,
+      "opened_epoch": 1795022110.506749,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "ETHUSD:TREND_PULLBACK",
+      "symbol": "ETHUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 1751.35,
+      "sl_price": 1763.24745,
+      "sl_dist": 11.89745,
+      "tp1_price": 1743.61665,
+      "tp2_price": 1734.09869,
+      "opened_epoch": 1795022112.193468,
+      "tp1_hit": false,
+      "peak_r": 0.018
+    },
+    {
+      "key": "SOLUSD:TREND_PULLBACK",
+      "symbol": "SOLUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 72.87,
+      "sl_price": 73.42731,
+      "sl_dist": 0.55731,
+      "tp1_price": 72.50775,
+      "tp2_price": 72.0619,
+      "opened_epoch": 1795022116.489629,
+      "tp1_hit": false,
+      "peak_r": 0.036
     }
   ],
   "shadow_cooldowns": {
@@ -753,9 +798,9 @@
     "BTCUSD:ICT": 1795021230.003566,
     "SOLUSD:SND": 1795015512.388271,
     "SOLUSD:ICT": 1795021205.729845,
-    "ETHUSD:TREND_PULLBACK": 1795008010.652364,
-    "BTCUSD:TREND_PULLBACK": 1795014614.616233,
-    "SOLUSD:TREND_PULLBACK": 1794970817.438558,
+    "ETHUSD:TREND_PULLBACK": 1795022112.193468,
+    "BTCUSD:TREND_PULLBACK": 1795022110.506749,
+    "SOLUSD:TREND_PULLBACK": 1795022116.489629,
     "ETHUSD:SND": 1795003509.7521,
     "BTCUSD:SND": 1795003508.118403,
     "XAUUSD:BREAKOUT": 1795005919.694807,
