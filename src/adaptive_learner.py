@@ -125,7 +125,9 @@ class AdaptiveLearner:
         in_probation = strategy_name in probation_list
 
         if in_probation:
-            if ema_r >= 0.05 or (wr >= 0.48 and ema_r >= 0.0):
+            # Require BOTH cumulative WR >= 48% AND positive EMA >= +0.05R so a 42% WR module
+            # cannot sneak off [SHADOW-BENCH] on a single lucky bounce before proving real edge.
+            if wr >= 0.48 and ema_r >= 0.05:
                 probation_list = [s for s in probation_list if s != strategy_name]
                 self.state["probation_strategies"] = probation_list
                 return True

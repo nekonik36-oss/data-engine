@@ -317,10 +317,12 @@ class CryptoDerivativesFlow:
 
         if trades >= cls.MIN_GRADUATION_EPISODES:
             # Initial graduation gate (30-49 eps): strict >=55% WR and >=+0.05R EMA.
-            # Veteran hysteresis (>=50 eps): stay graduated as long as cumulative WR >= 54% and EMA > -0.35R,
-            # preventing brief 5-trade news whipsaws from shutting off a 60%+ WR institutional module.
-            if (wr >= cls.MIN_GRADUATION_WR and ema_r >= cls.MIN_GRADUATION_EMA_R) or (
-                trades >= 50 and wr >= 0.54 and ema_r > -0.35
+            # Veteran hysteresis (50-99 eps: >=54% WR & >-0.35R EMA; 100+ eps: >=56% WR & >-0.55R EMA)
+            # prevents brief 5-6 trade range lulls from shutting off a ~60% WR institutional module.
+            if (
+                (wr >= cls.MIN_GRADUATION_WR and ema_r >= cls.MIN_GRADUATION_EMA_R)
+                or (trades >= 50 and wr >= 0.54 and ema_r > -0.35)
+                or (trades >= 100 and wr >= 0.56 and ema_r > -0.55)
             ):
                 return True, f"Graduated Live ({trades} eps, {wr * 100:.1f}% WR, {ema_r:+.2f}R EMA)"
         return False, f"Shadow Incubation ({trades}/{cls.MIN_GRADUATION_EPISODES} eps, {wr * 100:.0f}% WR, {ema_r:+.2f}R)"

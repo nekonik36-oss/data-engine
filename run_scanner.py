@@ -42,18 +42,24 @@ def run_scanner(
     except Exception:
         pass
     try:
-        # Prevent Windows Idle Sleep + Away Mode network drop when monitor turns off,
+        # Prevent Windows 11 Modern Standby (S0) + AC Sleep timeout + Away Mode Wi-Fi drop,
         # AND disable Windows CMD QuickEdit 'Select' mode so accidental mouse clicks
-        # inside the console window never freeze stdout!
+        # inside the console window never freeze stdout! (Turn monitor button off for dark screen.)
         if sys.platform == "win32":
+            import platform
+            import subprocess
+
             kernel32 = ctypes.windll.kernel32
-            kernel32.SetThreadExecutionState(0x80000041)
+            kernel32.SetThreadExecutionState(0x80000043)
             h_stdin = kernel32.GetStdHandle(-10)  # STD_INPUT_HANDLE
             mode = ctypes.c_uint32()
             if kernel32.GetConsoleMode(h_stdin, ctypes.byref(mode)):
                 # Clear ENABLE_QUICK_EDIT_MODE (0x0040) & ENABLE_INSERT_MODE (0x0020); set ENABLE_EXTENDED_FLAGS (0x0080)
                 new_mode = (mode.value & ~0x0060) | 0x0080
                 kernel32.SetConsoleMode(h_stdin, new_mode)
+            if platform.node().upper() == "DESKTOP-8RQUOSU":
+                subprocess.run(["powercfg", "/change", "standby-timeout-ac", "0"], check=False, capture_output=True)
+                subprocess.run(["powercfg", "/change", "hibernate-timeout-ac", "0"], check=False, capture_output=True)
     except Exception:
         pass
     console_buffer: list[str] = []
@@ -114,7 +120,7 @@ def run_scanner(
         cycle_count += 1
         try:
             if sys.platform == "win32":
-                ctypes.windll.kernel32.SetThreadExecutionState(0x80000041)
+                ctypes.windll.kernel32.SetThreadExecutionState(0x80000043)
         except Exception:
             pass
         just_connected = False

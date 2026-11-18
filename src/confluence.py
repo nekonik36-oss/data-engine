@@ -463,8 +463,8 @@ class ConfluenceEngine:
                             )
                             and (
                                 regime != MarketRegime.RANGING
-                                or macro_trend_intact
                                 or deriv_confirms
+                                or (not record_shadow and macro_trend_intact)
                             )
                         ):
                             top_pa_with_kronos = True
@@ -637,7 +637,7 @@ class ConfluenceEngine:
                             regime == MarketRegime.RANGING
                             and not (
                                 lead_c.strategy_name == "ICT"
-                                and (macro_trend_intact or deriv_confirms)
+                                and (deriv_confirms or (not record_shadow and macro_trend_intact))
                             )
                         )
                     ):
