@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 13:20:55 UTC",
-  "total_episodes": 1105,
+  "updated_utc": "2026-11-18 13:25:52 UTC",
+  "total_episodes": 1106,
   "strategy_stats": {
     "SND": {
       "trades": 47,
@@ -38,11 +38,11 @@
       "multiplier": 1.04
     },
     "DERIV_FLOW": {
-      "trades": 308,
-      "wins": 182,
+      "trades": 309,
+      "wins": 183,
       "losses": 124,
-      "ema_r": 0.086,
-      "multiplier": 1.021
+      "ema_r": 0.116,
+      "multiplier": 1.029
     }
   },
   "regime_strategy_multipliers": {
@@ -67,7 +67,7 @@
     "TRENDING_UP:TREND_PULLBACK": 0.915,
     "RANGING:DERIV_FLOW": 1.154,
     "TRENDING_DOWN:DERIV_FLOW": 1.392,
-    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.069,
+    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.076,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.968,
     "MACRO_NEWS_WINDOW:ICT": 1.039,
@@ -711,21 +711,6 @@
       "peak_r": 0.575
     },
     {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 74.34,
-      "sl_price": 74.62293,
-      "sl_dist": 0.28293,
-      "tp1_price": 74.15609,
-      "tp2_price": 73.92974,
-      "opened_epoch": 1795007570.776638,
-      "tp1_hit": true,
-      "peak_r": 0.672
-    },
-    {
       "key": "BTCUSD:ICT",
       "symbol": "BTCUSD",
       "strategy_name": "ICT",
@@ -768,7 +753,7 @@
       "tp2_price": 3793.69098,
       "opened_epoch": 1795007712.074654,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.112
     },
     {
       "key": "USDJPY:SND",
@@ -828,7 +813,7 @@
       "tp2_price": 3793.69098,
       "opened_epoch": 1795008034.647833,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.112
     }
   ],
   "shadow_cooldowns": {
@@ -865,7 +850,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1057,
+  "shadow_episodes": 1058,
   "probation_strategies": [
     "SND"
   ]
