@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 11:35:34 UTC",
-  "total_episodes": 1076,
+  "updated_utc": "2026-11-18 11:48:55 UTC",
+  "total_episodes": 1078,
   "strategy_stats": {
     "SND": {
       "trades": 44,
@@ -38,11 +38,11 @@
       "multiplier": 1.028
     },
     "DERIV_FLOW": {
-      "trades": 299,
+      "trades": 301,
       "wins": 178,
-      "losses": 120,
-      "ema_r": 0.047,
-      "multiplier": 1.012
+      "losses": 122,
+      "ema_r": -0.031,
+      "multiplier": 0.992
     }
   },
   "regime_strategy_multipliers": {
@@ -65,7 +65,7 @@
     "TRENDING_UP:KRONOS": 1.064,
     "TRENDING_UP:BREAKOUT": 0.97,
     "TRENDING_UP:TREND_PULLBACK": 0.915,
-    "RANGING:DERIV_FLOW": 1.185,
+    "RANGING:DERIV_FLOW": 1.17,
     "TRENDING_DOWN:DERIV_FLOW": 1.358,
     "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.062,
     "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -681,36 +681,6 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 64177.51,
-      "sl_price": 64318.70052,
-      "sl_dist": 141.19052,
-      "tp1_price": 64085.73616,
-      "tp2_price": 63972.78374,
-      "opened_epoch": 1795000719.624654,
-      "tp1_hit": false,
-      "peak_r": 0.32
-    },
-    {
-      "key": "ETHUSD:DERIV_FLOW",
-      "symbol": "ETHUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 1798.75,
-      "sl_price": 1803.92644,
-      "sl_dist": 5.17644,
-      "tp1_price": 1795.38532,
-      "tp2_price": 1791.24417,
-      "opened_epoch": 1795000722.719705,
-      "tp1_hit": false,
-      "peak_r": 0.485
-    },
-    {
       "key": "BTCUSD:ICT",
       "symbol": "BTCUSD",
       "strategy_name": "ICT",
@@ -835,7 +805,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795001414.392259
   },
-  "shadow_episodes": 1029,
+  "shadow_episodes": 1031,
   "probation_strategies": [
     "SND"
   ]
