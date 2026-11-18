@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 14:02:29 UTC",
-  "total_episodes": 1115,
+  "updated_utc": "2026-11-18 14:15:41 UTC",
+  "total_episodes": 1116,
   "strategy_stats": {
     "SND": {
       "trades": 47,
@@ -10,11 +10,11 @@
       "multiplier": 0.955
     },
     "ICT": {
-      "trades": 267,
+      "trades": 268,
       "wins": 139,
-      "losses": 126,
-      "ema_r": -0.097,
-      "multiplier": 0.976
+      "losses": 127,
+      "ema_r": -0.133,
+      "multiplier": 0.967
     },
     "BREAKOUT": {
       "trades": 199,
@@ -54,7 +54,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.916,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.026,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.764,
-    "TRENDING_DOWN:ICT": 0.926,
+    "TRENDING_DOWN:ICT": 0.917,
     "TRENDING_DOWN:KRONOS": 1.054,
     "RANGING:BREAKOUT": 0.951,
     "RANGING:SND": 1.042,
@@ -681,21 +681,6 @@
   "live_episodes": 30,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:KRONOS",
-      "symbol": "BTCUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 64075.4,
-      "sl_price": 64229.63504,
-      "sl_dist": 154.23504,
-      "tp1_price": 63975.14722,
-      "tp2_price": 63851.75919,
-      "opened_epoch": 1795008611.668275,
-      "tp1_hit": false,
-      "peak_r": 0.535
-    },
-    {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
       "strategy_name": "DERIV_FLOW",
@@ -724,21 +709,6 @@
       "opened_epoch": 1795009509.966067,
       "tp1_hit": false,
       "peak_r": 0.075
-    },
-    {
-      "key": "EURUSD:ICT",
-      "symbol": "EURUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1.09711,
-      "sl_price": 1.09621,
-      "sl_dist": 0.0009,
-      "tp1_price": 1.09769,
-      "tp2_price": 1.09841,
-      "opened_epoch": 1795009514.164454,
-      "tp1_hit": false,
-      "peak_r": 0.256
     },
     {
       "key": "XAUUSD:ICT",
@@ -820,7 +790,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1067,
+  "shadow_episodes": 1068,
   "probation_strategies": [
     "SND"
   ]
