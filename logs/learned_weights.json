@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 10:17:03 UTC",
-  "total_episodes": 1062,
+  "updated_utc": "2026-11-18 10:19:52 UTC",
+  "total_episodes": 1064,
   "strategy_stats": {
     "SND": {
       "trades": 44,
@@ -38,11 +38,11 @@
       "multiplier": 1.005
     },
     "DERIV_FLOW": {
-      "trades": 293,
-      "wins": 173,
+      "trades": 295,
+      "wins": 175,
       "losses": 119,
-      "ema_r": -0.333,
-      "multiplier": 0.917
+      "ema_r": -0.156,
+      "multiplier": 0.961
     }
   },
   "regime_strategy_multipliers": {
@@ -67,7 +67,7 @@
     "TRENDING_UP:TREND_PULLBACK": 0.915,
     "RANGING:DERIV_FLOW": 1.185,
     "TRENDING_DOWN:DERIV_FLOW": 1.358,
-    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 0.995,
+    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.021,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.968,
     "MACRO_NEWS_WINDOW:ICT": 1.039,
@@ -681,36 +681,6 @@
   "live_episodes": 29,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 64654.0,
-      "sl_price": 64796.2388,
-      "sl_dist": 142.2388,
-      "tp1_price": 64561.54478,
-      "tp2_price": 64447.75374,
-      "opened_epoch": 1794995385.147761,
-      "tp1_hit": true,
-      "peak_r": 1.013
-    },
-    {
-      "key": "ETHUSD:DERIV_FLOW",
-      "symbol": "ETHUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 1813.2,
-      "sl_price": 1817.6539,
-      "sl_dist": 4.4539,
-      "tp1_price": 1810.30496,
-      "tp2_price": 1806.74184,
-      "opened_epoch": 1794995386.28491,
-      "tp1_hit": true,
-      "peak_r": 1.228
-    },
-    {
       "key": "SOLUSD:BREAKOUT",
       "symbol": "SOLUSD",
       "strategy_name": "BREAKOUT",
@@ -774,7 +744,7 @@
     "XAUUSD:ICT": 1794933348.760101,
     "EURUSD:SND": 1794841214.521494
   },
-  "shadow_episodes": 1015,
+  "shadow_episodes": 1017,
   "probation_strategies": [
     "SND"
   ]
