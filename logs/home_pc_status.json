@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 00:52:30 UTC",
+  "updated_utc": "2026-11-18 00:54:29 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64753.46,
-    "ETHUSD": 1819.86,
-    "SOLUSD": 75.17
+    "BTCUSD": 64756.99,
+    "ETHUSD": 1819.92,
+    "SOLUSD": 75.12
   },
   "active_trades": {},
   "bot_stats": {
@@ -553,7 +553,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 00:49:17 UTC",
+    "updated_utc": "2026-11-18 00:54:28 UTC",
     "total_episodes": 1028,
     "strategy_stats": {
       "SND": {
@@ -1263,6 +1263,21 @@
         "opened_epoch": 1794962103.66211,
         "tp1_hit": false,
         "peak_r": 0.243
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 75.14,
+        "sl_price": 75.47461,
+        "sl_dist": 0.33461,
+        "tp1_price": 74.9225,
+        "tp2_price": 74.65481,
+        "opened_epoch": 1794963268.501562,
+        "tp1_hit": false,
+        "peak_r": 0.06
       }
     ],
     "shadow_cooldowns": {
@@ -1284,7 +1299,7 @@
       "XAUUSD:BREAKOUT": 1794844811.013358,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794927609.018028,
-      "SOLUSD:DERIV_FLOW": 1794961149.402767,
+      "SOLUSD:DERIV_FLOW": 1794963268.501562,
       "BTCUSD:DERIV_FLOW": 1794961147.509044,
       "ETHUSD:DERIV_FLOW": 1794961148.480012,
       "EURUSD:BREAKOUT": 1794930338.39185,
@@ -1303,7 +1318,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 18h 7m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 18h 5m)",
   "deriv_flow_status": "Graduated Live (278 eps, 61.0% WR, -0.12R EMA)",
-  "cycle_count": 85
+  "cycle_count": 90
 }
