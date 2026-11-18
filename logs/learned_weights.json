@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 12:29:16 UTC",
+  "updated_utc": "2026-11-18 12:30:18 UTC",
   "total_episodes": 1092,
   "strategy_stats": {
     "SND": {
@@ -680,21 +680,6 @@
   ],
   "live_episodes": 29,
   "active_shadow_trades": [
-    {
-      "key": "USDJPY:BREAKOUT",
-      "symbol": "USDJPY",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 159.368,
-      "sl_price": 159.25636,
-      "sl_dist": 0.11164,
-      "tp1_price": 159.44056,
-      "tp2_price": 159.52987,
-      "opened_epoch": 1795003209.356634,
-      "tp1_hit": false,
-      "peak_r": 0.17
-    },
     {
       "key": "EURUSD:ICT",
       "symbol": "EURUSD",
