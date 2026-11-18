@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 18:53:19 UTC",
+  "updated_utc": "2026-11-18 18:55:07 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63169.41,
-    "ETHUSD": 1771.14,
-    "SOLUSD": 73.85,
-    "XAUUSD": 3738.08,
+    "BTCUSD": 63191.51,
+    "ETHUSD": 1771.34,
+    "SOLUSD": 73.9,
+    "XAUUSD": 3737.59,
     "EURUSD": 1.09747,
-    "USDJPY": 159.327
+    "USDJPY": 159.336
   },
   "active_trades": {},
   "bot_stats": {
@@ -578,7 +578,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 18:49:26 UTC",
+    "updated_utc": "2026-11-18 18:55:02 UTC",
     "total_episodes": 1178,
     "strategy_stats": {
       "SND": {
@@ -1274,6 +1274,21 @@
         "opened_epoch": 1795027206.280982,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "BTCUSD:TREND_PULLBACK",
+        "symbol": "BTCUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "SHORT",
+        "regime": "MACRO_NEWS_WINDOW",
+        "entry_price": 63183.19,
+        "sl_price": 63422.51356,
+        "sl_dist": 239.32356,
+        "tp1_price": 63027.62969,
+        "tp2_price": 62836.17084,
+        "opened_epoch": 1795028102.236731,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1288,7 +1303,7 @@
       "SOLUSD:SND": 1795015512.388271,
       "SOLUSD:ICT": 1795021205.729845,
       "ETHUSD:TREND_PULLBACK": 1795026621.434674,
-      "BTCUSD:TREND_PULLBACK": 1795022110.506749,
+      "BTCUSD:TREND_PULLBACK": 1795028102.236731,
       "SOLUSD:TREND_PULLBACK": 1795022116.489629,
       "ETHUSD:SND": 1795003509.7521,
       "BTCUSD:SND": 1795003508.118403,
@@ -1315,7 +1330,7 @@
       "SND"
     ]
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD FOMC Meeting Minutes releases in 7m (19:00 UTC) [-35m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD FOMC Meeting Minutes releases in 5m (19:00 UTC) [-35m/+15m shield])",
   "deriv_flow_status": "Graduated Live (330 eps, 60.9% WR, +0.26R EMA)",
-  "cycle_count": 1430
+  "cycle_count": 1435
 }
