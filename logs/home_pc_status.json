@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 11:55:17 UTC",
+  "updated_utc": "2026-11-18 11:57:02 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64266.52,
-    "ETHUSD": 1801.93,
-    "SOLUSD": 74.58,
-    "XAUUSD": 3760.5,
-    "EURUSD": 1.09608,
-    "USDJPY": 159.363
+    "BTCUSD": 64281.15,
+    "ETHUSD": 1803.01,
+    "SOLUSD": 74.56,
+    "XAUUSD": 3762.41,
+    "EURUSD": 1.09605,
+    "USDJPY": 159.381
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 11:55:15 UTC",
+    "updated_utc": "2026-11-18 11:55:36 UTC",
     "total_episodes": 1082,
     "strategy_stats": {
       "SND": {
@@ -1265,7 +1265,7 @@
         "tp2_price": 1807.57582,
         "opened_epoch": 1795001734.292004,
         "tp1_hit": false,
-        "peak_r": 0.437
+        "peak_r": 0.632
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1296,6 +1296,21 @@
         "opened_epoch": 1795002838.634141,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 64260.11,
+        "sl_price": 64118.73776,
+        "sl_dist": 141.37224,
+        "tp1_price": 64352.00196,
+        "tp2_price": 64465.09975,
+        "opened_epoch": 1795002936.150363,
+        "tp1_hit": false,
+        "peak_r": 0.254
       }
     ],
     "shadow_cooldowns": {
@@ -1306,7 +1321,7 @@
       "ETHUSD:KRONOS": 1794999629.097168,
       "SOLUSD:BREAKOUT": 1794998107.794164,
       "SOLUSD:KRONOS": 1795001115.211002,
-      "BTCUSD:ICT": 1795000816.220322,
+      "BTCUSD:ICT": 1795002936.150363,
       "SOLUSD:SND": 1794967509.816772,
       "SOLUSD:ICT": 1795001115.209009,
       "ETHUSD:TREND_PULLBACK": 1794999906.79161,
@@ -1337,7 +1352,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 7h 4m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 7h 3m)",
   "deriv_flow_status": "Graduated Live (301 eps, 59.3% WR, -0.03R EMA)",
-  "cycle_count": 305
+  "cycle_count": 310
 }
