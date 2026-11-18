@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 09:57:55 UTC",
+  "updated_utc": "2026-11-18 10:00:10 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64599.53,
-    "ETHUSD": 1812.19,
-    "SOLUSD": 75.14
+    "BTCUSD": 64650.85,
+    "ETHUSD": 1813.66,
+    "SOLUSD": 75.21
   },
   "active_trades": {},
   "bot_stats": {
@@ -553,7 +553,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 09:55:16 UTC",
+    "updated_utc": "2026-11-18 10:00:05 UTC",
     "total_episodes": 1061,
     "strategy_stats": {
       "SND": {
@@ -1277,7 +1277,22 @@
         "tp2_price": 75.51686,
         "opened_epoch": 1794995716.382645,
         "tp1_hit": false,
-        "peak_r": 0.158
+        "peak_r": 0.237
+      },
+      {
+        "key": "ETHUSD:TREND_PULLBACK",
+        "symbol": "ETHUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 1813.73,
+        "sl_price": 1809.48698,
+        "sl_dist": 4.24302,
+        "tp1_price": 1816.48797,
+        "tp2_price": 1819.88238,
+        "opened_epoch": 1794996005.666402,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1291,7 +1306,7 @@
       "BTCUSD:ICT": 1794968701.882861,
       "SOLUSD:SND": 1794967509.816772,
       "SOLUSD:ICT": 1794968462.47371,
-      "ETHUSD:TREND_PULLBACK": 1794962103.66211,
+      "ETHUSD:TREND_PULLBACK": 1794996005.666402,
       "BTCUSD:TREND_PULLBACK": 1794990409.113617,
       "SOLUSD:TREND_PULLBACK": 1794970817.438558,
       "ETHUSD:SND": 1794932124.693626,
@@ -1318,7 +1333,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 9h 2m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 8h 59m)",
   "deriv_flow_status": "Graduated Live (293 eps, 59.2% WR, -0.33R EMA)",
-  "cycle_count": 65
+  "cycle_count": 70
 }
