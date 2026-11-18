@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 12:46:30 UTC",
+  "updated_utc": "2026-11-18 12:47:58 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9640.9,
+  "live_equity": 9648.55,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64077.8,
-    "SOLUSD": 74.27,
-    "XAUUSD": 3751.16,
-    "EURUSD": 1.09542,
-    "USDJPY": 159.449
+    "BTCUSD": 64046.46,
+    "SOLUSD": 74.18,
+    "XAUUSD": 3749.27,
+    "EURUSD": 1.09532,
+    "USDJPY": 159.454
   },
   "active_trades": {
     "1088737798": {
@@ -1294,7 +1294,7 @@
         "tp2_price": 73.83188,
         "opened_epoch": 1795005919.092071,
         "tp1_hit": false,
-        "peak_r": 0.036
+        "peak_r": 0.182
       },
       {
         "key": "XAUUSD:BREAKOUT",
@@ -1309,7 +1309,7 @@
         "tp2_price": 3732.83494,
         "opened_epoch": 1795005919.694807,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.148
       },
       {
         "key": "XAUUSD:KRONOS",
@@ -1338,8 +1338,8 @@
         "tp1_price": 1.09533,
         "tp2_price": 1.09469,
         "opened_epoch": 1795005920.300862,
-        "tp1_hit": false,
-        "peak_r": 0.537
+        "tp1_hit": true,
+        "peak_r": 0.787
       },
       {
         "key": "USDJPY:BREAKOUT",
@@ -1354,7 +1354,7 @@
         "tp2_price": 159.58709,
         "opened_epoch": 1795005920.904118,
         "tp1_hit": false,
-        "peak_r": 0.183
+        "peak_r": 0.33
       }
     ],
     "shadow_cooldowns": {
@@ -1396,7 +1396,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 6h 13m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 6h 12m)",
   "deriv_flow_status": "Graduated Live (305 eps, 59.5% WR, +0.00R EMA)",
-  "cycle_count": 465
+  "cycle_count": 470
 }
