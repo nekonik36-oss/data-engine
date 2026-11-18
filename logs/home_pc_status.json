@@ -1,28 +1,28 @@
 {
-  "updated_utc": "2026-11-18 02:19:43 UTC",
-  "hostname": "GB-5CD52876MS",
-  "python_version": "3.14.6",
+  "updated_utc": "2026-11-18 02:21:04 UTC",
+  "hostname": "DESKTOP-8RQUOSU",
+  "python_version": "3.12.10",
   "gpu": {
-    "torch_installed": false,
-    "torch_version": null,
-    "cuda_version": null,
-    "cuda_available": false,
-    "gpu_name": null,
-    "cuda_kernel_ok": false,
-    "cuda_error": "No module named 'torch'"
+    "torch_installed": true,
+    "torch_version": "2.11.0+cu128",
+    "cuda_version": "12.8",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 5060",
+    "cuda_kernel_ok": true,
+    "cuda_error": null
   },
   "pending_hot_reload": false,
-  "execution_mode": "signal_only",
+  "execution_mode": "auto",
   "mt5_connected": false,
-  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
+  "mt5_error": "mt5.initialize() failed: (-6, 'Terminal: Authorization failed') | proc_check=PROC:C:\\Program Files\\MetaTrader 5\\terminal64.exe",
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9628.26,
-  "telegram_configured": false,
-  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
+  "telegram_configured": true,
+  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64335.81,
-    "ETHUSD": 1801.81,
-    "SOLUSD": 74.55
+    "BTCUSD": 64447.51,
+    "ETHUSD": 1805.35,
+    "SOLUSD": 74.72
   },
   "active_trades": {},
   "bot_stats": {
@@ -553,7 +553,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 02:15:43 UTC",
+    "updated_utc": "2026-11-18 02:21:02 UTC",
     "total_episodes": 1042,
     "strategy_stats": {
       "SND": {
@@ -1233,7 +1233,38 @@
       }
     ],
     "live_episodes": 29,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 74.6,
+        "sl_price": 74.28674,
+        "sl_dist": 0.31326,
+        "tp1_price": 74.80362,
+        "tp2_price": 75.05423,
+        "opened_epoch": 1794968462.47371,
+        "tp1_hit": false,
+        "peak_r": 0.383
+      },
+      {
+        "key": "SOLUSD:KRONOS",
+        "symbol": "SOLUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 74.6,
+        "sl_price": 74.91326,
+        "sl_dist": 0.31326,
+        "tp1_price": 74.39638,
+        "tp2_price": 74.14577,
+        "opened_epoch": 1794968462.47471,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1794956428.307206,
       "BTCUSD:BREAKOUT": 1794967427.931154,
@@ -1241,10 +1272,10 @@
       "ETHUSD:BREAKOUT": 1794967428.942759,
       "ETHUSD:KRONOS": 1794949814.678681,
       "SOLUSD:BREAKOUT": 1794963922.297431,
-      "SOLUSD:KRONOS": 1794955808.077267,
+      "SOLUSD:KRONOS": 1794968462.47471,
       "BTCUSD:ICT": 1794953119.460027,
       "SOLUSD:SND": 1794967509.816772,
-      "SOLUSD:ICT": 1794955808.073743,
+      "SOLUSD:ICT": 1794968462.47371,
       "ETHUSD:TREND_PULLBACK": 1794962103.66211,
       "BTCUSD:TREND_PULLBACK": 1794943503.832944,
       "SOLUSD:TREND_PULLBACK": 1794961507.82145,
@@ -1272,7 +1303,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 16h 40m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 16h 38m)",
   "deriv_flow_status": "Graduated Live (284 eps, 61.1% WR, +0.01R EMA)",
-  "cycle_count": 40
+  "cycle_count": 1
 }
