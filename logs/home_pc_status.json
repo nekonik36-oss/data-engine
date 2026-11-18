@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 00:34:37 UTC",
+  "updated_utc": "2026-11-18 00:36:36 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64833.65,
-    "ETHUSD": 1821.02,
-    "SOLUSD": 75.28
+    "BTCUSD": 64810.88,
+    "ETHUSD": 1820.24,
+    "SOLUSD": 75.25
   },
   "active_trades": {},
   "bot_stats": {
@@ -553,7 +553,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 00:30:39 UTC",
+    "updated_utc": "2026-11-18 00:35:03 UTC",
     "total_episodes": 1027,
     "strategy_stats": {
       "SND": {
@@ -1263,6 +1263,21 @@
         "opened_epoch": 1794961507.82145,
         "tp1_hit": false,
         "peak_r": 0.557
+      },
+      {
+        "key": "ETHUSD:TREND_PULLBACK",
+        "symbol": "ETHUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 1820.21,
+        "sl_price": 1813.84172,
+        "sl_dist": 6.36828,
+        "tp1_price": 1824.34938,
+        "tp2_price": 1829.44401,
+        "opened_epoch": 1794962103.66211,
+        "tp1_hit": false,
+        "peak_r": 0.179
       }
     ],
     "shadow_cooldowns": {
@@ -1276,7 +1291,7 @@
       "BTCUSD:ICT": 1794953119.460027,
       "SOLUSD:SND": 1794956708.124543,
       "SOLUSD:ICT": 1794955808.073743,
-      "ETHUSD:TREND_PULLBACK": 1794943212.248429,
+      "ETHUSD:TREND_PULLBACK": 1794962103.66211,
       "BTCUSD:TREND_PULLBACK": 1794943503.832944,
       "SOLUSD:TREND_PULLBACK": 1794961507.82145,
       "ETHUSD:SND": 1794932124.693626,
@@ -1303,7 +1318,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 18h 25m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 18h 23m)",
   "deriv_flow_status": "Graduated Live (277 eps, 60.9% WR, -0.15R EMA)",
-  "cycle_count": 40
+  "cycle_count": 45
 }
