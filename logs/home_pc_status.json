@@ -1,28 +1,31 @@
 {
-  "updated_utc": "2026-11-18 10:00:10 UTC",
-  "hostname": "GB-5CD52876MS",
-  "python_version": "3.14.6",
+  "updated_utc": "2026-11-18 10:16:43 UTC",
+  "hostname": "DESKTOP-8RQUOSU",
+  "python_version": "3.12.10",
   "gpu": {
-    "torch_installed": false,
-    "torch_version": null,
-    "cuda_version": null,
-    "cuda_available": false,
-    "gpu_name": null,
-    "cuda_kernel_ok": false,
-    "cuda_error": "No module named 'torch'"
+    "torch_installed": true,
+    "torch_version": "2.11.0+cu128",
+    "cuda_version": "12.8",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 5060",
+    "cuda_kernel_ok": true,
+    "cuda_error": null
   },
   "pending_hot_reload": false,
-  "execution_mode": "signal_only",
-  "mt5_connected": false,
-  "mt5_error": "mt5.initialize() failed: (-10003, 'IPC initialize failed, MetaTrader 5 x64 not found') | proc_check=NO_TERMINAL64",
+  "execution_mode": "auto",
+  "mt5_connected": true,
+  "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9628.26,
-  "telegram_configured": false,
-  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
+  "telegram_configured": true,
+  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64650.85,
-    "ETHUSD": 1813.66,
-    "SOLUSD": 75.21
+    "BTCUSD": 64562.01,
+    "ETHUSD": 1809.72,
+    "SOLUSD": 74.98,
+    "XAUUSD": 3771.86,
+    "EURUSD": 1.09714,
+    "USDJPY": 159.247
   },
   "active_trades": {},
   "bot_stats": {
@@ -553,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 10:00:05 UTC",
+    "updated_utc": "2026-11-18 10:16:41 UTC",
     "total_episodes": 1061,
     "strategy_stats": {
       "SND": {
@@ -1261,8 +1264,8 @@
         "tp1_price": 1810.30496,
         "tp2_price": 1806.74184,
         "opened_epoch": 1794995386.28491,
-        "tp1_hit": false,
-        "peak_r": 0.483
+        "tp1_hit": true,
+        "peak_r": 0.781
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1293,6 +1296,21 @@
         "opened_epoch": 1794996005.666402,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 75.07,
+        "sl_price": 75.31732,
+        "sl_dist": 0.24732,
+        "tp1_price": 74.90924,
+        "tp2_price": 74.71138,
+        "opened_epoch": 1794997001.34612,
+        "tp1_hit": false,
+        "peak_r": 0.364
       }
     ],
     "shadow_cooldowns": {
@@ -1314,7 +1332,7 @@
       "XAUUSD:BREAKOUT": 1794844811.013358,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794927609.018028,
-      "SOLUSD:DERIV_FLOW": 1794994122.380259,
+      "SOLUSD:DERIV_FLOW": 1794997001.34612,
       "BTCUSD:DERIV_FLOW": 1794995385.147761,
       "ETHUSD:DERIV_FLOW": 1794995386.28491,
       "EURUSD:BREAKOUT": 1794930338.39185,
@@ -1333,7 +1351,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 8h 59m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 8h 43m)",
   "deriv_flow_status": "Graduated Live (293 eps, 59.2% WR, -0.33R EMA)",
-  "cycle_count": 70
+  "cycle_count": 1
 }
