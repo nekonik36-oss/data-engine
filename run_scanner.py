@@ -42,9 +42,18 @@ def run_scanner(
     except Exception:
         pass
     try:
-        # Prevent Windows Idle Sleep while 24/7 scanner is running (allows monitor to turn off)
+        # Prevent Windows Idle Sleep + Away Mode network drop when monitor turns off,
+        # AND disable Windows CMD QuickEdit 'Select' mode so accidental mouse clicks
+        # inside the console window never freeze stdout!
         if sys.platform == "win32":
-            ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
+            kernel32 = ctypes.windll.kernel32
+            kernel32.SetThreadExecutionState(0x80000041)
+            h_stdin = kernel32.GetStdHandle(-10)  # STD_INPUT_HANDLE
+            mode = ctypes.c_uint32()
+            if kernel32.GetConsoleMode(h_stdin, ctypes.byref(mode)):
+                # Clear ENABLE_QUICK_EDIT_MODE (0x0040) & ENABLE_INSERT_MODE (0x0020); set ENABLE_EXTENDED_FLAGS (0x0080)
+                new_mode = (mode.value & ~0x0060) | 0x0080
+                kernel32.SetConsoleMode(h_stdin, new_mode)
     except Exception:
         pass
     console_buffer: list[str] = []
@@ -103,6 +112,11 @@ def run_scanner(
 
     while True:
         cycle_count += 1
+        try:
+            if sys.platform == "win32":
+                ctypes.windll.kernel32.SetThreadExecutionState(0x80000041)
+        except Exception:
+            pass
         just_connected = False
         if not mt5_conn.connected and cycle_count > 1:
             if mt5_conn.connect():
