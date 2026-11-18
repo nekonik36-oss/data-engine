@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 20:15:06 UTC",
-  "total_episodes": 1187,
+  "updated_utc": "2026-11-18 20:20:50 UTC",
+  "total_episodes": 1188,
   "strategy_stats": {
     "SND": {
       "trades": 49,
@@ -38,11 +38,11 @@
       "multiplier": 1.0
     },
     "DERIV_FLOW": {
-      "trades": 335,
+      "trades": 336,
       "wins": 204,
-      "losses": 128,
-      "ema_r": 0.412,
-      "multiplier": 1.103
+      "losses": 129,
+      "ema_r": 0.36,
+      "multiplier": 1.09
     }
   },
   "regime_strategy_multipliers": {
@@ -66,7 +66,7 @@
     "TRENDING_UP:BREAKOUT": 0.97,
     "TRENDING_UP:TREND_PULLBACK": 0.915,
     "RANGING:DERIV_FLOW": 1.15,
-    "TRENDING_DOWN:DERIV_FLOW": 1.391,
+    "TRENDING_DOWN:DERIV_FLOW": 1.387,
     "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.093,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
@@ -682,21 +682,6 @@
   "live_episodes": 31,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 62671.13,
-      "sl_price": 62883.53477,
-      "sl_dist": 212.40477,
-      "tp1_price": 62533.0669,
-      "tp2_price": 62363.14309,
-      "opened_epoch": 1795031442.790039,
-      "tp1_hit": false,
-      "peak_r": 0.222
-    },
-    {
       "key": "SOLUSD:DERIV_FLOW",
       "symbol": "SOLUSD",
       "strategy_name": "DERIV_FLOW",
@@ -709,7 +694,7 @@
       "tp2_price": 72.61925,
       "opened_epoch": 1795031576.891614,
       "tp1_hit": false,
-      "peak_r": 0.246
+      "peak_r": 0.464
     },
     {
       "key": "BTCUSD:ICT",
@@ -725,6 +710,21 @@
       "opened_epoch": 1795032906.545073,
       "tp1_hit": false,
       "peak_r": 0.113
+    },
+    {
+      "key": "SOLUSD:BREAKOUT",
+      "symbol": "SOLUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 73.02,
+      "sl_price": 73.34555,
+      "sl_dist": 0.32555,
+      "tp1_price": 72.80839,
+      "tp2_price": 72.54795,
+      "opened_epoch": 1795033202.659621,
+      "tp1_hit": false,
+      "peak_r": 0.123
     }
   ],
   "shadow_cooldowns": {
@@ -733,7 +733,7 @@
     "BTCUSD:KRONOS": 1795028644.029942,
     "ETHUSD:BREAKOUT": 1795030513.144673,
     "ETHUSD:KRONOS": 1795021203.384491,
-    "SOLUSD:BREAKOUT": 1795029008.556899,
+    "SOLUSD:BREAKOUT": 1795033202.659621,
     "SOLUSD:KRONOS": 1795018816.963894,
     "BTCUSD:ICT": 1795032906.545073,
     "SOLUSD:SND": 1795015512.388271,
@@ -761,7 +761,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1138,
+  "shadow_episodes": 1139,
   "probation_strategies": [
     "SND"
   ]
