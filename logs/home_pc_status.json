@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 10:24:19 UTC",
+  "updated_utc": "2026-11-18 10:25:51 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64432.01,
-    "ETHUSD": 1806.42,
-    "SOLUSD": 74.82,
-    "XAUUSD": 3768.2,
-    "EURUSD": 1.09717,
-    "USDJPY": 159.244
+    "BTCUSD": 64446.11,
+    "ETHUSD": 1806.89,
+    "SOLUSD": 74.81,
+    "XAUUSD": 3769.19,
+    "EURUSD": 1.09706,
+    "USDJPY": 159.242
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 10:21:28 UTC",
+    "updated_utc": "2026-11-18 10:24:55 UTC",
     "total_episodes": 1065,
     "strategy_stats": {
       "SND": {
@@ -1250,7 +1250,7 @@
         "tp2_price": 74.71138,
         "opened_epoch": 1794997001.34612,
         "tp1_hit": true,
-        "peak_r": 1.011
+        "peak_r": 1.051
       },
       {
         "key": "BTCUSD:BREAKOUT",
@@ -1281,6 +1281,21 @@
         "opened_epoch": 1794997214.227691,
         "tp1_hit": false,
         "peak_r": 0.472
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 64531.67,
+        "sl_price": 64673.63967,
+        "sl_dist": 141.96967,
+        "tp1_price": 64439.38971,
+        "tp2_price": 64325.81397,
+        "opened_epoch": 1794997495.853918,
+        "tp1_hit": true,
+        "peak_r": 0.688
       }
     ],
     "shadow_cooldowns": {
@@ -1303,7 +1318,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794927609.018028,
       "SOLUSD:DERIV_FLOW": 1794997001.34612,
-      "BTCUSD:DERIV_FLOW": 1794995385.147761,
+      "BTCUSD:DERIV_FLOW": 1794997495.853918,
       "ETHUSD:DERIV_FLOW": 1794995386.28491,
       "EURUSD:BREAKOUT": 1794930338.39185,
       "USDJPY:BREAKOUT": 1794922211.802075,
@@ -1321,7 +1336,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 8h 35m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 8h 34m)",
   "deriv_flow_status": "Graduated Live (295 eps, 59.5% WR, -0.16R EMA)",
-  "cycle_count": 25
+  "cycle_count": 30
 }
