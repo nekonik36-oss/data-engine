@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 02:09:35 UTC",
+  "updated_utc": "2026-11-18 02:10:02 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64403.76,
-    "ETHUSD": 1803.02,
-    "SOLUSD": 74.43
+    "BTCUSD": 64429.63,
+    "ETHUSD": 1804.73,
+    "SOLUSD": 74.5
   },
   "active_trades": {},
   "bot_stats": {
@@ -553,8 +553,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 02:05:09 UTC",
-    "total_episodes": 1038,
+    "updated_utc": "2026-11-18 02:10:01 UTC",
+    "total_episodes": 1039,
     "strategy_stats": {
       "SND": {
         "trades": 42,
@@ -592,11 +592,11 @@
         "multiplier": 0.973
       },
       "DERIV_FLOW": {
-        "trades": 282,
+        "trades": 283,
         "wins": 173,
-        "losses": 108,
-        "ema_r": 0.188,
-        "multiplier": 1.047
+        "losses": 109,
+        "ema_r": 0.093,
+        "multiplier": 1.023
       }
     },
     "regime_strategy_multipliers": {
@@ -619,7 +619,7 @@
       "TRENDING_UP:KRONOS": 1.064,
       "TRENDING_UP:BREAKOUT": 0.97,
       "TRENDING_UP:TREND_PULLBACK": 0.915,
-      "RANGING:DERIV_FLOW": 1.299,
+      "RANGING:DERIV_FLOW": 1.283,
       "TRENDING_DOWN:DERIV_FLOW": 1.358,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.012,
       "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -1265,21 +1265,6 @@
         "peak_r": 0.469
       },
       {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 74.21,
-        "sl_price": 74.49499,
-        "sl_dist": 0.28499,
-        "tp1_price": 74.02476,
-        "tp2_price": 73.79677,
-        "opened_epoch": 1794967429.959921,
-        "tp1_hit": false,
-        "peak_r": 0.211
-      },
-      {
         "key": "SOLUSD:SND",
         "symbol": "SOLUSD",
         "strategy_name": "SND",
@@ -1292,7 +1277,7 @@
         "tp2_price": 74.79343,
         "opened_epoch": 1794967509.816772,
         "tp1_hit": false,
-        "peak_r": 0.268
+        "peak_r": 0.468
       }
     ],
     "shadow_cooldowns": {
@@ -1328,12 +1313,12 @@
       "XAUUSD:ICT": 1794933348.760101,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 991,
+    "shadow_episodes": 992,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 16h 50m)",
-  "deriv_flow_status": "Graduated Live (282 eps, 61.6% WR, +0.19R EMA)",
-  "cycle_count": 15
+  "deriv_flow_status": "Graduated Live (283 eps, 61.3% WR, +0.09R EMA)",
+  "cycle_count": 16
 }
