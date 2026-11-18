@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 00:44:31 UTC",
+  "updated_utc": "2026-11-18 00:46:30 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64719.21,
-    "ETHUSD": 1817.96,
+    "BTCUSD": 64763.69,
+    "ETHUSD": 1819.37,
     "SOLUSD": 75.2
   },
   "active_trades": {},
@@ -1247,7 +1247,7 @@
         "tp2_price": 1811.35352,
         "opened_epoch": 1794961148.480012,
         "tp1_hit": false,
-        "peak_r": 0.498
+        "peak_r": 0.567
       },
       {
         "key": "SOLUSD:TREND_PULLBACK",
@@ -1318,7 +1318,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 18h 15m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 18h 13m)",
   "deriv_flow_status": "Graduated Live (277 eps, 60.9% WR, -0.15R EMA)",
-  "cycle_count": 65
+  "cycle_count": 70
 }
