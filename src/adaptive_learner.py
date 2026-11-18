@@ -150,7 +150,13 @@ class AdaptiveLearner:
         reg_mult = float(
             (self.state.get("regime_strategy_multipliers") or {}).get(reg_key, 1.0)
         )
-        combined = 0.6 * global_mult + 0.4 * reg_mult
+        total_eps = int(self.state.get("total_episodes", 0))
+        # Once mature (>=200 episodes), weight regime-specific edge 65% vs 35% global
+        # so RANGING chop drawdowns do not starve TRENDING_UP / TRENDING_DOWN winners.
+        if total_eps >= 200:
+            combined = 0.35 * global_mult + 0.65 * reg_mult
+        else:
+            combined = 0.60 * global_mult + 0.40 * reg_mult
         return round(max(0.60, min(1.40, combined)), 3)
 
     def get_strategy_multipliers(
@@ -168,7 +174,7 @@ class AdaptiveLearner:
         loss_streak = int(sym_info.get("loss_streak", 0))
         win_streak = int(sym_info.get("win_streak", 0))
         if loss_streak >= 1:
-            return min(4.0, float(loss_streak) * 1.5)
+            return min(2.5, float(loss_streak) * 1.25)
         if win_streak >= 2:
             return -1.5
         return 0.0

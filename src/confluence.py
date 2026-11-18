@@ -387,7 +387,7 @@ class ConfluenceEngine:
                     agreeing_pa = [v for v in pa_votes if v.direction == direction]
                     kronos_confirms = (
                         kronos_real_ok
-                        and (not record_shadow or tpb_mult_global >= 1.03)
+                        and (not record_shadow or tpb_mult_global >= 1.00)
                         and kronos_fc is not None
                         and kronos_fc.direction == direction
                         and kronos_fc.confidence >= 0.42
@@ -512,7 +512,7 @@ class ConfluenceEngine:
                     agreeing_pa = [v for v in pa_votes if v.direction == direction]
                     kronos_confirms = (
                         kronos_real_ok
-                        and (not record_shadow or tpb_mult_global >= 1.03)
+                        and (not record_shadow or tpb_mult_global >= 1.00)
                         and kronos_fc is not None
                         and kronos_fc.direction == direction
                         and kronos_fc.confidence >= 0.42
