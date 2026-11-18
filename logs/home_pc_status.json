@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 20:44:20 UTC",
+  "updated_utc": "2026-11-18 20:46:03 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62546.01,
-    "ETHUSD": 1750.36,
-    "SOLUSD": 72.97,
-    "XAUUSD": 3731.82,
-    "EURUSD": 1.09754,
-    "USDJPY": 159.294
+    "BTCUSD": 62570.01,
+    "ETHUSD": 1751.7,
+    "SOLUSD": 73.07,
+    "XAUUSD": 3731.71,
+    "EURUSD": 1.09732,
+    "USDJPY": 159.31
   },
   "active_trades": {},
   "bot_stats": {
@@ -1273,7 +1273,7 @@
         "tp2_price": 62266.29656,
         "opened_epoch": 1795033501.6785,
         "tp1_hit": false,
-        "peak_r": 0.142
+        "peak_r": 0.239
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1303,7 +1303,7 @@
         "tp2_price": 1741.9263,
         "opened_epoch": 1795033504.051165,
         "tp1_hit": false,
-        "peak_r": 0.362
+        "peak_r": 0.4
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1332,8 +1332,8 @@
         "tp1_price": 73.05973,
         "tp2_price": 73.31785,
         "opened_epoch": 1795033505.347362,
-        "tp1_hit": false,
-        "peak_r": 0.589
+        "tp1_hit": true,
+        "peak_r": 0.682
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1348,7 +1348,7 @@
         "tp2_price": 62266.29656,
         "opened_epoch": 1795033557.144146,
         "tp1_hit": false,
-        "peak_r": 0.142
+        "peak_r": 0.239
       },
       {
         "key": "ETHUSD:DERIV_FLOW",
@@ -1363,7 +1363,7 @@
         "tp2_price": 1741.9263,
         "opened_epoch": 1795033658.535113,
         "tp1_hit": false,
-        "peak_r": 0.362
+        "peak_r": 0.4
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1422,5 +1422,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (337 eps, 61.4% WR, +0.37R EMA)",
-  "cycle_count": 1710
+  "cycle_count": 1715
 }
