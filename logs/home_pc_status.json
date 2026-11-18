@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 13:28:20 UTC",
+  "updated_utc": "2026-11-18 13:30:17 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64063.56,
-    "ETHUSD": 1796.25,
+    "BTCUSD": 64093.03,
+    "ETHUSD": 1795.28,
     "SOLUSD": 74.25,
-    "XAUUSD": 3772.37,
-    "EURUSD": 1.09689,
-    "USDJPY": 159.41
+    "XAUUSD": 3770.68,
+    "EURUSD": 1.09682,
+    "USDJPY": 159.417
   },
   "active_trades": {},
   "bot_stats": {
@@ -567,8 +567,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 13:25:52 UTC",
-    "total_episodes": 1106,
+    "updated_utc": "2026-11-18 13:30:15 UTC",
+    "total_episodes": 1107,
     "strategy_stats": {
       "SND": {
         "trades": 47,
@@ -578,11 +578,11 @@
         "multiplier": 0.955
       },
       "ICT": {
-        "trades": 263,
-        "wins": 137,
+        "trades": 264,
+        "wins": 138,
         "losses": 124,
-        "ema_r": -0.217,
-        "multiplier": 0.946
+        "ema_r": -0.141,
+        "multiplier": 0.965
       },
       "BREAKOUT": {
         "trades": 199,
@@ -622,7 +622,7 @@
       "SESSION_SWEEP_WINDOW:ICT": 0.916,
       "SESSION_SWEEP_WINDOW:BREAKOUT": 1.026,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.764,
-      "TRENDING_DOWN:ICT": 0.913,
+      "TRENDING_DOWN:ICT": 0.925,
       "TRENDING_DOWN:KRONOS": 1.041,
       "RANGING:BREAKOUT": 0.951,
       "RANGING:SND": 1.042,
@@ -1249,21 +1249,6 @@
     "live_episodes": 30,
     "active_shadow_trades": [
       {
-        "key": "EURUSD:ICT",
-        "symbol": "EURUSD",
-        "strategy_name": "ICT",
-        "direction": "LONG",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 1.09619,
-        "sl_price": 1.09533,
-        "sl_dist": 0.00086,
-        "tp1_price": 1.09675,
-        "tp2_price": 1.09743,
-        "opened_epoch": 1795006810.079789,
-        "tp1_hit": true,
-        "peak_r": 1.105
-      },
-      {
         "key": "ETHUSD:ICT",
         "symbol": "ETHUSD",
         "strategy_name": "ICT",
@@ -1382,12 +1367,27 @@
         "opened_epoch": 1795008034.647833,
         "tp1_hit": false,
         "peak_r": 0.176
+      },
+      {
+        "key": "BTCUSD:KRONOS",
+        "symbol": "BTCUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 64075.4,
+        "sl_price": 64229.63504,
+        "sl_dist": 154.23504,
+        "tp1_price": 63975.14722,
+        "tp2_price": 63851.75919,
+        "opened_epoch": 1795008611.668275,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795007410.219231,
       "BTCUSD:BREAKOUT": 1794997212.89977,
-      "BTCUSD:KRONOS": 1794930400.393225,
+      "BTCUSD:KRONOS": 1795008611.668275,
       "ETHUSD:BREAKOUT": 1794997214.227691,
       "ETHUSD:KRONOS": 1794999629.097168,
       "SOLUSD:BREAKOUT": 1795005919.092071,
@@ -1418,12 +1418,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795007713.266952
     },
-    "shadow_episodes": 1058,
+    "shadow_episodes": 1059,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 5h 31m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 5h 29m)",
   "deriv_flow_status": "Graduated Live (309 eps, 59.6% WR, +0.12R EMA)",
-  "cycle_count": 570
+  "cycle_count": 575
 }
