@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 16:46:23 UTC",
+  "updated_utc": "2026-11-18 16:50:27 UTC",
   "total_episodes": 1158,
   "strategy_stats": {
     "SND": {
@@ -681,21 +681,6 @@
   ],
   "live_episodes": 31,
   "active_shadow_trades": [
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 72.73,
-      "sl_price": 72.20292,
-      "sl_dist": 0.52708,
-      "tp1_price": 73.0726,
-      "tp2_price": 73.49427,
-      "opened_epoch": 1795018816.963894,
-      "tp1_hit": false,
-      "peak_r": 0.417
-    },
     {
       "key": "SOLUSD:BREAKOUT",
       "symbol": "SOLUSD",
