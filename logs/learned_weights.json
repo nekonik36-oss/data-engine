@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 15:40:33 UTC",
-  "total_episodes": 1138,
+  "updated_utc": "2026-11-18 15:41:12 UTC",
+  "total_episodes": 1139,
   "strategy_stats": {
     "SND": {
       "trades": 48,
@@ -10,11 +10,11 @@
       "multiplier": 0.982
     },
     "ICT": {
-      "trades": 275,
+      "trades": 276,
       "wins": 143,
-      "losses": 130,
-      "ema_r": 0.062,
-      "multiplier": 1.016
+      "losses": 131,
+      "ema_r": -0.023,
+      "multiplier": 0.994
     },
     "BREAKOUT": {
       "trades": 203,
@@ -54,7 +54,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.93,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.033,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.771,
-    "TRENDING_DOWN:ICT": 0.92,
+    "TRENDING_DOWN:ICT": 0.904,
     "TRENDING_DOWN:KRONOS": 1.022,
     "RANGING:BREAKOUT": 0.944,
     "RANGING:SND": 1.042,
@@ -693,8 +693,8 @@
       "tp1_price": 63349.08923,
       "tp2_price": 63108.9652,
       "opened_epoch": 1795014882.005459,
-      "tp1_hit": false,
-      "peak_r": 0.62
+      "tp1_hit": true,
+      "peak_r": 0.698
     },
     {
       "key": "ETHUSD:DERIV_FLOW",
@@ -709,22 +709,7 @@
       "tp2_price": 1754.90097,
       "opened_epoch": 1795014886.162656,
       "tp1_hit": false,
-      "peak_r": 0.443
-    },
-    {
-      "key": "BTCUSD:ICT",
-      "symbol": "BTCUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 63633.35,
-      "sl_price": 63334.7789,
-      "sl_dist": 298.5711,
-      "tp1_price": 63827.42122,
-      "tp2_price": 64066.2781,
-      "opened_epoch": 1795014909.748782,
-      "tp1_hit": false,
-      "peak_r": 0.37
+      "peak_r": 0.453
     },
     {
       "key": "ETHUSD:ICT",
@@ -769,7 +754,7 @@
       "tp2_price": 73.11523,
       "opened_epoch": 1795015512.388271,
       "tp1_hit": false,
-      "peak_r": 0.345
+      "peak_r": 0.426
     }
   ],
   "shadow_cooldowns": {
@@ -806,7 +791,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1089,
+  "shadow_episodes": 1090,
   "probation_strategies": [
     "SND"
   ]
