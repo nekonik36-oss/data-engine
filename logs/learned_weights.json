@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 10:57:32 UTC",
+  "updated_utc": "2026-11-18 11:00:29 UTC",
   "total_episodes": 1072,
   "strategy_stats": {
     "SND": {
@@ -694,14 +694,44 @@
       "opened_epoch": 1794999115.569,
       "tp1_hit": false,
       "peak_r": 0.542
+    },
+    {
+      "key": "ETHUSD:ICT",
+      "symbol": "ETHUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 1806.93,
+      "sl_price": 1802.25285,
+      "sl_dist": 4.67715,
+      "tp1_price": 1809.97015,
+      "tp2_price": 1813.71187,
+      "opened_epoch": 1794999629.095167,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "ETHUSD:KRONOS",
+      "symbol": "ETHUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 1806.93,
+      "sl_price": 1811.60715,
+      "sl_dist": 4.67715,
+      "tp1_price": 1803.88985,
+      "tp2_price": 1800.14813,
+      "opened_epoch": 1794999629.097168,
+      "tp1_hit": false,
+      "peak_r": 0.558
     }
   ],
   "shadow_cooldowns": {
-    "ETHUSD:ICT": 1794969017.447354,
+    "ETHUSD:ICT": 1794999629.095167,
     "BTCUSD:BREAKOUT": 1794997212.89977,
     "BTCUSD:KRONOS": 1794930400.393225,
     "ETHUSD:BREAKOUT": 1794997214.227691,
-    "ETHUSD:KRONOS": 1794969017.449354,
+    "ETHUSD:KRONOS": 1794999629.097168,
     "SOLUSD:BREAKOUT": 1794998107.794164,
     "SOLUSD:KRONOS": 1794971115.035898,
     "BTCUSD:ICT": 1794968701.882861,

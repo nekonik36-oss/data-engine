@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 11:00:05 UTC",
+  "updated_utc": "2026-11-18 11:01:53 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64373.18,
-    "ETHUSD": 1806.93,
-    "SOLUSD": 74.7,
-    "XAUUSD": 3771.73,
-    "EURUSD": 1.09703,
-    "USDJPY": 159.321
+    "BTCUSD": 64331.4,
+    "ETHUSD": 1804.81,
+    "SOLUSD": 74.62,
+    "XAUUSD": 3771.26,
+    "EURUSD": 1.09694,
+    "USDJPY": 159.329
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 10:57:32 UTC",
+    "updated_utc": "2026-11-18 11:00:29 UTC",
     "total_episodes": 1072,
     "strategy_stats": {
       "SND": {
@@ -1251,14 +1251,44 @@
         "opened_epoch": 1794999115.569,
         "tp1_hit": false,
         "peak_r": 0.542
+      },
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 1806.93,
+        "sl_price": 1802.25285,
+        "sl_dist": 4.67715,
+        "tp1_price": 1809.97015,
+        "tp2_price": 1813.71187,
+        "opened_epoch": 1794999629.095167,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:KRONOS",
+        "symbol": "ETHUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 1806.93,
+        "sl_price": 1811.60715,
+        "sl_dist": 4.67715,
+        "tp1_price": 1803.88985,
+        "tp2_price": 1800.14813,
+        "opened_epoch": 1794999629.097168,
+        "tp1_hit": false,
+        "peak_r": 0.558
       }
     ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1794969017.447354,
+      "ETHUSD:ICT": 1794999629.095167,
       "BTCUSD:BREAKOUT": 1794997212.89977,
       "BTCUSD:KRONOS": 1794930400.393225,
       "ETHUSD:BREAKOUT": 1794997214.227691,
-      "ETHUSD:KRONOS": 1794969017.449354,
+      "ETHUSD:KRONOS": 1794999629.097168,
       "SOLUSD:BREAKOUT": 1794998107.794164,
       "SOLUSD:KRONOS": 1794971115.035898,
       "BTCUSD:ICT": 1794968701.882861,
@@ -1291,7 +1321,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 7h 59m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 7h 58m)",
   "deriv_flow_status": "Graduated Live (298 eps, 59.9% WR, +0.14R EMA)",
-  "cycle_count": 135
+  "cycle_count": 140
 }
