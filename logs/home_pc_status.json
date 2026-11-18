@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 20:13:19 UTC",
+  "updated_utc": "2026-11-18 20:15:09 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62728.01,
-    "ETHUSD": 1754.29,
-    "SOLUSD": 73.06,
-    "XAUUSD": 3725.16,
-    "EURUSD": 1.09642,
-    "USDJPY": 159.341
+    "BTCUSD": 62788.0,
+    "ETHUSD": 1756.52,
+    "SOLUSD": 73.2,
+    "XAUUSD": 3724.54,
+    "EURUSD": 1.09651,
+    "USDJPY": 159.34
   },
   "active_trades": {},
   "bot_stats": {
@@ -578,7 +578,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 20:05:24 UTC",
+    "updated_utc": "2026-11-18 20:15:06 UTC",
     "total_episodes": 1187,
     "strategy_stats": {
       "SND": {
@@ -1289,6 +1289,21 @@
         "opened_epoch": 1795031576.891614,
         "tp1_hit": false,
         "peak_r": 0.246
+      },
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 62774.0,
+        "sl_price": 62579.18605,
+        "sl_dist": 194.81395,
+        "tp1_price": 62900.62907,
+        "tp2_price": 63056.48023,
+        "opened_epoch": 1795032906.545073,
+        "tp1_hit": false,
+        "peak_r": 0.072
       }
     ],
     "shadow_cooldowns": {
@@ -1299,7 +1314,7 @@
       "ETHUSD:KRONOS": 1795021203.384491,
       "SOLUSD:BREAKOUT": 1795029008.556899,
       "SOLUSD:KRONOS": 1795018816.963894,
-      "BTCUSD:ICT": 1795021230.003566,
+      "BTCUSD:ICT": 1795032906.545073,
       "SOLUSD:SND": 1795015512.388271,
       "SOLUSD:ICT": 1795021205.729845,
       "ETHUSD:TREND_PULLBACK": 1795026621.434674,
@@ -1332,5 +1347,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (335 eps, 61.4% WR, +0.41R EMA)",
-  "cycle_count": 1630
+  "cycle_count": 1635
 }
