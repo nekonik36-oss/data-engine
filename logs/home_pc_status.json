@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 18:48:57 UTC",
+  "updated_utc": "2026-11-18 18:49:27 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63240.58,
-    "ETHUSD": 1772.74,
-    "SOLUSD": 74.02,
-    "XAUUSD": 3739.49,
+    "BTCUSD": 63251.99,
+    "ETHUSD": 1772.9,
+    "SOLUSD": 74.01,
+    "XAUUSD": 3739.57,
     "EURUSD": 1.09765,
-    "USDJPY": 159.32
+    "USDJPY": 159.325
   },
   "active_trades": {},
   "bot_stats": {
@@ -578,8 +578,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 18:44:09 UTC",
-    "total_episodes": 1177,
+    "updated_utc": "2026-11-18 18:49:26 UTC",
+    "total_episodes": 1178,
     "strategy_stats": {
       "SND": {
         "trades": 49,
@@ -603,11 +603,11 @@
         "multiplier": 1.004
       },
       "TREND_PULLBACK": {
-        "trades": 133,
+        "trades": 134,
         "wins": 62,
-        "losses": 66,
-        "ema_r": -0.202,
-        "multiplier": 0.949
+        "losses": 67,
+        "ema_r": -0.23,
+        "multiplier": 0.943
       },
       "KRONOS": {
         "trades": 219,
@@ -648,7 +648,7 @@
       "TRENDING_DOWN:DERIV_FLOW": 1.391,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.093,
       "MACRO_NEWS_WINDOW:SND": 0.984,
-      "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.968,
+      "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.959,
       "MACRO_NEWS_WINDOW:ICT": 1.041,
       "TRENDING_UP:DERIV_FLOW": 1.065,
       "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.941,
@@ -1261,21 +1261,6 @@
     "live_episodes": 31,
     "active_shadow_trades": [
       {
-        "key": "ETHUSD:TREND_PULLBACK",
-        "symbol": "ETHUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "SHORT",
-        "regime": "MACRO_NEWS_WINDOW",
-        "entry_price": 1767.49,
-        "sl_price": 1777.2543,
-        "sl_dist": 9.7643,
-        "tp1_price": 1761.14321,
-        "tp2_price": 1753.33177,
-        "opened_epoch": 1795026621.434674,
-        "tp1_hit": false,
-        "peak_r": 0.0
-      },
-      {
         "key": "SOLUSD:DERIV_FLOW",
         "symbol": "SOLUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1325,12 +1310,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795007713.266952
     },
-    "shadow_episodes": 1128,
+    "shadow_episodes": 1129,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "ACTIVE SHIELD (Red-Folder USD FOMC Meeting Minutes releases in 11m (19:00 UTC) [-35m/+15m shield])",
   "deriv_flow_status": "Graduated Live (330 eps, 60.9% WR, +0.26R EMA)",
-  "cycle_count": 1420
+  "cycle_count": 1421
 }
