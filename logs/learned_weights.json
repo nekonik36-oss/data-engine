@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 11:27:09 UTC",
+  "updated_utc": "2026-11-18 11:30:14 UTC",
   "total_episodes": 1076,
   "strategy_stats": {
     "SND": {
@@ -693,7 +693,7 @@
       "tp2_price": 63972.78374,
       "opened_epoch": 1795000719.624654,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.32
     },
     {
       "key": "ETHUSD:DERIV_FLOW",
@@ -708,7 +708,7 @@
       "tp2_price": 1791.24417,
       "opened_epoch": 1795000722.719705,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.485
     },
     {
       "key": "BTCUSD:ICT",
@@ -753,7 +753,7 @@
       "tp2_price": 74.18684,
       "opened_epoch": 1795001115.211002,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.279
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -769,6 +769,21 @@
       "opened_epoch": 1795001229.169869,
       "tp1_hit": false,
       "peak_r": 0.24
+    },
+    {
+      "key": "USDJPY:SND",
+      "symbol": "USDJPY",
+      "strategy_name": "SND",
+      "direction": "SHORT",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 159.285,
+      "sl_price": 159.40093,
+      "sl_dist": 0.11593,
+      "tp1_price": 159.20965,
+      "tp2_price": 159.11691,
+      "opened_epoch": 1795001414.392259,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -802,7 +817,8 @@
     "USDJPY:ICT": 1794926117.400199,
     "EURUSD:TREND_PULLBACK": 1794921309.722345,
     "XAUUSD:ICT": 1794933348.760101,
-    "EURUSD:SND": 1794841214.521494
+    "EURUSD:SND": 1794841214.521494,
+    "USDJPY:SND": 1795001414.392259
   },
   "shadow_episodes": 1029,
   "probation_strategies": [
