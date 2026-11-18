@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 17:00:40 UTC",
-  "total_episodes": 1159,
+  "updated_utc": "2026-11-18 17:10:21 UTC",
+  "total_episodes": 1161,
   "strategy_stats": {
     "SND": {
       "trades": 49,
@@ -10,11 +10,11 @@
       "multiplier": 0.993
     },
     "ICT": {
-      "trades": 281,
-      "wins": 143,
+      "trades": 282,
+      "wins": 144,
       "losses": 136,
-      "ema_r": -0.328,
-      "multiplier": 0.918
+      "ema_r": -0.265,
+      "multiplier": 0.934
     },
     "BREAKOUT": {
       "trades": 207,
@@ -31,11 +31,11 @@
       "multiplier": 1.006
     },
     "KRONOS": {
-      "trades": 216,
-      "wins": 110,
+      "trades": 217,
+      "wins": 111,
       "losses": 101,
-      "ema_r": -0.049,
-      "multiplier": 0.988
+      "ema_r": -0.008,
+      "multiplier": 0.998
     },
     "DERIV_FLOW": {
       "trades": 325,
@@ -54,8 +54,8 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.898,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.052,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.771,
-    "TRENDING_DOWN:ICT": 0.863,
-    "TRENDING_DOWN:KRONOS": 1.013,
+    "TRENDING_DOWN:ICT": 0.87,
+    "TRENDING_DOWN:KRONOS": 1.02,
     "RANGING:BREAKOUT": 0.944,
     "RANGING:SND": 1.042,
     "TRENDING_DOWN:BREAKOUT": 1.117,
@@ -682,21 +682,6 @@
   "live_episodes": 31,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:KRONOS",
-      "symbol": "ETHUSD",
-      "strategy_name": "KRONOS",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1749.3,
-      "sl_price": 1736.92839,
-      "sl_dist": 12.37161,
-      "tp1_price": 1757.34154,
-      "tp2_price": 1767.23883,
-      "opened_epoch": 1795021203.384491,
-      "tp1_hit": true,
-      "peak_r": 0.761
-    },
-    {
       "key": "SOLUSD:ICT",
       "symbol": "SOLUSD",
       "strategy_name": "ICT",
@@ -770,21 +755,6 @@
       "opened_epoch": 1795021230.005568,
       "tp1_hit": false,
       "peak_r": 0.465
-    },
-    {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1749.3,
-      "sl_price": 1736.92839,
-      "sl_dist": 12.37161,
-      "tp1_price": 1757.34154,
-      "tp2_price": 1767.23883,
-      "opened_epoch": 1795021231.483697,
-      "tp1_hit": true,
-      "peak_r": 0.761
     }
   ],
   "shadow_cooldowns": {
@@ -821,7 +791,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1110,
+  "shadow_episodes": 1112,
   "probation_strategies": [
     "SND"
   ]
