@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 01:05:23 UTC",
+  "updated_utc": "2026-11-18 01:05:51 UTC",
   "hostname": "GB-5CD52876MS",
   "python_version": "3.14.6",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64615.73,
-    "ETHUSD": 1816.32,
-    "SOLUSD": 74.75
+    "BTCUSD": 64643.14,
+    "ETHUSD": 1817.0,
+    "SOLUSD": 74.77
   },
   "active_trades": {},
   "bot_stats": {
@@ -553,7 +553,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 01:05:22 UTC",
+    "updated_utc": "2026-11-18 01:05:49 UTC",
     "total_episodes": 1030,
     "strategy_stats": {
       "SND": {
@@ -1293,6 +1293,36 @@
         "opened_epoch": 1794963922.297431,
         "tp1_hit": false,
         "peak_r": 0.03
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 64613.31,
+        "sl_price": 64795.69524,
+        "sl_dist": 182.38524,
+        "tp1_price": 64494.75959,
+        "tp2_price": 64348.8514,
+        "opened_epoch": 1794963948.875923,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:DERIV_FLOW",
+        "symbol": "ETHUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 1815.71,
+        "sl_price": 1821.56752,
+        "sl_dist": 5.85752,
+        "tp1_price": 1811.90261,
+        "tp2_price": 1807.21659,
+        "opened_epoch": 1794963949.853278,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1315,8 +1345,8 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1794927609.018028,
       "SOLUSD:DERIV_FLOW": 1794963268.501562,
-      "BTCUSD:DERIV_FLOW": 1794961147.509044,
-      "ETHUSD:DERIV_FLOW": 1794961148.480012,
+      "BTCUSD:DERIV_FLOW": 1794963948.875923,
+      "ETHUSD:DERIV_FLOW": 1794963949.853278,
       "EURUSD:BREAKOUT": 1794930338.39185,
       "USDJPY:BREAKOUT": 1794922211.802075,
       "USDJPY:KRONOS": 1794824120.825775,
@@ -1335,5 +1365,5 @@
   },
   "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 17h 54m)",
   "deriv_flow_status": "Graduated Live (278 eps, 61.0% WR, -0.12R EMA)",
-  "cycle_count": 117
+  "cycle_count": 118
 }
