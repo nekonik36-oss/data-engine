@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 11:34:02 UTC",
+  "updated_utc": "2026-11-18 11:35:36 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64226.27,
-    "ETHUSD": 1799.94,
-    "SOLUSD": 74.52,
-    "XAUUSD": 3765.2,
-    "EURUSD": 1.09656,
-    "USDJPY": 159.305
+    "BTCUSD": 64231.68,
+    "ETHUSD": 1800.69,
+    "SOLUSD": 74.54,
+    "XAUUSD": 3762.69,
+    "EURUSD": 1.09657,
+    "USDJPY": 159.297
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 11:30:14 UTC",
+    "updated_utc": "2026-11-18 11:35:34 UTC",
     "total_episodes": 1076,
     "strategy_stats": {
       "SND": {
@@ -1341,10 +1341,25 @@
         "opened_epoch": 1795001414.392259,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 1800.21,
+        "sl_price": 1795.13012,
+        "sl_dist": 5.07988,
+        "tp1_price": 1803.51192,
+        "tp2_price": 1807.57582,
+        "opened_epoch": 1795001734.292004,
+        "tp1_hit": false,
+        "peak_r": 0.094
       }
     ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1794999629.095167,
+      "ETHUSD:ICT": 1795001734.292004,
       "BTCUSD:BREAKOUT": 1794997212.89977,
       "BTCUSD:KRONOS": 1794930400.393225,
       "ETHUSD:BREAKOUT": 1794997214.227691,
@@ -1382,7 +1397,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 7h 26m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 7h 24m)",
   "deriv_flow_status": "Graduated Live (299 eps, 59.7% WR, +0.05R EMA)",
-  "cycle_count": 240
+  "cycle_count": 245
 }
