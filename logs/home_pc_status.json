@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 19:01:10 UTC",
+  "updated_utc": "2026-11-18 19:03:01 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63005.0,
-    "ETHUSD": 1761.21,
-    "SOLUSD": 73.68,
-    "XAUUSD": 3732.94,
-    "EURUSD": 1.09729,
-    "USDJPY": 159.357
+    "BTCUSD": 62907.49,
+    "ETHUSD": 1760.51,
+    "SOLUSD": 73.55,
+    "XAUUSD": 3736.22,
+    "EURUSD": 1.09723,
+    "USDJPY": 159.345
   },
   "active_trades": {},
   "bot_stats": {
@@ -1273,7 +1273,7 @@
         "tp2_price": 73.08319,
         "opened_epoch": 1795027206.280982,
         "tp1_hit": false,
-        "peak_r": 0.152
+        "peak_r": 0.435
       },
       {
         "key": "BTCUSD:TREND_PULLBACK",
@@ -1288,7 +1288,7 @@
         "tp2_price": 62836.17084,
         "opened_epoch": 1795028102.236731,
         "tp1_hit": true,
-        "peak_r": 0.745
+        "peak_r": 1.152
       }
     ],
     "shadow_cooldowns": {
@@ -1330,7 +1330,7 @@
       "SND"
     ]
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD FOMC Meeting Minutes released 1m ago (19:00 UTC) [-35m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD FOMC Meeting Minutes released 3m ago (19:00 UTC) [-35m/+15m shield])",
   "deriv_flow_status": "Graduated Live (330 eps, 60.9% WR, +0.26R EMA)",
-  "cycle_count": 1450
+  "cycle_count": 1455
 }
