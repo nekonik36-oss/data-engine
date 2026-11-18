@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 11:57:02 UTC",
+  "updated_utc": "2026-11-18 11:58:44 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64281.15,
-    "ETHUSD": 1803.01,
-    "SOLUSD": 74.56,
-    "XAUUSD": 3762.41,
+    "BTCUSD": 64239.76,
+    "ETHUSD": 1801.7,
+    "SOLUSD": 74.49,
+    "XAUUSD": 3762.54,
     "EURUSD": 1.09605,
-    "USDJPY": 159.381
+    "USDJPY": 159.37
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,7 +556,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 11:55:36 UTC",
+    "updated_utc": "2026-11-18 11:57:28 UTC",
     "total_episodes": 1082,
     "strategy_stats": {
       "SND": {
@@ -1238,21 +1238,6 @@
     "live_episodes": 29,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "LONG",
-        "regime": "RANGING",
-        "entry_price": 74.55,
-        "sl_price": 74.29955,
-        "sl_dist": 0.25045,
-        "tp1_price": 74.71279,
-        "tp2_price": 74.91316,
-        "opened_epoch": 1795001229.169869,
-        "tp1_hit": false,
-        "peak_r": 0.24
-      },
-      {
         "key": "ETHUSD:ICT",
         "symbol": "ETHUSD",
         "strategy_name": "ICT",
@@ -1352,7 +1337,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 7h 3m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 7h 1m)",
   "deriv_flow_status": "Graduated Live (301 eps, 59.3% WR, -0.03R EMA)",
-  "cycle_count": 310
+  "cycle_count": 315
 }
