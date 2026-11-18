@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 02:32:01 UTC",
+  "updated_utc": "2026-11-18 02:33:14 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64500.0,
-    "ETHUSD": 1807.39,
-    "SOLUSD": 74.7,
-    "XAUUSD": 3807.5,
-    "EURUSD": 1.09918,
-    "USDJPY": 159.437
+    "BTCUSD": 64459.72,
+    "ETHUSD": 1806.42,
+    "SOLUSD": 74.64,
+    "XAUUSD": 3806.83,
+    "EURUSD": 1.09917,
+    "USDJPY": 159.422
   },
   "active_trades": {},
   "bot_stats": {
@@ -1279,8 +1279,8 @@
         "tp1_price": 1806.51476,
         "tp2_price": 1801.5483,
         "opened_epoch": 1794969017.449354,
-        "tp1_hit": false,
-        "peak_r": 0.509
+        "tp1_hit": true,
+        "peak_r": 0.686
       }
     ],
     "shadow_cooldowns": {
@@ -1321,7 +1321,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 16h 28m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 16h 26m)",
   "deriv_flow_status": "Graduated Live (284 eps, 61.1% WR, +0.01R EMA)",
-  "cycle_count": 36
+  "cycle_count": 40
 }
