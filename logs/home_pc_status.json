@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 08:29:07 UTC",
+  "updated_utc": "2026-11-18 08:31:56 UTC",
   "hostname": "runnervmccnms",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 64748.07,
-    "ETHUSD": 1812.41,
-    "SOLUSD": 74.9
+    "BTCUSD": 64754.0,
+    "ETHUSD": 1811.99,
+    "SOLUSD": 74.86
   },
   "active_trades": {},
   "bot_stats": {
@@ -553,7 +553,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 08:26:52 UTC",
+    "updated_utc": "2026-11-18 08:31:54 UTC",
     "total_episodes": 1057,
     "strategy_stats": {
       "SND": {
@@ -1247,7 +1247,7 @@
         "tp2_price": 64982.10177,
         "opened_epoch": 1794990409.113617,
         "tp1_hit": false,
-        "peak_r": 0.013
+        "peak_r": 0.27
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1262,7 +1262,22 @@
         "tp2_price": 75.37632,
         "opened_epoch": 1794990412.927527,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.066
+      },
+      {
+        "key": "ETHUSD:DERIV_FLOW",
+        "symbol": "ETHUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 1812.23,
+        "sl_price": 1817.54945,
+        "sl_dist": 5.31945,
+        "tp1_price": 1808.77236,
+        "tp2_price": 1804.51679,
+        "opened_epoch": 1794990714.261644,
+        "tp1_hit": false,
+        "peak_r": 0.045
       }
     ],
     "shadow_cooldowns": {
@@ -1286,7 +1301,7 @@
       "EURUSD:ICT": 1794927609.018028,
       "SOLUSD:DERIV_FLOW": 1794990412.927527,
       "BTCUSD:DERIV_FLOW": 1794972809.954575,
-      "ETHUSD:DERIV_FLOW": 1794972814.627824,
+      "ETHUSD:DERIV_FLOW": 1794990714.261644,
       "EURUSD:BREAKOUT": 1794930338.39185,
       "USDJPY:BREAKOUT": 1794922211.802075,
       "USDJPY:KRONOS": 1794824120.825775,
@@ -1303,7 +1318,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 10h 30m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 10h 28m)",
   "deriv_flow_status": "Graduated Live (290 eps, 59.9% WR, -0.33R EMA)",
-  "cycle_count": 5
+  "cycle_count": 10
 }
