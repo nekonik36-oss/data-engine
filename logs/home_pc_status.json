@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 16:14:29 UTC",
+  "updated_utc": "2026-11-18 16:16:14 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62807.68,
-    "ETHUSD": 1765.34,
-    "SOLUSD": 73.24,
-    "XAUUSD": 3745.87,
-    "EURUSD": 1.09666,
-    "USDJPY": 159.196
+    "BTCUSD": 62783.27,
+    "ETHUSD": 1762.0,
+    "SOLUSD": 73.12,
+    "XAUUSD": 3750.93,
+    "EURUSD": 1.09674,
+    "USDJPY": 159.186
   },
   "active_trades": {},
   "bot_stats": {
@@ -1273,7 +1273,7 @@
         "tp2_price": 1752.41865,
         "opened_epoch": 1795016997.39118,
         "tp1_hit": false,
-        "peak_r": 0.519
+        "peak_r": 0.576
       },
       {
         "key": "BTCUSD:BREAKOUT",
@@ -1288,7 +1288,7 @@
         "tp2_price": 62595.92267,
         "opened_epoch": 1795017020.848843,
         "tp1_hit": true,
-        "peak_r": 0.796
+        "peak_r": 0.862
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1303,7 +1303,7 @@
         "tp2_price": 72.53379,
         "opened_epoch": 1795017024.340028,
         "tp1_hit": false,
-        "peak_r": 0.276
+        "peak_r": 0.295
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1318,7 +1318,7 @@
         "tp2_price": 62595.92267,
         "opened_epoch": 1795017080.753987,
         "tp1_hit": true,
-        "peak_r": 0.796
+        "peak_r": 0.862
       },
       {
         "key": "SOLUSD:ICT",
@@ -1348,7 +1348,7 @@
         "tp2_price": 72.84511,
         "opened_epoch": 1795017442.350637,
         "tp1_hit": true,
-        "peak_r": 0.888
+        "peak_r": 0.908
       }
     ],
     "shadow_cooldowns": {
@@ -1390,7 +1390,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 2h 45m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 2h 43m)",
   "deriv_flow_status": "Graduated Live (319 eps, 60.4% WR, +0.32R EMA)",
-  "cycle_count": 1035
+  "cycle_count": 1040
 }
