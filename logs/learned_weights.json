@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 18:15:32 UTC",
-  "total_episodes": 1174,
+  "updated_utc": "2026-11-18 18:20:06 UTC",
+  "total_episodes": 1175,
   "strategy_stats": {
     "SND": {
       "trades": 49,
@@ -38,11 +38,11 @@
       "multiplier": 1.022
     },
     "DERIV_FLOW": {
-      "trades": 327,
-      "wins": 198,
+      "trades": 328,
+      "wins": 199,
       "losses": 126,
-      "ema_r": 0.422,
-      "multiplier": 1.105
+      "ema_r": 0.403,
+      "multiplier": 1.101
     }
   },
   "regime_strategy_multipliers": {
@@ -682,21 +682,6 @@
   "live_episodes": 31,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 63200.02,
-      "sl_price": 63541.67247,
-      "sl_dist": 341.65247,
-      "tp1_price": 62977.94589,
-      "tp2_price": 62704.62392,
-      "opened_epoch": 1795024189.491157,
-      "tp1_hit": false,
-      "peak_r": 0.445
-    },
-    {
       "key": "ETHUSD:ICT",
       "symbol": "ETHUSD",
       "strategy_name": "ICT",
@@ -761,7 +746,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1125,
+  "shadow_episodes": 1126,
   "probation_strategies": [
     "SND"
   ]
