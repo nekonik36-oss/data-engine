@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 19:53:18 UTC",
+  "updated_utc": "2026-11-18 20:05:24 UTC",
   "total_episodes": 1187,
   "strategy_stats": {
     "SND": {
@@ -681,21 +681,6 @@
   ],
   "live_episodes": 31,
   "active_shadow_trades": [
-    {
-      "key": "ETHUSD:BREAKOUT",
-      "symbol": "ETHUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 1757.18,
-      "sl_price": 1765.2672,
-      "sl_dist": 8.0872,
-      "tp1_price": 1751.92332,
-      "tp2_price": 1745.45355,
-      "opened_epoch": 1795030513.144673,
-      "tp1_hit": false,
-      "peak_r": 0.453
-    },
     {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
