@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 16:20:43 UTC",
+  "updated_utc": "2026-11-18 16:21:47 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62370.05,
-    "ETHUSD": 1745.3,
-    "SOLUSD": 72.51,
-    "XAUUSD": 3743.48,
-    "EURUSD": 1.09622,
-    "USDJPY": 159.197
+    "BTCUSD": 62525.02,
+    "ETHUSD": 1751.37,
+    "SOLUSD": 72.72,
+    "XAUUSD": 3741.61,
+    "EURUSD": 1.09609,
+    "USDJPY": 159.227
   },
   "active_trades": {},
   "bot_stats": {
@@ -578,8 +578,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 16:20:41 UTC",
-    "total_episodes": 1152,
+    "updated_utc": "2026-11-18 16:21:45 UTC",
+    "total_episodes": 1153,
     "strategy_stats": {
       "SND": {
         "trades": 49,
@@ -596,11 +596,11 @@
         "multiplier": 0.933
       },
       "BREAKOUT": {
-        "trades": 205,
-        "wins": 115,
+        "trades": 206,
+        "wins": 116,
         "losses": 88,
-        "ema_r": 0.309,
-        "multiplier": 1.077
+        "ema_r": 0.321,
+        "multiplier": 1.08
       },
       "TREND_PULLBACK": {
         "trades": 130,
@@ -637,7 +637,7 @@
       "TRENDING_DOWN:KRONOS": 1.029,
       "RANGING:BREAKOUT": 0.944,
       "RANGING:SND": 1.042,
-      "TRENDING_DOWN:BREAKOUT": 1.126,
+      "TRENDING_DOWN:BREAKOUT": 1.133,
       "TRENDING_DOWN:SND": 0.976,
       "TRENDING_UP:ICT": 1.126,
       "SESSION_SWEEP_WINDOW:SND": 0.851,
@@ -1261,21 +1261,6 @@
     "live_episodes": 31,
     "active_shadow_trades": [
       {
-        "key": "ETHUSD:BREAKOUT",
-        "symbol": "ETHUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "SHORT",
-        "regime": "TRENDING_DOWN",
-        "entry_price": 1752.89,
-        "sl_price": 1763.74414,
-        "sl_dist": 10.85414,
-        "tp1_price": 1745.83481,
-        "tp2_price": 1737.15149,
-        "opened_epoch": 1795018815.14229,
-        "tp1_hit": true,
-        "peak_r": 0.699
-      },
-      {
         "key": "ETHUSD:KRONOS",
         "symbol": "ETHUSD",
         "strategy_name": "KRONOS",
@@ -1340,12 +1325,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795007713.266952
     },
-    "shadow_episodes": 1103,
+    "shadow_episodes": 1104,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 2h 39m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 2h 38m)",
   "deriv_flow_status": "Graduated Live (322 eps, 60.8% WR, +0.51R EMA)",
-  "cycle_count": 1052
+  "cycle_count": 1055
 }
