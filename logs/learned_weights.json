@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 21:45:24 UTC",
+  "updated_utc": "2026-11-18 21:46:31 UTC",
   "total_episodes": 1201,
   "strategy_stats": {
     "SND": {
@@ -681,21 +681,6 @@
   ],
   "live_episodes": 31,
   "active_shadow_trades": [
-    {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 73.08,
-      "sl_price": 73.36297,
-      "sl_dist": 0.28297,
-      "tp1_price": 72.89607,
-      "tp2_price": 72.66969,
-      "opened_epoch": 1795036577.521112,
-      "tp1_hit": false,
-      "peak_r": 0.424
-    },
     {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
