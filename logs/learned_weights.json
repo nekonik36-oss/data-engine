@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-18 14:15:41 UTC",
-  "total_episodes": 1116,
+  "updated_utc": "2026-11-18 14:20:44 UTC",
+  "total_episodes": 1118,
   "strategy_stats": {
     "SND": {
       "trades": 47,
@@ -10,10 +10,10 @@
       "multiplier": 0.955
     },
     "ICT": {
-      "trades": 268,
-      "wins": 139,
-      "losses": 127,
-      "ema_r": -0.133,
+      "trades": 270,
+      "wins": 140,
+      "losses": 128,
+      "ema_r": -0.13,
       "multiplier": 0.967
     },
     "BREAKOUT": {
@@ -51,7 +51,7 @@
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.849,
     "RANGING:TREND_PULLBACK": 1.061,
     "TRENDING_DOWN:TREND_PULLBACK": 1.064,
-    "SESSION_SWEEP_WINDOW:ICT": 0.916,
+    "SESSION_SWEEP_WINDOW:ICT": 0.911,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.026,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.764,
     "TRENDING_DOWN:ICT": 0.917,
@@ -711,36 +711,6 @@
       "peak_r": 0.075
     },
     {
-      "key": "XAUUSD:ICT",
-      "symbol": "XAUUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 3784.92,
-      "sl_price": 3769.06913,
-      "sl_dist": 15.85087,
-      "tp1_price": 3795.22307,
-      "tp2_price": 3807.90377,
-      "opened_epoch": 1795009829.143738,
-      "tp1_hit": false,
-      "peak_r": 0.278
-    },
-    {
-      "key": "USDJPY:ICT",
-      "symbol": "USDJPY",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 159.375,
-      "sl_price": 159.48114,
-      "sl_dist": 0.10614,
-      "tp1_price": 159.30601,
-      "tp2_price": 159.2211,
-      "opened_epoch": 1795009829.156738,
-      "tp1_hit": false,
-      "peak_r": 0.48
-    },
-    {
       "key": "USDJPY:KRONOS",
       "symbol": "USDJPY",
       "strategy_name": "KRONOS",
@@ -790,7 +760,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1068,
+  "shadow_episodes": 1070,
   "probation_strategies": [
     "SND"
   ]
