@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 23:41:47 UTC",
+  "updated_utc": "2026-11-18 23:43:59 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63012.45,
-    "ETHUSD": 1777.49,
-    "SOLUSD": 73.63,
-    "XAUUSD": 3741.95,
-    "EURUSD": 1.0972,
-    "USDJPY": 159.399
+    "BTCUSD": 63054.0,
+    "ETHUSD": 1780.02,
+    "SOLUSD": 73.75,
+    "XAUUSD": 3742.16,
+    "EURUSD": 1.09722,
+    "USDJPY": 159.397
   },
   "active_trades": {},
   "bot_stats": {
@@ -1273,7 +1273,7 @@
         "tp2_price": 63127.31132,
         "opened_epoch": 1795044319.05881,
         "tp1_hit": true,
-        "peak_r": 1.11
+        "peak_r": 1.216
       },
       {
         "key": "ETHUSD:BREAKOUT",
@@ -1287,8 +1287,8 @@
         "tp1_price": 1778.03786,
         "tp2_price": 1784.55831,
         "opened_epoch": 1795044325.415994,
-        "tp1_hit": false,
-        "peak_r": 0.583
+        "tp1_hit": true,
+        "peak_r": 0.893
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1303,7 +1303,7 @@
         "tp2_price": 73.92264,
         "opened_epoch": 1795044330.92052,
         "tp1_hit": true,
-        "peak_r": 0.679
+        "peak_r": 0.962
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1377,5 +1377,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (347 eps, 60.5% WR, -0.05R EMA)",
-  "cycle_count": 2175
+  "cycle_count": 2180
 }
