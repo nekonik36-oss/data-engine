@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-18 02:31:38 UTC",
+  "updated_utc": "2026-11-18 02:32:01 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64515.17,
-    "ETHUSD": 1807.78,
-    "SOLUSD": 74.73,
-    "XAUUSD": 3805.89,
-    "EURUSD": 1.09913,
-    "USDJPY": 159.442
+    "BTCUSD": 64500.0,
+    "ETHUSD": 1807.39,
+    "SOLUSD": 74.7,
+    "XAUUSD": 3807.5,
+    "EURUSD": 1.09918,
+    "USDJPY": 159.437
   },
   "active_trades": {},
   "bot_stats": {
@@ -556,8 +556,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-18 02:31:15 UTC",
-    "total_episodes": 1043,
+    "updated_utc": "2026-11-18 02:31:59 UTC",
+    "total_episodes": 1044,
     "strategy_stats": {
       "SND": {
         "trades": 43,
@@ -567,11 +567,11 @@
         "multiplier": 0.994
       },
       "ICT": {
-        "trades": 253,
-        "wins": 132,
+        "trades": 254,
+        "wins": 133,
         "losses": 119,
-        "ema_r": -0.294,
-        "multiplier": 0.926
+        "ema_r": -0.234,
+        "multiplier": 0.942
       },
       "BREAKOUT": {
         "trades": 190,
@@ -603,7 +603,7 @@
       }
     },
     "regime_strategy_multipliers": {
-      "RANGING:ICT": 0.751,
+      "RANGING:ICT": 0.758,
       "RANGING:KRONOS": 0.688,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.871,
       "RANGING:TREND_PULLBACK": 1.035,
@@ -1238,21 +1238,6 @@
     "live_episodes": 29,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:ICT",
-        "symbol": "SOLUSD",
-        "strategy_name": "ICT",
-        "direction": "LONG",
-        "regime": "RANGING",
-        "entry_price": 74.6,
-        "sl_price": 74.28674,
-        "sl_dist": 0.31326,
-        "tp1_price": 74.80362,
-        "tp2_price": 75.05423,
-        "opened_epoch": 1794968462.47371,
-        "tp1_hit": true,
-        "peak_r": 0.862
-      },
-      {
         "key": "SOLUSD:KRONOS",
         "symbol": "SOLUSD",
         "strategy_name": "KRONOS",
@@ -1295,7 +1280,7 @@
         "tp2_price": 1801.5483,
         "opened_epoch": 1794969017.449354,
         "tp1_hit": false,
-        "peak_r": 0.446
+        "peak_r": 0.509
       }
     ],
     "shadow_cooldowns": {
@@ -1331,12 +1316,12 @@
       "XAUUSD:ICT": 1794933348.760101,
       "EURUSD:SND": 1794841214.521494
     },
-    "shadow_episodes": 996,
+    "shadow_episodes": 997,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m) | Next: USD FOMC Meeting Minutes @ 2026-11-18 19:00 UTC (in 16h 28m)",
   "deriv_flow_status": "Graduated Live (284 eps, 61.1% WR, +0.01R EMA)",
-  "cycle_count": 35
+  "cycle_count": 36
 }
