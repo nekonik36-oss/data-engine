@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 19:31:57 UTC",
+  "updated_utc": "2026-11-19 19:36:40 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,14 +20,40 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62727.28,
-    "ETHUSD": 1777.2,
-    "SOLUSD": 73.8,
-    "XAUUSD": 3676.2,
-    "EURUSD": 1.09767,
-    "USDJPY": 159.725
+    "BTCUSD": 62568.7,
+    "ETHUSD": 1776.2,
+    "SOLUSD": 73.67,
+    "XAUUSD": 3676.27,
+    "EURUSD": 1.09752,
+    "USDJPY": 159.742
   },
-  "active_trades": {},
+  "active_trades": {
+    "1090631525": {
+      "ticket": 1090631525,
+      "symbol": "BTCUSD",
+      "broker_symbol": "BTCUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 62568.05,
+      "sl_price": 63081.39,
+      "initial_sl_price": 63081.39,
+      "tp1_price": 62209.11,
+      "tp2_price": 61804.86,
+      "volume": 0.09,
+      "initial_volume": 0.09,
+      "risk_usd": 46.4,
+      "confluence_score": 93.5,
+      "regime": "RANGING",
+      "agreeing_strategies": [
+        "BREAKOUT",
+        "TREND_PULLBACK"
+      ],
+      "opened_at_utc": "2026-11-19 19:36:00 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0,
+      "scalp_upgraded": true
+    }
+  },
   "bot_stats": {
     "total_closed": 55,
     "wins": 17,
@@ -589,7 +615,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 19:21:49 UTC",
+    "updated_utc": "2026-11-19 19:35:58 UTC",
     "total_episodes": 1443,
     "strategy_stats": {
       "SND": {
@@ -1281,7 +1307,7 @@
         "tp2_price": 62345.36841,
         "opened_epoch": 1795115872.203457,
         "tp1_hit": false,
-        "peak_r": 0.082
+        "peak_r": 0.586
       },
       {
         "key": "SOLUSD:BREAKOUT",
@@ -1296,7 +1322,7 @@
         "tp2_price": 73.11388,
         "opened_epoch": 1795116008.712193,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.05
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1311,12 +1337,42 @@
         "tp2_price": 73.11388,
         "opened_epoch": 1795116109.530963,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.05
+      },
+      {
+        "key": "BTCUSD:BREAKOUT",
+        "symbol": "BTCUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 62644.47,
+        "sl_price": 62897.4329,
+        "sl_dist": 252.9629,
+        "tp1_price": 62480.04412,
+        "tp2_price": 62277.6738,
+        "opened_epoch": 1795116958.934565,
+        "tp1_hit": false,
+        "peak_r": 0.3
+      },
+      {
+        "key": "BTCUSD:TREND_PULLBACK",
+        "symbol": "BTCUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 62644.47,
+        "sl_price": 62897.4329,
+        "sl_dist": 252.9629,
+        "tp1_price": 62480.04412,
+        "tp2_price": 62277.6738,
+        "opened_epoch": 1795116958.936565,
+        "tp1_hit": false,
+        "peak_r": 0.3
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795113961.379581,
-      "BTCUSD:BREAKOUT": 1795108088.541029,
+      "BTCUSD:BREAKOUT": 1795116958.934565,
       "BTCUSD:KRONOS": 1795107004.75434,
       "ETHUSD:BREAKOUT": 1795107912.919162,
       "ETHUSD:KRONOS": 1795101647.694776,
@@ -1326,7 +1382,7 @@
       "SOLUSD:SND": 1795114003.552525,
       "SOLUSD:ICT": 1795114208.389989,
       "ETHUSD:TREND_PULLBACK": 1795110314.635482,
-      "BTCUSD:TREND_PULLBACK": 1795110313.229122,
+      "BTCUSD:TREND_PULLBACK": 1795116958.936565,
       "SOLUSD:TREND_PULLBACK": 1795100700.940149,
       "ETHUSD:SND": 1795107005.983799,
       "BTCUSD:SND": 1795107004.750341,
@@ -1355,5 +1411,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (427 eps, 59.7% WR, +0.18R EMA)",
-  "cycle_count": 5555
+  "cycle_count": 5559
 }
