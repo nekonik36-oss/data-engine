@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 08:54:27 UTC",
+  "updated_utc": "2026-11-19 08:55:10 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63685.85,
-    "ETHUSD": 1801.78,
-    "SOLUSD": 74.48,
-    "XAUUSD": 3737.17,
-    "EURUSD": 1.09854,
-    "USDJPY": 159.76
+    "BTCUSD": 63689.06,
+    "ETHUSD": 1801.89,
+    "SOLUSD": 74.53,
+    "XAUUSD": 3737.71,
+    "EURUSD": 1.0985800000000001,
+    "USDJPY": 159.759
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 08:54:25 UTC",
+    "updated_utc": "2026-11-19 08:55:05 UTC",
     "total_episodes": 1307,
     "strategy_stats": {
       "SND": {
@@ -1368,6 +1368,21 @@
         "opened_epoch": 1795078305.165938,
         "tp1_hit": false,
         "peak_r": 0.018
+      },
+      {
+        "key": "BTCUSD:TREND_PULLBACK",
+        "symbol": "BTCUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 63689.06,
+        "sl_price": 63548.94407,
+        "sl_dist": 140.11593,
+        "tp1_price": 63780.13536,
+        "tp2_price": 63892.2281,
+        "opened_epoch": 1795078505.95419,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1382,7 +1397,7 @@
       "SOLUSD:SND": 1795062312.485611,
       "SOLUSD:ICT": 1795077307.576574,
       "ETHUSD:TREND_PULLBACK": 1795077304.763335,
-      "BTCUSD:TREND_PULLBACK": 1795041915.89161,
+      "BTCUSD:TREND_PULLBACK": 1795078505.95419,
       "SOLUSD:TREND_PULLBACK": 1795065021.043716,
       "ETHUSD:SND": 1795003509.7521,
       "BTCUSD:SND": 1795075503.187902,
@@ -1411,5 +1426,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (385 eps, 59.9% WR, +0.02R EMA)",
-  "cycle_count": 3813
+  "cycle_count": 3815
 }
