@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 05:01:55 UTC",
+  "updated_utc": "2026-11-19 05:05:29 UTC",
   "total_episodes": 1265,
   "strategy_stats": {
     "SND": {
@@ -689,7 +689,7 @@
       "tp2_price": 1790.70142,
       "opened_epoch": 1795064116.705376,
       "tp1_hit": false,
-      "peak_r": 0.431
+      "peak_r": 0.458
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -704,7 +704,7 @@
       "tp2_price": 1790.70142,
       "opened_epoch": 1795064116.707383,
       "tp1_hit": false,
-      "peak_r": 0.431
+      "peak_r": 0.458
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -734,7 +734,37 @@
       "tp2_price": 63280.82138,
       "opened_epoch": 1795064515.54507,
       "tp1_hit": false,
-      "peak_r": 0.382
+      "peak_r": 0.462
+    },
+    {
+      "key": "SOLUSD:ICT",
+      "symbol": "SOLUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "TRENDING_UP",
+      "entry_price": 74.56,
+      "sl_price": 74.85994,
+      "sl_dist": 0.29994,
+      "tp1_price": 74.36504,
+      "tp2_price": 74.12508,
+      "opened_epoch": 1795064711.402522,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "BTCUSD:ICT",
+      "symbol": "BTCUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 63487.86,
+      "sl_price": 63692.84633,
+      "sl_dist": 204.98633,
+      "tp1_price": 63354.61888,
+      "tp2_price": 63190.62982,
+      "opened_epoch": 1795064729.038131,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -745,9 +775,9 @@
     "ETHUSD:KRONOS": 1795064116.707383,
     "SOLUSD:BREAKOUT": 1795059310.812983,
     "SOLUSD:KRONOS": 1795048219.364511,
-    "BTCUSD:ICT": 1795058401.201054,
+    "BTCUSD:ICT": 1795064729.038131,
     "SOLUSD:SND": 1795062312.485611,
-    "SOLUSD:ICT": 1795058405.060727,
+    "SOLUSD:ICT": 1795064711.402522,
     "ETHUSD:TREND_PULLBACK": 1795026621.434674,
     "BTCUSD:TREND_PULLBACK": 1795041915.89161,
     "SOLUSD:TREND_PULLBACK": 1795041919.571095,
