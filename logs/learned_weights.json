@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-19 17:08:08 UTC",
-  "total_episodes": 1425,
+  "updated_utc": "2026-11-19 17:08:51 UTC",
+  "total_episodes": 1426,
   "strategy_stats": {
     "SND": {
-      "trades": 62,
-      "wins": 25,
+      "trades": 63,
+      "wins": 26,
       "losses": 36,
-      "ema_r": 0.007,
-      "multiplier": 1.002
+      "ema_r": 0.043,
+      "multiplier": 1.011
     },
     "ICT": {
       "trades": 337,
@@ -57,7 +57,7 @@
     "TRENDING_DOWN:ICT": 0.891,
     "TRENDING_DOWN:KRONOS": 1.102,
     "RANGING:BREAKOUT": 0.967,
-    "RANGING:SND": 1.053,
+    "RANGING:SND": 1.06,
     "TRENDING_DOWN:BREAKOUT": 1.076,
     "TRENDING_DOWN:SND": 0.987,
     "TRENDING_UP:ICT": 1.05,
@@ -694,21 +694,6 @@
       "peak_r": 1.445
     },
     {
-      "key": "USDJPY:SND",
-      "symbol": "USDJPY",
-      "strategy_name": "SND",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 159.754,
-      "sl_price": 159.88666,
-      "sl_dist": 0.13266,
-      "tp1_price": 159.66777,
-      "tp2_price": 159.56165,
-      "opened_epoch": 1795107610.766821,
-      "tp1_hit": true,
-      "peak_r": 0.754
-    },
-    {
       "key": "ETHUSD:BREAKOUT",
       "symbol": "ETHUSD",
       "strategy_name": "BREAKOUT",
@@ -751,7 +736,7 @@
       "tp2_price": 62029.00218,
       "opened_epoch": 1795108087.836343,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.281
     },
     {
       "key": "BTCUSD:BREAKOUT",
@@ -766,7 +751,7 @@
       "tp2_price": 62029.00218,
       "opened_epoch": 1795108088.541029,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.281
     }
   ],
   "shadow_cooldowns": {
@@ -803,7 +788,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1370,
+  "shadow_episodes": 1371,
   "probation_strategies": [
     "SND"
   ]
