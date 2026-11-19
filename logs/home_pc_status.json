@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 09:29:51 UTC",
+  "updated_utc": "2026-11-19 09:31:36 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63692.32,
-    "ETHUSD": 1799.54,
-    "SOLUSD": 74.31,
-    "XAUUSD": 3727.44,
-    "EURUSD": 1.09958,
-    "USDJPY": 159.833
+    "BTCUSD": 63741.85,
+    "ETHUSD": 1801.38,
+    "SOLUSD": 74.37,
+    "XAUUSD": 3728.38,
+    "EURUSD": 1.09946,
+    "USDJPY": 159.829
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 09:28:41 UTC",
+    "updated_utc": "2026-11-19 09:30:17 UTC",
     "total_episodes": 1317,
     "strategy_stats": {
       "SND": {
@@ -1322,7 +1322,7 @@
         "tp2_price": 159.97364,
         "opened_epoch": 1795079712.879408,
         "tp1_hit": false,
-        "peak_r": 0.069
+        "peak_r": 0.109
       },
       {
         "key": "USDJPY:KRONOS",
@@ -1398,6 +1398,21 @@
         "opened_epoch": 1795080419.480095,
         "tp1_hit": true,
         "peak_r": 0.782
+      },
+      {
+        "key": "SOLUSD:BREAKOUT",
+        "symbol": "SOLUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 74.31,
+        "sl_price": 74.54328,
+        "sl_dist": 0.23328,
+        "tp1_price": 74.15837,
+        "tp2_price": 73.97174,
+        "opened_epoch": 1795080617.040215,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1406,7 +1421,7 @@
       "BTCUSD:KRONOS": 1795078830.904443,
       "ETHUSD:BREAKOUT": 1795077916.151641,
       "ETHUSD:KRONOS": 1795080030.51642,
-      "SOLUSD:BREAKOUT": 1795076707.208865,
+      "SOLUSD:BREAKOUT": 1795080617.040215,
       "SOLUSD:KRONOS": 1795079113.671245,
       "BTCUSD:ICT": 1795079708.924099,
       "SOLUSD:SND": 1795062312.485611,
@@ -1441,5 +1456,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (387 eps, 59.6% WR, -0.13R EMA)",
-  "cycle_count": 3915
+  "cycle_count": 3920
 }
