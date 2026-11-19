@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 07:54:19 UTC",
+  "updated_utc": "2026-11-19 07:54:58 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9580.28,
+  "live_equity": 9579.22,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63729.14,
+    "BTCUSD": 63718.86,
     "SOLUSD": 74.83,
-    "XAUUSD": 3732.13,
-    "EURUSD": 1.09748,
-    "USDJPY": 159.724
+    "XAUUSD": 3733.43,
+    "EURUSD": 1.0982,
+    "USDJPY": 159.717
   },
   "active_trades": {
     "1089818537": {
@@ -34,7 +34,7 @@
       "broker_source": "MT5_LIVE",
       "direction": "SHORT",
       "entry_price": 1803.04,
-      "sl_price": 1816.54,
+      "sl_price": 1808.71,
       "initial_sl_price": 1816.54,
       "tp1_price": 1794.265,
       "tp2_price": 1783.465,
@@ -53,7 +53,9 @@
       "partial_pnl": 0.0,
       "scalp_upgraded": true,
       "fast_scalp_upgraded": true,
-      "peak_favorable_r": 0.01
+      "peak_favorable_r": 0.01,
+      "time_decay_30m": true,
+      "time_decay_applied": true
     }
   },
   "bot_stats": {
@@ -1426,5 +1428,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (380 eps, 59.9% WR, -0.10R EMA)",
-  "cycle_count": 3635
+  "cycle_count": 3637
 }
