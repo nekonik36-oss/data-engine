@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 09:39:31 UTC",
+  "updated_utc": "2026-11-19 09:40:17 UTC",
   "total_episodes": 1322,
   "strategy_stats": {
     "SND": {
@@ -793,6 +793,21 @@
       "opened_epoch": 1795080918.821576,
       "tp1_hit": false,
       "peak_r": 0.248
+    },
+    {
+      "key": "SOLUSD:KRONOS",
+      "symbol": "SOLUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 74.49,
+      "sl_price": 74.72375,
+      "sl_dist": 0.23375,
+      "tp1_price": 74.33806,
+      "tp2_price": 74.15106,
+      "opened_epoch": 1795081217.939406,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -802,7 +817,7 @@
     "ETHUSD:BREAKOUT": 1795077916.151641,
     "ETHUSD:KRONOS": 1795080030.51642,
     "SOLUSD:BREAKOUT": 1795080617.040215,
-    "SOLUSD:KRONOS": 1795079113.671245,
+    "SOLUSD:KRONOS": 1795081217.939406,
     "BTCUSD:ICT": 1795079708.924099,
     "SOLUSD:SND": 1795062312.485611,
     "SOLUSD:ICT": 1795080900.694377,
