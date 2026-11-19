@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 17:01:02 UTC",
+  "updated_utc": "2026-11-19 17:02:32 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9493.69,
+  "live_equity": 9502.29,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1769.07,
-    "SOLUSD": 73.28,
-    "XAUUSD": 3683.7,
-    "EURUSD": 1.09777,
-    "USDJPY": 159.778
+    "ETHUSD": 1766.57,
+    "SOLUSD": 73.12,
+    "XAUUSD": 3680.71,
+    "EURUSD": 1.09761,
+    "USDJPY": 159.741
   },
   "active_trades": {
     "1090474952": {
@@ -51,7 +51,8 @@
       "tp1_hit": false,
       "partial_pnl": 0.0,
       "scalp_upgraded": true,
-      "fast_scalp_upgraded": true
+      "fast_scalp_upgraded": true,
+      "peak_favorable_r": 0.13
     }
   },
   "bot_stats": {
@@ -1298,8 +1299,8 @@
         "tp1_price": 73.11159,
         "tp2_price": 72.70739,
         "opened_epoch": 1795107462.574939,
-        "tp1_hit": false,
-        "peak_r": 0.534
+        "tp1_hit": true,
+        "peak_r": 0.713
       },
       {
         "key": "USDJPY:SND",
@@ -1314,7 +1315,7 @@
         "tp2_price": 159.56165,
         "opened_epoch": 1795107610.766821,
         "tp1_hit": false,
-        "peak_r": 0.09
+        "peak_r": 0.098
       }
     ],
     "shadow_cooldowns": {
@@ -1358,5 +1359,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (421 eps, 59.6% WR, +0.13R EMA)",
-  "cycle_count": 5175
+  "cycle_count": 5180
 }
