@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 00:20:08 UTC",
+  "updated_utc": "2026-11-19 00:20:49 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9633.98,
+  "live_equity": 9635.54,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62678.0,
-    "SOLUSD": 73.33,
-    "XAUUSD": 3740.95,
-    "EURUSD": 1.097,
-    "USDJPY": 159.406
+    "BTCUSD": 62668.61,
+    "SOLUSD": 73.31,
+    "XAUUSD": 3740.39,
+    "EURUSD": 1.09694,
+    "USDJPY": 159.413
   },
   "active_trades": {
     "1089422943": {
@@ -53,7 +53,7 @@
       "partial_pnl": 0.0,
       "scalp_upgraded": true,
       "fast_scalp_upgraded": true,
-      "peak_favorable_r": 0.102
+      "peak_favorable_r": 0.112
     }
   },
   "bot_stats": {
@@ -1346,7 +1346,7 @@
         "tp2_price": 62424.8512,
         "opened_epoch": 1795047006.251734,
         "tp1_hit": false,
-        "peak_r": 0.416
+        "peak_r": 0.482
       },
       {
         "key": "SOLUSD:SND",
@@ -1376,7 +1376,7 @@
         "tp2_price": 72.96327,
         "opened_epoch": 1795047392.572525,
         "tp1_hit": false,
-        "peak_r": 0.357
+        "peak_r": 0.417
       }
     ],
     "shadow_cooldowns": {
@@ -1420,5 +1420,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (349 eps, 60.7% WR, +0.13R EMA)",
-  "cycle_count": 2283
+  "cycle_count": 2285
 }
