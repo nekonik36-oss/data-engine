@@ -691,7 +691,7 @@
       "tp2_price": 1772.44086,
       "opened_epoch": 1795113645.283287,
       "tp1_hit": true,
-      "peak_r": 0.869
+      "peak_r": 0.986
     },
     {
       "key": "ETHUSD:ICT",
@@ -706,7 +706,7 @@
       "tp2_price": 1767.98648,
       "opened_epoch": 1795113961.379581,
       "tp1_hit": false,
-      "peak_r": 0.43
+      "peak_r": 0.549
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -720,8 +720,8 @@
       "tp1_price": 74.09522,
       "tp2_price": 73.7201,
       "opened_epoch": 1795114002.781671,
-      "tp1_hit": false,
-      "peak_r": 0.576
+      "tp1_hit": true,
+      "peak_r": 0.682
     },
     {
       "key": "SOLUSD:SND",
@@ -735,8 +735,8 @@
       "tp1_price": 74.09522,
       "tp2_price": 73.7201,
       "opened_epoch": 1795114003.552525,
-      "tp1_hit": false,
-      "peak_r": 0.576
+      "tp1_hit": true,
+      "peak_r": 0.682
     },
     {
       "key": "SOLUSD:ICT",
@@ -751,7 +751,7 @@
       "tp2_price": 73.60759,
       "opened_epoch": 1795114208.389989,
       "tp1_hit": false,
-      "peak_r": 0.306
+      "peak_r": 0.416
     }
   ],
   "shadow_cooldowns": {

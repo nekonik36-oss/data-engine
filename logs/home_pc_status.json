@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 18:55:25 UTC",
+  "updated_utc": "2026-11-19 19:00:01 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62946.52,
-    "ETHUSD": 1779.88,
-    "SOLUSD": 74.13,
-    "XAUUSD": 3679.84,
-    "EURUSD": 1.09798,
-    "USDJPY": 159.744
+    "BTCUSD": 62901.44,
+    "ETHUSD": 1777.75,
+    "SOLUSD": 74.09,
+    "XAUUSD": 3680.42,
+    "EURUSD": 1.09785,
+    "USDJPY": 159.755
   },
   "active_trades": {},
   "bot_stats": {
@@ -1281,7 +1281,7 @@
         "tp2_price": 1772.44086,
         "opened_epoch": 1795113645.283287,
         "tp1_hit": true,
-        "peak_r": 0.869
+        "peak_r": 0.986
       },
       {
         "key": "ETHUSD:ICT",
@@ -1296,7 +1296,7 @@
         "tp2_price": 1767.98648,
         "opened_epoch": 1795113961.379581,
         "tp1_hit": false,
-        "peak_r": 0.43
+        "peak_r": 0.549
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1310,8 +1310,8 @@
         "tp1_price": 74.09522,
         "tp2_price": 73.7201,
         "opened_epoch": 1795114002.781671,
-        "tp1_hit": false,
-        "peak_r": 0.576
+        "tp1_hit": true,
+        "peak_r": 0.682
       },
       {
         "key": "SOLUSD:SND",
@@ -1325,8 +1325,8 @@
         "tp1_price": 74.09522,
         "tp2_price": 73.7201,
         "opened_epoch": 1795114003.552525,
-        "tp1_hit": false,
-        "peak_r": 0.576
+        "tp1_hit": true,
+        "peak_r": 0.682
       },
       {
         "key": "SOLUSD:ICT",
@@ -1341,7 +1341,7 @@
         "tp2_price": 73.60759,
         "opened_epoch": 1795114208.389989,
         "tp1_hit": false,
-        "peak_r": 0.306
+        "peak_r": 0.416
       }
     ],
     "shadow_cooldowns": {
@@ -1385,5 +1385,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (425 eps, 59.5% WR, +0.00R EMA)",
-  "cycle_count": 5500
+  "cycle_count": 5505
 }
