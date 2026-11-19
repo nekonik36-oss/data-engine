@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 14:08:01 UTC",
+  "updated_utc": "2026-11-19 14:08:27 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63946.0,
-    "ETHUSD": 1811.45,
-    "SOLUSD": 75.1,
-    "XAUUSD": 3711.49,
-    "EURUSD": 1.09993,
+    "BTCUSD": 63940.4,
+    "ETHUSD": 1810.97,
+    "SOLUSD": 75.07,
+    "XAUUSD": 3712.13,
+    "EURUSD": 1.09998,
     "USDJPY": 159.897
   },
   "active_trades": {},
@@ -589,8 +589,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 14:00:26 UTC",
-    "total_episodes": 1375,
+    "updated_utc": "2026-11-19 14:08:25 UTC",
+    "total_episodes": 1376,
     "strategy_stats": {
       "SND": {
         "trades": 58,
@@ -607,11 +607,11 @@
         "multiplier": 1.004
       },
       "BREAKOUT": {
-        "trades": 242,
-        "wins": 134,
+        "trades": 243,
+        "wins": 135,
         "losses": 106,
-        "ema_r": -0.112,
-        "multiplier": 0.972
+        "ema_r": -0.066,
+        "multiplier": 0.983
       },
       "TREND_PULLBACK": {
         "trades": 145,
@@ -642,7 +642,7 @@
       "RANGING:TREND_PULLBACK": 1.045,
       "TRENDING_DOWN:TREND_PULLBACK": 1.086,
       "SESSION_SWEEP_WINDOW:ICT": 0.964,
-      "SESSION_SWEEP_WINDOW:BREAKOUT": 1.039,
+      "SESSION_SWEEP_WINDOW:BREAKOUT": 1.046,
       "SESSION_SWEEP_WINDOW:KRONOS": 0.752,
       "TRENDING_DOWN:ICT": 0.891,
       "TRENDING_DOWN:KRONOS": 1.06,
@@ -1287,21 +1287,6 @@
     "live_episodes": 36,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:BREAKOUT",
-        "symbol": "SOLUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "LONG",
-        "regime": "SESSION_SWEEP_WINDOW",
-        "entry_price": 74.99,
-        "sl_price": 74.7206,
-        "sl_dist": 0.2694,
-        "tp1_price": 75.16511,
-        "tp2_price": 75.38062,
-        "opened_epoch": 1795095615.178918,
-        "tp1_hit": true,
-        "peak_r": 0.965
-      },
-      {
         "key": "SOLUSD:KRONOS",
         "symbol": "SOLUSD",
         "strategy_name": "KRONOS",
@@ -1426,12 +1411,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795007713.266952
     },
-    "shadow_episodes": 1321,
+    "shadow_episodes": 1322,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (410 eps, 59.5% WR, -0.24R EMA)",
-  "cycle_count": 4695
+  "cycle_count": 4696
 }
