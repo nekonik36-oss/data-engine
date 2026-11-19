@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 08:55:05 UTC",
-  "total_episodes": 1307,
+  "updated_utc": "2026-11-19 08:56:15 UTC",
+  "total_episodes": 1308,
   "strategy_stats": {
     "SND": {
       "trades": 53,
@@ -38,11 +38,11 @@
       "multiplier": 0.959
     },
     "DERIV_FLOW": {
-      "trades": 385,
+      "trades": 386,
       "wins": 229,
-      "losses": 153,
-      "ema_r": 0.024,
-      "multiplier": 1.006
+      "losses": 154,
+      "ema_r": -0.058,
+      "multiplier": 0.986
     }
   },
   "regime_strategy_multipliers": {
@@ -71,7 +71,7 @@
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
     "MACRO_NEWS_WINDOW:ICT": 1.041,
-    "TRENDING_UP:DERIV_FLOW": 1.045,
+    "TRENDING_UP:DERIV_FLOW": 1.029,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.992,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
     "TRENDING_UP:SND": 0.953,
@@ -732,7 +732,7 @@
       "tp2_price": 74.83452,
       "opened_epoch": 1795077307.576574,
       "tp1_hit": false,
-      "peak_r": 0.143
+      "peak_r": 0.333
     },
     {
       "key": "ETHUSD:BREAKOUT",
@@ -765,21 +765,6 @@
       "peak_r": 0.516
     },
     {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 63574.43,
-      "sl_price": 63714.29375,
-      "sl_dist": 139.86375,
-      "tp1_price": 63483.51857,
-      "tp2_price": 63371.62757,
-      "opened_epoch": 1795078305.165938,
-      "tp1_hit": false,
-      "peak_r": 0.018
-    },
-    {
       "key": "BTCUSD:TREND_PULLBACK",
       "symbol": "BTCUSD",
       "strategy_name": "TREND_PULLBACK",
@@ -792,7 +777,7 @@
       "tp2_price": 63892.2281,
       "opened_epoch": 1795078505.95419,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.203
     }
   ],
   "shadow_cooldowns": {
@@ -829,7 +814,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1255,
+  "shadow_episodes": 1256,
   "probation_strategies": [
     "SND"
   ]
