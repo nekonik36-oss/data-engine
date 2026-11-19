@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 15:43:43 UTC",
+  "updated_utc": "2026-11-19 15:45:22 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62897.73,
-    "ETHUSD": 1775.81,
-    "SOLUSD": 73.73,
-    "XAUUSD": 3692.08,
-    "EURUSD": 1.09845,
-    "USDJPY": 159.714
+    "BTCUSD": 62866.5,
+    "ETHUSD": 1775.0,
+    "SOLUSD": 73.59,
+    "XAUUSD": 3691.01,
+    "EURUSD": 1.09848,
+    "USDJPY": 159.694
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 15:43:18 UTC",
+    "updated_utc": "2026-11-19 15:45:02 UTC",
     "total_episodes": 1408,
     "strategy_stats": {
       "SND": {
@@ -1318,7 +1318,22 @@
         "tp2_price": 73.13394,
         "opened_epoch": 1795102998.959127,
         "tp1_hit": false,
-        "peak_r": 0.243
+        "peak_r": 0.526
+      },
+      {
+        "key": "USDJPY:BREAKOUT",
+        "symbol": "USDJPY",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 159.719,
+        "sl_price": 159.83253,
+        "sl_dist": 0.11353,
+        "tp1_price": 159.6452,
+        "tp2_price": 159.55438,
+        "opened_epoch": 1795103102.580275,
+        "tp1_hit": false,
+        "peak_r": 0.22
       }
     ],
     "shadow_cooldowns": {
@@ -1344,7 +1359,7 @@
       "BTCUSD:DERIV_FLOW": 1795102513.189235,
       "ETHUSD:DERIV_FLOW": 1795102473.880937,
       "EURUSD:BREAKOUT": 1795075207.222294,
-      "USDJPY:BREAKOUT": 1795079712.879408,
+      "USDJPY:BREAKOUT": 1795103102.580275,
       "USDJPY:KRONOS": 1795096802.328074,
       "EURUSD:KRONOS": 1795006220.626757,
       "XAUUSD:TREND_PULLBACK": 1794807916.277754,
@@ -1362,5 +1377,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (417 eps, 59.2% WR, -0.12R EMA)",
-  "cycle_count": 4935
+  "cycle_count": 4940
 }

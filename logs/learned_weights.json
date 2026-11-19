@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 15:43:18 UTC",
+  "updated_utc": "2026-11-19 15:45:02 UTC",
   "total_episodes": 1408,
   "strategy_stats": {
     "SND": {
@@ -728,7 +728,22 @@
       "tp2_price": 73.13394,
       "opened_epoch": 1795102998.959127,
       "tp1_hit": false,
-      "peak_r": 0.243
+      "peak_r": 0.526
+    },
+    {
+      "key": "USDJPY:BREAKOUT",
+      "symbol": "USDJPY",
+      "strategy_name": "BREAKOUT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 159.719,
+      "sl_price": 159.83253,
+      "sl_dist": 0.11353,
+      "tp1_price": 159.6452,
+      "tp2_price": 159.55438,
+      "opened_epoch": 1795103102.580275,
+      "tp1_hit": false,
+      "peak_r": 0.22
     }
   ],
   "shadow_cooldowns": {
@@ -754,7 +769,7 @@
     "BTCUSD:DERIV_FLOW": 1795102513.189235,
     "ETHUSD:DERIV_FLOW": 1795102473.880937,
     "EURUSD:BREAKOUT": 1795075207.222294,
-    "USDJPY:BREAKOUT": 1795079712.879408,
+    "USDJPY:BREAKOUT": 1795103102.580275,
     "USDJPY:KRONOS": 1795096802.328074,
     "EURUSD:KRONOS": 1795006220.626757,
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
