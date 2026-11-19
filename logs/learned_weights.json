@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 12:49:46 UTC",
+  "updated_utc": "2026-11-19 12:50:15 UTC",
   "total_episodes": 1366,
   "strategy_stats": {
     "SND": {
@@ -698,21 +698,6 @@
   "live_episodes": 35,
   "active_shadow_trades": [
     {
-      "key": "EURUSD:ICT",
-      "symbol": "EURUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 1.09916,
-      "sl_price": 1.1,
-      "sl_dist": 0.00084,
-      "tp1_price": 1.09862,
-      "tp2_price": 1.09795,
-      "opened_epoch": 1795089914.22463,
-      "tp1_hit": true,
-      "peak_r": 0.869
-    },
-    {
       "key": "XAUUSD:BREAKOUT",
       "symbol": "XAUUSD",
       "strategy_name": "BREAKOUT",
@@ -726,10 +711,25 @@
       "opened_epoch": 1795092314.16201,
       "tp1_hit": false,
       "peak_r": 0.0
+    },
+    {
+      "key": "ETHUSD:ICT",
+      "symbol": "ETHUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 1805.52,
+      "sl_price": 1799.53441,
+      "sl_dist": 5.98559,
+      "tp1_price": 1809.41063,
+      "tp2_price": 1814.1991,
+      "opened_epoch": 1795092612.06706,
+      "tp1_hit": false,
+      "peak_r": 0.045
     }
   ],
   "shadow_cooldowns": {
-    "ETHUSD:ICT": 1795083304.894482,
+    "ETHUSD:ICT": 1795092612.06706,
     "BTCUSD:BREAKOUT": 1795088108.549713,
     "BTCUSD:KRONOS": 1795089006.889277,
     "ETHUSD:BREAKOUT": 1795077916.151641,
