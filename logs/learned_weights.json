@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 11:40:03 UTC",
-  "total_episodes": 1344,
+  "updated_utc": "2026-11-19 11:42:18 UTC",
+  "total_episodes": 1345,
   "strategy_stats": {
     "SND": {
       "trades": 55,
@@ -17,11 +17,11 @@
       "multiplier": 0.943
     },
     "BREAKOUT": {
-      "trades": 238,
+      "trades": 239,
       "wins": 132,
-      "losses": 104,
-      "ema_r": -0.064,
-      "multiplier": 0.984
+      "losses": 105,
+      "ema_r": -0.139,
+      "multiplier": 0.965
     },
     "TREND_PULLBACK": {
       "trades": 143,
@@ -56,7 +56,7 @@
     "SESSION_SWEEP_WINDOW:KRONOS": 0.759,
     "TRENDING_DOWN:ICT": 0.891,
     "TRENDING_DOWN:KRONOS": 1.06,
-    "RANGING:BREAKOUT": 0.978,
+    "RANGING:BREAKOUT": 0.962,
     "RANGING:SND": 1.066,
     "TRENDING_DOWN:BREAKOUT": 1.076,
     "TRENDING_DOWN:SND": 0.968,
@@ -710,22 +710,7 @@
       "tp2_price": 1.09862,
       "opened_epoch": 1795087804.694721,
       "tp1_hit": false,
-      "peak_r": 0.321
-    },
-    {
-      "key": "BTCUSD:BREAKOUT",
-      "symbol": "BTCUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 64038.33,
-      "sl_price": 63897.44567,
-      "sl_dist": 140.88433,
-      "tp1_price": 64129.90481,
-      "tp2_price": 64242.61227,
-      "opened_epoch": 1795088108.549713,
-      "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.393
     },
     {
       "key": "SOLUSD:BREAKOUT",
@@ -755,7 +740,7 @@
       "tp2_price": 74.60291,
       "opened_epoch": 1795088111.160209,
       "tp1_hit": false,
-      "peak_r": 0.366
+      "peak_r": 0.457
     },
     {
       "key": "BTCUSD:ICT",
@@ -770,7 +755,7 @@
       "tp2_price": 63731.57566,
       "opened_epoch": 1795088403.18517,
       "tp1_hit": false,
-      "peak_r": 0.066
+      "peak_r": 0.37
     }
   ],
   "shadow_cooldowns": {
@@ -807,7 +792,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1291,
+  "shadow_episodes": 1292,
   "probation_strategies": [
     "SND"
   ]
