@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 08:00:24 UTC",
+  "updated_utc": "2026-11-19 08:00:45 UTC",
   "total_episodes": 1297,
   "strategy_stats": {
     "SND": {
@@ -676,36 +676,6 @@
   ],
   "live_episodes": 33,
   "active_shadow_trades": [
-    {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 1803.18,
-      "sl_price": 1808.53387,
-      "sl_dist": 5.35387,
-      "tp1_price": 1799.69998,
-      "tp2_price": 1795.41688,
-      "opened_epoch": 1795072529.190087,
-      "tp1_hit": false,
-      "peak_r": 0.22
-    },
-    {
-      "key": "ETHUSD:KRONOS",
-      "symbol": "ETHUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 1803.18,
-      "sl_price": 1808.53387,
-      "sl_dist": 5.35387,
-      "tp1_price": 1799.69998,
-      "tp2_price": 1795.41688,
-      "opened_epoch": 1795072529.19308,
-      "tp1_hit": false,
-      "peak_r": 0.22
-    },
     {
       "key": "SOLUSD:DERIV_FLOW",
       "symbol": "SOLUSD",
