@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 08:14:30 UTC",
+  "updated_utc": "2026-11-19 08:14:53 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9575.01,
+  "live_equity": 9569.59,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63774.98,
-    "SOLUSD": 74.69,
-    "XAUUSD": 3739.9,
-    "EURUSD": 1.0983,
-    "USDJPY": 159.76
+    "BTCUSD": 63804.55,
+    "SOLUSD": 74.7,
+    "XAUUSD": 3740.36,
+    "EURUSD": 1.09824,
+    "USDJPY": 159.78
   },
   "active_trades": {
     "1089818537": {
@@ -620,15 +620,15 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 08:13:51 UTC",
-    "total_episodes": 1298,
+    "updated_utc": "2026-11-19 08:14:52 UTC",
+    "total_episodes": 1299,
     "strategy_stats": {
       "SND": {
-        "trades": 52,
+        "trades": 53,
         "wins": 22,
-        "losses": 29,
-        "ema_r": 0.06,
-        "multiplier": 1.015
+        "losses": 30,
+        "ema_r": -0.025,
+        "multiplier": 0.994
       },
       "ICT": {
         "trades": 312,
@@ -695,7 +695,7 @@
       "TRENDING_UP:DERIV_FLOW": 1.019,
       "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.992,
       "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
-      "TRENDING_UP:SND": 0.969,
+      "TRENDING_UP:SND": 0.953,
       "MACRO_NEWS_WINDOW:KRONOS": 1.012
     },
     "symbol_streaks": {
@@ -1311,21 +1311,6 @@
         "opened_epoch": 1795074963.587012,
         "tp1_hit": true,
         "peak_r": 0.835
-      },
-      {
-        "key": "BTCUSD:SND",
-        "symbol": "BTCUSD",
-        "strategy_name": "SND",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 63638.26,
-        "sl_price": 63778.26417,
-        "sl_dist": 140.00417,
-        "tp1_price": 63547.25729,
-        "tp2_price": 63435.25395,
-        "opened_epoch": 1795075503.187902,
-        "tp1_hit": false,
-        "peak_r": 0.017
       }
     ],
     "shadow_cooldowns": {
@@ -1362,12 +1347,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795007713.266952
     },
-    "shadow_episodes": 1247,
+    "shadow_episodes": 1248,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (381 eps, 59.8% WR, -0.17R EMA)",
-  "cycle_count": 3700
+  "cycle_count": 3701
 }

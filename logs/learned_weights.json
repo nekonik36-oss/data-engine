@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-19 08:13:51 UTC",
-  "total_episodes": 1298,
+  "updated_utc": "2026-11-19 08:14:52 UTC",
+  "total_episodes": 1299,
   "strategy_stats": {
     "SND": {
-      "trades": 52,
+      "trades": 53,
       "wins": 22,
-      "losses": 29,
-      "ema_r": 0.06,
-      "multiplier": 1.015
+      "losses": 30,
+      "ema_r": -0.025,
+      "multiplier": 0.994
     },
     "ICT": {
       "trades": 312,
@@ -74,7 +74,7 @@
     "TRENDING_UP:DERIV_FLOW": 1.019,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.992,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
-    "TRENDING_UP:SND": 0.969,
+    "TRENDING_UP:SND": 0.953,
     "MACRO_NEWS_WINDOW:KRONOS": 1.012
   },
   "symbol_streaks": {
@@ -690,21 +690,6 @@
       "opened_epoch": 1795074963.587012,
       "tp1_hit": true,
       "peak_r": 0.835
-    },
-    {
-      "key": "BTCUSD:SND",
-      "symbol": "BTCUSD",
-      "strategy_name": "SND",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 63638.26,
-      "sl_price": 63778.26417,
-      "sl_dist": 140.00417,
-      "tp1_price": 63547.25729,
-      "tp2_price": 63435.25395,
-      "opened_epoch": 1795075503.187902,
-      "tp1_hit": false,
-      "peak_r": 0.017
     }
   ],
   "shadow_cooldowns": {
@@ -741,7 +726,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1247,
+  "shadow_episodes": 1248,
   "probation_strategies": [
     "SND"
   ]
