@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 20:18:58 UTC",
+  "updated_utc": "2026-11-19 20:20:59 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62396.0,
-    "ETHUSD": 1766.75,
-    "SOLUSD": 73.41,
-    "XAUUSD": 3670.45,
-    "EURUSD": 1.09747,
-    "USDJPY": 159.691
+    "BTCUSD": 62292.0,
+    "ETHUSD": 1763.52,
+    "SOLUSD": 73.2,
+    "XAUUSD": 3669.74,
+    "EURUSD": 1.09743,
+    "USDJPY": 159.666
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 20:17:25 UTC",
+    "updated_utc": "2026-11-19 20:20:08 UTC",
     "total_episodes": 1451,
     "strategy_stats": {
       "SND": {
@@ -1267,7 +1267,23 @@
       }
     ],
     "live_episodes": 38,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 62382.06,
+        "sl_price": 62138.22369,
+        "sl_dist": 243.83631,
+        "tp1_price": 62540.5536,
+        "tp2_price": 62735.62264,
+        "opened_epoch": 1795119608.655506,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795113961.379581,
       "BTCUSD:BREAKOUT": 1795116958.934565,
@@ -1276,7 +1292,7 @@
       "ETHUSD:KRONOS": 1795101647.694776,
       "SOLUSD:BREAKOUT": 1795116008.712193,
       "SOLUSD:KRONOS": 1795101604.733339,
-      "BTCUSD:ICT": 1795109109.940684,
+      "BTCUSD:ICT": 1795119608.655506,
       "SOLUSD:SND": 1795114003.552525,
       "SOLUSD:ICT": 1795114208.389989,
       "ETHUSD:TREND_PULLBACK": 1795117210.487972,
@@ -1309,5 +1325,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (429 eps, 59.9% WR, +0.26R EMA)",
-  "cycle_count": 5630
+  "cycle_count": 5635
 }
