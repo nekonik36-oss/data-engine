@@ -689,7 +689,7 @@
       "tp2_price": 62474.12998,
       "opened_epoch": 1795053778.649436,
       "tp1_hit": true,
-      "peak_r": 0.664
+      "peak_r": 0.901
     },
     {
       "key": "ETHUSD:DERIV_FLOW",
@@ -703,8 +703,8 @@
       "tp1_price": 1771.31748,
       "tp2_price": 1765.259,
       "opened_epoch": 1795054946.004974,
-      "tp1_hit": false,
-      "peak_r": 0.577
+      "tp1_hit": true,
+      "peak_r": 0.676
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -719,7 +719,7 @@
       "tp2_price": 73.00807,
       "opened_epoch": 1795054947.084689,
       "tp1_hit": true,
-      "peak_r": 0.678
+      "peak_r": 0.825
     }
   ],
   "shadow_cooldowns": {
