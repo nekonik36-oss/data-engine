@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 05:15:53 UTC",
+  "updated_utc": "2026-11-19 05:17:44 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63434.67,
-    "ETHUSD": 1797.03,
-    "SOLUSD": 74.5,
-    "XAUUSD": 3727.76,
-    "EURUSD": 1.09637,
-    "USDJPY": 159.552
+    "BTCUSD": 63453.17,
+    "ETHUSD": 1797.44,
+    "SOLUSD": 74.53,
+    "XAUUSD": 3731.62,
+    "EURUSD": 1.0963,
+    "USDJPY": 159.561
   },
   "active_trades": {},
   "bot_stats": {
@@ -1279,7 +1279,7 @@
         "tp2_price": 1790.70142,
         "opened_epoch": 1795064116.705376,
         "tp1_hit": false,
-        "peak_r": 0.541
+        "peak_r": 0.629
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1294,7 +1294,7 @@
         "tp2_price": 1790.70142,
         "opened_epoch": 1795064116.707383,
         "tp1_hit": false,
-        "peak_r": 0.541
+        "peak_r": 0.629
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1324,7 +1324,7 @@
         "tp2_price": 63280.82138,
         "opened_epoch": 1795064515.54507,
         "tp1_hit": true,
-        "peak_r": 0.716
+        "peak_r": 0.762
       },
       {
         "key": "SOLUSD:ICT",
@@ -1354,7 +1354,7 @@
         "tp2_price": 63190.62982,
         "opened_epoch": 1795064729.038131,
         "tp1_hit": false,
-        "peak_r": 0.259
+        "peak_r": 0.306
       },
       {
         "key": "ETHUSD:DERIV_FLOW",
@@ -1368,8 +1368,8 @@
         "tp1_price": 1796.73746,
         "tp2_price": 1791.41741,
         "opened_epoch": 1795065013.518665,
-        "tp1_hit": false,
-        "peak_r": 0.606
+        "tp1_hit": true,
+        "peak_r": 0.698
       },
       {
         "key": "ETHUSD:TREND_PULLBACK",
@@ -1458,5 +1458,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (369 eps, 60.4% WR, -0.20R EMA)",
-  "cycle_count": 3150
+  "cycle_count": 3155
 }
