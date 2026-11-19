@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 15:20:47 UTC",
-  "total_episodes": 1402,
+  "updated_utc": "2026-11-19 15:28:27 UTC",
+  "total_episodes": 1403,
   "strategy_stats": {
     "SND": {
       "trades": 59,
@@ -17,11 +17,11 @@
       "multiplier": 0.965
     },
     "BREAKOUT": {
-      "trades": 248,
+      "trades": 249,
       "wins": 136,
-      "losses": 110,
-      "ema_r": -0.252,
-      "multiplier": 0.937
+      "losses": 111,
+      "ema_r": -0.312,
+      "multiplier": 0.922
     },
     "TREND_PULLBACK": {
       "trades": 147,
@@ -52,7 +52,7 @@
     "RANGING:TREND_PULLBACK": 1.045,
     "TRENDING_DOWN:TREND_PULLBACK": 1.086,
     "SESSION_SWEEP_WINDOW:ICT": 0.939,
-    "SESSION_SWEEP_WINDOW:BREAKOUT": 1.012,
+    "SESSION_SWEEP_WINDOW:BREAKOUT": 0.996,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.752,
     "TRENDING_DOWN:ICT": 0.891,
     "TRENDING_DOWN:KRONOS": 1.06,
@@ -671,21 +671,6 @@
   "live_episodes": 36,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:BREAKOUT",
-      "symbol": "SOLUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 74.51,
-      "sl_price": 74.92155,
-      "sl_dist": 0.41155,
-      "tp1_price": 74.24249,
-      "tp2_price": 73.91325,
-      "opened_epoch": 1795101604.730835,
-      "tp1_hit": false,
-      "peak_r": 0.146
-    },
-    {
       "key": "SOLUSD:KRONOS",
       "symbol": "SOLUSD",
       "strategy_name": "KRONOS",
@@ -698,7 +683,7 @@
       "tp2_price": 75.10675,
       "opened_epoch": 1795101604.733339,
       "tp1_hit": true,
-      "peak_r": 0.972
+      "peak_r": 1.069
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -713,7 +698,7 @@
       "tp2_price": 1802.92837,
       "opened_epoch": 1795101647.694776,
       "tp1_hit": false,
-      "peak_r": 0.463
+      "peak_r": 0.474
     }
   ],
   "shadow_cooldowns": {
@@ -750,7 +735,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795098616.52501
   },
-  "shadow_episodes": 1348,
+  "shadow_episodes": 1349,
   "probation_strategies": [
     "SND"
   ]
