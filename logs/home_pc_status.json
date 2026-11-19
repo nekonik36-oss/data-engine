@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 17:04:01 UTC",
+  "updated_utc": "2026-11-19 17:05:31 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9521.38,
+  "live_equity": 9522.49,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1757.82,
+    "ETHUSD": 1757.73,
     "SOLUSD": 72.86,
-    "XAUUSD": 3675.31,
-    "EURUSD": 1.09746,
-    "USDJPY": 159.679
+    "XAUUSD": 3672.53,
+    "EURUSD": 1.09738,
+    "USDJPY": 159.702
   },
   "active_trades": {
     "1090474952": {
@@ -52,7 +52,7 @@
       "partial_pnl": 0.0,
       "scalp_upgraded": true,
       "fast_scalp_upgraded": true,
-      "peak_favorable_r": 0.536,
+      "peak_favorable_r": 0.602,
       "be_shield_active": true
     }
   },
@@ -617,7 +617,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 17:00:10 UTC",
+    "updated_utc": "2026-11-19 17:05:12 UTC",
     "total_episodes": 1424,
     "strategy_stats": {
       "SND": {
@@ -1301,7 +1301,7 @@
         "tp2_price": 72.70739,
         "opened_epoch": 1795107462.574939,
         "tp1_hit": true,
-        "peak_r": 1.148
+        "peak_r": 1.207
       },
       {
         "key": "USDJPY:SND",
@@ -1317,13 +1317,28 @@
         "opened_epoch": 1795107610.766821,
         "tp1_hit": false,
         "peak_r": 0.565
+      },
+      {
+        "key": "ETHUSD:BREAKOUT",
+        "symbol": "ETHUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 1759.03,
+        "sl_price": 1771.24981,
+        "sl_dist": 12.21981,
+        "tp1_price": 1751.08713,
+        "tp2_price": 1741.31128,
+        "opened_epoch": 1795107912.919162,
+        "tp1_hit": false,
+        "peak_r": 0.197
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795099525.331606,
       "BTCUSD:BREAKOUT": 1795102513.977876,
       "BTCUSD:KRONOS": 1795107004.75434,
-      "ETHUSD:BREAKOUT": 1795102515.911316,
+      "ETHUSD:BREAKOUT": 1795107912.919162,
       "ETHUSD:KRONOS": 1795101647.694776,
       "SOLUSD:BREAKOUT": 1795101604.730835,
       "SOLUSD:KRONOS": 1795101604.733339,
@@ -1360,5 +1375,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (421 eps, 59.6% WR, +0.13R EMA)",
-  "cycle_count": 5185
+  "cycle_count": 5190
 }
