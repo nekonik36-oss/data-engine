@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 00:27:24 UTC",
+  "updated_utc": "2026-11-19 00:29:04 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9616.6,
+  "live_equity": 9609.93,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62844.01,
-    "SOLUSD": 73.4,
-    "XAUUSD": 3744.11,
-    "EURUSD": 1.097,
-    "USDJPY": 159.416
+    "BTCUSD": 62878.01,
+    "SOLUSD": 73.44,
+    "XAUUSD": 3744.09,
+    "EURUSD": 1.09701,
+    "USDJPY": 159.432
   },
   "active_trades": {
     "1089422943": {
@@ -1407,5 +1407,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (350 eps, 60.8% WR, +0.15R EMA)",
-  "cycle_count": 2305
+  "cycle_count": 2310
 }
