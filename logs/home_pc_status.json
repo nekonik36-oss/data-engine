@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 08:16:15 UTC",
+  "updated_utc": "2026-11-19 08:17:56 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63830.69,
-    "ETHUSD": 1806.27,
-    "SOLUSD": 74.72,
-    "XAUUSD": 3738.46,
-    "EURUSD": 1.09832,
-    "USDJPY": 159.782
+    "BTCUSD": 63807.8,
+    "ETHUSD": 1805.88,
+    "SOLUSD": 74.71,
+    "XAUUSD": 3737.8,
+    "EURUSD": 1.09833,
+    "USDJPY": 159.784
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 08:15:47 UTC",
+    "updated_utc": "2026-11-19 08:16:35 UTC",
     "total_episodes": 1300,
     "strategy_stats": {
       "SND": {
@@ -1338,6 +1338,21 @@
         "opened_epoch": 1795076115.641169,
         "tp1_hit": false,
         "peak_r": 0.019
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 63794.88,
+        "sl_price": 63939.76459,
+        "sl_dist": 144.88459,
+        "tp1_price": 63700.70501,
+        "tp2_price": 63584.79734,
+        "opened_epoch": 1795076195.459433,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1360,7 +1375,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795062606.455995,
       "SOLUSD:DERIV_FLOW": 1795074963.587012,
-      "BTCUSD:DERIV_FLOW": 1795074018.702553,
+      "BTCUSD:DERIV_FLOW": 1795076195.459433,
       "ETHUSD:DERIV_FLOW": 1795071472.936461,
       "EURUSD:BREAKOUT": 1795075207.222294,
       "USDJPY:BREAKOUT": 1795076115.639169,
@@ -1381,5 +1396,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (382 eps, 59.6% WR, -0.23R EMA)",
-  "cycle_count": 3705
+  "cycle_count": 3710
 }
