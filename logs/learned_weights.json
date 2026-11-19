@@ -697,8 +697,8 @@
       "tp1_price": 74.77751,
       "tp2_price": 75.10675,
       "opened_epoch": 1795101604.733339,
-      "tp1_hit": false,
-      "peak_r": 0.34
+      "tp1_hit": true,
+      "peak_r": 0.656
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -713,7 +713,7 @@
       "tp2_price": 1802.92837,
       "opened_epoch": 1795101647.694776,
       "tp1_hit": false,
-      "peak_r": 0.214
+      "peak_r": 0.311
     }
   ],
   "shadow_cooldowns": {
