@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 21:05:24 UTC",
-  "total_episodes": 1460,
+  "updated_utc": "2026-11-19 21:07:57 UTC",
+  "total_episodes": 1461,
   "strategy_stats": {
     "SND": {
       "trades": 64,
@@ -24,11 +24,11 @@
       "multiplier": 0.986
     },
     "TREND_PULLBACK": {
-      "trades": 156,
-      "wins": 77,
+      "trades": 157,
+      "wins": 78,
       "losses": 74,
-      "ema_r": 0.232,
-      "multiplier": 1.058
+      "ema_r": 0.25,
+      "multiplier": 1.063
     },
     "KRONOS": {
       "trades": 262,
@@ -49,7 +49,7 @@
     "RANGING:ICT": 0.751,
     "RANGING:KRONOS": 0.664,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.824,
-    "RANGING:TREND_PULLBACK": 1.12,
+    "RANGING:TREND_PULLBACK": 1.127,
     "TRENDING_DOWN:TREND_PULLBACK": 1.12,
     "SESSION_SWEEP_WINDOW:ICT": 0.939,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.01,
@@ -694,21 +694,6 @@
       "peak_r": 0.873
     },
     {
-      "key": "ETHUSD:TREND_PULLBACK",
-      "symbol": "ETHUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 1761.21,
-      "sl_price": 1769.82481,
-      "sl_dist": 8.61481,
-      "tp1_price": 1755.61037,
-      "tp2_price": 1748.71852,
-      "opened_epoch": 1795122008.847184,
-      "tp1_hit": true,
-      "peak_r": 0.849
-    },
-    {
       "key": "SOLUSD:TREND_PULLBACK",
       "symbol": "SOLUSD",
       "strategy_name": "TREND_PULLBACK",
@@ -751,7 +736,7 @@
       "tp2_price": 62319.79761,
       "opened_epoch": 1795122324.293211,
       "tp1_hit": false,
-      "peak_r": 0.412
+      "peak_r": 0.417
     }
   ],
   "shadow_cooldowns": {
@@ -788,7 +773,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1404,
+  "shadow_episodes": 1405,
   "probation_strategies": [
     "SND"
   ]
