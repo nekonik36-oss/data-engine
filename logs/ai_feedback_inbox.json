@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 01:59:15 UTC",
+  "updated_utc": "2026-11-19 02:00:54 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "live_equity": 9604.59,
   "bot_stats": {
@@ -616,43 +616,8 @@
       "net_r": -1.44
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1089422943,
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "entry_price": 1772.94,
-      "exit_price": 1780.75,
-      "tp1_price": 1763.892,
-      "tp2_price": 1752.756,
-      "agreeing_strategies": [
-        "ICT",
-        "KRONOS",
-        "DERIV_FLOW"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1795048163.765296,
-      "closed_at_utc": "2026-11-19 00:29:23 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-14 02:34:55 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 84612874,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "net_pnl": 56.43,
-      "r_multiple": 1.17,
-      "peak_favorable_r": 2.21,
-      "regime": "TRENDING_DOWN",
-      "strategies": [
-        "BREAKOUT",
-        "KRONOS"
-      ],
-      "auto_fix_action": "NONE"
-    },
     {
       "timestamp_utc": "2026-11-15 04:15:17 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -975,6 +940,14 @@
         "DERIV_FLOW"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if ETHUSD reaches TP1=1763.892)"
+    },
+    {
+      "timestamp_utc": "2026-11-19 01:59:38 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1089422943,
+      "symbol": "ETHUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1089422943 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }
