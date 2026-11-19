@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-19 07:49:44 UTC",
+  "updated_utc": "2026-11-19 07:51:17 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9581.74,
+  "live_equity": 9581.24,
   "bot_stats": {
     "total_closed": 51,
     "wins": 16,
@@ -616,40 +616,8 @@
       "net_r": -1.44
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1089710761,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "entry_price": 63388.65,
-      "exit_price": 63582.85,
-      "tp1_price": 63094.174,
-      "tp2_price": 62731.742,
-      "agreeing_strategies": [
-        "ICT",
-        "KRONOS",
-        "DERIV_FLOW"
-      ],
-      "regime": "RANGING",
-      "closed_epoch": 1795069242.810762,
-      "closed_at_utc": "2026-11-19 06:20:42 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-15 07:52:27 UTC",
-      "event": "WICK_OUT_AUTO_TUNED",
-      "ticket": 1085338207,
-      "symbol": "ETHUSD",
-      "direction": "SHORT",
-      "tp1_price": 1801.39725,
-      "current_price": 1775.55,
-      "minutes_after_close": 217.2,
-      "old_sl_floor_mult": 1.0,
-      "new_sl_floor_mult": 1.12,
-      "summary": "[AI POST-MORTEM SELF-FIX] Ticket #1085338207 (ETHUSD SHORT) was wicked out @ 1822.77 before reaching TP1 (1801.39725 -> 1775.55)! Auto-widened ETHUSD Stop-Floor Multiplier 1.00x -> 1.12x & restored strategy weight."
-    },
     {
       "timestamp_utc": "2026-11-15 15:26:32 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -967,6 +935,14 @@
         "DERIV_FLOW"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=63094.174)"
+    },
+    {
+      "timestamp_utc": "2026-11-19 07:50:43 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1089710761,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1089710761 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }
