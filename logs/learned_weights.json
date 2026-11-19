@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 11:42:18 UTC",
+  "updated_utc": "2026-11-19 11:45:03 UTC",
   "total_episodes": 1345,
   "strategy_stats": {
     "SND": {
@@ -710,7 +710,7 @@
       "tp2_price": 1.09862,
       "opened_epoch": 1795087804.694721,
       "tp1_hit": false,
-      "peak_r": 0.405
+      "peak_r": 0.44
     },
     {
       "key": "SOLUSD:BREAKOUT",
@@ -725,7 +725,7 @@
       "tp2_price": 75.23709,
       "opened_epoch": 1795088111.159216,
       "tp1_hit": false,
-      "peak_r": 0.091
+      "peak_r": 0.32
     },
     {
       "key": "SOLUSD:KRONOS",
@@ -756,6 +756,21 @@
       "opened_epoch": 1795088403.18517,
       "tp1_hit": false,
       "peak_r": 0.37
+    },
+    {
+      "key": "USDJPY:ICT",
+      "symbol": "USDJPY",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "TRENDING_UP",
+      "entry_price": 159.872,
+      "sl_price": 159.96317,
+      "sl_dist": 0.09117,
+      "tp1_price": 159.81274,
+      "tp2_price": 159.73981,
+      "opened_epoch": 1795088703.704874,
+      "tp1_hit": false,
+      "peak_r": 0.055
     }
   ],
   "shadow_cooldowns": {
@@ -786,7 +801,7 @@
     "EURUSD:KRONOS": 1795006220.626757,
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1795021206.320067,
-    "USDJPY:ICT": 1795067122.384054,
+    "USDJPY:ICT": 1795088703.704874,
     "EURUSD:TREND_PULLBACK": 1794921309.722345,
     "XAUUSD:ICT": 1795061703.946565,
     "EURUSD:SND": 1794841214.521494,
