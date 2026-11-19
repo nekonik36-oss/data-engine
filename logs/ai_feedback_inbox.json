@@ -1,25 +1,14 @@
 {
-  "updated_utc": "2026-11-19 12:51:15 UTC",
+  "updated_utc": "2026-11-19 12:52:59 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9502.85,
+  "live_equity": 9498.48,
   "bot_stats": {
-    "total_closed": 53,
+    "total_closed": 54,
     "wins": 16,
-    "losses": 28,
+    "losses": 29,
     "breakevens": 9,
-    "cumulative_pnl": -475.76,
+    "cumulative_pnl": -501.52,
     "history": [
-      {
-        "ticket": 1078992397,
-        "symbol": "BTCUSD",
-        "direction": "LONG",
-        "entry_price": 75919.05,
-        "exit_price": 75855.25,
-        "net_pnl": -50.4,
-        "r_multiple": -1.02,
-        "close_reason": "Stop Loss Hit \ud83d\uded1",
-        "closed_at_utc": "2026-11-08 10:31:20 UTC"
-      },
       {
         "ticket": 1079289556,
         "symbol": "BTCUSD",
@@ -558,6 +547,17 @@
         "r_multiple": -0.89,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-19 11:32:20 UTC"
+      },
+      {
+        "ticket": 1090055289,
+        "symbol": "EURUSD",
+        "direction": "SHORT",
+        "entry_price": 1.09843,
+        "exit_price": 1.09955,
+        "net_pnl": -25.76,
+        "r_multiple": -0.57,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-19 12:52:41 UTC"
       }
     ],
     "crypto_book_pnl": -25.01
@@ -612,8 +612,8 @@
     },
     "EURUSD": {
       "win_streak": 0,
-      "loss_streak": 2,
-      "net_r": -1.44
+      "loss_streak": 3,
+      "net_r": -2.01
     }
   },
   "pending_post_mortems": [
@@ -634,17 +634,26 @@
       "closed_epoch": 1795087940.621202,
       "closed_at_utc": "2026-11-19 11:32:20 UTC",
       "audited": false
+    },
+    {
+      "ticket": 1090055289,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "entry_price": 1.09843,
+      "exit_price": 1.09955,
+      "tp1_price": 1.09716,
+      "tp2_price": 1.0956,
+      "agreeing_strategies": [
+        "ICT",
+        "KRONOS"
+      ],
+      "regime": "SESSION_SWEEP_WINDOW",
+      "closed_epoch": 1795092761.804005,
+      "closed_at_utc": "2026-11-19 12:52:41 UTC",
+      "audited": false
     }
   ],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-16 01:51:31 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 84774918,
-      "symbol": "ETHUSD",
-      "direction": "LONG",
-      "summary": "Ticket #84774918 (ETHUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
     {
       "timestamp_utc": "2026-11-16 02:33:30 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -964,6 +973,22 @@
         "DERIV_FLOW"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=63515.5345)"
+    },
+    {
+      "timestamp_utc": "2026-11-19 12:52:41 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1090055289,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "net_pnl": -25.76,
+      "r_multiple": -0.57,
+      "peak_favorable_r": 0.0,
+      "regime": "SESSION_SWEEP_WINDOW",
+      "strategies": [
+        "ICT",
+        "KRONOS"
+      ],
+      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if EURUSD reaches TP1=1.09716)"
     }
   ]
 }
