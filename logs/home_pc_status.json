@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 19:03:24 UTC",
+  "updated_utc": "2026-11-19 19:05:06 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62829.01,
-    "ETHUSD": 1776.16,
-    "SOLUSD": 73.94,
-    "XAUUSD": 3678.5,
-    "EURUSD": 1.09779,
-    "USDJPY": 159.753
+    "BTCUSD": 62755.09,
+    "ETHUSD": 1773.86,
+    "SOLUSD": 73.85,
+    "XAUUSD": 3675.27,
+    "EURUSD": 1.09753,
+    "USDJPY": 159.752
   },
   "active_trades": {},
   "bot_stats": {
@@ -1281,7 +1281,7 @@
         "tp2_price": 1772.44086,
         "opened_epoch": 1795113645.283287,
         "tp1_hit": true,
-        "peak_r": 1.255
+        "peak_r": 1.315
       },
       {
         "key": "ETHUSD:ICT",
@@ -1296,7 +1296,7 @@
         "tp2_price": 1767.98648,
         "opened_epoch": 1795113961.379581,
         "tp1_hit": true,
-        "peak_r": 0.822
+        "peak_r": 0.882
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1311,7 +1311,7 @@
         "tp2_price": 73.7201,
         "opened_epoch": 1795114002.781671,
         "tp1_hit": true,
-        "peak_r": 1.066
+        "peak_r": 1.194
       },
       {
         "key": "SOLUSD:SND",
@@ -1326,7 +1326,7 @@
         "tp2_price": 73.7201,
         "opened_epoch": 1795114003.552525,
         "tp1_hit": true,
-        "peak_r": 1.066
+        "peak_r": 1.194
       },
       {
         "key": "SOLUSD:ICT",
@@ -1341,7 +1341,7 @@
         "tp2_price": 73.60759,
         "opened_epoch": 1795114208.389989,
         "tp1_hit": true,
-        "peak_r": 0.81
+        "peak_r": 0.941
       }
     ],
     "shadow_cooldowns": {
@@ -1385,5 +1385,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (425 eps, 59.5% WR, +0.00R EMA)",
-  "cycle_count": 5510
+  "cycle_count": 5515
 }
