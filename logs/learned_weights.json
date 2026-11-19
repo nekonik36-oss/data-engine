@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 12:47:54 UTC",
-  "total_episodes": 1365,
+  "updated_utc": "2026-11-19 12:49:46 UTC",
+  "total_episodes": 1366,
   "strategy_stats": {
     "SND": {
       "trades": 57,
@@ -10,11 +10,11 @@
       "multiplier": 0.939
     },
     "ICT": {
-      "trades": 325,
-      "wins": 166,
+      "trades": 326,
+      "wins": 167,
       "losses": 157,
-      "ema_r": 0.045,
-      "multiplier": 1.011
+      "ema_r": 0.135,
+      "multiplier": 1.034
     },
     "BREAKOUT": {
       "trades": 241,
@@ -51,7 +51,7 @@
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.833,
     "RANGING:TREND_PULLBACK": 1.045,
     "TRENDING_DOWN:TREND_PULLBACK": 1.086,
-    "SESSION_SWEEP_WINDOW:ICT": 0.964,
+    "SESSION_SWEEP_WINDOW:ICT": 0.983,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.048,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.778,
     "TRENDING_DOWN:ICT": 0.891,
@@ -713,21 +713,6 @@
       "peak_r": 0.869
     },
     {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 74.41,
-      "sl_price": 74.14699,
-      "sl_dist": 0.26301,
-      "tp1_price": 74.58096,
-      "tp2_price": 74.79136,
-      "opened_epoch": 1795092029.55567,
-      "tp1_hit": true,
-      "peak_r": 1.369
-    },
-    {
       "key": "XAUUSD:BREAKOUT",
       "symbol": "XAUUSD",
       "strategy_name": "BREAKOUT",
@@ -777,7 +762,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1312,
+  "shadow_episodes": 1313,
   "probation_strategies": [
     "SND"
   ]
