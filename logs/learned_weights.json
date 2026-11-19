@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 00:11:28 UTC",
+  "updated_utc": "2026-11-19 00:15:16 UTC",
   "total_episodes": 1228,
   "strategy_stats": {
     "SND": {
@@ -740,6 +740,21 @@
       "opened_epoch": 1795047006.251734,
       "tp1_hit": false,
       "peak_r": 0.294
+    },
+    {
+      "key": "SOLUSD:SND",
+      "symbol": "SOLUSD",
+      "strategy_name": "SND",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 73.45,
+      "sl_price": 73.11433,
+      "sl_dist": 0.33567,
+      "tp1_price": 73.66819,
+      "tp2_price": 73.93673,
+      "opened_epoch": 1795047316.384368,
+      "tp1_hit": false,
+      "peak_r": 0.209
     }
   ],
   "shadow_cooldowns": {
@@ -751,7 +766,7 @@
     "SOLUSD:BREAKOUT": 1795044330.92052,
     "SOLUSD:KRONOS": 1795042212.904472,
     "BTCUSD:ICT": 1795047006.251734,
-    "SOLUSD:SND": 1795015512.388271,
+    "SOLUSD:SND": 1795047316.384368,
     "SOLUSD:ICT": 1795046718.738252,
     "ETHUSD:TREND_PULLBACK": 1795026621.434674,
     "BTCUSD:TREND_PULLBACK": 1795041915.89161,
