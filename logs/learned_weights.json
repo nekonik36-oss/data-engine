@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 12:05:14 UTC",
-  "total_episodes": 1354,
+  "updated_utc": "2026-11-19 12:10:13 UTC",
+  "total_episodes": 1355,
   "strategy_stats": {
     "SND": {
       "trades": 57,
@@ -10,11 +10,11 @@
       "multiplier": 0.939
     },
     "ICT": {
-      "trades": 322,
-      "wins": 163,
+      "trades": 323,
+      "wins": 164,
       "losses": 157,
-      "ema_r": -0.183,
-      "multiplier": 0.954
+      "ema_r": -0.092,
+      "multiplier": 0.977
     },
     "BREAKOUT": {
       "trades": 240,
@@ -46,7 +46,7 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.716,
+    "RANGING:ICT": 0.731,
     "RANGING:KRONOS": 0.639,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.849,
     "RANGING:TREND_PULLBACK": 1.045,
@@ -698,21 +698,6 @@
   "live_episodes": 35,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:ICT",
-      "symbol": "BTCUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 63935.53,
-      "sl_price": 64076.18817,
-      "sl_dist": 140.65817,
-      "tp1_price": 63844.10219,
-      "tp2_price": 63731.57566,
-      "opened_epoch": 1795088403.18517,
-      "tp1_hit": true,
-      "peak_r": 1.141
-    },
-    {
       "key": "ETHUSD:DERIV_FLOW",
       "symbol": "ETHUSD",
       "strategy_name": "DERIV_FLOW",
@@ -770,7 +755,7 @@
       "tp2_price": 74.36728,
       "opened_epoch": 1795089914.207946,
       "tp1_hit": false,
-      "peak_r": 0.218
+      "peak_r": 0.261
     },
     {
       "key": "EURUSD:ICT",
@@ -785,7 +770,7 @@
       "tp2_price": 1.09795,
       "opened_epoch": 1795089914.22463,
       "tp1_hit": false,
-      "peak_r": 0.548
+      "peak_r": 0.607
     }
   ],
   "shadow_cooldowns": {
@@ -822,7 +807,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1301,
+  "shadow_episodes": 1302,
   "probation_strategies": [
     "SND"
   ]
