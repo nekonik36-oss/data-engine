@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 22:38:29 UTC",
+  "updated_utc": "2026-11-19 22:40:10 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62229.01,
-    "ETHUSD": 1762.57,
-    "SOLUSD": 73.16,
+    "BTCUSD": 62271.01,
+    "ETHUSD": 1763.36,
+    "SOLUSD": 73.18,
     "XAUUSD": 3624.95,
     "EURUSD": 1.09663,
-    "USDJPY": 159.65
+    "USDJPY": 159.652
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 22:35:24 UTC",
+    "updated_utc": "2026-11-19 22:40:08 UTC",
     "total_episodes": 1477,
     "strategy_stats": {
       "SND": {
@@ -1267,14 +1267,30 @@
       }
     ],
     "live_episodes": 38,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "SOLUSD:BREAKOUT",
+        "symbol": "SOLUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 73.22,
+        "sl_price": 72.84285,
+        "sl_dist": 0.37715,
+        "tp1_price": 73.46515,
+        "tp2_price": 73.76687,
+        "opened_epoch": 1795128008.887857,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795125908.523525,
       "BTCUSD:BREAKOUT": 1795123210.954357,
       "BTCUSD:KRONOS": 1795122324.293211,
       "ETHUSD:BREAKOUT": 1795123212.183567,
       "ETHUSD:KRONOS": 1795123212.186567,
-      "SOLUSD:BREAKOUT": 1795123213.473902,
+      "SOLUSD:BREAKOUT": 1795128008.887857,
       "SOLUSD:KRONOS": 1795124117.59687,
       "BTCUSD:ICT": 1795125906.982712,
       "SOLUSD:SND": 1795114003.552525,
@@ -1309,5 +1325,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (433 eps, 60.0% WR, +0.24R EMA)",
-  "cycle_count": 6055
+  "cycle_count": 6060
 }
