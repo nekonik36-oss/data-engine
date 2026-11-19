@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 03:26:54 UTC",
+  "updated_utc": "2026-11-19 03:27:18 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62832.02,
-    "ETHUSD": 1775.99,
-    "SOLUSD": 73.47,
-    "XAUUSD": 3711.21,
-    "EURUSD": 1.09586,
-    "USDJPY": 159.479
+    "BTCUSD": 62864.0,
+    "ETHUSD": 1777.26,
+    "SOLUSD": 73.54,
+    "XAUUSD": 3711.26,
+    "EURUSD": 1.09592,
+    "USDJPY": 159.478
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,8 +589,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 03:22:02 UTC",
-    "total_episodes": 1251,
+    "updated_utc": "2026-11-19 03:27:17 UTC",
+    "total_episodes": 1252,
     "strategy_stats": {
       "SND": {
         "trades": 51,
@@ -628,11 +628,11 @@
         "multiplier": 0.976
       },
       "DERIV_FLOW": {
-        "trades": 363,
+        "trades": 364,
         "wins": 221,
-        "losses": 139,
-        "ema_r": 0.324,
-        "multiplier": 1.081
+        "losses": 140,
+        "ema_r": 0.218,
+        "multiplier": 1.055
       }
     },
     "regime_strategy_multipliers": {
@@ -655,7 +655,7 @@
       "TRENDING_UP:KRONOS": 1.064,
       "TRENDING_UP:BREAKOUT": 0.97,
       "TRENDING_UP:TREND_PULLBACK": 0.915,
-      "RANGING:DERIV_FLOW": 1.273,
+      "RANGING:DERIV_FLOW": 1.257,
       "TRENDING_DOWN:DERIV_FLOW": 1.352,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.093,
       "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -1279,7 +1279,7 @@
         "tp2_price": 62916.63716,
         "opened_epoch": 1795058401.201054,
         "tp1_hit": true,
-        "peak_r": 1.13
+        "peak_r": 1.205
       },
       {
         "key": "ETHUSD:ICT",
@@ -1294,7 +1294,7 @@
         "tp2_price": 1780.01353,
         "opened_epoch": 1795058402.597664,
         "tp1_hit": true,
-        "peak_r": 0.909
+        "peak_r": 1.044
       },
       {
         "key": "SOLUSD:ICT",
@@ -1309,22 +1309,7 @@
         "tp2_price": 73.63296,
         "opened_epoch": 1795058405.060727,
         "tp1_hit": true,
-        "peak_r": 1.024
-      },
-      {
-        "key": "ETHUSD:DERIV_FLOW",
-        "symbol": "ETHUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 1770.17,
-        "sl_price": 1776.95864,
-        "sl_dist": 6.78864,
-        "tp1_price": 1765.75738,
-        "tp2_price": 1760.32647,
-        "opened_epoch": 1795058500.066526,
-        "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 1.152
       }
     ],
     "shadow_cooldowns": {
@@ -1361,12 +1346,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795007713.266952
     },
-    "shadow_episodes": 1201,
+    "shadow_episodes": 1202,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
-  "deriv_flow_status": "Graduated Live (363 eps, 61.4% WR, +0.32R EMA)",
-  "cycle_count": 2840
+  "deriv_flow_status": "Graduated Live (364 eps, 61.2% WR, +0.22R EMA)",
+  "cycle_count": 2841
 }
