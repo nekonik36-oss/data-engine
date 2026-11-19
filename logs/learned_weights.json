@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 17:32:48 UTC",
-  "total_episodes": 1431,
+  "updated_utc": "2026-11-19 17:35:41 UTC",
+  "total_episodes": 1433,
   "strategy_stats": {
     "SND": {
       "trades": 63,
@@ -10,11 +10,11 @@
       "multiplier": 1.011
     },
     "ICT": {
-      "trades": 337,
-      "wins": 172,
+      "trades": 339,
+      "wins": 174,
       "losses": 163,
-      "ema_r": -0.094,
-      "multiplier": 0.977
+      "ema_r": -0.009,
+      "multiplier": 0.998
     },
     "BREAKOUT": {
       "trades": 256,
@@ -54,7 +54,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.939,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.01,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.743,
-    "TRENDING_DOWN:ICT": 0.891,
+    "TRENDING_DOWN:ICT": 0.905,
     "TRENDING_DOWN:KRONOS": 1.102,
     "RANGING:BREAKOUT": 0.967,
     "RANGING:SND": 1.06,
@@ -691,37 +691,7 @@
       "tp2_price": 63491.63483,
       "opened_epoch": 1795109109.940684,
       "tp1_hit": true,
-      "peak_r": 1.098
-    },
-    {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1776.16,
-      "sl_price": 1762.65248,
-      "sl_dist": 13.50752,
-      "tp1_price": 1784.93989,
-      "tp2_price": 1795.7459,
-      "opened_epoch": 1795109111.515222,
-      "tp1_hit": true,
-      "peak_r": 0.802
-    },
-    {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 73.77,
-      "sl_price": 73.19009,
-      "sl_dist": 0.57991,
-      "tp1_price": 74.14694,
-      "tp2_price": 74.61087,
-      "opened_epoch": 1795109112.959711,
-      "tp1_hit": true,
-      "peak_r": 0.966
+      "peak_r": 1.145
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -773,7 +743,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1376,
+  "shadow_episodes": 1378,
   "probation_strategies": [
     "SND"
   ]
