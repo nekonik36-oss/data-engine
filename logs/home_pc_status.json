@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 18:48:48 UTC",
+  "updated_utc": "2026-11-19 18:51:27 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62964.01,
-    "ETHUSD": 1780.91,
-    "SOLUSD": 74.31,
-    "XAUUSD": 3679.24,
-    "EURUSD": 1.09809,
-    "USDJPY": 159.75
+    "BTCUSD": 62904.07,
+    "ETHUSD": 1778.53,
+    "SOLUSD": 74.19,
+    "XAUUSD": 3677.8,
+    "EURUSD": 1.09796,
+    "USDJPY": 159.734
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 18:48:40 UTC",
+    "updated_utc": "2026-11-19 18:50:08 UTC",
     "total_episodes": 1438,
     "strategy_stats": {
       "SND": {
@@ -1280,8 +1280,8 @@
         "tp1_price": 1780.82108,
         "tp2_price": 1772.44086,
         "opened_epoch": 1795113645.283287,
-        "tp1_hit": false,
-        "peak_r": 0.642
+        "tp1_hit": true,
+        "peak_r": 0.869
       },
       {
         "key": "ETHUSD:ICT",
@@ -1296,7 +1296,7 @@
         "tp2_price": 1767.98648,
         "opened_epoch": 1795113961.379581,
         "tp1_hit": false,
-        "peak_r": 0.199
+        "peak_r": 0.43
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1311,7 +1311,7 @@
         "tp2_price": 73.7201,
         "opened_epoch": 1795114002.781671,
         "tp1_hit": false,
-        "peak_r": 0.192
+        "peak_r": 0.512
       },
       {
         "key": "SOLUSD:SND",
@@ -1326,7 +1326,22 @@
         "tp2_price": 73.7201,
         "opened_epoch": 1795114003.552525,
         "tp1_hit": false,
-        "peak_r": 0.192
+        "peak_r": 0.512
+      },
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 74.27,
+        "sl_price": 74.72683,
+        "sl_dist": 0.45683,
+        "tp1_price": 73.97306,
+        "tp2_price": 73.60759,
+        "opened_epoch": 1795114208.389989,
+        "tp1_hit": false,
+        "peak_r": 0.241
       }
     ],
     "shadow_cooldowns": {
@@ -1339,7 +1354,7 @@
       "SOLUSD:KRONOS": 1795101604.733339,
       "BTCUSD:ICT": 1795109109.940684,
       "SOLUSD:SND": 1795114003.552525,
-      "SOLUSD:ICT": 1795109112.959711,
+      "SOLUSD:ICT": 1795114208.389989,
       "ETHUSD:TREND_PULLBACK": 1795110314.635482,
       "BTCUSD:TREND_PULLBACK": 1795110313.229122,
       "SOLUSD:TREND_PULLBACK": 1795100700.940149,
@@ -1370,5 +1385,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (425 eps, 59.5% WR, +0.00R EMA)",
-  "cycle_count": 5490
+  "cycle_count": 5495
 }
