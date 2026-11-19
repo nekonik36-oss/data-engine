@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 16:50:08 UTC",
+  "updated_utc": "2026-11-19 16:51:42 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63128.4,
-    "ETHUSD": 1780.27,
-    "SOLUSD": 73.76,
-    "XAUUSD": 3689.54,
-    "EURUSD": 1.09806,
-    "USDJPY": 159.881
+    "BTCUSD": 62972.95,
+    "ETHUSD": 1773.36,
+    "SOLUSD": 73.42,
+    "XAUUSD": 3688.3,
+    "EURUSD": 1.09808,
+    "USDJPY": 159.828
   },
   "active_trades": {},
   "bot_stats": {
@@ -1273,7 +1273,7 @@
         "tp2_price": 72.99348,
         "opened_epoch": 1795105360.454077,
         "tp1_hit": false,
-        "peak_r": 0.5
+        "peak_r": 0.522
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1288,7 +1288,7 @@
         "tp2_price": 62702.33066,
         "opened_epoch": 1795105933.019904,
         "tp1_hit": false,
-        "peak_r": 0.373
+        "peak_r": 0.45
       },
       {
         "key": "BTCUSD:SND",
@@ -1303,7 +1303,7 @@
         "tp2_price": 62757.79903,
         "opened_epoch": 1795107004.750341,
         "tp1_hit": false,
-        "peak_r": 0.062
+        "peak_r": 0.644
       },
       {
         "key": "BTCUSD:TREND_PULLBACK",
@@ -1318,7 +1318,7 @@
         "tp2_price": 62757.79903,
         "opened_epoch": 1795107004.75334,
         "tp1_hit": false,
-        "peak_r": 0.062
+        "peak_r": 0.644
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1333,7 +1333,7 @@
         "tp2_price": 62757.79903,
         "opened_epoch": 1795107004.75434,
         "tp1_hit": false,
-        "peak_r": 0.062
+        "peak_r": 0.644
       },
       {
         "key": "ETHUSD:SND",
@@ -1347,8 +1347,8 @@
         "tp1_price": 1774.08107,
         "tp2_price": 1765.98392,
         "opened_epoch": 1795107005.983799,
-        "tp1_hit": false,
-        "peak_r": 0.039
+        "tp1_hit": true,
+        "peak_r": 0.721
       },
       {
         "key": "ETHUSD:TREND_PULLBACK",
@@ -1362,8 +1362,8 @@
         "tp1_price": 1774.08107,
         "tp2_price": 1765.98392,
         "opened_epoch": 1795107005.987848,
-        "tp1_hit": false,
-        "peak_r": 0.039
+        "tp1_hit": true,
+        "peak_r": 0.721
       }
     ],
     "shadow_cooldowns": {
@@ -1407,5 +1407,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (419 eps, 59.4% WR, -0.03R EMA)",
-  "cycle_count": 5140
+  "cycle_count": 5145
 }
