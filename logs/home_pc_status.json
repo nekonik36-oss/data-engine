@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 23:49:42 UTC",
+  "updated_utc": "2026-11-19 23:51:37 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61946.53,
-    "ETHUSD": 1755.78,
-    "SOLUSD": 73.13,
-    "XAUUSD": 3603.9,
-    "EURUSD": 1.09685,
-    "USDJPY": 159.655
+    "BTCUSD": 61902.01,
+    "ETHUSD": 1754.19,
+    "SOLUSD": 73.04,
+    "XAUUSD": 3596.39,
+    "EURUSD": 1.09676,
+    "USDJPY": 159.651
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 23:45:10 UTC",
+    "updated_utc": "2026-11-19 23:50:08 UTC",
     "total_episodes": 1482,
     "strategy_stats": {
       "SND": {
@@ -1312,6 +1312,21 @@
         "opened_epoch": 1795131910.223221,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 73.14,
+        "sl_price": 73.5332,
+        "sl_dist": 0.3932,
+        "tp1_price": 72.88442,
+        "tp2_price": 72.56986,
+        "opened_epoch": 1795132208.985922,
+        "tp1_hit": false,
+        "peak_r": 0.254
       }
     ],
     "shadow_cooldowns": {
@@ -1324,7 +1339,7 @@
       "SOLUSD:KRONOS": 1795124117.59687,
       "BTCUSD:ICT": 1795125906.982712,
       "SOLUSD:SND": 1795114003.552525,
-      "SOLUSD:ICT": 1795125909.992993,
+      "SOLUSD:ICT": 1795132208.985922,
       "ETHUSD:TREND_PULLBACK": 1795122008.847184,
       "BTCUSD:TREND_PULLBACK": 1795122324.286219,
       "SOLUSD:TREND_PULLBACK": 1795122303.621288,
@@ -1355,5 +1370,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (437 eps, 60.4% WR, +0.28R EMA)",
-  "cycle_count": 6255
+  "cycle_count": 6260
 }
