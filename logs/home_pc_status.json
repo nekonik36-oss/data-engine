@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 07:23:15 UTC",
+  "updated_utc": "2026-11-19 07:24:55 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,14 +20,41 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63627.97,
-    "ETHUSD": 1804.92,
-    "SOLUSD": 74.91,
-    "XAUUSD": 3738.71,
-    "EURUSD": 1.09743,
-    "USDJPY": 159.61
+    "BTCUSD": 63611.29,
+    "ETHUSD": 1804.56,
+    "SOLUSD": 74.88,
+    "XAUUSD": 3740.39,
+    "EURUSD": 1.09759,
+    "USDJPY": 159.623
   },
-  "active_trades": {},
+  "active_trades": {
+    "1089818537": {
+      "ticket": 1089818537,
+      "symbol": "ETHUSD",
+      "broker_symbol": "ETHUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 1803.04,
+      "sl_price": 1816.54,
+      "initial_sl_price": 1816.54,
+      "tp1_price": 1794.26,
+      "tp2_price": 1783.46,
+      "volume": 3.54,
+      "initial_volume": 3.54,
+      "risk_usd": 47.79,
+      "confluence_score": 100.0,
+      "regime": "TRENDING_UP",
+      "agreeing_strategies": [
+        "ICT",
+        "KRONOS",
+        "DERIV_FLOW"
+      ],
+      "opened_at_utc": "2026-11-19 07:24:51 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0,
+      "scalp_upgraded": true
+    }
+  },
   "bot_stats": {
     "total_closed": 51,
     "wins": 16,
@@ -1441,5 +1468,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (378 eps, 59.7% WR, -0.31R EMA)",
-  "cycle_count": 3535
+  "cycle_count": 3540
 }
