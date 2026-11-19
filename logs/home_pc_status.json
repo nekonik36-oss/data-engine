@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 16:03:40 UTC",
+  "updated_utc": "2026-11-19 16:05:15 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63044.63,
-    "ETHUSD": 1778.93,
-    "SOLUSD": 73.54,
-    "XAUUSD": 3678.21,
-    "EURUSD": 1.09811,
-    "USDJPY": 159.773
+    "BTCUSD": 63123.04,
+    "ETHUSD": 1780.1,
+    "SOLUSD": 73.63,
+    "XAUUSD": 3674.76,
+    "EURUSD": 1.09789,
+    "USDJPY": 159.799
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 16:00:11 UTC",
+    "updated_utc": "2026-11-19 16:05:14 UTC",
     "total_episodes": 1412,
     "strategy_stats": {
       "SND": {
@@ -1288,7 +1288,22 @@
         "tp2_price": 3695.543,
         "opened_epoch": 1795104011.436025,
         "tp1_hit": false,
-        "peak_r": 0.351
+        "peak_r": 0.375
+      },
+      {
+        "key": "XAUUSD:BREAKOUT",
+        "symbol": "XAUUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 3672.68,
+        "sl_price": 3688.44759,
+        "sl_dist": 15.76759,
+        "tp1_price": 3662.43107,
+        "tp2_price": 3649.817,
+        "opened_epoch": 1795104314.563999,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1307,7 +1322,7 @@
       "SOLUSD:TREND_PULLBACK": 1795100700.940149,
       "ETHUSD:SND": 1795089009.080019,
       "BTCUSD:SND": 1795093824.250612,
-      "XAUUSD:BREAKOUT": 1795102202.374858,
+      "XAUUSD:BREAKOUT": 1795104314.563999,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795089914.22463,
       "SOLUSD:DERIV_FLOW": 1795102998.959127,
@@ -1332,5 +1347,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (419 eps, 59.4% WR, -0.03R EMA)",
-  "cycle_count": 4995
+  "cycle_count": 5000
 }
