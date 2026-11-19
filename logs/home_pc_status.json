@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 16:59:32 UTC",
+  "updated_utc": "2026-11-19 17:01:02 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9493.27,
+  "live_equity": 9493.69,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1769.34,
-    "SOLUSD": 73.22,
-    "XAUUSD": 3685.08,
-    "EURUSD": 1.0979700000000001,
-    "USDJPY": 159.743
+    "ETHUSD": 1769.07,
+    "SOLUSD": 73.28,
+    "XAUUSD": 3683.7,
+    "EURUSD": 1.09777,
+    "USDJPY": 159.778
   },
   "active_trades": {
     "1090474952": {
@@ -615,7 +615,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 16:57:42 UTC",
+    "updated_utc": "2026-11-19 17:00:10 UTC",
     "total_episodes": 1424,
     "strategy_stats": {
       "SND": {
@@ -1299,7 +1299,22 @@
         "tp2_price": 72.70739,
         "opened_epoch": 1795107462.574939,
         "tp1_hit": false,
-        "peak_r": 0.475
+        "peak_r": 0.534
+      },
+      {
+        "key": "USDJPY:SND",
+        "symbol": "USDJPY",
+        "strategy_name": "SND",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 159.754,
+        "sl_price": 159.88666,
+        "sl_dist": 0.13266,
+        "tp1_price": 159.66777,
+        "tp2_price": 159.56165,
+        "opened_epoch": 1795107610.766821,
+        "tp1_hit": false,
+        "peak_r": 0.09
       }
     ],
     "shadow_cooldowns": {
@@ -1334,7 +1349,7 @@
       "EURUSD:TREND_PULLBACK": 1794921309.722345,
       "XAUUSD:ICT": 1795061703.946565,
       "EURUSD:SND": 1794841214.521494,
-      "USDJPY:SND": 1795098616.52501
+      "USDJPY:SND": 1795107610.766821
     },
     "shadow_episodes": 1370,
     "probation_strategies": [
@@ -1343,5 +1358,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (421 eps, 59.6% WR, +0.13R EMA)",
-  "cycle_count": 5170
+  "cycle_count": 5175
 }
