@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 14:10:31 UTC",
-  "total_episodes": 1377,
+  "updated_utc": "2026-11-19 14:11:28 UTC",
+  "total_episodes": 1378,
   "strategy_stats": {
     "SND": {
       "trades": 58,
@@ -38,11 +38,11 @@
       "multiplier": 0.958
     },
     "DERIV_FLOW": {
-      "trades": 410,
+      "trades": 411,
       "wins": 242,
-      "losses": 165,
-      "ema_r": -0.245,
-      "multiplier": 0.939
+      "losses": 166,
+      "ema_r": -0.305,
+      "multiplier": 0.924
     }
   },
   "regime_strategy_multipliers": {
@@ -67,7 +67,7 @@
     "TRENDING_UP:TREND_PULLBACK": 0.905,
     "RANGING:DERIV_FLOW": 1.126,
     "TRENDING_DOWN:DERIV_FLOW": 1.352,
-    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.051,
+    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.035,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
     "MACRO_NEWS_WINDOW:ICT": 1.041,
@@ -697,21 +697,6 @@
   "live_episodes": 36,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:DERIV_FLOW",
-      "symbol": "ETHUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 1808.9,
-      "sl_price": 1814.42653,
-      "sl_dist": 5.52653,
-      "tp1_price": 1805.30776,
-      "tp2_price": 1800.88653,
-      "opened_epoch": 1795096529.718651,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
       "key": "USDJPY:ICT",
       "symbol": "USDJPY",
       "strategy_name": "ICT",
@@ -769,7 +754,7 @@
       "tp2_price": 1821.99497,
       "opened_epoch": 1795096826.923647,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.278
     },
     {
       "key": "ETHUSD:ICT",
@@ -836,7 +821,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1323,
+  "shadow_episodes": 1324,
   "probation_strategies": [
     "SND"
   ]
