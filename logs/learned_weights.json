@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 17:05:12 UTC",
-  "total_episodes": 1424,
+  "updated_utc": "2026-11-19 17:08:08 UTC",
+  "total_episodes": 1425,
   "strategy_stats": {
     "SND": {
       "trades": 62,
@@ -24,18 +24,18 @@
       "multiplier": 0.958
     },
     "TREND_PULLBACK": {
-      "trades": 149,
-      "wins": 71,
+      "trades": 150,
+      "wins": 72,
       "losses": 73,
-      "ema_r": 0.039,
-      "multiplier": 1.01
+      "ema_r": 0.142,
+      "multiplier": 1.035
     },
     "KRONOS": {
-      "trades": 259,
-      "wins": 135,
+      "trades": 260,
+      "wins": 136,
       "losses": 119,
-      "ema_r": 0.012,
-      "multiplier": 1.003
+      "ema_r": 0.121,
+      "multiplier": 1.03
     },
     "DERIV_FLOW": {
       "trades": 421,
@@ -50,12 +50,12 @@
     "RANGING:KRONOS": 0.645,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.824,
     "RANGING:TREND_PULLBACK": 1.064,
-    "TRENDING_DOWN:TREND_PULLBACK": 1.105,
+    "TRENDING_DOWN:TREND_PULLBACK": 1.128,
     "SESSION_SWEEP_WINDOW:ICT": 0.939,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.01,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.743,
     "TRENDING_DOWN:ICT": 0.891,
-    "TRENDING_DOWN:KRONOS": 1.079,
+    "TRENDING_DOWN:KRONOS": 1.102,
     "RANGING:BREAKOUT": 0.967,
     "RANGING:SND": 1.053,
     "TRENDING_DOWN:BREAKOUT": 1.076,
@@ -79,9 +79,9 @@
   },
   "symbol_streaks": {
     "BTCUSD": {
-      "win_streak": 0,
-      "loss_streak": 4,
-      "net_r": -4.73
+      "win_streak": 1,
+      "loss_streak": 0,
+      "net_r": -4.22
     },
     "ETHUSD": {
       "win_streak": 0,
@@ -133,14 +133,6 @@
   },
   "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-12 07:47:12 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 84391803,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "summary": "Ticket #84391803 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
     {
       "timestamp_utc": "2026-11-12 16:38:01 UTC",
       "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -666,9 +658,25 @@
       "symbol": "EURUSD",
       "direction": "SHORT",
       "summary": "Ticket #1090055289 (EURUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+    },
+    {
+      "timestamp_utc": "2026-11-19 17:08:04 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1090474952,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "net_pnl": 21.66,
+      "r_multiple": 0.51,
+      "peak_favorable_r": 0.83,
+      "regime": "TRENDING_DOWN",
+      "strategies": [
+        "TREND_PULLBACK",
+        "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
     }
   ],
-  "live_episodes": 36,
+  "live_episodes": 37,
   "active_shadow_trades": [
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -714,11 +722,56 @@
       "opened_epoch": 1795107912.919162,
       "tp1_hit": false,
       "peak_r": 0.496
+    },
+    {
+      "key": "ETHUSD:DERIV_FLOW",
+      "symbol": "ETHUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 1759.03,
+      "sl_price": 1771.24981,
+      "sl_dist": 12.21981,
+      "tp1_price": 1751.08713,
+      "tp2_price": 1741.31128,
+      "opened_epoch": 1795108051.52218,
+      "tp1_hit": false,
+      "peak_r": 0.374
+    },
+    {
+      "key": "BTCUSD:DERIV_FLOW",
+      "symbol": "BTCUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 62508.55,
+      "sl_price": 62839.27264,
+      "sl_dist": 330.72264,
+      "tp1_price": 62293.58029,
+      "tp2_price": 62029.00218,
+      "opened_epoch": 1795108087.836343,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "BTCUSD:BREAKOUT",
+      "symbol": "BTCUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 62508.55,
+      "sl_price": 62839.27264,
+      "sl_dist": 330.72264,
+      "tp1_price": 62293.58029,
+      "tp2_price": 62029.00218,
+      "opened_epoch": 1795108088.541029,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1795099525.331606,
-    "BTCUSD:BREAKOUT": 1795102513.977876,
+    "BTCUSD:BREAKOUT": 1795108088.541029,
     "BTCUSD:KRONOS": 1795107004.75434,
     "ETHUSD:BREAKOUT": 1795107912.919162,
     "ETHUSD:KRONOS": 1795101647.694776,
@@ -736,8 +789,8 @@
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1795089914.22463,
     "SOLUSD:DERIV_FLOW": 1795107462.574939,
-    "BTCUSD:DERIV_FLOW": 1795105933.019904,
-    "ETHUSD:DERIV_FLOW": 1795102473.880937,
+    "BTCUSD:DERIV_FLOW": 1795108087.836343,
+    "ETHUSD:DERIV_FLOW": 1795108051.52218,
     "EURUSD:BREAKOUT": 1795075207.222294,
     "USDJPY:BREAKOUT": 1795103102.580275,
     "USDJPY:KRONOS": 1795096802.328074,
