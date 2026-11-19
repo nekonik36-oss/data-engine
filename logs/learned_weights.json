@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 13:45:07 UTC",
-  "total_episodes": 1374,
+  "updated_utc": "2026-11-19 13:51:31 UTC",
+  "total_episodes": 1375,
   "strategy_stats": {
     "SND": {
       "trades": 58,
@@ -38,11 +38,11 @@
       "multiplier": 0.965
     },
     "DERIV_FLOW": {
-      "trades": 409,
+      "trades": 410,
       "wins": 242,
-      "losses": 164,
-      "ema_r": -0.179,
-      "multiplier": 0.955
+      "losses": 165,
+      "ema_r": -0.245,
+      "multiplier": 0.939
     }
   },
   "regime_strategy_multipliers": {
@@ -67,7 +67,7 @@
     "TRENDING_UP:TREND_PULLBACK": 0.905,
     "RANGING:DERIV_FLOW": 1.126,
     "TRENDING_DOWN:DERIV_FLOW": 1.352,
-    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.067,
+    "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.051,
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
     "MACRO_NEWS_WINDOW:ICT": 1.041,
@@ -708,8 +708,8 @@
       "tp1_price": 75.16511,
       "tp2_price": 75.38062,
       "opened_epoch": 1795095615.178918,
-      "tp1_hit": false,
-      "peak_r": 0.52
+      "tp1_hit": true,
+      "peak_r": 0.928
     },
     {
       "key": "SOLUSD:KRONOS",
@@ -725,21 +725,6 @@
       "opened_epoch": 1795095615.181431,
       "tp1_hit": false,
       "peak_r": 0.223
-    },
-    {
-      "key": "BTCUSD:DERIV_FLOW",
-      "symbol": "BTCUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "SESSION_SWEEP_WINDOW",
-      "entry_price": 63734.0,
-      "sl_price": 63881.8792,
-      "sl_dist": 147.8792,
-      "tp1_price": 63637.87852,
-      "tp2_price": 63519.57517,
-      "opened_epoch": 1795095907.011329,
-      "tp1_hit": false,
-      "peak_r": 0.041
     }
   ],
   "shadow_cooldowns": {
@@ -776,7 +761,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1320,
+  "shadow_episodes": 1321,
   "probation_strategies": [
     "SND"
   ]
