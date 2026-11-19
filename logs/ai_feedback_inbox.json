@@ -1,25 +1,14 @@
 {
-  "updated_utc": "2026-11-19 20:16:48 UTC",
+  "updated_utc": "2026-11-19 20:17:27 UTC",
   "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9543.2,
+  "live_equity": 9542.33,
   "bot_stats": {
-    "total_closed": 55,
-    "wins": 17,
+    "total_closed": 56,
+    "wins": 18,
     "losses": 29,
     "breakevens": 9,
-    "cumulative_pnl": -479.86,
+    "cumulative_pnl": -457.67,
     "history": [
-      {
-        "ticket": 1079358611,
-        "symbol": "ETHUSD",
-        "direction": "SHORT",
-        "entry_price": 2128.42,
-        "exit_price": 2105.84,
-        "net_pnl": 54.44,
-        "r_multiple": 1.1,
-        "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
-        "closed_at_utc": "2026-11-09 06:46:06 UTC"
-      },
       {
         "ticket": 1079309287,
         "symbol": "SOLUSD",
@@ -558,6 +547,17 @@
         "r_multiple": 0.51,
         "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
         "closed_at_utc": "2026-11-19 17:08:04 UTC"
+      },
+      {
+        "ticket": 1090631525,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 62568.05,
+        "exit_price": 62376.85,
+        "net_pnl": 22.19,
+        "r_multiple": 0.48,
+        "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
+        "closed_at_utc": "2026-11-19 20:17:08 UTC"
       }
     ],
     "crypto_book_pnl": -25.01
@@ -586,9 +586,9 @@
   },
   "symbol_streaks": {
     "BTCUSD": {
-      "win_streak": 1,
+      "win_streak": 2,
       "loss_streak": 0,
-      "net_r": -4.22
+      "net_r": -3.74
     },
     "ETHUSD": {
       "win_streak": 0,
@@ -618,14 +618,6 @@
   },
   "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-16 07:49:14 UTC",
-      "event": "TRUE_TREND_LOSS_CONFIRMED",
-      "ticket": 1085819383,
-      "symbol": "XAUUSD",
-      "direction": "SHORT",
-      "summary": "Ticket #1085819383 (XAUUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
-    },
     {
       "timestamp_utc": "2026-11-16 07:56:21 UTC",
       "event": "TRUE_TREND_LOSS_CONFIRMED",
@@ -935,6 +927,22 @@
       "strategies": [
         "TREND_PULLBACK",
         "KRONOS"
+      ],
+      "auto_fix_action": "NONE"
+    },
+    {
+      "timestamp_utc": "2026-11-19 20:17:08 UTC",
+      "event": "TRADE_CLOSED_DIAGNOSTIC",
+      "ticket": 1090631525,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "net_pnl": 22.19,
+      "r_multiple": 0.48,
+      "peak_favorable_r": 0.86,
+      "regime": "RANGING",
+      "strategies": [
+        "BREAKOUT",
+        "TREND_PULLBACK"
       ],
       "auto_fix_action": "NONE"
     }
