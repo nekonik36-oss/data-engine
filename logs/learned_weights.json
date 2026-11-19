@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 16:15:14 UTC",
+  "updated_utc": "2026-11-19 16:22:40 UTC",
   "total_episodes": 1413,
   "strategy_stats": {
     "SND": {
@@ -729,6 +729,21 @@
       "opened_epoch": 1795104914.797955,
       "tp1_hit": false,
       "peak_r": 0.128
+    },
+    {
+      "key": "SOLUSD:DERIV_FLOW",
+      "symbol": "SOLUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 73.66,
+      "sl_price": 74.11967,
+      "sl_dist": 0.45967,
+      "tp1_price": 73.36122,
+      "tp2_price": 72.99348,
+      "opened_epoch": 1795105360.454077,
+      "tp1_hit": false,
+      "peak_r": 0.305
     }
   ],
   "shadow_cooldowns": {
@@ -750,7 +765,7 @@
     "XAUUSD:BREAKOUT": 1795104314.563999,
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1795089914.22463,
-    "SOLUSD:DERIV_FLOW": 1795102998.959127,
+    "SOLUSD:DERIV_FLOW": 1795105360.454077,
     "BTCUSD:DERIV_FLOW": 1795102513.189235,
     "ETHUSD:DERIV_FLOW": 1795102473.880937,
     "EURUSD:BREAKOUT": 1795075207.222294,
