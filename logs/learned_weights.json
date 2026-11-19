@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-19 21:07:57 UTC",
-  "total_episodes": 1461,
+  "updated_utc": "2026-11-19 21:08:36 UTC",
+  "total_episodes": 1462,
   "strategy_stats": {
     "SND": {
-      "trades": 64,
-      "wins": 27,
+      "trades": 65,
+      "wins": 28,
       "losses": 36,
-      "ema_r": 0.133,
-      "multiplier": 1.033
+      "ema_r": 0.159,
+      "multiplier": 1.04
     },
     "ICT": {
       "trades": 346,
@@ -59,7 +59,7 @@
     "RANGING:BREAKOUT": 0.995,
     "RANGING:SND": 1.079,
     "TRENDING_DOWN:BREAKOUT": 1.051,
-    "TRENDING_DOWN:SND": 0.987,
+    "TRENDING_DOWN:SND": 0.994,
     "TRENDING_UP:ICT": 1.05,
     "SESSION_SWEEP_WINDOW:SND": 0.836,
     "TRENDING_UP:KRONOS": 1.028,
@@ -679,21 +679,6 @@
   "live_episodes": 38,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:SND",
-      "symbol": "BTCUSD",
-      "strategy_name": "SND",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 62128.57,
-      "sl_price": 62401.01322,
-      "sl_dist": 272.44322,
-      "tp1_price": 61951.4819,
-      "tp2_price": 61733.52732,
-      "opened_epoch": 1795122007.401728,
-      "tp1_hit": true,
-      "peak_r": 0.873
-    },
-    {
       "key": "SOLUSD:TREND_PULLBACK",
       "symbol": "SOLUSD",
       "strategy_name": "TREND_PULLBACK",
@@ -736,7 +721,7 @@
       "tp2_price": 62319.79761,
       "opened_epoch": 1795122324.293211,
       "tp1_hit": false,
-      "peak_r": 0.417
+      "peak_r": 0.49
     }
   ],
   "shadow_cooldowns": {
@@ -773,7 +758,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1405,
+  "shadow_episodes": 1406,
   "probation_strategies": [
     "SND"
   ]
