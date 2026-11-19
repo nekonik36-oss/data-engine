@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 20:02:06 UTC",
+  "updated_utc": "2026-11-19 20:05:19 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9551.03,
+  "live_equity": 9547.82,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1764.93,
-    "SOLUSD": 73.39,
-    "XAUUSD": 3662.43,
-    "EURUSD": 1.09743,
-    "USDJPY": 159.687
+    "ETHUSD": 1764.96,
+    "SOLUSD": 73.47,
+    "XAUUSD": 3666.56,
+    "EURUSD": 1.09767,
+    "USDJPY": 159.64
   },
   "active_trades": {
     "1090631525": {
@@ -619,7 +619,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 19:52:43 UTC",
+    "updated_utc": "2026-11-19 20:03:40 UTC",
     "total_episodes": 1445,
     "strategy_stats": {
       "SND": {
@@ -1299,21 +1299,6 @@
     "live_episodes": 37,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:DERIV_FLOW",
-        "symbol": "BTCUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 62720.01,
-        "sl_price": 62978.38351,
-        "sl_dist": 258.37351,
-        "tp1_price": 62552.06722,
-        "tp2_price": 62345.36841,
-        "opened_epoch": 1795115872.203457,
-        "tp1_hit": false,
-        "peak_r": 0.586
-      },
-      {
         "key": "BTCUSD:BREAKOUT",
         "symbol": "BTCUSD",
         "strategy_name": "BREAKOUT",
@@ -1415,5 +1400,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (428 eps, 59.8% WR, +0.18R EMA)",
-  "cycle_count": 5596
+  "cycle_count": 5600
 }
