@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 21:05:03 UTC",
+  "updated_utc": "2026-11-19 21:05:24 UTC",
   "total_episodes": 1460,
   "strategy_stats": {
     "SND": {
@@ -691,7 +691,7 @@
       "tp2_price": 61733.52732,
       "opened_epoch": 1795122007.401728,
       "tp1_hit": true,
-      "peak_r": 0.805
+      "peak_r": 0.873
     },
     {
       "key": "ETHUSD:TREND_PULLBACK",
@@ -706,7 +706,7 @@
       "tp2_price": 1748.71852,
       "opened_epoch": 1795122008.847184,
       "tp1_hit": true,
-      "peak_r": 0.826
+      "peak_r": 0.849
     },
     {
       "key": "SOLUSD:TREND_PULLBACK",
@@ -721,13 +721,43 @@
       "tp2_price": 72.20806,
       "opened_epoch": 1795122303.621288,
       "tp1_hit": false,
-      "peak_r": 0.05
+      "peak_r": 0.125
+    },
+    {
+      "key": "BTCUSD:TREND_PULLBACK",
+      "symbol": "BTCUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "SHORT",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 61909.16,
+      "sl_price": 62192.35835,
+      "sl_dist": 283.19835,
+      "tp1_price": 61725.08107,
+      "tp2_price": 61498.52239,
+      "opened_epoch": 1795122324.286219,
+      "tp1_hit": false,
+      "peak_r": 0.065
+    },
+    {
+      "key": "BTCUSD:KRONOS",
+      "symbol": "BTCUSD",
+      "strategy_name": "KRONOS",
+      "direction": "LONG",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 61909.16,
+      "sl_price": 61625.96165,
+      "sl_dist": 283.19835,
+      "tp1_price": 62093.23893,
+      "tp2_price": 62319.79761,
+      "opened_epoch": 1795122324.293211,
+      "tp1_hit": false,
+      "peak_r": 0.136
     }
   ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1795121106.320306,
     "BTCUSD:BREAKOUT": 1795120220.094096,
-    "BTCUSD:KRONOS": 1795120220.102096,
+    "BTCUSD:KRONOS": 1795122324.293211,
     "ETHUSD:BREAKOUT": 1795118757.166489,
     "ETHUSD:KRONOS": 1795120222.614563,
     "SOLUSD:BREAKOUT": 1795120202.269362,
@@ -736,7 +766,7 @@
     "SOLUSD:SND": 1795114003.552525,
     "SOLUSD:ICT": 1795121712.964564,
     "ETHUSD:TREND_PULLBACK": 1795122008.847184,
-    "BTCUSD:TREND_PULLBACK": 1795120220.098095,
+    "BTCUSD:TREND_PULLBACK": 1795122324.286219,
     "SOLUSD:TREND_PULLBACK": 1795122303.621288,
     "ETHUSD:SND": 1795107005.983799,
     "BTCUSD:SND": 1795122007.401728,
