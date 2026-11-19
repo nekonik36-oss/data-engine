@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 04:25:51 UTC",
+  "updated_utc": "2026-11-19 04:27:40 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63385.97,
-    "ETHUSD": 1798.51,
-    "SOLUSD": 74.54,
-    "XAUUSD": 3724.9,
-    "EURUSD": 1.09606,
-    "USDJPY": 159.581
+    "BTCUSD": 63341.51,
+    "ETHUSD": 1796.17,
+    "SOLUSD": 74.46,
+    "XAUUSD": 3725.92,
+    "EURUSD": 1.0961400000000001,
+    "USDJPY": 159.567
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 04:25:12 UTC",
+    "updated_utc": "2026-11-19 04:26:52 UTC",
     "total_episodes": 1260,
     "strategy_stats": {
       "SND": {
@@ -1294,7 +1294,7 @@
         "tp2_price": 1785.87271,
         "opened_epoch": 1795062229.383454,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.103
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1325,6 +1325,21 @@
         "opened_epoch": 1795062312.485611,
         "tp1_hit": false,
         "peak_r": 0.03
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 63404.27,
+        "sl_price": 63629.95135,
+        "sl_dist": 225.68135,
+        "tp1_price": 63257.57712,
+        "tp2_price": 63077.03205,
+        "opened_epoch": 1795062412.390283,
+        "tp1_hit": false,
+        "peak_r": 0.278
       }
     ],
     "shadow_cooldowns": {
@@ -1347,7 +1362,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795012225.713348,
       "SOLUSD:DERIV_FLOW": 1795062231.660701,
-      "BTCUSD:DERIV_FLOW": 1795060307.588454,
+      "BTCUSD:DERIV_FLOW": 1795062412.390283,
       "ETHUSD:DERIV_FLOW": 1795062229.383454,
       "EURUSD:BREAKOUT": 1795013100.852936,
       "USDJPY:BREAKOUT": 1795005920.904118,
@@ -1368,5 +1383,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (366 eps, 60.9% WR, +0.03R EMA)",
-  "cycle_count": 3015
+  "cycle_count": 3020
 }
