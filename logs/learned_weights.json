@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 09:33:33 UTC",
+  "updated_utc": "2026-11-19 09:35:18 UTC",
   "total_episodes": 1320,
   "strategy_stats": {
     "SND": {
@@ -778,6 +778,51 @@
       "opened_epoch": 1795080617.040215,
       "tp1_hit": false,
       "peak_r": 0.0
+    },
+    {
+      "key": "SOLUSD:ICT",
+      "symbol": "SOLUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 74.48,
+      "sl_price": 74.23981,
+      "sl_dist": 0.24019,
+      "tp1_price": 74.63612,
+      "tp2_price": 74.82828,
+      "opened_epoch": 1795080900.694377,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "BTCUSD:TREND_PULLBACK",
+      "symbol": "BTCUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "entry_price": 63862.53,
+      "sl_price": 63707.83604,
+      "sl_dist": 154.69396,
+      "tp1_price": 63963.08107,
+      "tp2_price": 64086.83624,
+      "opened_epoch": 1795080917.348532,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "ETHUSD:TREND_PULLBACK",
+      "symbol": "ETHUSD",
+      "strategy_name": "TREND_PULLBACK",
+      "direction": "LONG",
+      "regime": "TRENDING_UP",
+      "entry_price": 1805.76,
+      "sl_price": 1800.36158,
+      "sl_dist": 5.39842,
+      "tp1_price": 1809.26897,
+      "tp2_price": 1813.58771,
+      "opened_epoch": 1795080918.821576,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -790,9 +835,9 @@
     "SOLUSD:KRONOS": 1795079113.671245,
     "BTCUSD:ICT": 1795079708.924099,
     "SOLUSD:SND": 1795062312.485611,
-    "SOLUSD:ICT": 1795077307.576574,
-    "ETHUSD:TREND_PULLBACK": 1795077304.763335,
-    "BTCUSD:TREND_PULLBACK": 1795078505.95419,
+    "SOLUSD:ICT": 1795080900.694377,
+    "ETHUSD:TREND_PULLBACK": 1795080918.821576,
+    "BTCUSD:TREND_PULLBACK": 1795080917.348532,
     "SOLUSD:TREND_PULLBACK": 1795065021.043716,
     "ETHUSD:SND": 1795003509.7521,
     "BTCUSD:SND": 1795075503.187902,
