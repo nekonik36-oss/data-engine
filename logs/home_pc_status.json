@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 07:26:37 UTC",
+  "updated_utc": "2026-11-19 07:28:07 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9576.21,
+  "live_equity": 9574.37,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63594.21,
-    "SOLUSD": 74.79,
-    "XAUUSD": 3739.62,
-    "EURUSD": 1.09747,
-    "USDJPY": 159.682
+    "BTCUSD": 63601.68,
+    "SOLUSD": 74.83,
+    "XAUUSD": 3736.52,
+    "EURUSD": 1.09735,
+    "USDJPY": 159.672
   },
   "active_trades": {
     "1089818537": {
@@ -1334,7 +1334,7 @@
         "tp2_price": 63521.00415,
         "opened_epoch": 1795071622.920117,
         "tp1_hit": true,
-        "peak_r": 0.996
+        "peak_r": 1.027
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1349,7 +1349,7 @@
         "tp2_price": 63521.00415,
         "opened_epoch": 1795071677.084452,
         "tp1_hit": true,
-        "peak_r": 0.996
+        "peak_r": 1.027
       },
       {
         "key": "BTCUSD:ICT",
@@ -1364,7 +1364,7 @@
         "tp2_price": 63513.6168,
         "opened_epoch": 1795071922.461796,
         "tp1_hit": true,
-        "peak_r": 0.96
+        "peak_r": 0.99
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1483,5 +1483,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (378 eps, 59.7% WR, -0.31R EMA)",
-  "cycle_count": 3545
+  "cycle_count": 3550
 }
