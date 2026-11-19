@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 04:02:21 UTC",
+  "updated_utc": "2026-11-19 04:15:03 UTC",
   "total_episodes": 1260,
   "strategy_stats": {
     "SND": {
@@ -675,7 +675,23 @@
     }
   ],
   "live_episodes": 32,
-  "active_shadow_trades": [],
+  "active_shadow_trades": [
+    {
+      "key": "XAUUSD:ICT",
+      "symbol": "XAUUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 3727.79,
+      "sl_price": 3710.36843,
+      "sl_dist": 17.42157,
+      "tp1_price": 3739.11402,
+      "tp2_price": 3753.05127,
+      "opened_epoch": 1795061703.946565,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    }
+  ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1795058402.597664,
     "BTCUSD:BREAKOUT": 1795059006.761288,
@@ -706,7 +722,7 @@
     "XAUUSD:KRONOS": 1795021206.320067,
     "USDJPY:ICT": 1795011936.857611,
     "EURUSD:TREND_PULLBACK": 1794921309.722345,
-    "XAUUSD:ICT": 1795021206.317067,
+    "XAUUSD:ICT": 1795061703.946565,
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 04:14:21 UTC",
+  "updated_utc": "2026-11-19 04:15:59 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63354.69,
-    "ETHUSD": 1798.04,
-    "SOLUSD": 74.32,
-    "XAUUSD": 3726.44,
-    "EURUSD": 1.09603,
-    "USDJPY": 159.579
+    "BTCUSD": 63280.05,
+    "ETHUSD": 1796.5,
+    "SOLUSD": 74.25,
+    "XAUUSD": 3724.28,
+    "EURUSD": 1.09602,
+    "USDJPY": 159.581
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 04:02:21 UTC",
+    "updated_utc": "2026-11-19 04:15:03 UTC",
     "total_episodes": 1260,
     "strategy_stats": {
       "SND": {
@@ -1265,7 +1265,23 @@
       }
     ],
     "live_episodes": 32,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "XAUUSD:ICT",
+        "symbol": "XAUUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 3727.79,
+        "sl_price": 3710.36843,
+        "sl_dist": 17.42157,
+        "tp1_price": 3739.11402,
+        "tp2_price": 3753.05127,
+        "opened_epoch": 1795061703.946565,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795058402.597664,
       "BTCUSD:BREAKOUT": 1795059006.761288,
@@ -1296,7 +1312,7 @@
       "XAUUSD:KRONOS": 1795021206.320067,
       "USDJPY:ICT": 1795011936.857611,
       "EURUSD:TREND_PULLBACK": 1794921309.722345,
-      "XAUUSD:ICT": 1795021206.317067,
+      "XAUUSD:ICT": 1795061703.946565,
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795007713.266952
     },
@@ -1307,5 +1323,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (366 eps, 60.9% WR, +0.03R EMA)",
-  "cycle_count": 2980
+  "cycle_count": 2985
 }
