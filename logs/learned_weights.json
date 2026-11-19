@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 11:45:03 UTC",
-  "total_episodes": 1345,
+  "updated_utc": "2026-11-19 11:49:25 UTC",
+  "total_episodes": 1346,
   "strategy_stats": {
     "SND": {
       "trades": 55,
@@ -17,11 +17,11 @@
       "multiplier": 0.943
     },
     "BREAKOUT": {
-      "trades": 239,
-      "wins": 132,
+      "trades": 240,
+      "wins": 133,
       "losses": 105,
-      "ema_r": -0.139,
-      "multiplier": 0.965
+      "ema_r": -0.091,
+      "multiplier": 0.977
     },
     "TREND_PULLBACK": {
       "trades": 143,
@@ -56,7 +56,7 @@
     "SESSION_SWEEP_WINDOW:KRONOS": 0.759,
     "TRENDING_DOWN:ICT": 0.891,
     "TRENDING_DOWN:KRONOS": 1.06,
-    "RANGING:BREAKOUT": 0.962,
+    "RANGING:BREAKOUT": 0.969,
     "RANGING:SND": 1.066,
     "TRENDING_DOWN:BREAKOUT": 1.076,
     "TRENDING_DOWN:SND": 0.968,
@@ -713,21 +713,6 @@
       "peak_r": 0.44
     },
     {
-      "key": "SOLUSD:BREAKOUT",
-      "symbol": "SOLUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 74.92,
-      "sl_price": 74.70132,
-      "sl_dist": 0.21868,
-      "tp1_price": 75.06214,
-      "tp2_price": 75.23709,
-      "opened_epoch": 1795088111.159216,
-      "tp1_hit": true,
-      "peak_r": 0.732
-    },
-    {
       "key": "SOLUSD:KRONOS",
       "symbol": "SOLUSD",
       "strategy_name": "KRONOS",
@@ -807,7 +792,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1292,
+  "shadow_episodes": 1293,
   "probation_strategies": [
     "SND"
   ]
