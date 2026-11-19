@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 07:56:03 UTC",
-  "total_episodes": 1296,
+  "updated_utc": "2026-11-19 08:00:24 UTC",
+  "total_episodes": 1297,
   "strategy_stats": {
     "SND": {
       "trades": 52,
@@ -31,11 +31,11 @@
       "multiplier": 1.0
     },
     "KRONOS": {
-      "trades": 233,
+      "trades": 234,
       "wins": 120,
-      "losses": 108,
-      "ema_r": -0.101,
-      "multiplier": 0.975
+      "losses": 109,
+      "ema_r": -0.13,
+      "multiplier": 0.968
     },
     "DERIV_FLOW": {
       "trades": 381,
@@ -62,7 +62,7 @@
     "TRENDING_DOWN:SND": 0.968,
     "TRENDING_UP:ICT": 1.11,
     "SESSION_SWEEP_WINDOW:SND": 0.851,
-    "TRENDING_UP:KRONOS": 1.071,
+    "TRENDING_UP:KRONOS": 1.064,
     "TRENDING_UP:BREAKOUT": 0.994,
     "TRENDING_UP:TREND_PULLBACK": 0.905,
     "RANGING:DERIV_FLOW": 1.174,
@@ -707,21 +707,6 @@
       "peak_r": 0.22
     },
     {
-      "key": "USDJPY:KRONOS",
-      "symbol": "USDJPY",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 159.666,
-      "sl_price": 159.76203,
-      "sl_dist": 0.09603,
-      "tp1_price": 159.60358,
-      "tp2_price": 159.52676,
-      "opened_epoch": 1795073416.277863,
-      "tp1_hit": false,
-      "peak_r": 0.437
-    },
-    {
       "key": "SOLUSD:DERIV_FLOW",
       "symbol": "SOLUSD",
       "strategy_name": "DERIV_FLOW",
@@ -733,6 +718,21 @@
       "tp1_price": 74.68997,
       "tp2_price": 74.51762,
       "opened_epoch": 1795074963.587012,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "EURUSD:BREAKOUT",
+      "symbol": "EURUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "LONG",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 1.09815,
+      "sl_price": 1.09745,
+      "sl_dist": 0.0007,
+      "tp1_price": 1.0986,
+      "tp2_price": 1.09916,
+      "opened_epoch": 1795075207.222294,
       "tp1_hit": false,
       "peak_r": 0.0
     }
@@ -759,7 +759,7 @@
     "SOLUSD:DERIV_FLOW": 1795074963.587012,
     "BTCUSD:DERIV_FLOW": 1795074018.702553,
     "ETHUSD:DERIV_FLOW": 1795071472.936461,
-    "EURUSD:BREAKOUT": 1795072507.521772,
+    "EURUSD:BREAKOUT": 1795075207.222294,
     "USDJPY:BREAKOUT": 1795073416.275862,
     "USDJPY:KRONOS": 1795073416.277863,
     "EURUSD:KRONOS": 1795006220.626757,
@@ -771,7 +771,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1245,
+  "shadow_episodes": 1246,
   "probation_strategies": [
     "SND"
   ]
