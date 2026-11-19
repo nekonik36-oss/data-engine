@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 20:30:22 UTC",
+  "updated_utc": "2026-11-19 20:45:06 UTC",
   "total_episodes": 1452,
   "strategy_stats": {
     "SND": {
@@ -752,10 +752,25 @@
       "opened_epoch": 1795120222.614563,
       "tp1_hit": true,
       "peak_r": 1.075
+    },
+    {
+      "key": "ETHUSD:ICT",
+      "symbol": "ETHUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 1763.2,
+      "sl_price": 1754.13448,
+      "sl_dist": 9.06552,
+      "tp1_price": 1769.09259,
+      "tp2_price": 1776.34501,
+      "opened_epoch": 1795121106.320306,
+      "tp1_hit": false,
+      "peak_r": 0.017
     }
   ],
   "shadow_cooldowns": {
-    "ETHUSD:ICT": 1795113961.379581,
+    "ETHUSD:ICT": 1795121106.320306,
     "BTCUSD:BREAKOUT": 1795120220.094096,
     "BTCUSD:KRONOS": 1795120220.102096,
     "ETHUSD:BREAKOUT": 1795118757.166489,
