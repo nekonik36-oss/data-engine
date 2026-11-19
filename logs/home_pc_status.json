@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 13:58:19 UTC",
+  "updated_utc": "2026-11-19 14:00:04 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 64025.22,
-    "ETHUSD": 1812.68,
-    "SOLUSD": 75.18,
-    "XAUUSD": 3714.6,
-    "EURUSD": 1.0997,
-    "USDJPY": 159.893
+    "BTCUSD": 64038.01,
+    "ETHUSD": 1813.59,
+    "SOLUSD": 75.17,
+    "XAUUSD": 3713.66,
+    "EURUSD": 1.09976,
+    "USDJPY": 159.867
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 13:55:29 UTC",
+    "updated_utc": "2026-11-19 14:00:02 UTC",
     "total_episodes": 1375,
     "strategy_stats": {
       "SND": {
@@ -1330,6 +1330,36 @@
         "opened_epoch": 1795096529.718651,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "USDJPY:ICT",
+        "symbol": "USDJPY",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 159.862,
+        "sl_price": 159.94606,
+        "sl_dist": 0.08406,
+        "tp1_price": 159.80736,
+        "tp2_price": 159.74012,
+        "opened_epoch": 1795096802.321755,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "USDJPY:KRONOS",
+        "symbol": "USDJPY",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 159.862,
+        "sl_price": 159.94606,
+        "sl_dist": 0.08406,
+        "tp1_price": 159.80736,
+        "tp2_price": 159.74012,
+        "opened_epoch": 1795096802.328074,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1356,11 +1386,11 @@
       "ETHUSD:DERIV_FLOW": 1795096529.718651,
       "EURUSD:BREAKOUT": 1795075207.222294,
       "USDJPY:BREAKOUT": 1795079712.879408,
-      "USDJPY:KRONOS": 1795079712.881409,
+      "USDJPY:KRONOS": 1795096802.328074,
       "EURUSD:KRONOS": 1795006220.626757,
       "XAUUSD:TREND_PULLBACK": 1794807916.277754,
       "XAUUSD:KRONOS": 1795021206.320067,
-      "USDJPY:ICT": 1795088703.704874,
+      "USDJPY:ICT": 1795096802.321755,
       "EURUSD:TREND_PULLBACK": 1794921309.722345,
       "XAUUSD:ICT": 1795061703.946565,
       "EURUSD:SND": 1794841214.521494,
@@ -1373,5 +1403,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (410 eps, 59.5% WR, -0.24R EMA)",
-  "cycle_count": 4670
+  "cycle_count": 4675
 }
