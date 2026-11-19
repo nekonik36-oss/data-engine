@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 06:39:44 UTC",
+  "updated_utc": "2026-11-19 06:41:25 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63533.64,
-    "ETHUSD": 1803.1,
-    "SOLUSD": 74.91,
-    "XAUUSD": 3730.85,
-    "EURUSD": 1.09656,
-    "USDJPY": 159.505
+    "BTCUSD": 63549.51,
+    "ETHUSD": 1803.99,
+    "SOLUSD": 74.95,
+    "XAUUSD": 3730.55,
+    "EURUSD": 1.09666,
+    "USDJPY": 159.496
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 06:35:07 UTC",
+    "updated_utc": "2026-11-19 06:40:07 UTC",
     "total_episodes": 1278,
     "strategy_stats": {
       "SND": {
@@ -1368,14 +1368,44 @@
         "opened_epoch": 1795070107.564465,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 1803.29,
+        "sl_price": 1808.85388,
+        "sl_dist": 5.56388,
+        "tp1_price": 1799.67348,
+        "tp2_price": 1795.22237,
+        "opened_epoch": 1795070407.55911,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:KRONOS",
+        "symbol": "ETHUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 1803.29,
+        "sl_price": 1808.85388,
+        "sl_dist": 5.56388,
+        "tp1_price": 1799.67348,
+        "tp2_price": 1795.22237,
+        "opened_epoch": 1795070407.561112,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1795064116.705376,
+      "ETHUSD:ICT": 1795070407.55911,
       "BTCUSD:BREAKOUT": 1795059006.761288,
       "BTCUSD:KRONOS": 1795044913.036012,
       "ETHUSD:BREAKOUT": 1795070105.721375,
-      "ETHUSD:KRONOS": 1795064116.707383,
+      "ETHUSD:KRONOS": 1795070407.561112,
       "SOLUSD:BREAKOUT": 1795070107.564465,
       "SOLUSD:KRONOS": 1795069513.301184,
       "BTCUSD:ICT": 1795064729.038131,
@@ -1411,5 +1441,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (375 eps, 59.9% WR, -0.34R EMA)",
-  "cycle_count": 3405
+  "cycle_count": 3410
 }
