@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 20:00:40 UTC",
+  "updated_utc": "2026-11-19 20:02:06 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9540.59,
+  "live_equity": 9551.03,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1768.48,
-    "SOLUSD": 73.54,
-    "XAUUSD": 3665.24,
-    "EURUSD": 1.09737,
-    "USDJPY": 159.712
+    "ETHUSD": 1764.93,
+    "SOLUSD": 73.39,
+    "XAUUSD": 3662.43,
+    "EURUSD": 1.09743,
+    "USDJPY": 159.687
   },
   "active_trades": {
     "1090631525": {
@@ -34,11 +34,11 @@
       "broker_source": "MT5_LIVE",
       "direction": "SHORT",
       "entry_price": 62568.05,
-      "sl_price": 63081.39,
+      "sl_price": 62372.98,
       "initial_sl_price": 63081.39,
       "tp1_price": 62234.379,
       "tp2_price": 61823.707,
-      "volume": 0.09,
+      "volume": 0.06,
       "initial_volume": 0.09,
       "risk_usd": 46.4,
       "confluence_score": 93.5,
@@ -48,11 +48,14 @@
         "TREND_PULLBACK"
       ],
       "opened_at_utc": "2026-11-19 19:36:00 UTC",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "partial_pnl": 0.0,
       "scalp_upgraded": true,
       "fast_scalp_upgraded": true,
-      "peak_favorable_r": 0.449
+      "peak_favorable_r": 0.669,
+      "be_shield_active": true,
+      "near_tp1_cushion_active": true,
+      "partial_closed_volume": 0.03
     }
   },
   "bot_stats": {
@@ -1353,7 +1356,7 @@
         "tp2_price": 1762.70322,
         "opened_epoch": 1795117209.650059,
         "tp1_hit": true,
-        "peak_r": 0.747
+        "peak_r": 1.179
       },
       {
         "key": "ETHUSD:TREND_PULLBACK",
@@ -1368,7 +1371,7 @@
         "tp2_price": 1762.70322,
         "opened_epoch": 1795117210.487972,
         "tp1_hit": true,
-        "peak_r": 0.747
+        "peak_r": 1.179
       }
     ],
     "shadow_cooldowns": {
@@ -1412,5 +1415,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (428 eps, 59.8% WR, +0.18R EMA)",
-  "cycle_count": 5595
+  "cycle_count": 5596
 }
