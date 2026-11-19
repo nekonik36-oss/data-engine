@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 07:55:19 UTC",
+  "updated_utc": "2026-11-19 07:55:39 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9575.33,
+  "live_equity": 9575.97,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63746.68,
-    "SOLUSD": 74.9,
-    "XAUUSD": 3734.34,
-    "EURUSD": 1.09824,
-    "USDJPY": 159.713
+    "BTCUSD": 63731.32,
+    "SOLUSD": 74.91,
+    "XAUUSD": 3736.3,
+    "EURUSD": 1.09847,
+    "USDJPY": 159.704
   },
   "active_trades": {
     "1089818537": {
@@ -620,8 +620,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 07:55:18 UTC",
-    "total_episodes": 1294,
+    "updated_utc": "2026-11-19 07:55:38 UTC",
+    "total_episodes": 1295,
     "strategy_stats": {
       "SND": {
         "trades": 52,
@@ -631,11 +631,11 @@
         "multiplier": 1.015
       },
       "ICT": {
-        "trades": 311,
+        "trades": 312,
         "wins": 159,
-        "losses": 150,
-        "ema_r": -0.073,
-        "multiplier": 0.982
+        "losses": 151,
+        "ema_r": -0.083,
+        "multiplier": 0.979
       },
       "BREAKOUT": {
         "trades": 230,
@@ -681,7 +681,7 @@
       "RANGING:SND": 1.066,
       "TRENDING_DOWN:BREAKOUT": 1.076,
       "TRENDING_DOWN:SND": 0.968,
-      "TRENDING_UP:ICT": 1.113,
+      "TRENDING_UP:ICT": 1.11,
       "SESSION_SWEEP_WINDOW:SND": 0.851,
       "TRENDING_UP:KRONOS": 1.071,
       "TRENDING_UP:BREAKOUT": 0.987,
@@ -1328,21 +1328,6 @@
         "peak_r": 0.22
       },
       {
-        "key": "SOLUSD:ICT",
-        "symbol": "SOLUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 74.86,
-        "sl_price": 75.10858,
-        "sl_dist": 0.24858,
-        "tp1_price": 74.69843,
-        "tp2_price": 74.49956,
-        "opened_epoch": 1795073121.648168,
-        "tp1_hit": false,
-        "peak_r": 0.603
-      },
-      {
         "key": "USDJPY:BREAKOUT",
         "symbol": "USDJPY",
         "strategy_name": "BREAKOUT",
@@ -1407,12 +1392,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795007713.266952
     },
-    "shadow_episodes": 1243,
+    "shadow_episodes": 1244,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (381 eps, 59.8% WR, -0.17R EMA)",
-  "cycle_count": 3638
+  "cycle_count": 3639
 }
