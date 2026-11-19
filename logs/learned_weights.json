@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 12:40:29 UTC",
+  "updated_utc": "2026-11-19 12:45:14 UTC",
   "total_episodes": 1362,
   "strategy_stats": {
     "SND": {
@@ -770,7 +770,22 @@
       "tp2_price": 74.79136,
       "opened_epoch": 1795092029.55567,
       "tp1_hit": false,
-      "peak_r": 0.342
+      "peak_r": 0.418
+    },
+    {
+      "key": "XAUUSD:BREAKOUT",
+      "symbol": "XAUUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "SHORT",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 3712.93,
+      "sl_price": 3724.84598,
+      "sl_dist": 11.91598,
+      "tp1_price": 3705.18462,
+      "tp2_price": 3695.65183,
+      "opened_epoch": 1795092314.16201,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -789,7 +804,7 @@
     "SOLUSD:TREND_PULLBACK": 1795090808.429602,
     "ETHUSD:SND": 1795089009.080019,
     "BTCUSD:SND": 1795089006.888278,
-    "XAUUSD:BREAKOUT": 1795089599.182251,
+    "XAUUSD:BREAKOUT": 1795092314.16201,
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1795089914.22463,
     "SOLUSD:DERIV_FLOW": 1795091500.628711,
