@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 15:03:44 UTC",
+  "updated_utc": "2026-11-19 15:05:02 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63798.01,
-    "ETHUSD": 1811.78,
-    "SOLUSD": 75.36,
-    "XAUUSD": 3707.8,
-    "EURUSD": 1.09897,
-    "USDJPY": 159.908
+    "BTCUSD": 63860.01,
+    "ETHUSD": 1811.71,
+    "SOLUSD": 75.34,
+    "XAUUSD": 3711.77,
+    "EURUSD": 1.099,
+    "USDJPY": 159.905
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 15:03:43 UTC",
+    "updated_utc": "2026-11-19 15:05:00 UTC",
     "total_episodes": 1398,
     "strategy_stats": {
       "SND": {
@@ -1272,8 +1272,23 @@
         "tp1_price": 63800.43974,
         "tp2_price": 63962.98711,
         "opened_epoch": 1795100113.916661,
+        "tp1_hit": true,
+        "peak_r": 1.101
+      },
+      {
+        "key": "SOLUSD:TREND_PULLBACK",
+        "symbol": "SOLUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 75.33,
+        "sl_price": 74.94385,
+        "sl_dist": 0.38615,
+        "tp1_price": 75.581,
+        "tp2_price": 75.88992,
+        "opened_epoch": 1795100700.940149,
         "tp1_hit": false,
-        "peak_r": 0.638
+        "peak_r": 0.026
       }
     ],
     "shadow_cooldowns": {
@@ -1289,7 +1304,7 @@
       "SOLUSD:ICT": 1795100118.142612,
       "ETHUSD:TREND_PULLBACK": 1795098909.075698,
       "BTCUSD:TREND_PULLBACK": 1795093824.253619,
-      "SOLUSD:TREND_PULLBACK": 1795090808.429602,
+      "SOLUSD:TREND_PULLBACK": 1795100700.940149,
       "ETHUSD:SND": 1795089009.080019,
       "BTCUSD:SND": 1795093824.250612,
       "XAUUSD:BREAKOUT": 1795092314.16201,
@@ -1317,5 +1332,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (415 eps, 59.0% WR, -0.35R EMA)",
-  "cycle_count": 4832
+  "cycle_count": 4835
 }
