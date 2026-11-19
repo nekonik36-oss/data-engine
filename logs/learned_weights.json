@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 14:20:12 UTC",
+  "updated_utc": "2026-11-19 14:22:55 UTC",
   "total_episodes": 1379,
   "strategy_stats": {
     "SND": {
@@ -131,42 +131,8 @@
       "be_shield_r": 0.55
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1090055289,
-      "symbol": "EURUSD",
-      "direction": "SHORT",
-      "entry_price": 1.09843,
-      "exit_price": 1.09955,
-      "tp1_price": 1.09716,
-      "tp2_price": 1.0956,
-      "agreeing_strategies": [
-        "ICT",
-        "KRONOS"
-      ],
-      "regime": "SESSION_SWEEP_WINDOW",
-      "closed_epoch": 1795092761.804005,
-      "closed_at_utc": "2026-11-19 12:52:41 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-12 01:04:31 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 84391803,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "net_pnl": -19.71,
-      "r_multiple": -0.42,
-      "peak_favorable_r": 0.0,
-      "regime": "SESSION_SWEEP_WINDOW",
-      "strategies": [
-        "SND",
-        "TREND_PULLBACK"
-      ],
-      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=73484.97)"
-    },
     {
       "timestamp_utc": "2026-11-12 07:47:12 UTC",
       "event": "TRUE_TREND_LOSS_CONFIRMED",
@@ -692,6 +658,14 @@
       "symbol": "BTCUSD",
       "direction": "SHORT",
       "summary": "Ticket #1089976706 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+    },
+    {
+      "timestamp_utc": "2026-11-19 14:22:55 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1090055289,
+      "symbol": "EURUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1090055289 (EURUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ],
   "live_episodes": 36,
@@ -709,7 +683,7 @@
       "tp2_price": 159.74012,
       "opened_epoch": 1795096802.321755,
       "tp1_hit": false,
-      "peak_r": 0.19
+      "peak_r": 0.226
     },
     {
       "key": "USDJPY:KRONOS",
@@ -724,7 +698,7 @@
       "tp2_price": 159.74012,
       "opened_epoch": 1795096802.328074,
       "tp1_hit": false,
-      "peak_r": 0.19
+      "peak_r": 0.226
     },
     {
       "key": "ETHUSD:BREAKOUT",
@@ -784,7 +758,7 @@
       "tp2_price": 74.71867,
       "opened_epoch": 1795097741.007772,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.076
     },
     {
       "key": "BTCUSD:DERIV_FLOW",
