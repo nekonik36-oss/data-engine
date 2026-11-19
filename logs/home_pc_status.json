@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 01:04:34 UTC",
+  "updated_utc": "2026-11-19 01:06:09 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63288.38,
-    "ETHUSD": 1789.36,
-    "SOLUSD": 73.84,
-    "XAUUSD": 3747.31,
-    "EURUSD": 1.09752,
-    "USDJPY": 159.434
+    "BTCUSD": 63226.87,
+    "ETHUSD": 1787.77,
+    "SOLUSD": 73.77,
+    "XAUUSD": 3749.41,
+    "EURUSD": 1.09755,
+    "USDJPY": 159.402
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 01:00:34 UTC",
+    "updated_utc": "2026-11-19 01:05:12 UTC",
     "total_episodes": 1236,
     "strategy_stats": {
       "SND": {
@@ -1306,13 +1306,28 @@
         "opened_epoch": 1795049431.43889,
         "tp1_hit": false,
         "peak_r": 0.298
+      },
+      {
+        "key": "ETHUSD:BREAKOUT",
+        "symbol": "ETHUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 1789.07,
+        "sl_price": 1781.9945,
+        "sl_dist": 7.0755,
+        "tp1_price": 1793.66908,
+        "tp2_price": 1799.32948,
+        "opened_epoch": 1795050312.990054,
+        "tp1_hit": false,
+        "peak_r": 0.033
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795046714.820545,
       "BTCUSD:BREAKOUT": 1795044319.05881,
       "BTCUSD:KRONOS": 1795044913.036012,
-      "ETHUSD:BREAKOUT": 1795044325.415994,
+      "ETHUSD:BREAKOUT": 1795050312.990054,
       "ETHUSD:KRONOS": 1795040714.133288,
       "SOLUSD:BREAKOUT": 1795044330.92052,
       "SOLUSD:KRONOS": 1795048219.364511,
@@ -1349,5 +1364,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (352 eps, 60.5% WR, -0.05R EMA)",
-  "cycle_count": 2410
+  "cycle_count": 2415
 }
