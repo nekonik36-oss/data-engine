@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 11:32:26 UTC",
+  "updated_utc": "2026-11-19 11:35:11 UTC",
   "total_episodes": 1344,
   "strategy_stats": {
     "SND": {
@@ -711,16 +711,61 @@
       "opened_epoch": 1795087804.694721,
       "tp1_hit": false,
       "peak_r": 0.131
+    },
+    {
+      "key": "BTCUSD:BREAKOUT",
+      "symbol": "BTCUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 64038.33,
+      "sl_price": 63897.44567,
+      "sl_dist": 140.88433,
+      "tp1_price": 64129.90481,
+      "tp2_price": 64242.61227,
+      "opened_epoch": 1795088108.549713,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "SOLUSD:BREAKOUT",
+      "symbol": "SOLUSD",
+      "strategy_name": "BREAKOUT",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 74.92,
+      "sl_price": 74.70132,
+      "sl_dist": 0.21868,
+      "tp1_price": 75.06214,
+      "tp2_price": 75.23709,
+      "opened_epoch": 1795088111.159216,
+      "tp1_hit": false,
+      "peak_r": 0.091
+    },
+    {
+      "key": "SOLUSD:KRONOS",
+      "symbol": "SOLUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 74.92,
+      "sl_price": 75.13868,
+      "sl_dist": 0.21868,
+      "tp1_price": 74.77786,
+      "tp2_price": 74.60291,
+      "opened_epoch": 1795088111.160209,
+      "tp1_hit": false,
+      "peak_r": 0.229
     }
   ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1795083304.894482,
-    "BTCUSD:BREAKOUT": 1795079108.138052,
+    "BTCUSD:BREAKOUT": 1795088108.549713,
     "BTCUSD:KRONOS": 1795086622.173938,
     "ETHUSD:BREAKOUT": 1795077916.151641,
     "ETHUSD:KRONOS": 1795083906.420538,
-    "SOLUSD:BREAKOUT": 1795080617.040215,
-    "SOLUSD:KRONOS": 1795081217.939406,
+    "SOLUSD:BREAKOUT": 1795088111.159216,
+    "SOLUSD:KRONOS": 1795088111.160209,
     "BTCUSD:ICT": 1795085715.39871,
     "SOLUSD:SND": 1795062312.485611,
     "SOLUSD:ICT": 1795080900.694377,
