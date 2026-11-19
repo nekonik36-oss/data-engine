@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 21:33:46 UTC",
+  "updated_utc": "2026-11-19 21:35:18 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61535.41,
-    "ETHUSD": 1741.68,
-    "SOLUSD": 72.31,
-    "XAUUSD": 3631.92,
-    "EURUSD": 1.09668,
-    "USDJPY": 159.697
+    "BTCUSD": 61532.01,
+    "ETHUSD": 1740.84,
+    "SOLUSD": 72.24,
+    "XAUUSD": 3627.0,
+    "EURUSD": 1.09683,
+    "USDJPY": 159.67
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 21:32:30 UTC",
+    "updated_utc": "2026-11-19 21:35:17 UTC",
     "total_episodes": 1466,
     "strategy_stats": {
       "SND": {
@@ -1357,6 +1357,21 @@
         "opened_epoch": 1795123642.473121,
         "tp1_hit": true,
         "peak_r": 0.9
+      },
+      {
+        "key": "SOLUSD:KRONOS",
+        "symbol": "SOLUSD",
+        "strategy_name": "KRONOS",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 72.26,
+        "sl_price": 71.8476,
+        "sl_dist": 0.4124,
+        "tp1_price": 72.52806,
+        "tp2_price": 72.85798,
+        "opened_epoch": 1795124117.59687,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1366,7 +1381,7 @@
       "ETHUSD:BREAKOUT": 1795123212.183567,
       "ETHUSD:KRONOS": 1795123212.186567,
       "SOLUSD:BREAKOUT": 1795123213.473902,
-      "SOLUSD:KRONOS": 1795101604.733339,
+      "SOLUSD:KRONOS": 1795124117.59687,
       "BTCUSD:ICT": 1795121709.606082,
       "SOLUSD:SND": 1795114003.552525,
       "SOLUSD:ICT": 1795121712.964564,
@@ -1400,5 +1415,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (430 eps, 60.0% WR, +0.33R EMA)",
-  "cycle_count": 5850
+  "cycle_count": 5855
 }
