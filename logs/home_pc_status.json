@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 15:37:52 UTC",
+  "updated_utc": "2026-11-19 15:39:48 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63094.07,
-    "ETHUSD": 1775.07,
-    "SOLUSD": 74.03,
-    "XAUUSD": 3685.76,
-    "EURUSD": 1.09791,
-    "USDJPY": 159.708
+    "BTCUSD": 62843.98,
+    "ETHUSD": 1771.17,
+    "SOLUSD": 73.73,
+    "XAUUSD": 3684.12,
+    "EURUSD": 1.09833,
+    "USDJPY": 159.682
   },
   "active_trades": {},
   "bot_stats": {
@@ -1273,7 +1273,7 @@
         "tp2_price": 3666.21995,
         "opened_epoch": 1795102202.374858,
         "tp1_hit": false,
-        "peak_r": 0.163
+        "peak_r": 0.261
       },
       {
         "key": "BTCUSD:DERIV_FLOW",
@@ -1287,8 +1287,8 @@
         "tp1_price": 63001.16057,
         "tp2_price": 62783.93049,
         "opened_epoch": 1795102513.189235,
-        "tp1_hit": false,
-        "peak_r": 0.419
+        "tp1_hit": true,
+        "peak_r": 1.229
       },
       {
         "key": "BTCUSD:BREAKOUT",
@@ -1302,8 +1302,8 @@
         "tp1_price": 63001.16057,
         "tp2_price": 62783.93049,
         "opened_epoch": 1795102513.977876,
-        "tp1_hit": false,
-        "peak_r": 0.419
+        "tp1_hit": true,
+        "peak_r": 1.229
       },
       {
         "key": "ETHUSD:BREAKOUT",
@@ -1317,8 +1317,8 @@
         "tp1_price": 1772.83904,
         "tp2_price": 1764.55478,
         "opened_epoch": 1795102515.911316,
-        "tp1_hit": false,
-        "peak_r": 0.435
+        "tp1_hit": true,
+        "peak_r": 0.887
       },
       {
         "key": "SOLUSD:SND",
@@ -1333,7 +1333,7 @@
         "tp2_price": 73.70267,
         "opened_epoch": 1795102517.788042,
         "tp1_hit": true,
-        "peak_r": 0.717
+        "peak_r": 1.389
       }
     ],
     "shadow_cooldowns": {
@@ -1377,5 +1377,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (417 eps, 59.2% WR, -0.12R EMA)",
-  "cycle_count": 4920
+  "cycle_count": 4925
 }
