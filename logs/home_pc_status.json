@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 04:24:11 UTC",
+  "updated_utc": "2026-11-19 04:25:51 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63387.94,
-    "ETHUSD": 1798.24,
-    "SOLUSD": 74.45,
-    "XAUUSD": 3725.14,
-    "EURUSD": 1.09609,
-    "USDJPY": 159.58
+    "BTCUSD": 63385.97,
+    "ETHUSD": 1798.51,
+    "SOLUSD": 74.54,
+    "XAUUSD": 3724.9,
+    "EURUSD": 1.09606,
+    "USDJPY": 159.581
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 04:23:51 UTC",
+    "updated_utc": "2026-11-19 04:25:12 UTC",
     "total_episodes": 1260,
     "strategy_stats": {
       "SND": {
@@ -1310,6 +1310,21 @@
         "opened_epoch": 1795062231.660701,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:SND",
+        "symbol": "SOLUSD",
+        "strategy_name": "SND",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 74.53,
+        "sl_price": 74.19313,
+        "sl_dist": 0.33687,
+        "tp1_price": 74.74897,
+        "tp2_price": 75.01846,
+        "opened_epoch": 1795062312.485611,
+        "tp1_hit": false,
+        "peak_r": 0.03
       }
     ],
     "shadow_cooldowns": {
@@ -1321,7 +1336,7 @@
       "SOLUSD:BREAKOUT": 1795059310.812983,
       "SOLUSD:KRONOS": 1795048219.364511,
       "BTCUSD:ICT": 1795058401.201054,
-      "SOLUSD:SND": 1795047316.384368,
+      "SOLUSD:SND": 1795062312.485611,
       "SOLUSD:ICT": 1795058405.060727,
       "ETHUSD:TREND_PULLBACK": 1795026621.434674,
       "BTCUSD:TREND_PULLBACK": 1795041915.89161,
@@ -1353,5 +1368,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (366 eps, 60.9% WR, +0.03R EMA)",
-  "cycle_count": 3010
+  "cycle_count": 3015
 }
