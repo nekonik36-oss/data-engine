@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-19 05:50:45 UTC",
-  "total_episodes": 1272,
+  "updated_utc": "2026-11-19 06:02:13 UTC",
+  "total_episodes": 1274,
   "strategy_stats": {
     "SND": {
       "trades": 52,
@@ -38,11 +38,11 @@
       "multiplier": 0.995
     },
     "DERIV_FLOW": {
-      "trades": 371,
+      "trades": 373,
       "wins": 223,
-      "losses": 145,
-      "ema_r": -0.108,
-      "multiplier": 0.973
+      "losses": 147,
+      "ema_r": -0.245,
+      "multiplier": 0.939
     }
   },
   "regime_strategy_multipliers": {
@@ -71,7 +71,7 @@
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
     "MACRO_NEWS_WINDOW:ICT": 1.041,
-    "TRENDING_UP:DERIV_FLOW": 1.061,
+    "TRENDING_UP:DERIV_FLOW": 1.029,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.992,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
     "TRENDING_UP:SND": 0.969,
@@ -677,21 +677,6 @@
   "live_episodes": 32,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:DERIV_FLOW",
-      "symbol": "ETHUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 1799.67,
-      "sl_price": 1805.42202,
-      "sl_dist": 5.75202,
-      "tp1_price": 1795.93119,
-      "tp2_price": 1791.32958,
-      "opened_epoch": 1795067120.717976,
-      "tp1_hit": false,
-      "peak_r": 0.502
-    },
-    {
       "key": "USDJPY:ICT",
       "symbol": "USDJPY",
       "strategy_name": "ICT",
@@ -705,21 +690,6 @@
       "opened_epoch": 1795067122.384054,
       "tp1_hit": false,
       "peak_r": 0.444
-    },
-    {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 74.57,
-      "sl_price": 74.82342,
-      "sl_dist": 0.25342,
-      "tp1_price": 74.40528,
-      "tp2_price": 74.20254,
-      "opened_epoch": 1795067158.567632,
-      "tp1_hit": false,
-      "peak_r": 0.197
     }
   ],
   "shadow_cooldowns": {
@@ -756,7 +726,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795007713.266952
   },
-  "shadow_episodes": 1222,
+  "shadow_episodes": 1224,
   "probation_strategies": [
     "SND"
   ]
