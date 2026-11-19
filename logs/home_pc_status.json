@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 14:33:59 UTC",
+  "updated_utc": "2026-11-19 14:35:35 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63931.79,
-    "ETHUSD": 1808.97,
-    "SOLUSD": 75.38,
-    "XAUUSD": 3713.02,
-    "EURUSD": 1.09983,
-    "USDJPY": 159.877
+    "BTCUSD": 63886.01,
+    "ETHUSD": 1809.39,
+    "SOLUSD": 75.4,
+    "XAUUSD": 3712.97,
+    "EURUSD": 1.10012,
+    "USDJPY": 159.852
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 14:33:56 UTC",
+    "updated_utc": "2026-11-19 14:35:11 UTC",
     "total_episodes": 1385,
     "strategy_stats": {
       "SND": {
@@ -1289,6 +1289,66 @@
         "opened_epoch": 1795098616.52501,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "ETHUSD:TREND_PULLBACK",
+        "symbol": "ETHUSD",
+        "strategy_name": "TREND_PULLBACK",
+        "direction": "LONG",
+        "regime": "SESSION_SWEEP_WINDOW",
+        "entry_price": 1810.79,
+        "sl_price": 1805.19604,
+        "sl_dist": 5.59396,
+        "tp1_price": 1814.42608,
+        "tp2_price": 1818.90125,
+        "opened_epoch": 1795098909.075698,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:BREAKOUT",
+        "symbol": "SOLUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 75.45,
+        "sl_price": 75.16707,
+        "sl_dist": 0.28293,
+        "tp1_price": 75.63391,
+        "tp2_price": 75.86026,
+        "opened_epoch": 1795098911.35381,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:KRONOS",
+        "symbol": "SOLUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 75.45,
+        "sl_price": 75.73293,
+        "sl_dist": 0.28293,
+        "tp1_price": 75.26609,
+        "tp2_price": 75.03974,
+        "opened_epoch": 1795098911.356809,
+        "tp1_hit": false,
+        "peak_r": 0.177
+      },
+      {
+        "key": "USDJPY:ICT",
+        "symbol": "USDJPY",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 159.815,
+        "sl_price": 159.90435,
+        "sl_dist": 0.08935,
+        "tp1_price": 159.75692,
+        "tp2_price": 159.68544,
+        "opened_epoch": 1795098911.385854,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1297,12 +1357,12 @@
       "BTCUSD:KRONOS": 1795089006.889277,
       "ETHUSD:BREAKOUT": 1795096826.923647,
       "ETHUSD:KRONOS": 1795089009.081019,
-      "SOLUSD:BREAKOUT": 1795095615.178918,
-      "SOLUSD:KRONOS": 1795095615.181431,
+      "SOLUSD:BREAKOUT": 1795098911.35381,
+      "SOLUSD:KRONOS": 1795098911.356809,
       "BTCUSD:ICT": 1795090803.143544,
       "SOLUSD:SND": 1795062312.485611,
       "SOLUSD:ICT": 1795097430.746417,
-      "ETHUSD:TREND_PULLBACK": 1795080918.821576,
+      "ETHUSD:TREND_PULLBACK": 1795098909.075698,
       "BTCUSD:TREND_PULLBACK": 1795093824.253619,
       "SOLUSD:TREND_PULLBACK": 1795090808.429602,
       "ETHUSD:SND": 1795089009.080019,
@@ -1319,7 +1379,7 @@
       "EURUSD:KRONOS": 1795006220.626757,
       "XAUUSD:TREND_PULLBACK": 1794807916.277754,
       "XAUUSD:KRONOS": 1795021206.320067,
-      "USDJPY:ICT": 1795096802.321755,
+      "USDJPY:ICT": 1795098911.385854,
       "EURUSD:TREND_PULLBACK": 1794921309.722345,
       "XAUUSD:ICT": 1795061703.946565,
       "EURUSD:SND": 1794841214.521494,
@@ -1332,5 +1392,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (412 eps, 59.2% WR, -0.36R EMA)",
-  "cycle_count": 4761
+  "cycle_count": 4765
 }
