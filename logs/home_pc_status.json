@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-19 18:29:09 UTC",
+  "updated_utc": "2026-11-19 18:30:09 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 63281.6,
-    "ETHUSD": 1787.0,
-    "SOLUSD": 74.63,
-    "XAUUSD": 3681.9,
-    "EURUSD": 1.09763,
-    "USDJPY": 159.812
+    "BTCUSD": 63244.95,
+    "ETHUSD": 1786.99,
+    "SOLUSD": 74.6,
+    "XAUUSD": 3684.39,
+    "EURUSD": 1.09777,
+    "USDJPY": 159.808
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-19 18:29:08 UTC",
+    "updated_utc": "2026-11-19 18:30:08 UTC",
     "total_episodes": 1437,
     "strategy_stats": {
       "SND": {
@@ -1267,14 +1267,30 @@
       }
     ],
     "live_episodes": 37,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "SOLUSD:BREAKOUT",
+        "symbol": "SOLUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 74.63,
+        "sl_price": 74.13407,
+        "sl_dist": 0.49593,
+        "tp1_price": 74.95235,
+        "tp2_price": 75.3491,
+        "opened_epoch": 1795113008.008991,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795109111.515222,
       "BTCUSD:BREAKOUT": 1795108088.541029,
       "BTCUSD:KRONOS": 1795107004.75434,
       "ETHUSD:BREAKOUT": 1795107912.919162,
       "ETHUSD:KRONOS": 1795101647.694776,
-      "SOLUSD:BREAKOUT": 1795101604.730835,
+      "SOLUSD:BREAKOUT": 1795113008.008991,
       "SOLUSD:KRONOS": 1795101604.733339,
       "BTCUSD:ICT": 1795109109.940684,
       "SOLUSD:SND": 1795102517.788042,
@@ -1309,5 +1325,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (425 eps, 59.5% WR, +0.00R EMA)",
-  "cycle_count": 5452
+  "cycle_count": 5455
 }
