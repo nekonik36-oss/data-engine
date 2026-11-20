@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 05:24:55 UTC",
+  "updated_utc": "2026-11-20 05:30:00 UTC",
   "total_episodes": 1529,
   "strategy_stats": {
     "SND": {
@@ -692,6 +692,21 @@
       "opened_epoch": 1795151788.13846,
       "tp1_hit": false,
       "peak_r": 0.433
+    },
+    {
+      "key": "USDJPY:ICT",
+      "symbol": "USDJPY",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 159.144,
+      "sl_price": 158.99409,
+      "sl_dist": 0.14991,
+      "tp1_price": 159.24144,
+      "tp2_price": 159.36138,
+      "opened_epoch": 1795152600.953121,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -722,7 +737,7 @@
     "EURUSD:KRONOS": 1795006220.626757,
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1795149900.820118,
-    "USDJPY:ICT": 1795098911.385854,
+    "USDJPY:ICT": 1795152600.953121,
     "EURUSD:TREND_PULLBACK": 1794921309.722345,
     "XAUUSD:ICT": 1795149900.817041,
     "EURUSD:SND": 1794841214.521494,
