@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-20 00:36:34 UTC",
-  "total_episodes": 1487,
+  "updated_utc": "2026-11-20 00:38:30 UTC",
+  "total_episodes": 1488,
   "strategy_stats": {
     "SND": {
       "trades": 65,
@@ -38,11 +38,11 @@
       "multiplier": 1.039
     },
     "DERIV_FLOW": {
-      "trades": 440,
-      "wins": 263,
+      "trades": 441,
+      "wins": 264,
       "losses": 174,
-      "ema_r": 0.116,
-      "multiplier": 1.029
+      "ema_r": 0.2,
+      "multiplier": 1.05
     }
   },
   "regime_strategy_multipliers": {
@@ -65,7 +65,7 @@
     "TRENDING_UP:KRONOS": 1.028,
     "TRENDING_UP:BREAKOUT": 0.942,
     "TRENDING_UP:TREND_PULLBACK": 0.889,
-    "RANGING:DERIV_FLOW": 1.191,
+    "RANGING:DERIV_FLOW": 1.21,
     "TRENDING_DOWN:DERIV_FLOW": 1.377,
     "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.054,
     "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -679,21 +679,6 @@
   "live_episodes": 38,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 73.26,
-      "sl_price": 73.62297,
-      "sl_dist": 0.36297,
-      "tp1_price": 73.02407,
-      "tp2_price": 72.7337,
-      "opened_epoch": 1795133306.616158,
-      "tp1_hit": true,
-      "peak_r": 1.13
-    },
-    {
       "key": "ETHUSD:TREND_PULLBACK",
       "symbol": "ETHUSD",
       "strategy_name": "TREND_PULLBACK",
@@ -720,8 +705,8 @@
       "tp1_price": 72.7972,
       "tp2_price": 72.5353,
       "opened_epoch": 1795134620.50956,
-      "tp1_hit": false,
-      "peak_r": 0.489
+      "tp1_hit": true,
+      "peak_r": 0.733
     },
     {
       "key": "BTCUSD:DERIV_FLOW",
@@ -736,7 +721,7 @@
       "tp2_price": 61811.06403,
       "opened_epoch": 1795134994.648782,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.343
     }
   ],
   "shadow_cooldowns": {
@@ -773,7 +758,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1431,
+  "shadow_episodes": 1432,
   "probation_strategies": [
     "SND"
   ]
