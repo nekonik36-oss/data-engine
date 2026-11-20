@@ -1,28 +1,31 @@
 {
-  "updated_utc": "2026-11-20 11:29:17 UTC",
-  "hostname": "runnervmccnms",
-  "python_version": "3.12.16",
+  "updated_utc": "2026-11-20 18:36:20 UTC",
+  "hostname": "DESKTOP-8RQUOSU",
+  "python_version": "3.12.10",
   "gpu": {
-    "torch_installed": false,
-    "torch_version": null,
-    "cuda_version": null,
-    "cuda_available": false,
-    "gpu_name": null,
-    "cuda_kernel_ok": false,
-    "cuda_error": "No module named 'torch'"
+    "torch_installed": true,
+    "torch_version": "2.11.0+cu128",
+    "cuda_version": "12.8",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 5060",
+    "cuda_kernel_ok": true,
+    "cuda_error": null
   },
   "pending_hot_reload": false,
-  "execution_mode": "signal_only",
-  "mt5_connected": false,
-  "mt5_error": "No module named 'MetaTrader5'",
+  "execution_mode": "auto",
+  "mt5_connected": true,
+  "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
   "live_equity": 9542.33,
-  "telegram_configured": false,
-  "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
+  "telegram_configured": true,
+  "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61876.0,
-    "ETHUSD": 1753.98,
-    "SOLUSD": 72.17
+    "BTCUSD": 59058.01,
+    "ETHUSD": 1637.21,
+    "SOLUSD": 69.2,
+    "XAUUSD": 3517.43,
+    "EURUSD": 1.09694,
+    "USDJPY": 158.85
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-20 11:18:46 UTC",
+    "updated_utc": "2026-11-20 18:36:17 UTC",
     "total_episodes": 1542,
     "strategy_stats": {
       "SND": {
@@ -1264,7 +1267,23 @@
       }
     ],
     "live_episodes": 38,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "ETHUSD:DERIV_FLOW",
+        "symbol": "ETHUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "LONG",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 1636.9,
+        "sl_price": 1623.22512,
+        "sl_dist": 13.67488,
+        "tp1_price": 1645.78867,
+        "tp2_price": 1656.72858,
+        "opened_epoch": 1795199777.57697,
+        "tp1_hit": false,
+        "peak_r": 0.023
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795149921.640204,
       "BTCUSD:BREAKOUT": 1795139708.81962,
@@ -1286,7 +1305,7 @@
       "EURUSD:ICT": 1795153503.616428,
       "SOLUSD:DERIV_FLOW": 1795156546.504338,
       "BTCUSD:DERIV_FLOW": 1795155672.427655,
-      "ETHUSD:DERIV_FLOW": 1795156009.453811,
+      "ETHUSD:DERIV_FLOW": 1795199777.57697,
       "EURUSD:BREAKOUT": 1795155304.778202,
       "USDJPY:BREAKOUT": 1795103102.580275,
       "USDJPY:KRONOS": 1795096802.328074,
@@ -1306,5 +1325,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (464 eps, 60.1% WR, -0.02R EMA)",
-  "cycle_count": 20
+  "cycle_count": 1
 }
