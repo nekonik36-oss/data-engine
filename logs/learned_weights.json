@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-20 01:07:38 UTC",
-  "total_episodes": 1492,
+  "updated_utc": "2026-11-20 01:09:02 UTC",
+  "total_episodes": 1493,
   "strategy_stats": {
     "SND": {
-      "trades": 65,
-      "wins": 28,
+      "trades": 66,
+      "wins": 29,
       "losses": 36,
-      "ema_r": 0.159,
-      "multiplier": 1.04
+      "ema_r": 0.24,
+      "multiplier": 1.06
     },
     "ICT": {
       "trades": 350,
@@ -57,7 +57,7 @@
     "TRENDING_DOWN:ICT": 0.921,
     "TRENDING_DOWN:KRONOS": 1.105,
     "RANGING:BREAKOUT": 0.977,
-    "RANGING:SND": 1.079,
+    "RANGING:SND": 1.098,
     "TRENDING_DOWN:BREAKOUT": 1.073,
     "TRENDING_DOWN:SND": 0.994,
     "TRENDING_UP:ICT": 1.05,
@@ -677,23 +677,7 @@
     }
   ],
   "live_episodes": 38,
-  "active_shadow_trades": [
-    {
-      "key": "ETHUSD:SND",
-      "symbol": "ETHUSD",
-      "strategy_name": "SND",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 1757.47,
-      "sl_price": 1750.0611,
-      "sl_dist": 7.4089,
-      "tp1_price": 1762.28578,
-      "tp2_price": 1768.2129,
-      "opened_epoch": 1795136407.180439,
-      "tp1_hit": true,
-      "peak_r": 1.419
-    }
-  ],
+  "active_shadow_trades": [],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1795125908.523525,
     "BTCUSD:BREAKOUT": 1795123210.954357,
@@ -728,7 +712,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1436,
+  "shadow_episodes": 1437,
   "probation_strategies": [
     "SND"
   ]
