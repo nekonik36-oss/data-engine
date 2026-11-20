@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 05:51:36 UTC",
+  "updated_utc": "2026-11-20 06:00:39 UTC",
   "total_episodes": 1530,
   "strategy_stats": {
     "SND": {
@@ -679,21 +679,6 @@
   "live_episodes": 38,
   "active_shadow_trades": [
     {
-      "key": "USDJPY:ICT",
-      "symbol": "USDJPY",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 159.144,
-      "sl_price": 158.99409,
-      "sl_dist": 0.14991,
-      "tp1_price": 159.24144,
-      "tp2_price": 159.36138,
-      "opened_epoch": 1795152600.953121,
-      "tp1_hit": false,
-      "peak_r": 0.24
-    },
-    {
       "key": "EURUSD:ICT",
       "symbol": "EURUSD",
       "strategy_name": "ICT",
@@ -737,6 +722,36 @@
       "opened_epoch": 1795153896.236721,
       "tp1_hit": false,
       "peak_r": 0.011
+    },
+    {
+      "key": "SOLUSD:DERIV_FLOW",
+      "symbol": "SOLUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 72.7,
+      "sl_price": 73.08294,
+      "sl_dist": 0.38294,
+      "tp1_price": 72.45109,
+      "tp2_price": 72.14474,
+      "opened_epoch": 1795154438.050499,
+      "tp1_hit": false,
+      "peak_r": 0.287
+    },
+    {
+      "key": "XAUUSD:ICT",
+      "symbol": "XAUUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 3544.62,
+      "sl_price": 3516.90334,
+      "sl_dist": 27.71666,
+      "tp1_price": 3562.63583,
+      "tp2_price": 3584.80916,
+      "opened_epoch": 1795154438.740801,
+      "tp1_hit": false,
+      "peak_r": 0.047
     }
   ],
   "shadow_cooldowns": {
@@ -758,7 +773,7 @@
     "XAUUSD:BREAKOUT": 1795104314.563999,
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1795153503.616428,
-    "SOLUSD:DERIV_FLOW": 1795147029.612403,
+    "SOLUSD:DERIV_FLOW": 1795154438.050499,
     "BTCUSD:DERIV_FLOW": 1795150472.260847,
     "ETHUSD:DERIV_FLOW": 1795153896.236721,
     "EURUSD:BREAKOUT": 1795075207.222294,
@@ -769,7 +784,7 @@
     "XAUUSD:KRONOS": 1795149900.820118,
     "USDJPY:ICT": 1795152600.953121,
     "EURUSD:TREND_PULLBACK": 1794921309.722345,
-    "XAUUSD:ICT": 1795149900.817041,
+    "XAUUSD:ICT": 1795154438.740801,
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
