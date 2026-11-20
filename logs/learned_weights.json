@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-20 06:45:23 UTC",
-  "total_episodes": 1537,
+  "updated_utc": "2026-11-20 06:49:10 UTC",
+  "total_episodes": 1538,
   "strategy_stats": {
     "SND": {
-      "trades": 71,
+      "trades": 72,
       "wins": 30,
-      "losses": 40,
-      "ema_r": 0.004,
-      "multiplier": 1.001
+      "losses": 41,
+      "ema_r": -0.076,
+      "multiplier": 0.981
     },
     "ICT": {
       "trades": 360,
@@ -57,7 +57,7 @@
     "TRENDING_DOWN:ICT": 0.958,
     "TRENDING_DOWN:KRONOS": 1.1,
     "RANGING:BREAKOUT": 0.996,
-    "RANGING:SND": 1.083,
+    "RANGING:SND": 1.067,
     "TRENDING_DOWN:BREAKOUT": 1.073,
     "TRENDING_DOWN:SND": 0.97,
     "TRENDING_UP:ICT": 1.05,
@@ -722,21 +722,6 @@
       "opened_epoch": 1795156546.513908,
       "tp1_hit": false,
       "peak_r": 0.133
-    },
-    {
-      "key": "ETHUSD:SND",
-      "symbol": "ETHUSD",
-      "strategy_name": "SND",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 1740.43,
-      "sl_price": 1748.11302,
-      "sl_dist": 7.68302,
-      "tp1_price": 1735.43604,
-      "tp2_price": 1729.28962,
-      "opened_epoch": 1795156814.457199,
-      "tp1_hit": false,
-      "peak_r": 0.2
     }
   ],
   "shadow_cooldowns": {
@@ -773,7 +758,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1481,
+  "shadow_episodes": 1482,
   "probation_strategies": [
     "SND"
   ]
