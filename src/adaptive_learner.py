@@ -176,7 +176,7 @@ class AdaptiveLearner:
         loss_streak = int(sym_info.get("loss_streak", 0))
         win_streak = int(sym_info.get("win_streak", 0))
         if loss_streak >= 1:
-            return min(2.5, float(loss_streak) * 1.25)
+            return min(4.0, float(loss_streak) * 1.25)
         if win_streak >= 2:
             return -1.5
         return 0.0

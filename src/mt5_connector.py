@@ -535,6 +535,30 @@ class MT5Connector:
                         f"Capping simultaneous unprotected Crypto risk at 1 trade."
                     )
 
+        # 1b-2. Consecutive Loss Streak Circuit Breaker:
+        # If symbol has >= 3 consecutive losses, enforce a 60-minute circuit breaker lockout to let market structure cycle
+        if self.learner:
+            sym_streaks = (self.learner.state.get("symbol_streaks") or {}).get(signal.symbol.upper(), {})
+            if int(sym_streaks.get("loss_streak", 0)) >= 3:
+                # Find when the last loss closed
+                for past in reversed(list(self.stats.get("history", []))):
+                    if str(past.get("symbol", "")).upper() == signal.symbol.upper():
+                        closed_str = str(past.get("closed_at_utc", ""))
+                        if closed_str:
+                            try:
+                                closed_dt = datetime.strptime(closed_str, "%Y-%m-%d %H:%M:%S UTC").replace(tzinfo=timezone.utc)
+                                elapsed_sec = (datetime.now(timezone.utc) - closed_dt).total_seconds()
+                                if 0 <= elapsed_sec < 3600:
+                                    rem_min = (3600 - elapsed_sec) / 60.0
+                                    return (
+                                        f"[LOSS-STREAK CIRCUIT BREAKER] Skipping {signal.symbol}: "
+                                        f"{sym_streaks.get('loss_streak')} consecutive losses recorded. "
+                                        f"Lockout active for {rem_min:.0f}m more to prevent revenge drift."
+                                    )
+                            except Exception:
+                                pass
+                        break
+
         # 1c. 60m Same-Symbol Re-Entry Cooldown & 45m Cross-Crypto Stop-Loss Cooldown
         checked_same_symbol = False
         for past in reversed(list(self.stats.get("history", []))):
@@ -813,10 +837,12 @@ class MT5Connector:
             except Exception:
                 pass
 
-        # Tier 1 (+0.50R excursion OR >=25m open with >=+0.25R) -> +0.05R BE Shield (un-choked so M5 noise doesn't kill early winners)
+        # Tier 1 (Adaptive BE Shield: use learner's per-symbol be_shield_r instead of hardcoded 0.50R)
+        # Also trigger on >=25m open with >=+0.25R to un-choke so M5 noise doesn't kill early winners
+        adaptive_be_r = self.learner.get_symbol_be_shield_r(symbol) if self.learner else 0.55
         if not already_hit_sl and not trade.get("be_shield_active", False) and not trade.get("tp1_hit", False):
             if (
-                excursion_r >= 0.50
+                excursion_r >= adaptive_be_r
                 or (age_min >= 25.0 and excursion_r >= 0.25)
             ):
                 be_sl = round(entry_price + (0.05 * sl_dist if is_long else -0.05 * sl_dist), 2)
@@ -825,11 +851,13 @@ class MT5Connector:
                 sl_price = be_sl
                 self._save_state()
                 events.append(
-                    f"[24/7 CRYPTO BE SHIELD] Ticket #{ticket} ({symbol}) reached {peak_r:+.2f}R! "
+                    f"[24/7 CRYPTO BE SHIELD] Ticket #{ticket} ({symbol}) reached {peak_r:+.2f}R (threshold {adaptive_be_r:.2f}R)! "
                     f"Locked SL at +0.05R ({be_sl})."
                 )
 
         # 18-Minute Failed-Impulse Shield (cuts risk to -0.55R; strictly monotonic — NEVER widens SL!)
+        # Hard floor: even after time-decay, the effective SL must never exceed -1.0R from entry
+        # (prevents catastrophic drift like ticket #84729146 ETHUSD −2.4R)
         if (
             not already_hit_sl
             and age_min >= 18.0
@@ -841,9 +869,11 @@ class MT5Connector:
         ):
             imp_dist = 0.55 * sl_dist
             if is_long:
-                imp_sl = round(max(sl_price, min(cur_price - 0.05 * sl_dist, entry_price - imp_dist)), 2)
+                hard_floor_sl = entry_price - 1.0 * sl_dist
+                imp_sl = round(max(sl_price, max(hard_floor_sl, min(cur_price - 0.05 * sl_dist, entry_price - imp_dist))), 2)
             else:
-                imp_sl = round(min(sl_price, max(cur_price + 0.05 * sl_dist, entry_price + imp_dist)), 2)
+                hard_ceiling_sl = entry_price + 1.0 * sl_dist
+                imp_sl = round(min(sl_price, min(hard_ceiling_sl, max(cur_price + 0.05 * sl_dist, entry_price + imp_dist))), 2)
             trade["failed_impulse_shield"] = True
             trade["time_decay_applied"] = True
             trade["sl_price"] = imp_sl
@@ -851,7 +881,7 @@ class MT5Connector:
             self._save_state()
             events.append(
                 f"[18M FAILED-IMPULSE SHIELD] Ticket #{ticket} ({symbol}) open {age_min:.0f}m with peak {peak_r:+.2f}R; "
-                f"tightened SL to {imp_sl} (-0.55R cap)."
+                f"tightened SL to {imp_sl} (-0.55R cap, -1.0R hard floor)."
             )
 
         # 30-Minute Fast-Scalp Time-Decay Stagnation Shield (cuts risk to -0.42R; strictly monotonic — NEVER widens SL!)

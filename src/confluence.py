@@ -139,6 +139,10 @@ class ConfluenceEngine:
                 return None
             if not profile.is_crypto and not (6 <= curr.timestamp.hour <= 18):
                 return None
+            # Suppress crypto entries in low-ADX RANGING chop (ADX < 18) where multiple
+            # losses showed peak_favorable_r = 0.0 — price just oscillates without impulse
+            if profile.is_crypto and regime == MarketRegime.RANGING and ind.adx[idx] < 18.0:
+                return None
 
         active_set = TOURNAMENT_PRESETS.get(
             preset_name, TOURNAMENT_PRESETS["HYBRID_REGIME_KRONOS"]
