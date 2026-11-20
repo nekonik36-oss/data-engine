@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 22:04:12 UTC",
+  "updated_utc": "2026-11-20 22:05:44 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 59116.9,
-    "ETHUSD": 1620.3,
-    "SOLUSD": 69.06,
+    "BTCUSD": 59106.04,
+    "ETHUSD": 1620.1,
+    "SOLUSD": 69.1,
     "XAUUSD": 3539.68,
     "EURUSD": 1.0965799999999999,
     "USDJPY": 158.528
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-20 22:03:14 UTC",
+    "updated_utc": "2026-11-20 22:05:06 UTC",
     "total_episodes": 1576,
     "strategy_stats": {
       "SND": {
@@ -1281,7 +1281,7 @@
         "tp2_price": 69.87465,
         "opened_epoch": 1795211116.493877,
         "tp1_hit": false,
-        "peak_r": 0.151
+        "peak_r": 0.218
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1296,7 +1296,7 @@
         "tp2_price": 69.87465,
         "opened_epoch": 1795211133.953437,
         "tp1_hit": false,
-        "peak_r": 0.151
+        "peak_r": 0.218
       },
       {
         "key": "ETHUSD:DERIV_FLOW",
@@ -1327,6 +1327,21 @@
         "opened_epoch": 1795211708.720362,
         "tp1_hit": false,
         "peak_r": 0.041
+      },
+      {
+        "key": "BTCUSD:SND",
+        "symbol": "BTCUSD",
+        "strategy_name": "SND",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 59111.17,
+        "sl_price": 58738.634,
+        "sl_dist": 372.536,
+        "tp1_price": 59353.3184,
+        "tp2_price": 59651.3472,
+        "opened_epoch": 1795212306.542324,
+        "tp1_hit": false,
+        "peak_r": 0.05
       }
     ],
     "shadow_cooldowns": {
@@ -1344,7 +1359,7 @@
       "BTCUSD:TREND_PULLBACK": 1795206916.771149,
       "SOLUSD:TREND_PULLBACK": 1795206920.693105,
       "ETHUSD:SND": 1795209904.063814,
-      "BTCUSD:SND": 1795209902.719954,
+      "BTCUSD:SND": 1795212306.542324,
       "XAUUSD:BREAKOUT": 1795104314.563999,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795153503.616428,
@@ -1370,5 +1385,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (477 eps, 59.5% WR, -0.20R EMA)",
-  "cycle_count": 670
+  "cycle_count": 675
 }
