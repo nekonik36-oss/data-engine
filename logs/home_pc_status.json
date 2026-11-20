@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 20:48:57 UTC",
+  "updated_utc": "2026-11-20 20:50:30 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 58610.83,
-    "ETHUSD": 1608.32,
-    "SOLUSD": 67.79,
-    "XAUUSD": 3521.99,
-    "EURUSD": 1.09624,
-    "USDJPY": 158.518
+    "BTCUSD": 58527.03,
+    "ETHUSD": 1605.26,
+    "SOLUSD": 67.66,
+    "XAUUSD": 3521.56,
+    "EURUSD": 1.09623,
+    "USDJPY": 158.493
   },
   "active_trades": {},
   "bot_stats": {
@@ -1296,7 +1296,7 @@
         "tp2_price": 1611.89299,
         "opened_epoch": 1795206919.246068,
         "tp1_hit": true,
-        "peak_r": 1.221
+        "peak_r": 1.224
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1356,7 +1356,7 @@
         "tp2_price": 1611.89299,
         "opened_epoch": 1795207157.26092,
         "tp1_hit": true,
-        "peak_r": 1.221
+        "peak_r": 1.224
       },
       {
         "key": "SOLUSD:ICT",
@@ -1415,5 +1415,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (471 eps, 59.6% WR, -0.24R EMA)",
-  "cycle_count": 430
+  "cycle_count": 435
 }
