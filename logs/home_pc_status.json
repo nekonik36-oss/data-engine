@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 01:45:47 UTC",
+  "updated_utc": "2026-11-20 01:47:28 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62094.0,
-    "ETHUSD": 1756.64,
-    "SOLUSD": 72.88,
-    "XAUUSD": 3566.18,
-    "EURUSD": 1.09636,
-    "USDJPY": 159.38
+    "BTCUSD": 62070.01,
+    "ETHUSD": 1756.62,
+    "SOLUSD": 72.87,
+    "XAUUSD": 3572.54,
+    "EURUSD": 1.09639,
+    "USDJPY": 159.347
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-20 01:45:20 UTC",
+    "updated_utc": "2026-11-20 01:46:47 UTC",
     "total_episodes": 1497,
     "strategy_stats": {
       "SND": {
@@ -1312,6 +1312,21 @@
         "opened_epoch": 1795138312.905931,
         "tp1_hit": true,
         "peak_r": 0.747
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 62032.01,
+        "sl_price": 62299.35701,
+        "sl_dist": 267.34701,
+        "tp1_price": 61858.23444,
+        "tp2_price": 61644.35684,
+        "opened_epoch": 1795139207.69391,
+        "tp1_hit": false,
+        "peak_r": 0.008
       }
     ],
     "shadow_cooldowns": {
@@ -1334,7 +1349,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795089914.22463,
       "SOLUSD:DERIV_FLOW": 1795137512.694654,
-      "BTCUSD:DERIV_FLOW": 1795137106.303407,
+      "BTCUSD:DERIV_FLOW": 1795139207.69391,
       "ETHUSD:DERIV_FLOW": 1795138312.905931,
       "EURUSD:BREAKOUT": 1795075207.222294,
       "USDJPY:BREAKOUT": 1795103102.580275,
@@ -1355,5 +1370,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (444 eps, 60.3% WR, +0.21R EMA)",
-  "cycle_count": 6560
+  "cycle_count": 6565
 }
