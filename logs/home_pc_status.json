@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 02:23:59 UTC",
+  "updated_utc": "2026-11-20 02:25:24 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61574.74,
-    "ETHUSD": 1733.63,
-    "SOLUSD": 71.95,
+    "BTCUSD": 61543.08,
+    "ETHUSD": 1733.26,
+    "SOLUSD": 71.9,
     "XAUUSD": 3533.4,
-    "EURUSD": 1.09656,
-    "USDJPY": 159.17
+    "EURUSD": 1.09664,
+    "USDJPY": 159.189
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,8 +589,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-20 02:21:56 UTC",
-    "total_episodes": 1505,
+    "updated_utc": "2026-11-20 02:25:21 UTC",
+    "total_episodes": 1507,
     "strategy_stats": {
       "SND": {
         "trades": 67,
@@ -607,11 +607,11 @@
         "multiplier": 1.072
       },
       "BREAKOUT": {
-        "trades": 269,
+        "trades": 270,
         "wins": 148,
-        "losses": 119,
-        "ema_r": 0.006,
-        "multiplier": 1.001
+        "losses": 120,
+        "ema_r": -0.004,
+        "multiplier": 0.999
       },
       "TREND_PULLBACK": {
         "trades": 161,
@@ -621,11 +621,11 @@
         "multiplier": 1.075
       },
       "KRONOS": {
-        "trades": 266,
+        "trades": 267,
         "wins": 140,
-        "losses": 121,
-        "ema_r": 0.182,
-        "multiplier": 1.046
+        "losses": 122,
+        "ema_r": 0.14,
+        "multiplier": 1.035
       },
       "DERIV_FLOW": {
         "trades": 449,
@@ -637,7 +637,7 @@
     },
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.792,
-      "RANGING:KRONOS": 0.671,
+      "RANGING:KRONOS": 0.666,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.824,
       "RANGING:TREND_PULLBACK": 1.123,
       "TRENDING_DOWN:TREND_PULLBACK": 1.153,
@@ -646,7 +646,7 @@
       "SESSION_SWEEP_WINDOW:KRONOS": 0.743,
       "TRENDING_DOWN:ICT": 0.921,
       "TRENDING_DOWN:KRONOS": 1.105,
-      "RANGING:BREAKOUT": 0.984,
+      "RANGING:BREAKOUT": 0.982,
       "RANGING:SND": 1.089,
       "TRENDING_DOWN:BREAKOUT": 1.073,
       "TRENDING_DOWN:SND": 0.994,
@@ -1269,51 +1269,6 @@
     "live_episodes": 38,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:BREAKOUT",
-        "symbol": "BTCUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 61503.63,
-        "sl_price": 61828.09964,
-        "sl_dist": 324.46964,
-        "tp1_price": 61292.72473,
-        "tp2_price": 61033.14902,
-        "opened_epoch": 1795139708.81962,
-        "tp1_hit": false,
-        "peak_r": 0.597
-      },
-      {
-        "key": "ETHUSD:BREAKOUT",
-        "symbol": "ETHUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 1733.0,
-        "sl_price": 1744.36657,
-        "sl_dist": 11.36657,
-        "tp1_price": 1725.61173,
-        "tp2_price": 1716.51848,
-        "opened_epoch": 1795139710.504625,
-        "tp1_hit": false,
-        "peak_r": 0.396
-      },
-      {
-        "key": "SOLUSD:KRONOS",
-        "symbol": "SOLUSD",
-        "strategy_name": "KRONOS",
-        "direction": "LONG",
-        "regime": "RANGING",
-        "entry_price": 72.06,
-        "sl_price": 71.59126,
-        "sl_dist": 0.46874,
-        "tp1_price": 72.36468,
-        "tp2_price": 72.73967,
-        "opened_epoch": 1795139712.349069,
-        "tp1_hit": false,
-        "peak_r": 0.555
-      },
-      {
         "key": "BTCUSD:DERIV_FLOW",
         "symbol": "BTCUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1363,12 +1318,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1449,
+    "shadow_episodes": 1451,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (449 eps, 60.8% WR, +0.41R EMA)",
-  "cycle_count": 6675
+  "cycle_count": 6679
 }
