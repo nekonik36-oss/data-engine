@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 01:09:03 UTC",
+  "updated_utc": "2026-11-20 01:10:41 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62539.27,
-    "ETHUSD": 1768.54,
-    "SOLUSD": 73.49,
-    "XAUUSD": 3606.63,
-    "EURUSD": 1.09722,
-    "USDJPY": 159.36
+    "BTCUSD": 62348.01,
+    "ETHUSD": 1764.75,
+    "SOLUSD": 73.24,
+    "XAUUSD": 3602.26,
+    "EURUSD": 1.09704,
+    "USDJPY": 159.333
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-20 01:09:02 UTC",
+    "updated_utc": "2026-11-20 01:10:16 UTC",
     "total_episodes": 1493,
     "strategy_stats": {
       "SND": {
@@ -1267,7 +1267,23 @@
       }
     ],
     "live_episodes": 38,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "SOLUSD:SND",
+        "symbol": "SOLUSD",
+        "strategy_name": "SND",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 73.34,
+        "sl_price": 72.95037,
+        "sl_dist": 0.38963,
+        "tp1_price": 73.59326,
+        "tp2_price": 73.90497,
+        "opened_epoch": 1795137016.938162,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795125908.523525,
       "BTCUSD:BREAKOUT": 1795123210.954357,
@@ -1277,7 +1293,7 @@
       "SOLUSD:BREAKOUT": 1795131910.223221,
       "SOLUSD:KRONOS": 1795124117.59687,
       "BTCUSD:ICT": 1795125906.982712,
-      "SOLUSD:SND": 1795114003.552525,
+      "SOLUSD:SND": 1795137016.938162,
       "SOLUSD:ICT": 1795132208.985922,
       "ETHUSD:TREND_PULLBACK": 1795134617.424865,
       "BTCUSD:TREND_PULLBACK": 1795122324.286219,
@@ -1309,5 +1325,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (443 eps, 60.2% WR, +0.12R EMA)",
-  "cycle_count": 6456
+  "cycle_count": 6460
 }
