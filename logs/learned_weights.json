@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 05:30:00 UTC",
+  "updated_utc": "2026-11-20 05:45:03 UTC",
   "total_episodes": 1529,
   "strategy_stats": {
     "SND": {
@@ -707,6 +707,21 @@
       "opened_epoch": 1795152600.953121,
       "tp1_hit": false,
       "peak_r": 0.0
+    },
+    {
+      "key": "EURUSD:ICT",
+      "symbol": "EURUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "SESSION_SWEEP_WINDOW",
+      "entry_price": 1.09756,
+      "sl_price": 1.09809,
+      "sl_dist": 0.00053,
+      "tp1_price": 1.09722,
+      "tp2_price": 1.0968,
+      "opened_epoch": 1795153503.616428,
+      "tp1_hit": false,
+      "peak_r": 0.113
     }
   ],
   "shadow_cooldowns": {
@@ -727,7 +742,7 @@
     "BTCUSD:SND": 1795149919.990243,
     "XAUUSD:BREAKOUT": 1795104314.563999,
     "XAUUSD:SND": 1794811517.619458,
-    "EURUSD:ICT": 1795089914.22463,
+    "EURUSD:ICT": 1795153503.616428,
     "SOLUSD:DERIV_FLOW": 1795147029.612403,
     "BTCUSD:DERIV_FLOW": 1795150472.260847,
     "ETHUSD:DERIV_FLOW": 1795151788.13846,
