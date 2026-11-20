@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 00:25:07 UTC",
+  "updated_utc": "2026-11-20 00:27:08 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 62182.01,
-    "ETHUSD": 1759.43,
-    "SOLUSD": 73.16,
-    "XAUUSD": 3618.58,
-    "EURUSD": 1.09727,
-    "USDJPY": 159.634
+    "BTCUSD": 62114.4,
+    "ETHUSD": 1756.78,
+    "SOLUSD": 73.02,
+    "XAUUSD": 3616.16,
+    "EURUSD": 1.09726,
+    "USDJPY": 159.601
   },
   "active_trades": {},
   "bot_stats": {
@@ -1280,8 +1280,8 @@
         "tp1_price": 73.02407,
         "tp2_price": 72.7337,
         "opened_epoch": 1795133306.616158,
-        "tp1_hit": false,
-        "peak_r": 0.413
+        "tp1_hit": true,
+        "peak_r": 0.661
       },
       {
         "key": "ETHUSD:DERIV_FLOW",
@@ -1296,7 +1296,7 @@
         "tp2_price": 1747.49112,
         "opened_epoch": 1795133635.354685,
         "tp1_hit": false,
-        "peak_r": 0.049
+        "peak_r": 0.276
       }
     ],
     "shadow_cooldowns": {
@@ -1340,5 +1340,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (439 eps, 60.1% WR, +0.09R EMA)",
-  "cycle_count": 6345
+  "cycle_count": 6350
 }
