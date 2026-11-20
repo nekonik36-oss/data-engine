@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 21:22:51 UTC",
+  "updated_utc": "2026-11-20 21:25:05 UTC",
   "total_episodes": 1570,
   "strategy_stats": {
     "SND": {
@@ -677,7 +677,53 @@
     }
   ],
   "live_episodes": 38,
-  "active_shadow_trades": [],
+  "active_shadow_trades": [
+    {
+      "key": "BTCUSD:SND",
+      "symbol": "BTCUSD",
+      "strategy_name": "SND",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 58639.83,
+      "sl_price": 58256.72205,
+      "sl_dist": 383.10795,
+      "tp1_price": 58888.85017,
+      "tp2_price": 59195.33653,
+      "opened_epoch": 1795209902.719954,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "ETHUSD:SND",
+      "symbol": "ETHUSD",
+      "strategy_name": "SND",
+      "direction": "LONG",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 1609.67,
+      "sl_price": 1594.78313,
+      "sl_dist": 14.88687,
+      "tp1_price": 1619.34646,
+      "tp2_price": 1631.25596,
+      "opened_epoch": 1795209904.063814,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    },
+    {
+      "key": "SOLUSD:ICT",
+      "symbol": "SOLUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "TRENDING_DOWN",
+      "entry_price": 67.9,
+      "sl_price": 67.29066,
+      "sl_dist": 0.60934,
+      "tp1_price": 68.29607,
+      "tp2_price": 68.78354,
+      "opened_epoch": 1795209905.502687,
+      "tp1_hit": false,
+      "peak_r": 0.0
+    }
+  ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1795203614.188058,
     "BTCUSD:BREAKOUT": 1795200301.359186,
@@ -688,12 +734,12 @@
     "SOLUSD:KRONOS": 1795206920.69611,
     "BTCUSD:ICT": 1795203003.274752,
     "SOLUSD:SND": 1795157419.311009,
-    "SOLUSD:ICT": 1795207215.644286,
+    "SOLUSD:ICT": 1795209905.502687,
     "ETHUSD:TREND_PULLBACK": 1795206919.244067,
     "BTCUSD:TREND_PULLBACK": 1795206916.771149,
     "SOLUSD:TREND_PULLBACK": 1795206920.693105,
-    "ETHUSD:SND": 1795156814.457199,
-    "BTCUSD:SND": 1795201520.404593,
+    "ETHUSD:SND": 1795209904.063814,
+    "BTCUSD:SND": 1795209902.719954,
     "XAUUSD:BREAKOUT": 1795104314.563999,
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1795153503.616428,
