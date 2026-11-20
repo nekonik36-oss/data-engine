@@ -720,8 +720,8 @@
       "tp1_price": 1740.38827,
       "tp2_price": 1749.48152,
       "opened_epoch": 1795139710.506625,
-      "tp1_hit": false,
-      "peak_r": 0.144
+      "tp1_hit": true,
+      "peak_r": 0.656
     },
     {
       "key": "SOLUSD:BREAKOUT",
@@ -751,7 +751,7 @@
       "tp2_price": 72.73967,
       "opened_epoch": 1795139712.349069,
       "tp1_hit": false,
-      "peak_r": 0.043
+      "peak_r": 0.405
     }
   ],
   "shadow_cooldowns": {
