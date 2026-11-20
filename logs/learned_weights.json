@@ -690,8 +690,8 @@
       "tp1_price": 58888.85017,
       "tp2_price": 59195.33653,
       "opened_epoch": 1795209902.719954,
-      "tp1_hit": false,
-      "peak_r": 0.646
+      "tp1_hit": true,
+      "peak_r": 0.688
     },
     {
       "key": "ETHUSD:SND",
@@ -706,7 +706,7 @@
       "tp2_price": 1631.25596,
       "opened_epoch": 1795209904.063814,
       "tp1_hit": true,
-      "peak_r": 0.737
+      "peak_r": 0.81
     },
     {
       "key": "SOLUSD:ICT",
@@ -721,7 +721,7 @@
       "tp2_price": 68.78354,
       "opened_epoch": 1795209905.502687,
       "tp1_hit": true,
-      "peak_r": 0.952
+      "peak_r": 1.001
     },
     {
       "key": "BTCUSD:DERIV_FLOW",
