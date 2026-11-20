@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-20 06:30:54 UTC",
-  "total_episodes": 1534,
+  "updated_utc": "2026-11-20 06:35:04 UTC",
+  "total_episodes": 1535,
   "strategy_stats": {
     "SND": {
       "trades": 71,
@@ -10,11 +10,11 @@
       "multiplier": 1.001
     },
     "ICT": {
-      "trades": 359,
+      "trades": 360,
       "wins": 187,
-      "losses": 170,
-      "ema_r": 0.288,
-      "multiplier": 1.072
+      "losses": 171,
+      "ema_r": 0.239,
+      "multiplier": 1.06
     },
     "BREAKOUT": {
       "trades": 272,
@@ -54,7 +54,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.93,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.01,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.743,
-    "TRENDING_DOWN:ICT": 0.963,
+    "TRENDING_DOWN:ICT": 0.958,
     "TRENDING_DOWN:KRONOS": 1.1,
     "RANGING:BREAKOUT": 0.996,
     "RANGING:SND": 1.083,
@@ -679,21 +679,6 @@
   "live_episodes": 38,
   "active_shadow_trades": [
     {
-      "key": "USDJPY:ICT",
-      "symbol": "USDJPY",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 159.153,
-      "sl_price": 159.00522,
-      "sl_dist": 0.14778,
-      "tp1_price": 159.24906,
-      "tp2_price": 159.36729,
-      "opened_epoch": 1795154702.372919,
-      "tp1_hit": false,
-      "peak_r": 0.582
-    },
-    {
       "key": "EURUSD:BREAKOUT",
       "symbol": "EURUSD",
       "strategy_name": "BREAKOUT",
@@ -706,7 +691,7 @@
       "tp2_price": 1.09925,
       "opened_epoch": 1795155304.778202,
       "tp1_hit": false,
-      "peak_r": 0.328
+      "peak_r": 0.5
     },
     {
       "key": "BTCUSD:DERIV_FLOW",
@@ -773,7 +758,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1478,
+  "shadow_episodes": 1479,
   "probation_strategies": [
     "SND"
   ]
