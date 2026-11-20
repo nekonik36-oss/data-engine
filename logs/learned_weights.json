@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-20 23:51:28 UTC",
-  "total_episodes": 1592,
+  "updated_utc": "2026-11-20 23:55:31 UTC",
+  "total_episodes": 1593,
   "strategy_stats": {
     "SND": {
       "trades": 77,
@@ -38,11 +38,11 @@
       "multiplier": 1.063
     },
     "DERIV_FLOW": {
-      "trades": 485,
+      "trades": 486,
       "wins": 289,
-      "losses": 193,
-      "ema_r": 0.046,
-      "multiplier": 1.012
+      "losses": 194,
+      "ema_r": -0.038,
+      "multiplier": 0.991
     }
   },
   "regime_strategy_multipliers": {
@@ -65,7 +65,7 @@
     "TRENDING_UP:KRONOS": 1.028,
     "TRENDING_UP:BREAKOUT": 0.942,
     "TRENDING_UP:TREND_PULLBACK": 0.889,
-    "RANGING:DERIV_FLOW": 1.29,
+    "RANGING:DERIV_FLOW": 1.274,
     "TRENDING_DOWN:DERIV_FLOW": 1.3,
     "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.054,
     "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -679,21 +679,6 @@
   "live_episodes": 38,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 69.28,
-      "sl_price": 68.88701,
-      "sl_dist": 0.39299,
-      "tp1_price": 69.53544,
-      "tp2_price": 69.84983,
-      "opened_epoch": 1795217468.570206,
-      "tp1_hit": false,
-      "peak_r": 0.229
-    },
-    {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
       "strategy_name": "DERIV_FLOW",
@@ -743,7 +728,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1536,
+  "shadow_episodes": 1537,
   "probation_strategies": [
     "SND"
   ]
