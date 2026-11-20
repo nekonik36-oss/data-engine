@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-20 20:42:43 UTC",
-  "total_episodes": 1559,
+  "updated_utc": "2026-11-20 20:47:03 UTC",
+  "total_episodes": 1560,
   "strategy_stats": {
     "SND": {
       "trades": 74,
@@ -24,11 +24,11 @@
       "multiplier": 1.057
     },
     "TREND_PULLBACK": {
-      "trades": 164,
+      "trades": 165,
       "wins": 81,
-      "losses": 78,
-      "ema_r": 0.049,
-      "multiplier": 1.012
+      "losses": 79,
+      "ema_r": -0.035,
+      "multiplier": 0.991
     },
     "KRONOS": {
       "trades": 271,
@@ -50,7 +50,7 @@
     "RANGING:KRONOS": 0.666,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.824,
     "RANGING:TREND_PULLBACK": 1.107,
-    "TRENDING_DOWN:TREND_PULLBACK": 1.129,
+    "TRENDING_DOWN:TREND_PULLBACK": 1.113,
     "SESSION_SWEEP_WINDOW:ICT": 0.93,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.018,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.743,
@@ -694,21 +694,6 @@
       "peak_r": 1.113
     },
     {
-      "key": "ETHUSD:TREND_PULLBACK",
-      "symbol": "ETHUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1589.23,
-      "sl_price": 1604.85965,
-      "sl_dist": 15.62965,
-      "tp1_price": 1579.07073,
-      "tp2_price": 1566.56701,
-      "opened_epoch": 1795206919.244067,
-      "tp1_hit": false,
-      "peak_r": 0.138
-    },
-    {
       "key": "ETHUSD:KRONOS",
       "symbol": "ETHUSD",
       "strategy_name": "KRONOS",
@@ -721,7 +706,7 @@
       "tp2_price": 1611.89299,
       "opened_epoch": 1795206919.246068,
       "tp1_hit": true,
-      "peak_r": 0.885
+      "peak_r": 1.006
     },
     {
       "key": "SOLUSD:DERIV_FLOW",
@@ -781,7 +766,7 @@
       "tp2_price": 1611.89299,
       "opened_epoch": 1795207157.26092,
       "tp1_hit": true,
-      "peak_r": 0.885
+      "peak_r": 1.006
     },
     {
       "key": "SOLUSD:ICT",
@@ -833,7 +818,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1503,
+  "shadow_episodes": 1504,
   "probation_strategies": [
     "SND"
   ]
