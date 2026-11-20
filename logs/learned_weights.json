@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-20 22:20:51 UTC",
+  "updated_utc": "2026-11-20 22:25:13 UTC",
   "total_episodes": 1580,
   "strategy_stats": {
     "SND": {
@@ -721,7 +721,52 @@
       "tp2_price": 68.57058,
       "opened_epoch": 1795213251.217608,
       "tp1_hit": false,
-      "peak_r": 0.352
+      "peak_r": 0.477
+    },
+    {
+      "key": "ETHUSD:DERIV_FLOW",
+      "symbol": "ETHUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 1626.54,
+      "sl_price": 1638.4369,
+      "sl_dist": 11.8969,
+      "tp1_price": 1618.80702,
+      "tp2_price": 1609.2895,
+      "opened_epoch": 1795213493.852167,
+      "tp1_hit": false,
+      "peak_r": 0.483
+    },
+    {
+      "key": "SOLUSD:ICT",
+      "symbol": "SOLUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 69.08,
+      "sl_price": 69.55898,
+      "sl_dist": 0.47898,
+      "tp1_price": 68.76866,
+      "tp2_price": 68.38548,
+      "opened_epoch": 1795213513.032838,
+      "tp1_hit": false,
+      "peak_r": 0.084
+    },
+    {
+      "key": "SOLUSD:KRONOS",
+      "symbol": "SOLUSD",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 69.08,
+      "sl_price": 69.55898,
+      "sl_dist": 0.47898,
+      "tp1_price": 68.76866,
+      "tp2_price": 68.38548,
+      "opened_epoch": 1795213513.035839,
+      "tp1_hit": false,
+      "peak_r": 0.084
     }
   ],
   "shadow_cooldowns": {
@@ -731,10 +776,10 @@
     "ETHUSD:BREAKOUT": 1795211114.143987,
     "ETHUSD:KRONOS": 1795206919.246068,
     "SOLUSD:BREAKOUT": 1795211116.493877,
-    "SOLUSD:KRONOS": 1795206920.69611,
+    "SOLUSD:KRONOS": 1795213513.035839,
     "BTCUSD:ICT": 1795211708.720362,
     "SOLUSD:SND": 1795157419.311009,
-    "SOLUSD:ICT": 1795209905.502687,
+    "SOLUSD:ICT": 1795213513.032838,
     "ETHUSD:TREND_PULLBACK": 1795206919.244067,
     "BTCUSD:TREND_PULLBACK": 1795206916.771149,
     "SOLUSD:TREND_PULLBACK": 1795206920.693105,
@@ -745,7 +790,7 @@
     "EURUSD:ICT": 1795153503.616428,
     "SOLUSD:DERIV_FLOW": 1795213251.217608,
     "BTCUSD:DERIV_FLOW": 1795212363.641686,
-    "ETHUSD:DERIV_FLOW": 1795211374.032499,
+    "ETHUSD:DERIV_FLOW": 1795213493.852167,
     "EURUSD:BREAKOUT": 1795155304.778202,
     "USDJPY:BREAKOUT": 1795103102.580275,
     "USDJPY:KRONOS": 1795096802.328074,
