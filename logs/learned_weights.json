@@ -1,20 +1,20 @@
 {
-  "updated_utc": "2026-11-20 05:15:02 UTC",
-  "total_episodes": 1526,
+  "updated_utc": "2026-11-20 05:15:26 UTC",
+  "total_episodes": 1528,
   "strategy_stats": {
     "SND": {
-      "trades": 70,
-      "wins": 29,
+      "trades": 71,
+      "wins": 30,
       "losses": 40,
-      "ema_r": -0.012,
-      "multiplier": 0.997
+      "ema_r": 0.004,
+      "multiplier": 1.001
     },
     "ICT": {
-      "trades": 356,
-      "wins": 185,
+      "trades": 357,
+      "wins": 186,
       "losses": 169,
-      "ema_r": 0.363,
-      "multiplier": 1.091
+      "ema_r": 0.345,
+      "multiplier": 1.086
     },
     "BREAKOUT": {
       "trades": 271,
@@ -54,10 +54,10 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.939,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.01,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.743,
-    "TRENDING_DOWN:ICT": 0.954,
+    "TRENDING_DOWN:ICT": 0.956,
     "TRENDING_DOWN:KRONOS": 1.1,
     "RANGING:BREAKOUT": 0.989,
-    "RANGING:SND": 1.08,
+    "RANGING:SND": 1.083,
     "TRENDING_DOWN:BREAKOUT": 1.073,
     "TRENDING_DOWN:SND": 0.97,
     "TRENDING_UP:ICT": 1.05,
@@ -679,36 +679,6 @@
   "live_episodes": 38,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:SND",
-      "symbol": "BTCUSD",
-      "strategy_name": "SND",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 61539.76,
-      "sl_price": 61267.69655,
-      "sl_dist": 272.06345,
-      "tp1_price": 61716.60124,
-      "tp2_price": 61934.25201,
-      "opened_epoch": 1795149919.990243,
-      "tp1_hit": false,
-      "peak_r": 0.464
-    },
-    {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1724.42,
-      "sl_price": 1714.51099,
-      "sl_dist": 9.90901,
-      "tp1_price": 1730.86086,
-      "tp2_price": 1738.78807,
-      "opened_epoch": 1795149921.640204,
-      "tp1_hit": false,
-      "peak_r": 0.609
-    },
-    {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
       "strategy_name": "DERIV_FLOW",
@@ -758,7 +728,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1470,
+  "shadow_episodes": 1472,
   "probation_strategies": [
     "SND"
   ]
