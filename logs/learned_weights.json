@@ -690,8 +690,8 @@
       "tp1_price": 68.4469,
       "tp2_price": 68.24616,
       "opened_epoch": 1795228512.10617,
-      "tp1_hit": false,
-      "peak_r": 0.598
+      "tp1_hit": true,
+      "peak_r": 0.877
     },
     {
       "key": "SOLUSD:KRONOS",
@@ -705,8 +705,8 @@
       "tp1_price": 68.40949,
       "tp2_price": 68.21195,
       "opened_epoch": 1795228809.177325,
-      "tp1_hit": false,
-      "peak_r": 0.445
+      "tp1_hit": true,
+      "peak_r": 0.729
     },
     {
       "key": "SOLUSD:ICT",
@@ -736,7 +736,7 @@
       "tp2_price": 68.33337,
       "opened_epoch": 1795229737.111837,
       "tp1_hit": true,
-      "peak_r": 0.935
+      "peak_r": 1.22
     }
   ],
   "shadow_cooldowns": {
