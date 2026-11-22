@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 13:16:36 UTC",
+  "updated_utc": "2026-11-22 13:18:07 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,12 +16,12 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9514.06,
+  "live_equity": 9512.72,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1705.11,
-    "SOLUSD": 70.19
+    "ETHUSD": 1705.64,
+    "SOLUSD": 70.25
   },
   "active_trades": {
     "1092657409": {
@@ -616,7 +616,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 13:15:53 UTC",
+    "updated_utc": "2026-11-22 13:17:32 UTC",
     "total_episodes": 1648,
     "strategy_stats": {
       "SND": {
@@ -1289,21 +1289,6 @@
     "live_episodes": 39,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:DERIV_FLOW",
-        "symbol": "BTCUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 60635.43,
-        "sl_price": 60982.46382,
-        "sl_dist": 347.03382,
-        "tp1_price": 60409.85802,
-        "tp2_price": 60132.23096,
-        "opened_epoch": 1795350743.234237,
-        "tp1_hit": false,
-        "peak_r": 0.367
-      },
-      {
         "key": "ETHUSD:TREND_PULLBACK",
         "symbol": "ETHUSD",
         "strategy_name": "TREND_PULLBACK",
@@ -1358,7 +1343,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 72h 13m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 72h 11m)",
   "deriv_flow_status": "Graduated Live (509 eps, 59.3% WR, -0.24R EMA)",
-  "cycle_count": 1110
+  "cycle_count": 1115
 }
