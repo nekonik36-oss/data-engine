@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-22 15:45:09 UTC",
-  "total_episodes": 1652,
+  "updated_utc": "2026-11-22 15:49:08 UTC",
+  "total_episodes": 1653,
   "strategy_stats": {
     "SND": {
       "trades": 78,
@@ -10,11 +10,11 @@
       "multiplier": 1.027
     },
     "ICT": {
-      "trades": 379,
+      "trades": 380,
       "wins": 193,
-      "losses": 184,
-      "ema_r": -0.177,
-      "multiplier": 0.956
+      "losses": 185,
+      "ema_r": -0.243,
+      "multiplier": 0.939
     },
     "BREAKOUT": {
       "trades": 290,
@@ -60,7 +60,7 @@
     "RANGING:SND": 1.075,
     "TRENDING_DOWN:BREAKOUT": 1.118,
     "TRENDING_DOWN:SND": 0.996,
-    "TRENDING_UP:ICT": 1.025,
+    "TRENDING_UP:ICT": 1.009,
     "SESSION_SWEEP_WINDOW:SND": 0.836,
     "TRENDING_UP:KRONOS": 0.98,
     "TRENDING_UP:BREAKOUT": 0.959,
@@ -677,7 +677,7 @@
       "tp2_price": 1729.83035,
       "opened_epoch": 1795361410.516891,
       "tp1_hit": false,
-      "peak_r": 0.217
+      "peak_r": 0.541
     },
     {
       "key": "ETHUSD:KRONOS",
@@ -693,21 +693,6 @@
       "opened_epoch": 1795361410.517898,
       "tp1_hit": false,
       "peak_r": 0.469
-    },
-    {
-      "key": "ETHUSD:ICT",
-      "symbol": "ETHUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 1716.31,
-      "sl_price": 1722.65273,
-      "sl_dist": 6.34273,
-      "tp1_price": 1712.18722,
-      "tp2_price": 1707.11303,
-      "opened_epoch": 1795362309.382407,
-      "tp1_hit": false,
-      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
@@ -744,7 +729,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1594,
+  "shadow_episodes": 1595,
   "probation_strategies": [
     "SND"
   ]
