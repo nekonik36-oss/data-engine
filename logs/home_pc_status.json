@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 12:38:45 UTC",
+  "updated_utc": "2026-11-22 12:40:23 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,38 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60513.13,
-    "ETHUSD": 1699.77,
-    "SOLUSD": 70.02
+    "BTCUSD": 60604.6,
+    "ETHUSD": 1703.37,
+    "SOLUSD": 70.15
   },
-  "active_trades": {},
+  "active_trades": {
+    "1092657409": {
+      "ticket": 1092657409,
+      "symbol": "BTCUSD",
+      "broker_symbol": "BTCUSD",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 60589.9,
+      "sl_price": 61371.07,
+      "initial_sl_price": 61371.07,
+      "tp1_price": 60026.93,
+      "tp2_price": 59393.49,
+      "volume": 0.05,
+      "initial_volume": 0.05,
+      "risk_usd": 39.26,
+      "confluence_score": 89.0,
+      "regime": "RANGING",
+      "agreeing_strategies": [
+        "ICT",
+        "KRONOS",
+        "DERIV_FLOW"
+      ],
+      "opened_at_utc": "2026-11-22 12:40:17 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0,
+      "scalp_upgraded": true
+    }
+  },
   "bot_stats": {
     "total_closed": 57,
     "wins": 18,
@@ -1271,7 +1298,7 @@
         "tp2_price": 60136.75744,
         "opened_epoch": 1795350303.954398,
         "tp1_hit": false,
-        "peak_r": 0.352
+        "peak_r": 0.367
       },
       {
         "key": "ETHUSD:ICT",
@@ -1316,7 +1343,7 @@
         "tp2_price": 60132.23096,
         "opened_epoch": 1795350743.234237,
         "tp1_hit": false,
-        "peak_r": 0.352
+        "peak_r": 0.367
       }
     ],
     "shadow_cooldowns": {
@@ -1358,7 +1385,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 72h 51m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 72h 49m)",
   "deriv_flow_status": "Graduated Live (508 eps, 59.2% WR, -0.28R EMA)",
-  "cycle_count": 985
+  "cycle_count": 990
 }
