@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 17:37:57 UTC",
+  "updated_utc": "2026-11-22 17:55:26 UTC",
   "total_episodes": 1668,
   "strategy_stats": {
     "SND": {
@@ -664,21 +664,6 @@
   ],
   "live_episodes": 40,
   "active_shadow_trades": [
-    {
-      "key": "BTCUSD:SND",
-      "symbol": "BTCUSD",
-      "strategy_name": "SND",
-      "direction": "LONG",
-      "regime": "RANGING",
-      "entry_price": 60883.26,
-      "sl_price": 60670.37703,
-      "sl_dist": 212.88297,
-      "tp1_price": 61021.63393,
-      "tp2_price": 61191.94031,
-      "opened_epoch": 1795368316.707462,
-      "tp1_hit": false,
-      "peak_r": 0.338
-    },
     {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",

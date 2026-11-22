@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 17:54:28 UTC",
+  "updated_utc": "2026-11-22 17:56:04 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60877.35,
-    "ETHUSD": 1716.64,
-    "SOLUSD": 70.49
+    "BTCUSD": 60879.39,
+    "ETHUSD": 1716.55,
+    "SOLUSD": 70.43
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,7 +586,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 17:37:57 UTC",
+    "updated_utc": "2026-11-22 17:55:26 UTC",
     "total_episodes": 1668,
     "strategy_stats": {
       "SND": {
@@ -1252,21 +1252,6 @@
     "live_episodes": 40,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:SND",
-        "symbol": "BTCUSD",
-        "strategy_name": "SND",
-        "direction": "LONG",
-        "regime": "RANGING",
-        "entry_price": 60883.26,
-        "sl_price": 60670.37703,
-        "sl_dist": 212.88297,
-        "tp1_price": 61021.63393,
-        "tp2_price": 61191.94031,
-        "opened_epoch": 1795368316.707462,
-        "tp1_hit": false,
-        "peak_r": 0.338
-      },
-      {
         "key": "BTCUSD:DERIV_FLOW",
         "symbol": "BTCUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1321,7 +1306,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 67h 35m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 67h 33m)",
   "deriv_flow_status": "Graduated Live (515 eps, 59.0% WR, -0.21R EMA)",
-  "cycle_count": 480
+  "cycle_count": 485
 }
