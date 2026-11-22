@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 22:40:29 UTC",
+  "updated_utc": "2026-11-22 22:42:02 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60854.01,
-    "ETHUSD": 1714.14,
-    "SOLUSD": 70.08,
-    "EURUSD": 1.09706,
-    "USDJPY": 158.499
+    "BTCUSD": 60853.13,
+    "ETHUSD": 1713.65,
+    "SOLUSD": 70.1,
+    "EURUSD": 1.09708,
+    "USDJPY": 158.495
   },
   "active_trades": {},
   "bot_stats": {
@@ -588,7 +588,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 22:40:09 UTC",
+    "updated_utc": "2026-11-22 22:40:49 UTC",
     "total_episodes": 1698,
     "strategy_stats": {
       "SND": {
@@ -1267,6 +1267,21 @@
         "opened_epoch": 1795387209.835717,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 70.13,
+        "sl_price": 70.3402,
+        "sl_dist": 0.2102,
+        "tp1_price": 69.99337,
+        "tp2_price": 69.82521,
+        "opened_epoch": 1795387249.343004,
+        "tp1_hit": false,
+        "peak_r": 0.333
       }
     ],
     "shadow_cooldowns": {
@@ -1288,7 +1303,7 @@
       "XAUUSD:BREAKOUT": 1795104314.563999,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795153503.616428,
-      "SOLUSD:DERIV_FLOW": 1795385131.888873,
+      "SOLUSD:DERIV_FLOW": 1795387249.343004,
       "BTCUSD:DERIV_FLOW": 1795385517.959896,
       "ETHUSD:DERIV_FLOW": 1795277362.983058,
       "EURUSD:BREAKOUT": 1795155304.778202,
@@ -1308,7 +1323,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 62h 49m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 62h 48m)",
   "deriv_flow_status": "Graduated Live (525 eps, 59.2% WR, +0.07R EMA)",
-  "cycle_count": 820
+  "cycle_count": 825
 }
