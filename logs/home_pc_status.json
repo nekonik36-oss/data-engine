@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 19:34:11 UTC",
+  "updated_utc": "2026-11-22 19:35:45 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60729.87,
-    "ETHUSD": 1714.15,
-    "SOLUSD": 70.23
+    "BTCUSD": 60720.21,
+    "ETHUSD": 1714.27,
+    "SOLUSD": 70.19
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,7 +586,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 19:10:09 UTC",
+    "updated_utc": "2026-11-22 19:34:52 UTC",
     "total_episodes": 1676,
     "strategy_stats": {
       "SND": {
@@ -1250,7 +1250,23 @@
       }
     ],
     "live_episodes": 40,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 70.33,
+        "sl_price": 70.51576,
+        "sl_dist": 0.18576,
+        "tp1_price": 70.20925,
+        "tp2_price": 70.06064,
+        "opened_epoch": 1795376092.147095,
+        "tp1_hit": true,
+        "peak_r": 0.754
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795372211.733622,
       "BTCUSD:BREAKOUT": 1795371012.119599,
@@ -1270,7 +1286,7 @@
       "XAUUSD:BREAKOUT": 1795104314.563999,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795153503.616428,
-      "SOLUSD:DERIV_FLOW": 1795372782.568508,
+      "SOLUSD:DERIV_FLOW": 1795376092.147095,
       "BTCUSD:DERIV_FLOW": 1795371185.265141,
       "ETHUSD:DERIV_FLOW": 1795277362.983058,
       "EURUSD:BREAKOUT": 1795155304.778202,
@@ -1290,7 +1306,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 65h 55m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 65h 54m)",
   "deriv_flow_status": "Graduated Live (519 eps, 58.9% WR, -0.12R EMA)",
-  "cycle_count": 215
+  "cycle_count": 220
 }
