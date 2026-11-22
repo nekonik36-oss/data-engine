@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 22:38:56 UTC",
+  "updated_utc": "2026-11-22 22:40:29 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60872.84,
-    "ETHUSD": 1715.03,
-    "SOLUSD": 70.12,
-    "EURUSD": 1.09667,
-    "USDJPY": 158.531
+    "BTCUSD": 60854.01,
+    "ETHUSD": 1714.14,
+    "SOLUSD": 70.08,
+    "EURUSD": 1.09706,
+    "USDJPY": 158.499
   },
   "active_trades": {},
   "bot_stats": {
@@ -588,7 +588,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 22:34:18 UTC",
+    "updated_utc": "2026-11-22 22:40:09 UTC",
     "total_episodes": 1698,
     "strategy_stats": {
       "SND": {
@@ -1252,9 +1252,25 @@
       }
     ],
     "live_episodes": 40,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 1714.52,
+        "sl_price": 1710.10471,
+        "sl_dist": 4.41529,
+        "tp1_price": 1717.38994,
+        "tp2_price": 1720.92218,
+        "opened_epoch": 1795387209.835717,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1795383621.390926,
+      "ETHUSD:ICT": 1795387209.835717,
       "BTCUSD:BREAKOUT": 1795380611.37478,
       "BTCUSD:KRONOS": 1795384208.220045,
       "ETHUSD:BREAKOUT": 1795380612.637205,
@@ -1292,7 +1308,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 62h 51m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 62h 49m)",
   "deriv_flow_status": "Graduated Live (525 eps, 59.2% WR, +0.07R EMA)",
-  "cycle_count": 815
+  "cycle_count": 820
 }
