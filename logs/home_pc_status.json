@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 12:08:46 UTC",
+  "updated_utc": "2026-11-22 12:10:19 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61168.14,
-    "ETHUSD": 1711.56,
-    "SOLUSD": 70.63
+    "BTCUSD": 61225.44,
+    "ETHUSD": 1713.07,
+    "SOLUSD": 70.66
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,7 +586,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 12:08:24 UTC",
+    "updated_utc": "2026-11-22 12:10:16 UTC",
     "total_episodes": 1637,
     "strategy_stats": {
       "SND": {
@@ -1270,8 +1270,8 @@
         "tp1_price": 61230.55215,
         "tp2_price": 61417.16403,
         "opened_epoch": 1795348513.669397,
-        "tp1_hit": false,
-        "peak_r": 0.5
+        "tp1_hit": true,
+        "peak_r": 0.7
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1300,8 +1300,8 @@
         "tp1_price": 1713.38323,
         "tp2_price": 1717.87952,
         "opened_epoch": 1795348515.01383,
-        "tp1_hit": false,
-        "peak_r": 0.523
+        "tp1_hit": true,
+        "peak_r": 0.653
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1317,11 +1317,26 @@
         "opened_epoch": 1795348515.015843,
         "tp1_hit": false,
         "peak_r": 0.288
+      },
+      {
+        "key": "BTCUSD:BREAKOUT",
+        "symbol": "BTCUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 61243.89,
+        "sl_price": 61017.25705,
+        "sl_dist": 226.63295,
+        "tp1_price": 61391.20142,
+        "tp2_price": 61572.50778,
+        "opened_epoch": 1795349416.937093,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795338605.195978,
-      "BTCUSD:BREAKOUT": 1795335910.205295,
+      "BTCUSD:BREAKOUT": 1795349416.937093,
       "BTCUSD:KRONOS": 1795348513.6714,
       "ETHUSD:BREAKOUT": 1795335314.329954,
       "ETHUSD:KRONOS": 1795348515.015843,
@@ -1358,7 +1373,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 73h 21m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 73h 19m)",
   "deriv_flow_status": "Graduated Live (507 eps, 59.3% WR, -0.22R EMA)",
-  "cycle_count": 890
+  "cycle_count": 895
 }
