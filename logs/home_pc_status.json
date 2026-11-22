@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 17:04:38 UTC",
+  "updated_utc": "2026-11-22 17:06:18 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60919.99,
-    "ETHUSD": 1713.05,
-    "SOLUSD": 70.37
+    "BTCUSD": 60948.13,
+    "ETHUSD": 1715.13,
+    "SOLUSD": 70.46
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,7 +586,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 17:04:37 UTC",
+    "updated_utc": "2026-11-22 17:05:23 UTC",
     "total_episodes": 1665,
     "strategy_stats": {
       "SND": {
@@ -1250,18 +1250,64 @@
       }
     ],
     "live_episodes": 40,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "BTCUSD:ICT",
+        "symbol": "BTCUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 60938.49,
+        "sl_price": 61162.27551,
+        "sl_dist": 223.78551,
+        "tp1_price": 60793.02942,
+        "tp2_price": 60614.00102,
+        "opened_epoch": 1795367117.511973,
+        "tp1_hit": false,
+        "peak_r": 0.118
+      },
+      {
+        "key": "ETHUSD:ICT",
+        "symbol": "ETHUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 1713.93,
+        "sl_price": 1720.21642,
+        "sl_dist": 6.28642,
+        "tp1_price": 1709.84383,
+        "tp2_price": 1704.81469,
+        "opened_epoch": 1795367120.525093,
+        "tp1_hit": false,
+        "peak_r": 0.134
+      },
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 70.37,
+        "sl_price": 70.62604,
+        "sl_dist": 0.25604,
+        "tp1_price": 70.20358,
+        "tp2_price": 69.99875,
+        "opened_epoch": 1795367123.596803,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
-      "ETHUSD:ICT": 1795364417.247477,
+      "ETHUSD:ICT": 1795367120.525093,
       "BTCUSD:BREAKOUT": 1795364716.695844,
       "BTCUSD:KRONOS": 1795348513.6714,
       "ETHUSD:BREAKOUT": 1795361410.516891,
       "ETHUSD:KRONOS": 1795361410.517898,
       "SOLUSD:BREAKOUT": 1795365926.133591,
       "SOLUSD:KRONOS": 1795228809.177325,
-      "BTCUSD:ICT": 1795364414.485198,
+      "BTCUSD:ICT": 1795367117.511973,
       "SOLUSD:SND": 1795339205.248938,
-      "SOLUSD:ICT": 1795363227.685734,
+      "SOLUSD:ICT": 1795367123.596803,
       "ETHUSD:TREND_PULLBACK": 1795364718.785299,
       "BTCUSD:TREND_PULLBACK": 1795354544.424119,
       "SOLUSD:TREND_PULLBACK": 1795364720.635171,
@@ -1290,7 +1336,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 68h 25m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 68h 23m)",
   "deriv_flow_status": "Graduated Live (514 eps, 59.1% WR, -0.19R EMA)",
-  "cycle_count": 320
+  "cycle_count": 325
 }
