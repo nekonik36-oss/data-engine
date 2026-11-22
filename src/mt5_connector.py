@@ -32,6 +32,7 @@ from src.adaptive_learner import AdaptiveLearner
 from src.config import ALL_INSTRUMENTS, CRYPTO_INSTRUMENTS, INSTRUMENTS, InstrumentProfile
 from src.crypto_exchange import CryptoLiveFeed
 from src.fundamental_guard import MacroNewsShield
+from src.local_llm import LocalLLMClient
 from src.models import Candle, Direction, SetupSignal
 from src.telegram_notifier import TelegramNotifier
 
@@ -55,6 +56,7 @@ class MT5Connector:
         self.crypto_feed = CryptoLiveFeed()
         self.news_shield = MacroNewsShield()
         self.learner = learner or AdaptiveLearner()
+        self.local_llm = LocalLLMClient()
         self.active_trades: Dict[str, Dict[str, Any]] = self._load_json(ACTIVE_TRADES_PATH, {})
         self.stats: Dict[str, Any] = self._load_json(
             BOT_STATS_PATH,
@@ -520,6 +522,26 @@ class MT5Connector:
             return (
                 f"[MACRO NEWS SHIELD] Skipping {signal.symbol} {signal.direction.value}: "
                 f"{news_reason}. Protecting equity from macro whipsaw."
+            )
+
+        # 1a-2. Local LLM Pre-Execution Sanity Gate (Qwen 2.5 7B Instruct)
+        # Evaluates for structural exhaustion, overbought/oversold traps, or low-momentum chop. Fails open on timeout.
+        strats = [v.strategy_name for v in signal.votes if v.direction == signal.direction]
+        llm_pass, llm_conf, llm_reason = self.local_llm.validate_setup_signal(
+            symbol=signal.symbol,
+            direction=signal.direction.value,
+            confluence_score=signal.confluence_score,
+            regime=signal.regime.value if hasattr(signal.regime, "value") else str(signal.regime),
+            strategies=strats,
+            rsi=50.0,
+            adx=25.0,
+            atr=signal.atr,
+            price=signal.entry_price,
+        )
+        if not llm_pass:
+            return (
+                f"[LOCAL LLM VETO] Qwen 2.5 7B rejected {signal.symbol} {signal.direction.value} "
+                f"(conf={llm_conf:.2f}): {llm_reason}"
             )
 
         # 1b. Correlated Crypto Risk Cap: Never open a 2nd Crypto trade while another Crypto trade is unprotected (< BE Shield)
