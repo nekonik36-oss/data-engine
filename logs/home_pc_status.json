@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 16:54:49 UTC",
+  "updated_utc": "2026-11-22 16:55:32 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61241.92,
-    "ETHUSD": 1722.7,
-    "SOLUSD": 70.69
+    "BTCUSD": 61222.08,
+    "ETHUSD": 1722.44,
+    "SOLUSD": 70.68
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,8 +586,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 16:45:26 UTC",
-    "total_episodes": 1660,
+    "updated_utc": "2026-11-22 16:55:30 UTC",
+    "total_episodes": 1663,
     "strategy_stats": {
       "SND": {
         "trades": 78,
@@ -604,18 +604,18 @@
         "multiplier": 0.905
       },
       "BREAKOUT": {
-        "trades": 291,
+        "trades": 292,
         "wins": 164,
-        "losses": 125,
-        "ema_r": 0.315,
-        "multiplier": 1.079
+        "losses": 126,
+        "ema_r": 0.266,
+        "multiplier": 1.066
       },
       "TREND_PULLBACK": {
-        "trades": 174,
-        "wins": 87,
+        "trades": 176,
+        "wins": 89,
         "losses": 82,
-        "ema_r": 0.156,
-        "multiplier": 1.039
+        "ema_r": 0.177,
+        "multiplier": 1.044
       },
       "KRONOS": {
         "trades": 285,
@@ -650,8 +650,8 @@
       "TRENDING_UP:ICT": 0.977,
       "SESSION_SWEEP_WINDOW:SND": 0.836,
       "TRENDING_UP:KRONOS": 0.982,
-      "TRENDING_UP:BREAKOUT": 0.957,
-      "TRENDING_UP:TREND_PULLBACK": 0.932,
+      "TRENDING_UP:BREAKOUT": 0.952,
+      "TRENDING_UP:TREND_PULLBACK": 0.942,
       "RANGING:DERIV_FLOW": 1.221,
       "TRENDING_DOWN:DERIV_FLOW": 1.3,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.054,
@@ -1252,51 +1252,6 @@
     "live_episodes": 40,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:BREAKOUT",
-        "symbol": "BTCUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "LONG",
-        "regime": "TRENDING_UP",
-        "entry_price": 61286.99,
-        "sl_price": 61069.66684,
-        "sl_dist": 217.32316,
-        "tp1_price": 61428.25005,
-        "tp2_price": 61602.10858,
-        "opened_epoch": 1795364716.695844,
-        "tp1_hit": false,
-        "peak_r": 0.48
-      },
-      {
-        "key": "ETHUSD:TREND_PULLBACK",
-        "symbol": "ETHUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "LONG",
-        "regime": "TRENDING_UP",
-        "entry_price": 1721.46,
-        "sl_price": 1715.45716,
-        "sl_dist": 6.00284,
-        "tp1_price": 1725.36185,
-        "tp2_price": 1730.16412,
-        "opened_epoch": 1795364718.785299,
-        "tp1_hit": false,
-        "peak_r": 0.481
-      },
-      {
-        "key": "SOLUSD:TREND_PULLBACK",
-        "symbol": "SOLUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "LONG",
-        "regime": "TRENDING_UP",
-        "entry_price": 70.57,
-        "sl_price": 70.30575,
-        "sl_dist": 0.26425,
-        "tp1_price": 70.74177,
-        "tp2_price": 70.95317,
-        "opened_epoch": 1795364720.635171,
-        "tp1_hit": false,
-        "peak_r": 0.605
-      },
-      {
         "key": "SOLUSD:BREAKOUT",
         "symbol": "SOLUSD",
         "strategy_name": "BREAKOUT",
@@ -1346,12 +1301,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1602,
+    "shadow_episodes": 1605,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 68h 35m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 68h 34m)",
   "deriv_flow_status": "Graduated Live (513 eps, 59.0% WR, -0.30R EMA)",
-  "cycle_count": 290
+  "cycle_count": 292
 }
