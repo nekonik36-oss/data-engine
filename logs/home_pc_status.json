@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 13:44:47 UTC",
+  "updated_utc": "2026-11-22 13:45:31 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,8 +20,8 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60759.27,
-    "ETHUSD": 1705.31,
+    "BTCUSD": 60750.59,
+    "ETHUSD": 1704.75,
     "SOLUSD": 70.09
   },
   "active_trades": {},
@@ -586,8 +586,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 13:35:44 UTC",
-    "total_episodes": 1649,
+    "updated_utc": "2026-11-22 13:45:29 UTC",
+    "total_episodes": 1650,
     "strategy_stats": {
       "SND": {
         "trades": 78,
@@ -611,11 +611,11 @@
         "multiplier": 1.088
       },
       "TREND_PULLBACK": {
-        "trades": 172,
+        "trades": 173,
         "wins": 87,
-        "losses": 80,
-        "ema_r": 0.289,
-        "multiplier": 1.072
+        "losses": 81,
+        "ema_r": 0.256,
+        "multiplier": 1.064
       },
       "KRONOS": {
         "trades": 284,
@@ -651,7 +651,7 @@
       "SESSION_SWEEP_WINDOW:SND": 0.836,
       "TRENDING_UP:KRONOS": 0.98,
       "TRENDING_UP:BREAKOUT": 0.959,
-      "TRENDING_UP:TREND_PULLBACK": 0.95,
+      "TRENDING_UP:TREND_PULLBACK": 0.948,
       "RANGING:DERIV_FLOW": 1.238,
       "TRENDING_DOWN:DERIV_FLOW": 1.3,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.054,
@@ -1279,21 +1279,6 @@
     "live_episodes": 40,
     "active_shadow_trades": [
       {
-        "key": "ETHUSD:TREND_PULLBACK",
-        "symbol": "ETHUSD",
-        "strategy_name": "TREND_PULLBACK",
-        "direction": "LONG",
-        "regime": "TRENDING_UP",
-        "entry_price": 1705.75,
-        "sl_price": 1697.60717,
-        "sl_dist": 8.14283,
-        "tp1_price": 1711.04284,
-        "tp2_price": 1717.55711,
-        "opened_epoch": 1795353314.469798,
-        "tp1_hit": false,
-        "peak_r": 0.485
-      },
-      {
         "key": "SOLUSD:DERIV_FLOW",
         "symbol": "SOLUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1358,12 +1343,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1591,
+    "shadow_episodes": 1592,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 71h 45m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 71h 44m)",
   "deriv_flow_status": "Graduated Live (510 eps, 59.2% WR, -0.28R EMA)",
-  "cycle_count": 1200
+  "cycle_count": 1202
 }
