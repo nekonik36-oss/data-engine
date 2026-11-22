@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 15:22:42 UTC",
+  "updated_utc": "2026-11-22 15:24:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "statistical_mc_fallback",
   "latest_prices": {
-    "BTCUSD": 60879.99,
-    "ETHUSD": 1714.03,
-    "SOLUSD": 70.24
+    "BTCUSD": 60915.16,
+    "ETHUSD": 1716.01,
+    "SOLUSD": 70.34
   },
   "active_trades": {},
   "bot_stats": {
@@ -1290,7 +1290,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 70h 7m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 70h 5m)",
   "deriv_flow_status": "Graduated Live (511 eps, 59.3% WR, -0.22R EMA)",
-  "cycle_count": 1
+  "cycle_count": 5
 }
