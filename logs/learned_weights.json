@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 21:28:54 UTC",
+  "updated_utc": "2026-11-22 21:36:54 UTC",
   "total_episodes": 1689,
   "strategy_stats": {
     "SND": {
@@ -663,7 +663,23 @@
     }
   ],
   "live_episodes": 40,
-  "active_shadow_trades": [],
+  "active_shadow_trades": [
+    {
+      "key": "BTCUSD:DERIV_FLOW",
+      "symbol": "BTCUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "TRENDING_UP",
+      "entry_price": 60993.73,
+      "sl_price": 61136.55789,
+      "sl_dist": 142.82789,
+      "tp1_price": 60900.89187,
+      "tp2_price": 60786.62956,
+      "opened_epoch": 1795383414.605701,
+      "tp1_hit": false,
+      "peak_r": 0.278
+    }
+  ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1795372211.733622,
     "BTCUSD:BREAKOUT": 1795380611.37478,
@@ -684,7 +700,7 @@
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1795153503.616428,
     "SOLUSD:DERIV_FLOW": 1795380303.307636,
-    "BTCUSD:DERIV_FLOW": 1795371185.265141,
+    "BTCUSD:DERIV_FLOW": 1795383414.605701,
     "ETHUSD:DERIV_FLOW": 1795277362.983058,
     "EURUSD:BREAKOUT": 1795155304.778202,
     "USDJPY:BREAKOUT": 1795103102.580275,
