@@ -1,20 +1,20 @@
 {
-  "updated_utc": "2026-11-22 23:10:12 UTC",
-  "total_episodes": 1701,
+  "updated_utc": "2026-11-22 23:17:30 UTC",
+  "total_episodes": 1703,
   "strategy_stats": {
     "SND": {
-      "trades": 79,
+      "trades": 80,
       "wins": 35,
-      "losses": 43,
-      "ema_r": 0.136,
-      "multiplier": 1.034
+      "losses": 44,
+      "ema_r": 0.045,
+      "multiplier": 1.011
     },
     "ICT": {
-      "trades": 394,
+      "trades": 395,
       "wins": 200,
-      "losses": 192,
-      "ema_r": 0.141,
-      "multiplier": 1.035
+      "losses": 193,
+      "ema_r": 0.05,
+      "multiplier": 1.012
     },
     "BREAKOUT": {
       "trades": 297,
@@ -46,7 +46,7 @@
     }
   },
   "regime_strategy_multipliers": {
-    "RANGING:ICT": 0.76,
+    "RANGING:ICT": 0.744,
     "RANGING:KRONOS": 0.6,
     "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.824,
     "RANGING:TREND_PULLBACK": 1.11,
@@ -57,7 +57,7 @@
     "TRENDING_DOWN:ICT": 0.962,
     "TRENDING_DOWN:KRONOS": 1.148,
     "RANGING:BREAKOUT": 1.068,
-    "RANGING:SND": 1.082,
+    "RANGING:SND": 1.066,
     "TRENDING_DOWN:BREAKOUT": 1.118,
     "TRENDING_DOWN:SND": 0.996,
     "TRENDING_UP:ICT": 1.022,
@@ -665,36 +665,6 @@
   "live_episodes": 40,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:SND",
-      "symbol": "BTCUSD",
-      "strategy_name": "SND",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 60871.89,
-      "sl_price": 61067.19197,
-      "sl_dist": 195.30197,
-      "tp1_price": 60744.94372,
-      "tp2_price": 60588.70215,
-      "opened_epoch": 1795389010.482708,
-      "tp1_hit": false,
-      "peak_r": 0.184
-    },
-    {
-      "key": "BTCUSD:ICT",
-      "symbol": "BTCUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "RANGING",
-      "entry_price": 60871.89,
-      "sl_price": 61067.19197,
-      "sl_dist": 195.30197,
-      "tp1_price": 60744.94372,
-      "tp2_price": 60588.70215,
-      "opened_epoch": 1795389010.485711,
-      "tp1_hit": false,
-      "peak_r": 0.184
-    },
-    {
       "key": "SOLUSD:ICT",
       "symbol": "SOLUSD",
       "strategy_name": "ICT",
@@ -744,7 +714,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1643,
+  "shadow_episodes": 1645,
   "probation_strategies": [
     "SND"
   ]
