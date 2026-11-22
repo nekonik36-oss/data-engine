@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 22:48:10 UTC",
+  "updated_utc": "2026-11-22 22:49:42 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60858.15,
-    "ETHUSD": 1714.85,
-    "SOLUSD": 70.14,
-    "EURUSD": 1.09643,
-    "USDJPY": 158.507
+    "BTCUSD": 60857.57,
+    "ETHUSD": 1715.02,
+    "SOLUSD": 70.16,
+    "EURUSD": 1.0964,
+    "USDJPY": 158.501
   },
   "active_trades": {},
   "bot_stats": {
@@ -1266,7 +1266,7 @@
         "tp2_price": 1720.92218,
         "opened_epoch": 1795387209.835717,
         "tp1_hit": false,
-        "peak_r": 0.093
+        "peak_r": 0.161
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1338,7 +1338,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 62h 41m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 62h 40m)",
   "deriv_flow_status": "Graduated Live (525 eps, 59.2% WR, +0.07R EMA)",
-  "cycle_count": 845
+  "cycle_count": 850
 }
