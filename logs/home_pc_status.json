@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 23:17:31 UTC",
+  "updated_utc": "2026-11-22 23:19:05 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61099.99,
-    "ETHUSD": 1723.7,
-    "SOLUSD": 70.55,
-    "XAUUSD": 3580.46,
-    "EURUSD": 1.09741,
-    "USDJPY": 158.693
+    "BTCUSD": 61083.86,
+    "ETHUSD": 1723.25,
+    "SOLUSD": 70.6,
+    "XAUUSD": 3577.22,
+    "EURUSD": 1.0973600000000001,
+    "USDJPY": 158.707
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 23:17:30 UTC",
+    "updated_utc": "2026-11-22 23:18:11 UTC",
     "total_episodes": 1703,
     "strategy_stats": {
       "SND": {
@@ -1268,6 +1268,21 @@
         "opened_epoch": 1795389012.618227,
         "tp1_hit": false,
         "peak_r": 0.256
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 70.4,
+        "sl_price": 70.6746,
+        "sl_dist": 0.2746,
+        "tp1_price": 70.22151,
+        "tp2_price": 70.00183,
+        "opened_epoch": 1795389491.722559,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1289,7 +1304,7 @@
       "XAUUSD:BREAKOUT": 1795104314.563999,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795153503.616428,
-      "SOLUSD:DERIV_FLOW": 1795387249.343004,
+      "SOLUSD:DERIV_FLOW": 1795389491.722559,
       "BTCUSD:DERIV_FLOW": 1795387632.540347,
       "ETHUSD:DERIV_FLOW": 1795277362.983058,
       "EURUSD:BREAKOUT": 1795155304.778202,
@@ -1309,7 +1324,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 62h 12m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 62h 10m)",
   "deriv_flow_status": "Graduated Live (527 eps, 59.0% WR, -0.09R EMA)",
-  "cycle_count": 940
+  "cycle_count": 945
 }
