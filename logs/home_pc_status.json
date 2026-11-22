@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 18:12:09 UTC",
+  "updated_utc": "2026-11-22 18:13:46 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60721.73,
-    "ETHUSD": 1715.19,
-    "SOLUSD": 70.44
+    "BTCUSD": 60703.68,
+    "ETHUSD": 1715.28,
+    "SOLUSD": 70.42
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,7 +586,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 18:10:12 UTC",
+    "updated_utc": "2026-11-22 18:13:05 UTC",
     "total_episodes": 1669,
     "strategy_stats": {
       "SND": {
@@ -1280,6 +1280,21 @@
         "opened_epoch": 1795371012.119599,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 60666.33,
+        "sl_price": 60863.05139,
+        "sl_dist": 196.72139,
+        "tp1_price": 60538.4611,
+        "tp2_price": 60381.08399,
+        "opened_epoch": 1795371185.265141,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1302,7 +1317,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795153503.616428,
       "SOLUSD:DERIV_FLOW": 1795370681.478597,
-      "BTCUSD:DERIV_FLOW": 1795369077.839715,
+      "BTCUSD:DERIV_FLOW": 1795371185.265141,
       "ETHUSD:DERIV_FLOW": 1795277362.983058,
       "EURUSD:BREAKOUT": 1795155304.778202,
       "USDJPY:BREAKOUT": 1795103102.580275,
@@ -1321,7 +1336,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 67h 17m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 67h 16m)",
   "deriv_flow_status": "Graduated Live (516 eps, 59.1% WR, -0.10R EMA)",
-  "cycle_count": 535
+  "cycle_count": 540
 }
