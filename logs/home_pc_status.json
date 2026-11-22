@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 21:54:13 UTC",
+  "updated_utc": "2026-11-22 21:55:30 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60948.34,
-    "ETHUSD": 1721.03,
-    "SOLUSD": 70.43
+    "BTCUSD": 60959.4,
+    "ETHUSD": 1720.94,
+    "SOLUSD": 70.46
   },
   "active_trades": {},
   "bot_stats": {
@@ -1264,7 +1264,7 @@
         "tp2_price": 60786.62956,
         "opened_epoch": 1795383414.605701,
         "tp1_hit": false,
-        "peak_r": 0.318
+        "peak_r": 0.446
       },
       {
         "key": "ETHUSD:ICT",
@@ -1279,7 +1279,7 @@
         "tp2_price": 1717.9578,
         "opened_epoch": 1795383621.390926,
         "tp1_hit": true,
-        "peak_r": 0.677
+        "peak_r": 0.82
       },
       {
         "key": "ETHUSD:KRONOS",
@@ -1294,7 +1294,7 @@
         "tp2_price": 1719.65712,
         "opened_epoch": 1795383917.035687,
         "tp1_hit": true,
-        "peak_r": 1.098
+        "peak_r": 1.244
       },
       {
         "key": "BTCUSD:ICT",
@@ -1308,8 +1308,8 @@
         "tp1_price": 60930.11516,
         "tp2_price": 60822.72459,
         "opened_epoch": 1795384208.217045,
-        "tp1_hit": false,
-        "peak_r": 0.514
+        "tp1_hit": true,
+        "peak_r": 0.651
       },
       {
         "key": "BTCUSD:KRONOS",
@@ -1323,8 +1323,8 @@
         "tp1_price": 60930.11516,
         "tp2_price": 60822.72459,
         "opened_epoch": 1795384208.220045,
-        "tp1_hit": false,
-        "peak_r": 0.514
+        "tp1_hit": true,
+        "peak_r": 0.651
       }
     ],
     "shadow_cooldowns": {
@@ -1366,7 +1366,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 63h 35m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 63h 34m)",
   "deriv_flow_status": "Graduated Live (522 eps, 59.0% WR, -0.11R EMA)",
-  "cycle_count": 671
+  "cycle_count": 675
 }
