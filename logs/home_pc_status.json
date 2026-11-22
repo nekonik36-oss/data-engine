@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 09:35:41 UTC",
+  "updated_utc": "2026-11-22 09:36:06 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,63 +16,22 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9527.5,
+  "live_equity": 9524.92,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1690.22,
-    "SOLUSD": 69.88
+    "BTCUSD": 60127.53,
+    "ETHUSD": 1691.56,
+    "SOLUSD": 69.92
   },
-  "active_trades": {
-    "1092603516": {
-      "ticket": 1092603516,
-      "symbol": "BTCUSD",
-      "broker_symbol": "BTCUSD",
-      "broker_source": "MT5_LIVE",
-      "direction": "SHORT",
-      "entry_price": 59795.55,
-      "sl_price": 60077.55,
-      "initial_sl_price": 60466.99,
-      "tp1_price": 59359.114,
-      "tp2_price": 58821.962,
-      "volume": 0.06,
-      "initial_volume": 0.06,
-      "risk_usd": 40.29,
-      "confluence_score": 92.8,
-      "regime": "RANGING",
-      "agreeing_strategies": [
-        "ICT",
-        "KRONOS",
-        "DERIV_FLOW"
-      ],
-      "opened_at_utc": "2026-11-22 09:05:15 UTC",
-      "tp1_hit": false,
-      "partial_pnl": 0.0,
-      "scalp_upgraded": true,
-      "fast_scalp_upgraded": true,
-      "peak_favorable_r": 0.153,
-      "time_decay_30m": true,
-      "time_decay_applied": true
-    }
-  },
+  "active_trades": {},
   "bot_stats": {
-    "total_closed": 56,
+    "total_closed": 57,
     "wins": 18,
-    "losses": 29,
+    "losses": 30,
     "breakevens": 9,
-    "cumulative_pnl": -457.67,
+    "cumulative_pnl": -475.08,
     "history": [
-      {
-        "ticket": 1079309287,
-        "symbol": "SOLUSD",
-        "direction": "SHORT",
-        "entry_price": 87.21,
-        "exit_price": 85.8,
-        "net_pnl": 13.77,
-        "r_multiple": 0.77,
-        "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
-        "closed_at_utc": "2026-11-09 07:12:30 UTC"
-      },
       {
         "ticket": 1079412826,
         "symbol": "BTCUSD",
@@ -611,13 +570,24 @@
         "r_multiple": 0.48,
         "close_reason": "TP1 + Ratchet Profit Stop Hit \ud83d\udee1\ufe0f\ud83d\udcb0",
         "closed_at_utc": "2026-11-19 20:17:08 UTC"
+      },
+      {
+        "ticket": 1092603516,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 59795.55,
+        "exit_price": 60085.75,
+        "net_pnl": -17.41,
+        "r_multiple": -0.43,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-22 09:35:59 UTC"
       }
     ],
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 09:21:56 UTC",
-    "total_episodes": 1627,
+    "updated_utc": "2026-11-22 09:36:05 UTC",
+    "total_episodes": 1630,
     "strategy_stats": {
       "SND": {
         "trades": 77,
@@ -627,11 +597,11 @@
         "multiplier": 1.019
       },
       "ICT": {
-        "trades": 374,
+        "trades": 376,
         "wins": 192,
-        "losses": 180,
-        "ema_r": 0.023,
-        "multiplier": 1.006
+        "losses": 182,
+        "ema_r": -0.115,
+        "multiplier": 0.971
       },
       "BREAKOUT": {
         "trades": 286,
@@ -648,23 +618,23 @@
         "multiplier": 1.01
       },
       "KRONOS": {
-        "trades": 279,
+        "trades": 280,
         "wins": 148,
-        "losses": 126,
-        "ema_r": 0.246,
-        "multiplier": 1.062
+        "losses": 127,
+        "ema_r": 0.097,
+        "multiplier": 1.024
       },
       "DERIV_FLOW": {
-        "trades": 502,
+        "trades": 504,
         "wins": 297,
-        "losses": 202,
-        "ema_r": -0.149,
-        "multiplier": 0.963
+        "losses": 204,
+        "ema_r": -0.238,
+        "multiplier": 0.94
       }
     },
     "regime_strategy_multipliers": {
-      "RANGING:ICT": 0.79,
-      "RANGING:KRONOS": 0.686,
+      "RANGING:ICT": 0.762,
+      "RANGING:KRONOS": 0.667,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.824,
       "RANGING:TREND_PULLBACK": 1.11,
       "TRENDING_DOWN:TREND_PULLBACK": 1.119,
@@ -682,7 +652,7 @@
       "TRENDING_UP:KRONOS": 1.028,
       "TRENDING_UP:BREAKOUT": 0.942,
       "TRENDING_UP:TREND_PULLBACK": 0.893,
-      "RANGING:DERIV_FLOW": 1.281,
+      "RANGING:DERIV_FLOW": 1.253,
       "TRENDING_DOWN:DERIV_FLOW": 1.3,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.054,
       "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -696,9 +666,9 @@
     },
     "symbol_streaks": {
       "BTCUSD": {
-        "win_streak": 2,
-        "loss_streak": 0,
-        "net_r": -3.74
+        "win_streak": 0,
+        "loss_streak": 1,
+        "net_r": -4.17
       },
       "ETHUSD": {
         "win_streak": 0,
@@ -748,24 +718,27 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [],
-    "ai_feedback_feed": [
+    "pending_post_mortems": [
       {
-        "timestamp_utc": "2026-11-12 19:41:46 UTC",
-        "event": "TRADE_CLOSED_DIAGNOSTIC",
-        "ticket": 1083876139,
+        "ticket": 1092603516,
         "symbol": "BTCUSD",
         "direction": "SHORT",
-        "net_pnl": 1.5,
-        "r_multiple": 0.03,
-        "peak_favorable_r": 0.13,
-        "regime": "RANGING",
-        "strategies": [
-          "SND",
-          "BREAKOUT"
+        "entry_price": 59795.55,
+        "exit_price": 60085.75,
+        "tp1_price": 59359.114,
+        "tp2_price": 58821.962,
+        "agreeing_strategies": [
+          "ICT",
+          "KRONOS",
+          "DERIV_FLOW"
         ],
-        "auto_fix_action": "NONE"
-      },
+        "regime": "RANGING",
+        "closed_epoch": 1795340159.832719,
+        "closed_at_utc": "2026-11-22 09:35:59 UTC",
+        "audited": false
+      }
+    ],
+    "ai_feedback_feed": [
       {
         "timestamp_utc": "2026-11-12 22:01:31 UTC",
         "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -1291,40 +1264,27 @@
           "TREND_PULLBACK"
         ],
         "auto_fix_action": "NONE"
+      },
+      {
+        "timestamp_utc": "2026-11-22 09:35:59 UTC",
+        "event": "TRADE_CLOSED_DIAGNOSTIC",
+        "ticket": 1092603516,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "net_pnl": -17.41,
+        "r_multiple": -0.43,
+        "peak_favorable_r": 0.15,
+        "regime": "RANGING",
+        "strategies": [
+          "ICT",
+          "KRONOS",
+          "DERIV_FLOW"
+        ],
+        "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=59359.114)"
       }
     ],
-    "live_episodes": 38,
+    "live_episodes": 39,
     "active_shadow_trades": [
-      {
-        "key": "BTCUSD:DERIV_FLOW",
-        "symbol": "BTCUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 59654.44,
-        "sl_price": 59971.73653,
-        "sl_dist": 317.29653,
-        "tp1_price": 59448.19725,
-        "tp2_price": 59194.36003,
-        "opened_epoch": 1795337458.684135,
-        "tp1_hit": false,
-        "peak_r": 0.0
-      },
-      {
-        "key": "BTCUSD:ICT",
-        "symbol": "BTCUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 59791.16,
-        "sl_price": 60087.1488,
-        "sl_dist": 295.9888,
-        "tp1_price": 59598.76728,
-        "tp2_price": 59361.97624,
-        "opened_epoch": 1795338315.745816,
-        "tp1_hit": false,
-        "peak_r": 0.0
-      },
       {
         "key": "ETHUSD:TREND_PULLBACK",
         "symbol": "ETHUSD",
@@ -1405,12 +1365,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1571,
+    "shadow_episodes": 1573,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 75h 54m)",
-  "deriv_flow_status": "Graduated Live (502 eps, 59.5% WR, -0.15R EMA)",
-  "cycle_count": 390
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 75h 53m)",
+  "deriv_flow_status": "Graduated Live (504 eps, 59.3% WR, -0.24R EMA)",
+  "cycle_count": 391
 }
