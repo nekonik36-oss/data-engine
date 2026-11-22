@@ -1,28 +1,3 @@
-  Entry Price       : 60540.29000
-  Stop Loss (SL)    : 61285.51374  (Invalidation + ATR Buffer)
-  Take Profit 1     : 59981.37220  (0.8R -> Close 50% & Move SL to BE)
-  Take Profit 2     : 59347.93202  (1.6R -> Runner Target)
-  Suggested Lot     : 0.06 lots  (Risk: $44.71 / 0.50%)
---------------------------------------------------------------------------
-  STRATEGY BREAKDOWN (Why this setup triggered):
-    [AGREES ] ICT             (conf   90%): BSL Liquidity Sweep above 61365.24 (high 61669.99) + Bearish FVG [60733.00-61213.54]
-    [NEUTRAL] BREAKOUT        (conf    0%): Inside compression box [60464.01 - 61669.99]
-    [NEUTRAL] TREND_PULLBACK  (conf    0%): Waiting for H1-aligned Connors RSI(2) pullback break
-    [AGREES ] KRONOS          (conf   20%): Bullish Prob=41.1% | Exp Move=-0.27 ATR (Max Up +0.66 ATR / Max Down -0.49 ATR)
-    [AGREES ] DERIV_FLOW      (conf   74%): [binance_fapi] Bearish Long-Squeeze Flow: Crowd 70% Long, Seller Taker 0.91x, Perp Basis -3.4bps
---------------------------------------------------------------------------
-  KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=41.1% | Exp Move=-0.27 ATR (Max Up +0.66 ATR / Max Down -0.49 ATR)
-==========================================================================
-  [AUTO-TRADE EXECUTED (MT5)] Ticket #1092657409 | SHORT 0.05 lots BTCUSD @ 60589.9 (SL=61371.07, TP1=60026.93, TP2=59393.49) | Telegram: Telegram alert delivered to your phone!
-  [ETHUSD (M5  Live data-api.binance.vision)] Price=1703.37    | Watching for A+ Sniper setup...
-==========================================================================
-  HIGH-CONFLUENCE SETUP DETECTED | SOLUSD (M5) | SELL (SHORT)
-==========================================================================
-  Timestamp (UTC)   : 2026-11-22 12:35 UTC
-  Market Regime     : RANGING
-  Confluence Score  : 92.5 / 100.0  [HYBRID_REGIME_KRONOS]
---------------------------------------------------------------------------
-  Entry Price       : 70.09000
   Stop Loss (SL)    : 70.95614  (Invalidation + ATR Buffer)
   Take Profit 1     : 69.44039  (0.8R -> Close 50% & Move SL to BE)
   Take Profit 2     : 68.70418  (1.6R -> Runner Target)
@@ -148,3 +123,28 @@
   [OPEN #1092657409] BTCUSD SHORT @ 60589.9 | SL=61371.07 | TP1=60082.1395 | TP2=59457.2035
   [ETHUSD (M5  Live data-api.binance.vision)] Price=1707.09    | Watching for A+ Sniper setup...
   [SOLUSD (M5  Live data-api.binance.vision)] Price=70.33      | Watching for A+ Sniper setup...
+
+[2026-11-22 12:48:06 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 18W-30L ($-475.08) | Equity: $9,514.49
+  [OPEN #1092657409] BTCUSD SHORT @ 60589.9 | SL=61371.07 | TP1=60082.1395 | TP2=59457.2035
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1707.45    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=70.34      | Watching for A+ Sniper setup...
+
+[2026-11-22 12:48:23 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 18W-30L ($-475.08) | Equity: $9,511.26
+  [OPEN #1092657409] BTCUSD SHORT @ 60589.9 | SL=61371.07 | TP1=60082.1395 | TP2=59457.2035
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1708.68    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=70.41      | Watching for A+ Sniper setup...
+
+[2026-11-22 12:48:40 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 18W-30L ($-475.08) | Equity: $9,512.95
+  [OPEN #1092657409] BTCUSD SHORT @ 60589.9 | SL=61371.07 | TP1=60082.1395 | TP2=59457.2035
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1707.79    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=70.38      | Watching for A+ Sniper setup...
+
+[2026-11-22 12:48:57 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 18W-30L ($-475.08) | Equity: $9,513.51
+  [OPEN #1092657409] BTCUSD SHORT @ 60589.9 | SL=61371.07 | TP1=60082.1395 | TP2=59457.2035
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1707.77    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=70.36      | Watching for A+ Sniper setup...
+
+[2026-11-22 12:49:13 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 18W-30L ($-475.08) | Equity: $9,510.89
+  [OPEN #1092657409] BTCUSD SHORT @ 60589.9 | SL=61371.07 | TP1=60082.1395 | TP2=59457.2035
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1708.76    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=70.41      | Watching for A+ Sniper setup...
