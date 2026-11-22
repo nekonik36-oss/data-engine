@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-11-22 23:50:18 UTC",
-  "total_episodes": 1705,
+  "updated_utc": "2026-11-22 23:50:39 UTC",
+  "total_episodes": 1706,
   "strategy_stats": {
     "SND": {
-      "trades": 80,
+      "trades": 81,
       "wins": 35,
-      "losses": 44,
-      "ema_r": 0.045,
-      "multiplier": 1.011
+      "losses": 45,
+      "ema_r": 0.021,
+      "multiplier": 1.005
     },
     "ICT": {
       "trades": 396,
@@ -74,7 +74,7 @@
     "TRENDING_UP:DERIV_FLOW": 1.028,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.992,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
-    "TRENDING_UP:SND": 0.944,
+    "TRENDING_UP:SND": 0.94,
     "MACRO_NEWS_WINDOW:KRONOS": 1.012
   },
   "symbol_streaks": {
@@ -665,21 +665,6 @@
   "live_episodes": 40,
   "active_shadow_trades": [
     {
-      "key": "ETHUSD:SND",
-      "symbol": "ETHUSD",
-      "strategy_name": "SND",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 1723.53,
-      "sl_price": 1717.37656,
-      "sl_dist": 6.15344,
-      "tp1_price": 1727.52974,
-      "tp2_price": 1732.45249,
-      "opened_epoch": 1795389618.934284,
-      "tp1_hit": false,
-      "peak_r": 0.481
-    },
-    {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
       "strategy_name": "DERIV_FLOW",
@@ -774,7 +759,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1647,
+  "shadow_episodes": 1648,
   "probation_strategies": [
     "SND"
   ]
