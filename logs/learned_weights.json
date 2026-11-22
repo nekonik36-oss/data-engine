@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 17:21:49 UTC",
+  "updated_utc": "2026-11-22 17:25:16 UTC",
   "total_episodes": 1666,
   "strategy_stats": {
     "SND": {
@@ -708,6 +708,21 @@
       "opened_epoch": 1795367889.491494,
       "tp1_hit": false,
       "peak_r": 0.038
+    },
+    {
+      "key": "BTCUSD:SND",
+      "symbol": "BTCUSD",
+      "strategy_name": "SND",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 60883.26,
+      "sl_price": 60670.37703,
+      "sl_dist": 212.88297,
+      "tp1_price": 61021.63393,
+      "tp2_price": 61191.94031,
+      "opened_epoch": 1795368316.707462,
+      "tp1_hit": false,
+      "peak_r": 0.028
     }
   ],
   "shadow_cooldowns": {
@@ -725,7 +740,7 @@
     "BTCUSD:TREND_PULLBACK": 1795354544.424119,
     "SOLUSD:TREND_PULLBACK": 1795364720.635171,
     "ETHUSD:SND": 1795209904.063814,
-    "BTCUSD:SND": 1795212306.542324,
+    "BTCUSD:SND": 1795368316.707462,
     "XAUUSD:BREAKOUT": 1795104314.563999,
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1795153503.616428,

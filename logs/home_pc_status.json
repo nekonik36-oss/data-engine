@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 17:24:55 UTC",
+  "updated_utc": "2026-11-22 17:26:30 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60883.26,
-    "ETHUSD": 1715.26,
-    "SOLUSD": 70.44
+    "BTCUSD": 60889.13,
+    "ETHUSD": 1715.12,
+    "SOLUSD": 70.43
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,7 +586,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 17:21:49 UTC",
+    "updated_utc": "2026-11-22 17:25:16 UTC",
     "total_episodes": 1666,
     "strategy_stats": {
       "SND": {
@@ -1295,6 +1295,21 @@
         "opened_epoch": 1795367889.491494,
         "tp1_hit": false,
         "peak_r": 0.038
+      },
+      {
+        "key": "BTCUSD:SND",
+        "symbol": "BTCUSD",
+        "strategy_name": "SND",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 60883.26,
+        "sl_price": 60670.37703,
+        "sl_dist": 212.88297,
+        "tp1_price": 61021.63393,
+        "tp2_price": 61191.94031,
+        "opened_epoch": 1795368316.707462,
+        "tp1_hit": false,
+        "peak_r": 0.028
       }
     ],
     "shadow_cooldowns": {
@@ -1312,7 +1327,7 @@
       "BTCUSD:TREND_PULLBACK": 1795354544.424119,
       "SOLUSD:TREND_PULLBACK": 1795364720.635171,
       "ETHUSD:SND": 1795209904.063814,
-      "BTCUSD:SND": 1795212306.542324,
+      "BTCUSD:SND": 1795368316.707462,
       "XAUUSD:BREAKOUT": 1795104314.563999,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795153503.616428,
@@ -1336,7 +1351,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 68h 5m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 68h 3m)",
   "deriv_flow_status": "Graduated Live (514 eps, 59.1% WR, -0.19R EMA)",
-  "cycle_count": 385
+  "cycle_count": 390
 }
