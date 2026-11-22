@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 12:10:19 UTC",
+  "updated_utc": "2026-11-22 12:11:51 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61225.44,
-    "ETHUSD": 1713.07,
-    "SOLUSD": 70.66
+    "BTCUSD": 61177.31,
+    "ETHUSD": 1712.54,
+    "SOLUSD": 70.67
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,7 +586,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 12:10:16 UTC",
+    "updated_utc": "2026-11-22 12:10:39 UTC",
     "total_episodes": 1637,
     "strategy_stats": {
       "SND": {
@@ -1332,6 +1332,21 @@
         "opened_epoch": 1795349416.937093,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "SOLUSD:DERIV_FLOW",
+        "symbol": "SOLUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 70.68,
+        "sl_price": 70.92923,
+        "sl_dist": 0.24923,
+        "tp1_price": 70.518,
+        "tp2_price": 70.31862,
+        "opened_epoch": 1795349439.820474,
+        "tp1_hit": false,
+        "peak_r": 0.12
       }
     ],
     "shadow_cooldowns": {
@@ -1353,7 +1368,7 @@
       "XAUUSD:BREAKOUT": 1795104314.563999,
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795153503.616428,
-      "SOLUSD:DERIV_FLOW": 1795347326.279295,
+      "SOLUSD:DERIV_FLOW": 1795349439.820474,
       "BTCUSD:DERIV_FLOW": 1795348257.228382,
       "ETHUSD:DERIV_FLOW": 1795277362.983058,
       "EURUSD:BREAKOUT": 1795155304.778202,
@@ -1373,7 +1388,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 73h 19m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 73h 18m)",
   "deriv_flow_status": "Graduated Live (507 eps, 59.3% WR, -0.22R EMA)",
-  "cycle_count": 895
+  "cycle_count": 900
 }
