@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-22 16:44:59 UTC",
+  "updated_utc": "2026-11-22 16:46:41 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61340.01,
-    "ETHUSD": 1723.2,
-    "SOLUSD": 70.68
+    "BTCUSD": 61361.45,
+    "ETHUSD": 1723.93,
+    "SOLUSD": 70.72
   },
   "active_trades": {},
   "bot_stats": {
@@ -586,7 +586,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-22 16:35:34 UTC",
+    "updated_utc": "2026-11-22 16:45:26 UTC",
     "total_episodes": 1660,
     "strategy_stats": {
       "SND": {
@@ -1279,7 +1279,7 @@
         "tp2_price": 1730.16412,
         "opened_epoch": 1795364718.785299,
         "tp1_hit": false,
-        "peak_r": 0.396
+        "peak_r": 0.481
       },
       {
         "key": "SOLUSD:TREND_PULLBACK",
@@ -1294,7 +1294,22 @@
         "tp2_price": 70.95317,
         "opened_epoch": 1795364720.635171,
         "tp1_hit": false,
-        "peak_r": 0.454
+        "peak_r": 0.568
+      },
+      {
+        "key": "SOLUSD:BREAKOUT",
+        "symbol": "SOLUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 70.68,
+        "sl_price": 70.43571,
+        "sl_dist": 0.24429,
+        "tp1_price": 70.83879,
+        "tp2_price": 71.03422,
+        "opened_epoch": 1795365926.133591,
+        "tp1_hit": false,
+        "peak_r": 0.164
       }
     ],
     "shadow_cooldowns": {
@@ -1303,7 +1318,7 @@
       "BTCUSD:KRONOS": 1795348513.6714,
       "ETHUSD:BREAKOUT": 1795361410.516891,
       "ETHUSD:KRONOS": 1795361410.517898,
-      "SOLUSD:BREAKOUT": 1795350306.866055,
+      "SOLUSD:BREAKOUT": 1795365926.133591,
       "SOLUSD:KRONOS": 1795228809.177325,
       "BTCUSD:ICT": 1795364414.485198,
       "SOLUSD:SND": 1795339205.248938,
@@ -1336,7 +1351,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 68h 45m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 68h 43m)",
   "deriv_flow_status": "Graduated Live (513 eps, 59.0% WR, -0.30R EMA)",
-  "cycle_count": 260
+  "cycle_count": 265
 }
