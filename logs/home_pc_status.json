@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 05:30:55 UTC",
+  "updated_utc": "2026-11-23 05:31:19 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,46 +16,17 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9484.42,
+  "live_equity": 9480.3,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1731.85,
-    "SOLUSD": 71.64,
-    "XAUUSD": 3619.09,
-    "EURUSD": 1.09846
+    "BTCUSD": 61546.0,
+    "ETHUSD": 1733.55,
+    "SOLUSD": 71.76,
+    "XAUUSD": 3622.54,
+    "EURUSD": 1.09845
   },
   "active_trades": {
-    "1092976211": {
-      "ticket": 1092976211,
-      "symbol": "BTCUSD",
-      "broker_symbol": "BTCUSD",
-      "broker_source": "MT5_LIVE",
-      "direction": "SHORT",
-      "entry_price": 61254.65,
-      "sl_price": 61577.74,
-      "initial_sl_price": 62023.92,
-      "tp1_price": 60754.6245,
-      "tp2_price": 60139.2085,
-      "volume": 0.05,
-      "initial_volume": 0.05,
-      "risk_usd": 38.46,
-      "confluence_score": 94.8,
-      "regime": "TRENDING_UP",
-      "agreeing_strategies": [
-        "ICT",
-        "DERIV_FLOW"
-      ],
-      "opened_at_utc": "2026-11-23 03:52:48 UTC",
-      "tp1_hit": false,
-      "partial_pnl": 0.0,
-      "scalp_upgraded": true,
-      "fast_scalp_upgraded": true,
-      "peak_favorable_r": 0.21,
-      "failed_impulse_shield": true,
-      "time_decay_applied": true,
-      "time_decay_30m": true
-    },
     "1093026467": {
       "ticket": 1093026467,
       "symbol": "USDJPY",
@@ -84,23 +55,12 @@
     }
   },
   "bot_stats": {
-    "total_closed": 58,
+    "total_closed": 59,
     "wins": 18,
-    "losses": 31,
+    "losses": 32,
     "breakevens": 9,
-    "cumulative_pnl": -491.75,
+    "cumulative_pnl": -507.93,
     "history": [
-      {
-        "ticket": 1079451328,
-        "symbol": "BTCUSD",
-        "direction": "SHORT",
-        "entry_price": 74018.15,
-        "exit_price": 74474.35,
-        "net_pnl": -45.62,
-        "r_multiple": -1.0,
-        "close_reason": "Stop Loss Hit \ud83d\uded1",
-        "closed_at_utc": "2026-11-09 08:51:40 UTC"
-      },
       {
         "ticket": 1079533010,
         "symbol": "ETHUSD",
@@ -639,13 +599,24 @@
         "r_multiple": -0.42,
         "close_reason": "Stop Loss Hit \ud83d\uded1",
         "closed_at_utc": "2026-11-22 13:35:39 UTC"
+      },
+      {
+        "ticket": 1092976211,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "entry_price": 61254.65,
+        "exit_price": 61578.2,
+        "net_pnl": -16.18,
+        "r_multiple": -0.42,
+        "close_reason": "Stop Loss Hit \ud83d\uded1",
+        "closed_at_utc": "2026-11-23 05:31:12 UTC"
       }
     ],
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-23 05:20:18 UTC",
-    "total_episodes": 1738,
+    "updated_utc": "2026-11-23 05:31:12 UTC",
+    "total_episodes": 1739,
     "strategy_stats": {
       "SND": {
         "trades": 82,
@@ -655,11 +626,11 @@
         "multiplier": 0.985
       },
       "ICT": {
-        "trades": 404,
+        "trades": 405,
         "wins": 205,
-        "losses": 197,
-        "ema_r": 0.133,
-        "multiplier": 1.033
+        "losses": 198,
+        "ema_r": 0.011,
+        "multiplier": 1.003
       },
       "BREAKOUT": {
         "trades": 302,
@@ -683,11 +654,11 @@
         "multiplier": 0.939
       },
       "DERIV_FLOW": {
-        "trades": 539,
+        "trades": 540,
         "wins": 315,
-        "losses": 221,
-        "ema_r": -0.153,
-        "multiplier": 0.962
+        "losses": 222,
+        "ema_r": -0.212,
+        "multiplier": 0.947
       }
     },
     "regime_strategy_multipliers": {
@@ -705,7 +676,7 @@
       "RANGING:SND": 1.066,
       "TRENDING_DOWN:BREAKOUT": 1.118,
       "TRENDING_DOWN:SND": 0.996,
-      "TRENDING_UP:ICT": 0.993,
+      "TRENDING_UP:ICT": 0.974,
       "SESSION_SWEEP_WINDOW:SND": 0.836,
       "TRENDING_UP:KRONOS": 1.008,
       "TRENDING_UP:BREAKOUT": 0.927,
@@ -716,7 +687,7 @@
       "MACRO_NEWS_WINDOW:SND": 0.984,
       "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
       "MACRO_NEWS_WINDOW:ICT": 1.041,
-      "TRENDING_UP:DERIV_FLOW": 1.039,
+      "TRENDING_UP:DERIV_FLOW": 1.02,
       "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.992,
       "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
       "TRENDING_UP:SND": 0.924,
@@ -725,8 +696,8 @@
     "symbol_streaks": {
       "BTCUSD": {
         "win_streak": 0,
-        "loss_streak": 2,
-        "net_r": -4.59
+        "loss_streak": 3,
+        "net_r": -5.01
       },
       "ETHUSD": {
         "win_streak": 0,
@@ -776,24 +747,26 @@
         "be_shield_r": 0.55
       }
     },
-    "pending_post_mortems": [],
-    "ai_feedback_feed": [
+    "pending_post_mortems": [
       {
-        "timestamp_utc": "2026-11-14 02:34:55 UTC",
-        "event": "TRADE_CLOSED_DIAGNOSTIC",
-        "ticket": 84612874,
+        "ticket": 1092976211,
         "symbol": "BTCUSD",
         "direction": "SHORT",
-        "net_pnl": 56.43,
-        "r_multiple": 1.17,
-        "peak_favorable_r": 2.21,
-        "regime": "TRENDING_DOWN",
-        "strategies": [
-          "BREAKOUT",
-          "KRONOS"
+        "entry_price": 61254.65,
+        "exit_price": 61578.2,
+        "tp1_price": 60754.6245,
+        "tp2_price": 60139.2085,
+        "agreeing_strategies": [
+          "ICT",
+          "DERIV_FLOW"
         ],
-        "auto_fix_action": "NONE"
-      },
+        "regime": "TRENDING_UP",
+        "closed_epoch": 1795411872.965766,
+        "closed_at_utc": "2026-11-23 05:31:12 UTC",
+        "audited": false
+      }
+    ],
+    "ai_feedback_feed": [
       {
         "timestamp_utc": "2026-11-15 04:15:17 UTC",
         "event": "TRADE_CLOSED_DIAGNOSTIC",
@@ -1305,9 +1278,25 @@
         "symbol": "BTCUSD",
         "direction": "SHORT",
         "summary": "Ticket #1092657409 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
+      },
+      {
+        "timestamp_utc": "2026-11-23 05:31:12 UTC",
+        "event": "TRADE_CLOSED_DIAGNOSTIC",
+        "ticket": 1092976211,
+        "symbol": "BTCUSD",
+        "direction": "SHORT",
+        "net_pnl": -16.18,
+        "r_multiple": -0.42,
+        "peak_favorable_r": 0.21,
+        "regime": "TRENDING_UP",
+        "strategies": [
+          "ICT",
+          "DERIV_FLOW"
+        ],
+        "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=60754.6245)"
       }
     ],
-    "live_episodes": 40,
+    "live_episodes": 41,
     "active_shadow_trades": [
       {
         "key": "USDJPY:ICT",
@@ -1379,7 +1368,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 55h 59m)",
-  "deriv_flow_status": "Graduated Live (539 eps, 58.8% WR, -0.15R EMA)",
-  "cycle_count": 2145
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 55h 58m)",
+  "deriv_flow_status": "Graduated Live (540 eps, 58.7% WR, -0.21R EMA)",
+  "cycle_count": 2146
 }
