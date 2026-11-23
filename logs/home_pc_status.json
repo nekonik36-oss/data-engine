@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 05:46:31 UTC",
+  "updated_utc": "2026-11-23 05:47:47 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9483.62,
+  "live_equity": 9488.14,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61803.97,
-    "ETHUSD": 1737.1,
-    "SOLUSD": 72.17,
-    "XAUUSD": 3620.74,
-    "EURUSD": 1.09886
+    "BTCUSD": 61760.46,
+    "ETHUSD": 1735.54,
+    "SOLUSD": 72.11,
+    "XAUUSD": 3620.72,
+    "EURUSD": 1.09897
   },
   "active_trades": {
     "1093026467": {
@@ -618,8 +618,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-23 05:45:16 UTC",
-    "total_episodes": 1739,
+    "updated_utc": "2026-11-23 05:47:46 UTC",
+    "total_episodes": 1740,
     "strategy_stats": {
       "SND": {
         "trades": 82,
@@ -636,11 +636,11 @@
         "multiplier": 1.003
       },
       "BREAKOUT": {
-        "trades": 302,
-        "wins": 170,
+        "trades": 303,
+        "wins": 171,
         "losses": 130,
-        "ema_r": 0.328,
-        "multiplier": 1.082
+        "ema_r": 0.339,
+        "multiplier": 1.085
       },
       "TREND_PULLBACK": {
         "trades": 182,
@@ -682,7 +682,7 @@
       "TRENDING_UP:ICT": 0.974,
       "SESSION_SWEEP_WINDOW:SND": 0.836,
       "TRENDING_UP:KRONOS": 1.008,
-      "TRENDING_UP:BREAKOUT": 0.927,
+      "TRENDING_UP:BREAKOUT": 0.934,
       "TRENDING_UP:TREND_PULLBACK": 0.869,
       "RANGING:DERIV_FLOW": 1.157,
       "TRENDING_DOWN:DERIV_FLOW": 1.3,
@@ -1302,21 +1302,6 @@
     "live_episodes": 41,
     "active_shadow_trades": [
       {
-        "key": "SOLUSD:BREAKOUT",
-        "symbol": "SOLUSD",
-        "strategy_name": "BREAKOUT",
-        "direction": "LONG",
-        "regime": "TRENDING_UP",
-        "entry_price": 72.0,
-        "sl_price": 71.67622,
-        "sl_dist": 0.32378,
-        "tp1_price": 72.21045,
-        "tp2_price": 72.46947,
-        "opened_epoch": 1795412402.066247,
-        "tp1_hit": true,
-        "peak_r": 0.679
-      },
-      {
         "key": "SOLUSD:KRONOS",
         "symbol": "SOLUSD",
         "strategy_name": "KRONOS",
@@ -1396,12 +1381,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1680,
+    "shadow_episodes": 1681,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 55h 43m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 55h 42m)",
   "deriv_flow_status": "Graduated Live (540 eps, 58.7% WR, -0.21R EMA)",
-  "cycle_count": 2195
+  "cycle_count": 2199
 }
