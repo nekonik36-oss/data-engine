@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 03:33:49 UTC",
+  "updated_utc": "2026-11-23 03:34:10 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61591.28,
-    "ETHUSD": 1736.8,
-    "SOLUSD": 71.6,
-    "XAUUSD": 3604.92,
-    "EURUSD": 1.09828,
-    "USDJPY": 158.965
+    "BTCUSD": 61669.99,
+    "ETHUSD": 1738.58,
+    "SOLUSD": 71.65,
+    "XAUUSD": 3604.09,
+    "EURUSD": 1.09826,
+    "USDJPY": 158.967
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,8 +589,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-23 03:25:09 UTC",
-    "total_episodes": 1733,
+    "updated_utc": "2026-11-23 03:34:09 UTC",
+    "total_episodes": 1734,
     "strategy_stats": {
       "SND": {
         "trades": 81,
@@ -621,11 +621,11 @@
         "multiplier": 0.963
       },
       "KRONOS": {
-        "trades": 292,
-        "wins": 151,
+        "trades": 293,
+        "wins": 152,
         "losses": 136,
-        "ema_r": -0.305,
-        "multiplier": 0.924
+        "ema_r": -0.244,
+        "multiplier": 0.939
       },
       "DERIV_FLOW": {
         "trades": 537,
@@ -637,7 +637,7 @@
     },
     "regime_strategy_multipliers": {
       "RANGING:ICT": 0.785,
-      "RANGING:KRONOS": 0.6,
+      "RANGING:KRONOS": 0.607,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.824,
       "RANGING:TREND_PULLBACK": 1.117,
       "TRENDING_DOWN:TREND_PULLBACK": 1.119,
@@ -1253,23 +1253,7 @@
       }
     ],
     "live_episodes": 40,
-    "active_shadow_trades": [
-      {
-        "key": "ETHUSD:KRONOS",
-        "symbol": "ETHUSD",
-        "strategy_name": "KRONOS",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 1741.75,
-        "sl_price": 1752.51005,
-        "sl_dist": 10.76005,
-        "tp1_price": 1734.75597,
-        "tp2_price": 1726.14792,
-        "opened_epoch": 1795404309.575976,
-        "tp1_hit": true,
-        "peak_r": 1.068
-      }
-    ],
+    "active_shadow_trades": [],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795402816.429429,
       "BTCUSD:BREAKOUT": 1795404019.015646,
@@ -1304,12 +1288,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1675,
+    "shadow_episodes": 1676,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 57h 56m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 57h 55m)",
   "deriv_flow_status": "Graduated Live (537 eps, 58.8% WR, -0.14R EMA)",
-  "cycle_count": 1770
+  "cycle_count": 1771
 }
