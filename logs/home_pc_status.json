@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 05:14:31 UTC",
+  "updated_utc": "2026-11-23 05:15:14 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9508.55,
+  "live_equity": 9510.69,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1726.23,
-    "SOLUSD": 71.42,
-    "XAUUSD": 3608.21,
-    "EURUSD": 1.09823,
-    "USDJPY": 158.955
+    "ETHUSD": 1725.35,
+    "SOLUSD": 71.39,
+    "XAUUSD": 3609.38,
+    "EURUSD": 1.09827,
+    "USDJPY": 158.951
   },
   "active_trades": {
     "1092976211": {
@@ -56,6 +56,31 @@
       "failed_impulse_shield": true,
       "time_decay_applied": true,
       "time_decay_30m": true
+    },
+    "1093026467": {
+      "ticket": 1093026467,
+      "symbol": "USDJPY",
+      "broker_symbol": "USDJPY",
+      "broker_source": "MT5_LIVE",
+      "direction": "SHORT",
+      "entry_price": 158.951,
+      "sl_price": 159.105,
+      "initial_sl_price": 159.105,
+      "tp1_price": 158.851,
+      "tp2_price": 158.727,
+      "volume": 0.48,
+      "initial_volume": 0.48,
+      "risk_usd": 46.59,
+      "confluence_score": 80.8,
+      "regime": "SESSION_SWEEP_WINDOW",
+      "agreeing_strategies": [
+        "ICT",
+        "KRONOS"
+      ],
+      "opened_at_utc": "2026-11-23 05:15:12 UTC",
+      "tp1_hit": false,
+      "partial_pnl": 0.0,
+      "scalp_upgraded": true
     }
   },
   "bot_stats": {
@@ -1384,7 +1409,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 56h 15m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 56h 14m)",
   "deriv_flow_status": "Graduated Live (538 eps, 58.9% WR, -0.12R EMA)",
-  "cycle_count": 2090
+  "cycle_count": 2092
 }
