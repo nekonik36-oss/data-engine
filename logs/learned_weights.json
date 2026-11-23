@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 04:50:07 UTC",
+  "updated_utc": "2026-11-23 05:00:07 UTC",
   "total_episodes": 1736,
   "strategy_stats": {
     "SND": {
@@ -678,6 +678,36 @@
       "opened_epoch": 1795409407.23279,
       "tp1_hit": false,
       "peak_r": 0.0
+    },
+    {
+      "key": "USDJPY:ICT",
+      "symbol": "USDJPY",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 158.978,
+      "sl_price": 159.09052,
+      "sl_dist": 0.11252,
+      "tp1_price": 158.90486,
+      "tp2_price": 158.81485,
+      "opened_epoch": 1795410007.32147,
+      "tp1_hit": false,
+      "peak_r": 0.071
+    },
+    {
+      "key": "USDJPY:KRONOS",
+      "symbol": "USDJPY",
+      "strategy_name": "KRONOS",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 158.978,
+      "sl_price": 159.09052,
+      "sl_dist": 0.11252,
+      "tp1_price": 158.90486,
+      "tp2_price": 158.81485,
+      "opened_epoch": 1795410007.322975,
+      "tp1_hit": false,
+      "peak_r": 0.071
     }
   ],
   "shadow_cooldowns": {
@@ -704,11 +734,11 @@
     "ETHUSD:DERIV_FLOW": 1795277362.983058,
     "EURUSD:BREAKOUT": 1795155304.778202,
     "USDJPY:BREAKOUT": 1795103102.580275,
-    "USDJPY:KRONOS": 1795096802.328074,
+    "USDJPY:KRONOS": 1795410007.322975,
     "EURUSD:KRONOS": 1795006220.626757,
     "XAUUSD:TREND_PULLBACK": 1794807916.277754,
     "XAUUSD:KRONOS": 1795149900.820118,
-    "USDJPY:ICT": 1795154702.372919,
+    "USDJPY:ICT": 1795410007.32147,
     "EURUSD:TREND_PULLBACK": 1794921309.722345,
     "XAUUSD:ICT": 1795156546.513908,
     "EURUSD:SND": 1794841214.521494,
