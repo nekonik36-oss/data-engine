@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 00:19:39 UTC",
+  "updated_utc": "2026-11-23 00:21:14 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61169.18,
-    "ETHUSD": 1721.26,
-    "SOLUSD": 70.67,
-    "XAUUSD": 3571.43,
-    "EURUSD": 1.09762,
-    "USDJPY": 158.883
+    "BTCUSD": 61238.88,
+    "ETHUSD": 1722.54,
+    "SOLUSD": 70.73,
+    "XAUUSD": 3570.71,
+    "EURUSD": 1.0974,
+    "USDJPY": 158.914
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-23 00:12:31 UTC",
+    "updated_utc": "2026-11-23 00:20:20 UTC",
     "total_episodes": 1710,
     "strategy_stats": {
       "SND": {
@@ -1255,21 +1255,6 @@
     "live_episodes": 40,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:ICT",
-        "symbol": "BTCUSD",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 61250.35,
-        "sl_price": 61460.48075,
-        "sl_dist": 210.13075,
-        "tp1_price": 61113.76501,
-        "tp2_price": 60945.66041,
-        "opened_epoch": 1795391416.485517,
-        "tp1_hit": false,
-        "peak_r": 0.525
-      },
-      {
         "key": "BTCUSD:DERIV_FLOW",
         "symbol": "BTCUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1324,7 +1309,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 61h 10m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 61h 8m)",
   "deriv_flow_status": "Graduated Live (530 eps, 58.6% WR, -0.22R EMA)",
-  "cycle_count": 1140
+  "cycle_count": 1145
 }
