@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-23 00:40:24 UTC",
-  "total_episodes": 1714,
+  "updated_utc": "2026-11-23 00:41:23 UTC",
+  "total_episodes": 1716,
   "strategy_stats": {
     "SND": {
       "trades": 81,
@@ -10,11 +10,11 @@
       "multiplier": 1.005
     },
     "ICT": {
-      "trades": 397,
-      "wins": 200,
+      "trades": 398,
+      "wins": 201,
       "losses": 195,
-      "ema_r": -0.075,
-      "multiplier": 0.981
+      "ema_r": -0.032,
+      "multiplier": 0.992
     },
     "BREAKOUT": {
       "trades": 298,
@@ -38,11 +38,11 @@
       "multiplier": 0.955
     },
     "DERIV_FLOW": {
-      "trades": 531,
-      "wins": 310,
+      "trades": 532,
+      "wins": 311,
       "losses": 218,
-      "ema_r": -0.167,
-      "multiplier": 0.958
+      "ema_r": -0.117,
+      "multiplier": 0.971
     }
   },
   "regime_strategy_multipliers": {
@@ -60,7 +60,7 @@
     "RANGING:SND": 1.066,
     "TRENDING_DOWN:BREAKOUT": 1.118,
     "TRENDING_DOWN:SND": 0.996,
-    "TRENDING_UP:ICT": 1.013,
+    "TRENDING_UP:ICT": 1.02,
     "SESSION_SWEEP_WINDOW:SND": 0.836,
     "TRENDING_UP:KRONOS": 1.008,
     "TRENDING_UP:BREAKOUT": 0.927,
@@ -71,7 +71,7 @@
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
     "MACRO_NEWS_WINDOW:ICT": 1.041,
-    "TRENDING_UP:DERIV_FLOW": 1.017,
+    "TRENDING_UP:DERIV_FLOW": 1.024,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.992,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
     "TRENDING_UP:SND": 0.94,
@@ -665,36 +665,6 @@
   "live_episodes": 40,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 70.68,
-      "sl_price": 70.92793,
-      "sl_dist": 0.24793,
-      "tp1_price": 70.51885,
-      "tp2_price": 70.3205,
-      "opened_epoch": 1795393533.112225,
-      "tp1_hit": true,
-      "peak_r": 0.807
-    },
-    {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 70.68,
-      "sl_price": 70.92793,
-      "sl_dist": 0.24793,
-      "tp1_price": 70.51885,
-      "tp2_price": 70.3205,
-      "opened_epoch": 1795393717.074334,
-      "tp1_hit": true,
-      "peak_r": 0.807
-    },
-    {
       "key": "BTCUSD:ICT",
       "symbol": "BTCUSD",
       "strategy_name": "ICT",
@@ -744,7 +714,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1656,
+  "shadow_episodes": 1658,
   "probation_strategies": [
     "SND"
   ]
