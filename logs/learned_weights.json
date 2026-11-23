@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 03:34:09 UTC",
+  "updated_utc": "2026-11-23 03:45:19 UTC",
   "total_episodes": 1734,
   "strategy_stats": {
     "SND": {
@@ -663,7 +663,23 @@
     }
   ],
   "live_episodes": 40,
-  "active_shadow_trades": [],
+  "active_shadow_trades": [
+    {
+      "key": "BTCUSD:ICT",
+      "symbol": "BTCUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "TRENDING_UP",
+      "entry_price": 61295.91,
+      "sl_price": 61649.90169,
+      "sl_dist": 353.99169,
+      "tp1_price": 61065.8154,
+      "tp2_price": 60782.62205,
+      "opened_epoch": 1795405519.574606,
+      "tp1_hit": false,
+      "peak_r": 0.304
+    }
+  ],
   "shadow_cooldowns": {
     "ETHUSD:ICT": 1795402816.429429,
     "BTCUSD:BREAKOUT": 1795404019.015646,
@@ -672,7 +688,7 @@
     "ETHUSD:KRONOS": 1795404309.575976,
     "SOLUSD:BREAKOUT": 1795403722.798073,
     "SOLUSD:KRONOS": 1795403722.801074,
-    "BTCUSD:ICT": 1795403120.46012,
+    "BTCUSD:ICT": 1795405519.574606,
     "SOLUSD:SND": 1795382716.720372,
     "SOLUSD:ICT": 1795402817.804821,
     "ETHUSD:TREND_PULLBACK": 1795394106.063001,
