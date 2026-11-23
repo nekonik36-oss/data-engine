@@ -1,11 +1,3 @@
-  Take Profit 2     : 158.747  (1.6R -> Runner Target)
-  Suggested Lot     : 0.58 lots  (Risk: $46.82 / 0.50%)
---------------------------------------------------------------------------
-  STRATEGY BREAKDOWN (Why this setup triggered):
-    [AGREES ] ICT             (conf   90%): BSL Liquidity Sweep above 159.027 (high 159.047) + Bearish FVG [158.987-159.013]
-    [NEUTRAL] BREAKOUT        (conf    0%): Inside compression box [158.78 - 159.05]
-    [NEUTRAL] TREND_PULLBACK  (conf    0%): No aligned EMA pullback trigger (RSI=56.5)
-    [AGREES ] KRONOS          (conf   34%): Bullish Prob=34.7% | Exp Move=-0.47 ATR (Max Up +0.43 ATR / Max Down -1.39 ATR)
 --------------------------------------------------------------------------
   KRONOS AI FORECAST (NeoQuasar/Kronos-base (cuda:0)): Bullish Prob=34.7% | Exp Move=-0.47 ATR (Max Up +0.43 ATR / Max Down -1.39 ATR)
 ==========================================================================
@@ -148,3 +140,11 @@
   [XAUUSD (M15 MT5)] Price=3611.64    | Watching for A+ Sniper setup...
   [EURUSD (M15 MT5)] Price=1.0984099999999999 | Watching for A+ Sniper setup...
   [SHADOW RL EPISODE #1738] SOLUSD (TRENDING_UP): DERIV_FLOW v1.01x (-0.55R)
+
+[2026-11-23 05:20:37 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 2 | Record: 18W-31L ($-491.75) | Equity: $9,501.39
+  [OPEN #1092976211] BTCUSD SHORT @ 61254.65 | SL=61577.74 | TP1=60754.6245 | TP2=60139.2085
+  [OPEN #1093026467] USDJPY SHORT @ 158.951 | SL=159.105 | TP1=158.8509 | TP2=158.7277
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1728.05    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=71.5       | Watching for A+ Sniper setup...
+  [XAUUSD (M15 MT5)] Price=3611.02    | Watching for A+ Sniper setup...
+  [EURUSD (M15 MT5)] Price=1.0984     | Watching for A+ Sniper setup...
