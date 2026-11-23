@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-11-23 06:54:40 UTC",
-  "hostname": "DESKTOP-8RQUOSU",
-  "live_equity": 9487.54,
+  "updated_utc": "2026-11-23 12:10:55 UTC",
+  "hostname": "runnervm0hi8g",
+  "live_equity": 9492.07,
   "bot_stats": {
     "total_closed": 59,
     "wins": 18,
@@ -616,42 +616,8 @@
       "net_r": -2.01
     }
   },
-  "pending_post_mortems": [
-    {
-      "ticket": 1092976211,
-      "symbol": "BTCUSD",
-      "direction": "SHORT",
-      "entry_price": 61254.65,
-      "exit_price": 61578.2,
-      "tp1_price": 60754.6245,
-      "tp2_price": 60139.2085,
-      "agreeing_strategies": [
-        "ICT",
-        "DERIV_FLOW"
-      ],
-      "regime": "TRENDING_UP",
-      "closed_epoch": 1795411872.965766,
-      "closed_at_utc": "2026-11-23 05:31:12 UTC",
-      "audited": false
-    }
-  ],
+  "pending_post_mortems": [],
   "ai_feedback_feed": [
-    {
-      "timestamp_utc": "2026-11-16 17:01:37 UTC",
-      "event": "TRADE_CLOSED_DIAGNOSTIC",
-      "ticket": 1086537289,
-      "symbol": "XAUUSD",
-      "direction": "SHORT",
-      "net_pnl": -12.41,
-      "r_multiple": -0.43,
-      "peak_favorable_r": 0.06,
-      "regime": "RANGING",
-      "strategies": [
-        "ICT",
-        "KRONOS"
-      ],
-      "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if XAUUSD reaches TP1=3839.493)"
-    },
     {
       "timestamp_utc": "2026-11-16 18:31:41 UTC",
       "event": "TRUE_TREND_LOSS_CONFIRMED",
@@ -963,6 +929,14 @@
         "DERIV_FLOW"
       ],
       "auto_fix_action": "LOSS_QUEUED_FOR_90M_WICK_AUDIT (monitoring if BTCUSD reaches TP1=60754.6245)"
+    },
+    {
+      "timestamp_utc": "2026-11-23 12:10:55 UTC",
+      "event": "TRUE_TREND_LOSS_CONFIRMED",
+      "ticket": 1092976211,
+      "symbol": "BTCUSD",
+      "direction": "SHORT",
+      "summary": "Ticket #1092976211 (BTCUSD) did not reach TP1 within 90m; stricter confluence filter (+3.0) retained."
     }
   ]
 }
