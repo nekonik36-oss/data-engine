@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 05:44:56 UTC",
+  "updated_utc": "2026-11-23 05:45:17 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9479.99,
+  "live_equity": 9483.92,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61733.32,
-    "ETHUSD": 1735.69,
-    "SOLUSD": 72.0,
-    "XAUUSD": 3623.59,
-    "EURUSD": 1.09881
+    "BTCUSD": 61733.02,
+    "ETHUSD": 1735.55,
+    "SOLUSD": 72.02,
+    "XAUUSD": 3623.03,
+    "EURUSD": 1.09893
   },
   "active_trades": {
     "1093026467": {
@@ -34,7 +34,7 @@
       "broker_source": "MT5_LIVE",
       "direction": "SHORT",
       "entry_price": 158.951,
-      "sl_price": 159.036,
+      "sl_price": 159.016,
       "initial_sl_price": 159.105,
       "tp1_price": 158.8509,
       "tp2_price": 158.7277,
@@ -53,7 +53,8 @@
       "scalp_upgraded": true,
       "fast_scalp_upgraded": true,
       "failed_impulse_shield": true,
-      "time_decay_applied": true
+      "time_decay_applied": true,
+      "time_decay_30m": true
     }
   },
   "bot_stats": {
@@ -617,7 +618,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-23 05:40:02 UTC",
+    "updated_utc": "2026-11-23 05:45:16 UTC",
     "total_episodes": 1739,
     "strategy_stats": {
       "SND": {
@@ -1301,36 +1302,6 @@
     "live_episodes": 41,
     "active_shadow_trades": [
       {
-        "key": "USDJPY:ICT",
-        "symbol": "USDJPY",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 158.978,
-        "sl_price": 159.09052,
-        "sl_dist": 0.11252,
-        "tp1_price": 158.90486,
-        "tp2_price": 158.81485,
-        "opened_epoch": 1795410007.32147,
-        "tp1_hit": false,
-        "peak_r": 0.293
-      },
-      {
-        "key": "USDJPY:KRONOS",
-        "symbol": "USDJPY",
-        "strategy_name": "KRONOS",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 158.978,
-        "sl_price": 159.09052,
-        "sl_dist": 0.11252,
-        "tp1_price": 158.90486,
-        "tp2_price": 158.81485,
-        "opened_epoch": 1795410007.322975,
-        "tp1_hit": false,
-        "peak_r": 0.293
-      },
-      {
         "key": "SOLUSD:BREAKOUT",
         "symbol": "SOLUSD",
         "strategy_name": "BREAKOUT",
@@ -1359,6 +1330,36 @@
         "opened_epoch": 1795412402.06925,
         "tp1_hit": false,
         "peak_r": 0.525
+      },
+      {
+        "key": "EURUSD:BREAKOUT",
+        "symbol": "EURUSD",
+        "strategy_name": "BREAKOUT",
+        "direction": "LONG",
+        "regime": "TRENDING_UP",
+        "entry_price": 1.09881,
+        "sl_price": 1.0982,
+        "sl_dist": 0.00061,
+        "tp1_price": 1.09921,
+        "tp2_price": 1.09969,
+        "opened_epoch": 1795412716.695107,
+        "tp1_hit": false,
+        "peak_r": 0.197
+      },
+      {
+        "key": "EURUSD:KRONOS",
+        "symbol": "EURUSD",
+        "strategy_name": "KRONOS",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 1.09881,
+        "sl_price": 1.09942,
+        "sl_dist": 0.00061,
+        "tp1_price": 1.09841,
+        "tp2_price": 1.09793,
+        "opened_epoch": 1795412716.697107,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1383,10 +1384,10 @@
       "SOLUSD:DERIV_FLOW": 1795409407.23279,
       "BTCUSD:DERIV_FLOW": 1795405964.216565,
       "ETHUSD:DERIV_FLOW": 1795277362.983058,
-      "EURUSD:BREAKOUT": 1795155304.778202,
+      "EURUSD:BREAKOUT": 1795412716.695107,
       "USDJPY:BREAKOUT": 1795103102.580275,
       "USDJPY:KRONOS": 1795410007.322975,
-      "EURUSD:KRONOS": 1795006220.626757,
+      "EURUSD:KRONOS": 1795412716.697107,
       "XAUUSD:TREND_PULLBACK": 1794807916.277754,
       "XAUUSD:KRONOS": 1795149900.820118,
       "USDJPY:ICT": 1795410007.32147,
@@ -1400,7 +1401,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 55h 45m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 55h 44m)",
   "deriv_flow_status": "Graduated Live (540 eps, 58.7% WR, -0.21R EMA)",
-  "cycle_count": 2190
+  "cycle_count": 2191
 }
