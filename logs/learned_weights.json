@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 04:18:21 UTC",
+  "updated_utc": "2026-11-23 04:30:32 UTC",
   "total_episodes": 1735,
   "strategy_stats": {
     "SND": {
@@ -665,21 +665,6 @@
   "live_episodes": 40,
   "active_shadow_trades": [
     {
-      "key": "BTCUSD:ICT",
-      "symbol": "BTCUSD",
-      "strategy_name": "ICT",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 61295.91,
-      "sl_price": 61649.90169,
-      "sl_dist": 353.99169,
-      "tp1_price": 61065.8154,
-      "tp2_price": 60782.62205,
-      "opened_epoch": 1795405519.574606,
-      "tp1_hit": false,
-      "peak_r": 0.304
-    },
-    {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
       "strategy_name": "DERIV_FLOW",
@@ -693,36 +678,6 @@
       "opened_epoch": 1795405964.216565,
       "tp1_hit": false,
       "peak_r": 0.0
-    },
-    {
-      "key": "SOLUSD:TREND_PULLBACK",
-      "symbol": "SOLUSD",
-      "strategy_name": "TREND_PULLBACK",
-      "direction": "LONG",
-      "regime": "TRENDING_UP",
-      "entry_price": 71.39,
-      "sl_price": 70.99092,
-      "sl_dist": 0.39908,
-      "tp1_price": 71.6494,
-      "tp2_price": 71.96866,
-      "opened_epoch": 1795406408.314263,
-      "tp1_hit": false,
-      "peak_r": 0.501
-    },
-    {
-      "key": "SOLUSD:KRONOS",
-      "symbol": "SOLUSD",
-      "strategy_name": "KRONOS",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 71.39,
-      "sl_price": 71.78908,
-      "sl_dist": 0.39908,
-      "tp1_price": 71.1306,
-      "tp2_price": 70.81134,
-      "opened_epoch": 1795406408.320279,
-      "tp1_hit": false,
-      "peak_r": 0.426
     },
     {
       "key": "SOLUSD:ICT",
