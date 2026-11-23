@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 06:06:40 UTC",
+  "updated_utc": "2026-11-23 06:08:14 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,10 +20,10 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61716.69,
-    "ETHUSD": 1731.25,
-    "SOLUSD": 71.99,
-    "XAUUSD": 3625.47,
+    "BTCUSD": 61744.01,
+    "ETHUSD": 1731.46,
+    "SOLUSD": 72.03,
+    "XAUUSD": 3623.64,
     "EURUSD": 1.09953
   },
   "active_trades": {
@@ -619,7 +619,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-23 06:06:01 UTC",
+    "updated_utc": "2026-11-23 06:07:35 UTC",
     "total_episodes": 1742,
     "strategy_stats": {
       "SND": {
@@ -1316,6 +1316,21 @@
         "opened_epoch": 1795412402.06925,
         "tp1_hit": false,
         "peak_r": 0.649
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 61654.37,
+        "sl_price": 61894.32635,
+        "sl_dist": 239.95635,
+        "tp1_price": 61498.39837,
+        "tp2_price": 61306.43329,
+        "opened_epoch": 1795414055.541783,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1338,7 +1353,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795407308.783974,
       "SOLUSD:DERIV_FLOW": 1795409407.23279,
-      "BTCUSD:DERIV_FLOW": 1795405964.216565,
+      "BTCUSD:DERIV_FLOW": 1795414055.541783,
       "ETHUSD:DERIV_FLOW": 1795277362.983058,
       "EURUSD:BREAKOUT": 1795412716.695107,
       "USDJPY:BREAKOUT": 1795103102.580275,
@@ -1357,7 +1372,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 55h 23m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 55h 21m)",
   "deriv_flow_status": "Graduated Live (540 eps, 58.7% WR, -0.21R EMA)",
-  "cycle_count": 2260
+  "cycle_count": 2265
 }
