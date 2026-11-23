@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 03:53:03 UTC",
+  "updated_utc": "2026-11-23 03:54:15 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,16 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9508.25,
+  "live_equity": 9505.97,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61277.11,
-    "ETHUSD": 1730.61,
-    "SOLUSD": 71.23,
-    "XAUUSD": 3604.51,
-    "EURUSD": 1.09819,
-    "USDJPY": 158.967
+    "ETHUSD": 1730.82,
+    "SOLUSD": 71.21,
+    "XAUUSD": 3606.54,
+    "EURUSD": 1.09818,
+    "USDJPY": 158.98
   },
   "active_trades": {
     "1092976211": {
@@ -37,8 +36,8 @@
       "entry_price": 61254.65,
       "sl_price": 62023.92,
       "initial_sl_price": 62023.92,
-      "tp1_price": 60707.7,
-      "tp2_price": 60087.82,
+      "tp1_price": 60754.6245,
+      "tp2_price": 60139.2085,
       "volume": 0.05,
       "initial_volume": 0.05,
       "risk_usd": 38.46,
@@ -51,7 +50,8 @@
       "opened_at_utc": "2026-11-23 03:52:48 UTC",
       "tp1_hit": false,
       "partial_pnl": 0.0,
-      "scalp_upgraded": true
+      "scalp_upgraded": true,
+      "fast_scalp_upgraded": true
     }
   },
   "bot_stats": {
@@ -1365,7 +1365,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 57h 37m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 57h 35m)",
   "deriv_flow_status": "Graduated Live (537 eps, 58.8% WR, -0.14R EMA)",
-  "cycle_count": 1831
+  "cycle_count": 1835
 }
