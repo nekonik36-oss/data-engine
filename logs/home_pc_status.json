@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 00:24:17 UTC",
+  "updated_utc": "2026-11-23 00:25:51 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,11 +20,11 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 61231.64,
-    "ETHUSD": 1721.93,
-    "SOLUSD": 70.66,
-    "XAUUSD": 3579.94,
-    "EURUSD": 1.09774,
+    "BTCUSD": 61244.0,
+    "ETHUSD": 1722.22,
+    "SOLUSD": 70.65,
+    "XAUUSD": 3576.94,
+    "EURUSD": 1.09771,
     "USDJPY": 158.883
   },
   "active_trades": {},
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-23 00:20:20 UTC",
+    "updated_utc": "2026-11-23 00:25:33 UTC",
     "total_episodes": 1710,
     "strategy_stats": {
       "SND": {
@@ -1268,6 +1268,21 @@
         "opened_epoch": 1795392658.382177,
         "tp1_hit": false,
         "peak_r": 0.263
+      },
+      {
+        "key": "SOLUSD:ICT",
+        "symbol": "SOLUSD",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 70.68,
+        "sl_price": 70.92793,
+        "sl_dist": 0.24793,
+        "tp1_price": 70.51885,
+        "tp2_price": 70.3205,
+        "opened_epoch": 1795393533.112225,
+        "tp1_hit": false,
+        "peak_r": 0.121
       }
     ],
     "shadow_cooldowns": {
@@ -1280,7 +1295,7 @@
       "SOLUSD:KRONOS": 1795380613.856184,
       "BTCUSD:ICT": 1795391416.485517,
       "SOLUSD:SND": 1795382716.720372,
-      "SOLUSD:ICT": 1795391418.639103,
+      "SOLUSD:ICT": 1795393533.112225,
       "ETHUSD:TREND_PULLBACK": 1795383917.032896,
       "BTCUSD:TREND_PULLBACK": 1795354544.424119,
       "SOLUSD:TREND_PULLBACK": 1795364720.635171,
@@ -1309,7 +1324,7 @@
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 61h 5m)",
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 61h 4m)",
   "deriv_flow_status": "Graduated Live (530 eps, 58.6% WR, -0.22R EMA)",
-  "cycle_count": 1155
+  "cycle_count": 1160
 }
