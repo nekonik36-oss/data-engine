@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 04:00:08 UTC",
+  "updated_utc": "2026-11-23 04:05:08 UTC",
   "total_episodes": 1734,
   "strategy_stats": {
     "SND": {
@@ -737,7 +737,22 @@
       "tp2_price": 70.81134,
       "opened_epoch": 1795406408.320279,
       "tp1_hit": false,
-      "peak_r": 0.251
+      "peak_r": 0.376
+    },
+    {
+      "key": "SOLUSD:ICT",
+      "symbol": "SOLUSD",
+      "strategy_name": "ICT",
+      "direction": "SHORT",
+      "regime": "TRENDING_UP",
+      "entry_price": 71.32,
+      "sl_price": 71.70343,
+      "sl_dist": 0.38343,
+      "tp1_price": 71.07077,
+      "tp2_price": 70.76403,
+      "opened_epoch": 1795406708.955803,
+      "tp1_hit": false,
+      "peak_r": 0.209
     }
   ],
   "shadow_cooldowns": {
@@ -750,7 +765,7 @@
     "SOLUSD:KRONOS": 1795406408.320279,
     "BTCUSD:ICT": 1795405519.574606,
     "SOLUSD:SND": 1795382716.720372,
-    "SOLUSD:ICT": 1795402817.804821,
+    "SOLUSD:ICT": 1795406708.955803,
     "ETHUSD:TREND_PULLBACK": 1795394106.063001,
     "BTCUSD:TREND_PULLBACK": 1795396517.416722,
     "SOLUSD:TREND_PULLBACK": 1795406408.314263,
