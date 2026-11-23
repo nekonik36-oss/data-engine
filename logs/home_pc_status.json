@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-23 04:17:45 UTC",
+  "updated_utc": "2026-11-23 04:18:22 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -16,15 +16,15 @@
   "mt5_connected": true,
   "mt5_error": null,
   "crypto_feed_source": "data-api.binance.vision",
-  "live_equity": 9503.58,
+  "live_equity": 9503.89,
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "ETHUSD": 1732.34,
-    "SOLUSD": 71.28,
-    "XAUUSD": 3609.43,
-    "EURUSD": 1.09774,
-    "USDJPY": 159.038
+    "ETHUSD": 1731.97,
+    "SOLUSD": 71.26,
+    "XAUUSD": 3609.63,
+    "EURUSD": 1.09775,
+    "USDJPY": 159.032
   },
   "active_trades": {
     "1092976211": {
@@ -618,8 +618,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-23 04:15:08 UTC",
-    "total_episodes": 1734,
+    "updated_utc": "2026-11-23 04:18:21 UTC",
+    "total_episodes": 1735,
     "strategy_stats": {
       "SND": {
         "trades": 81,
@@ -657,11 +657,11 @@
         "multiplier": 0.939
       },
       "DERIV_FLOW": {
-        "trades": 537,
-        "wins": 314,
+        "trades": 538,
+        "wins": 315,
         "losses": 220,
-        "ema_r": -0.145,
-        "multiplier": 0.964
+        "ema_r": -0.118,
+        "multiplier": 0.97
       }
     },
     "regime_strategy_multipliers": {
@@ -690,7 +690,7 @@
       "MACRO_NEWS_WINDOW:SND": 0.984,
       "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
       "MACRO_NEWS_WINDOW:ICT": 1.041,
-      "TRENDING_UP:DERIV_FLOW": 1.045,
+      "TRENDING_UP:DERIV_FLOW": 1.048,
       "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.992,
       "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
       "TRENDING_UP:SND": 0.94,
@@ -1299,21 +1299,6 @@
         "peak_r": 0.304
       },
       {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "TRENDING_UP",
-        "entry_price": 71.34,
-        "sl_price": 71.7581,
-        "sl_dist": 0.4181,
-        "tp1_price": 71.06823,
-        "tp2_price": 70.73375,
-        "opened_epoch": 1795405690.591767,
-        "tp1_hit": false,
-        "peak_r": 0.383
-      },
-      {
         "key": "BTCUSD:DERIV_FLOW",
         "symbol": "BTCUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1423,12 +1408,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1676,
+    "shadow_episodes": 1677,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 57h 12m)",
-  "deriv_flow_status": "Graduated Live (537 eps, 58.8% WR, -0.14R EMA)",
-  "cycle_count": 1915
+  "macro_shield": "Armed (-35m/+15m) | Next: USD Core PCE Price Index m/m @ 2026-11-25 13:30 UTC (in 57h 11m)",
+  "deriv_flow_status": "Graduated Live (538 eps, 58.9% WR, -0.12R EMA)",
+  "cycle_count": 1917
 }
