@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-25 13:00:11 UTC",
+  "updated_utc": "2026-11-25 13:02:21 UTC",
   "hostname": "runnervm0hi8g",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 58772.0,
-    "ETHUSD": 1648.07,
-    "SOLUSD": 67.9
+    "BTCUSD": 58672.0,
+    "ETHUSD": 1647.21,
+    "SOLUSD": 67.86
   },
   "active_trades": {
     "1093026467": {
@@ -1285,8 +1285,8 @@
         "tp1_price": 58624.69469,
         "tp2_price": 58471.43277,
         "opened_epoch": 1795611608.157559,
-        "tp1_hit": false,
-        "peak_r": 0.0
+        "tp1_hit": true,
+        "peak_r": 0.674
       },
       {
         "key": "SOLUSD:DERIV_FLOW",
@@ -1301,7 +1301,7 @@
         "tp2_price": 67.47979,
         "opened_epoch": 1795611611.197605,
         "tp1_hit": false,
-        "peak_r": 0.0
+        "peak_r": 0.518
       }
     ],
     "shadow_cooldowns": {
@@ -1343,7 +1343,7 @@
       "SND"
     ]
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core PCE Price Index m/m / USD Prelim GDP q/q releases in 30m (13:30 UTC) [-35m/+15m shield])",
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core PCE Price Index m/m / USD Prelim GDP q/q releases in 28m (13:30 UTC) [-35m/+15m shield])",
   "deriv_flow_status": "Graduated Live (550 eps, 58.3% WR, -0.29R EMA)",
-  "cycle_count": 1
+  "cycle_count": 5
 }
