@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-25 13:02:21 UTC",
+  "updated_utc": "2026-11-25 13:05:04 UTC",
   "hostname": "runnervm0hi8g",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 58672.0,
-    "ETHUSD": 1647.21,
-    "SOLUSD": 67.86
+    "BTCUSD": 58725.0,
+    "ETHUSD": 1648.32,
+    "SOLUSD": 67.93
   },
   "active_trades": {
     "1093026467": {
@@ -617,8 +617,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-25 13:00:11 UTC",
-    "total_episodes": 1768,
+    "updated_utc": "2026-11-25 13:05:04 UTC",
+    "total_episodes": 1769,
     "strategy_stats": {
       "SND": {
         "trades": 82,
@@ -656,11 +656,11 @@
         "multiplier": 0.947
       },
       "DERIV_FLOW": {
-        "trades": 550,
-        "wins": 319,
+        "trades": 551,
+        "wins": 320,
         "losses": 228,
-        "ema_r": -0.286,
-        "multiplier": 0.928
+        "ema_r": -0.226,
+        "multiplier": 0.943
       }
     },
     "regime_strategy_multipliers": {
@@ -690,7 +690,7 @@
       "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
       "MACRO_NEWS_WINDOW:ICT": 1.041,
       "TRENDING_UP:DERIV_FLOW": 1.011,
-      "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.992,
+      "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.999,
       "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
       "TRENDING_UP:SND": 0.924,
       "MACRO_NEWS_WINDOW:KRONOS": 1.012
@@ -1274,21 +1274,6 @@
     "live_episodes": 41,
     "active_shadow_trades": [
       {
-        "key": "BTCUSD:DERIV_FLOW",
-        "symbol": "BTCUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
-        "regime": "MACRO_NEWS_WINDOW",
-        "entry_price": 58749.22,
-        "sl_price": 58940.7974,
-        "sl_dist": 191.5774,
-        "tp1_price": 58624.69469,
-        "tp2_price": 58471.43277,
-        "opened_epoch": 1795611608.157559,
-        "tp1_hit": true,
-        "peak_r": 0.674
-      },
-      {
         "key": "SOLUSD:DERIV_FLOW",
         "symbol": "SOLUSD",
         "strategy_name": "DERIV_FLOW",
@@ -1338,12 +1323,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1709,
+    "shadow_episodes": 1710,
     "probation_strategies": [
       "SND"
     ]
   },
-  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core PCE Price Index m/m / USD Prelim GDP q/q releases in 28m (13:30 UTC) [-35m/+15m shield])",
-  "deriv_flow_status": "Graduated Live (550 eps, 58.3% WR, -0.29R EMA)",
-  "cycle_count": 5
+  "macro_shield": "ACTIVE SHIELD (Red-Folder USD Core PCE Price Index m/m / USD Prelim GDP q/q releases in 25m (13:30 UTC) [-35m/+15m shield])",
+  "deriv_flow_status": "Graduated Live (551 eps, 58.4% WR, -0.23R EMA)",
+  "cycle_count": 10
 }
