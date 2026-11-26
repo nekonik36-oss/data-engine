@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-26 04:21:33 UTC",
+  "updated_utc": "2026-11-26 04:24:18 UTC",
   "hostname": "runnervm0hi8g",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 60985.7,
-    "ETHUSD": 1702.88,
-    "SOLUSD": 71.23
+    "BTCUSD": 61011.22,
+    "ETHUSD": 1703.09,
+    "SOLUSD": 71.21
   },
   "active_trades": {
     "1093026467": {
@@ -617,7 +617,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-26 04:16:36 UTC",
+    "updated_utc": "2026-11-26 04:22:06 UTC",
     "total_episodes": 1776,
     "strategy_stats": {
       "SND": {
@@ -1272,7 +1272,23 @@
       }
     ],
     "live_episodes": 41,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_UP",
+        "entry_price": 60949.64,
+        "sl_price": 61128.61034,
+        "sl_dist": 178.97034,
+        "tp1_price": 60833.30928,
+        "tp2_price": 60690.13301,
+        "opened_epoch": 1795666926.285929,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795576329.654754,
       "BTCUSD:BREAKOUT": 1795404019.015646,
@@ -1293,7 +1309,7 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795407308.783974,
       "SOLUSD:DERIV_FLOW": 1795645467.763883,
-      "BTCUSD:DERIV_FLOW": 1795645464.248518,
+      "BTCUSD:DERIV_FLOW": 1795666926.285929,
       "ETHUSD:DERIV_FLOW": 1795645466.014645,
       "EURUSD:BREAKOUT": 1795416305.052476,
       "USDJPY:BREAKOUT": 1795103102.580275,
@@ -1314,5 +1330,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (555 eps, 58.2% WR, -0.35R EMA)",
-  "cycle_count": 10
+  "cycle_count": 15
 }
