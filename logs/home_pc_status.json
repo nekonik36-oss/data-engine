@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-26 14:18:14 UTC",
+  "updated_utc": "2026-11-26 14:20:59 UTC",
   "hostname": "runnervm0hi8g",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 60817.34,
-    "ETHUSD": 1703.41,
-    "SOLUSD": 71.33
+    "BTCUSD": 60799.22,
+    "ETHUSD": 1702.88,
+    "SOLUSD": 71.31
   },
   "active_trades": {
     "1093026467": {
@@ -1330,5 +1330,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (556 eps, 58.2% WR, -0.29R EMA)",
-  "cycle_count": 10
+  "cycle_count": 15
 }
