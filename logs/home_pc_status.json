@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-26 23:06:48 UTC",
+  "updated_utc": "2026-11-26 23:09:31 UTC",
   "hostname": "runnervm0hi8g",
   "python_version": "3.12.16",
   "gpu": {
@@ -20,9 +20,9 @@
   "telegram_configured": false,
   "kronos_active_backend": "NeoQuasar/Kronos-base [Offline-Ready Simulation]",
   "latest_prices": {
-    "BTCUSD": 60549.99,
-    "ETHUSD": 1692.73,
-    "SOLUSD": 71.16
+    "BTCUSD": 60450.0,
+    "ETHUSD": 1689.01,
+    "SOLUSD": 70.95
   },
   "active_trades": {
     "1093026467": {
@@ -617,7 +617,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-26 23:05:12 UTC",
+    "updated_utc": "2026-11-26 23:07:22 UTC",
     "total_episodes": 1779,
     "strategy_stats": {
       "SND": {
@@ -1286,7 +1286,7 @@
         "tp2_price": 70.75935,
         "opened_epoch": 1795734118.44959,
         "tp1_hit": false,
-        "peak_r": 0.14
+        "peak_r": 0.56
       },
       {
         "key": "SOLUSD:ICT",
@@ -1302,6 +1302,36 @@
         "opened_epoch": 1795734312.783821,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "BTCUSD:DERIV_FLOW",
+        "symbol": "BTCUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 60530.23,
+        "sl_price": 60663.39651,
+        "sl_dist": 133.16651,
+        "tp1_price": 60443.67177,
+        "tp2_price": 60337.13857,
+        "opened_epoch": 1795734441.24557,
+        "tp1_hit": false,
+        "peak_r": 0.602
+      },
+      {
+        "key": "ETHUSD:DERIV_FLOW",
+        "symbol": "ETHUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 1692.76,
+        "sl_price": 1697.07176,
+        "sl_dist": 4.31176,
+        "tp1_price": 1689.95736,
+        "tp2_price": 1686.50795,
+        "opened_epoch": 1795734442.52596,
+        "tp1_hit": true,
+        "peak_r": 0.87
       }
     ],
     "shadow_cooldowns": {
@@ -1324,8 +1354,8 @@
       "XAUUSD:SND": 1794811517.619458,
       "EURUSD:ICT": 1795407308.783974,
       "SOLUSD:DERIV_FLOW": 1795734118.44959,
-      "BTCUSD:DERIV_FLOW": 1795702991.270495,
-      "ETHUSD:DERIV_FLOW": 1795645466.014645,
+      "BTCUSD:DERIV_FLOW": 1795734441.24557,
+      "ETHUSD:DERIV_FLOW": 1795734442.52596,
       "EURUSD:BREAKOUT": 1795416305.052476,
       "USDJPY:BREAKOUT": 1795103102.580275,
       "USDJPY:KRONOS": 1795410007.322975,
@@ -1345,5 +1375,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (557 eps, 58.3% WR, -0.17R EMA)",
-  "cycle_count": 10
+  "cycle_count": 15
 }
