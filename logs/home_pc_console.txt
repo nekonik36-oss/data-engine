@@ -1,5 +1,3 @@
-==============================================================================
-  24/7 3-ENGINE SPECIALIZED QUANT BOT (75.2% Walk-Forward WR) | Mode: SIGNAL_ONLY
   Data Source    : 24/7 Live Crypto Feed Active (Equity: $9,492.07)
   BTC/SOL (M5)   : H1 Trend + EMA 50/200 + Connors RSI(2) Pullback Break (65%-75% WR)
   ETHUSD (M5)    : ICT/SND Sweep + Volume Climax (>=1.2x) + Engulfing (80% WR)
@@ -105,3 +103,48 @@
   [BTCUSD (M5  Live data-api.binance.vision)] Price=61679.76   | Watching for A+ Sniper setup...
   [ETHUSD (M5  Live data-api.binance.vision)] Price=1743.28    | Watching for A+ Sniper setup...
   [SOLUSD (M5  Live data-api.binance.vision)] Price=73.12      | Watching for A+ Sniper setup...
+
+[2026-11-27 05:12:02 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 18W-32L ($-507.93) | Equity: $9,492.07
+  [OPEN #1093026467] USDJPY SHORT @ 158.951 | SL=159.016 | TP1=158.8509 | TP2=158.7277
+  [BTCUSD (M5  Live data-api.binance.vision)] Price=61719.61   | Watching for A+ Sniper setup...
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1743.94    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=73.16      | Watching for A+ Sniper setup...
+
+[2026-11-27 05:12:35 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 18W-32L ($-507.93) | Equity: $9,492.07
+  [OPEN #1093026467] USDJPY SHORT @ 158.951 | SL=159.016 | TP1=158.8509 | TP2=158.7277
+  [BTCUSD (M5  Live data-api.binance.vision)] Price=61684.18   | Watching for A+ Sniper setup...
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1743.12    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=73.11      | Watching for A+ Sniper setup...
+
+[2026-11-27 05:13:08 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 18W-32L ($-507.93) | Equity: $9,492.07
+  [OPEN #1093026467] USDJPY SHORT @ 158.951 | SL=159.016 | TP1=158.8509 | TP2=158.7277
+  [BTCUSD (M5  Live data-api.binance.vision)] Price=61699.99   | Watching for A+ Sniper setup...
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1742.95    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=73.11      | Watching for A+ Sniper setup...
+
+[2026-11-27 05:13:41 UTC] Scanning 24/7 Crypto (BTC/ETH/SOL) + Forex | Open Trades: 1 | Record: 18W-32L ($-507.93) | Equity: $9,492.07
+  [OPEN #1093026467] USDJPY SHORT @ 158.951 | SL=159.016 | TP1=158.8509 | TP2=158.7277
+==========================================================================
+  HIGH-CONFLUENCE SETUP DETECTED | BTCUSD (M5) | BUY (LONG)
+==========================================================================
+  Timestamp (UTC)   : 2026-11-27 05:05 UTC
+  Market Regime     : TRENDING_UP
+  Confluence Score  : 91.7 / 100.0  [HYBRID_REGIME_KRONOS]
+--------------------------------------------------------------------------
+  Entry Price       : 61743.61000
+  Stop Loss (SL)    : 61356.23931  (Invalidation + ATR Buffer)
+  Take Profit 1     : 62034.13802  (0.8R -> Close 50% & Move SL to BE)
+  Take Profit 2     : 62363.40310  (1.6R -> Runner Target)
+  Suggested Lot     : 0.12 lots  (Risk: $46.48 / 0.50%)
+--------------------------------------------------------------------------
+  STRATEGY BREAKDOWN (Why this setup triggered):
+    [NEUTRAL] ICT             (conf    0%): Waiting for BSL (61881.03) or SSL (60621.60) liquidity sweep
+    [AGREES ] BREAKOUT        (conf   86%): Bullish volatility breakout above compression high 61722.86 (body=1.79x ATR, ADX=31.4)
+    [AGREES ] TREND_PULLBACK  (conf   88%): H1 Bull Trend + EMA20>50>200 + Connors RSI(2)=12.9 Pullback Break
+    [NEUTRAL] DERIV_FLOW      (conf    0%): [okx_swap_full] Balanced perp flow (funding=+0.010%, longs=71%, taker=1.46x, basis=-4.5bps)
+--------------------------------------------------------------------------
+  KRONOS AI FORECAST (NeoQuasar/Kronos-base [Offline-Ready Simulation]): 10-Path Forecast: Bullish=80.5%, Bearish=19.5% | Expected 8-Bar Drift=+0.92 ATR
+==========================================================================
+  [COPILOT MODE: signal_only] Setup displayed for manual review. No automated order was placed.
+  [ETHUSD (M5  Live data-api.binance.vision)] Price=1742.41    | Watching for A+ Sniper setup...
+  [SOLUSD (M5  Live data-api.binance.vision)] Price=73.1       | Watching for A+ Sniper setup...
