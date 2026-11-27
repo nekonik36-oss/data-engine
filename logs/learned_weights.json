@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-27 05:05:54 UTC",
-  "total_episodes": 1785,
+  "updated_utc": "2026-11-27 05:06:29 UTC",
+  "total_episodes": 1786,
   "strategy_stats": {
     "SND": {
       "trades": 82,
@@ -38,11 +38,11 @@
       "multiplier": 0.947
     },
     "DERIV_FLOW": {
-      "trades": 562,
+      "trades": 563,
       "wins": 325,
-      "losses": 234,
-      "ema_r": -0.27,
-      "multiplier": 0.932
+      "losses": 235,
+      "ema_r": -0.328,
+      "multiplier": 0.918
     }
   },
   "regime_strategy_multipliers": {
@@ -71,7 +71,7 @@
     "MACRO_NEWS_WINDOW:SND": 0.984,
     "MACRO_NEWS_WINDOW:TREND_PULLBACK": 0.966,
     "MACRO_NEWS_WINDOW:ICT": 1.041,
-    "TRENDING_UP:DERIV_FLOW": 0.979,
+    "TRENDING_UP:DERIV_FLOW": 0.963,
     "MACRO_NEWS_WINDOW:DERIV_FLOW": 0.983,
     "MACRO_NEWS_WINDOW:BREAKOUT": 1.016,
     "TRENDING_UP:SND": 0.924,
@@ -656,21 +656,6 @@
   "live_episodes": 41,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_UP",
-      "entry_price": 72.77,
-      "sl_price": 73.05026,
-      "sl_dist": 0.28026,
-      "tp1_price": 72.58783,
-      "tp2_price": 72.36362,
-      "opened_epoch": 1795755821.20156,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
       "key": "BTCUSD:TREND_PULLBACK",
       "symbol": "BTCUSD",
       "strategy_name": "TREND_PULLBACK",
@@ -682,8 +667,8 @@
       "tp1_price": 61635.42801,
       "tp2_price": 61768.54555,
       "opened_epoch": 1795755919.539348,
-      "tp1_hit": false,
-      "peak_r": 0.552
+      "tp1_hit": true,
+      "peak_r": 0.788
     },
     {
       "key": "ETHUSD:TREND_PULLBACK",
@@ -697,8 +682,8 @@
       "tp1_price": 1740.64688,
       "tp2_price": 1745.62767,
       "opened_epoch": 1795755920.50676,
-      "tp1_hit": false,
-      "peak_r": 0.435
+      "tp1_hit": true,
+      "peak_r": 0.724
     },
     {
       "key": "SOLUSD:TREND_PULLBACK",
@@ -713,7 +698,7 @@
       "tp2_price": 73.33687,
       "opened_epoch": 1795755921.465718,
       "tp1_hit": false,
-      "peak_r": 0.249
+      "peak_r": 0.57
     }
   ],
   "shadow_cooldowns": {
@@ -750,7 +735,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1726,
+  "shadow_episodes": 1727,
   "probation_strategies": [
     "SND"
   ]
