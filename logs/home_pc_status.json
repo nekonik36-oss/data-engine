@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-27 16:44:04 UTC",
+  "updated_utc": "2026-11-27 16:45:18 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60224.01,
-    "ETHUSD": 1678.63,
-    "SOLUSD": 72.12,
-    "XAUUSD": 3628.87,
-    "EURUSD": 1.09367,
-    "USDJPY": 159.498
+    "BTCUSD": 60310.66,
+    "ETHUSD": 1681.45,
+    "SOLUSD": 72.31,
+    "XAUUSD": 3631.32,
+    "EURUSD": 1.09381,
+    "USDJPY": 159.495
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,8 +589,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-27 16:37:55 UTC",
-    "total_episodes": 1803,
+    "updated_utc": "2026-11-27 16:45:17 UTC",
+    "total_episodes": 1804,
     "strategy_stats": {
       "SND": {
         "trades": 82,
@@ -628,11 +628,11 @@
         "multiplier": 0.958
       },
       "DERIV_FLOW": {
-        "trades": 569,
-        "wins": 329,
+        "trades": 570,
+        "wins": 330,
         "losses": 237,
-        "ema_r": -0.244,
-        "multiplier": 0.939
+        "ema_r": -0.188,
+        "multiplier": 0.953
       }
     },
     "regime_strategy_multipliers": {
@@ -655,7 +655,7 @@
       "TRENDING_UP:KRONOS": 1.0,
       "TRENDING_UP:BREAKOUT": 0.935,
       "TRENDING_UP:TREND_PULLBACK": 0.941,
-      "RANGING:DERIV_FLOW": 1.155,
+      "RANGING:DERIV_FLOW": 1.162,
       "TRENDING_DOWN:DERIV_FLOW": 1.241,
       "SESSION_SWEEP_WINDOW:DERIV_FLOW": 1.083,
       "MACRO_NEWS_WINDOW:SND": 0.984,
@@ -1276,7 +1276,7 @@
         "tp2_price": 3647.83877,
         "opened_epoch": 1795797008.544114,
         "tp1_hit": false,
-        "peak_r": 0.34
+        "peak_r": 0.361
       },
       {
         "key": "USDJPY:ICT",
@@ -1324,19 +1324,19 @@
         "peak_r": 0.08
       },
       {
-        "key": "SOLUSD:DERIV_FLOW",
-        "symbol": "SOLUSD",
-        "strategy_name": "DERIV_FLOW",
-        "direction": "SHORT",
+        "key": "XAUUSD:KRONOS",
+        "symbol": "XAUUSD",
+        "strategy_name": "KRONOS",
+        "direction": "LONG",
         "regime": "RANGING",
-        "entry_price": 72.48,
-        "sl_price": 73.05048,
-        "sl_dist": 0.57048,
-        "tp1_price": 72.10919,
-        "tp2_price": 71.65281,
-        "opened_epoch": 1795797475.009127,
-        "tp1_hit": true,
-        "peak_r": 0.736
+        "entry_price": 3630.31,
+        "sl_price": 3615.17531,
+        "sl_dist": 15.13469,
+        "tp1_price": 3640.14755,
+        "tp2_price": 3652.25531,
+        "opened_epoch": 1795797917.086623,
+        "tp1_hit": false,
+        "peak_r": 0.067
       }
     ],
     "shadow_cooldowns": {
@@ -1366,19 +1366,19 @@
       "USDJPY:KRONOS": 1795410007.322975,
       "EURUSD:KRONOS": 1795416305.055479,
       "XAUUSD:TREND_PULLBACK": 1794807916.277754,
-      "XAUUSD:KRONOS": 1795149900.820118,
+      "XAUUSD:KRONOS": 1795797917.086623,
       "USDJPY:ICT": 1795797010.229296,
       "EURUSD:TREND_PULLBACK": 1794921309.722345,
       "XAUUSD:ICT": 1795797008.544114,
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1743,
+    "shadow_episodes": 1744,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
-  "deriv_flow_status": "Graduated Live (569 eps, 58.1% WR, -0.24R EMA)",
-  "cycle_count": 320
+  "deriv_flow_status": "Graduated Live (570 eps, 58.2% WR, -0.19R EMA)",
+  "cycle_count": 324
 }
