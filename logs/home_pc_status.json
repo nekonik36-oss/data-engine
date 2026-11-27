@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-27 16:59:55 UTC",
+  "updated_utc": "2026-11-27 17:00:17 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 59981.24,
-    "ETHUSD": 1670.19,
-    "SOLUSD": 72.06,
-    "XAUUSD": 3634.54,
-    "EURUSD": 1.09368,
-    "USDJPY": 159.511
+    "BTCUSD": 59958.01,
+    "ETHUSD": 1669.23,
+    "SOLUSD": 71.98,
+    "XAUUSD": 3633.66,
+    "EURUSD": 1.09369,
+    "USDJPY": 159.506
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,8 +589,8 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-27 16:56:54 UTC",
-    "total_episodes": 1807,
+    "updated_utc": "2026-11-27 17:00:16 UTC",
+    "total_episodes": 1809,
     "strategy_stats": {
       "SND": {
         "trades": 82,
@@ -600,11 +600,11 @@
         "multiplier": 0.985
       },
       "ICT": {
-        "trades": 418,
-        "wins": 212,
+        "trades": 420,
+        "wins": 214,
         "losses": 203,
-        "ema_r": -0.023,
-        "multiplier": 0.994
+        "ema_r": 0.037,
+        "multiplier": 1.009
       },
       "BREAKOUT": {
         "trades": 311,
@@ -636,7 +636,7 @@
       }
     },
     "regime_strategy_multipliers": {
-      "RANGING:ICT": 0.762,
+      "RANGING:ICT": 0.774,
       "RANGING:KRONOS": 0.607,
       "SESSION_SWEEP_WINDOW:TREND_PULLBACK": 0.846,
       "RANGING:TREND_PULLBACK": 1.136,
@@ -1249,36 +1249,6 @@
     "live_episodes": 42,
     "active_shadow_trades": [
       {
-        "key": "XAUUSD:ICT",
-        "symbol": "XAUUSD",
-        "strategy_name": "ICT",
-        "direction": "LONG",
-        "regime": "RANGING",
-        "entry_price": 3625.85,
-        "sl_price": 3610.68533,
-        "sl_dist": 15.16467,
-        "tp1_price": 3635.70704,
-        "tp2_price": 3647.83877,
-        "opened_epoch": 1795797008.544114,
-        "tp1_hit": true,
-        "peak_r": 0.731
-      },
-      {
-        "key": "USDJPY:ICT",
-        "symbol": "USDJPY",
-        "strategy_name": "ICT",
-        "direction": "SHORT",
-        "regime": "RANGING",
-        "entry_price": 159.526,
-        "sl_price": 159.61126,
-        "sl_dist": 0.08526,
-        "tp1_price": 159.47058,
-        "tp2_price": 159.40237,
-        "opened_epoch": 1795797010.229296,
-        "tp1_hit": false,
-        "peak_r": 0.528
-      },
-      {
         "key": "XAUUSD:KRONOS",
         "symbol": "XAUUSD",
         "strategy_name": "KRONOS",
@@ -1328,12 +1298,12 @@
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
-    "shadow_episodes": 1747,
+    "shadow_episodes": 1749,
     "probation_strategies": [
       "SND"
     ]
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (571 eps, 58.1% WR, -0.22R EMA)",
-  "cycle_count": 370
+  "cycle_count": 371
 }
