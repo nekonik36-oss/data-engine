@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-27 16:30:10 UTC",
+  "updated_utc": "2026-11-27 16:32:54 UTC",
   "total_episodes": 1802,
   "strategy_stats": {
     "SND": {
@@ -658,21 +658,6 @@
   ],
   "live_episodes": 42,
   "active_shadow_trades": [
-    {
-      "key": "SOLUSD:DERIV_FLOW",
-      "symbol": "SOLUSD",
-      "strategy_name": "DERIV_FLOW",
-      "direction": "SHORT",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 72.15,
-      "sl_price": 72.77197,
-      "sl_dist": 0.62197,
-      "tp1_price": 71.74572,
-      "tp2_price": 71.24815,
-      "opened_epoch": 1795795364.86861,
-      "tp1_hit": false,
-      "peak_r": 0.354
-    },
     {
       "key": "ETHUSD:DERIV_FLOW",
       "symbol": "ETHUSD",
