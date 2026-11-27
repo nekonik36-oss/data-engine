@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-27 16:46:53 UTC",
-  "total_episodes": 1805,
+  "updated_utc": "2026-11-27 16:55:35 UTC",
+  "total_episodes": 1806,
   "strategy_stats": {
     "SND": {
       "trades": 82,
@@ -17,11 +17,11 @@
       "multiplier": 0.994
     },
     "BREAKOUT": {
-      "trades": 309,
+      "trades": 310,
       "wins": 173,
-      "losses": 134,
-      "ema_r": 0.104,
-      "multiplier": 1.026
+      "losses": 135,
+      "ema_r": 0.052,
+      "multiplier": 1.013
     },
     "TREND_PULLBACK": {
       "trades": 194,
@@ -58,7 +58,7 @@
     "TRENDING_DOWN:KRONOS": 1.148,
     "RANGING:BREAKOUT": 1.102,
     "RANGING:SND": 1.066,
-    "TRENDING_DOWN:BREAKOUT": 1.118,
+    "TRENDING_DOWN:BREAKOUT": 1.109,
     "TRENDING_DOWN:SND": 0.996,
     "TRENDING_UP:ICT": 0.981,
     "SESSION_SWEEP_WINDOW:SND": 0.836,
@@ -670,8 +670,8 @@
       "tp1_price": 3635.70704,
       "tp2_price": 3647.83877,
       "opened_epoch": 1795797008.544114,
-      "tp1_hit": false,
-      "peak_r": 0.581
+      "tp1_hit": true,
+      "peak_r": 0.728
     },
     {
       "key": "USDJPY:ICT",
@@ -704,21 +704,6 @@
       "peak_r": 0.237
     },
     {
-      "key": "ETHUSD:BREAKOUT",
-      "symbol": "ETHUSD",
-      "strategy_name": "BREAKOUT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 1683.32,
-      "sl_price": 1670.58752,
-      "sl_dist": 12.73248,
-      "tp1_price": 1691.59611,
-      "tp2_price": 1701.7821,
-      "opened_epoch": 1795797314.468929,
-      "tp1_hit": false,
-      "peak_r": 0.08
-    },
-    {
       "key": "XAUUSD:KRONOS",
       "symbol": "XAUUSD",
       "strategy_name": "KRONOS",
@@ -731,7 +716,7 @@
       "tp2_price": 3652.25531,
       "opened_epoch": 1795797917.086623,
       "tp1_hit": false,
-      "peak_r": 0.287
+      "peak_r": 0.435
     }
   ],
   "shadow_cooldowns": {
@@ -768,7 +753,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1745,
+  "shadow_episodes": 1746,
   "probation_strategies": [
     "SND"
   ]
