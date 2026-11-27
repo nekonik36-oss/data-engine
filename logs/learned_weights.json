@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-27 15:25:10 UTC",
+  "updated_utc": "2026-11-27 15:30:07 UTC",
   "total_episodes": 1795,
   "strategy_stats": {
     "SND": {
@@ -686,7 +686,7 @@
       "tp2_price": 60617.31508,
       "opened_epoch": 1795793105.412604,
       "tp1_hit": false,
-      "peak_r": 0.005
+      "peak_r": 0.076
     },
     {
       "key": "ETHUSD:ICT",
@@ -716,7 +716,22 @@
       "tp2_price": 72.75454,
       "opened_epoch": 1795793110.07996,
       "tp1_hit": false,
-      "peak_r": 0.0
+      "peak_r": 0.07
+    },
+    {
+      "key": "EURUSD:ICT",
+      "symbol": "EURUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 1.09419,
+      "sl_price": 1.09315,
+      "sl_dist": 0.00104,
+      "tp1_price": 1.09487,
+      "tp2_price": 1.0957,
+      "opened_epoch": 1795793407.865747,
+      "tp1_hit": false,
+      "peak_r": 0.173
     }
   ],
   "shadow_cooldowns": {
@@ -737,7 +752,7 @@
     "BTCUSD:SND": 1795389010.482708,
     "XAUUSD:BREAKOUT": 1795104314.563999,
     "XAUUSD:SND": 1794811517.619458,
-    "EURUSD:ICT": 1795407308.783974,
+    "EURUSD:ICT": 1795793407.865747,
     "SOLUSD:DERIV_FLOW": 1795791610.463007,
     "BTCUSD:DERIV_FLOW": 1795791593.637478,
     "ETHUSD:DERIV_FLOW": 1795791921.014008,
