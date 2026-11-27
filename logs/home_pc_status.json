@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-27 15:04:40 UTC",
+  "updated_utc": "2026-11-27 15:06:15 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 59093.38,
-    "ETHUSD": 1645.31,
-    "SOLUSD": 70.61,
-    "XAUUSD": 3635.93,
+    "BTCUSD": 58937.44,
+    "ETHUSD": 1639.06,
+    "SOLUSD": 70.4,
+    "XAUUSD": 3631.46,
     "EURUSD": 1.09448,
-    "USDJPY": 159.459
+    "USDJPY": 159.45
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-27 15:02:08 UTC",
+    "updated_utc": "2026-11-27 15:05:21 UTC",
     "total_episodes": 1794,
     "strategy_stats": {
       "SND": {
@@ -1247,7 +1247,23 @@
       }
     ],
     "live_episodes": 42,
-    "active_shadow_trades": [],
+    "active_shadow_trades": [
+      {
+        "key": "ETHUSD:DERIV_FLOW",
+        "symbol": "ETHUSD",
+        "strategy_name": "DERIV_FLOW",
+        "direction": "SHORT",
+        "regime": "TRENDING_DOWN",
+        "entry_price": 1644.33,
+        "sl_price": 1659.34713,
+        "sl_dist": 15.01713,
+        "tp1_price": 1634.56887,
+        "tp2_price": 1622.55516,
+        "opened_epoch": 1795791921.014008,
+        "tp1_hit": false,
+        "peak_r": 0.497
+      }
+    ],
     "shadow_cooldowns": {
       "ETHUSD:ICT": 1795576329.654754,
       "BTCUSD:BREAKOUT": 1795756223.456825,
@@ -1269,7 +1285,7 @@
       "EURUSD:ICT": 1795407308.783974,
       "SOLUSD:DERIV_FLOW": 1795791610.463007,
       "BTCUSD:DERIV_FLOW": 1795791593.637478,
-      "ETHUSD:DERIV_FLOW": 1795755819.306871,
+      "ETHUSD:DERIV_FLOW": 1795791921.014008,
       "EURUSD:BREAKOUT": 1795416305.052476,
       "USDJPY:BREAKOUT": 1795103102.580275,
       "USDJPY:KRONOS": 1795410007.322975,
@@ -1289,5 +1305,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (565 eps, 58.2% WR, -0.21R EMA)",
-  "cycle_count": 15
+  "cycle_count": 20
 }
