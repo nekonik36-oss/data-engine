@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-27 16:28:37 UTC",
+  "updated_utc": "2026-11-27 16:30:11 UTC",
   "hostname": "DESKTOP-8RQUOSU",
   "python_version": "3.12.10",
   "gpu": {
@@ -20,12 +20,12 @@
   "telegram_configured": true,
   "kronos_active_backend": "NeoQuasar/Kronos-base (cuda:0)",
   "latest_prices": {
-    "BTCUSD": 60056.88,
-    "ETHUSD": 1671.95,
+    "BTCUSD": 60041.2,
+    "ETHUSD": 1671.61,
     "SOLUSD": 72.01,
-    "XAUUSD": 3624.19,
-    "EURUSD": 1.09372,
-    "USDJPY": 159.512
+    "XAUUSD": 3625.0,
+    "EURUSD": 1.09379,
+    "USDJPY": 159.531
   },
   "active_trades": {},
   "bot_stats": {
@@ -589,7 +589,7 @@
     "crypto_book_pnl": -25.01
   },
   "learned_weights": {
-    "updated_utc": "2026-11-27 16:21:46 UTC",
+    "updated_utc": "2026-11-27 16:30:10 UTC",
     "total_episodes": 1802,
     "strategy_stats": {
       "SND": {
@@ -1292,6 +1292,36 @@
         "opened_epoch": 1795796506.703738,
         "tp1_hit": false,
         "peak_r": 0.0
+      },
+      {
+        "key": "XAUUSD:ICT",
+        "symbol": "XAUUSD",
+        "strategy_name": "ICT",
+        "direction": "LONG",
+        "regime": "RANGING",
+        "entry_price": 3625.85,
+        "sl_price": 3610.68533,
+        "sl_dist": 15.16467,
+        "tp1_price": 3635.70704,
+        "tp2_price": 3647.83877,
+        "opened_epoch": 1795797008.544114,
+        "tp1_hit": false,
+        "peak_r": 0.0
+      },
+      {
+        "key": "USDJPY:ICT",
+        "symbol": "USDJPY",
+        "strategy_name": "ICT",
+        "direction": "SHORT",
+        "regime": "RANGING",
+        "entry_price": 159.526,
+        "sl_price": 159.61126,
+        "sl_dist": 0.08526,
+        "tp1_price": 159.47058,
+        "tp2_price": 159.40237,
+        "opened_epoch": 1795797010.229296,
+        "tp1_hit": false,
+        "peak_r": 0.0
       }
     ],
     "shadow_cooldowns": {
@@ -1322,9 +1352,9 @@
       "EURUSD:KRONOS": 1795416305.055479,
       "XAUUSD:TREND_PULLBACK": 1794807916.277754,
       "XAUUSD:KRONOS": 1795149900.820118,
-      "USDJPY:ICT": 1795410007.32147,
+      "USDJPY:ICT": 1795797010.229296,
       "EURUSD:TREND_PULLBACK": 1794921309.722345,
-      "XAUUSD:ICT": 1795156546.513908,
+      "XAUUSD:ICT": 1795797008.544114,
       "EURUSD:SND": 1794841214.521494,
       "USDJPY:SND": 1795107610.766821
     },
@@ -1335,5 +1365,5 @@
   },
   "macro_shield": "Armed (-35m/+15m Red-Folder USD/EUR/JPY)",
   "deriv_flow_status": "Graduated Live (568 eps, 58.2% WR, -0.18R EMA)",
-  "cycle_count": 270
+  "cycle_count": 275
 }
