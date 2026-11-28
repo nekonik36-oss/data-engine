@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-28 04:57:42 UTC",
+  "updated_utc": "2026-11-28 05:00:25 UTC",
   "total_episodes": 1816,
   "strategy_stats": {
     "SND": {
@@ -672,10 +672,55 @@
       "opened_epoch": 1795841699.583551,
       "tp1_hit": false,
       "peak_r": 0.0
+    },
+    {
+      "key": "BTCUSD:DERIV_FLOW",
+      "symbol": "BTCUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 59997.06,
+      "sl_price": 60129.05353,
+      "sl_dist": 131.99353,
+      "tp1_price": 59911.2642,
+      "tp2_price": 59805.66938,
+      "opened_epoch": 1795842023.91383,
+      "tp1_hit": false,
+      "peak_r": 0.341
+    },
+    {
+      "key": "ETHUSD:DERIV_FLOW",
+      "symbol": "ETHUSD",
+      "strategy_name": "DERIV_FLOW",
+      "direction": "SHORT",
+      "regime": "RANGING",
+      "entry_price": 1663.08,
+      "sl_price": 1666.73878,
+      "sl_dist": 3.65878,
+      "tp1_price": 1660.7018,
+      "tp2_price": 1657.77477,
+      "opened_epoch": 1795842025.199032,
+      "tp1_hit": false,
+      "peak_r": 0.618
+    },
+    {
+      "key": "ETHUSD:ICT",
+      "symbol": "ETHUSD",
+      "strategy_name": "ICT",
+      "direction": "LONG",
+      "regime": "RANGING",
+      "entry_price": 1663.08,
+      "sl_price": 1659.42122,
+      "sl_dist": 3.65878,
+      "tp1_price": 1665.4582,
+      "tp2_price": 1668.38523,
+      "opened_epoch": 1795842025.200623,
+      "tp1_hit": false,
+      "peak_r": 0.0
     }
   ],
   "shadow_cooldowns": {
-    "ETHUSD:ICT": 1795793107.715696,
+    "ETHUSD:ICT": 1795842025.200623,
     "BTCUSD:BREAKOUT": 1795797311.835091,
     "BTCUSD:KRONOS": 1795403120.463123,
     "ETHUSD:BREAKOUT": 1795797314.468929,
@@ -694,8 +739,8 @@
     "XAUUSD:SND": 1794811517.619458,
     "EURUSD:ICT": 1795793407.865747,
     "SOLUSD:DERIV_FLOW": 1795841699.581755,
-    "BTCUSD:DERIV_FLOW": 1795822093.745168,
-    "ETHUSD:DERIV_FLOW": 1795799094.505802,
+    "BTCUSD:DERIV_FLOW": 1795842023.91383,
+    "ETHUSD:DERIV_FLOW": 1795842025.199032,
     "EURUSD:BREAKOUT": 1795792516.451569,
     "USDJPY:BREAKOUT": 1795103102.580275,
     "USDJPY:KRONOS": 1795410007.322975,
