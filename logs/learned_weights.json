@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-11-28 05:00:25 UTC",
-  "total_episodes": 1816,
+  "updated_utc": "2026-11-28 05:04:11 UTC",
+  "total_episodes": 1817,
   "strategy_stats": {
     "SND": {
       "trades": 82,
@@ -10,11 +10,11 @@
       "multiplier": 0.985
     },
     "ICT": {
-      "trades": 422,
+      "trades": 423,
       "wins": 215,
-      "losses": 204,
-      "ema_r": 0.037,
-      "multiplier": 1.009
+      "losses": 205,
+      "ema_r": -0.046,
+      "multiplier": 0.989
     },
     "BREAKOUT": {
       "trades": 311,
@@ -54,7 +54,7 @@
     "SESSION_SWEEP_WINDOW:ICT": 0.921,
     "SESSION_SWEEP_WINDOW:BREAKOUT": 1.002,
     "SESSION_SWEEP_WINDOW:KRONOS": 0.743,
-    "TRENDING_DOWN:ICT": 0.983,
+    "TRENDING_DOWN:ICT": 0.967,
     "TRENDING_DOWN:KRONOS": 1.148,
     "RANGING:BREAKOUT": 1.102,
     "RANGING:SND": 1.066,
@@ -659,21 +659,6 @@
   "live_episodes": 42,
   "active_shadow_trades": [
     {
-      "key": "SOLUSD:ICT",
-      "symbol": "SOLUSD",
-      "strategy_name": "ICT",
-      "direction": "LONG",
-      "regime": "TRENDING_DOWN",
-      "entry_price": 71.67,
-      "sl_price": 71.496,
-      "sl_dist": 0.174,
-      "tp1_price": 71.7831,
-      "tp2_price": 71.9223,
-      "opened_epoch": 1795841699.583551,
-      "tp1_hit": false,
-      "peak_r": 0.0
-    },
-    {
       "key": "BTCUSD:DERIV_FLOW",
       "symbol": "BTCUSD",
       "strategy_name": "DERIV_FLOW",
@@ -686,7 +671,7 @@
       "tp2_price": 59805.66938,
       "opened_epoch": 1795842023.91383,
       "tp1_hit": false,
-      "peak_r": 0.341
+      "peak_r": 0.523
     },
     {
       "key": "ETHUSD:DERIV_FLOW",
@@ -700,8 +685,8 @@
       "tp1_price": 1660.7018,
       "tp2_price": 1657.77477,
       "opened_epoch": 1795842025.199032,
-      "tp1_hit": false,
-      "peak_r": 0.618
+      "tp1_hit": true,
+      "peak_r": 0.839
     },
     {
       "key": "ETHUSD:ICT",
@@ -753,7 +738,7 @@
     "EURUSD:SND": 1794841214.521494,
     "USDJPY:SND": 1795107610.766821
   },
-  "shadow_episodes": 1756,
+  "shadow_episodes": 1757,
   "probation_strategies": [
     "SND"
   ]
